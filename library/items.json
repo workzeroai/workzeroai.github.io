@@ -59,6 +59,40 @@
  ],
  "notes": [
   {
+   "video_id": "npS5jzOoji8",
+   "title": "앤트로픽은 클로드 스킬을 진짜 이렇게 만듭니다",
+   "title_orig": "How Anthropic ACTUALLY Builds Claude Skills To Automate Work",
+   "source": "Ben AI",
+   "date": "2026-10-06",
+   "topic": "자동화",
+   "summary": "Ben이 Anthropic의 Claude 스킬 가이드와 모범 사례를 뜯어보고 업무 자동화가 실제로 안정적으로 돌아가는 스킬을 만드는 8가지 방법을 정리했어요. 한마디로 **\"설명하지 말고 한 번 직접 해 보고 나서 스킬로 만들라\"**는 거예요.",
+   "points": [
+    "스킬은 '설명'이 아니라 '시연'에서 나온다",
+    "컨텍스트 창 관리가 곧 스킬 품질",
+    "스킬은 5~10번 고쳐야 쓸 만해진다"
+   ],
+   "thumb": "notes/thumb/npS5jzOoji8.webp",
+   "url": "notes/npS5jzOoji8/",
+   "ready": true
+  },
+  {
+   "video_id": "uMCIgRcJWMM",
+   "title": "AI 도입 100번 해보고 알게 된 것 전부",
+   "title_orig": "after 100 AI implementations, here's everything I learned",
+   "source": "Nick Puru",
+   "date": "2026-10-05",
+   "topic": "AI 소식",
+   "summary": "AI 파일럿 프로젝트의 95%가 측정 가능한 성과를 못 낸다는 MIT 연구와 100여 개 기업 도입 경험을 겹쳐 보면, 성공한 5%는 도구가 아니라 **\"어떤 숫자를 바꿀지 정하는 회의\"**에서 출발했어요. Nick Puru가 그 5%가 지키는 네 가지 순서를 정리해 줍니다.",
+   "points": [
+    "실패의 시작은 기술이 아니라 '정하지 않은 숫자'",
+    "도구 10개보다 공유된 기억 하나",
+    "데모와 운영 사이에는 인증·예외·담당자가 있다"
+   ],
+   "thumb": "notes/thumb/uMCIgRcJWMM.webp",
+   "url": "notes/uMCIgRcJWMM/",
+   "ready": true
+  },
+  {
    "video_id": "bvGptCLDhyo",
    "title": "클로드로 안드레이 카파시를 한 명 더 만들었다",
    "title_orig": "I Built Another Andrej Karpathy Using Claude",

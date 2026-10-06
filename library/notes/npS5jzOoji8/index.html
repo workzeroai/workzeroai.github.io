@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>앤트로픽은 클로드 스킬을 진짜 이렇게 만듭니다 · 워크제로 자료실</title>
+<meta name="description" content="Ben이 Anthropic의 Claude 스킬 가이드와 모범 사례를 뜯어보고 업무 자동화가 실제로 안정적으로 돌아가는 스킬을 만드는 8가지 방법을 정리했어요. 한마디로 **&quot;설명하지 말고 한 번 직접 해 보고 나서 스킬로 만들라&quot;**는 거예요.">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/npS5jzOoji8/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#533afd">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="앤트로픽은 클로드 스킬을 진짜 이렇게 만듭니다">
+<meta property="og:description" content="Ben이 Anthropic의 Claude 스킬 가이드와 모범 사례를 뜯어보고 업무 자동화가 실제로 안정적으로 돌아가는 스킬을 만드는 8가지 방법을 정리했어요. 한마디로 **&quot;설명하지 말고 한 번 직접 해 보고 나서 스킬로 만들라&quot;**는 거예요.">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/npS5jzOoji8/">
+<meta property="og:image" content="https://img.youtube.com/vi/npS5jzOoji8/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="앤트로픽은 클로드 스킬을 진짜 이렇게 만듭니다">
+<meta name="twitter:description" content="Ben이 Anthropic의 Claude 스킬 가이드와 모범 사례를 뜯어보고 업무 자동화가 실제로 안정적으로 돌아가는 스킬을 만드는 8가지 방법을 정리했어요. 한마디로 **&quot;설명하지 말고 한 번 직접 해 보고 나서 스킬로 만들라&quot;**는 거예요.">
+<meta name="twitter:image" content="https://img.youtube.com/vi/npS5jzOoji8/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+:root{--primary:#533afd;--primary-deep:#4434d4;--primary-pale:#eceaff;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f6f9fc;--hair:#e3e8ee;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴">
+    <a href="../../../tutoring/">1:1 과외</a><a href="../../../build/">제작 문의</a>
+    <a class="on" href="../../" aria-current="page">자료실</a>
+  </div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../../">← 자료실</a>
+  <div class="head"><div class="m"><i>자동화</i><span>2026-10-06</span></div><h1>앤트로픽은 클로드 스킬을 진짜 이렇게 만듭니다</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/npS5jzOoji8.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Ben AI</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<span class="orig">원제 · How Anthropic ACTUALLY Builds Claude Skills To Automate Work</span><br><a href="https://www.youtube.com/watch?v=npS5jzOoji8" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>스킬은 &#x27;설명&#x27;이 아니라 &#x27;시연&#x27;에서 나온다</li><li>컨텍스트 창 관리가 곧 스킬 품질</li><li>스킬은 5~10번 고쳐야 쓸 만해진다</li></ul></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>Ben이 Anthropic의 Claude 스킬 가이드와 모범 사례를 뜯어보고 업무 자동화가 실제로 안정적으로 돌아가는 스킬을 만드는 8가지 방법을 정리했어요. 한마디로 <strong>"설명하지 말고 한 번 직접 해 보고 나서 스킬로 만들라"</strong>는 거예요.</p>
+<h3>전체 내용 정리</h3>
+<h4>계획부터 세우지 말고 일을 한 번 끝낸 다음 스킬로 만드세요</h4>
+<p>Ben은 세 번 창업했고 AI 에이전시와 전문가·사업가를 위한 대형 AI 커뮤니티를 운영하는 사람이에요. 그가 꼽은 첫 번째이자 가장 중요한 팁은 <strong>스킬을 만들 때 미리 계획하거나 긴 프롬프트를 쓰지 말라</strong>는 거예요. Ben 자신도 예전엔 자동화할 작업을 계획하고 Claude에게 자세한 프롬프트를 줘서 스킬을 만들었다고 해요.</p>
+<p>그런데 Anthropic 가이드는 스킬을 만들기 전에 먼저 작업을 끝내라고 명시적으로 안내해요. 작업을 하다 보면 맥락을 자연스럽게 주고 선호를 설명하고 절차적 지식(일을 어떤 순서로 처리하는지에 대한 노하우)을 나누게 되거든요. Claude와 함께 작업을 성공적으로 마쳤다면 채팅 창의 "스킬로 만들기" 버튼을 누르거나 "이걸 스킬로 만들어 주세요"라고 말하면 끝이에요.</p>
+<p>이유는 사람과 같아요. 머릿속 과정을 말로 설명하긴 어렵지만 직접 해 보이면 훨씬 쉽죠.</p>
+<p>Ben은 새로 나온 <strong>"스킬 기록" 기능</strong>이 지금 Claude에서 가장 과소평가된 기능 중 하나라고 봐요. 작업을 직접 하면서 무엇을 왜 하는지 말하기만 하면, Claude가 화면과 클릭을 캡처하고 음성 녹취를 읽어 의도를 파악한 뒤, 멈추는 순간 전체 과정을 스킬로 바꿔 줘요. Ben은 이 방식으로 이메일 분류(triage) 스킬을 만들었고 이걸 기본 스킬 구축 방법으로 강력히 추천합니다.</p>
+<h4>스킬 하나에 한 가지 일만 맡기세요</h4>
+<p>두 번째 원칙은 특정 작업에 집중한 스킬을 만드는 거예요. Ben이 보기에 가장 흔한 실수는 스킬을 너무 넓게 잡거나 한 스킬에 너무 많은 일을 담는 것이에요. Anthropic의 심층 가이드도 가장 효과적인 스킬 제작자는 확장하기 전에 한 작업에 집중해 반복 개선한다고 말해요. 모범 사례 가이드 역시 범위를 작게 유지하고 워크플로우마다 별도 스킬을 만들라고 강조하죠.</p>
+<p>그럼 너무 많이 담았는지는 어떻게 알까요? Ben의 에이전시는 자동화하려는 전체 프로세스를 펼쳐 놓고 그중 가장 작은 부분부터 가치를 만드는 스킬을 만들어요. 예를 들어 리서치 스킬 하나만으로도 이미 가치가 있죠. 그게 잘 돌아가면 거기서 확장하거나, 더 나은 방법으로 나머지 단계를 별도 스킬로 나눠 같은 채팅에서 필요할 때마다 실행해요.</p>
+<p>덤으로 스킬 파일이 작아지면 컨텍스트 창이 깔끔해져서 AI 성능도 좋아진다고 해요.</p>
+<h4>스킬은 완성품이 아니라 계속 고쳐 쓰는 업무 프로세스예요</h4>
+<p>세 번째는 스킬을 완성된 파일이 아니라 비즈니스 프로세스처럼 다루는 거예요. Anthropic 가이드는 스킬을 <strong>살아있는 문서</strong>라고 불러요. 상황이 바뀌거나 새 예외가 생기면 업데이트해야 하죠. Anthropic 블로그에도 최고의 스킬은 몇 줄로 시작해서, Claude가 새 예외를 만날 때마다 사람들이 내용을 덧붙이며 좋아졌다는 얘기가 나와요.</p>
+<p>Ben도 비슷했다고 해요. 그가 만든 최고의 스킬들도 최소 5~10번은 고쳤고 어떤 건 그만큼 반복한 뒤에야 쓸 만해졌대요.</p>
+<p>Anthropic은 스킬을 만들고 개선하는 채팅과 테스트하는 채팅을 따로 쓰라고 권해요. Claude A와 첫 버전을 만들고 Claude B로 실제 워크플로우에서 돌려 보고 오류가 나면 Claude A에게 알려 함께 고치는 식이죠. 그러면 한쪽에 치우치지 않고 각자 맡은 일에 집중할 수 있어요.</p>
+<p>예외가 자주 생긴다면 <strong>자기 개선 역할</strong>을 넣을 수도 있어요. "내가 새 업데이트를 주거나 수정·오류를 지적할 때마다 스킬에 새 규칙이 자동으로 반영되도록 자기 개선 역할을 추가해 주세요" 같은 지시 한 줄이면 됩니다.</p>
+<h4>입력·출력 예시를 넣으세요, 카피라이팅이면 많이</h4>
+<p>네 번째는 당연해 보이지만 많은 사람이 안 하는 것, 입력·출력 예시 추가예요. 예시는 설명만으로는 전하기 어려운 스타일과 디테일 수준을 Claude에게 훨씬 분명하게 전해요. 출력 형식, 어조, 구조를 정하는 가장 확실한 방법 중 하나죠.</p>
+<p>Ben의 경험으로는 디자인, 카피라이팅, 크리에이티브 스킬에서 특히 중요해요. 최소 3~5개의 좋은 예시를 넣는 게 좋고 <strong>카피라이팅은 최대 20개까지 넣으면 결과가 훨씬 좋아진다</strong>고 해요. 여기서도 기준은 "설명하지 말고 보여주기"예요.</p>
+<p>아직 좋은 예시가 없다면 다른 사람 것을 가져오거나, 좋은 결과물을 자동으로 쌓는 역할을 스킬에 넣으면 돼요. 결과물을 고치거나 특히 마음에 드는 게 나올 때마다 "이걸 스킬에 영구 저장할까요?"라고 묻고 '예'라고 하면 예시로 저장하게 하는 방식이에요.</p>
+<h4>점진적 공개: 필요한 단계에서 필요한 파일만 읽게 하세요</h4>
+<p>다섯 번째는 점진적 공개(progressive disclosure)예요. Anthropic 엔지니어링 블로그는 이걸 에이전트 스킬을 유연하고 확장 가능하게 만드는 핵심 설계 원칙이라고 불러요. 덕분에 스킬에 담을 수 있는 컨텍스트 양은 사실상 무제한이 되지만 제대로 적용하지 않으면 오히려 성능이 떨어져요. Ben은 Anthropic의 스킬 생성기조차 이 원칙을 제대로 적용하지 않는 경우가 있다고 봐요.</p>
+<p>스킬은 따라야 할 과정을 적은 skill.md 파일과, 추가 자료를 담은 참조(reference) 폴더로 구성될 수 있어요. 예를 들어 Ben의 뉴스레터 스킬에는 본인 배경, 회사 소개, ICP(이상적인 고객 프로필), 말투, 예시 같은 파일이 들어 있죠.</p>
+<p>점진적 공개란 이 파일들을 처음부터 다 읽지 않고 <strong>필요한 단계에서만 읽게 하는 것</strong>이에요. 한 번에 다 불러오면 컨텍스트 창이 복잡해지고 Claude가 마지막 단계쯤엔 앞 내용을 잊기 시작하거든요. 그래서 Ben의 뉴스레터 스킬은 단계마다 "이 단계를 실행하기 전에 이 파일을 읽어라"를 명시해 둬요.</p>
+<h4>리서치 단계는 하위 에이전트에게 맡기세요</h4>
+<p>여섯 번째는 조사·연결 단계에서 하위 에이전트 사용을 강제하는 거예요. Anthropic은 컨텍스트 창을 기본적인 제약 조건이라고 명시해요.</p>
+<p>많은 스킬이 비슷한 패턴을 따라요. 인터넷이나 소프트웨어에서 데이터를 가져오고 해석해서 쓸 만한 결과를 내는 거죠. 데이터 분석 스킬은 데이터를 뽑아 보고서나 대시보드를 만들고 아이디어 발상 스킬은 조사하고 걸러서 제안을 내요.</p>
+<p>문제는 첫 단계에서 쓰는 MCP나 커넥터가 토큰을 많이 먹는다는 거예요. 컨텍스트 창이 처음부터 차 버리면, 정작 가장 중요한 해석 단계에서 Claude의 성능이 크게 떨어져요. 하위 에이전트가 조사를 하고 요약만 메인 에이전트에 넘기면 이 문제를 피할 수 있죠.</p>
+<p>Claude가 알아서 그렇게 할 때도 있지만 안 그럴 때가 많아요. Ben의 영상 제목 아이디어 스킬은 YouTube에서 성과 좋은 제목을 먼저 조사하는데, 모든 연결 호출을 하위 에이전트 안에서 돌리도록 지침을 넣어 뒀다고 해요.</p>
+<h4>체크포인트마다 여러 버전을 받으세요</h4>
+<p>일곱 번째는 스킬이 단계마다 여러 변형을 내게 하는 거예요. 카피라이팅이나 디자인 스킬은 제대로 작동해도 각도나 표현, 방향이 마음에 안 들어 계속 고치게 되잖아요. 선택지가 많으면 그중 하나가 맞는 방향일 확률이 높고 고쳐도 고칠 부분이 줄어요.</p>
+<p>Ben의 뉴스레터 스킬은 첫 단계에서 여러 각도와 방향을 제안해요. 하나를 고르면 그 관점으로 개요 세 가지가 나오고 또 하나를 골라 조금 손보는 식이죠. 제목부터 본문까지 모든 단계에서 이렇게 하니 워크플로우가 훨씬 빨라지고 모델을 좋은 방향으로 이끌 수 있다고 해요.</p>
+<p>이건 Anthropic 모범 사례 가이드에 있는 내용은 아니에요. 다만 Anthropic이 자체 스킬을 많이 설계할 때 쓴 방식이고 Ben도 거기서 아이디어를 얻었다고 해요.</p>
+<h4>원치 않는 자동 발동은 한 줄로 끌 수 있어요</h4>
+<p>마지막은 자동 발동을 막는 거예요. 스킬은 슬래시 명령어로 부를 수도 있지만 Claude가 스킬 설명을 읽고 이 작업에 맞다고 판단하면 스스로 발동하기도 해요. 그런데 Ben을 포함해 많은 사람이 어차피 슬래시 명령어로만 스킬을 쓰는데, 원치 않는 상황에서 모델이 스킬을 불러오는 일이 종종 생겨요.</p>
+<p>해결법은 간단해요. 스킬 프런트매터(파일 맨 위 설정 영역)에 <code>disable-model-invocation</code>(모델 호출 비활성화)을 <code>true</code>로 넣으면 돼요. Ben의 LinkedIn 작가 스킬 맨 위에도 이 줄이 있어요. 이러면 Claude가 스스로 호출하진 못하지만 슬래시로는 계속 쓸 수 있죠.</p>
+<p><strong>덤으로 새 채팅마다 스킬 설명이 로드되지 않아 컨텍스트 창도 더 깔끔해져요.</strong></p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>스킬은 '설명'이 아니라 '시연'에서 나온다</strong>: 머릿속 과정을 프롬프트로 옮기는 것보다 한 번 같이 일하고 그걸 스킬로 굳히는 게 훨씬 정확해요. 스킬 기록 기능은 이 과정을 거의 자동으로 만들어 줘요.</li><li><strong>컨텍스트 창 관리가 곧 스킬 품질</strong>: 작은 스킬, 점진적 공개, 리서치용 하위 에이전트, 자동 발동 끄기는 모두 결국 Claude가 핵심 단계에서 쓸 컨텍스트를 아끼는 방법이에요. 결과가 들쭉날쭉하다면 프롬프트보다 컨텍스트 구조를 먼저 의심해 볼 만해요.</li><li><strong>스킬은 5~10번 고쳐야 쓸 만해진다</strong>: 처음부터 완벽한 스킬은 드물어요. 만드는 채팅과 테스트하는 채팅을 나누고 자기 개선 역할로 수정 사항이 자동으로 쌓이게 하면 반복 비용이 크게 줄어요.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li>이번 주에 반복한 업무 하나(예: 문의 메일 답장, 견적서 초안)를 Claude와 처음부터 끝까지 같이 처리한 뒤 "이걸 스킬로 만들어 주세요"라고 해 보세요. 미리 짠 프롬프트로 만든 스킬과 결과를 비교하면 차이가 바로 보여요.</li><li>이미 쓰는 스킬이 있다면 skill.md를 열어 한 스킬이 여러 일을 하고 있지 않은지 확인해 보세요. 리서치·작성·검수처럼 단계가 섞여 있다면 따로 나누는 것만으로도 결과가 안정됩니다.</li><li>슬래시로만 쓰는 스킬의 프런트매터에 <code>disable-model-invocation: true</code>를 한 줄 추가해 보세요. 엉뚱한 순간에 스킬이 끼어드는 일이 줄고 컨텍스트도 가벼워져요.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>세 가지만 답하면 4단계 중 지금 위치를 바로 알려드려요. 무료예요.</p><span class="go">내 단계 진단하기 →</span></a>
+    <a class="cross" href="../../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../../" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>
