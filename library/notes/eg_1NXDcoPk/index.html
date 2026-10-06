@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>GPT-6 Astra에게 1만 달러 주고 주식을 맡겨봤다 · 워크제로 자료실</title>
+<meta name="description" content="Nate Herk가 GPT-6 Astra(Codex에서 구동)에게 실제 돈 1만 달러를 맡겨 7거래일 동안 주식 거래를 시키고 S&amp;P 500과 수익률을 겨룬 실험 기록입니다. 결과는 9,900달러로 마감해 같은 기간 S&amp;P 500(9,980달러 상당)에 졌고, 에이전트">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/eg_1NXDcoPk/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#533afd">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="GPT-6 Astra에게 1만 달러 주고 주식을 맡겨봤다">
+<meta property="og:description" content="Nate Herk가 GPT-6 Astra(Codex에서 구동)에게 실제 돈 1만 달러를 맡겨 7거래일 동안 주식 거래를 시키고 S&amp;P 500과 수익률을 겨룬 실험 기록입니다. 결과는 9,900달러로 마감해 같은 기간 S&amp;P 500(9,980달러 상당)에 졌고, 에이전트">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/eg_1NXDcoPk/">
+<meta property="og:image" content="https://img.youtube.com/vi/eg_1NXDcoPk/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GPT-6 Astra에게 1만 달러 주고 주식을 맡겨봤다">
+<meta name="twitter:description" content="Nate Herk가 GPT-6 Astra(Codex에서 구동)에게 실제 돈 1만 달러를 맡겨 7거래일 동안 주식 거래를 시키고 S&amp;P 500과 수익률을 겨룬 실험 기록입니다. 결과는 9,900달러로 마감해 같은 기간 S&amp;P 500(9,980달러 상당)에 졌고, 에이전트">
+<meta name="twitter:image" content="https://img.youtube.com/vi/eg_1NXDcoPk/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+:root{--primary:#533afd;--primary-deep:#4434d4;--primary-pale:#eceaff;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f6f9fc;--hair:#e3e8ee;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴">
+    <a href="../../tutoring/">1:1 과외</a><a href="../../build/">제작 문의</a>
+    <a class="on" href="../" aria-current="page">자료실</a>
+  </div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../">← 자료실</a>
+  <div class="head"><div class="m"><i>에이전트</i><span>2026-09-28</span></div><h1>GPT-6 Astra에게 1만 달러 주고 주식을 맡겨봤다</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/eg_1NXDcoPk.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Nate Herk | AI Automation</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<span class="orig">원제 · I Gave GPT 6 Astra $10,000 to Trade Stocks...And This Happened</span><br><a href="https://www.youtube.com/watch?v=eg_1NXDcoPk" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>여러 번 깨어나는 에이전트는 &quot;인수인계 메시지&quot;로 하나처럼 만든다</li><li>모델이 거부하는 단계는 &quot;판단&quot;과 &quot;실행&quot;을 분리해 푼다</li><li>보수적인 기본값은 &quot;아무것도 안 하는 자동화&quot;가 된다</li></ul></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>Nate Herk가 GPT-6 Astra(Codex에서 구동)에게 실제 돈 1만 달러를 맡겨 7거래일 동안 주식 거래를 시키고 S&amp;P 500과 수익률을 겨룬 실험 기록입니다. 결과는 9,900달러로 마감해 같은 기간 S&amp;P 500(9,980달러 상당)에 졌고, 에이전트가 초반에 너무 소극적이었던 점과 모델이 직접 주문을 거부한 문제가 핵심 교훈으로 남았습니다.</p>
+<h3>전체 내용 정리</h3>
+<h4>실험 규칙: 1만 달러, 7거래일, S&amp;P 500을 이겨라</h4>
+<p>Nate는 예전에 오픈클로(OpenClaw)로 비슷한 실험을 했을 때 "한 번 세팅하면 절대 손대지 않는다"는 규칙을 지켰지만, 이번엔 하루 최대 두 번까지 시스템을 수정할 수 있게 규칙을 바꿨습니다. 돈을 다 잃더라도 거래를 멈출 수는 없고, 최종 결과는 S&amp;P 500과 비교합니다. 지수를 이기지 못하면 10월 17~18일 행사(AIS Live) VIP 티켓을 시청자 한 명에게 무료로 주기로 했습니다. 목표는 1만 달러를 1만 5천 달러로 만드는 게 아니라 S&amp;P 수익률을 이기는 것입니다. Nate 스스로 전문 데이 트레이더가 아니라고 밝히며, S&amp;P가 10% 떨어질 때 5%만 떨어져도 이긴 것이라고 설명합니다.</p>
+<h4>시스템 설계: 하루 7번 깨어나는 루틴과 "인수인계 메시지"</h4>
+<p>시작은 Codex에게 "7거래일 동안 1만 달러로 최대한 수익을 내야 하니 조사해서 전략을 짜 달라"고 요청한 것이었습니다. Codex는 여러 거래 에이전트에게 리서치를 위임해 전략을 세웠습니다. 루틴은 7시 45분, 9시 30분, 오전 11시, 오후 1시, 2시 15분, 2시 45분, 3시 15분에 실행됩니다. 개장 전에는 뉴스와 계좌를 확인해 주시할 종목을 고르고, 개장 1시간쯤 뒤 첫 거래를 찾고, 정오에 포지션을 검토하고, 2시 15분에 남은 포지션을 정리하고, 마감 직전에 결과를 기록하는 식입니다. 가장 중요한 설계는 연속성입니다. 에이전트가 깨어날 때마다 다음 에이전트에게 인수인계 메시지를 남기고, 다음 에이전트는 그걸 읽고 행동한 뒤 다시 메시지를 남겨서 마치 하나의 에이전트가 전체를 수행하는 것처럼 작동합니다. 모든 루틴이 같은 스레드에서 돌기 때문에 스레드 하나만 보면 에이전트가 한 일을 전부 확인할 수 있습니다.</p>
+<h4>1~2일차: 거의 움직이지 않는 에이전트, 그리고 주문 거부</h4>
+<p>1일차 잔액은 9,991달러로 약 9달러 손실이었습니다. 테슬라를 9주(위험 노출 3,000달러 조금 넘는 금액) 샀다가 손절매가 바로 실행된 결과입니다. Nate는 차라리 500달러를 잃었더라도 리스크를 감수하며 거래했다는 걸 알 수 있는 편이 나았을 거라며 답답해했고, 위험 대비 수익 비율 기준을 2:1에서 1.5:1로 낮추고 필터 제한을 줄였습니다. 2일차에는 더 큰 문제가 생겼습니다. GPT-6 Astra가 "전략 수립은 돕겠지만 자동 주문 실행은 하지 않겠다"며 거래 주문을 거부한 것입니다. 설득해도 풀리지 않아, Nate는 "Trader"라는 이름의 Grok 봇을 따로 세웠습니다. Astra가 루틴을 마치고 Grok 봇 전용 이메일로 추천 내용을 보내면, 이메일 수신 웹훅이 Grok 봇을 깨우고 Grok 봇이 알파카(Alpaca)를 통해 거래를 실행하는 구조입니다. 전략과 리서치는 Astra, 실행만 Grok 봇이 맡는 분업입니다. 그런데도 2일차 일일 변동 폭은 0.21달러에 그쳐, Nate는 실행 빈도를 30분마다로 높이고 제한을 풀어 더 공격적으로 운영하기로 했습니다.</p>
+<h4>3~5일차: 현금이 시장에 들어가자 손익이 움직이기 시작</h4>
+<p>3일차 점검(일요일) 시점 잔액은 10,018달러로 약 18달러 수익이었습니다. HPE에 거의 2,000달러, 엑슨모빌에 1,200달러, 애플에 약 1,000달러를 투자했지만, 투입 금액은 약 4,000달러이고 5,800달러(약 60%)는 여전히 현금으로 놀고 있었습니다. 참고로 챌린지가 시작된 9월 9일에 S&amp;P에 1만 달러를 넣었다면 약 5달러 손실 상태였습니다. 4일차에는 개장 30분~1시간 전 모든 포지션을 매도하고 새로 세 포지션을 잡아 현금이 2,000달러만 남았습니다(포트폴리오 80% 운용). 하지만 하루 종일 하락해 225달러 손실, 약 9,800달러로 마감했고 크라우드스트라이크에서 손실이 컸습니다. 이날 수익률은 -2.26%로 S&amp;P(-0.5%)보다 훨씬 나빴고, 에이전트가 S&amp;P ETF 포지션을 잡은 것도 의아한 선택이었습니다. 5일차 아침엔 현금이 8달러만 남아 거의 전액이 투자됐고, 마감 잔고는 9,832.58달러로 하루 약 36달러(+0.37%p) 상승해 S&amp;P(-0.45%p)를 이겼습니다. 그러나 1일차에 S&amp;P에 넣었다면 9,925달러였을 것이라 누적으로는 약 100달러 뒤처져 있었습니다. Nate는 1만 달러 가까이 투자했는데도 하루 변동이 35~36달러에 불과하다는 점이 흥미롭다며, 무모한 스윙 트레이딩이나 옵션이 아니면 수익률이 크게 오르내리지 않고 장기 전략이 더 중요하다고 말합니다.</p>
+<h4>6~7일차: 금리 인상 충격과 마지막 날 역전 실패</h4>
+<p>6일차 오후, 연방준비제도가 만장일치로 금리를 25bp 인상(3.75%→4%)했고 발표 직후 S&amp;P와 함께 포트폴리오도 하락했습니다. 이날 잔액은 9,759달러로 하루 0.87%(85달러) 하락, S&amp;P는 0.45% 하락이었습니다. Astra는 금리 발표 후 많은 종목을 매도해 한때 7천 달러를 현금으로 들고 있었고, 마감 시 현금은 3,600달러였습니다. Codex에 따르면 시작 때 S&amp;P에 넣었다면 9,857달러로, 약 140달러만 잃었을 상황인데 실제로는 약 240달러를 잃은 셈입니다. 7일차 아침엔 10,012달러까지 올랐다가 급락해 9,868달러가 됐는데, Astra가 더 큰 손실 전에 해당 포지션을 매도해 피해를 줄였습니다. 최종 잔액은 9,900달러로, 이날 하루는 182달러(+1.87%) 벌어 S&amp;P(+1.14%)를 이겼지만 전체 기간으로는 S&amp;P 기준 9,980달러에 미치지 못했습니다. 약속대로 AIS Live VIP 패스를 시청자에게 주기로 했습니다.</p>
+<h4>Nate의 결론: 7일로는 판단 불가, 30일 버전으로 계속한다</h4>
+<p>Nate는 첫 이틀 동안 에이전트가 너무 소극적이어서 실제로 제대로 거래한 날은 5일 정도였고, 3일차에야 현금이 본격적으로 움직였다고 정리합니다. 이번엔 주식(기업 지분 소유)만 거래했지만, 옵션으로 넓히면 수익과 손실이 모두 훨씬 커지고 위험도 커진다고 설명합니다. 제목만 보고 5천 달러를 벌거나 잃었을 거라 기대했겠지만, 주식 시장에서 그렇게 짧은 기간에 그런 일은 잘 일어나지 않으며 2만~50만 달러 규모로 데이·스윙 트레이딩을 해야 그런 변동이 생긴다고 말합니다. 결론적으로 7거래일로는 전략이 유효한지 판단하기에 부족하다며, 지난번 30일간 주식만으로 S&amp;P를 앞질렀던 것처럼 전략을 수정하며 30일차 영상을 만들겠다고 예고합니다.</p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>여러 번 깨어나는 에이전트는 "인수인계 메시지"로 하나처럼 만든다</strong>: 정해진 시각마다 새로 깨어나는 에이전트가 이전 상황을 모르면 무용지물이다. 매번 다음 에이전트에게 메모를 남기는 구조가 장기 자동화의 핵심 설계다.</li><li><strong>모델이 거부하는 단계는 "판단"과 "실행"을 분리해 푼다</strong>: Astra가 주문 실행을 거부하자 전략은 Astra, 실행은 별도 봇이 이메일·웹훅으로 이어받게 나눴다. 고위험 실행 단계를 분리하는 건 안전장치로도 유효한 패턴이다.</li><li><strong>보수적인 기본값은 "아무것도 안 하는 자동화"가 된다</strong>: 위험 필터가 많으면 에이전트는 좋은 종목을 찾아도 마지막에 거래를 거부한다. 첫 이틀 하루 변동 0.21달러처럼, 자동화의 성과를 보려면 제약 조건 자체를 튜닝해야 한다.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li>지금 쓰거나 맡기려는 자동화가 여러 단계로 나뉘어 돌아간다면, 업체에 "각 단계가 이전 단계 결과를 어떻게 넘겨받나요? 중간 기록을 제가 한 곳에서 볼 수 있나요?"라고 물어보세요.</li><li>결제·발송·주문처럼 되돌리기 어려운 동작이 들어간 자동화라면, "AI가 판단하는 단계와 실제로 실행하는 단계가 분리돼 있는지, 실행 전에 제가 확인하는 지점이 있는지"를 업체에 확인하세요.</li><li>이미 돌아가는 자동화가 있다면 지난 일주일 동안 실제로 몇 건을 처리했는지 세어 보세요. 거의 0건이라면 조건이 너무 까다롭게 걸려 "아무것도 안 하는" 상태일 수 있으니 기준을 점검해 달라고 요청하세요.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>업무를 같이 분해하고 4단계 중 지금 위치를 짚어 드려요.</p><span class="go">진단 콜 보기 →</span></a>
+    <a class="cross" href="../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>

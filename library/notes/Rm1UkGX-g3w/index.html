@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>클로드 디자인, 단계별로 전부 설명 · 워크제로 자료실</title>
+<meta name="description" content="클로드 디자인(Claude design)을 아무 지시 없이 쓰는 초보 단계부터, 디자인 시스템을 만들어 사업 전체에 복제하고, 외부 이미지·영상 생성 도구와 Supabase까지 결합해 실제로 작동하는 앱을 완성하는 단계까지, 잭 로버츠(Jack Roberts)가 7단계">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/Rm1UkGX-g3w/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#533afd">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="클로드 디자인, 단계별로 전부 설명">
+<meta property="og:description" content="클로드 디자인(Claude design)을 아무 지시 없이 쓰는 초보 단계부터, 디자인 시스템을 만들어 사업 전체에 복제하고, 외부 이미지·영상 생성 도구와 Supabase까지 결합해 실제로 작동하는 앱을 완성하는 단계까지, 잭 로버츠(Jack Roberts)가 7단계">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/Rm1UkGX-g3w/">
+<meta property="og:image" content="https://img.youtube.com/vi/Rm1UkGX-g3w/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="클로드 디자인, 단계별로 전부 설명">
+<meta name="twitter:description" content="클로드 디자인(Claude design)을 아무 지시 없이 쓰는 초보 단계부터, 디자인 시스템을 만들어 사업 전체에 복제하고, 외부 이미지·영상 생성 도구와 Supabase까지 결합해 실제로 작동하는 앱을 완성하는 단계까지, 잭 로버츠(Jack Roberts)가 7단계">
+<meta name="twitter:image" content="https://img.youtube.com/vi/Rm1UkGX-g3w/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+:root{--primary:#533afd;--primary-deep:#4434d4;--primary-pale:#eceaff;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f6f9fc;--hair:#e3e8ee;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴">
+    <a href="../../tutoring/">1:1 과외</a><a href="../../build/">제작 문의</a>
+    <a class="on" href="../" aria-current="page">자료실</a>
+  </div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../">← 자료실</a>
+  <div class="head"><div class="m"><i>모델·도구</i><span>2026-08-22</span></div><h1>클로드 디자인, 단계별로 전부 설명</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/Rm1UkGX-g3w.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Jack Roberts</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<span class="orig">원제 · Every Level of Claude Design Explained</span><br><a href="https://www.youtube.com/watch?v=Rm1UkGX-g3w" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>참고 이미지와 반복 피드백이 결과물 질을 가른다</li><li>디자인 시스템을 한 번 굳히면 사업 전체에 복제된다</li><li>클로드만으로는 한계가 있고, 외부 생성 도구와 Supabase 연결이 최종 완성도를 결정한다</li></ul></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>클로드 디자인(Claude design)을 아무 지시 없이 쓰는 초보 단계부터, 디자인 시스템을 만들어 사업 전체에 복제하고, 외부 이미지·영상 생성 도구와 Supabase까지 결합해 실제로 작동하는 앱을 완성하는 단계까지, 잭 로버츠(Jack Roberts)가 7단계로 정리한 영상.</p>
+<h3>전체 내용 정리</h3>
+<h4>레벨 1, 아무 지시 없이 던져도 나쁘지 않은 결과가 나온다</h4>
+<p>클로드 디자인은 claude.ai 왼쪽 하단의 디자인(Design) 버튼을 누르면 시작할 수 있다. 레벨 1 사용자는 "티셔츠 회사 UI 목업을 만들어줘" 같은 짧은 프롬프트만 던지고, 모델과 강도(effort)를 고른 뒤 바로 실행한다. 이렇게만 써도 대부분의 사람보다 앞서 있다는 게 요지인데, 클로드 디자인의 존재 자체를 모르는 사람이 압도적으로 많기 때문이다. 다만 같은 시스템과 같은 프롬프트를 쓰면 다들 비슷비슷한 보라색 그라디언트 결과물을 받게 된다는 한계가 있다. 이 한계를 넘으려면 얼마나 구체적으로 지시하느냐가 관건이라는 게 레벨 2로 넘어가는 이유다.</p>
+<h4>레벨 2, 진짜 디자이너처럼 브리핑하고 참고 이미지를 붙이면 결과가 달라진다</h4>
+<p>레벨 2는 클로드를 디자인 디렉터처럼 대하는 단계다. "습관 추적 앱을 노션처럼 예쁘게 만들어줘" 식의 막연한 요청 대신, Pinterest·Awwwards·Godly·Mobbin·Land-book 같은 사이트에서 마음에 드는 디자인을 스크린샷으로 캡처해 참고 이미지로 첨부한다. 참고 이미지 없이 받은 결과와 이미지를 붙여서 받은 결과를 비교하면 완성도 차이가 뚜렷하다. 레벨 2의 또 다른 핵심은 한 번에 끝내지 않는 것이다. "버튼을 다 선택하면 색종이가 터지게 해줘", "화면마다 상단 색을 노랑·파랑·초록으로 다르게 해줘" 같은 후속 피드백을 계속 주고받으며 다듬어야 한다.</p>
+<h4>레벨 3, 한 번 만든 스타일을 재사용 가능한 디자인 시스템으로 굳힌다</h4>
+<p>레벨 3은 매번 새로 만드는 대신 하나의 일관된 디자인 시스템을 구축하는 단계다. 방법은 마음에 드는 결과물을 공유(Share) 메뉴에서 project.html로 프로젝트 아카이브를 다운로드한 뒤, 홈 화면의 "디자인 시스템 만들기(create a design system)"에 그 파일을 업로드하고 생성(generate)을 누르는 것이다. 이 과정에서 로고, 타이포그래피, 컬러 팔레트를 함께 넣을 수 있고, 무료 도구 coolors.co로 색상 팔레트를 뽑아 활용할 수도 있다. 이렇게 나온 디자인 시스템에는 소스, 콘텐츠 기본값, 비주얼 변환, 손그림 마크까지 포함돼 있고, 완성 후에는 다시 project.html로 내려받아 컴퓨터에 별도로 보관해둔다.</p>
+<h4>레벨 4, 하나의 디자인 시스템을 이메일부터 슬라이드까지 사업 전체에 복제한다</h4>
+<p>레벨 4는 만들어둔 디자인 시스템을 이메일, 프레젠테이션, 슬라이드 덱 등 사업의 모든 산출물에 적용하는 단계다. 저장된 디자인 시스템을 불러와 "생산성에 관한 슬라이드 덱을 만들어줘", "웰컴 이메일을 디자인해줘" 같은 요청을 하면 컬러와 스타일이 일관되게 반영된 결과가 한 번에 나온다. 여기서도 이터레이션이 핵심이라 "슬라이드마다 색상 높이를 통일해줘", "문장은 두 줄을 넘기지 말아줘" 같은 피드백을 5~10차례 주고받는 걸 두려워하지 말라고 조언한다. 실제로 이메일 시퀀스 디자인에만 4천 달러를 썼던 과거 경험과 비교하면, 이 단계부터는 같은 품질을 훨씬 적은 비용으로 반복 생산할 수 있게 된다.</p>
+<h4>레벨 5~6, 외부 이미지·영상 생성 도구와 모션으로 브랜드에 고유한 생명력을 더한다</h4>
+<p>레벨 5는 클로드 디자인의 한계, 즉 본 것만 따라 그린다는 한계를 이미지·영상 생성 도구로 보완하는 단계다. Higgsfield 같은 툴에서 Nana Banana 2 Pro나 GPT Image 2 같은 모델로 로고 시안을 여러 개 뽑거나, Higgsfield의 MCP·CLI를 클로드 코드에 연결해 디자인 시스템을 업로드하고 여러 변형을 한 번에 생성할 수 있다. 레벨 6은 여기에 모션을 더하는 단계로, "습관이 시간이 지나며 어떻게 변하는지 설명하는 HTML 애니메이션을 만들어줘" 같은 요청 한 번으로 그래프, 3D 구체 같은 인터랙티브 그래픽까지 원샷으로 생성할 수 있다. 이렇게 이미지·영상 생성과 모션을 결합하면 스크롤을 멈추게 하는 웹사이트나 콘텐츠를 만들 수 있다.</p>
+<h4>레벨 7, 클로드 코드와 Supabase를 결합해 실제로 작동하는 프로덕션 앱까지 완성한다</h4>
+<p>마지막 레벨 7은 디자인을 넘어 실제로 쓸 수 있는 프로덕션 앱을 만드는 단계다. 클로드와 Supabase를 연결하면 SQL을 몰라도 로그인, 회원가입, 데이터베이스가 있는 앱을 구축할 수 있는데, 핵심은 Supabase의 "에이전트 스킬(agent skills)"을 클로드에 붙여주는 것이다. 클로드의 커넥터에서 Supabase를 연결하고 "디자인 시스템을 따라 로그인 페이지와 관리자 대시보드를 만들고, 이름·이메일·소득·기타 정보를 받는 폼이 있는 Supabase 테이블을 새로 만들어줘" 같은 프롬프트를 주면 실제 가입·로그인이 되는 웹사이트가 완성된다. 이메일 인증을 끄는 것 같은 Supabase 설정도 클로드에게 "자동 확인을 꺼줘"라고 말로 시킬 수 있고, "Supabase 데이터베이스 어드바이저를 돌려서 뭘 지적하는지 보여줘"라고 하면 유출된 비밀번호 보호 미비 같은 보안 경고까지 점검하고 고치는 법을 알려준다.</p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>참고 이미지와 반복 피드백이 결과물 질을 가른다</strong>: 레벨 1처럼 프롬프트만 던지면 다들 비슷한 결과를 받지만, Pinterest 같은 곳에서 참고 이미지를 붙이고 5~10차례 피드백을 주고받으면 완성도가 확연히 달라진다. 한 번에 끝내려는 태도(one-shot)가 가장 큰 실수라고 지적한다.</li><li><strong>디자인 시스템을 한 번 굳히면 사업 전체에 복제된다</strong>: 매번 새 프로젝트마다 처음부터 디자인하는 대신, 컬러·타이포그래피·로고를 담은 파일 하나로 이메일·슬라이드·웹사이트를 일관되게 뽑아낼 수 있다. 이메일 시퀀스 디자인에만 4천 달러를 썼던 과거와 비교하면 비용 구조 자체가 달라진다.</li><li><strong>클로드만으로는 한계가 있고, 외부 생성 도구와 Supabase 연결이 최종 완성도를 결정한다</strong>: 클로드 디자인은 본 것을 참고해 재현하는 데는 강하지만 완전히 고유한 이미지·영상을 만들지는 못한다. Higgsfield 같은 생성 도구와 Supabase의 에이전트 스킬을 연결해야 브랜드다운 결과물과 실제로 작동하는 로그인·데이터베이스까지 갖춘 앱이 나온다.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li>claude.ai 좌측 하단 "디자인(Design)" 메뉴에서 실제 업무에 쓸 산출물(예: 상세페이지 UI 목업) 하나를 프롬프트로 만들어보고, Pinterest나 Awwwards에서 캡처한 참고 이미지를 첨부해 결과를 비교해본다.</li><li>마음에 드는 결과가 나오면 공유(Share) → project.html로 다운로드한 뒤, "디자인 시스템 만들기"에 업로드해서 나만의 디자인 시스템 파일을 하나 만들어둔다.</li><li>만들어둔 디자인 시스템을 불러와 다음에 보낼 이메일이나 슬라이드 한 장을 디자인해보고, "색을 통일해줘" 같은 구체적 피드백을 최소 3번 주고받으며 다듬어본다.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>업무를 같이 분해하고 4단계 중 지금 위치를 짚어 드려요.</p><span class="go">진단 콜 보기 →</span></a>
+    <a class="cross" href="../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>

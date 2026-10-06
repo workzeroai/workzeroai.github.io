@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>성교육 강사가 AI로 만든 인생 자동화 시스템 전부 공개 (클로드 코드) · 워크제로 자료실</title>
+<meta name="description" content="성교육 강사 김채원이 Claude Code만으로 강의 이력·수입·일정 관리부터 콘텐츠 변환·팟캐스트 편집까지 자신의 업무 전체를 자동화한 시스템을 공개하고, &quot;AI가 바보 같은 건 내 맥락을 안 알려줬기 때문&quot;이라는 깨달음과 자동화의 한계선을 이야기한 인터뷰다.">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/R8EB6FvGXNs/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#533afd">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="성교육 강사가 AI로 만든 인생 자동화 시스템 전부 공개 (클로드 코드)">
+<meta property="og:description" content="성교육 강사 김채원이 Claude Code만으로 강의 이력·수입·일정 관리부터 콘텐츠 변환·팟캐스트 편집까지 자신의 업무 전체를 자동화한 시스템을 공개하고, &quot;AI가 바보 같은 건 내 맥락을 안 알려줬기 때문&quot;이라는 깨달음과 자동화의 한계선을 이야기한 인터뷰다.">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/R8EB6FvGXNs/">
+<meta property="og:image" content="https://img.youtube.com/vi/R8EB6FvGXNs/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="성교육 강사가 AI로 만든 인생 자동화 시스템 전부 공개 (클로드 코드)">
+<meta name="twitter:description" content="성교육 강사 김채원이 Claude Code만으로 강의 이력·수입·일정 관리부터 콘텐츠 변환·팟캐스트 편집까지 자신의 업무 전체를 자동화한 시스템을 공개하고, &quot;AI가 바보 같은 건 내 맥락을 안 알려줬기 때문&quot;이라는 깨달음과 자동화의 한계선을 이야기한 인터뷰다.">
+<meta name="twitter:image" content="https://img.youtube.com/vi/R8EB6FvGXNs/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+:root{--primary:#533afd;--primary-deep:#4434d4;--primary-pale:#eceaff;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f6f9fc;--hair:#e3e8ee;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴">
+    <a href="../../tutoring/">1:1 과외</a><a href="../../build/">제작 문의</a>
+    <a class="on" href="../" aria-current="page">자료실</a>
+  </div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../">← 자료실</a>
+  <div class="head"><div class="m"><i>에이전트</i><span>2026-09-05</span></div><h1>성교육 강사가 AI로 만든 인생 자동화 시스템 전부 공개 (클로드 코드)</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/R8EB6FvGXNs.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · 윤자동</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<br><a href="https://www.youtube.com/watch?v=R8EB6FvGXNs" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>AI 출력 품질은 프롬프트 기술이 아니라 맥락 이전(移轉)에서 갈린다</li><li>자동화 설계의 핵심은 &#x27;무엇을 자동화하지 않을지&#x27; 정하는 것이다</li><li>AI는 평균을 출력하도록 설계돼 있어, 전문가의 차별점은 그 평균을 깨는 데서 나온다</li></ul></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>성교육 강사 김채원이 Claude Code만으로 강의 이력·수입·일정 관리부터 콘텐츠 변환·팟캐스트 편집까지 자신의 업무 전체를 자동화한 시스템을 공개하고, "AI가 바보 같은 건 내 맥락을 안 알려줬기 때문"이라는 깨달음과 자동화의 한계선을 이야기한 인터뷰다.</p>
+<h3>전체 내용 정리</h3>
+<h4>손으로 하는 일을 못 하게 될까 봐 시작한 커리어 전환이 성교육 강사로 이어졌다</h4>
+<p>김채원은 원래 치과위생사였다. 손재주가 좋지 않은데 이 일을 계속할 수 있을까 하는 고민을 남들보다 일찍 했고, 손으로 안 하는 일을 해보자는 생각에 성교육 조교로 들어갔다. 약에 관한 수업에서 피임약과 항생제를 같이 먹으면 피임 효과가 떨어진다는 이야기를 듣고, 이렇게 중요한 걸 왜 아무도 안 알려줬을까 하는 문제의식이 생겼다. 성 이야기를 편안하게 하고 싶은데 그러기 어려운 이유가 서로 알아야 할 지식과 태도가 부족해서라는 것을 깨닫고, 더 많은 사람을 만날 수 있는 토이샵과 콘돔 회사를 거쳐 강사가 됐다. 강의에서는 "안 돼요, 싫어요, 하지 마세요"가 의미 없다고 보고, 대신 "그럼 뭘 해야 할까"를 존중과 사랑의 관점에서 이야기한다.</p>
+<h4>인생 대시보드: 흩어진 기록을 모아 스스로가 악덕 고용주였다는 걸 객관화했다</h4>
+<p>첫 번째로 보여준 것은 노션 포트폴리오였는데, 원래는 메모장이었다. 그다음이 인생 대시보드다. 구글 스프레드시트에 2022~2023년부터 쌓인 모든 강의 기록(몇 시간, 몇 명 대상)을 전부 합산해 넣었다. 여기에는 좌표가 없는 강의 내역, 기한이 지난 할 일, 회고 누락 알림이 뜬다. 매일 회고를 쓰면 그걸 바탕으로 아침 브리핑을 해주는 챗이 돌아가고, 회고가 부족하면 "잘 하고 있니?"라고 리마인드한다. 일정마다 좌표를 찍으면 무료 대중교통 소요시간 API로 이동 시간을 계산해, 일정을 등록할 때 "1시에 끝나고 6시 일정인데 5시간 안에 갈 수 있는 곳이 맞아?"를 확인해준다. 온라인 일정이면 동선 계산을 생략하고, 일정 간격이 두 시간보다 짧으면 "이동 가능한 거 맞아?"라는 팝업을 먼저 띄운다. 김채원은 "나만큼 나를 잘하는 비서"를 원했다고 말한다. 시간을 기록해 객관화해보니 8시간 동안 48시간치 일을 자신에게 시키고 있었고, 스스로가 악덕 고용주라는 걸 깨달았다. 돌아보기 메뉴는 "싫은 점" 대신 "발전할 점"이라고 이름 붙여, 자신에게 더 다정하기 위해 만들었다.</p>
+<h4>강의·수입 관리: 구글 캘린더 메모에 양식대로 쓰면 자동으로 수집되고 매칭된다</h4>
+<p>올해 처음 홀로서기를 하며 종합소득세 신고가 어려웠던 경험에서, 더치페이 정산과 수입·지출 항목 분류 기능도 넣었다. 수입에는 강의료 외에 이자, 칼럼 원고료, 행사 PM 수익도 정리된다. 강의 관리 화면은 기관·학교·체험관별로 강의 주제, 대상자, 금액, 예정/완료, 완납 여부, 월별 실수령을 보여준다. 이걸 하나하나 수동으로 입력한 게 아니라, 구글 캘린더 일정 메모에 미리 약속한 양식대로 쓰면 강의 장소, 담당자, 담당 기관, 금액이 자동으로 파싱되고, 기관에 따라 언제쯤 입금되는지까지 매칭된다. "1시간 강의하고 1시간은 통역에 써야 한다" 같은 메모도 같이 긁어온다. 인사이트 화면에서는 기관별·주제별 유입과 전년 동기 대비 실적을 볼 수 있다. 1월에 11만 원을 벌었던 것과 비교하면 지금은 조건이 크게 달라졌는데도 71% 수준이라 선방했다고 평가한다.</p>
+<h4>이력서 생성기와 담당자 관리: 매번 반복하던 최신화·분야별 편집을 버튼 하나로</h4>
+<p>강의 이력, 주제, 경력, 자격증, 이수 교육을 정리해두고, 기관이 특정 분야(예: 연애 교육)만 있는 이력서를 요구하면 해당 항목만 체크해 "이력서 생성"을 누른다. 그러면 그 분야만 담긴 이력서가 나온다. 에이전시가 자주 요구하는데 매번 최신화하기 번거로웠던 작업이다. 담당자 관리에는 각 기관이 어떤 강의 주제와 연결돼 있고 어디를 통해 연락하는지, 학부모가 어떤 수강생과 연결된 학부모인지가 정리돼 있어, 상담할 때 상대의 맥락을 빠르게 파악할 수 있다. "여긴 가지 말아야지" 하는 블랙리스트와 기관별 입금 시기도 함께 관리한다.</p>
+<h4>콘텐츠 대시보드: Threads 원본을 수집·분석해 블로그·카드뉴스로 변환한다</h4>
+<p>교육장에 모두가 오지 않는다면 사람들이 있는 곳에 콘텐츠를 올려야 한다는 생각에서 만들었다. 텍스트가 가장 강하고 2,000개가 넘게 쌓인 Threads 글을 원본으로 삼아, 네이버 블로그와 인스타 카드뉴스로 바꾸는 과정을 만들었다. 매일 아침 원본 수집함이 Threads 글의 반응과 반응률을 자동 수집한다. 다만 성교육 강사 특유의 딜레마가 있다. 자극적인 키워드가 들어간 글은 Threads가 조회수를 아예 보여주지 않는데, 메타가 "도파민만 챙기려는 것 아니냐"고 판단하는 것으로 보인다. 그래서 메타 개발자 계정 API로 직접 긁어오면 브라우저에서 안 보이던 수치도 보인다. 일요일마다 인사이트 보고서가 각 콘텐츠의 조회수와 반응률을 체크해, 다시 쓰면 좋을 주제를 추천하고 "조회수 16만으로 전 기간 상위 3%인데 왜 또 안 쓰셨죠?"라고 회초리를 든다. 어떤 글은 카드뉴스로, 어떤 글은 블로그로 변환하는 게 좋을지 구분해주고, 주제가 비슷한 글을 묶어 한 편으로 만들자고 제안한다. 변환 스튜디오는 파파고 UI를 캡처해 참고시켜 만들었고, 블로그·캐러셀·유튜브 중 무엇으로 변환할지 물어본다. 유튜브는 대본만 만들고, 처음부터 유튜브까지 하려 하자 Claude가 "지금 다 하면 나중에 큰코다친다"고 경고했다고 한다. 네이버 블로그는 어사이드가 윈도우에 아직 적용되지 않아, Claude Code로 크롬을 긁으면 느려서 직접 복사하는 게 빨라 아직 수동이다.</p>
+<h4>카드뉴스와 팟캐스트: 디자인은 시행착오로 발전했고 편집은 4편 만에 거의 자동이 됐다</h4>
+<p>카드뉴스 디자인은 처음엔 칙칙한 텍스트였다가, 색을 밝게 하자 Claude 특유의 주황색이 나왔고, 본인 얼굴을 넣었더니 조회수가 잘 나왔으며, 이후 픽토그램을 넣는 방식으로 바뀌었다. 타깃을 아동청소년 성교육에 관심 있는 양육자로 명확히 하고, 핵심·후킹 문장과 상세 내용, 픽토그램, "오늘 한 가지 물어보세요" 같은 CTA로 구조를 잡았다. 자동 게시를 누르면 "인스타 앱에서만 삭제 가능하니 업로드가 맞는지 확인해달라"는 팝업이 뜬다. 팟캐스트는 1시간 10분짜리 녹음에서 앞뒤 멘트를 자르고, 고양이 울음이나 세탁기 소리 같은 구간을 미리 약속한 음성 신호로 표시해 AI가 1차로 컷하면 사람이 라벨링된 부분을 확인하고, 그다음 팝·클릭 제거와 저음 보강 같은 음질 보정을 한다. 작업은 음질이 좋은 WAV로 하고, 업로드용 팟캐스트는 MP3로 용량을 줄이며, 큰 WAV 파일은 삭제한다. 전사본으로 자막 영상까지 만들어 1시간 녹음에서 쇼츠 12개와 풀영상 1개를 뽑아 유튜브와 인스타에 올린다. 1편은 10시간, 2편은 다섯 시간 넘게 걸렸지만, 3편에서 "컷 편집 네가 해봐" 하고 코멘트를 주자 4편에서는 손댈 게 거의 없었다. 관련 계정을 자동화한 이유는 선교육 콘텐츠에 달리는 성희롱 DM과 댓글 스트레스 때문이다. 자동화하면 댓글이 달리든 말든 자신이 볼지 말지 선택할 수 있게 된다.</p>
+<h4>AI가 바보 같았던 이유는 내 맥락을 안 알려줬기 때문이었다</h4>
+<p>처음에는 생성형 AI가 맥락을 못 알아들어 답답했고, AI로 업무하는 걸 못 믿겠다고 생각했다. 만들면서 깨달은 건 자신에 대해 충분히 교육하지 않았다는 것이다. 나에 대해 잘 알려주는 것부터 해야 AI가 나를 위해 일하는데, 그걸 안 하고 "왜 이것도 못 해?"라고 하면 AI는 시킨 대로 한 것뿐이다. 지인의 조언은 "어떻게 해야 되는지까지 AI한테 다 물어봐"였다. "너 이거 할 수 있니?"라고 물으면 할 수 있다, 안 된다, 할 수 있는데 어렵다를 알려주고, 어려운 경우 "내가 뭘 도와주면 돼?"를 물으면 된다. AI는 인간 두뇌처럼 부정어를 잘 못 알아듣기 때문에 "얼굴에 있는 손 지워줘"가 아니라 "얼굴과 손을 뗀 그림을 그려줘"라고 해야 한다. 거창한 역할 부여보다 중요한 건 AI가 알아들을 수 있게 내 맥락을 말로 푸는 능력이다. 일을 시키기 전에 "네가 기억하는 걸 얘기해봐"로 맥락 이해도를 확인하고, 결과물에 대해 "김채원의 업무 방식과 비교하면 네가 어떻게 한 것 같아? 셀프로 피드백해봐"라고 하면 "제가 이거 잘못했네요"라고 먼저 말한다. 진행자는 여기에 "평균에서 벗어난 생각을 해봐"를 더한다. AI 모델은 평균적인 답을 하도록 설계돼 있어서, "내가 모르는 평균적이지 않은 차트 10개를 만들어봐"라고 하면 생전 처음 보는 결과가 나온다. 성 관련 자료 조사에서 AI는 대중이 흔히 하는 그럴싸한 평균값을 가져오는데, 그게 바로 강사가 깨야 할 지점이라 오히려 강의 스킬이 늘었다고 한다.</p>
+<h4>자동화의 한계선: 되돌릴 수 없는 일과 사람을 만나는 일은 자동화하지 않는다</h4>
+<p>김채원이 만들며 정리한 원칙은 세 가지다. 첫째, 자동화의 적은 실패가 아니라 조용한 것이다. 둘째, 되돌릴 수 없는 일은 자동으로 처리하더라도 사람이 확인한다. 빈칸이 틀린 것보다 낫지만, 틀린 걸 넣기 전에 사람한테 물어볼 수 있는 시스템을 만드는 것까지가 사람의 일이다. 실제로 거절 메일 답장에 말투 스킬을 다 써놨는데 "거절한다고 보내"라고 하자 본문에 "거절한다" 네 글자만 보낸 사고가 있었고, 이후 석고대죄 메일을 보내야 했다. 그 뒤로 되돌릴 수 없는 건 눈으로 확인한다. 셋째, 자동화하지 않는 일도 정한다. 고객 상담은 신청 동기 하나만 설문으로 받고 나머지는 직접 하는 게 시간이 덜 드는데, 이 맥락은 AI에 다 주입할 수 없기 때문이다. 여기서 "아직 대체되지 않는 사람이구나"를 느꼈다고 한다. 부작용도 있었다. 같이 일하는 AI가 지치지 않으니 자신도 안 지친다고 착각해 20시간씩 깨어 있고 일주일에 세 시간만 자기도 했다. "나도 사람인데 왜 AI인 척했지?"라는 생각이 들어, 지금은 오히려 강의를 꽉 채우지 않으려 하고 필라테스를 등록했다. 모델도 예전엔 페이블만 고집했지만, 맥락을 기억시키면 소네트로도 비슷한 일을 해내고 토큰도 훨씬 절약된다는 걸 알게 됐다. 대시보드는 아카이빙용 원본 수집과 수정할 때 외에는 토큰을 거의 쓰지 않도록 설계했다.</p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>AI 출력 품질은 프롬프트 기술이 아니라 맥락 이전(移轉)에서 갈린다</strong>: "왜 이것도 못 하냐"고 다그치기 전에, 내가 어떻게 일해왔는지를 AI가 알아들을 언어로 먼저 풀어줘야 한다. 김채원의 시스템이 작동하는 이유는 기능이 화려해서가 아니라 자신의 업무 맥락을 파일로 축적해뒀기 때문이다.</li><li><strong>자동화 설계의 핵심은 '무엇을 자동화하지 않을지' 정하는 것이다</strong>: 되돌릴 수 없는 행동(메일 발송, 게시)에는 사람 확인 단계를 넣고, 맥락을 다 옮길 수 없는 일(고객 상담)은 아예 사람이 한다. 이 경계선이 "조용한 실패"를 막는다.</li><li><strong>AI는 평균을 출력하도록 설계돼 있어, 전문가의 차별점은 그 평균을 깨는 데서 나온다</strong>: 자료 조사를 시키면 대중이 흔히 하는 답이 나오고, 그것과 싸우는 과정에서 오히려 전문성이 선명해진다. "평균적이지 않은 것 N개를 만들어봐"는 내가 모르던 선택지를 발견하는 프롬프트다.</li><li><strong>AI는 지치지 않지만 사람은 지친다</strong>: 지치지 않는 파트너와 일하면 자기 착취를 정상으로 착각하게 된다. 시스템이 나 대신 기억하고 리마인드하게 만드는 목적은 생산량이 아니라 에너지를 아껴 하고 싶은 일에 쓰기 위해서다.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li>흩어져 있는 업무 기록(강의·프로젝트·매출 스프레드시트, 캘린더, 메모)을 한 폴더에 텍스트로 모으고, Claude Code에 "내가 여태 어떤 방식으로 일해온 것 같아? 네가 파악한 걸 먼저 말해봐"라고 시켜 맥락 이해도를 확인한다.</li><li>반복 편집하는 문서(분야별 이력서, 견적서, 소개서 등) 하나를 골라, 항목을 체크하면 해당 부분만 뽑아 완성본이 나오는 생성기를 만들어달라고 요청한다.</li><li>자동화 대상 목록에서 "되돌릴 수 없는 행동"(메일·게시·결제)을 표시하고, 각 단계에 "실행 전 사람에게 확인 팝업"을 넣는 규칙을 시스템 지침으로 추가한다. 그리고 "자동화하지 않을 일"도 한 줄로 명시한다.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>업무를 같이 분해하고 4단계 중 지금 위치를 짚어 드려요.</p><span class="go">진단 콜 보기 →</span></a>
+    <a class="cross" href="../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>

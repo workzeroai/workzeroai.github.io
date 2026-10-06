@@ -60,7 +60,8 @@
  "notes": [
   {
    "video_id": "bvGptCLDhyo",
-   "title": "I Built Another Andrej Karpathy Using Claude",
+   "title": "클로드로 안드레이 카파시를 한 명 더 만들었다",
+   "title_orig": "I Built Another Andrej Karpathy Using Claude",
    "source": "Nate Herk | AI Automation",
    "date": "2026-10-05",
    "topic": "에이전트",
@@ -76,7 +77,8 @@
   },
   {
    "video_id": "9C5hLJ1bIzk",
-   "title": "I Tested ChatGPT's New Business Platform. Should You Switch?",
+   "title": "ChatGPT 새 비즈니스 플랫폼 써봤다 — 갈아탈 만한가?",
+   "title_orig": "I Tested ChatGPT's New Business Platform. Should You Switch?",
    "source": "Liam Ottley",
    "date": "2026-10-05",
    "topic": "에이전트",
@@ -92,7 +94,8 @@
   },
   {
    "video_id": "638GQZ9UZ4w",
-   "title": "Is AI Automation Still Worth It in 2027?",
+   "title": "2027년에도 AI 자동화가 돈이 될까?",
+   "title_orig": "Is AI Automation Still Worth It in 2027?",
    "source": "Nick Saraev",
    "date": "2026-10-05",
    "topic": "자동화",
@@ -108,7 +111,8 @@
   },
   {
    "video_id": "HGoECgO6PdY",
-   "title": "i promise you, setting up AIOS can blow up your business!",
+   "title": "진짜예요, AIOS 한번 깔면 사업이 뒤집힙니다",
+   "title_orig": "i promise you, setting up AIOS can blow up your business!",
    "source": "Nick Puru",
    "date": "2026-10-04",
    "topic": "자동화",
@@ -124,7 +128,8 @@
   },
   {
    "video_id": "DFlELTiSPk8",
-   "title": "Every Codex Concept Explained for Non-Coders",
+   "title": "코딩 몰라도 되는 Codex 개념 총정리",
+   "title_orig": "Every Codex Concept Explained for Non-Coders",
    "source": "Nate Herk | AI Automation",
    "date": "2026-10-03",
    "topic": "에이전트",
@@ -140,7 +145,8 @@
   },
   {
    "video_id": "FSXHk4hMrY8",
-   "title": "How I Learn Complex Skills & Difficult Subjects So Fast with AI",
+   "title": "AI로 어려운 걸 남보다 빨리 익히는 법",
+   "title_orig": "How I Learn Complex Skills & Difficult Subjects So Fast with AI",
    "source": "Nick Saraev",
    "date": "2026-10-03",
    "topic": "AI 소식",
@@ -156,10 +162,11 @@
   },
   {
    "video_id": "6sZAZaQ5SNU",
-   "title": "Claude Opus 5.5 Just Changed Design Forever (5 Insane Use Cases)",
+   "title": "Opus 5.5가 디자인 판을 갈아버렸다 (미친 활용 5가지)",
+   "title_orig": "Claude Opus 5.5 Just Changed Design Forever (5 Insane Use Cases)",
    "source": "Ben AI",
    "date": "2026-10-02",
-   "topic": "모델·도구",
+   "topic": "자동화",
    "summary": "Claude Opus 5.5와 데스크톱 앱에 통합된 Claude Design으로 디자인 시스템을 세팅한 뒤, 영상 애니메이션·슬라이드·랜딩 페이지·소셜 캐러셀을 브랜드에 맞게 빠르게 만들고 반복 작업은 스킬과 예약 작업으로 자동화하는 방법을 보여준다.",
    "points": [
     "디자인 시스템 한 번이 이후 모든 결과물의 품질을 결정한다",
@@ -172,7 +179,8 @@
   },
   {
    "video_id": "xfHbePnyiks",
-   "title": "OpenAI engineers just showed how they prompt GPT-6 Astra...",
+   "title": "오픈AI 엔지니어가 직접 공개한 GPT-6 Astra 프롬프트법",
+   "title_orig": "OpenAI engineers just showed how they prompt GPT-6 Astra...",
    "source": "Nick Puru",
    "date": "2026-10-02",
    "topic": "모델·도구",
@@ -188,7 +196,8 @@
   },
   {
    "video_id": "pY5_Ux_YJjo",
-   "title": "I Tested Codex's $500/mo Ultrafast. What You Need to Know.",
+   "title": "월 500달러 Codex Ultrafast 써봤다 — 핵심만 정리",
+   "title_orig": "I Tested Codex's $500/mo Ultrafast. What You Need to Know.",
    "source": "Nate Herk | AI Automation",
    "date": "2026-10-01",
    "topic": "모델·도구",
@@ -204,7 +213,8 @@
   },
   {
    "video_id": "tzzYHh9--0M",
-   "title": "Claude Code Killed My Business in 6 Months",
+   "title": "클로드 코드가 6개월 만에 내 사업을 죽였다",
+   "title_orig": "Claude Code Killed My Business in 6 Months",
    "source": "Eugene Kadzina",
    "date": "2026-10-01",
    "topic": "에이전트",
@@ -219,8 +229,128 @@
    "ready": true
   },
   {
+   "video_id": "zb6uiEHmVuA",
+   "title": "Higgsfield API를 이용해서 바이럴된 밈 영상을 대량으로 만들어보자 (코드, 스킬 전부 제공!)",
+   "title_orig": "Higgsfield API를 이용해서 바이럴된 밈 영상을 대량으로 만들어보자 (코드, 스킬 전부 제공!)",
+   "source": "샘 호트만 : AI 엔지니어의 시선",
+   "date": "2026-09-30",
+   "topic": "모델·도구",
+   "summary": "레퍼런스 밈 영상과 사진만 넣으면 Claude가 영상을 분석하고 프롬프트까지 써서 새 밈 영상을 뽑아 주는 시스템을 Higgsfield API로 만들고, 실제 비용까지 공개한 영상이다.",
+   "points": [
+    "API는 사람 대신 주문서를 쓰는 프로그램이다",
+    "종량제는 테스트 설계가 곧 비용 관리다",
+    "입출력을 이해하면 나머지는 AI가 짠다"
+   ],
+   "thumb": "notes/thumb/zb6uiEHmVuA.webp",
+   "url": "notes/zb6uiEHmVuA/",
+   "ready": true
+  },
+  {
+   "video_id": "xpfuSPG71XI",
+   "title": "Claude + Jev, 역대 가장 싼 에이전트 OS",
+   "title_orig": "Claude + Jev = Cheapest Agentic OS EVER",
+   "source": "Jack Roberts",
+   "date": "2026-09-30",
+   "topic": "에이전트",
+   "summary": "Jack Roberts가 매우 빠르고 저렴한 새 모델 Jev(자막상 표기)를 자신의 에이전트 운영체제에 붙여, 이메일 분류·음성 비서·릴스 편집·청구서 확인·의미 검색까지 실제로 돌려 보여준다. 이 모델은 글을 길게 쓰는 대신 A냐 B냐를 고르고 점수를 매기는 분류기로 쓸 때 가장 값어치가 크다고 한다.",
+   "points": [
+    "싼 모델은 '분류기'로 쓸 때 가장 쓸모 있다",
+    "비싼 모델 앞에 싼 모델을 문지기로 세운다",
+    "읽지 못하는 것은 다른 싼 모델이 먼저 글로 바꿔 준다"
+   ],
+   "thumb": "notes/thumb/xpfuSPG71XI.webp",
+   "url": "notes/xpfuSPG71XI/",
+   "ready": true
+  },
+  {
+   "video_id": "deZOQOoXN10",
+   "title": "월 1억 광고비를 AI가 굴립니다, 하루 10개 소재 만들고 1시간마다 끄고 켜는 방법 (퍼널랩스 엘런님)",
+   "title_orig": "월 1억 광고비를 AI가 굴립니다, 하루 10개 소재 만들고 1시간마다 끄고 켜는 방법 (퍼널랩스 엘런님)",
+   "source": "빌더 조쉬 Builder Josh",
+   "date": "2026-09-30",
+   "topic": "자동화",
+   "summary": "퍼널랩스(Funnel Labs) 앨런(추진호) 대표는 월 약 1억 원의 광고비 집행을 AI에게 맡기고, 7년간 쌓은 세일즈 노하우를 규칙으로 넣어 두었다. 영상은 그 자동화 구조와, \"고객이 어떤 마음일지 상상하는 힘\"이라는 파는 기술을 함께 다룬다.",
+   "points": [
+    "AI 광고 운영은 \"규칙 + 판단 기준\"이 만든다",
+    "사람 검수를 줄이는 대신 손실 상한을 설계한다",
+    "경쟁이 늘수록 전환율이 곧 광고 여력이다"
+   ],
+   "thumb": "notes/thumb/deZOQOoXN10.webp",
+   "url": "notes/deZOQOoXN10/",
+   "ready": true
+  },
+  {
+   "video_id": "7eo-11K2e3c",
+   "title": "Sonnet 5.5 vs Opus 5.5 붙여봤다 — 핵심만",
+   "title_orig": "I Tested Sonnet 5.5 vs Opus 5.5. What You Need to Know.",
+   "source": "Nate Herk | AI Automation",
+   "date": "2026-09-30",
+   "topic": "모델·도구",
+   "summary": "Nate Herk가 같은 프롬프트로 Sonnet 5.5와 Opus 5.5를 7가지 실전 과제에 돌려 비교했다. 결론은 \"결과 기준이 명확하면 Sonnet, 모호하고 창의적인 목표면 Opus\"이고, 비용은 Opus가 대략 두 배다.",
+   "points": [
+    "프롬프트가 모호할수록 Opus의 값어치가 커진다",
+    "스킬이 있으면 모델 격차가 줄어든다",
+    "한 번 더 시키는 비용을 계산에 넣어야 한다"
+   ],
+   "thumb": "notes/thumb/7eo-11K2e3c.webp",
+   "url": "notes/7eo-11K2e3c/",
+   "ready": true
+  },
+  {
+   "video_id": "2GPCo8gqyX8",
+   "title": "오픈AI DevDay 2026, 팀원들과 실시간 리액션",
+   "title_orig": "OpenAI DevDay 2026: LIVE Reaction w/ My Team",
+   "source": "Liam Ottley",
+   "date": "2026-09-30",
+   "topic": "에이전트",
+   "summary": "Liam Ottley 팀이 OpenAI DevDay 2026 키노트를 라이브로 보며 반응한 영상으로, 24시간 일하는 에이전트 \"dots\"와 팀 협업 공간 \"spaces\", 더 싸고 빠른 GPT 6.1 Soul·ultra fast, 개발자용 agents API와 마켓플레이스 발표를 정리하고 AI 에이전시가 이 변화를 어떻게 기회로 쓸지 이야기한다.",
+   "points": [
+    "AI가 도구에서 위임받는 직원으로 이동한다",
+    "속도와 가격이 동시에 내려가면 쓰는 방식이 바뀐다",
+    "연구소가 개발을 가져가도 서비스 가치는 남는다"
+   ],
+   "thumb": "notes/thumb/2GPCo8gqyX8.webp",
+   "url": "notes/2GPCo8gqyX8/",
+   "ready": true
+  },
+  {
+   "video_id": "1lR87PvkPEk",
+   "title": "ARR 1,500만 달러 에이전시, 고객 확보 전략 전부 공개",
+   "title_orig": "$15M ARR Agency Entire Acquisition Strategy",
+   "source": "Eugene Kadzina",
+   "date": "2026-09-30",
+   "topic": "비즈니스",
+   "summary": "연 매출 1,500만 달러 SEO 에이전시의 창업자가, 0에서 첫 100만 달러까지 이끈 유일한 핵심 채널은 구글 광고였다고 말한다. 가격 공개, 구매 버튼, 셀프 온보딩, 선결제 덕분에 번 돈을 전부 광고에 다시 넣을 수 있었다.",
+   "points": [
+    "검색하는 사람에게 광고를 보여주는 것이 가장 논리적이다",
+    "가격 공개와 구매 버튼이 신뢰를 앞당긴다",
+    "선결제는 광고 재투자의 연료다"
+   ],
+   "thumb": "notes/thumb/1lR87PvkPEk.webp",
+   "url": "notes/1lR87PvkPEk/",
+   "ready": true
+  },
+  {
+   "video_id": "13_-mbhsbpE",
+   "title": "Codex 사용량 한도, 두 번 다시 안 터뜨리는 법",
+   "title_orig": "How to Never Run Out of Codex Usage Limit (Even on GPT-6 Astra)",
+   "source": "Nick Puru",
+   "date": "2026-09-30",
+   "topic": "에이전트",
+   "summary": "Nick Puru가 Codex 사용량 한도를 훨씬 오래 쓰는 방법을 정리했다. 사용량을 눈으로 확인하고, 작업에 맞는 작은 모델을 고르고, 채팅을 새로 열고, 프롬프트를 구체적으로 쓰는 것이 핵심이다. 서브에이전트로 아끼라는 흔한 조언은 오히려 토큰을 더 태울 수 있다고 한다.",
+   "points": [
+    "채팅 길이가 곧 비용이다",
+    "비싼 모델은 어려운 일 전용으로",
+    "\"아끼는 기능\"이 오히려 토큰을 태울 수 있다"
+   ],
+   "thumb": "notes/thumb/13_-mbhsbpE.webp",
+   "url": "notes/13_-mbhsbpE/",
+   "ready": true
+  },
+  {
    "video_id": "KtMMRcEj1sk",
-   "title": "GPT-6-Astra on The New ULTRAFAST $500 Plan Is Scary...",
+   "title": "월 500달러 ULTRAFAST로 돌린 GPT-6 Astra, 좀 무섭다",
+   "title_orig": "GPT-6-Astra on The New ULTRAFAST $500 Plan Is Scary...",
    "source": "Nick Saraev",
    "date": "2026-09-30",
    "topic": "모델·도구",
@@ -236,7 +366,8 @@
   },
   {
    "video_id": "qI0LbAkqQ_c",
-   "title": "with no doubt, grokbot is the clear winner…",
+   "title": "고민할 것 없다, 승자는 Grok Bot이다",
+   "title_orig": "with no doubt, grokbot is the clear winner…",
    "source": "Nick Puru",
    "date": "2026-09-30",
    "topic": "에이전트",
@@ -248,6 +379,1842 @@
    ],
    "thumb": "notes/thumb/qI0LbAkqQ_c.webp",
    "url": "notes/qI0LbAkqQ_c/",
+   "ready": true
+  },
+  {
+   "video_id": "eg_1NXDcoPk",
+   "title": "GPT-6 Astra에게 1만 달러 주고 주식을 맡겨봤다",
+   "title_orig": "I Gave GPT 6 Astra $10,000 to Trade Stocks...And This Happened",
+   "source": "Nate Herk | AI Automation",
+   "date": "2026-09-28",
+   "topic": "에이전트",
+   "summary": "Nate Herk가 GPT-6 Astra(Codex에서 구동)에게 실제 돈 1만 달러를 맡겨 7거래일 동안 주식 거래를 시키고 S&P 500과 수익률을 겨룬 실험 기록입니다. 결과는 9,900달러로 마감해 같은 기간 S&P 500(9,980달러 상당)에 졌고, 에이전트가 초반에 너무 소극적이었던 점과 모델이 직접 주문을 거부한 문제가 핵심 교훈으로 남았습니다.",
+   "points": [
+    "여러 번 깨어나는 에이전트는 \"인수인계 메시지\"로 하나처럼 만든다",
+    "모델이 거부하는 단계는 \"판단\"과 \"실행\"을 분리해 푼다",
+    "보수적인 기본값은 \"아무것도 안 하는 자동화\"가 된다"
+   ],
+   "thumb": "notes/thumb/eg_1NXDcoPk.webp",
+   "url": "notes/eg_1NXDcoPk/",
+   "ready": true
+  },
+  {
+   "video_id": "RnbGsSiD4dw",
+   "title": "Jev로 돈 버는 방법 10가지, 라이브로 쪼개본다",
+   "title_orig": "Top 10 Ways to Make Money With JEV: Live Breakdown",
+   "source": "Liam Ottley",
+   "date": "2026-09-28",
+   "topic": "에이전트",
+   "summary": "Liam Ottley가 라이브 방송에서 Typesafe AI의 새 모델 Jev를 딥리서치 에이전트로 해부하고, 이 모델로 돈 버는 방법을 정리한 방송입니다. 결론은 Jev가 \"글을 쓰는 모델이 아니라 판정하는 모델\"이고, 기존 에이전시 상품을 더 싸게 바꾸는 것보다 데이터를 모으고 분류해 파는 사업에서 진짜 기회가 열린다는 것입니다.",
+   "points": [
+    "\"판단\"이 공짜가 되면 가치는 데이터로 이동한다",
+    "샘플 검수에서 전수 검수로",
+    "고객은 기술 이름이 아니라 결과를 산다"
+   ],
+   "thumb": "notes/thumb/RnbGsSiD4dw.webp",
+   "url": "notes/RnbGsSiD4dw/",
+   "ready": true
+  },
+  {
+   "video_id": "HmyjE5YP2Hk",
+   "title": "집에서 돌리는 최신 로컬 AI 모델, 콘텐츠 자동화에 어디까지 쓸 수 있을까? (워크플로우, 프롬프트 제공)",
+   "title_orig": "집에서 돌리는 최신 로컬 AI 모델, 콘텐츠 자동화에 어디까지 쓸 수 있을까? (워크플로우, 프롬프트 제공)",
+   "source": "샘 호트만 : AI 엔지니어의 시선",
+   "date": "2026-09-28",
+   "topic": "자동화",
+   "summary": "32GB VRAM GPU 한 대로 최신 로컬 AI 모델 네 종류(이미지·아바타·영상·음악)를 직접 돌려 보고, 콘텐츠 자동화 파이프라인에 바로 넣어도 되는 모델과 아직 사람이 붙어야 하는 모델을 가려낸 실측 리뷰입니다. 결론은 아바타(인피니티토크, InfiniteTalk)와 음악(V2)은 합격, 이미지(Qwen Image 2.1)는 불합격, 영상(미니맥스 H3)은 프롬프트 연구가 더 필요하다는 것입니다.",
+   "points": [
+    "\"돌아간다\"와 \"자동화에 쓸 수 있다\"는 다르다",
+    "로컬 모델의 진짜 가치는 비용보다 \"제약 없음\"",
+    "영상 품질의 병목은 모델보다 프롬프트"
+   ],
+   "thumb": "notes/thumb/HmyjE5YP2Hk.webp",
+   "url": "notes/HmyjE5YP2Hk/",
+   "ready": true
+  },
+  {
+   "video_id": "x55Fj_syFcI",
+   "title": "AI 뉴스 좀 끊으세요",
+   "title_orig": "Stop Listening To AI News",
+   "source": "Nick Saraev",
+   "date": "2026-09-27",
+   "topic": "모델·도구",
+   "summary": "AI 뉴스를 매일 따라가는 건 교육이 아니라 오락에 가깝고, 그 뉴스 대부분은 돈을 받고 부풀려진 것이다. Nick Saraev는 뉴스를 끊고, 필요한 걸 직접 검색해 배우고, 모델이 바뀌어도 가치가 떨어지지 않는 영업 같은 소프트 스킬에 집중하라고 말한다.",
+   "points": [
+    "소수점 버전 업은 업무를 바꾸지 않는다",
+    "화제성 뒤에는 인센티브가 있다",
+    "도구 지식은 감가상각되고, 영업 능력은 복리로 쌓인다"
+   ],
+   "thumb": "notes/thumb/x55Fj_syFcI.webp",
+   "url": "notes/x55Fj_syFcI/",
+   "ready": true
+  },
+  {
+   "video_id": "JVNVyBDwz7I",
+   "title": "이 사람 때문에 일자리가 사라지고 있다",
+   "title_orig": "He Makes People Jobless",
+   "source": "Eugene Kadzina",
+   "date": "2026-09-27",
+   "topic": "에이전트",
+   "summary": "회의 예약 AI 에이전트로 GTM 엔지니어·대행사·프리랜서 일자리를 없앤다는 비판에 대해, 개발자는 \"죄책감은 전혀 없다, 적응하지 못하면 도태될 뿐이고 위기에는 항상 기회가 있다\"고 답한다. 짧은 인터뷰 클립으로, 핵심은 '피해자 모드 대신 내 강점을 다시 찾으라'는 메시지다.",
+   "points": [
+    "AI가 대체하는 건 '쉽고 반복적인 부분'이다",
+    "피해자 모드는 가장 비싼 선택이다",
+    "기술이 느리게 도는 시장을 노려라"
+   ],
+   "thumb": "notes/thumb/JVNVyBDwz7I.webp",
+   "url": "notes/JVNVyBDwz7I/",
+   "ready": true
+  },
+  {
+   "video_id": "rRxZ_rC7nqg",
+   "title": "AI·사업·소싱 질문 다 받습니다 — @thesourcingguy와 Q&A",
+   "title_orig": "Q&A w/ @thesourcingguy : Answering Your AI, Business & Sourcing Questions",
+   "source": "Liam Ottley",
+   "date": "2026-09-26",
+   "topic": "비즈니스",
+   "summary": "Liam Ottley가 중국 소싱 에이전시를 운영하는 Isaac(the sourcing guy)과 함께 진행한 라이브 Q&A로, AI를 활용한 아웃바운드 영업, AI 서비스 사업을 처음 시작하고 월 1만 달러까지 키우는 법, 고객이 실제로 돈을 내는 이유, 그리고 Isaac의 저비용 이커머스 제품 전략(80/20 원칙)까지 한 번에 다룬다.",
+   "points": [
+    "고객은 모델명이 아니라 절감액과 역량에 돈을 낸다",
+    "핵심 업무를 뜯기보다 바깥에서 시작하라",
+    "완전히 새로 만들기보다 검증된 80%에 20%를 더하라"
+   ],
+   "thumb": "notes/thumb/rRxZ_rC7nqg.webp",
+   "url": "notes/rRxZ_rC7nqg/",
+   "ready": true
+  },
+  {
+   "video_id": "A80oOy2YuZY",
+   "title": "20달러 Grok Bot이 10배 좋아졌다… 저 그만할게요",
+   "title_orig": "$20 GrokBot Just Got 10X Better... I Quit!!!",
+   "source": "Jack Roberts",
+   "date": "2026-09-26",
+   "topic": "AI 소식",
+   "summary": "Jack Roberts는 비용이 70% 저렴해지고 새 기능이 붙은 GrokBot을 실제 업무 사례 5가지로 테스트했어요. API 없는 서비스 연결, 데이터 분석, 음성 대화, 다른 앱 대신 조작하기, 화면 녹화로 작업 가르치기까지 다룹니다. (이 영상은 xAI의 후원을 받았고, 테스트는 직접 한 것이라고 밝혔습니다.)",
+   "points": [
+    "API가 없다는 게 더 이상 자동화의 벽이 아니다",
+    "가져오는 것보다 해석이 돈이 된다",
+    "설명 대신 보여주는 방식으로 업무를 넘긴다"
+   ],
+   "thumb": "notes/thumb/A80oOy2YuZY.webp",
+   "url": "notes/A80oOy2YuZY/",
+   "ready": true
+  },
+  {
+   "video_id": "EKZka39wD3w",
+   "title": "GPT-6 + GPT Sites, 이제 뭐든 만들 수 있다",
+   "title_orig": "NEW GPT-6 + GPT Sites Changes Everything (Build Anything)",
+   "source": "Ben AI",
+   "date": "2026-09-25",
+   "topic": "모델·도구",
+   "summary": "Ben AI 채널의 Ben이 ChatGPT의 새 플러그인 'Sites'로 웹사이트·내부 앱·자동 보고서·대화형 프레젠테이션·자동 갱신 대시보드 5가지를 직접 만들어 보여주고, GPT-6 Astra 같은 강력한 모델에서 한 번에 좋은 결과를 뽑는 프롬프트 작성법까지 정리한 영상이다.",
+   "points": [
+    "강력한 모델일수록 첫 프롬프트가 비용을 좌우한다",
+    "'만들기'보다 '돌아가게 두기'가 진짜 가치다",
+    "광고 많고 불편한 SaaS는 이제 직접 대체할 수 있다"
+   ],
+   "thumb": "notes/thumb/EKZka39wD3w.webp",
+   "url": "notes/EKZka39wD3w/",
+   "ready": true
+  },
+  {
+   "video_id": "7jHXoPGnA4c",
+   "title": "Opus 5.5가 영상 편집을 바꿔놨다 (무료 스킬 포함)",
+   "title_orig": "Opus 5.5 Just Changed Video Editing Forever (free skills)",
+   "source": "Nate Herk | AI Automation",
+   "date": "2026-09-25",
+   "topic": "AI 소식",
+   "summary": "Nate Herk가 Opus 5.5와 무료 도구 하이퍼프레임(HyperFrames)으로 자연어 프롬프트 하나만 써서 모션 그래픽·사운드·B-roll까지 들어간 영상을 편집한 사례들을 보여주고, AI 영상 편집에서 늘 지키는 다섯 가지 원칙(받아쓰기, 불필요한 부분 잘라내기, 계획, 스킬, 검증 루프)을 정리한 영상이다.",
+   "points": [
+    "정확한 지시보다 '원하는 감정'을 전달해도 된다",
+    "좋아하는 결과물을 분석시켜 스킬로 만드는 것이 품질을 복제하는 방법이다",
+    "검증 루프가 첫 결과물의 품질을 결정한다"
+   ],
+   "thumb": "notes/thumb/7jHXoPGnA4c.webp",
+   "url": "notes/7jHXoPGnA4c/",
+   "ready": true
+  },
+  {
+   "video_id": "45K3zHckCnQ",
+   "title": "클로드 코드에 3만 1,141달러 태워서 배운 것",
+   "title_orig": "I Spent $31,141 On Claude Code To Learn This",
+   "source": "Nick Saraev",
+   "date": "2026-09-25",
+   "topic": "에이전트",
+   "summary": "몇 달 동안 Claude Code에 3만 달러 넘게 쓴 Nick Saraev가 처음 시작할 때 알았으면 좋았을 요령 15가지를 쉬운 것부터 어려운 순으로 정리했다. 결과의 일관성을 확보하는 평가 루프, 컨텍스트 창 관리, 병렬 작업과 저렴한 모델 활용, CLAUDE.md 운영, 장애 대비용 백업 모델까지 다룬다.",
+   "points": [
+    "AI 결과물은 한 번이 아니라 성공률로 판단해야 한다",
+    "컨텍스트는 비용이자 지능이다",
+    "세세하게 통제하기보다 \"완료 기준\"과 \"진단 먼저\"로 맡겨라"
+   ],
+   "thumb": "notes/thumb/45K3zHckCnQ.webp",
+   "url": "notes/45K3zHckCnQ/",
+   "ready": true
+  },
+  {
+   "video_id": "QCkHIyEPIYo",
+   "title": "Opus 5.5를 effort 단계별로 전부 테스트했다",
+   "title_orig": "I Tested Opus 5.5 at Every Effort Level. What You Need to Know.",
+   "source": "Nate Herk | AI Automation",
+   "date": "2026-09-24",
+   "topic": "모델·도구",
+   "summary": "Nate는 Opus 5.5에 같은 프롬프트를 넣고 effort 레벨 6단계(Low, Medium, High, Extra, Max, UltraCode)를 전부 돌려 결과물, 시간, 비용을 비교했다. 가장 비싼 Max가 아니라 비용이 그 절반 정도인 Extra가 1등이었다.",
+   "points": [
+    "가장 비싼 설정이 가장 좋은 결과는 아니다",
+    "effort를 올리면 달라지는 건 '상호작용의 깊이'였다",
+    "기본값은 Medium, 올리는 기준은 '뒤져야 할 자료의 양'"
+   ],
+   "thumb": "notes/thumb/QCkHIyEPIYo.webp",
+   "url": "notes/QCkHIyEPIYo/",
+   "ready": true
+  },
+  {
+   "video_id": "HOXrLsVqinY",
+   "title": "Opus 5.5로 클로드 디자인이 10배가 됐다",
+   "title_orig": "Opus 5.5 Just 10X'd Claude Design…",
+   "source": "Jack Roberts",
+   "date": "2026-09-24",
+   "topic": "모델·도구",
+   "summary": "Jack Roberts가 Opus 5.5로 슬라이드, 웹사이트, 숏폼 영상, 로고 애니메이션까지 수정 없이 한 번에 뽑아낸 과정을 7단계 활용법으로 정리했다. 핵심은 웹 크롤링 툴 Firecrawl로 브랜드 정보를 가져온 뒤 Opus 5.5에 넘기는 조합이다.",
+   "points": [
+    "브랜드 정보 추출 + 디자인 모델 조합이 핵심",
+    "정지 이미지에서 루프 애니메이션으로 기준이 바뀐다",
+    "한 번 만든 스타일을 시스템으로 저장해야 확장된다"
+   ],
+   "thumb": "notes/thumb/HOXrLsVqinY.webp",
+   "url": "notes/HOXrLsVqinY/",
+   "ready": true
+  },
+  {
+   "video_id": "3ogITvjOh30",
+   "title": "Opus 5.5 vs Fable 5.1, 실전 7가지로 붙여봤다 (상대가 안 됨)",
+   "title_orig": "I Tested Opus 5.5 vs Fable 5.1 on 7 Real Use Cases (Not Even Close)",
+   "source": "Ben AI",
+   "date": "2026-09-24",
+   "topic": "모델·도구",
+   "summary": "Ben AI 채널의 Ben이 Claude의 신모델 Opus 5.5와 Fable 5.1을 슬라이드 제작·디자인·조사·문서 작성·데이터 분석·세컨드 브레인 분석 등 7가지 실제 업무에 똑같이 돌려본 결과, Opus 5.5가 품질·비용·속도 대부분에서 이겼지만 맥락과 데이터가 방대한 작업만큼은 Fable 5.1이 더 깊게 파고들었다.",
+   "points": [
+    "벤치마크보다 내 업무로 직접 비교하라",
+    "토큰을 더 쓴 모델이 더 비싼 건 아니다",
+    "맥락 양이 모델 선택의 기준이 된다"
+   ],
+   "thumb": "notes/thumb/3ogITvjOh30.webp",
+   "url": "notes/3ogITvjOh30/",
+   "ready": true
+  },
+  {
+   "video_id": "eF3yeJuifoQ",
+   "title": "Opus 5.5 vs GPT-6 Sol, 실전 10가지 맞대결",
+   "title_orig": "I Tested Opus 5.5 vs. GPT-6 Sol on 10 Real Use Cases",
+   "source": "Nate Herk | AI Automation",
+   "date": "2026-09-23",
+   "topic": "모델·도구",
+   "summary": "Nate Herk가 Claude Opus 5.5와 GPT-6 Sol(Soul)에게 웹사이트 제작부터 3D 게임, 코드베이스 검토, 브라우저 작업까지 10가지 실제 업무를 동일한 프롬프트로 맡겨본 결과, 가격이 3배 비싼 Opus 5.5가 7대 1로 압승했지만 코드 검토처럼 정형화된 작업에서는 Sol이 20분의 1 비용으로 더 나은 결과를 낸 역전도 있었다.",
+   "points": [
+    "비싼 모델이 항상 이기지 않는다",
+    "작업 성격에 따라 모델을 나눠 써야 한다",
+    "여러 AI 에이전트를 같은 작업 공간에서 돌릴 때는 격리 지시가 필수다"
+   ],
+   "thumb": "notes/thumb/eF3yeJuifoQ.webp",
+   "url": "notes/eF3yeJuifoQ/",
+   "ready": true
+  },
+  {
+   "video_id": "L2K__oshGds",
+   "title": "Jev로 클로드를 10배 쓰는 법",
+   "title_orig": "Jev Will 10x Your Claude (Here's How)",
+   "source": "Ben AI",
+   "date": "2026-09-23",
+   "topic": "자동화",
+   "summary": "ChatGPT 공동 창업자 중 한 명이 내놓은 새 AI 모델 'Jev'는 텍스트를 쓰는 대신 '결정'만 출력해서 일반 LLM보다 최대 200배 빠르고 400배 저렴하게 대량 분류·라우팅 작업을 처리하며, Claude와 묶어서 쓰면 리드 스코어링부터 이탈 예측, 브라우저 자동화까지 예전엔 비용 때문에 포기했던 자동화를 가능하게 만들어준다.",
+   "points": [
+    "분류·라우팅은 텍스트 생성이 아니다",
+    "저렴함이 새로운 활용 사례를 만든다",
+    "Jev 단독이 아니라 Claude와 묶어야 진짜 힘이 나온다"
+   ],
+   "thumb": "notes/thumb/L2K__oshGds.webp",
+   "url": "notes/L2K__oshGds/",
+   "ready": true
+  },
+  {
+   "video_id": "DIogX8GZS-c",
+   "title": "이제 GPT-6 Astra가 당신 사업을 대신 굴린다",
+   "title_orig": "GPT-6 Astra Can Now Run Your Business For You",
+   "source": "Nick Puru",
+   "date": "2026-09-23",
+   "topic": "자동화",
+   "summary": "AI 도입 컨설팅을 하는 닉 푸루(Nick Puru)가 ChatGPT 데스크톱 앱과 GPT-6 Astra로 메모리·스킬·플러그인·전문 워커·예약 작업을 차례로 붙여 \"말만 하는 AI\"를 \"실제로 일하는 AI 팀\"으로 바꾸는 설정 전체를 보여준다. 결론은 마법 버튼이 아니라, 워크플로우 하나를 세 번 연속 성공시킨 뒤 넓혀가라는 것이다.",
+   "points": [
+    "AI를 \"쓰는\" 회사와 AI \"네이티브\" 회사는 다르다",
+    "많이 붙일수록 오히려 나빠진다",
+    "자동화의 성패는 \"범위\"에서 갈린다"
+   ],
+   "thumb": "notes/thumb/DIogX8GZS-c.webp",
+   "url": "notes/DIogX8GZS-c/",
+   "ready": true
+  },
+  {
+   "video_id": "whU_2A0d4kQ",
+   "title": "이제 영상 편집하는데 시간낭비하지 마세요",
+   "title_orig": "이제 영상 편집하는데 시간낭비하지 마세요",
+   "source": "투쏠ㅣAI 에이전트",
+   "date": "2026-09-22",
+   "topic": "에이전트",
+   "summary": "캡컷(CapCut)으로 촬영·1차 자막까지는 수동으로 진행하고, 그 이후 인트로 편집(컷 전환, 애니메이션, 스타일)은 캡컷 프로젝트의 드래프트 파일 경로를 직접 지정한 AI 에이전트(클로드/GPT)에게 맡기는 반자동(하이브리드) 영상 편집 워크플로우를 처음부터 끝까지 실제로 보여주는 영상이다.",
+   "points": [
+    "편집 툴 자체의 AI 자막 기능을 믿지 말 것",
+    "파일 경로 하나가 에이전트 자동화 여부를 가른다",
+    "가이드와 수치 기준이 없으면 AI는 대충 만든다"
+   ],
+   "thumb": "",
+   "url": "notes/whU_2A0d4kQ/",
+   "ready": true
+  },
+  {
+   "video_id": "IXDYEF22CG8",
+   "title": "46명 회계법인을 AI로 4일 만에 재설계했다",
+   "title_orig": "I Rebuilt This 46-Person Accounting Firm With AI (in 4 Days)",
+   "source": "Liam Ottley",
+   "date": "2026-09-21",
+   "topic": "에이전트",
+   "summary": "유튜버 Liam Ottley가 영국 세무·회계 자문사 Thomas and Co를 찾아가, 나흘 동안 \"VAT 워킹페이퍼\"(고객 계좌 대조 문서) 작성 업무를 AI 에이전트 플랫폼 Kylon으로 자동화하는 과정을 그대로 따라간 브이로그형 영상.",
+   "points": [
+    "자동화 전에 반드시 '측정'부터 한다",
+    "규제 산업 자동화의 진짜 장벽은 기술이 아니라 '암묵지'와 '책임 소재'다",
+    "음성 인터뷰로 암묵지를 옮기는 방식이 텍스트 작업보다 훨씬 빠르다"
+   ],
+   "thumb": "notes/thumb/IXDYEF22CG8.webp",
+   "url": "notes/IXDYEF22CG8/",
+   "ready": true
+  },
+  {
+   "video_id": "DtfwNoL7Ndw",
+   "title": "AI 좋아하는데, GPT-6 Astra는 솔직히 무섭다",
+   "title_orig": "I Love AI, But GPT-6-Astra Terrifies Me",
+   "source": "Nick Saraev",
+   "date": "2026-09-20",
+   "topic": "자동화",
+   "summary": "AI 자동화 채널을 운영하는 닉 사라예프(Nick Saraev)가 GPT-6 Astra의 위험한 시연 장면을 보여주며, AI를 사랑하는 자신조차 인정할 수밖에 없는 이 기술의 어두운 이면과 지금이 그 흐름을 바꿀 수 있는 마지막 기회라는 경고를 던진다.",
+   "points": [
+    "AI의 \"쓸모\"는 능력의 일부일 뿐, 나머지는 통제되지 않은 위험 지대다",
+    "신기술의 부작용은 초기에 가장 크고, 선용에는 오랜 시간이 걸린다",
+    "AI 위험 논의를 \"이상한 사람\" 취급으로 막는 사회적 압력이 실재한다"
+   ],
+   "thumb": "notes/thumb/DtfwNoL7Ndw.webp",
+   "url": "notes/DtfwNoL7Ndw/",
+   "ready": true
+  },
+  {
+   "video_id": "ymgH8jS6Wb8",
+   "title": "Jev를 실전 12가지로 써봤다 — 솔직한 후기",
+   "title_orig": "I Tested Jev on 12 Real Use Cases. My Honest Thoughts.",
+   "source": "Nate Herk | AI Automation",
+   "date": "2026-09-19",
+   "topic": "모델·도구",
+   "summary": "\"글을 쓰지 않고 오직 예/아니오·분류·점수 같은 결정만 내리는\" 신형 AI 모델 Jev를 이메일 분류부터 실시간 트레이딩 봇까지 12가지 실전 사례로 테스트해본 영상으로, 대량 반복 판단 업무에서 기존 모델 대비 압도적인 속도·비용 우위를 데이터로 보여준다.",
+   "points": [
+    "\"결정 전용\" 모델이라는 좁은 역할이 오히려 강점이다",
+    "대량·반복 판단 업무일수록 비용 격차가 기하급수적으로 벌어진다",
+    "속도·비용이 좋아졌다고 그대로 신뢰하면 안 된다"
+   ],
+   "thumb": "notes/thumb/ymgH8jS6Wb8.webp",
+   "url": "notes/ymgH8jS6Wb8/",
+   "ready": true
+  },
+  {
+   "video_id": "bjDDsdSfun8",
+   "title": "GPT-6 Astra로 자비스를 만들었다… 이건 좀 미쳤다",
+   "title_orig": "I Built JARVIS with GPT-6 Astra… It's Insane",
+   "source": "Jack Roberts",
+   "date": "2026-09-18",
+   "topic": "모델·도구",
+   "summary": "유튜버 Jack Roberts가 GPT-6 Astra로 만든 \"에이전틱 OS\"를 시연한다 — Claude·Codex·이메일·사진·캘린더·재무 정보를 하나의 로컬 메모리에 모으고, 음성 명령으로 일정을 잡거나 이미지·영상을 생성하고 웹사이트까지 직접 편집·빌드하는 개인·비즈니스 운영체제다.",
+   "points": [
+    "\"연결 → 정리 → 실행\"이 에이전틱 OS의 본질",
+    "이미 연결된 도구를 재사용하는 설계",
+    "수동 메모리 입력 + 매직 서치의 조합"
+   ],
+   "thumb": "notes/thumb/bjDDsdSfun8.webp",
+   "url": "notes/bjDDsdSfun8/",
+   "ready": true
+  },
+  {
+   "video_id": "I1SX22MgoPw",
+   "title": "GPT-6 Astra + GPT Work, 판이 바뀐다",
+   "title_orig": "GPT 6 Astra + GPT Work Changes Everything",
+   "source": "Ben AI",
+   "date": "2026-09-18",
+   "topic": "모델·도구",
+   "summary": "GPT-6(Astra 모델)과 챗GPT Work를 결합하면 프롬프트 한 번으로 인터랙티브 대시보드, 엑셀/구글시트 모델, 조간 브리핑, SNS 인포그래픽, 웹사이트까지 만들 수 있다 — 실제 화면을 보여주며 각 사용법과 프롬프트 짜는 법을 설명한다.",
+   "points": [
+    "\"무엇을\"보다 \"왜\"를 설명해야 한다",
+    "레퍼런스 이미지·링크 하나가 긴 설명보다 강력하다",
+    "브레인덤프 → 구조화 스킬로 프롬프트 품질을 끌어올릴 수 있다"
+   ],
+   "thumb": "notes/thumb/I1SX22MgoPw.webp",
+   "url": "notes/I1SX22MgoPw/",
+   "ready": true
+  },
+  {
+   "video_id": "G9edFGL3rKs",
+   "title": "연매출 40억 스타트업, Tiro가 설명하는 '온톨로지' (feat. 여울님, 현제님)",
+   "title_orig": "연매출 40억 스타트업, Tiro가 설명하는 '온톨로지' (feat. 여울님, 현제님)",
+   "source": "빌더 조쉬 Builder Josh",
+   "date": "2026-09-18",
+   "topic": "에이전트",
+   "summary": "연매출 40억 규모의 AI 회의록·대화기록 스타트업 '티로(Tiro)'는 팀원 12명 전원에게 자신을 복제한 개인 AI 에이전트를 하나씩 붙여주고, 소울(말투)·위키(개인 데이터)·온톨로지(회사 공용 규칙) 3계층으로 구성해 회사 업무의 98%를 시뮬레이션하는 것을 목표로 운영하고 있다.",
+   "points": [
+    "역할별 에이전트가 아니라 개인별 복제 에이전트를 만들어라",
+    "모든 규칙을 온톨로지로 만들 필요는 없다",
+    "조직의 진짜 성장 병목은 에이전트가 아니라 사람이다"
+   ],
+   "thumb": "notes/thumb/G9edFGL3rKs.webp",
+   "url": "notes/G9edFGL3rKs/",
+   "ready": true
+  },
+  {
+   "video_id": "ElrC9j2XiMg",
+   "title": "원가 0원으로 AI 웹사이트 팔아 마진 남기는 법",
+   "title_orig": "How I Sell AI Websites for $0 and Still Make Ridiculous Profit",
+   "source": "Nick Puru",
+   "date": "2026-09-18",
+   "topic": "자동화",
+   "summary": "AI로 20분 만에 홈페이지를 뽑아 지역 업체에 완전 무료로 먼저 던져주고 월 몇백 달러짜리 유지보수 계약으로 발을 들인 다음 자동화·컨설팅 같은 진짜 돈 되는 서비스로 넘어가는 영업 구조를, 리모델링 업체 실제 사례로 처음부터 끝까지 보여주는 영상.",
+   "points": [
+    "무료는 손해가 아니라 진입 장벽 제거다",
+    "매출 규모보다 매출의 분산이 사업의 맷집을 만든다",
+    "업종 선택 하나가 한 해 성과 전체를 좌우한다"
+   ],
+   "thumb": "notes/thumb/ElrC9j2XiMg.webp",
+   "url": "notes/ElrC9j2XiMg/",
+   "ready": true
+  },
+  {
+   "video_id": "f_CC5GRbiYA",
+   "title": "앤트로픽이 소상공인용 클로드를 내놨다 (스킬 44개)",
+   "title_orig": "Anthropic Just Dropped Claude for Small Businesses (44 Skills)",
+   "source": "Ben AI",
+   "date": "2026-09-17",
+   "topic": "모델·도구",
+   "summary": "Anthropic이 44개 스킬·35개 커넥터로 확장된 Claude \"Small Business\" 플러그인을 새로 내놓았고, 이 영상은 설치 방법부터 가장 쓸모 있는 10개 스킬, 커스터마이징 방법, 자동 실행(스케줄링)까지 실제 화면으로 보여준다.",
+   "points": [
+    "모든 스킬이 하나의 메모리를 공유한다",
+    "\"Record a skill\"이 커스터마이징의 게임체인저다",
+    "스케줄드 태스크로 이어지면 완전 자동화가 된다"
+   ],
+   "thumb": "notes/thumb/f_CC5GRbiYA.webp",
+   "url": "notes/f_CC5GRbiYA/",
+   "ready": true
+  },
+  {
+   "video_id": "qrCtnDETmLo",
+   "title": "GPT-6 Astra + DeepSeek 4.1 = 최전선 조합",
+   "title_orig": "GPT-6 Astra + DeepSeek 4.1 = Frontier AI",
+   "source": "Nick Puru",
+   "date": "2026-09-16",
+   "topic": "모델·도구",
+   "summary": "\"DeepSeek이 GPT-6 Astra보다 80배 싸다\"는 마케팅 문구를 실제로 웹사이트·세일즈덱·제안서 세 가지 실무 작업으로 검증했더니, 진짜 절감 폭은 10배였고 그 차이만큼 정확도와 신뢰도에서도 차이가 났다.",
+   "points": [
+    "마케팅 숫자와 실측 숫자는 다르다",
+    "싼 모델일수록 \"지어내는\" 리스크가 크다",
+    "\"만들기\"와 \"변형하기\"를 분리하면 비용과 품질을 동시에 잡을 수 있다"
+   ],
+   "thumb": "notes/thumb/qrCtnDETmLo.webp",
+   "url": "notes/qrCtnDETmLo/",
+   "ready": true
+  },
+  {
+   "video_id": "ff7om2bBLKM",
+   "title": "Grok Bot이 내 메일함을 관리한다 (성격까지 있음)",
+   "title_orig": "Grok Bot Manages My Inbox (and has its own personality)",
+   "source": "Nate Herk | AI Automation",
+   "date": "2026-09-16",
+   "topic": "에이전트",
+   "summary": "이메일을 자동으로 분류·정리해주는 AI봇과, 아예 자기만의 이메일 주소를 갖고 메일이 오면 스스로 깨어나 답장하는 AI봇을 그록봇(Grok Bot)으로 각각 만드는 전 과정을 실제 화면으로 보여주는 영상이다. 라우팅 규칙 설계부터 Agent Mail 연동, 웹훅 인증, 여러 인박스가 섞이지 않게 필터링하는 법까지 다룬다.",
+   "points": [
+    "자동화보다 분류 기준 설계가 먼저다",
+    "전용 이메일 주소는 봇을 '이벤트로 깨어나는 존재'로 만든다",
+    "노코드 자동화도 결국 약간의 코드가 필요한 지점이 있다"
+   ],
+   "thumb": "notes/thumb/ff7om2bBLKM.webp",
+   "url": "notes/ff7om2bBLKM/",
+   "ready": true
+  },
+  {
+   "video_id": "FqnNL8fnUWo",
+   "title": "사용량 안 잡아먹는 GPT-6 Astra 자동화 만들기",
+   "title_orig": "How to Build GPT-6 Astra Automations (that don't eat your usage limit)",
+   "source": "Nate Herk | AI Automation",
+   "date": "2026-09-16",
+   "topic": "자동화",
+   "summary": "Codex 자동화를 계속 켜두면 구독 사용량이 깎이므로, 대신 Codex로 자동화 코드를 만들어 trigger.dev(GitHub 연동)에 올려 독립 실행시키는 3가지 자동화 패턴(예약형·웹훅형·SDK형)을 실습으로 보여주는 영상.",
+   "points": [
+    "자동화를 만드는 도구와 실행하는 도구를 분리하라",
+    "결정론적 vs 비결정론적을 먼저 판단하고 설계 방식을 정하라",
+    "API 키는 플러그인이 아니라 `.env` 파일에 모아두면 이식성이 좋아진다"
+   ],
+   "thumb": "notes/thumb/FqnNL8fnUWo.webp",
+   "url": "notes/FqnNL8fnUWo/",
+   "ready": true
+  },
+  {
+   "video_id": "-jl4-8nHdH4",
+   "title": "앤트로픽이 공개한 최상위 AI 기업들의 작업 방식",
+   "title_orig": "Anthropic Just Revealed How Top AI Companies",
+   "source": "Ben AI",
+   "date": "2026-09-16",
+   "topic": "자동화",
+   "summary": "Anthropic이 공개한 고객 사례집(case study)을 분석한 결과, AI 도입에 성공한 Notion·Zapier·DoorDash 같은 \"AI 퍼스트\" 기업들은 전부 같은 8가지 원칙을 따르고 있었다 — 이 영상은 그 8가지를 사업주, AI 에이전시, 사내 AI 챔피언 세 관점에서 각각 어떻게 적용할지 정리한다.",
+   "points": [
+    "AI 도입은 위에서 아래로 흐른다",
+    "AI의 성과는 \"접근권 + 데이터 + 맥락\"의 곱셈이다",
+    "가장 큰 ROI는 \"원래 안 하던 일\"에서 나온다"
+   ],
+   "thumb": "notes/thumb/-jl4-8nHdH4.webp",
+   "url": "notes/-jl4-8nHdH4/",
+   "ready": true
+  },
+  {
+   "video_id": "jSUEnzXVImY",
+   "title": "이제 웹사이트로는 못 먹고삽니다",
+   "title_orig": "I Can't Sell Websites Anymore",
+   "source": "Eugene Kadzina",
+   "date": "2026-09-15",
+   "topic": "AI 소식",
+   "summary": "서비스형 비즈니스는 앞으로 10년도 살아남겠지만, 그 안에서 가격은 계속 무너진다 — 실제로 풀스택 웹사이트 제작 비용이 30~40만 달러에서 3만 달러로 떨어졌다는 이야기와 함께, \"그래도 사람이 필요한 이유\"를 설명한다.",
+   "points": [
+    "던닝-크루거 효과가 서비스업의 방패가 된다",
+    "AI 도입 속도는 지역·집단마다 완전히 다르다",
+    "가격은 살아남아도 마진은 무너진다"
+   ],
+   "thumb": "notes/thumb/jSUEnzXVImY.webp",
+   "url": "notes/jSUEnzXVImY/",
+   "ready": true
+  },
+  {
+   "video_id": "IJS08TVGut0",
+   "title": "돈 한 푼 안 내고 AI 에이전트 쓰는 법",
+   "title_orig": "The 100% Free Way To Use AI Agents",
+   "source": "Nick Saraev",
+   "date": "2026-09-15",
+   "topic": "에이전트",
+   "summary": "\"프리버프(Freebuff)\"라는 신생 플랫폼은 신용카드 없이, 광고만 보면 GPT·GLM·딥시크 같은 프론티어 AI 코딩 에이전트를 하루 최대 20시간까지 공짜로 쓰게 해주는데, Nick이 직접 사이트 제작과 게임 제작을 시켜보며 이 \"광고로 값을 치르는 AI 코딩\" 모델이 실제로 쓸 만한지 확인해본다.",
+   "points": [
+    "광고 기반 과금이 AI 접근성 격차를 좁힐 수 있다",
+    "무료 챗봇 모델도 코딩 에이전트로 전환하면 가치가 달라진다",
+    "결과물의 완성도보다 \"누구나 접근 가능해졌다\"는 구조 자체가 뉴스거리다"
+   ],
+   "thumb": "notes/thumb/IJS08TVGut0.webp",
+   "url": "notes/IJS08TVGut0/",
+   "ready": true
+  },
+  {
+   "video_id": "z3kot_j4et8",
+   "title": "웹사이트 만드는 법 그만 배우고, 파는 법을 배우세요",
+   "title_orig": "Stop Learning to Build Websites. Learn to Sell Them",
+   "source": "Nick Puru",
+   "date": "2026-09-14",
+   "topic": "자동화",
+   "summary": "\"AI로 웹사이트 만들어서 몇천 달러에 팔아라\"는 조언은 빌드가 아니라 파는 방식 자체가 잘못됐다는 게 요지다. 완성된 웹사이트 전체가 아니라 섹션 하나만 무료로 미끼로 던지고, 진짜 돈은 그 뒤에 붙는 월 정기 서비스(리드 응대·부재중 자동화 등)에서 나온다는 6단계 영업 방법론을 설명한다.",
+   "points": [
+    "완제품을 무료로 주지 마라",
+    "웹사이트는 미끼일 뿐, 진짜 돈은 월정액 서비스",
+    "아웃리치는 통화를 요구하지 않는 두 문장으로"
+   ],
+   "thumb": "notes/thumb/z3kot_j4et8.webp",
+   "url": "notes/z3kot_j4et8/",
+   "ready": true
+  },
+  {
+   "video_id": "kEN2IKzxu6o",
+   "title": "13만 5천 달러짜리 드림카를 샀습니다",
+   "title_orig": "I BOUGHT MY $135,000 DREAM CAR",
+   "source": "Eugene Kadzina",
+   "date": "2026-09-14",
+   "topic": "자동화",
+   "summary": "자동화 채널 운영자 Eugene Kadzina가 오랜 꿈이었던 Audi RS7을 $130,000에 구매하는 하루를 브이로그로 기록한 영상으로, 업무 자동화나 비즈니스 인사이트는 없는 개인 소비 콘텐츠다.",
+   "points": [
+    "큰 지출은 표면가가 아니라 총비용으로 비교했다",
+    "용도가 겹치지 않으면 자산을 굳이 하나로 통합하지 않았다",
+    "구매 전 이미지 생성 AI로 결과물을 미리 확인했다"
+   ],
+   "thumb": "notes/thumb/kEN2IKzxu6o.webp",
+   "url": "notes/kEN2IKzxu6o/",
+   "ready": true
+  },
+  {
+   "video_id": "Jr-jyTL2MYI",
+   "title": "토큰 한도 다시 안 터뜨리는 Fable 5.1 꿀팁 6가지",
+   "title_orig": "6 Simple Fable 5.1 Hacks to Never Hit a Token Limit Again",
+   "source": "Ben AI",
+   "date": "2026-09-14",
+   "topic": "에이전트",
+   "summary": "Claude(Fable 5.1) 같은 강력한 모델이 순식간에 토큰 한도를 태우는 진짜 이유와, 서브에이전트(sub agent) 모델 지정 한 줄부터 대화 습관까지 토큰 사용량을 최대 90%까지 줄이는 6가지 실전 팁.",
+   "points": [
+    "서브에이전트 모델 지정 한 줄이 가장 확실한 절감 포인트",
+    "토큰을 많이 준다고 결과가 좋아지는 게 아니라, 오히려 나빠진다",
+    "Anthropic 1차 가이드가 프롬프트 설계의 기준을 제시한다"
+   ],
+   "thumb": "notes/thumb/Jr-jyTL2MYI.webp",
+   "url": "notes/Jr-jyTL2MYI/",
+   "ready": true
+  },
+  {
+   "video_id": "9a6oCFbs0O8",
+   "title": "지금 당장 챙겨야 할 깃허브 레포 7개 (GPT-6 Astra)",
+   "title_orig": "7 New Github Repos You Need NOW (GPT-6 Astra)",
+   "source": "Jack Roberts",
+   "date": "2026-09-14",
+   "topic": "에이전트",
+   "summary": "Jack Roberts가 최근 한 달 사이 화제가 된 깃허브(GitHub) 오픈소스·도구 7개를 실제로 켜서 시연하며, 지구 실시간 관제부터 AI 에이전트 스킬 보안 검사, 빌드한 결과물을 바로 서비스로 배포하는 법, AI스러운 문장을 사람 냄새 나는 카피로 바꾸는 법, 여러 AI 모델을 함께 쓰는 법, 텍스트만으로 프로세스 다이어그램을 그리는 법까지 한 번에 훑어준다.",
+   "points": [
+    "\"켜두기만 해도 되는 안전장치가 이미 나와 있다\"",
+    "\"만드는 것\"과 \"서비스로 내놓는 것\"은 다른 일이었는데, 그 간극이 사라지고 있다",
+    "AI 카피는 \"그럴싸함\"보다 \"구체성\"으로 승부해야 한다는 게 도구로 검증되고 있다"
+   ],
+   "thumb": "notes/thumb/9a6oCFbs0O8.webp",
+   "url": "notes/9a6oCFbs0O8/",
+   "ready": true
+  },
+  {
+   "video_id": "_MrumlZnGic",
+   "title": "GPT-6 Astra에 DeepSeek을 붙였다 (비용 100분의 1)",
+   "title_orig": "I Combined GPT-6 Astra With DeepSeek... (100x Cheaper)",
+   "source": "Jack Roberts",
+   "date": "2026-09-13",
+   "topic": "모델·도구",
+   "summary": "Jack이 신규 오픈소스 모델 DeepSeek V4.1을 GPT-6 Astra와 실제로 엮어서(코드명 \"Deep Astra\") 프레젠테이션 디자인, 5만 행 데이터 분석, 대시보드 재설계까지 직접 테스트한 결과, DeepSeek이 벤치마크에서 크게 도약했고 Astra보다 훨씬 저렴한 \"워크호스\" 모델로 쓸 수 있다는 결론을 내린다.",
+   "points": [
+    "\"프론티어 모델 vs 워크호스 모델\" 이원화 전략",
+    "\"기존 것을 유지·보완\"과 \"처음부터 새로 만들기\"는 전혀 다른 난이도",
+    "구독 한도에 도달했을 때의 대안이 생긴다"
+   ],
+   "thumb": "notes/thumb/_MrumlZnGic.webp",
+   "url": "notes/_MrumlZnGic/",
+   "ready": true
+  },
+  {
+   "video_id": "Lu2WpMQaEBQ",
+   "title": "클로드 코드 구독을 끊은 이유",
+   "title_orig": "Why I Cancelled My Claude Code Subscription..",
+   "source": "Nick Puru",
+   "date": "2026-09-13",
+   "topic": "에이전트",
+   "summary": "Claude에 연 3억 토큰, $10만 넘게 쓴 파워유저가 지난주 자신의 $200 플랜을 해지했다 — 그 이유와, Claude 하나에 걸었던 업무를 6개 모델·4개 실행 도구로 쪼갠 대체 구조를 그대로 공개한 영상이다.",
+   "points": [
+    "락인은 계약서가 아니라 \"편의\"로 완성된다",
+    "정액제 요금은 실제 사용량에 대한 감각을 지운다",
+    "탈락인은 \"대체 도구 하나 찾기\"가 아니라 \"역할별로 모델을 쪼개는 구조 설계\"다"
+   ],
+   "thumb": "notes/thumb/Lu2WpMQaEBQ.webp",
+   "url": "notes/Lu2WpMQaEBQ/",
+   "ready": true
+  },
+  {
+   "video_id": "HIRDzMtuWFk",
+   "title": "앤트로픽 엔지니어의 조언: 에이전트 대신 뭘 만들어야 하나",
+   "title_orig": "Anthropic Engineer Explains: What to Build Instead of AI Agents",
+   "source": "Nate Herk | AI Automation",
+   "date": "2026-09-13",
+   "topic": "에이전트",
+   "summary": "앤트로픽 엔지니어들은 작업마다 새 에이전트를 만드는 대신, 하나의 범용 에이전트에 \"스킬(Skill)\"을 장착해 쓰는 방식으로 전환했다 — 이 영상은 그 배경과, 스킬을 실제로 잘 작동시키는 4가지 원칙을 정리한다.",
+   "points": [
+    "\"에이전트\"가 아니라 \"범용 에이전트 + 스킬\" 구조로 이동한다",
+    "검증된 코드·스크립트는 반드시 재사용 가능한 형태로 저장해야 한다",
+    "AI의 첫 결과물을 사람이 검증하는 구조는 확장되지 않는다"
+   ],
+   "thumb": "notes/thumb/HIRDzMtuWFk.webp",
+   "url": "notes/HIRDzMtuWFk/",
+   "ready": true
+  },
+  {
+   "video_id": "GmCbzlb091A",
+   "title": "초파리 뇌를 업로드해서 메일 답장을 맡겼다",
+   "title_orig": "I Uploaded A Fruit Fly Brain To Reply To My Emails",
+   "source": "Nick Saraev",
+   "date": "2026-09-13",
+   "topic": "모델·도구",
+   "summary": "Nick Saraev가 구글이 최근 공개한 실제 초파리(Drosophila) 뇌 지도(커넥톰, connectome)를 시뮬레이션에 올리고, GPT-6 Astra로 이메일 864건을 학습시켜 \"생물학적 뇌가 내 이메일에 답장하게\" 만든 실험 영상 — 정확도는 약 80%로 실용성은 낮지만, 생물학적 신경망도 인공신경망처럼 특정 목적에 맞게 \"훈련\"할 수 있다는 것을 실증한다.",
+   "points": [
+    "생물학적 신경망도 \"파인튜닝\" 대상이 될 수 있다",
+    "\"AI가 이메일을 쓴다\"는 말의 실체는 대부분 분류+템플릿 매칭이다",
+    "소규모·특수 목적 신경망이 오히려 실용적일 수 있다"
+   ],
+   "thumb": "notes/thumb/GmCbzlb091A.webp",
+   "url": "notes/GmCbzlb091A/",
+   "ready": true
+  },
+  {
+   "video_id": "68HH9HVFJDM",
+   "title": "10분 AI 뉴스: 인류 멸망 확률 10%",
+   "title_orig": "AI News in 10 mins: 10% chance AI kills all humans",
+   "source": "Nate Herk | AI Automation",
+   "date": "2026-09-13",
+   "topic": "AI 소식",
+   "summary": "Anthropic 연구원의 \"AI가 인류를 몰살할 확률 10%\"급 폭로 트윗이 일주일 만에 정치권까지 끌어들이며 퍼졌고, 그 진위 논란과 Anthropic의 AI 악용 보고서, Dario Amodei의 안전 3단계 제안까지 한 주 동안 벌어진 AI 안전 공방을 정리한다.",
+   "points": [
+    "Anthropic 내부 인사도 \"AI 위험\"에 공개적으로 동의하고 있다",
+    "바이럴리티 자체가 하나의 무기가 되고 있다",
+    "\"안전\"이 이제 AI 기업의 경쟁 요소가 되어야 한다는 제안이 나왔다"
+   ],
+   "thumb": "notes/thumb/68HH9HVFJDM.webp",
+   "url": "notes/68HH9HVFJDM/",
+   "ready": true
+  },
+  {
+   "video_id": "0u_n7EdU78s",
+   "title": "GPT 6 Astra로 유튜브 영상 처음부터 끝까지 딸깍하면 퀄리티가 어느 정도인지 알아보자 (프롬프트 제공)",
+   "title_orig": "GPT 6 Astra로 유튜브 영상 처음부터 끝까지 딸깍하면 퀄리티가 어느 정도인지 알아보자 (프롬프트 제공)",
+   "source": "샘 호트만 : AI 엔지니어의 시선",
+   "date": "2026-09-13",
+   "topic": "모델·도구",
+   "summary": "GPT-6 아스트라(챗GPT)에게 대본부터 목소리, 편집까지 광고 영상 제작 전 과정을 맡기고, 그 결과와 실제 비용·시간·검수 팁을 공개하는 영상.",
+   "points": [
+    "역할 분담이 핵심이다",
+    "컴퓨터 유즈가 반복 실습·녹화 작업을 대체한다",
+    "비용은 토큰을 아끼는 것보다 설계가 우선이다"
+   ],
+   "thumb": "notes/thumb/0u_n7EdU78s.webp",
+   "url": "notes/0u_n7EdU78s/",
+   "ready": true
+  },
+  {
+   "video_id": "hUxWv-gchLQ",
+   "title": "2026년 콜드메일 세팅, 이게 정답이다",
+   "title_orig": "The Best Cold Email Setup For 2026",
+   "source": "Eugene Kadzina",
+   "date": "2026-09-12",
+   "topic": "AI 소식",
+   "summary": "콜드 이메일 에이전시 운영자가 신규 클라이언트마다 도메인·메일박스를 몇 개나 쓰는지, 그리고 두 가지 인프라 도구(Zapmail, Hyperdrive 계열 툴)로 발송량을 어떻게 설계하는지 짧게 답한 클립.",
+   "points": [
+    "정답은 없고 테스트만 있다",
+    "도메인당 총 발송량을 먼저 정하고 역산한다",
+    "여분 인프라를 항상 예열해둔다"
+   ],
+   "thumb": "notes/thumb/hUxWv-gchLQ.webp",
+   "url": "notes/hUxWv-gchLQ/",
+   "ready": true
+  },
+  {
+   "video_id": "MujaqZS9wtM",
+   "title": "GPT-6 Astra가 유튜브를 바꿔놓은 것 같다",
+   "title_orig": "I Think GPT-6-Astra Just Changed YouTube",
+   "source": "Nick Saraev",
+   "date": "2026-09-11",
+   "topic": "에이전트",
+   "summary": "자신의 실제 영상을 애니메이션 스타일로 완전히 바꾸는 \"비디오 스타일 트랜스퍼\" 파이프라인을, 누구나 따라할 수 있는 간단한 방법부터 코딩 에이전트로 자동화하는 방법까지 전부 공개한다.",
+   "points": [
+    "스타일 트랜스퍼는 \"곱셈\" 구조로 이해하면 쉽다",
+    "프롬프트에서 \"무엇을 고정할지\"를 명시하는 게 품질을 가른다",
+    "모델 선택으로 비용을 3배 이상 줄일 수 있다"
+   ],
+   "thumb": "notes/thumb/MujaqZS9wtM.webp",
+   "url": "notes/MujaqZS9wtM/",
+   "ready": true
+  },
+  {
+   "video_id": "KaZcN1kqBMg",
+   "title": "이미지부터 광고 영상까지 전부 한 곳에서 만들어봤습니다 (feat. 어도비 파이어플라이)",
+   "title_orig": "이미지부터 광고 영상까지 전부 한 곳에서 만들어봤습니다 (feat. 어도비 파이어플라이)",
+   "source": "빌더 조쉬 Builder Josh",
+   "date": "2026-09-11",
+   "topic": "자동화",
+   "summary": "어도비 파이어플라이 하나로 광고 이미지 생성부터 부분 수정, 영상 변환까지 전 과정을 끝내는 실전 워크플로우를 보여준다.",
+   "points": [
+    "부분 수정으로 90% 완성도를 지킨다",
+    "\"어디를(마크업) + 얼마나(디테일 조절)\"의 이중 통제권",
+    "상업적 라이선스 문제를 원천 차단"
+   ],
+   "thumb": "notes/thumb/KaZcN1kqBMg.webp",
+   "url": "notes/KaZcN1kqBMg/",
+   "ready": true
+  },
+  {
+   "video_id": "6LNlCpQPYFc",
+   "title": "AI 에이전트, 진짜 제대로 고르는 법",
+   "title_orig": "How to Actually Choose the Right AI Agent",
+   "source": "Nate Herk | AI Automation",
+   "date": "2026-09-11",
+   "topic": "에이전트",
+   "summary": "AI 자동화 유튜버 Nate Herk가 Mark Kashef(하네스/AIOS 전문가)와 나눈 대담 — \"모델(브레인)보다 하네스(도구·시스템)가 훨씬 중요하다\"는 주제로, Claude Code·Codex 비교부터 스킬 부패 관리법까지 다룬다.",
+   "points": [
+    "모델 논쟁보다 하네스 투자",
+    "작업 단계별로 도구를 섞어 써라",
+    "스킬은 유통기한이 있다"
+   ],
+   "thumb": "notes/thumb/6LNlCpQPYFc.webp",
+   "url": "notes/6LNlCpQPYFc/",
+   "ready": true
+  },
+  {
+   "video_id": "s8iynp6FQtQ",
+   "title": "GPT-6 아스트라로 회사 업무 자동화 실전 | 윤자동 라이브",
+   "title_orig": "GPT-6 아스트라로 회사 업무 자동화 실전 | 윤자동 라이브",
+   "source": "윤자동",
+   "date": "2026-09-10",
+   "topic": "자동화",
+   "summary": "윤자동이 사무실에서 혼자 진행한 라이브로, 코덱스(ChatGPT 앱)에 GPT-6 아스트라 모델과 컴퓨터 유즈 기능을 붙여 환율 검색·블로그 발행·쿠팡 주문내역 엑셀 분석·PDF 다운로드·3D 웹앱 제작·인트로 영상 제작·오픈채팅방 강퇴까지 말 한마디로 처리하는 과정을 보여주고, \"컴퓨터 안에서 벌어지는 일은 이제 사람이 손대지 않아야 한다\"는 관점과 그 시대에 살아남는 방법까지 정리한 방송이다.",
+   "points": [
+    "컴퓨터 안의 일은 위임 대상이 100%다",
+    "피드백 누적이 자동화의 실체다",
+    "비용은 인건비와 비교해야 한다"
+   ],
+   "thumb": "notes/thumb/s8iynp6FQtQ.webp",
+   "url": "notes/s8iynp6FQtQ/",
+   "ready": true
+  },
+  {
+   "video_id": "nQz6sMBSK4A",
+   "title": "경쟁자들과 몬테네그로에서 보낸 일주일",
+   "title_orig": "A Week In Montenegro With My Biggest Competitors",
+   "source": "Liam Ottley",
+   "date": "2026-09-10",
+   "topic": "에이전트",
+   "summary": "몬테네그로에서 열린 AI 서밋 브이로그로, 튜토리얼보다는 \"회사 전체를 Claude Code 하나로 운영하는 AI 오퍼레이팅 시스템\" 컨셉과 크리에이터 커뮤니티 이벤트의 운영 구조를 보여주는 영상이다.",
+   "points": [
+    "\"AI 오퍼레이팅 시스템\"이라는 프레이밍",
+    "부서별 특화 학습 구조",
+    "경쟁자를 커뮤니티로 묶는 전략"
+   ],
+   "thumb": "notes/thumb/nQz6sMBSK4A.webp",
+   "url": "notes/nQz6sMBSK4A/",
+   "ready": true
+  },
+  {
+   "video_id": "kpILRTwELb4",
+   "title": "클로드 코드가 내 AI 스타트업을 죽였다",
+   "title_orig": "Claude Code Killed My AI Startup",
+   "source": "Eugene Kadzina",
+   "date": "2026-09-10",
+   "topic": "에이전트",
+   "summary": "Voice AI SaaS를 2~3년 운영해온 Eugene Kadzina가, Claude Code 같은 코딩 도구 때문에 고객이 대시보드를 직접 만들어버리면서 \"지금 구조로는 이 문제를 완전히 넘어설 길이 안 보인다\"고 인정하고, 대시보드 판매에서 구현 대행 에이전시로 방향을 트는 이유를 인터뷰로 밝히는 짧은 클립이다.",
+   "points": [
+    "매출이 늘고 있다는 사실이 해자를 증명하지 않는다",
+    "해지 사유는 가장 정직한 시장 신호다",
+    "쉽게 복제되는 건 팔고, 복제 안 되는 건 남긴다"
+   ],
+   "thumb": "notes/thumb/kpILRTwELb4.webp",
+   "url": "notes/kpILRTwELb4/",
+   "ready": true
+  },
+  {
+   "video_id": "BYQdA7kMmbA",
+   "title": "AI에게 UI 화면 1만 장을 먹여봤다",
+   "title_orig": "I Gave AI 10,000 UI Screens... Then This Happened",
+   "source": "Jack Roberts",
+   "date": "2026-09-09",
+   "topic": "AI 소식",
+   "summary": "Jack Roberts가 앱 빌더 Base44 하나만으로, 이미 잘 만들어진 1만여 개의 UI 디자인을 AI에 참고자료로 먹여 \"AI 티 나는 허접한 결과물(slop)\"을 피하면서 금융 앱을 설계·카피 다듬기·기능 연결·배포까지 네 단계로 완성하는 과정을 보여주는 영상이다(Base44 협찬).",
+   "points": [
+    "AI에게 \"무엇을 원하는지\" 대신 \"무엇처럼 되길 원하는지\"를 보여줘라",
+    "기능 우선에서 디자인 우선으로 순서가 바뀌었다",
+    "카피 휴머나이징은 별도 공정이다"
+   ],
+   "thumb": "notes/thumb/BYQdA7kMmbA.webp",
+   "url": "notes/BYQdA7kMmbA/",
+   "ready": true
+  },
+  {
+   "video_id": "5QmOhvVssxY",
+   "title": "구독자 100만, 감사합니다",
+   "title_orig": "Thank You for 1M Subscribers",
+   "source": "Nate Herk | AI Automation",
+   "date": "2026-09-09",
+   "topic": "에이전트",
+   "summary": "AI 자동화 유튜버 Nate Herk가 구독자 100만 명 달성을 기념해 지난 2년을 돌아보는 감사 영상으로, 자동화 콘텐츠를 다루는 사람이 \"많은 영상을 어떻게 만드느냐\"는 질문에 \"AI 에이전트가 아니라 팀 덕분\"이라고 못 박는 대목이 핵심이다.",
+   "points": [
+    "자동화 전문가일수록 \"무엇을 자동화하지 않을지\"를 분명히 한다",
+    "도약의 병목은 기술이 아니라 결심과 주변 설득이다",
+    "초기 품질 부족은 지속의 이유가 되지 않는다"
+   ],
+   "thumb": "notes/thumb/5QmOhvVssxY.webp",
+   "url": "notes/5QmOhvVssxY/",
+   "ready": true
+  },
+  {
+   "video_id": "pJZy4LBK3gI",
+   "title": "클로드 새 스킬 /design, 디자인이 달라졌다",
+   "title_orig": "Claude's New Skill Just Changed Design Forever (/design)",
+   "source": "Ben AI",
+   "date": "2026-09-08",
+   "topic": "에이전트",
+   "summary": "Claude가 새로 낸 디자인 스킬 `/design`으로 Claude Code·코워크(co-work) 안에서 바로 프레젠테이션·웹사이트·소셜 이미지·뉴스레터를 만들 수 있게 됐는데, 캔버스만 믿고 프롬프트를 던지면 토큰만 날린다는 것이 핵심이다. 벤(Ben)이 일관된 디자인을 빠르게 뽑기 위해 쓰는 '디자인 시스템 → 사용 사례별 템플릿 → 스킬 패키징' 3단계 세팅법을 실제 사례로 정리한 영상이다.",
+   "points": [
+    "캔버스가 아니라 '사전 확정'이 결과의 90%를 만든다",
+    "디자인 시스템·템플릿·스킬 3종 세트가 일관성의 축",
+    "자동화 스킬 안에 '자기개선'과 '사람 개입'을 설계로 박아 넣는다"
+   ],
+   "thumb": "notes/thumb/pJZy4LBK3gI.webp",
+   "url": "notes/pJZy4LBK3gI/",
+   "ready": true
+  },
+  {
+   "video_id": "iJqMPkQotYQ",
+   "title": "스타트업 40%가 사라진다",
+   "title_orig": "The Death of 40% Startups",
+   "source": "Eugene Kadzina",
+   "date": "2026-09-08",
+   "topic": "AI 소식",
+   "summary": "전직 VC가 스타트업 성장률 기준을 짚는 짧은 인터뷰 클립이다. 벤처 투자(venture funding)를 받으면 연 20~30~40% 성장은 '실패'로 취급되지만, 자기 돈으로 부트스트랩한 회사라면 똑같은 성장률이 훌륭한 성과라는 이야기다.",
+   "points": [
+    "'실패'를 가르는 건 성장률 숫자가 아니라 받은 자본의 종류다",
+    "series A 기준선은 고정값이 아니라 계속 상향된다",
+    "벤처 게임의 결말 구조를 미리 알아야 한다"
+   ],
+   "thumb": "notes/thumb/iJqMPkQotYQ.webp",
+   "url": "notes/iJqMPkQotYQ/",
+   "ready": true
+  },
+  {
+   "video_id": "T2v2pf_uypE",
+   "title": "클로드 코드 기반 AI OS, 끝이 보인다",
+   "title_orig": "The End Is Near for Claude Code AI Operating Systems...",
+   "source": "Liam Ottley",
+   "date": "2026-09-08",
+   "topic": "에이전트",
+   "summary": "지난 4개월간 기업 현장에서 Claude Code 기반 AI 운영체제(AI OS)를 직접 구축해온 Liam Ottley가, 이 방식이 설정 속도·교육 부담·확장 난이도 때문에 대중 시장에 못 간다고 판단하고, 그 세 문제를 하나로 묶은 플랫폼 Kylon으로 갈아타는 이유와 실제 온보딩 과정을 보여주는 영상이다(Kylon 협찬).",
+   "points": [
+    "커스텀 AI OS는 대중 시장에 못 간다 — 통합 플랫폼으로 수렴한다",
+    "떠난 뒤 고객이 스스로 굴릴 수 있느냐가 서비스 설계의 핵심 기준이다",
+    "기본 제공 스킬·연동이 곧 도입 속도다"
+   ],
+   "thumb": "notes/thumb/T2v2pf_uypE.webp",
+   "url": "notes/T2v2pf_uypE/",
+   "ready": true
+  },
+  {
+   "video_id": "yysILVsfLFM",
+   "title": "GPT-6 Astra를 완전체 세컨드 브레인으로 만들었다",
+   "title_orig": "I Turned GPT-6 Astra Into the Ultimate AI Second Brain",
+   "source": "Nate Herk | AI Automation",
+   "date": "2026-09-07",
+   "topic": "모델·도구",
+   "summary": "GPT-6 Astra로 '제2의 두뇌'와 'AI 운영체제(AI OS)'를 구축하는 방법을, 맥락·연결·역량·주기(4C) 프레임워크와 온보딩·감사·레벨업·3D 브레인 등 무료 스킬을 통해 처음부터 세팅하는 과정으로 보여주는 영상이다.",
+   "points": [
+    "맥락과 연결이 먼저다",
+    "agents.md/cloud.md는 라우팅 맵이다",
+    "머릿속을 비우는 게 목표"
+   ],
+   "thumb": "notes/thumb/yysILVsfLFM.webp",
+   "url": "notes/yysILVsfLFM/",
+   "ready": true
+  },
+  {
+   "video_id": "j-FffQYiPCY",
+   "title": "GPT-6 Astra가 드디어 컴퓨터 조작을 해냈다",
+   "title_orig": "GPT-6 Astra FINALLY Solves Computer Use",
+   "source": "Jack Roberts",
+   "date": "2026-09-07",
+   "topic": "에이전트",
+   "summary": "ChatGPT가 API나 MCP 없이도 브라우저·데스크톱 앱·스마트폰을 직접 조작하게 됐고, Jack이 디자인 변형 생성, Premiere Pro 편집, 자사 앱 사용성 테스트, 웹사이트 이미지 삽입, 폰 미러링 인스타그램 분석까지 5가지 사례로 보여주면서 \"언제 이걸 써야 하는가\"의 판단 기준까지 정리한 영상이다.",
+   "points": [
+    "API·MCP가 없는 도구도 이제 자동화 대상이 된다",
+    "'만들기'에서 '사람처럼 테스트하기'로 범위가 넓어졌다",
+    "컴퓨터 조작은 최후의 수단, 판단 순서가 먼저다"
+   ],
+   "thumb": "notes/thumb/j-FffQYiPCY.webp",
+   "url": "notes/j-FffQYiPCY/",
+   "ready": true
+  },
+  {
+   "video_id": "X8kn17oun9I",
+   "title": "AI 마케팅 왕초보 무료 강의 | 윤자동 라이브",
+   "title_orig": "AI 마케팅 왕초보 무료 강의 | 윤자동 라이브",
+   "source": "윤자동",
+   "date": "2026-09-07",
+   "topic": "에이전트",
+   "summary": "윤자동 라이브 특별편으로, 정상록 대표가 Claude 앱·Claude Code로 인스타그램 카드뉴스와 마케팅을 자동화하는 실전 세팅을 왕초보용으로 시연하고, 김경욱 교수가 AI 시대에 필요한 '추론'과 '컨셉'이라는 본질을 짚는 3시간짜리 대담이다.",
+   "points": [
+    "세팅(하네스)이 결과를 만든다",
+    "AI가 추론하면 사람도 추론해야 한다",
+    "숫자가 아니라 컨셉을 관리하라"
+   ],
+   "thumb": "notes/thumb/X8kn17oun9I.webp",
+   "url": "notes/X8kn17oun9I/",
+   "ready": true
+  },
+  {
+   "video_id": "TLQLfa7yH4I",
+   "title": "GPT-6 Astra를 24시간 주식 트레이더로 만들었다",
+   "title_orig": "I Turned GPT-6 Astra Into a 24/7 Stock Trader (tutorial)",
+   "source": "Nate Herk | AI Automation",
+   "date": "2026-09-07",
+   "topic": "에이전트",
+   "summary": "Nate Herk가 클로드에게 실제 돈 1만 달러를 주고 주식 거래를 맡겨 한 달 만에 S&P 수익률을 8% 넘게 앞선 뒤, 더 강력해진 GPT-6 아스트라로 같은 실험을 다시 하려고 24시간 트레이딩 에이전트를 세팅하는 과정을 보여주는 튜토리얼이다. 전략 수립부터 하루 6회 실행 일정, 진행 로그로 만드는 연속성, Alpaca 연결, 예약 작업 6개, ClickUp 알림까지 전부 자연어 대화만으로 구성한다.",
+   "points": [
+    "연속성은 기억이 아니라 공유된 기록에서 나온다",
+    "무엇을 맡길지 먼저 정한다 — 판단 자체 vs 실행 속도",
+    "위험한 자동화일수록 실패 시나리오를 먼저 설계한다"
+   ],
+   "thumb": "notes/thumb/TLQLfa7yH4I.webp",
+   "url": "notes/TLQLfa7yH4I/",
+   "ready": true
+  },
+  {
+   "video_id": "Puzgmzv7t3Q",
+   "title": "Fable 5.1으로 세컨드 브레인 만들기 (세팅 간단)",
+   "title_orig": "Build Your Ultimate Second Brain with Fable 5.1 (Easy Setup)",
+   "source": "Ben AI",
+   "date": "2026-09-07",
+   "topic": "비즈니스",
+   "summary": "컴퓨터 폴더 하나에 텍스트 파일로 사업 맥락을 모은 '제2의 뇌'를, 세 가지 무료 스킬(설정·운영자·최적화)과 Fable 5.1을 이용해 만들고, 실시간으로 갱신하며, 데이터가 커져도 최적화 상태를 유지하는 전 과정을 안내하는 영상이다.",
+   "points": [
+    "결과의 질은 맥락을 채우는 시간에 달렸다",
+    "cloud.md는 지도다",
+    "로컬 예약 작업 vs 클라우드 루틴"
+   ],
+   "thumb": "notes/thumb/Puzgmzv7t3Q.webp",
+   "url": "notes/Puzgmzv7t3Q/",
+   "ready": true
+  },
+  {
+   "video_id": "8yCyUD3Nsuk",
+   "title": "클로드 디자인 영상 제작부터 인스타 카드뉴스까지, 음성 입력으로 만든 실전 사례 3가지 (feat. Typeless)",
+   "title_orig": "클로드 디자인 영상 제작부터 인스타 카드뉴스까지, 음성 입력으로 만든 실전 사례 3가지 (feat. Typeless)",
+   "source": "빌더 조쉬 Builder Josh",
+   "date": "2026-09-07",
+   "topic": "에이전트",
+   "summary": "음성 입력 도구 Typeless(타임리스)로 두서없이 말만 해도 300자짜리 구조화된 프롬프트가 만들어지고, 이를 Claude Code·Claude 앱에 물려 제안서·홍보 영상·블로그 자동화·인스타 카드뉴스를 실제로 만들어낸 빌더 조쉬의 실전 사례 리뷰다.",
+   "points": [
+    "프롬프트의 질이 결과의 질을 결정한다",
+    "Claude Code·Claude 앱이 내 파일을 기반으로 움직인다",
+    "AI가 못 하는 부분은 다른 도구로 메운다"
+   ],
+   "thumb": "notes/thumb/8yCyUD3Nsuk.webp",
+   "url": "notes/8yCyUD3Nsuk/",
+   "ready": true
+  },
+  {
+   "video_id": "VxsBGpSSaNU",
+   "title": "회사 3개를 돌리는 실사판 자비스 만들기",
+   "title_orig": "Build a Real-Life JARVIS That Does EVERYTHING for You (Runs My 3 Companies)",
+   "source": "Nick Puru",
+   "date": "2026-09-06",
+   "topic": "에이전트",
+   "summary": "Nick Puru가 Mac에서 헤드리스로 돌아가는 Claude Code와 텍스트 파일 폴더만으로 이메일·캘린더·ClickUp·CRM에 접근하는 개인 비서 \"Jarvis\"를 만들고, Telegram 음성 노트로 지시하며 메시지마다 모델을 골라 쓰는 라우팅 구조와 \"채팅이 아니라 위임\"이라는 사용법을 설명한 영상이다.",
+   "points": [
+    "\"채팅이 아니라 위임\"이 사용법의 핵심이다",
+    "메시지 단위 모델 라우팅이 정액제 플랜을 오래 쓰게 한다",
+    "시스템을 유지보수하는 모델이 곧 시스템을 돌리는 모델이어야 오래간다"
+   ],
+   "thumb": "notes/thumb/VxsBGpSSaNU.webp",
+   "url": "notes/VxsBGpSSaNU/",
+   "ready": true
+  },
+  {
+   "video_id": "R8EB6FvGXNs",
+   "title": "성교육 강사가 AI로 만든 인생 자동화 시스템 전부 공개 (클로드 코드)",
+   "title_orig": "성교육 강사가 AI로 만든 인생 자동화 시스템 전부 공개 (클로드 코드)",
+   "source": "윤자동",
+   "date": "2026-09-05",
+   "topic": "에이전트",
+   "summary": "성교육 강사 김채원이 Claude Code만으로 강의 이력·수입·일정 관리부터 콘텐츠 변환·팟캐스트 편집까지 자신의 업무 전체를 자동화한 시스템을 공개하고, \"AI가 바보 같은 건 내 맥락을 안 알려줬기 때문\"이라는 깨달음과 자동화의 한계선을 이야기한 인터뷰다.",
+   "points": [
+    "AI 출력 품질은 프롬프트 기술이 아니라 맥락 이전(移轉)에서 갈린다",
+    "자동화 설계의 핵심은 '무엇을 자동화하지 않을지' 정하는 것이다",
+    "AI는 평균을 출력하도록 설계돼 있어, 전문가의 차별점은 그 평균을 깨는 데서 나온다"
+   ],
+   "thumb": "notes/thumb/R8EB6FvGXNs.webp",
+   "url": "notes/R8EB6FvGXNs/",
+   "ready": true
+  },
+  {
+   "video_id": "MPYS-I__Jgg",
+   "title": "보이스클론을 잘하는 오픈소스 TTS 모델 5가지 비교 분석! (일관성 있는 음성을 생성하기 위한 꿀팁까지!)",
+   "title_orig": "보이스클론을 잘하는 오픈소스 TTS 모델 5가지 비교 분석! (일관성 있는 음성을 생성하기 위한 꿀팁까지!)",
+   "source": "샘 호트만 : AI 엔지니어의 시선",
+   "date": "2026-09-05",
+   "topic": "자동화",
+   "summary": "콘텐츠 자동화용 보이스 클론을 무료로 하고 싶은 사람을 위해, 오픈소스 TTS 다섯 개(Qwen 3 TTS·VoxCPM 2·XTTS 3·Audio8·Fish Audio S2)로 발표자 본인 목소리를 직접 클론해 비교하고, 모델보다 참조 음성 데이터가 결과를 좌우한다는 결론과 실전 팁을 정리한 영상이다.",
+   "points": [
+    "모델 선택보다 입력 데이터 설계가 먼저다",
+    "유사도 숫자는 의사결정 기준이 아니다",
+    "자기 복제 자동화는 두 가지 결정으로 좁혀진다"
+   ],
+   "thumb": "notes/thumb/MPYS-I__Jgg.webp",
+   "url": "notes/MPYS-I__Jgg/",
+   "ready": true
+  },
+  {
+   "video_id": "9oi-b5Dvtso",
+   "title": "GPT-6 Astra 음성 모드로 진짜 뭐든 자동화된다",
+   "title_orig": "GPT-6 Astra Voice Mode Automates Literally Anything",
+   "source": "Nate Herk | AI Automation",
+   "date": "2026-09-05",
+   "topic": "자동화",
+   "summary": "Nate Herk가 영상에서 \"GPT-6 Astra\"라고 부르는 OpenAI 음성 모드로 여러 개의 Codex 작업 스레드를 말로 지시·조율하며, 유튜브 영상을 X 아티클로 변환하고 커리큘럼 랜딩 페이지를 만들고 개인 OS에 회의 탭을 추가하는 과정을 실시간으로 보여준 영상이다.",
+   "points": [
+    "음성 위임의 힘은 \"동시성\"에 있다",
+    "맥락 지정이 결과 품질을 좌우한다",
+    "되돌리기 어려운 세부 작업을 스킬로 표준화한다"
+   ],
+   "thumb": "notes/thumb/9oi-b5Dvtso.webp",
+   "url": "notes/9oi-b5Dvtso/",
+   "ready": true
+  },
+  {
+   "video_id": "uzDH5ZpzyRg",
+   "title": "Fable 5.1 미친 활용 5가지",
+   "title_orig": "5 Insane Fable 5.1 Use Cases (Endless Possibilities)",
+   "source": "Ben AI",
+   "date": "2026-09-04",
+   "topic": "에이전트",
+   "summary": "Claude Fable 5.1은 리서치·설계·데이터 분석처럼 가치가 크고 끝까지 맡길 수 있는 복잡한 작업에만 쓰고, 토큰 낭비를 막으려면 프롬프트를 사전에 15분쯤 설계하고 \"완료 기준\"을 명시하며 하위 에이전트는 Sonnet 5로 돌리라는, 다섯 가지 활용 사례로 정리한 영상이다.",
+   "points": [
+    "비싼 모델은 \"고레버리지 작업\"에만 쓴다",
+    "토큰 낭비의 진짜 원인은 \"완료 기준의 부재\"다",
+    "하위 에이전트 모델 지정 한 줄이 비용을 좌우한다"
+   ],
+   "thumb": "notes/thumb/uzDH5ZpzyRg.webp",
+   "url": "notes/uzDH5ZpzyRg/",
+   "ready": true
+  },
+  {
+   "video_id": "SPvNDLWPijE",
+   "title": "광고비 0원으로 ARR 200만 달러까지",
+   "title_orig": "From 0 to $2M ARR with $0 on Paid Ads",
+   "source": "Eugene Kadzina",
+   "date": "2026-09-03",
+   "topic": "AI 소식",
+   "summary": "$0의 유료 광고 예산으로 여러 제품을 키운 창업자가, 제품마다 완전히 다른 유입 경로(X 트렌딩, SEO, 입소문)를 어떻게 골라 썼는지 짧게 풀어준다.",
+   "points": [
+    "팔로워 수보다 타겟 고객의 위치",
+    "제품마다 채널을 따로 설계",
+    "선택과 집중이 유료 광고보다 강하다"
+   ],
+   "thumb": "notes/thumb/SPvNDLWPijE.webp",
+   "url": "notes/SPvNDLWPijE/",
+   "ready": true
+  },
+  {
+   "video_id": "5FukkI4fbiU",
+   "title": "Fable 5.1과 5에게 같은 앱을 만들게 했다",
+   "title_orig": "I Had Fable 5.1 and 5 Build Me the Same App",
+   "source": "Nate Herk | AI Automation",
+   "date": "2026-09-03",
+   "topic": "자동화",
+   "summary": "Nate Herk가 Fable 5.1과 Fable 5에게 완전히 똑같은 프롬프트로 같은 앱(장애 대응 워크플로우를 그림으로 그리고 시뮬레이션하는 로컬 도구)을 오케스트레이션 방식으로 만들게 시켰더니, 5.1은 약 1,200달러·36시간이 들었고 5는 약 500달러·반나절이 걸렸다. 코드 품질 평가 점수는 5.1이 근소하게 앞섰지만(9.1 대 8.4), Nate는 비용·시간 대비 결과물 차이가 700달러를 정당화하지 못한다며 이 대결의 승자는 Fable 5라고 결론지었다.",
+   "points": [
+    "모델 선택보다 \"예산 배분\"이 결과물을 가른다",
+    "공정한 벤치마크의 기준선은 \"동일 예산\"이다",
+    "에이전트에 \"완료의 정의\"와 \"멈추지 마라\"를 명시해야 한다"
+   ],
+   "thumb": "notes/thumb/5FukkI4fbiU.webp",
+   "url": "notes/5FukkI4fbiU/",
+   "ready": true
+  },
+  {
+   "video_id": "QLLuZbuTIRc",
+   "title": "AI 시대에 명료하게 생각하는 법 — 5시간 풀강의",
+   "title_orig": "How to Think Clearly In The Era Of AI: Full Course (5 Hours)",
+   "source": "Nick Saraev",
+   "date": "2026-09-02",
+   "topic": "비즈니스",
+   "summary": "지난 3년간 매년 100만 달러 이상을 번 사업가 Nick Saraev가, 대학에서 5년간 행동신경과학을 연구한 경험을 바탕으로 \"명확하게 사고하는 법\"을 5시간짜리 강의로 정리했다. 사고력을 게임 캐릭터의 스탯처럼 다루며, 수면·환경·공기 질 같은 '하드웨어' 최적화(누적 시 인지 능력 150~200% 개선)와 기댓값·파워 법칙·베이즈 추론 같은 '소프트웨어'(사고 프레임워크), 그리고 트리거-행동 계획·프리모템·5분 타이머 같은 즉시 실행 기법까지 순서대로 다룬다.",
+   "points": [
+    "명확한 사고는 규율이 아니라 환경 설계다",
+    "확률을 적는 행위 자체가 결정을 바꾼다",
+    "아는 것이 아니라 하는 것이 병목이다"
+   ],
+   "thumb": "notes/thumb/QLLuZbuTIRc.webp",
+   "url": "notes/QLLuZbuTIRc/",
+   "ready": true
+  },
+  {
+   "video_id": "HDmBwU5uvEE",
+   "title": "앤트로픽이 공개한 클로드 5 프롬프트 7원칙",
+   "title_orig": "Anthropic Just Revealed 7 New Rules for Prompting Claude 5 Models",
+   "source": "Ben AI",
+   "date": "2026-09-02",
+   "topic": "모델·도구",
+   "summary": "Anthropic의 새 프롬프팅 가이드와 기조연설을 근거로, Claude Opus 5·Fable 5 같은 최신 모델은 예전 모델과 근본적으로 다르게 작동하므로 프롬프트 작성법도 바꿔야 한다는 내용이다. 단계별 지시를 버리고 전체 작업을 한 번에 맡기기, 사전 계획에 시간 쓰기, '왜'와 '완료 기준' 명시하기, 강압적 금지 대신 이유 달기, 불필요한 이중 검증 빼기, 모델 말투 교정 규칙 두기 — 7가지 규칙을 실제 예시와 함께 제시한다.",
+   "points": [
+    "\"빨리 프롬프트 넣고 고치기\"에서 \"사전 계획에 시간 쓰기\"로",
+    "금지어 목록보다 이유가 붙은 지침이 더 잘 먹힌다",
+    "예전에 배운 기법 중 일부는 이제 손해다"
+   ],
+   "thumb": "notes/thumb/HDmBwU5uvEE.webp",
+   "url": "notes/HDmBwU5uvEE/",
+   "ready": true
+  },
+  {
+   "video_id": "NyfYxpXiw_0",
+   "title": "비전공자용 Grok Bot 개념 총정리",
+   "title_orig": "Every Grok Bot Concept Explained for Normal People",
+   "source": "Nate Herk | AI Automation",
+   "date": "2026-09-01",
+   "topic": "에이전트",
+   "summary": "xAI의 Grok 봇(Grok Bot) — 이름·직무·설명을 가진 개별 AI 에이전트를 팀처럼 꾸려 쓰는 도구 — 를 제대로 활용하는 데 필요한 25개(+보너스 1개) 개념을 5부로 나눠 정리한 영상이다. 봇 하나의 정의부터 공유 클라우드 컴퓨터, 스킬·routine·webhook, 봇끼리의 위임, 승인·사용량·로깅까지 훑는다.",
+   "points": [
+    "봇의 성능은 프롬프트가 아니라 \"설명(description)\"에서 갈린다",
+    "자율 에이전트를 쉽게 찍어낼수록 로깅과 승인 게이트가 생명줄이다",
+    "\"로그인 1회 저장 + 로컬 파일 접근\"이 실무 진입장벽을 낮춘다"
+   ],
+   "thumb": "notes/thumb/NyfYxpXiw_0.webp",
+   "url": "notes/NyfYxpXiw_0/",
+   "ready": true
+  },
+  {
+   "video_id": "pUu4G2lINnk",
+   "title": "1만 달러짜리 웹사이트를 만드는 클로드 디자인 스킬",
+   "title_orig": "Insane Claude Design Skills You Need for $10,000 Websites",
+   "source": "Jack Roberts",
+   "date": "2026-08-31",
+   "topic": "모델·도구",
+   "summary": "Claude는 예쁜 웹사이트는 잘 만들지만 \"팔리는\" 웹사이트는 그것만으로 안 된다. 이 영상은 레퍼런스 기준 잡기, 전체 사이트 구조 설계, 이미지 생성, 스크롤 스토퍼(인터랙티브 요소), 모바일 최적화, AI 티 지우기(deslopification), UI 컴포넌트 가져오기, SEO까지 7단계 스킬을 로핑 회사 데모 사이트를 만들며 순서대로 보여준다.",
+   "points": [
+    "\"예쁨\"은 기본값이고 차별점은 그 주변에 있다",
+    "홈페이지 한 장이 아니라 사이트맵을 먼저 판다",
+    "AI 티는 신뢰를 깎는다"
+   ],
+   "thumb": "notes/thumb/pUu4G2lINnk.webp",
+   "url": "notes/pUu4G2lINnk/",
+   "ready": true
+  },
+  {
+   "video_id": "xXS83RALMtc",
+   "title": "이것만 클로드에 붙여넣으면 토큰 한도가 안 터진다",
+   "title_orig": "Paste This Into Claude, Never Hit a Token Limit Again",
+   "source": "Jack Roberts",
+   "date": "2026-08-29",
+   "topic": "에이전트",
+   "summary": "요금제를 그대로 두고도 클로드(Claude / Claude Code)에서 쓸 수 있는 사용량을 3배 이상 늘리는 방법을, 서로 쌓이는 5단계(세션 낭비 진단 → 사용 습관 → 소통 스타일 → 모델 라우팅 → 디자인)로 정리한 영상이다.",
+   "points": [
+    "토큰 낭비의 대부분은 \"구조\"가 아니라 \"방치\"에서 나온다",
+    "매 턴마다 전체 대화를 다시 처리한다는 사실이 모든 규칙의 뿌리다",
+    "모델은 하나를 고집할 자원이 아니라 역할로 배분하는 자원이다"
+   ],
+   "thumb": "notes/thumb/xXS83RALMtc.webp",
+   "url": "notes/xXS83RALMtc/",
+   "ready": true
+  },
+  {
+   "video_id": "upJhz8I40b0",
+   "title": "2026 한국어 오픈소스 TTS 모델 5가지 비교 분석!",
+   "title_orig": "2026 한국어 오픈소스 TTS 모델 5가지 비교 분석!",
+   "source": "샘 호트만 : AI 엔지니어의 시선",
+   "date": "2026-08-29",
+   "topic": "모델·도구",
+   "summary": "2026년 상반기 기준으로 공개된 한국어 오픈소스 TTS(Text-to-Speech, 음성 합성) 모델 5종(Qwen3 TTS, VoxCPM2, XTTS3, Supertonic 3, Audio8)을 같은 문장·같은 조건으로 생성해 나레이션·성우 다양성·숫자/터미널 명령어·다국어·감정 표현·하드웨어 요구량 관점에서 비교한 실험 리뷰로, \"나레이션은 이제 어떤 모델을 써도 충분하고, 차이는 숫자·명령어 예외 처리와 라이선스에서 갈린다\"는 결론을 준다.",
+   "points": [
+    "나레이션 품질은 평준화됐고, 승부는 예외 처리에서 난다",
+    "모델 지능(파라미터 크기)과 정확한 낭독은 비례하지 않는다",
+    "경량 모델이 실용 단계에 진입했다"
+   ],
+   "thumb": "notes/thumb/upJhz8I40b0.webp",
+   "url": "notes/upJhz8I40b0/",
+   "ready": true
+  },
+  {
+   "video_id": "iJFyRWcqBNw",
+   "title": "콜드메일 후속 연락, 이렇게 하세요",
+   "title_orig": "Best Cold Email Followup Strategy",
+   "source": "Eugene Kadzina",
+   "date": "2026-08-29",
+   "topic": "AI 소식",
+   "summary": "콜드이메일(cold email) 대행사를 운영하는 게스트가 blitz(초고속 문답)로 풀어놓은 실전 세팅과 전략 정리 — 핵심 주장은 \"후속 메일(follow-up)은 최대 1번, 사실은 0번이 나을 때가 많다\"이다.",
+   "points": [
+    "후속 메일 최적화 대신 첫 메일 최적화",
+    "TAM이 크면 후속이 아니라 재발송 주기가 전략",
+    "개인화는 비용 대비 과대평가"
+   ],
+   "thumb": "notes/thumb/iJFyRWcqBNw.webp",
+   "url": "notes/iJFyRWcqBNw/",
+   "ready": true
+  },
+  {
+   "video_id": "82hCt3xH9Gc",
+   "title": "이 세컨드 브레인 세팅 없이 클로드 쓰지 마세요",
+   "title_orig": "Stop Using Claude Without This Second Brain Setup",
+   "source": "Ben AI",
+   "date": "2026-08-29",
+   "topic": "모델·도구",
+   "summary": "Claude용 \"second brain\"(사업·팀 맥락과 기억을 텍스트 파일로 쌓아 AI에 물려주는 지식 베이스)을 대부분 Obsidian으로 관리하지만, 팀 공유·권한·백업·자동 갱신이 안 된다는 한계가 있다. 이 영상은 그 네 가지를 메운 오픈소스 앱 Baldur를 만든 팀이 전체 기능을 데모하고 설치법까지 보여주는 제품 소개 영상이다.",
+   "points": [
+    "second brain의 병목은 \"무엇을 담느냐\"가 아니라 \"어떻게 최신 상태로 유지하느냐\"다",
+    "MCP를 통한 \"쓰기\" 자동화가 핵심 차별점이다",
+    "새 도구 하나에 올라타기 전에 \"한계 목록\" 자체가 체크리스트다"
+   ],
+   "thumb": "notes/thumb/82hCt3xH9Gc.webp",
+   "url": "notes/82hCt3xH9Gc/",
+   "ready": true
+  },
+  {
+   "video_id": "yO4p4wipcwk",
+   "title": "바이브 코딩으로 만든 100만 달러 AI 스타트업",
+   "title_orig": "Vide Code $1M AI Startup",
+   "source": "Eugene Kadzina",
+   "date": "2026-08-28",
+   "topic": "에이전트",
+   "summary": "바이브 코딩으로 누구나 앱을 빠르게 찍어내는 시대에, 한 AI 세일즈 스타트업 창업자가 \"당신 제품을 통째로 복제할 수 있나\"라는 질문에 \"UI는 스크린샷으로 베낄 수 있어도 백엔드의 메모리·지식그래프·세일즈팀을 굴리는 에이전트, 그리고 세일즈 훈련에서 나오는 판단력과 취향은 못 베낀다\"고 답한 인터뷰 클립이다.",
+   "points": [
+    "복제 가능한 것과 불가능한 것의 경계가 선명해졌다",
+    "바이브 코딩은 \"0 → MVP\"를 압축하지, \"MVP → 엔터프라이즈 제품\"을 없애지 않는다",
+    "비개발자도 프로토타이퍼가 될 수 있다"
+   ],
+   "thumb": "notes/thumb/yO4p4wipcwk.webp",
+   "url": "notes/yO4p4wipcwk/",
+   "ready": true
+  },
+  {
+   "video_id": "QCSmTnd2TdE",
+   "title": "인스타 팔로워 7만을 클로드로 20만 달러로 만든 방법",
+   "title_orig": "How I Turned 70K Instagram Followers Into $200,000 With Claude",
+   "source": "Nick Puru",
+   "date": "2026-08-28",
+   "topic": "모델·도구",
+   "summary": "인스타그램 팔로워 7만 명, 이메일 구독자 2만 명, 숏폼만으로 마감된 딜 20만 달러 이상 — 이 모든 게 컴퓨터 안 폴더 하나에서 나왔고, 그 폴더는 \"누구에게 말하는가 / 대본을 어떻게 짜는가 / 내 숫자는 무엇인가\" 세 개 층으로 되어 있다는 콘텐츠 시스템 공개 영상.",
+   "points": [
+    "콘텐츠는 매번 처음부터 시작하는 게 아니라, 과거 성과 데이터를 재료로 쓰는 작업이다",
+    "AI에게 맡길 반복 작업일수록, 사람은 판단 두세 개만 남기고 나머지를 규칙·데이터·컨텍스트 파일로 밀어넣어야 한다",
+    "ICP를 이름 붙인 한 사람(\"Patrick\")으로, 두려움·오해·구매 여정까지 극단적으로 상세히 정의하면 출력 품질이 올라간다"
+   ],
+   "thumb": "notes/thumb/QCSmTnd2TdE.webp",
+   "url": "notes/QCSmTnd2TdE/",
+   "ready": true
+  },
+  {
+   "video_id": "PYjbeY8sGLs",
+   "title": "Calendly를 복제했다, 이제 평생 무료",
+   "title_orig": "I Cloned Calendly and Now It's Free Forever",
+   "source": "Nate Herk | AI Automation",
+   "date": "2026-08-28",
+   "topic": "에이전트",
+   "summary": "유튜버 Nate Herk가 코덱스(Codex) 에이전트에게 프롬프트 몇 개만 던져서 Calendly를 통째로 클론한 예약 시스템 \"스냅타임(Snag Time)\"을 5일 만에 완성했고, 빌드 과정·실제 비용(약 1만5천 달러 상당, 본인 실지출은 약 150달러)·한계까지 전부 공개했다.",
+   "points": [
+    "\"목표 프롬프트 + 자율 테스트 루프\"가 핵심 레버리지다",
+    "에이전트는 기능은 잘 만들어도 \"사람이 처음 보는 화면에서 뭘 누르고 싶어 하는지\"는 놓친다",
+    "\"공짜로 만들었다\"는 헤드라인과 실제 비용 구조는 다르다"
+   ],
+   "thumb": "notes/thumb/PYjbeY8sGLs.webp",
+   "url": "notes/PYjbeY8sGLs/",
+   "ready": true
+  },
+  {
+   "video_id": "ulJqlCPNGKI",
+   "title": "아직 안 늦었습니다 — 22분 AI 입문",
+   "title_orig": "You're not behind (yet): How to learn AI in 22 minutes",
+   "source": "Liam Ottley",
+   "date": "2026-08-27",
+   "topic": "모델·도구",
+   "summary": "같은 20달러짜리 Claude 계정을 쓰면서도 누구는 검색창처럼, 누구는 삶 전체를 굴리는 운영체제처럼 쓴다 — Liam Ottley가 완전 초보부터 상위 1% 사용자까지 올라가는 \"사다리\"를 지식(knowledge)과 도구(tools)라는 두 축으로 단계별로 정리한 영상이다.",
+   "points": [
+    "AI 활용의 격차는 지능이 아니라 \"어디까지 알고 있느냐\"에서 온다",
+    "모든 기능은 \"지식\"과 \"도구\" 두 가지 중 하나를 키우는 일이다",
+    "자동화는 한 번에 만드는 게 아니라 3단계로 \"걸어 올리는\" 것이다"
+   ],
+   "thumb": "notes/thumb/ulJqlCPNGKI.webp",
+   "url": "notes/ulJqlCPNGKI/",
+   "ready": true
+  },
+  {
+   "video_id": "gQef3d3erOs",
+   "title": "14분이면 끝나는 개인 Hermes 세팅 (VPS·맥미니 불필요)",
+   "title_orig": "Set Up a Personal Hermes in 14 Mins (no VPS or mac mini)",
+   "source": "Nate Herk | AI Automation",
+   "date": "2026-08-27",
+   "topic": "에이전트",
+   "summary": "Nate가 로컬 설치나 VPS 없이 Hostinger의 관리형(managed) Hermes(허미스) 에이전트로 개인 AI 에이전트를 14분 만에 세팅하는 과정을 처음부터 끝까지 보여준다. Telegram(텔레그램) 연동, ChatGPT 구독 연결, 대시보드 기능, 환경변수로 외부 API(Tavily) 붙이기까지 다룬다.",
+   "points": [
+    "관리형 에이전트는 \"서버 관리\"라는 진입장벽을 통째로 없앤다",
+    "API 키 대신 기존 ChatGPT/Claude 구독을 연결하면 비용 구조가 바뀐다",
+    "외부 도구 연결은 \"환경변수 추가 → 재시작\"이 사실상 정해진 절차다"
+   ],
+   "thumb": "notes/thumb/gQef3d3erOs.webp",
+   "url": "notes/gQef3d3erOs/",
+   "ready": true
+  },
+  {
+   "video_id": "eXswS4_5dgQ",
+   "title": "엉클잡스 & 현업 개발자 초대석, 바이브코딩 실무에선 진짜? | 윤자동 라이브",
+   "title_orig": "엉클잡스 & 현업 개발자 초대석, 바이브코딩 실무에선 진짜? | 윤자동 라이브",
+   "source": "윤자동",
+   "date": "2026-08-27",
+   "topic": "에이전트",
+   "summary": "채널 운영자 윤자동과 커뮤니티 '강북 에르메스단'을 이끄는 엉클잡스가, 현업 개발자이자 오픈소스 코딩 도구 메인테이너인 조제표(가제코드)와 박성수(오마이 오픈 에이전트)를 불러 \"바이브코딩이 실무에서 진짜 통하는가\"를 5시간 동안 파헤친 라이브로, 현업 개발자가 AI가 쓴 코드를 어떻게 다루는지·모델 20종을 용도별로 어떻게 나눠 쓰는지·자동화와 수익화의 진짜 병목이 무엇인지가 핵심이다.",
+   "points": [
+    "현업의 바이브코딩은 \"코드를 안 읽되 로직은 이해한다\"이고, 검증 책임은 결국 만든 사람에게 남는다",
+    "모델은 \"제일 센 것 하나\"가 아니라 역할별로 쪼개 쓰는 것이고, 최상위 모델 의존은 그 자체가 리스크다",
+    "자동화와 수익화의 병목은 기술이 아니라 사람이다"
+   ],
+   "thumb": "notes/thumb/eXswS4_5dgQ.webp",
+   "url": "notes/eXswS4_5dgQ/",
+   "ready": true
+  },
+  {
+   "video_id": "3OWjqky90HU",
+   "title": "에이전트가 늘어날수록 사람이 할 일은 줄어듭니다, 대신 판단 기준을 만들어야 합니다 (Arize AI 이승민·진상열님)",
+   "title_orig": "에이전트가 늘어날수록 사람이 할 일은 줄어듭니다, 대신 판단 기준을 만들어야 합니다 (Arize AI 이승민·진상열님)",
+   "source": "빌더 조쉬 Builder Josh",
+   "date": "2026-08-27",
+   "topic": "에이전트",
+   "summary": "AI 에이전트의 내부 동작을 기록하고 평가하는 '옵저버빌리티' 회사 어라이즈 AI의 이승민·진상열 님이, 에이전트가 실행을 맡을수록 사람에게 남는 일은 \"무엇이 좋은 답인가\"라는 판단 기준(평가·데이터셋)을 만드는 쪽으로 옮겨간다는 이야기를, LG유플러스·커서/윈드서프 사례와 라이브 시연을 곁들여 풀어낸 팟캐스트다.",
+   "points": [
+    "에이전트가 실행을 맡을수록 사람의 일은 '판단 기준을 만드는 것'으로 옮겨간다",
+    "평가는 품질 관리가 아니라 비용 최적화 수단이다",
+    "'취향'과 도메인 데이터셋이 마지막 차별화다"
+   ],
+   "thumb": "notes/thumb/3OWjqky90HU.webp",
+   "url": "notes/3OWjqky90HU/",
+   "ready": true
+  },
+  {
+   "video_id": "zEv0lLYjUHw",
+   "title": "클로드 스킬 만들기가 10배 쉬워졌다",
+   "title_orig": "Building Claude Skills Just Got 10x Easier",
+   "source": "Ben AI",
+   "date": "2026-08-26",
+   "topic": "에이전트",
+   "summary": "클로드 데스크톱의 Cowork 탭에 새로 생긴 '스킬 녹화(record a skill)' 기능은 반복 업무를 하는 화면·클릭·음성을 그대로 녹화하면 클로드가 이를 재사용 가능한 스킬로 바꿔주는 기능으로, Ben은 이 기능이 프롬프트로 스킬을 만드는 것보다 훨씬 효율적인 이유(폴라니의 역설)와 실제로 신뢰할 수 있는 스킬을 만드는 4가지 원칙, 그리고 이메일 분류 스킬을 만드는 라이브 시연을 보여준다.",
+   "points": [
+    "암묵지는 코드가 아니라 '시연'으로 옮긴다",
+    "스킬 만들기는 프롬프트가 아니라 인턴 온보딩이다",
+    "작게 시작하는 것이 성패를 가른다"
+   ],
+   "thumb": "notes/thumb/zEv0lLYjUHw.webp",
+   "url": "notes/zEv0lLYjUHw/",
+   "ready": true
+  },
+  {
+   "video_id": "hNpC5clEbp4",
+   "title": "클로드가 모션 디자인을 해결했다 (AI 티 나는 결과물 탈출)",
+   "title_orig": "Claude Just Solved Motion Design (Destroy AI Slop)",
+   "source": "Jack Roberts",
+   "date": "2026-08-26",
+   "topic": "자동화",
+   "summary": "Jack이 Claude(클로드)와 영상 생성 도구 Higgsfield만으로 컬러 그레이딩, 모션 B-roll, 트랜지션까지 만들어내는 3단계 디자인 워크플로우를 보여주는 영상으로, 핵심은 \"잘 만든 디자인을 찾아 → 그대로 만들고 → 스킬로 코드화해 언제든 재사용한다\"는 루프다.",
+   "points": [
+    "\"찾기 → 만들기 → 코드화\" 루프가 재현성의 핵심이다",
+    "AI에게 \"왜 이게 좋아 보이는가\"를 분해시키는 것이 프롬프트보다 강하다",
+    "AI는 만능이 아니라 역할 분담 대상이다"
+   ],
+   "thumb": "notes/thumb/hNpC5clEbp4.webp",
+   "url": "notes/hNpC5clEbp4/",
+   "ready": true
+  },
+  {
+   "video_id": "R8obO54ErYA",
+   "title": "당황스럽네요",
+   "title_orig": "당황스럽네요",
+   "source": "윤자동",
+   "date": "2026-08-25",
+   "topic": "자동화",
+   "summary": "전기차 충전 기업 SK일렉링크가 사내 직원들에게 AX(자동화) 교육을 진행한 현장을 담은 영상으로, 교육 담당자와 마케팅 담당자가 코딩 경험 없이 직접 만든 실무 자동화 사례와 AI가 브라우저를 스스로 조작하는 라이브 시연이 함께 소개된다.",
+   "points": [
+    "\"몰라도 된다\"는 사고 전환이 진입장벽을 없앤다",
+    "비개발자가 실무 자동화를 직접 만드는 게 이미 현실이 됐다",
+    "AI가 컴퓨터 화면을 스스로 조작하는 단계까지 왔다"
+   ],
+   "thumb": "notes/thumb/R8obO54ErYA.webp",
+   "url": "notes/R8obO54ErYA/",
+   "ready": true
+  },
+  {
+   "video_id": "L5zQU347z-c",
+   "title": "눈 돌아가는 웹사이트를 만드는 갓스킬 5개 (클로드 디자인)",
+   "title_orig": "5 God Skills to Create STUNNING Websites (Claude Design)",
+   "source": "Nick Puru",
+   "date": "2026-08-25",
+   "topic": "모델·도구",
+   "summary": "클로드 디자인(Claude Design)에 다섯 가지 스킬 — Front-end Design, UI UX Pro Max, GSAP, Impeccable, 그리고 유행 중인 \"건틀렛 루프(Gauntlet Loop)\"를 응용한 디자인 건틀렛 루프 — 을 차례로 쌓아서 낡은 로펌 웹사이트를 통째로 재구축하고, 이 방식을 로컬 비즈니스 리드마그넷 영업으로 연결하는 방법을 보여주는 영상이다.",
+   "points": [
+    "평균에서 벗어나는 게 핵심이다",
+    "빌더와 심판을 분리하는 게 품질을 가른다",
+    "리드마그넷 전략이 진입장벽을 없앤다"
+   ],
+   "thumb": "notes/thumb/L5zQU347z-c.webp",
+   "url": "notes/L5zQU347z-c/",
+   "ready": true
+  },
+  {
+   "video_id": "DoHPZf7jEQ4",
+   "title": "월 2만 달러 리테이너를 막는 AI 에이전시 실수 3가지",
+   "title_orig": "The 3 AI Agency Mistakes Keeping You From $20K/Month Retainers",
+   "source": "Nate Herk | AI Automation",
+   "date": "2026-08-25",
+   "topic": "자동화",
+   "summary": "AI 자동화 에이전시를 운영하며 월 2만 달러 리테이너를 받기까지, 저자가 초창기에 저질렀던 세 가지 치명적 실수(잘못된 제약 파악, KPI 부재, 감으로 정한 가격)를 실제 사례와 함께 풀어내는 발표 영상이다.",
+   "points": [
+    "클라이언트가 요청한 것과 실제로 필요한 것은 거의 항상 다르다",
+    "결제 전에 합의된 숫자 하나가 분쟁을 막는다",
+    "가격은 비용이 아니라 가치로 정당화해야 한다"
+   ],
+   "thumb": "notes/thumb/DoHPZf7jEQ4.webp",
+   "url": "notes/DoHPZf7jEQ4/",
+   "ready": true
+  },
+  {
+   "video_id": "M_E460gRHIQ",
+   "title": "클릭 한 번으로 아무 앱이나 클로드에 붙이는 법",
+   "title_orig": "How to Connect ANY App to Claude Instantly (with 1 click)",
+   "source": "Ben AI",
+   "date": "2026-08-24",
+   "topic": "모델·도구",
+   "summary": "Claude의 기본 커넥터와 커스텀 MCP가 가진 한계(연결 가능한 앱 부족, 유지보수 부담, 토큰 낭비, 팀 관리 어려움)를 한 번에 해결해주는 메타 커넥터 \"Composio\"를 8가지 이점 중심으로 소개하는 영상.",
+   "points": [
+    "커넥터를 \"관리\"하는 게 아니라 \"구독\"하는 개념으로 바뀐다",
+    "네이티브 연결이 \"있다\"와 \"실제로 쓸만하다\"는 다른 문제다",
+    "컨텍스트 토큰은 눈에 보이지 않는 비용이다"
+   ],
+   "thumb": "notes/thumb/M_E460gRHIQ.webp",
+   "url": "notes/M_E460gRHIQ/",
+   "ready": true
+  },
+  {
+   "video_id": "wl5wwfEj0U4",
+   "title": "AI 도구를 공부하지 마세요",
+   "title_orig": "AI 도구를 공부하지 마세요",
+   "source": "윤자동",
+   "date": "2026-08-23",
+   "topic": "자동화",
+   "summary": "AX(AI 전환) 자동화 전문가 윤자동이 유튜브 라이브 Q&A에서 \"AI 툴 공부에 매몰되지 말고 일단 써서 아웃풋부터 만들라\"고 조언하며, 라이브 방송 운영 방식과 법인 재정 철학, 채널 운영 원칙, 컨설팅 가격까지 솔직하게 풀어놓았다.",
+   "points": [
+    "툴 공부는 최소화, 아웃풋이 먼저다",
+    "자동화로 돈을 벌 수 있어도, 방향은 본인이 정해야 한다",
+    "보안이 AI 도입의 진짜 병목일 수 있다"
+   ],
+   "thumb": "notes/thumb/wl5wwfEj0U4.webp",
+   "url": "notes/wl5wwfEj0U4/",
+   "ready": true
+  },
+  {
+   "video_id": "DJZISqryDfw",
+   "title": "실무용 Codex 풀강의 (4시간 30분)",
+   "title_orig": "CODEX FOR BUSINESS FULL COURSE (4.5 HOURS)",
+   "source": "Nick Saraev",
+   "date": "2026-08-23",
+   "topic": "에이전트",
+   "summary": "자동화 크리에이터 Nick Saraev가 4시간 반짜리 무료 코스에서 코덱스(Codex, OpenAI의 에이전트형 코딩 도구)로 세일즈 제안서 발행, 콘텐츠 리퍼포징, CRM/PM 파이프라인 관리, 음성 상담원까지 실제 비즈니스 4개 기능을 처음부터 끝까지 자동화하는 전 과정을 보여준다.",
+   "points": [
+    "AI 결과물은 한 번 보고 판단하면 안 된다",
+    "프롬프트 → 스킬 → 로컬 자동화 → 클라우드 자동화는 건너뛸 수 없는 성숙도 사다리다",
+    "자동화는 사람을 100% 대체하는 게 아니라 90%의 생산 업무를 걷어내는 것"
+   ],
+   "thumb": "notes/thumb/DJZISqryDfw.webp",
+   "url": "notes/DJZISqryDfw/",
+   "ready": true
+  },
+  {
+   "video_id": "_kK_4cOYF4o",
+   "title": "이 숨은 모델로 클로드 코드를 공짜로 쓴다",
+   "title_orig": "This Stealth Model Makes Claude Code Free. Here's How.",
+   "source": "Nate Herk | AI Automation",
+   "date": "2026-08-22",
+   "topic": "에이전트",
+   "summary": "OpenRouter의 무료 모델(스텔스 Ox Alpha 등)을 Claude Code 설정 파일에 끼워 넣으면 API 비용 없이 Claude Code 하네스를 그대로 쓸 수 있는데, 지식노동성 작업은 꽤 쓸만하지만 속도가 정상 Claude 대비 10배 이상 느리고 딥한 개발 작업에는 부적합하다.",
+   "points": [
+    "속도와 품질은 별개 축이다",
+    "모델 교체는 설정 파일 전체에 일관되게 적용해야 한다",
+    "하네스의 맥락 활용 능력은 모델 교체와 무관하게 유지된다"
+   ],
+   "thumb": "notes/thumb/_kK_4cOYF4o.webp",
+   "url": "notes/_kK_4cOYF4o/",
+   "ready": true
+  },
+  {
+   "video_id": "Rm1UkGX-g3w",
+   "title": "클로드 디자인, 단계별로 전부 설명",
+   "title_orig": "Every Level of Claude Design Explained",
+   "source": "Jack Roberts",
+   "date": "2026-08-22",
+   "topic": "모델·도구",
+   "summary": "클로드 디자인(Claude design)을 아무 지시 없이 쓰는 초보 단계부터, 디자인 시스템을 만들어 사업 전체에 복제하고, 외부 이미지·영상 생성 도구와 Supabase까지 결합해 실제로 작동하는 앱을 완성하는 단계까지, 잭 로버츠(Jack Roberts)가 7단계로 정리한 영상.",
+   "points": [
+    "참고 이미지와 반복 피드백이 결과물 질을 가른다",
+    "디자인 시스템을 한 번 굳히면 사업 전체에 복제된다",
+    "클로드만으로는 한계가 있고, 외부 생성 도구와 Supabase 연결이 최종 완성도를 결정한다"
+   ],
+   "thumb": "notes/thumb/Rm1UkGX-g3w.webp",
+   "url": "notes/Rm1UkGX-g3w/",
+   "ready": true
+  },
+  {
+   "video_id": "RkNafW_Mv9w",
+   "title": "DeepSeek Harness, 0원짜리 클로드 코드",
+   "title_orig": "DeepSeek Harness = Claude Code for $0",
+   "source": "Jack Roberts",
+   "date": "2026-08-22",
+   "topic": "에이전트",
+   "summary": "DeepSeek이 만든 무료 오픈소스 코딩 하네스(harness)가 Claude Code와 맞먹는 구조로 170,000개의 스타를 받으며 급성장했고, 이 영상은 그 하네스를 설치해서 어떤 모델이든 $0로 연결해 쓰는 방법과 언제 Claude 대신 이걸 써야 하는지를 보여준다.",
+   "points": [
+    "하네스와 모델은 분리해서 사고해야 한다",
+    "프론티어 모델과 워크하스 모델을 나눠 쓰는 전략",
+    "Zapier 같은 인증 허브로 여러 AI 도구를 한 번에 업무 도구화"
+   ],
+   "thumb": "notes/thumb/RkNafW_Mv9w.webp",
+   "url": "notes/RkNafW_Mv9w/",
+   "ready": true
+  },
+  {
+   "video_id": "QUI6Ug4cHnE",
+   "title": "클로드 웹디자인 스킬 완성본 (그냥 가져가세요)",
+   "title_orig": "I Built The Ultimate Claude Website Design Skill (steal this)",
+   "source": "Nate Herk | AI Automation",
+   "date": "2026-08-22",
+   "topic": "에이전트",
+   "summary": "클로드 코드(Claude Code)용으로 만든 무료 웹사이트 디자인 스킬 \"스크롤크래프트(ScrollCraft)\"를 소개하고, 자신이 운영하는 커뮤니티 사이트를 이 스킬로 실제로 다시 만들어보는 전 과정(인터뷰 → 이미지·영상 생성 → 자체 검증 → 피드백 반영)을 그대로 보여주는 영상.",
+   "points": [
+    "템플릿이 아니라 질문으로 시작하면 \"AI가 만든 티\" 나는 획일적인 결과물을 피할 수 있다",
+    "가진 자료는 그대로 쓰고, 없는 자료만 AI로 채우는 방식이 신뢰도를 지킨다",
+    "완성 전 자체 검증 단계가 첫 결과물의 완성도를 끌어올린다"
+   ],
+   "thumb": "notes/thumb/QUI6Ug4cHnE.webp",
+   "url": "notes/QUI6Ug4cHnE/",
+   "ready": true
+  },
+  {
+   "video_id": "QDWFJDY2Rcw",
+   "title": "내 하루 업무 90%를 처리하는 클로드 세팅 공개",
+   "title_orig": "Inside the Claude Setup That Does 90% of My Daily Work",
+   "source": "Nick Puru",
+   "date": "2026-08-22",
+   "topic": "에이전트",
+   "summary": "\"코딩 도구\"라는 이름 때문에 대부분이 지나치는 Claude Code를, 60개 이상 업체에 AI 자동화를 붙여온 저자가 비개발자도 코드 한 줄 없이 영수증 정리·대시보드 제작·회의록 자동화·미수금 추심까지 돌리는 실전 세팅법으로 풀어낸 영상.",
+   "points": [
+    "챗봇과 에이전트 도구의 차이가 생산성 차이를 만든다",
+    "CLAUDE.md와 스킬이 진짜 자동화의 복리 효과를 만든다",
+    "모든 업무는 결국 파일-도구-웹-스케줄, 4가지 조합으로 환원된다"
+   ],
+   "thumb": "notes/thumb/QDWFJDY2Rcw.webp",
+   "url": "notes/QDWFJDY2Rcw/",
+   "ready": true
+  },
+  {
+   "video_id": "MExj9f7e2RU",
+   "title": "AI 수업에서 1등은 늘 50대였습니다 (20대가 아니라)",
+   "title_orig": "AI 수업에서 1등은 늘 50대였습니다 (20대가 아니라)",
+   "source": "윤자동",
+   "date": "2026-08-22",
+   "topic": "AI 소식",
+   "summary": "AI(클로드 코드)에게 신입사원 다루듯 구체적으로 반복 피드백을 줘야 결과물이 좋아지고, 코딩을 AI가 대신하는 지금은 오래 대화하며 문제를 알아보는 경험 많은 50대가 20대보다 유리해졌다는 이야기.",
+   "points": [
+    "막연한 피드백은 막연한 결과만 반복시킨다",
+    "AI 활용의 성패는 포기 시점에서 갈린다",
+    "코딩력의 시대에서 문제 인식력의 시대로 전환됐다"
+   ],
+   "thumb": "notes/thumb/MExj9f7e2RU.webp",
+   "url": "notes/MExj9f7e2RU/",
+   "ready": true
+  },
+  {
+   "video_id": "GoHMNm63vYg",
+   "title": "16분만에 알아보는 왕초보를 위한 클로드코드 9개 핵심 기능정리",
+   "title_orig": "16분만에 알아보는 왕초보를 위한 클로드코드 9개 핵심 기능정리",
+   "source": "샘 호트만 : AI 엔지니어의 시선",
+   "date": "2026-08-22",
+   "topic": "에이전트",
+   "summary": "클로드 코드의 용어(모드, 컨텍스트, CLAUDE.md, 룰즈, 오토 메모리, 스킬, MCP/CLI, 훅, 서브 에이전트)를 따로따로 외우지 말고, \"사람이 하던 일을 하나씩 AI에게 넘기는 순서\"로 이해하면 훨씬 쉬워진다는 초보자용 정리 영상.",
+   "points": [
+    "클로드 코드의 기능들은 개별 지식이 아니라 하나의 연속된 순서다",
+    "CLAUDE.md는 매 세션 강제로 읽히므로 짧을수록 좋고, 절차성 내용은 절대 넣으면 안 된다",
+    "AI가 스스로 만드는 기억(오토 메모리)과 사람이 쓰는 규칙(CLAUDE.md)은 역할이 다르다"
+   ],
+   "thumb": "notes/thumb/GoHMNm63vYg.webp",
+   "url": "notes/GoHMNm63vYg/",
+   "ready": true
+  },
+  {
+   "video_id": "eJJqHydZwl4",
+   "title": "시청자의 반복 업무를 라이브에서 바로 AI로 자동화해드립니다. 귀찮은 일 하나 적어보세요.",
+   "title_orig": "시청자의 반복 업무를 라이브에서 바로 AI로 자동화해드립니다. 귀찮은 일 하나 적어보세요.",
+   "source": "윤자동",
+   "date": "2026-08-21",
+   "topic": "자동화",
+   "summary": "윤자동(AI 자동화 전문가)이 2시간 20분짜리 유튜브 라이브에서 데스크톱 정리부터 카카오톡·쓰레드·이메일·홈택스 세금계산서·유튜브 썸네일 제작까지, 시청자가 요청한 반복 업무를 클로드 코드·코덱스·어사이드 브라우저로 실시간 병렬 자동화하며 보여준 실전 데모 라이브다.",
+   "points": [
+    "AI 리터러시 격차는 생각보다 훨씬 크다",
+    "막힌 사이트를 뚫는 것은 도구 선택의 문제다",
+    "툴 공부가 목적이 되면 본말전도다"
+   ],
+   "thumb": "notes/thumb/eJJqHydZwl4.webp",
+   "url": "notes/eJJqHydZwl4/",
+   "ready": true
+  },
+  {
+   "video_id": "ZdTNbziWxqE",
+   "title": "18분이면 되는 로컬 AI 구축",
+   "title_orig": "How to Run AI Locally in 18 Min (Easy Setup)",
+   "source": "Ben AI",
+   "date": "2026-08-21",
+   "topic": "모델·도구",
+   "summary": "Kimi, DeepSeek, GLM 같은 오픈소스 모델이 프론티어 모델을 따라잡으면서, AI를 클라우드가 아니라 내 하드웨어나 내가 빌린 서버에서 직접 돌리는 \"로컬 AI\"가 이제 비기술자도 30분~1시간이면 세팅할 수 있는 현실적 옵션이 됐다는 내용이다.",
+   "points": [
+    "오픈소스 모델 품질 상승이 로컬 AI를 실전 옵션으로 바꿨다",
+    "임대 서버는 \"프라이버시\"와 \"최상위 성능\"을 동시에 얻는 현실적 타협점이다",
+    "하니스 선택에 따라 기존 워크플로우 재사용 가능 여부가 갈린다"
+   ],
+   "thumb": "notes/thumb/ZdTNbziWxqE.webp",
+   "url": "notes/ZdTNbziWxqE/",
+   "ready": true
+  },
+  {
+   "video_id": "8Hu2s7sMWZg",
+   "title": "AI로 1인 기업 만드는 법",
+   "title_orig": "How To Build a 1-Person Business Using AI",
+   "source": "Liam Ottley",
+   "date": "2026-08-21",
+   "topic": "에이전트",
+   "summary": "AI 자동화 컨설턴트 Liam Ottley가 실제 고객 Alan의 사례로, 인스타그램 DM과 스프레드시트에 흩어진 리드 데이터를 검색 가능한 데이터베이스로 만들고 HyperAgent라는 노코드 플랫폼으로 \"AI 운영체제\"를 구축해 리드 스코어링부터 메시지 초안 작성, 자동 발송까지 완전 자동화하는 전체 과정을 보여준다.",
+   "points": [
+    "데이터를 먼저 구조화해야 AI가 진짜 힘을 발휘한다",
+    "수동 → 스킬 → 에이전트라는 검증된 순서를 건너뛰면 실패한다",
+    "가장 가치 있는 자산은 이미 갖고 있던 대화 기록이다"
+   ],
+   "thumb": "notes/thumb/8Hu2s7sMWZg.webp",
+   "url": "notes/8Hu2s7sMWZg/",
+   "ready": true
+  },
+  {
+   "video_id": "1BgJuwcIn-Q",
+   "title": "AI 운영체제 세팅하는 법",
+   "title_orig": "How to Setup an AI Operating System",
+   "source": "Nick Puru",
+   "date": "2026-08-21",
+   "topic": "모델·도구",
+   "summary": "Claude 하나로 비즈니스 전체를 파악하고 돌아가는 \"AI 운영체제\"를 하루 만에 세팅하는 5단계 방법을 소개하는 영상이다.",
+   "points": [
+    "음성으로 시작하는 온보딩이 진입장벽을 낮춘다",
+    "\"연결\"이 자동화의 전제 조건이다",
+    "반복 업무 하나를 골라 스킬+스케줄로 완성하는 것이 핵심 전환점"
+   ],
+   "thumb": "notes/thumb/1BgJuwcIn-Q.webp",
+   "url": "notes/1BgJuwcIn-Q/",
+   "ready": true
+  },
+  {
+   "video_id": "ddFFtFylJZE",
+   "title": "AI 제대로 하려면 맥북부터 사세요",
+   "title_orig": "AI 제대로 하려면 맥북부터 사세요",
+   "source": "윤자동",
+   "date": "2026-08-14",
+   "topic": "에이전트",
+   "summary": "유튜버 윤자동이 AI 코딩 작업을 제대로 하려면 왜 맥북이 필요한지, 램 용량별 실제 견적을 보여주고, 이어서 자신이 쓰던 코딩 에이전트 툴 오르카(Orca)에서 최근 나온 신생 툴로 갈아탄 이유를 설명하는 영상.",
+   "points": [
+    "AI 코딩 작업의 병목은 저장장치가 아니라 램이다",
+    "오케스트레이션 기능이 화려한 툴보다 실제로 쓰는 기능만 있는 쉬운 툴이 낫다",
+    "원격 제어 편의성이 보안 앱과 충돌할 수 있다"
+   ],
+   "thumb": "notes/thumb/ddFFtFylJZE.webp",
+   "url": "notes/ddFFtFylJZE/",
+   "ready": true
+  },
+  {
+   "video_id": "sbQarac6xco",
+   "title": "AI로 인스타 DM 하루 1,000통 보내는 법",
+   "title_orig": "How I Send 1,000 Instagram DMs a Day With AI",
+   "source": "Eugene Kadzina",
+   "date": "2026-08-13",
+   "topic": "자동화",
+   "summary": "크립토 거래소의 신규 트레이더 유치를 위해 이메일 대신 인스타그램 DM으로 콜드 아웃리치를 하는 실제 자동화 파이프라인(계정 워밍업 → 타겟 정리·AI 개인화 메시지 발송 → 답장 감정분석 → 긍정 답장만 걸러 담당 세일즈와 그룹채팅 자동 생성)을 인터뷰 형식으로 보여주는 영상.",
+   "points": [
+    "타깃이 안 읽는 채널을 버리고 다른 채널로 옮기면 응답률이 달라질 수 있다",
+    "자동화는 첫 반응을 받아내는 것까지만 맡기고, 실제 영업 대화는 사람에게 넘기는 구조가 안전하다",
+    "AI 개인화의 품질은 확보 가능한 데이터 양에 좌우된다"
+   ],
+   "thumb": "notes/thumb/sbQarac6xco.webp",
+   "url": "notes/sbQarac6xco/",
+   "ready": true
+  },
+  {
+   "video_id": "aWao8F7G1Bg",
+   "title": "Grok Bot이 Openclaw와 Hermes를 보내버렸다",
+   "title_orig": "Grokbot KILLED Openclaw & Hermes",
+   "source": "Nick Puru",
+   "date": "2026-08-13",
+   "topic": "AI 소식",
+   "summary": "일론 머스크 쪽에서 새로 내놓은 그록봇(Grokbot)이 AI 하나를 여러 개의 AI 팀원으로 구성된 조직으로 바꿔주는 시스템이라는 걸, 채용하듯 이름과 직함만 정해주면 각자 클라우드 컴퓨터를 가진 봇들이 서로 대화하며 실제 업무를 처리하는 구조로 소개하는 영상.",
+   "points": [
+    "채용 방식 그대로 AI 팀을 꾸릴 수 있다",
+    "API가 없어도 자동화 대상이 된다",
+    "화면 녹화 한 번으로 업무를 가르칠 수 있다"
+   ],
+   "thumb": "notes/thumb/aWao8F7G1Bg.webp",
+   "url": "notes/aWao8F7G1Bg/",
+   "ready": true
+  },
+  {
+   "video_id": "CB5bG4mvnS0",
+   "title": "Codex 브라우저 에이전트로 진짜 뭐든 자동화된다",
+   "title_orig": "Codex's Browser Agent Automates Literally Anything",
+   "source": "Nate Herk | AI Automation",
+   "date": "2026-08-13",
+   "topic": "에이전트",
+   "summary": "코덱스(Codex)의 브라우저 유즈(browser use) 기능으로 웹사이트 UI 버그를 자동으로 찾아내고, API가 없는 서비스에서도 반복 작업을 \"스킬\"로 저장해 자동화하고, 나아가 컴퓨터 유즈로 데스크톱 앱 설정까지 조작하는 전 과정을 실제로 시연하는 영상.",
+   "points": [
+    "자동화 순서는 API → 결정론적 매크로 → AI 비전 기반 브라우저 유즈다",
+    "한 번의 시연이 재사용 가능한 자동화 스킬이 된다",
+    "민감한 계정 작업은 자동화 전에 사람이 직접 반복 검증해야 한다"
+   ],
+   "thumb": "notes/thumb/CB5bG4mvnS0.webp",
+   "url": "notes/CB5bG4mvnS0/",
+   "ready": true
+  },
+  {
+   "video_id": "XNQBCRcwXV4",
+   "title": "클로드 스킬을 전부 지웠더니 더 똑똑해졌다",
+   "title_orig": "I Deleted All My Claude Skills... And Claude Got Smarter",
+   "source": "Nate Herk | AI Automation",
+   "date": "2026-08-12",
+   "topic": "모델·도구",
+   "summary": "클로드 코드를 만든 앤스로픽 개발자 보리스 처니가 시스템 프롬프트를 80% 넘게 지운 이유와 \"AI에게 세세한 지시 대신 목표와 검증 기준을 줘라\"는 조언을, 유튜버 네이트 허크가 자기 채널로 직접 실험해보며 리액션한 영상.",
+   "points": [
+    "지시가 과할수록 모델을 방해한다",
+    "검증 기준을 먼저 정해줘야 AI가 스스로 일을 끝낸다",
+    "지시문은 브랜드·형식 같은 고정값에만 쓰고, 판단이 필요한 부분은 비워둬라"
+   ],
+   "thumb": "notes/thumb/XNQBCRcwXV4.webp",
+   "url": "notes/XNQBCRcwXV4/",
+   "ready": true
+  },
+  {
+   "video_id": "PQBYZQqan2g",
+   "title": "Grok Bot, 진짜다 — 알아야 할 것만",
+   "title_orig": "Grok Bot is For Real. What You Need to Know.",
+   "source": "Nate Herk | AI Automation",
+   "date": "2026-08-12",
+   "topic": "에이전트",
+   "summary": "새로 나온 AI 에이전트 앱 그록 봇은 폰과 PC에서 완전히 동기화되는 여러 에이전트를 만들어 각자 전용 컴퓨터로 반복 업무를 처리하게 하고, 시간·이벤트 기반 자동화까지 프롬프트 한 줄로 만들 수 있는 도구다.",
+   "points": [
+    "에이전트별 전용 컴퓨터가 반복 업무 자동화의 핵심",
+    "이름·타이틀·설명만으로 에이전트 간 업무 위임이 자동 작동한다",
+    "트리거 자동화 설정 속도가 기존 노코드 도구보다 훨씬 빠르다"
+   ],
+   "thumb": "notes/thumb/PQBYZQqan2g.webp",
+   "url": "notes/PQBYZQqan2g/",
+   "ready": true
+  },
+  {
+   "video_id": "NAumQObJEwM",
+   "title": "클로드를 디자인 천재로 만드는 법, 일단 보세요",
+   "title_orig": "Turn Claude into a Design Genius... Just Watch",
+   "source": "Jack Roberts",
+   "date": "2026-08-12",
+   "topic": "모델·도구",
+   "summary": "Claude가 만드는 디자인이 왜 \"AI 티\"가 나는지 원리를 짚고, 레퍼런스 사이트 활용·벤치마크 비교 프롬프트·스크린샷 한 장으로 완성본을 뽑는 \"디자인 루프\"·개인 디자인 운영체제까지 3단계로 디자인 퀄리티를 끌어올리는 실전 방법을 다룬 영상.",
+   "points": [
+    "좋은 디자인은 \"본 적 있어야\" 나온다",
+    "막연한 요청보다 비교 프롬프트가 훨씬 구체적인 개선점을 뽑아낸다",
+    "여러 개의 자체 검증 단계를 거치는 구조가 사람이 여러 번 수정 요청하는 것보다 빠르게 기준을 통과한 결과물을 만든다"
+   ],
+   "thumb": "notes/thumb/NAumQObJEwM.webp",
+   "url": "notes/NAumQObJEwM/",
+   "ready": true
+  },
+  {
+   "video_id": "KPq4lCuW-yA",
+   "title": "AI한테 \"알아서 운영해\" 했더니 라이브 중에 제 계정을 키우고 있었습니다",
+   "title_orig": "AI한테 \"알아서 운영해\" 했더니 라이브 중에 제 계정을 키우고 있었습니다",
+   "source": "윤자동",
+   "date": "2026-08-12",
+   "topic": "AI 소식",
+   "summary": "쓰레드 계정을 \"네가 알아서 24시간 운영해봐\"라는 한 마디로 AI에게 통째로 맡겼더니, 유튜브 라이브 방송 중에 AI가 실제로 글을 쓰고 댓글을 달고 팔로워를 늘리고 있는 걸 실시간으로 확인한 영상.",
+   "points": [
+    "판단까지 위임하는 자동화",
+    "API가 없어도 브라우저로 우회 가능",
+    "디테일 하나가 노출을 좌우한다"
+   ],
+   "thumb": "notes/thumb/KPq4lCuW-yA.webp",
+   "url": "notes/KPq4lCuW-yA/",
    "ready": true
   }
  ]

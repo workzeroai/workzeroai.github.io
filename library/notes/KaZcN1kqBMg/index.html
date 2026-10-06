@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>이미지부터 광고 영상까지 전부 한 곳에서 만들어봤습니다 (feat. 어도비 파이어플라이) · 워크제로 자료실</title>
+<meta name="description" content="어도비 파이어플라이 하나로 광고 이미지 생성부터 부분 수정, 영상 변환까지 전 과정을 끝내는 실전 워크플로우를 보여준다.">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/KaZcN1kqBMg/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#533afd">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="이미지부터 광고 영상까지 전부 한 곳에서 만들어봤습니다 (feat. 어도비 파이어플라이)">
+<meta property="og:description" content="어도비 파이어플라이 하나로 광고 이미지 생성부터 부분 수정, 영상 변환까지 전 과정을 끝내는 실전 워크플로우를 보여준다.">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/KaZcN1kqBMg/">
+<meta property="og:image" content="https://img.youtube.com/vi/KaZcN1kqBMg/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="이미지부터 광고 영상까지 전부 한 곳에서 만들어봤습니다 (feat. 어도비 파이어플라이)">
+<meta name="twitter:description" content="어도비 파이어플라이 하나로 광고 이미지 생성부터 부분 수정, 영상 변환까지 전 과정을 끝내는 실전 워크플로우를 보여준다.">
+<meta name="twitter:image" content="https://img.youtube.com/vi/KaZcN1kqBMg/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+:root{--primary:#533afd;--primary-deep:#4434d4;--primary-pale:#eceaff;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f6f9fc;--hair:#e3e8ee;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴">
+    <a href="../../tutoring/">1:1 과외</a><a href="../../build/">제작 문의</a>
+    <a class="on" href="../" aria-current="page">자료실</a>
+  </div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../">← 자료실</a>
+  <div class="head"><div class="m"><i>자동화</i><span>2026-09-11</span></div><h1>이미지부터 광고 영상까지 전부 한 곳에서 만들어봤습니다 (feat. 어도비 파이어플라이)</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/KaZcN1kqBMg.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · 빌더 조쉬 Builder Josh</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<br><a href="https://www.youtube.com/watch?v=KaZcN1kqBMg" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>부분 수정으로 90% 완성도를 지킨다</li><li>&quot;어디를(마크업) + 얼마나(디테일 조절)&quot;의 이중 통제권</li><li>상업적 라이선스 문제를 원천 차단</li></ul></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>어도비 파이어플라이 하나로 광고 이미지 생성부터 부분 수정, 영상 변환까지 전 과정을 끝내는 실전 워크플로우를 보여준다.</p>
+<h3>전체 내용 정리</h3>
+<h4>AI 이미지는 쉬운데 광고에는 못 쓰는 두 가지 이유</h4>
+<p>콘텐츠로 수익화하는 사람이라면 다 아는 문제다. AI로 이미지를 뽑는 것 자체는 어렵지 않지만, 그걸 실제 광고에 쓰지 못하는 경우가 많다. 첫째는 의도대로 안 나온다는 점이다. 컵 색이 아쉽거나 배경이 허전해서 프롬프트를 고쳐 다시 돌리면, 마음에 들었던 90%까지 통째로 날아간다. 열 번쯤 반복하다 결국 포기하고 처음 이미지를 그냥 쓰는 경우도 많다. 둘째는 학습 데이터 출처를 몰라서 클라이언트 광고에 써도 되는지 확신할 수 없다는 점이다. 개인 작업이면 상관없지만 클라이언트 집행 단계에서 막힌다.</p>
+<h4>프롬프트 작성의 두 가지 기본 원칙</h4>
+<p>이미지를 생성할 때는 빛과 구도를 구체적으로 명시해야 한다. "커피 사진"처럼 두루뭉술하게 쓰면 너무 일반적인 결과가 나온다. 브랜드 메인 컬러(딥 그린, 색상값 1 4D 3위 같은 구체적 값), 조명 조건(따뜻한 자연광, 카페 창가), 소품 배치(원목 테이블, 크래프트 종이 원두 패키지)까지 상세히 적어야 한다. 또 하나, 이미지 생성 단계에서는 글자(로고, 카피)를 넣지 않는 게 좋다. 로고나 카피는 나중에 실제 폰트로 별도 작업하는 게 실무 기본이며, 이렇게 해야 이후 수정도 훨씬 편해진다.</p>
+<h4>마크업 기능 — 고칠 부분만 정확히 지정해서 수정</h4>
+<p>파이어플라이에는 마크업(Markup)이라는 기능이 있다. 이미지를 저장한 뒤 편집 모드로 들어가 브러시로 고치고 싶은 영역만 정확히 칠하고 프롬프트를 입력하면, 그 영역만 원하는 대로 바뀐다. 예를 들어 흰색 커피잔을 브랜드 컬러인 딥 그린으로 바꾸고 싶을 때, 예전 같으면 "컵을 녹색으로 바꿔줘"라고 전체를 다시 생성해야 했지만, 마크업으로 컵 부분만 칠하고 색상 프롬프트를 넣으면 구도는 그대로 유지한 채 그 부분만 바뀐다. 같은 방식으로 테이블 위에 로스팅 원두를 추가로 생성하면, 조명과 그림자가 원본과 정확히 맞아떨어져 원래부터 거기 있던 것처럼 자연스럽게 합성된다.</p>
+<h4>디테일 조절 — 얼마나 바꿀지 강도를 정하는 슬라이더</h4>
+<p>마크업이 "어디를 바꿀지"를 정한다면, 디테일 조절(디테일 슬라이더)은 "얼마나 바꿀지"를 정하는 기능이다. 캠페인 전체 무드를 아직 못 정했을 때, 원하는 영역을 지정하고 "해질녘 노을빛이 들어오는 조명으로"라는 프롬프트를 넣으면 왼쪽은 원본에 가깝고 오른쪽으로 갈수록 노을빛으로 점점 변하는 스펙트럼이 생성된다. 슬라이더로 그 변화 정도를 세밀하게 조절할 수 있어, 원하는 감도를 딱 맞춰 고를 수 있다.</p>
+<h4>참조 이미지로 톤을 통일한 베리에이션과 SNS용 정사각형 이미지</h4>
+<p>완성한 컷을 참조 이미지로 넣고 "로스팅 원두 클로즈업, 원목 표면, 얕은 심도" 같은 새 프롬프트를 추가하면, 컵 색깔과 톤앤매너가 일관된 새로운 컷을 만들 수 있다. 비율도 정사각형으로 바꿔 SNS용 이미지를 별도로 생성할 수 있다.</p>
+<h4>비디오 생성 — 첫 프레임과 마지막 프레임으로 연결하기</h4>
+<p>파이어플라이 비디오 생성에서는 첫 번째 프레임과 두 번째(마지막) 프레임에 각각 이미지를 넣어 그 사이를 자연스럽게 연결하는 영상을 만들 수 있다. 원두 클로즈업 사진을 첫 프레임으로, 무드가 있는 브랜드 컷을 마지막 프레임으로 넣고 "카메라가 원두에서 앞으로 부드럽게 이동해 초점이 패키지로 옮겨가고, 김이 모락모락 피어오른다"처럼 구체적인 카메라 무브와 디테일을 프롬프트로 적으면, 광고에서 자주 쓰는 "초점이 제품으로 천천히 넘어가는" 문법의 영상이 완성된다. 앞서 다듬은 이미지를 그대로 사용하기 때문에 색감과 톤이 영상까지 그대로 유지된다.</p>
+<h4>상업적으로 안전하게 쓸 수 있는 이유</h4>
+<p>파이어플라이의 어도비 자산 모델은 상업적으로 안전한 데이터로 학습되어, 만든 결과물을 그대로 광고에 집행할 수 있다. 협업하거나 에이전시에 다니는 사람에게는 이 지점이 특히 중요하다.</p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>부분 수정으로 90% 완성도를 지킨다</strong>: 마크업 기능 덕분에 전체를 다시 생성하지 않고 문제 되는 부분만 고칠 수 있어, 반복 생성으로 마음에 들었던 결과물을 잃는 일이 없어진다.</li><li><strong>"어디를(마크업) + 얼마나(디테일 조절)"의 이중 통제권</strong>: 두 기능을 조합하면 원하는 부분을 원하는 강도로 세밀하게 조정할 수 있어, AI가 만들어준 결과를 그대로 쓰는 게 아니라 자기 의도대로 끝까지 끌고 갈 수 있다.</li><li><strong>상업적 라이선스 문제를 원천 차단</strong>: 어도비 자산 모델이 상업적으로 안전한 데이터로 학습됐기 때문에, 클라이언트 광고 집행 전 저작권 문제로 막히는 일이 없다.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li>어도비 파이어플라이 웹사이트에서 무료 계정을 만들고, 빛과 구도를 구체적으로 명시한 프롬프트(예: "따뜻한 자연광이 들어오는 카페 창가, 원목 테이블 위 흰색 세라믹 잔, 글자 없음")로 이미지 한 장을 생성해본다.</li><li>생성된 이미지를 저장한 뒤 편집 모드의 마크업 기능으로 특정 부분(제품 색상, 소품 추가 등)만 브러시로 칠해 수정해본다.</li><li>완성한 이미지 두 장을 첫 프레임·마지막 프레임으로 넣어 비디오 생성 기능으로 5~10초짜리 짧은 광고 클립을 만들어본다.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>업무를 같이 분해하고 4단계 중 지금 위치를 짚어 드려요.</p><span class="go">진단 콜 보기 →</span></a>
+    <a class="cross" href="../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>

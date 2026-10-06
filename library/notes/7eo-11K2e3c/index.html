@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Sonnet 5.5 vs Opus 5.5 붙여봤다 — 핵심만 · 워크제로 자료실</title>
+<meta name="description" content="Nate Herk가 같은 프롬프트로 Sonnet 5.5와 Opus 5.5를 7가지 실전 과제에 돌려 비교했다. 결론은 &quot;결과 기준이 명확하면 Sonnet, 모호하고 창의적인 목표면 Opus&quot;이고, 비용은 Opus가 대략 두 배다.">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/7eo-11K2e3c/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#533afd">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="Sonnet 5.5 vs Opus 5.5 붙여봤다 — 핵심만">
+<meta property="og:description" content="Nate Herk가 같은 프롬프트로 Sonnet 5.5와 Opus 5.5를 7가지 실전 과제에 돌려 비교했다. 결론은 &quot;결과 기준이 명확하면 Sonnet, 모호하고 창의적인 목표면 Opus&quot;이고, 비용은 Opus가 대략 두 배다.">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/7eo-11K2e3c/">
+<meta property="og:image" content="https://img.youtube.com/vi/7eo-11K2e3c/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sonnet 5.5 vs Opus 5.5 붙여봤다 — 핵심만">
+<meta name="twitter:description" content="Nate Herk가 같은 프롬프트로 Sonnet 5.5와 Opus 5.5를 7가지 실전 과제에 돌려 비교했다. 결론은 &quot;결과 기준이 명확하면 Sonnet, 모호하고 창의적인 목표면 Opus&quot;이고, 비용은 Opus가 대략 두 배다.">
+<meta name="twitter:image" content="https://img.youtube.com/vi/7eo-11K2e3c/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+:root{--primary:#533afd;--primary-deep:#4434d4;--primary-pale:#eceaff;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f6f9fc;--hair:#e3e8ee;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴">
+    <a href="../../tutoring/">1:1 과외</a><a href="../../build/">제작 문의</a>
+    <a class="on" href="../" aria-current="page">자료실</a>
+  </div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../">← 자료실</a>
+  <div class="head"><div class="m"><i>모델·도구</i><span>2026-09-30</span></div><h1>Sonnet 5.5 vs Opus 5.5 붙여봤다 — 핵심만</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/7eo-11K2e3c.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Nate Herk | AI Automation</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<span class="orig">원제 · I Tested Sonnet 5.5 vs Opus 5.5. What You Need to Know.</span><br><a href="https://www.youtube.com/watch?v=7eo-11K2e3c" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>프롬프트가 모호할수록 Opus의 값어치가 커진다</li><li>스킬이 있으면 모델 격차가 줄어든다</li><li>한 번 더 시키는 비용을 계산에 넣어야 한다</li></ul></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>Nate Herk가 같은 프롬프트로 Sonnet 5.5와 Opus 5.5를 7가지 실전 과제에 돌려 비교했다. 결론은 "결과 기준이 명확하면 Sonnet, 모호하고 창의적인 목표면 Opus"이고, 비용은 Opus가 대략 두 배다.</p>
+<h3>전체 내용 정리</h3>
+<h4>Opus는 Sonnet보다 값이 두 배지만, 품질이 두 배는 아니다</h4>
+<p>Sonnet 5.5는 입력 토큰 100만 개당 2달러, 출력 100만 개당 10달러다. Opus 5.5는 각각 4달러와 20달러라서 가격이 정확히 두 배다. Nate는 두 모델의 노력 수준(effort)을 모두 '높음'으로 맞추고, 일곱 세션에 똑같은 프롬프트를 줬다. 목적은 어느 쪽이 더 똑똑한지 가리는 게 아니라, 어떤 일에 어떤 모델을 쓸지 감을 잡는 것이다.</p>
+<h4>사용 기준: 완료 기준이 객관적이면 Sonnet, 함께 고민할 파트너가 필요하면 Opus</h4>
+<p>Claude 쪽 가이드는 범위가 분명한 일상 코딩, 버그 수정, 깔끔한 문서·슬라이드·스프레드시트·원페이지 보고서는 Sonnet에 맡기라고 한다. 복잡한 판단이 필요한 장기 에이전트형 작업이나 가장 어려운 문제는 Opus 몫이다. Nate는 이를 "무엇이 완료인지 정의하는 과정부터 같이 고민해야 하면 Opus, 완료 기준이 분명하면 Sonnet"으로 해석한다.</p>
+<h4>랜딩 페이지와 모션 쇼릴: 결과는 Sonnet과 Opus가 한 판씩 나눠 가졌다</h4>
+<p>PerkForm 랜딩 페이지에서는 Sonnet이 히어로 섹션의 캔을 훨씬 실감 나게 만들었다. 다만 페이지 전체는 브랜드 가이드에 맞는 실제 이미지를 쓴 Opus 쪽이 더 나았다. 실행 시간은 Sonnet 28분, Opus 52분이었고, 비용도 Opus가 약 두 배였다. Nate는 Sonnet에게 "가짜 이미지 대신 실제 이미지를 써"라고 다시 시키면 13달러 미만으로 비슷한 결과가 나왔을 것이라며 Sonnet 승리로 봤다. 모션 쇼릴은 Opus가 배경, 카피, 사운드 디자인까지 더 Glido다웠다. 비용은 Sonnet 14.37달러, Opus 20.55달러였고, Nate는 Sonnet이 20달러를 써도 못 따라갈 것이라며 Opus 승리로 했다.</p>
+<h4>모호한 목표는 Opus가 더 잘 푼다: 90일 구독자 1,000명 계획</h4>
+<p>"연구에 기반한 90일 실행 계획을 세워줘" 정도로만 모호하게 요청하자, Opus는 10월 1일부터 12월 29일까지 4분기 스프린트에 맞춘 월별 계획(구축·출시·확장)과 실제 체크할 수 있는 작업 문서까지 만들었다. Sonnet은 11월 2일 런칭 기준으로 단계를 나눈 결과를 내놨는데, 정보는 많지만 한눈에 들어오지는 않았다. Opus는 20분에 9달러 조금 넘게, Sonnet은 14분에 5달러 조금 안 되게 들었다. 가이드라인을 거의 안 줬기 때문에 벌어진 차이이고, 원하는 형태를 자세히 지시했다면 둘이 비슷했을 것이라고 Nate는 말한다.</p>
+<h4>스프레드시트와 피치 덱: 결과가 비슷하면 더 싼 쪽이 이긴다</h4>
+<p>가상 회사 데이터로 엑셀 시트와 투자자용 피치 덱을 만들게 하자 두 모델 모두 수식이 촘촘히 들어간 여러 탭짜리 시트를 냈다. Nate는 값이 하드코딩된 시트를 싫어하는데, 둘 다 수식 기반이라 데이터를 고치면 전체가 갱신된다. 피치 덱도 구성과 분위기가 거의 같았고(Opus 18장, Sonnet이 슬라이드는 더 많음), 이번에는 Opus가 오히려 더 싸고 빨랐다. 그래서 이 항목은 Opus 승리다.</p>
+<h4>설명 자료와 뉴스 대시보드: 한 번에 잘 나온 쪽은 Opus, 값싸게 다듬을 수 있는 쪽은 Sonnet</h4>
+<p>'내 PC에서 돌릴 수 있는 로컬 AI 모델'을 설명하는 HTML 페이지는 Opus가 설명이 더 충실했고, Sonnet은 시각 자료가 더 좋았지만 이유 설명이 부족했다. Sonnet은 가격이 절반이라 "정보를 더 추가해줘"라고 한 번 더 시키는 편이 낫다고 보고 Sonnet 승리로 했다. X에서 오늘 AI 뉴스를 긁어오는 인터랙티브 대시보드는 Opus가 시각화와 사용성이 앞섰다. 다만 Sonnet도 요구를 구체적으로 주면 만들 수 있었을 것이고, 한 번에 나온 결과만 보면 Opus가 낫다고 했다.</p>
+<h4>최종 스코어는 Sonnet 4 대 Opus 3, 핵심은 "누가 이겼나"가 아니다</h4>
+<p>마지막 유튜브 리소스 가이드는 Nate가 쓰는 스킬이 "좋은 결과물이 무엇인가"를 이미 정의해 둔 덕분에 두 모델 결과가 거의 같았다. Sonnet이 절반 시간, 1.40달러 더 싸게 끝내 Sonnet이 이겼다. 일곱 세션 합계로 Opus는 약 46분 더 오래 돌았고 입력 토큰을 약 3,800만 개 더 썼지만, 비용은 예상처럼 두 배까지 벌어지진 않았다. Nate는 결국 각자의 스킬, 프롬프트, 프로세스에 맞춰 직접 테스트해 보라고 권한다.</p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>프롬프트가 모호할수록 Opus의 값어치가 커진다</strong>: 목표가 애매한 90일 계획, 뉴스 대시보드에서는 Opus가 스스로 더 좋은 구조를 만들어 냈다. 반대로 지시가 구체적이면 Sonnet도 충분하다.</li><li><strong>스킬이 있으면 모델 격차가 줄어든다</strong>: "좋은 결과물의 정의"를 담은 스킬을 쓴 유튜브 리소스 가이드에서는 두 모델 결과가 거의 같았다. 규칙을 잘 써 두면 싼 모델로 충분해진다.</li><li><strong>한 번 더 시키는 비용을 계산에 넣어야 한다</strong>: Sonnet은 다시 요청해도 Opus 한 번보다 싸다. 그래서 반복 수정이 쉬운 작업에는 Sonnet이 유리하다.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li>지금 반복하는 업무 한 가지를 골라 "완료 기준을 한 문장으로 적을 수 있는가"를 확인한다. 적을 수 있으면 Sonnet 5.5, 못 적겠으면 Opus 5.5로 시작한다.</li><li>같은 프롬프트를 Sonnet 5.5와 Opus 5.5에 노력 수준 '높음'으로 각각 돌리고, 걸린 시간과 비용을 나란히 적어 본다.</li><li>자주 하는 작업의 "좋은 결과물이 이런 것"이라는 기준을 스킬이나 지침 문서로 저장한다. 다음부터 싼 모델에 그 문서를 붙여 결과를 비교한다.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>업무를 같이 분해하고 4단계 중 지금 위치를 짚어 드려요.</p><span class="go">진단 콜 보기 →</span></a>
+    <a class="cross" href="../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>

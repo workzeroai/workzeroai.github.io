@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>GPT-6 Astra로 자비스를 만들었다… 이건 좀 미쳤다 · 워크제로 자료실</title>
+<meta name="description" content="유튜버 Jack Roberts가 GPT-6 Astra로 만든 &quot;에이전틱 OS&quot;를 시연한다 — Claude·Codex·이메일·사진·캘린더·재무 정보를 하나의 로컬 메모리에 모으고, 음성 명령으로 일정을 잡거나 이미지·영상을 생성하고 웹사이트까지 직접 편집·빌드하는 개인·">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/bjDDsdSfun8/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#533afd">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="GPT-6 Astra로 자비스를 만들었다… 이건 좀 미쳤다">
+<meta property="og:description" content="유튜버 Jack Roberts가 GPT-6 Astra로 만든 &quot;에이전틱 OS&quot;를 시연한다 — Claude·Codex·이메일·사진·캘린더·재무 정보를 하나의 로컬 메모리에 모으고, 음성 명령으로 일정을 잡거나 이미지·영상을 생성하고 웹사이트까지 직접 편집·빌드하는 개인·">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/bjDDsdSfun8/">
+<meta property="og:image" content="https://img.youtube.com/vi/bjDDsdSfun8/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GPT-6 Astra로 자비스를 만들었다… 이건 좀 미쳤다">
+<meta name="twitter:description" content="유튜버 Jack Roberts가 GPT-6 Astra로 만든 &quot;에이전틱 OS&quot;를 시연한다 — Claude·Codex·이메일·사진·캘린더·재무 정보를 하나의 로컬 메모리에 모으고, 음성 명령으로 일정을 잡거나 이미지·영상을 생성하고 웹사이트까지 직접 편집·빌드하는 개인·">
+<meta name="twitter:image" content="https://img.youtube.com/vi/bjDDsdSfun8/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+:root{--primary:#533afd;--primary-deep:#4434d4;--primary-pale:#eceaff;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f6f9fc;--hair:#e3e8ee;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴">
+    <a href="../../tutoring/">1:1 과외</a><a href="../../build/">제작 문의</a>
+    <a class="on" href="../" aria-current="page">자료실</a>
+  </div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../">← 자료실</a>
+  <div class="head"><div class="m"><i>모델·도구</i><span>2026-09-18</span></div><h1>GPT-6 Astra로 자비스를 만들었다… 이건 좀 미쳤다</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/bjDDsdSfun8.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Jack Roberts</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<span class="orig">원제 · I Built JARVIS with GPT-6 Astra… It&#x27;s Insane</span><br><a href="https://www.youtube.com/watch?v=bjDDsdSfun8" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>&quot;연결 → 정리 → 실행&quot;이 에이전틱 OS의 본질</li><li>이미 연결된 도구를 재사용하는 설계</li><li>수동 메모리 입력 + 매직 서치의 조합</li></ul></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>유튜버 Jack Roberts가 GPT-6 Astra로 만든 "에이전틱 OS"를 시연한다 — Claude·Codex·이메일·사진·캘린더·재무 정보를 하나의 로컬 메모리에 모으고, 음성 명령으로 일정을 잡거나 이미지·영상을 생성하고 웹사이트까지 직접 편집·빌드하는 개인·비즈니스 운영체제다.</p>
+<h3>전체 내용 정리</h3>
+<h4>에이전틱 OS의 3단계 원리: 연결 → 정리 → 실행</h4>
+<p>Jack은 먼저 이 시스템이 왜 특별한지를 설명한다. 첫째, 사용자의 세계 전체와 연결돼야 한다 — Claude, Codex, ChatGPT, 이메일, 미팅, 스킬, 사진 등 모든 컨텍스트를 끌어와야 한다는 것이다. 둘째, 그 정보를 정리하고 추론할 수 있어야 한다. 셋째, 가장 중요한 부분으로 단순히 ChatGPT로도 할 수 있는 일이 아니라 실제로 사용자 대신 일을 처리해야 한다. 이 세 가지가 이 OS를 만든 핵심 기준이다.</p>
+<h4>메모리 코어 — 모든 도구의 컨텍스트를 모으는 중심</h4>
+<p>시스템의 핵심은 "메모리 코어"다. ChatGPT와 Claude에서 나온 정보를 포함해 시스템 전체의 기억을 담고 있으며, 백그라운드에서 새로운 메모리가 계속 추가된다. 라이트·다크 모드 전환도 지원한다. OS를 만들 때는 이름을 붙이고 "비즈니스 프로필"과 "라이프 프로필"을 입력하는데, 이는 사용자가 무엇에 집중하는지, 고객이 누구인지 등 컨텍스트를 채우는 과정이다. 이 프롬프트를 ChatGPT Astra에 주면 AI가 직접 인터뷰하듯 질문해서 필요한 컨텍스트를 만들어준다.</p>
+<h4>원클릭으로 기존 도구를 그대로 연결</h4>
+<p>Jack은 모든 걸 새로 세팅할 필요 없이 이미 연결돼 있는 도구를 그대로 가져다 쓰는 방식을 강조한다. GPT Astra 6가 제안한 아이디어로, Claude와 Codex 등 이미 존재하는 연결을 재사용한다. 화면에는 Codex, Claude, Hermes, Open Claude 같은 코딩 에디터가 자동 인식되어 나열되고, 메모리 쪽에서는 Granola, Notion, Obsidian, 사진을 원클릭으로 가져올 수 있다. 여기에 Gmail, Outlook, Slack, 학교(디스코드로 추정되는 "school") 계정, YouTube, 각종 소셜미디어 프로필, 그리고 재무 정보까지 연결할 수 있다.</p>
+<h4>목표·대시보드로 실제 진행 상황을 추적</h4>
+<p>연결이 끝나면 목표와 전략을 설정하는 "progress" 섹션으로 넘어간다. 이 메모리와 컨텍스트를 기반으로 매일 무엇에 집중해야 하는지 알려주는 "데일리 브리프"가 제공되고, 이번 주 할 일, 이번 달 목표, 이번 분기 목표까지 확인할 수 있다. 대시보드에서는 연결된 모든 시스템의 핵심 지표를 한눈에 볼 수 있고(영상 속 수치는 데모용), 재무 현황을 월별로 확인하거나 목표 대비 진행률, 오디언스(팔로워) 성장 추이도 볼 수 있다.</p>
+<h4>다이나믹 메모리와 대화, 그리고 음성으로 실제 일정 잡기</h4>
+<p>메모리는 실시간으로 갱신된다. Claude나 Codex에서 대화하거나 이메일을 받으면 그 내용이 자동으로 로컬에서 돌아가는 에이전틱 OS에 반영된다. 채팅창에서 "마지막 미팅 참가자가 누구였는지" 같은 질문을 하면 답을 찾아주고, 원하는 모델(GPT-6 Astra, Claude 하네스, Hermes 하네스, 오픈라우터, 로컬 등)을 골라 대화할 수도 있다. 메모리는 수동으로도 넣을 수 있는데, "Jack Roberts가 가장 좋아하는 색은 초록색이고 좋아하는 동물은 잉글리시 스프링거 스패니얼"이라고 직접 입력해 저장한 뒤, 새 채팅에서 Astra에게 같은 질문을 하면 정확히 답을 찾아낸다. 음성 비서 기능도 있어 "내일 11시부터 12시까지 부다페스트 시간으로 '잭 브런치 락인'이라는 일정을 잡아줘"라고 말하면 실제로 캘린더에 일정이 생성된다.</p>
+<h4>Higgsfield API로 이미지·영상 생성, 그리고 매직 서치</h4>
+<p>대시보드 왼쪽 아래 "디자인 시스템"에서는 Higgsfield API를 연결해 이미지·영상을 생성할 수 있다. 기존 구독형 대신 API 키만 연결하면 되고, 첫 주에는 상대적으로 저렴한 가격이 제공된다고 언급한다. 예시로 "체육관에서 프로틴 셰이크를 마시는 잉글리시 스프링거 스패니얼" 이미지를 만들고, 모델(Sol 2 등)과 비율(16:9), 장수(4장)를 지정해 생성한 뒤, "버거를 더 크게 만들어줘" 같은 후속 편집도 가능하다. "라이브러리"에서는 컴퓨터 안의 모든 이미지를 AI가 내용 기반으로 인덱싱해서, 파일명이 "double cross"인 이미지도 "burger"로 검색하면 찾아주는 "매직 서치" 기능을 보여준다. 이 외에도 스튜디오에서 카로셀 제작, 영상 편집 등을 할 수 있고, 인박스에서는 학교 DM, Slack, Gmail, Outlook 메시지를 한 곳에서 확인·발송할 수 있다.</p>
+<h4>웹사이트 빌더와 Zapier 연동으로 확장하기</h4>
+<p>"웹사이트 디자인 시스템"에서는 로컬호스트 주소를 입력하면 Astra가 만든 웹사이트를 미리보기 형태로 바로 띄워준다. 태블릿·모바일 화면도 확인할 수 있고, 라이트·다크 모드 전환, 카피·그래픽·디자인 요소를 직접 편집할 수 있다(카피 편집은 "Slop Monster"라는 도구를 거친다고 언급). 마지막으로 Zapier를 "연결 레이어"로 소개하는데, OS에 기본으로 없는 앱이라도 Zapier를 통해 거의 다 연결할 수 있다는 설명이다. Jack은 첫 스타트업을 Zapier로 만들었다는 일화도 덧붙인다. 영상은 이 전체 "에이전틱 메모리 시스템"을 원클릭으로 내려받을 수 있는 커뮤니티 스타터 킷 소개로 마무리된다.</p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>"연결 → 정리 → 실행"이 에이전틱 OS의 본질</strong>: 단순히 정보를 모으는 게 아니라 실제로 일을 대신 처리하는 것까지 가야 진짜 가치가 생긴다는 관점은, 자동화 툴을 도입할 때 "정보만 모으는 대시보드"에서 멈추지 말고 실행 단계까지 설계해야 한다는 기준으로 그대로 옮길 수 있다.</li><li><strong>이미 연결된 도구를 재사용하는 설계</strong>: 새로운 통합을 일일이 만드는 대신 Claude·Codex 등 이미 로그인돼 있는 서비스의 연결을 그대로 활용하는 접근은, 자동화를 구축할 때 매번 처음부터 API 연동을 새로 만들 필요가 없다는 걸 보여준다 — 이미 있는 연결 고리를 찾는 게 먼저다.</li><li><strong>수동 메모리 입력 + 매직 서치의 조합</strong>: 원할 때 직접 정보를 "저장"하고, 파일명과 무관하게 내용 기반으로 검색되는 구조는, 개인·업무 데이터가 흩어져 있는 1인 사업자에게 "어디에 뭘 저장했는지 기억 못 해도 찾아진다"는 실질적인 문제 해결책이 된다.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li>현재 쓰고 있는 AI 도구(Claude, ChatGPT, 노션 등)에서 이미 저장된 대화·메모를 한 곳(예: 옵시디언 볼트나 노션 데이터베이스)으로 모으는 최소 버전의 "메모리 코어" 폴더를 하나 만들어본다.</li><li>업무에서 반복적으로 참고하는 "나에 대한 정보"(고객 프로필, 이번 달 목표, 이번 분기 목표)를 한 페이지짜리 문서로 정리해, AI에게 매번 다시 설명하지 않아도 되게 만든다.</li><li>Zapier(또는 Make)로 지금 수동으로 옮기고 있는 앱 간 데이터(예: 이메일→캘린더, 문의→시트)를 하나만 골라 자동 연결을 시도해본다.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>업무를 같이 분해하고 4단계 중 지금 위치를 짚어 드려요.</p><span class="go">진단 콜 보기 →</span></a>
+    <a class="cross" href="../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>

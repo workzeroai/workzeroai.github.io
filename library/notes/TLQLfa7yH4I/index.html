@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>GPT-6 Astra를 24시간 주식 트레이더로 만들었다 · 워크제로 자료실</title>
+<meta name="description" content="Nate Herk가 클로드에게 실제 돈 1만 달러를 주고 주식 거래를 맡겨 한 달 만에 S&amp;P 수익률을 8% 넘게 앞선 뒤, 더 강력해진 GPT-6 아스트라로 같은 실험을 다시 하려고 24시간 트레이딩 에이전트를 세팅하는 과정을 보여주는 튜토리얼이다. 전략 수립부터 하">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/TLQLfa7yH4I/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#533afd">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="GPT-6 Astra를 24시간 주식 트레이더로 만들었다">
+<meta property="og:description" content="Nate Herk가 클로드에게 실제 돈 1만 달러를 주고 주식 거래를 맡겨 한 달 만에 S&amp;P 수익률을 8% 넘게 앞선 뒤, 더 강력해진 GPT-6 아스트라로 같은 실험을 다시 하려고 24시간 트레이딩 에이전트를 세팅하는 과정을 보여주는 튜토리얼이다. 전략 수립부터 하">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/TLQLfa7yH4I/">
+<meta property="og:image" content="https://img.youtube.com/vi/TLQLfa7yH4I/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GPT-6 Astra를 24시간 주식 트레이더로 만들었다">
+<meta name="twitter:description" content="Nate Herk가 클로드에게 실제 돈 1만 달러를 주고 주식 거래를 맡겨 한 달 만에 S&amp;P 수익률을 8% 넘게 앞선 뒤, 더 강력해진 GPT-6 아스트라로 같은 실험을 다시 하려고 24시간 트레이딩 에이전트를 세팅하는 과정을 보여주는 튜토리얼이다. 전략 수립부터 하">
+<meta name="twitter:image" content="https://img.youtube.com/vi/TLQLfa7yH4I/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+:root{--primary:#533afd;--primary-deep:#4434d4;--primary-pale:#eceaff;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f6f9fc;--hair:#e3e8ee;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴">
+    <a href="../../tutoring/">1:1 과외</a><a href="../../build/">제작 문의</a>
+    <a class="on" href="../" aria-current="page">자료실</a>
+  </div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../">← 자료실</a>
+  <div class="head"><div class="m"><i>에이전트</i><span>2026-09-07</span></div><h1>GPT-6 Astra를 24시간 주식 트레이더로 만들었다</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/TLQLfa7yH4I.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Nate Herk | AI Automation</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<span class="orig">원제 · I Turned GPT-6 Astra Into a 24/7 Stock Trader (tutorial)</span><br><a href="https://www.youtube.com/watch?v=TLQLfa7yH4I" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>연속성은 기억이 아니라 공유된 기록에서 나온다</li><li>무엇을 맡길지 먼저 정한다 — 판단 자체 vs 실행 속도</li><li>위험한 자동화일수록 실패 시나리오를 먼저 설계한다</li></ul></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>Nate Herk가 클로드에게 실제 돈 1만 달러를 주고 주식 거래를 맡겨 한 달 만에 S&amp;P 수익률을 8% 넘게 앞선 뒤, 더 강력해진 GPT-6 아스트라로 같은 실험을 다시 하려고 24시간 트레이딩 에이전트를 세팅하는 과정을 보여주는 튜토리얼이다. 전략 수립부터 하루 6회 실행 일정, 진행 로그로 만드는 연속성, Alpaca 연결, 예약 작업 6개, ClickUp 알림까지 전부 자연어 대화만으로 구성한다.</p>
+<h3>전체 내용 정리</h3>
+<h4>클로드로 8% 초과수익을 낸 뒤 GPT-6 아스트라로 다시 도전하는 이유</h4>
+<p>Nate Herk는 최근 클로드에게 자기 실제 돈 1만 달러를 맡겨 주식을 거래하게 하는 챌린지를 했고, 한 달이 지난 시점에 S&amp;P 수익률을 8% 넘게 앞서고 있어 인상 깊었다고 한다. 이번에는 더 강력해진 GPT-6 아스트라가 나왔으니 같은 실험을 반복하려 하며, 1만 달러 챌린지를 본격적으로 시작하기 전에 아스트라를 24시간 거래 비서로 세팅하는 방법을 먼저 공개한다. 다만 이건 투자 조언이 아니라고 분명히 못 박는다. 에이전트에게 1만 달러를 주고 거래시키라는 권유가 아니라, 모의 투자(페이퍼 트레이딩)로 먼저 자기 전략을 세운 뒤 그 일부만 자동화해 보라는 것이고, 이미 매일 꾸준히 거래하는 사람이라면 AI로 더 많은 정보를 얻거나 주식 창을 계속 들여다보지 않고도 상황을 모니터링하는 용도로 쓰라고 권한다.</p>
+<h4>에이전트에게 전략 자체를 맡길지, 실행 속도만 도울지 두 갈래</h4>
+<p>여기서 활용 방향이 두 가지로 갈린다. 하나는 트레이딩 전략이 딱히 없어서 조사와 고민 같은 것을 AI 에이전트에게 통째로 맡기고 싶은 경우이고, 다른 하나는 이미 매일 꾸준히 거래하고 있는데 더 빠르게 움직이거나 깜빡하는 일을 방지하고 싶은 경우다. Nate Herk 본인은 그 고민을 외부화하고 싶어서 아스트라가 전략을 세우게 했고, 자신은 방향만 잡아주는 역할을 한다. 꾸준히 거래하는 사람이라면 장 시작과 장 마감 때 무엇을 하는지, 장이 열리기 전과 열리고 한 시간 뒤, 장 마감 직전에 각각 무엇을 확인하는지를 하루 일정으로 정리해 보라고 권한다. 그래야 특정 시간에 그 일을 대신할 에이전트를 만들어 붙일 수 있기 때문이다.</p>
+<h4>대화만으로 전략과 하루 6회 실행 일정을 뽑아낸 과정</h4>
+<p>처음에는 그냥 아스트라와 대화를 나누는 것으로 시작했다. "이런 챌린지를 하려고 한다", "새 전략을 써보고 싶어서 좀 더 위험할 수도 있다", "7일 안에 수익을 내야 한다"고 말한 뒤 방대한 조사를 부탁했더니, 아스트라가 하위 에이전트 10개를 가동해 엄청난 양의 정보를 조사해 왔고 전략을 논의한 긴 문서에 그 리서치가 통합됐다. 전략은 1만 달러, 7 거래일, 하루 6번 체크라는 세 가지 제약 조건으로 세웠다. 그 결과로 나온 일정은 중부 표준시 기준으로, 오전 7시 45분에 뉴스를 읽고 계좌를 확인한 뒤 주시할 종목을 고르고, 오전 9시 30분에 첫 유효 거래를 찾고, 오전 11시에 포지션을 검토하며 마지막 신규 거래를 고려하고, 오후 1시에 기존 포지션을 관리하고, 오후 2시 15분에 남은 포지션을 모두 정리하고, 장 마감 직전인 오후 2시 45분에 모든 포지션이 종료됐는지 확인하고 당일 수익을 기록한다. 장기 투자보다는 단타 위주 전략인 셈이다. 매 거래일 이 일정대로 작업이 돌아가는 것이 7일 챌린지용 24시간 트레이더를 만드는 방식이며, 장 마감 후나 장 시작 전에 한 번 더 깨어나게 하고 싶으면 그렇게 설정해도 된다.</p>
+<h4>연속성은 AI가 대화를 기억하는 게 아니라 공유된 기록에서 나온다</h4>
+<p>Nate Herk가 특히 강조하는 부분은 연속성이다. 이 에이전트들은 깨어날 때마다 상태 정보가 초기화되기 때문에, 에이전트가 프로젝트를 읽고 포트폴리오를 확인하며 무엇을 해야 할지 맥락을 스스로 파악하도록 만들어야 한다. 그가 이 문제를 푸는 방법은 모든 작업이 끝날 때마다 진행 상황 로그를 남기는 것이다. 에이전트가 깨어나 작업을 시작할 때 오늘 한 일과 다음에 할 일을 명시하게 하면, 다음 에이전트가 깨어나 그 출력을 읽고 자기 일을 수행한 뒤 다시 기록을 남긴다. 이렇게 여러 개의 고립된 작업자가 아니라 하나의 트레이딩 에이전트처럼 계속 작동하는 루프가 만들어진다. 문서에는 "연속성은 AI가 대화를 기억하는 것이 아니라 공유된 기록에서 나온다"고 적혀 있다. 매번 전략과 이전 작업을 읽고, 거래 중인 Alpaca를 확인해 실제 상황을 파악하고, 할당된 업무를 수행한 뒤, 현재 계좌 상태와 진행 로그를 업데이트하고 다음 작업을 위한 명확한 지침을 남긴다. 중요한 작업은 실행 즉시 기록되므로 작업이 중단돼도 거래를 실수로 반복하지 않고 복구할 수 있다. 아스트라와 함께 오류 상황도 브레인스토밍했는데, 첫 실행 시 이전 진행 기록이 없는 경우, 다음 모델에 대화 내역이 없는 경우, 이전 실행이 주문 전송 후 충돌한 경우, 두 실행이 겹치는 경우, 데이터가 누락되거나 손상된 경우, 기기나 앱이 오프라인 상태가 되는 경우 등이다.</p>
+<h4>Alpaca 연결과 API 키·시장 데이터 세팅</h4>
+<p>다음 단계는 브로커인 Alpaca에 연결하는 것이다. Alpaca는 계정을 만들면 모의 투자(페이퍼 트레이딩) 계정도 함께 생성되는데, 실제 주식 시세를 그대로 따르지만 돈은 가짜라서 몇 주에서 몇 달간 에이전트에게 대신 거래하게 하며 전략에 익숙해진 뒤 실제 자금으로 전환할 수 있다. Nate Herk의 계좌에는 1만 달러의 실제 현금이 들어 있다. Alpaca의 API 키 항목에서 엔드포인트와 시크릿 키를 받는데, 이 키는 거래 계좌의 비밀번호와 같으므로 누구에게도 알려주면 안 되고 Codex 채팅 창에 그대로 입력해서도 안 된다. 대신 .env 파일을 생성해 거기에 넣으라고 요청하면 된다. Nate Herk는 이 트레이딩 챌린지를 자신의 AIOS 안 별도 폴더로 분리해 두고(문서, agents.md, 스크립트, 루틴, .env 파일 구성), 트레이딩 봇이 사업이나 다른 프로젝트 정보에 영향받지 않도록 프로젝트를 격리했다. 실제 자금 운용 시에는 '재생성(regenerate)'을 눌러 API 키와 시크릿 키를 둘 다 받아 .env에 넣고 저장한 뒤, Codex에게 계정 정보를 제대로 읽고 거래를 실행할 수 있는지 확인해 달라고 한다. 결과로 Alpaca가 1만 달러의 현금과 자산이 있는 실계좌, 보유 포지션이나 미체결 주문 없음을 보고했다. 그는 Alpaca의 '플랜 및 기능'에서 월 99달러짜리 시장 데이터 플랜을 써서 실시간 시세와 분당 API 호출 한도를 늘렸는데, 클로드로 1만 달러 챌린지를 했을 때는 이런 유료 플랜 없이 웹 리서치나 2차 자료만 썼고, 이번엔 7일이라는 짧은 기간이라 실시간에 가까운 데이터가 필요해서 지불한 것이라고 한다. 반드시 따라 할 필요는 없다. 플러그인 탭에서 'Alpaca'나 'stocks'를 검색하면 Alpha stocks, Massive, Stock and ETF Research Panel, Trading Cursor 같은 리서치·기술적 분석 도구를 연결할 수도 있는데, 플러그인은 보통 거래 실행보다 시장 데이터 조회용이라 거래는 API 키를 따로 써서 처리한다.</p>
+<h4>예약 작업 6개 세팅과 ClickUp 알림, 원격 모니터링</h4>
+<p>마지막은 예약 작업 구축이다. 예약 작업에는 로컬 방식과 클라우드 방식이 있다. 클라우드는 기기가 오프라인이어도 실행되는 장점이 있지만 채팅, 프로젝트, 모델, 추론 설정을 고를 수 없어서, GPT-6 아스트라로 거래하려는 이번 챌린지에는 맞지 않는다. 그래서 로컬 방식으로 프로젝트를 직접 선택하고 모델은 GPT-6 아스트라, 추론 설정은 '높음'으로 유지한다. 또 매 실행이 동일한 대화 스레드에서 돌아가게 설정하면 대화 기록이 쌓이고, Codex의 자동 압축 기능이 좋아 컨텍스트 한계에 거의 부딪히지 않는다. Nate Herk는 '트레이딩 챌린지'라는 새 프로젝트에 'challenge thread'라는 스레드를 하나 만들고, 6개의 예약 작업이 모두 이 하나의 스레드에서 실행되도록 각 작업 설정 시 그 채팅을 선택했다. 이 세팅도 아스트라에게 자연어로 지시했고("{slash} goal" 프롬프트 사용), 아스트라가 챌린지 스레드를 찾아 6개 작업을 모두 그 스레드에 연결했다. 각 예약 작업에는 올바른 폴더와 파일 위치, 해야 할 일, 그리고 공유된 시작·종료 핸드오프를 따르고 변경 사항을 저장하며 실제 결과·잔여 위험·미해결 문제·다음 작업을 안내하라는 지침이 들어간다. 여기에 더해 실패 시 알림을 받기 위해 오후 1시와 오후 3시 15분(중부 표준시)에 예약 작업 두 개를 추가로 만들어, 하루 중간 점검과 장 마감 후 요약을 내부 자동화 채널을 통해 ClickUp DM으로 보내게 했고, 거래가 없을 때도 보고서가 전송되는지 테스트해 확인했다. 모든 루틴은 내일부터 시작되도록 예약돼 현재는 일시 중지 상태다. 마지막으로 휴대폰 화면을 데스크톱에 미러링하고 '원격(remote)'으로 로컬 데스크톱에 접속하면, 집 밖에서도 챌린지 스레드를 열어 에이전트들이 어떻게 돌아가는지 확인할 수 있다.</p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>연속성은 기억이 아니라 공유된 기록에서 나온다</strong>: 에이전트는 깨어날 때마다 상태가 초기화되므로, 매 작업 끝에 "오늘 한 일 + 다음에 할 일" 로그를 남기게 하고 다음 실행이 그걸 읽고 이어가게 하면 여러 실행이 하나의 일꾼처럼 움직인다. 반복 업무를 여러 시점에 나눠 자동화할 때 그대로 쓸 수 있는 설계다.</li><li><strong>무엇을 맡길지 먼저 정한다 — 판단 자체 vs 실행 속도</strong>: 전략이 없으면 리서치와 의사결정까지 에이전트에게 외부화하고, 이미 방식이 있으면 속도와 누락 방지만 맡긴다. 본인은 방향만 잡는 위치에 선다는 역할 분리가 핵심이다.</li><li><strong>위험한 자동화일수록 실패 시나리오를 먼저 설계한다</strong>: 중간 중단, 중복 실행, 데이터 손상, 기기 오프라인 등 깨질 수 있는 경우를 미리 목록화하고, 로컬·페이퍼 트레이딩처럼 손실이 없는 환경에서 관찰 기간을 둔 뒤에야 실제로 전환한다.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li>반복적으로 하는 업무 하나(예: 콘텐츠 점검, 리드 확인, 재고 확인)의 하루 일과를 "장 시작 / 장 중간 / 장 마감"처럼 시간대로 쪼개, 각 시간에 어떤 판단을 내리는지 3~6줄로 적어본다. 나중에 그 시간대를 대신할 에이전트를 맡길 단위가 된다.</li><li>자동화를 업체에 맡길 때 "매 실행마다 무엇을 했고 다음에 무엇을 할지 진행 로그를 남기고, 다음 실행이 그 로그부터 읽고 이어가게 해달라"고 명세로 요구한다. 결과물보다 연속성 설계를 먼저 요청하는 것이다.</li><li>돈이나 계약처럼 되돌리기 어려운 자동화라면, 먼저 "실패 시나리오 목록"(중복 실행, 중간 중단, 데이터 누락, 오프라인 등)을 뽑아달라고 하고, 페이퍼 트레이딩 같은 손실 없는 환경에서 최소 1~2주 관찰 기간을 둔 뒤 실제 전환 여부를 판단한다.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>업무를 같이 분해하고 4단계 중 지금 위치를 짚어 드려요.</p><span class="go">진단 콜 보기 →</span></a>
+    <a class="cross" href="../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>앤트로픽이 소상공인용 클로드를 내놨다 (스킬 44개) · 워크제로 자료실</title>
+<meta name="description" content="Anthropic이 44개 스킬·35개 커넥터로 확장된 Claude &quot;Small Business&quot; 플러그인을 새로 내놓았고, 이 영상은 설치 방법부터 가장 쓸모 있는 10개 스킬, 커스터마이징 방법, 자동 실행(스케줄링)까지 실제 화면으로 보여준다.">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/f_CC5GRbiYA/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#533afd">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="앤트로픽이 소상공인용 클로드를 내놨다 (스킬 44개)">
+<meta property="og:description" content="Anthropic이 44개 스킬·35개 커넥터로 확장된 Claude &quot;Small Business&quot; 플러그인을 새로 내놓았고, 이 영상은 설치 방법부터 가장 쓸모 있는 10개 스킬, 커스터마이징 방법, 자동 실행(스케줄링)까지 실제 화면으로 보여준다.">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/f_CC5GRbiYA/">
+<meta property="og:image" content="https://img.youtube.com/vi/f_CC5GRbiYA/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="앤트로픽이 소상공인용 클로드를 내놨다 (스킬 44개)">
+<meta name="twitter:description" content="Anthropic이 44개 스킬·35개 커넥터로 확장된 Claude &quot;Small Business&quot; 플러그인을 새로 내놓았고, 이 영상은 설치 방법부터 가장 쓸모 있는 10개 스킬, 커스터마이징 방법, 자동 실행(스케줄링)까지 실제 화면으로 보여준다.">
+<meta name="twitter:image" content="https://img.youtube.com/vi/f_CC5GRbiYA/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+:root{--primary:#533afd;--primary-deep:#4434d4;--primary-pale:#eceaff;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f6f9fc;--hair:#e3e8ee;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴">
+    <a href="../../tutoring/">1:1 과외</a><a href="../../build/">제작 문의</a>
+    <a class="on" href="../" aria-current="page">자료실</a>
+  </div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../">← 자료실</a>
+  <div class="head"><div class="m"><i>모델·도구</i><span>2026-09-17</span></div><h1>앤트로픽이 소상공인용 클로드를 내놨다 (스킬 44개)</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/f_CC5GRbiYA.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Ben AI</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<span class="orig">원제 · Anthropic Just Dropped Claude for Small Businesses (44 Skills)</span><br><a href="https://www.youtube.com/watch?v=f_CC5GRbiYA" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>모든 스킬이 하나의 메모리를 공유한다</li><li>&quot;Record a skill&quot;이 커스터마이징의 게임체인저다</li><li>스케줄드 태스크로 이어지면 완전 자동화가 된다</li></ul></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>Anthropic이 44개 스킬·35개 커넥터로 확장된 Claude "Small Business" 플러그인을 새로 내놓았고, 이 영상은 설치 방법부터 가장 쓸모 있는 10개 스킬, 커스터마이징 방법, 자동 실행(스케줄링)까지 실제 화면으로 보여준다.</p>
+<h3>전체 내용 정리</h3>
+<h4>Claude의 소상공인용 플러그인이 44개 스킬로 확장됐다</h4>
+<p>Anthropic이 기존에 있던 소상공인(Small Business)용 플러그인을 업데이트해 44개 스킬과 35개 커넥터를 담았다. 설치는 Claude 계정에서 Customize 탭 → Plugins → Discover로 들어가 "small business"를 검색하면 되고, 아직 설치 전이면 Add(또는 +) 버튼이 뜬다. 이 버튼을 누르면 CRM 오토파일럿, 스피드 투 리드, 급여 준비, SMB 온보딩, 리드 파인더 등 여러 스킬과 신규 커넥터들이 계정에 한 번에 활성화된다. 스킬은 특정 작업을 어떻게 처리할지 미리 정해둔 "재사용 가능한 지시문 세트"로, 예를 들어 인박스 매니저 스킬은 "이메일 전체를 가져온다 → 카테고리로 분류한다 → 각 메일이 요청하는 바를 추출한다 → 답장 초안을 쓴다"는 절차를 이미 갖고 있어서, 매번 새로 프롬프트를 짤 필요 없이 슬래시(/)와 스킬 이름만 입력하면 실행된다.</p>
+<h4>제일 먼저 돌려야 할 것은 SMB Onboard 스킬이다</h4>
+<p>스킬을 처음 쓴다면 가장 먼저 <code>/SMB onboard</code>를 실행해야 한다. 이 스킬은 아직 연결하지 않은 소프트웨어를 Claude와 연동시켜줄 뿐 아니라, 사업에 대한 질문 몇 개를 던진 뒤 그 답을 바탕으로 "비즈니스 컨텍스트 파일"을 만들어 Claude 메모리에 저장한다. 여기에는 브랜드 컬러 같은 세부 정보까지 포함되는데, 이후 이 플러그인 안의 모든 다른 스킬이 이 메모리를 불러와 쓰기 때문에, 이후 생성되는 리포트나 대시보드가 자동으로 사용자의 브랜드 스타일을 반영하게 된다.</p>
+<h4>인박스 매니저는 화면 녹화로 나만의 방식을 학습시킬 수 있다</h4>
+<p>인박스 매니저 스킬은 (연결된) 이메일함을 훑어 과거 답장 스타일로 "보이스 프로필"을 만들고, 메일을 카테고리별로 분류하고 필요한 곳엔 답장 초안을 쓴 뒤, 우선순위가 매겨진 대시보드로 정리해 보여준다. 여기서도 저장된 비즈니스 컨텍스트(브랜드 스타일)를 그대로 반영한다. 단순 텍스트 지시로도 커스터마이징이 가능한데("스폰서십 메일은 답장 없이 읽음 처리만 해줘" 같은 식으로 말하면 스킬 자체가 수정된다), 더 강력한 방법은 새로 나온 "Record a skill" 기능이다. 화면 공유를 켜고 실제로 자기가 이메일을 정리하는 과정을 보여주면서 음성으로 이유를 설명하면, Claude가 화면 동작과 음성 스크립트를 함께 보고 그 방식 그대로 스킬을 재구성해준다. 이렇게 만들어진 스킬은 이후 "매일 오전 9시에 실행해줘"처럼 말만 하면 Claude의 스케줄드 태스크 기능으로 등록되어, 매일 아침 사람이 손대지 않아도 이메일 트리아지가 끝나 있게 된다.</p>
+<h4>리포트·회계 업무는 Report Builder와 Month-End Prep이 맡는다</h4>
+<p>리포트 계열 스킬 중에는 Monday Brief, Business Pulse 등도 있지만 가장 유용한 건 Report Builder다. 원하는 리포트 내용을 몇 가지 질문으로 확인하고, 연결된 커넥터와 메모리 속 비즈니스 컨텍스트를 바탕으로 지난 한 주간의 핵심 지표를 담은 리포트·대시보드를 만들어주며, 이 리포트를 매주 자동 생성하는 스케줄드 태스크도 함께 만들어준다. 이후 "이 지표도 넣어줘" 식으로 커스터마이징할 수 있고, 완성한 리포트를 Slack 채널로 자동 전송하는 단계를 추가하거나 팀과 라이브 아티팩트로 공유하도록 확장할 수도 있다. Month-End Prep 스킬은 QuickBooks, Xero 같은 회계 소프트�어와 연동해 손익계산서(P&amp;L)를 엑셀과 1페이지 PDF로 만들어준다. 영상 속 진행자는 브라질 법인이라 QuickBooks·Xero를 쓸 수 없어서, 대신 이메일함에서 지출 내역을, Stripe에서 매출 내역을 끌어와 같은 형태의 1페이지 PDF와 P&amp;L 스프레드시트를 뽑아냈다.</p>
+<h4>영업·채용 자동화: Proposal Builder, Invoice Chase, Speed to Lead, Hiring Screener</h4>
+<p>Proposal Builder는 누구를 위한 제안서인지 먼저 물은 뒤, 영업 담당자와 고객 간 마지막 미팅 녹취록(예시에서는 Fireflies에서 가져옴)과 비즈니스 컨텍스트만으로 꽤 완성도 있는 제안서를 바로 만들어냈다. 기존에 쓰던 제안서 템플릿을 넣어주고 "이 형식대로 업데이트해줘"라고 하면, 이후 만들어지는 모든 제안서가 그 브랜드 스타일과 구조를 그대로 따르도록 스킬 자체가 바뀐다. Invoice Chase는 회계 소프트�어나 결제 처리기(영상에서는 Stripe)를 훑어 연체된 인보이스에 대한 리마인드 메일 초안을 작성해주며, 커스터마이징 없이도 잘 작동한다. Speed to Lead는 웹폼·CRM·이메일 등 어디로 들어오든 신규 인바운드 문의를 얼마나 최근 범위까지 확인할지 물은 뒤(24시간 이내를 권장), 들어온 리드를 정리한 대시보드와 답장 초안을 만들어준다. 이 역시 24시간 또는 3시간 간격 등으로 자동 실행하도록 스케줄링할 수 있고, 답장을 자동으로 발송하도록까지 확장할 수 있다. Hiring Screener는 지원자 목록을 순위가 매겨진 후보 리스트로 바꿔주는데, 지원자를 어디서 가져올지와 채용 기준을 알려주면(영상에서는 200명이 넘는 지원자 CSV 사용) 여러 서브 에이전트를 띄워 지원자별로 점수를 매기고, 인터뷰 대상·보류·탈락(영상 기준 23명/38명/134명)으로 나눈 대시보드와 각 지원자 요약을 제공한다. 채용 기준을 더 구체화하거나 후보 리서치 단계를 추가해 커스터마이징할 수도 있다.</p>
+<h4>마케팅·평판 관리: Marketing Monday와 Review &amp; Reputation</h4>
+<p>마지막 두 스킬은 마케팅용이다. Marketing Monday는 매주 고객 반응, 경쟁사 동향, 이번 주 우선순위를 담은 마케팅/성장 브리핑 대시보드를 커스터마이징 없이도 꽤 준수하게 만들어주며, 이 역시 주간 스케줄드 태스크로 자동화할 수 있다. Review &amp; Reputation 스킬은 Google 리뷰 등 여러 플랫폼(영상에서는 YouTube, 이메일함, Google, Facebook 리뷰까지)의 후기를 한데 모아 브랜드 평판을 파악하고, 발생 가능한 문제들을 사례와 함께 카테고리로 묶어주며, 필요한 리뷰·댓글에는 답장 초안까지 작성해준다. 역시 기본 설정만으로 잘 작동한다.</p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>모든 스킬이 하나의 메모리를 공유한다</strong>: SMB Onboard 스킬로 한 번 저장한 비즈니스 컨텍스트(브랜드 컬러 포함)를 이후 모든 스킬이 재사용하기 때문에, 이 온보딩을 제일 먼저 끝내야 나머지 10개 스킬의 결과물 품질이 실제로 달라진다.</li><li><strong>"Record a skill"이 커스터마이징의 게임체인저다</strong>: 텍스트로 규칙을 알려주는 것보다, 화면 녹화 + 음성 설명으로 실제 업무 방식을 보여주면 Claude가 그 과정을 그대로 스킬에 반영한다 — 프롬프트를 잘 쓰는 것보다 "일하는 모습을 보여주는 것"이 더 정확한 커스터마이징 방법이 될 수 있다.</li><li><strong>스케줄드 태스크로 이어지면 완전 자동화가 된다</strong>: 대부분의 스킬은 "매일 9시에", "매주" 같은 한마디로 자동 반복 실행되도록 예약할 수 있어, 인박스 정리·리포트 생성·리드 응대·평판 관리 같은 반복 업무를 사람이 매번 트리거하지 않아도 되게 만든다.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li>Claude 계정의 Customize → Plugins → Discover에서 "small business"를 검색해 플러그인을 설치하고, <code>/SMB onboard</code>부터 실행해 비즈니스 컨텍스트를 메모리에 저장한다.</li><li>인박스 매니저나 리포트 빌더처럼 매일·매주 반복하는 업무 하나를 골라, 커스터마이징 지시("이런 메일은 이렇게 처리해줘")를 준 뒤 스케줄드 태스크로 등록해 자동 실행되게 만든다.</li><li>이미 쓰고 있는 제안서·리포트 템플릿 파일이 있다면 Proposal Builder나 Report Builder에 그대로 붙여넣고 "이 형식대로 업데이트해줘"라고 요청해, 앞으로 나오는 결과물이 자동으로 내 브랜드 스타일을 따르게 만든다.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>업무를 같이 분해하고 4단계 중 지금 위치를 짚어 드려요.</p><span class="go">진단 콜 보기 →</span></a>
+    <a class="cross" href="../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>DeepSeek Harness, 0원짜리 클로드 코드 · 워크제로 자료실</title>
+<meta name="description" content="DeepSeek이 만든 무료 오픈소스 코딩 하네스(harness)가 Claude Code와 맞먹는 구조로 170,000개의 스타를 받으며 급성장했고, 이 영상은 그 하네스를 설치해서 어떤 모델이든 $0로 연결해 쓰는 방법과 언제 Claude 대신 이걸 써야 하는지를 보">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/RkNafW_Mv9w/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#533afd">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="DeepSeek Harness, 0원짜리 클로드 코드">
+<meta property="og:description" content="DeepSeek이 만든 무료 오픈소스 코딩 하네스(harness)가 Claude Code와 맞먹는 구조로 170,000개의 스타를 받으며 급성장했고, 이 영상은 그 하네스를 설치해서 어떤 모델이든 $0로 연결해 쓰는 방법과 언제 Claude 대신 이걸 써야 하는지를 보">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/RkNafW_Mv9w/">
+<meta property="og:image" content="https://img.youtube.com/vi/RkNafW_Mv9w/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DeepSeek Harness, 0원짜리 클로드 코드">
+<meta name="twitter:description" content="DeepSeek이 만든 무료 오픈소스 코딩 하네스(harness)가 Claude Code와 맞먹는 구조로 170,000개의 스타를 받으며 급성장했고, 이 영상은 그 하네스를 설치해서 어떤 모델이든 $0로 연결해 쓰는 방법과 언제 Claude 대신 이걸 써야 하는지를 보">
+<meta name="twitter:image" content="https://img.youtube.com/vi/RkNafW_Mv9w/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+:root{--primary:#533afd;--primary-deep:#4434d4;--primary-pale:#eceaff;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f6f9fc;--hair:#e3e8ee;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴">
+    <a href="../../tutoring/">1:1 과외</a><a href="../../build/">제작 문의</a>
+    <a class="on" href="../" aria-current="page">자료실</a>
+  </div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../">← 자료실</a>
+  <div class="head"><div class="m"><i>에이전트</i><span>2026-08-22</span></div><h1>DeepSeek Harness, 0원짜리 클로드 코드</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/RkNafW_Mv9w.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Jack Roberts</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<span class="orig">원제 · DeepSeek Harness = Claude Code for $0</span><br><a href="https://www.youtube.com/watch?v=RkNafW_Mv9w" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>하네스와 모델은 분리해서 사고해야 한다</li><li>프론티어 모델과 워크하스 모델을 나눠 쓰는 전략</li><li>Zapier 같은 인증 허브로 여러 AI 도구를 한 번에 업무 도구화</li></ul></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>DeepSeek이 만든 무료 오픈소스 코딩 하네스(harness)가 Claude Code와 맞먹는 구조로 170,000개의 스타를 받으며 급성장했고, 이 영상은 그 하네스를 설치해서 어떤 모델이든 $0로 연결해 쓰는 방법과 언제 Claude 대신 이걸 써야 하는지를 보여준다.</p>
+<h3>전체 내용 정리</h3>
+<h4>모델은 "뇌", 하네스는 "몸" — DeepSeek 하네스가 왜 화제인가</h4>
+<p>DeepSeek이 가장 빠르게 성장한 깃허브 레포로 떠오른 이유는 새 모델이 아니라 새로운 "하네스" 때문이다. 하네스는 모델(뇌)을 감싸는 실행 환경(몸)으로, Claude에게 Claude Code가 있듯 DeepSeek에도 이번에 무료 하네스가 생겼다는 것이 핵심이다. 출시 얼마 되지 않아 약 17만 개의 스타를 받았고 MIT 라이선스라 사실상 완전히 자유롭게 가져다 쓸 수 있으며, 플러그인·챗 도구·UI는 물론 하네스 자체까지도 전부 바꿔치기할 수 있다. 이 영상은 이 하네스를 원하는 모델로 실행하는 법뿐 아니라 이걸 다른 도구들과 연결해서 실제로 뭔가를 만드는 법까지 보여준다.</p>
+<h4>왜 신경 써야 하나 — 모델 자유·수정 자유·비용 $0</h4>
+<p>첫째, DeepSeek·Claude·ChatGPT 등 어떤 모델이든 그냥 선택해서 바로 바꿔 쓸 수 있다. 둘째, 하네스 자체가 그냥 코드이기 때문에 원하는 대로 무엇이든 수정할 수 있다. 앱은 완전히 무료라 $0로도 언제든 원하는 방식으로 쓸 수 있고, 클라우드가 아니라 로컬 컴퓨터에서 돌아가며, 어떤 커넥터로든 다른 도구와 연결할 수 있고 이걸 기반으로 자기만의 앱을 키워나갈 수도 있다. 결국 지향점은 모든 프론티어 모델(Codex, Claude, 이제 DeepSeek까지)을 위한 "하나의 범용 하네스"다.</p>
+<h4>설치 방법 — Claude Code에게 시켜서 레포를 로컬로 가져오기</h4>
+<p>설치는 해당 웹사이트에서 "View on GitHub"를 클릭하거나 깃허브 링크를 복사한 뒤, Claude의 새 채팅창에 "이 깃허브 레포를 다운로드해서 로컬호스트로 열어줘"라고 붙여넣으면 Claude가 알아서 처리해준다. 완료되면 새 페이지가 열리는데, 여기서 모델과 리즈닝 노력(effort) 수준을 선택할 수 있고, 사실상 Claude Code와 똑같이 작동하되 내부는 DeepSeek 하네스로 돌아간다. 기존 Claude Code 모델들도 그대로 쓸 수 있고, 원한다면 OpenRouter의 무료 모델도 붙일 수 있다.</p>
+<h4>하네스로 직접 만들어보기 — 메모리 툴 제작과 커스텀 UI 디자인 예시</h4>
+<p>하네스에게 "네 자신을 위한 메모리 도구를 만들어줘"라고 시키면, Claude Code처럼 각 단계를 세밀하게 보여주며 작업을 진행한다. Claude가 "미리 조립된 레고 세트"라면 이 하네스는 "레고 부품 전체"를 주는 셈이라, 원하는 대로 재조립할 수 있다는 비유가 나온다. 실제로 예시 UI 디자인 이미지를 주고 "이걸 만들어줘"라고 했더니 그대로 구현해냈고, 완성된 UI 품질도 나쁘지 않았다고 언급한다. 자신의 하네스를 소유한다는 것은 모델을 감싸는 지능 자체를 소유하는 것이므로, 원하는 방향으로 자유롭게 발전시킬 수 있다는 점이 강조된다.</p>
+<h4>DeepSeek의 실제 성능 — Opus·GPT-5.6 대비 한 단계 아래지만 비용은 훨씬 저렴</h4>
+<p>DeepSeek 모델(V4 Flash 등)을 Opus나 GPT-5.6과 비교하면 성능은 한 단계 아래다. 하지만 "비용의 극히 일부로 90~95%의 성능을 얻는" 개념으로 접근하면 충분히 매력적이다. 실제로 "멋진 HTML을 열어서 설명해줘"라고 시켰더니 저장·검색·삭제가 가능한 가벼운 메모리 뷰어를 만들어냈고, 이 결과물에서 GPT-5.6 특유의 디자인 특징이 묻어났다고 언급한다.</p>
+<h4>Zapier로 실제 업무 도구와 연결하기 — 이메일 초안 작성 데모</h4>
+<p>하네스를 단순 챗봇이 아니라 실제 업무 도구로 쓰려면 외부 서비스와 연동해야 한다. Claude에게 "Zapier를 DeepSeek 하네스에 연동해서 이메일 초안 작성을 돕게 해줘"라고 시키면 되는데, Zapier를 쓰는 이유는 여러 서비스(DeepSeek, Codex, Claude, 그 외 개인 앱들)를 한 번에 인증해서 붙일 수 있는 인증 레이어 역할을 하기 때문이며, 특히 Outlook 같은 서비스는 다른 방식으로는 쉽게 연결하기 어렵다고 한다. 연동 후 새 세션을 열고 "내 Gmail에 가서 부다페스트가 얼마나 아름다운 도시인지 나 자신에게 설명하는 이메일 초안을 써줘"라고 시키자, 실제로 스킬 카탈로그에서 도구를 호출해 이메일 초안을 완성했다.</p>
+<h4>4가지 실행 모드와 Claude 대비 언제 이걸 써야 하나</h4>
+<p>하네스에는 표준 모드(파일 수정 등 기본 코딩 에이전트), PTC 모드(표준 모드 기능 + 코드 모드 SDK로 여러 단계를 하나의 TypeScript 프로그램으로 결합), 미니멀 모드, 크리에이티브 모드(런타임 인스펙션이 포함된 커스텀 에이전트 프리셋 제작용)가 있으며 실제로는 표준 모드만으로도 충분했다고 한다. Claude Code(또는 Codex)를 써야 할 때는 결과물이 고객에게 보여지고 완성도가 중요할 때, 웹사이트처럼 좋은 디자인 감각이 내장돼 있어야 할 때다 — Claude는 모델 자체에 더해 하네스 안에 이미 많은 노하우가 녹아있어 특정 디자인 작업에서 더 나은 결과를 낸다. 반대로 DeepSeek 하네스를 써야 할 때는 가격이 중요한 대용량 작업, 새로 나온 모델을 빠르게 시험해보고 싶을 때, 나만의 확장 도구를 직접 만들어보고 싶을 때다.</p>
+<h4>프론티어 모델 vs 워크하스 모델이라는 사고방식</h4>
+<p>전체를 관통하는 프레임은 "프론티어(Claude, GPT-5.6 등 최고 성능 모델)"와 "워크하스(workhorse, 가격은 1% 수준이지만 성능은 95%인 모델)"를 구분해서 쓰라는 것이다. DeepSeek은 워크하스 역할에 맞고, 대량 작업을 빠르게 처리할 때 유용하다. 다만 아직 초기 단계라 완벽함을 기대하면 안 되고 중간에 오류가 날 수도 있으며, 하네스 자체는 무료지만 토큰 비용은 별도로 낸다. OpenRouter에는 무료 모델을 돌아가며 쓰는 옵션도 있지만, DeepSeek V3 Flash를 고정으로 쓰는 걸 추천한다고 언급한다 — OpenRouter 내에서 11조 토큰 이상으로 사용량이 가장 많은 모델이기 때문이다.</p>
+<h4>자주 묻는 질문 — 무료인지, 데이터가 중국으로 가는지, 기존 구독으로 쓸 수 있는지</h4>
+<p>정말 무료냐는 질문에는 MIT 라이선스라 앱 자체는 $0이고 토큰 비용만 낸다고 답한다. 코드가 중국으로 전송되는지에 대해서는, 로컬에서 돌아가고 텔레메트리가 기본적으로 꺼져 있어 그럴 일이 없지만 걱정되면 로컬 서구권 모델을 쓸 수도 있다고 설명한다. Claude Code나 Codex 구독을 그대로 쓸 수 있냐는 질문에는 안 되고 API 키가 필요하다고 답하며, Ollama 같은 로컬 모델도 완전히 지원된다고 한다. 플러그인 생태계(DeepSeek 플러그인 스토어)도 존재하지만 본인은 플러그인보다는 직접 설계해서 쓰는 걸 즐긴다고 덧붙인다.</p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>하네스와 모델은 분리해서 사고해야 한다</strong>: "뇌(모델)"와 "몸(하네스)"을 나눠 생각하면, 특정 AI 툴에 종속되지 않고 모델을 자유롭게 갈아끼우는 관점을 가질 수 있다. 이는 특정 벤더 락인 없이 도구 스택을 설계하려는 사람에게 중요한 프레임이다.</li><li><strong>프론티어 모델과 워크하스 모델을 나눠 쓰는 전략</strong>: 모든 작업에 최고 성능 모델을 쓸 필요는 없다. 대용량·저부가가치 작업은 저렴한 워크하스 모델(DeepSeek 등)로, 클라이언트 대면·고품질 결과물은 Claude 같은 프론티어 모델로 나누면 비용을 크게 아낄 수 있다.</li><li><strong>Zapier 같은 인증 허브로 여러 AI 도구를 한 번에 업무 도구화</strong>: AI 하네스 자체보다 이를 이메일, 캘린더 같은 실제 업무 도구와 연결하는 인증 레이어가 실무 활용의 핵심이다. 한 번 연결해두면 어떤 모델·하네스를 쓰든 동일한 연동을 재사용할 수 있다.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li>Claude Code 새 채팅창에 "이 깃허브 레포(DeepSeek 하네스)를 다운로드해서 로컬호스트로 열어줘"라고 요청해 무료로 하네스를 설치해본다.</li><li>설치한 하네스에서 표준 모드로 "간단한 메모리 도구를 만들어줘" 같은 저부담 작업을 시켜보며 워크하스 모델의 체감 품질을 테스트한다.</li><li>반복적이고 대용량인 작업(초안 작성, 대량 정리 등)은 DeepSeek 하네스로, 클라이언트에게 보여줄 결과물은 Claude Code로 나눠서 이번 주 업무에 적용해본다.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>업무를 같이 분해하고 4단계 중 지금 위치를 짚어 드려요.</p><span class="go">진단 콜 보기 →</span></a>
+    <a class="cross" href="../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>

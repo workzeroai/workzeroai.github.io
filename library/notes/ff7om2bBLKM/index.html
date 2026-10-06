@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Grok Bot이 내 메일함을 관리한다 (성격까지 있음) · 워크제로 자료실</title>
+<meta name="description" content="이메일을 자동으로 분류·정리해주는 AI봇과, 아예 자기만의 이메일 주소를 갖고 메일이 오면 스스로 깨어나 답장하는 AI봇을 그록봇(Grok Bot)으로 각각 만드는 전 과정을 실제 화면으로 보여주는 영상이다. 라우팅 규칙 설계부터 Agent Mail 연동, 웹훅 인증,">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/ff7om2bBLKM/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#533afd">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="Grok Bot이 내 메일함을 관리한다 (성격까지 있음)">
+<meta property="og:description" content="이메일을 자동으로 분류·정리해주는 AI봇과, 아예 자기만의 이메일 주소를 갖고 메일이 오면 스스로 깨어나 답장하는 AI봇을 그록봇(Grok Bot)으로 각각 만드는 전 과정을 실제 화면으로 보여주는 영상이다. 라우팅 규칙 설계부터 Agent Mail 연동, 웹훅 인증,">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/ff7om2bBLKM/">
+<meta property="og:image" content="https://img.youtube.com/vi/ff7om2bBLKM/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Grok Bot이 내 메일함을 관리한다 (성격까지 있음)">
+<meta name="twitter:description" content="이메일을 자동으로 분류·정리해주는 AI봇과, 아예 자기만의 이메일 주소를 갖고 메일이 오면 스스로 깨어나 답장하는 AI봇을 그록봇(Grok Bot)으로 각각 만드는 전 과정을 실제 화면으로 보여주는 영상이다. 라우팅 규칙 설계부터 Agent Mail 연동, 웹훅 인증,">
+<meta name="twitter:image" content="https://img.youtube.com/vi/ff7om2bBLKM/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+:root{--primary:#533afd;--primary-deep:#4434d4;--primary-pale:#eceaff;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f6f9fc;--hair:#e3e8ee;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴">
+    <a href="../../tutoring/">1:1 과외</a><a href="../../build/">제작 문의</a>
+    <a class="on" href="../" aria-current="page">자료실</a>
+  </div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../">← 자료실</a>
+  <div class="head"><div class="m"><i>에이전트</i><span>2026-09-16</span></div><h1>Grok Bot이 내 메일함을 관리한다 (성격까지 있음)</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/ff7om2bBLKM.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Nate Herk | AI Automation</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<span class="orig">원제 · Grok Bot Manages My Inbox (and has its own personality)</span><br><a href="https://www.youtube.com/watch?v=ff7om2bBLKM" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>자동화보다 분류 기준 설계가 먼저다</li><li>전용 이메일 주소는 봇을 &#x27;이벤트로 깨어나는 존재&#x27;로 만든다</li><li>노코드 자동화도 결국 약간의 코드가 필요한 지점이 있다</li></ul></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>이메일을 자동으로 분류·정리해주는 AI봇과, 아예 자기만의 이메일 주소를 갖고 메일이 오면 스스로 깨어나 답장하는 AI봇을 그록봇(Grok Bot)으로 각각 만드는 전 과정을 실제 화면으로 보여주는 영상이다. 라우팅 규칙 설계부터 Agent Mail 연동, 웹훅 인증, 여러 인박스가 섞이지 않게 필터링하는 법까지 다룬다.</p>
+<h3>전체 내용 정리</h3>
+<h4>이메일을 4~5개 카테고리로 자동 분류하는 봇 만들기</h4>
+<p>영상은 이미 운영 중인 사례로 문을 연다. GPT-6 Astra라는 AI가 종목을 조사해 매매 지시를 이메일로 보내면 트레이딩 봇이 실제 주문을 실행하는데, 이 봇은 정해진 시간이 아니라 이메일이 도착하는 순간(웹훅)에 깨어난다. 그리고 "Nat"이라는 또 다른 봇은 하루 두 번 받은편지함을 정리해준다. Nate는 이 두 가지를 처음부터 만드는 법을 이어서 보여주는데, 먼저 Nat부터 보면 실제로 걸린 시간은 몇 분이 안 됐다. 그록봇에서 새 봇을 만들고 "너는 내 이메일 관리 에이전트고 이름은 Natie야. 내 받은편지함을 깔끔하게 유지해줘"라고 역할을 지시한 뒤, 원하는 라벨 체계를 알려주는 것이 전부였다. 그는 primary(직접 소통 중인 메일), notifications(은행이나 구독 서비스 알림), outreach(협찬·제안 등 외부 연락), urgent(청구서 같은 긴급 건) 네 가지를 기준으로 제시했고, 봇이 스스로 "뉴스레터도 꽤 많이 받으시는데 카테고리에 추가할까요?"라고 제안해 다섯 번째 카테고리를 더했다. 그는 가장 중요한 첫 단계는 "메일이 도착했을 때 어떻게 분류할지 라우팅 규칙을 먼저 명확히 하는 것"이라고 강조했다. 이후 마켓플레이스에서 Gmail이나 Outlook 같은 실제 메일 계정을 연결하면 되고, 계정이 여러 개면 각각 라벨을 붙여 전부 연결할 수 있다.</p>
+<h4>하루 두 번 정리 결과를 알림으로 받기</h4>
+<p>계정 연결이 끝나면 이 봇이 언제, 어떻게 작동할지를 정한다. Nate는 오전 6시 45분과 오후 6시 45분, 하루 두 번 받은편지함을 정리하도록 설정했고, 작업이 끝나면 ClickUp 다이렉트 메시지로 급한 메일이 뭔지 요약해서 보내달라고 요청했다. 메시지 맨 아래에는 "sent by Nat"이라는 서명도 자동으로 붙게 했다. 이 봇은 답장 초안을 써주지는 않고, 오직 라벨을 붙이고 긴급 건을 빨간색으로 표시하는 역할만 한다. Nate는 이 세팅 전체가 5~10분이면 끝날 만큼 간단하다고 설명했다.</p>
+<h4>봇에게 자기만의 이메일 주소 주기 — Agent Mail 연동</h4>
+<p>두 번째로 보여준 건 더 진전된 형태로, 봇이 사람처럼 자기 이메일 계정을 갖고 그 계정으로 메일을 받고 보내는 구조다. 이를 위해 Agent Mail이라는 무료로 시작할 수 있는 서비스를 썼는데, 대시보드에서 봇이 보내고 받은 메일량 같은 전송 통계를 바로 확인할 수 있다. Nate는 인박스 메뉴에서 새 인박스를 만들었는데, 무료 요금제라 생성 개수에 제한이 있었고(이번이 마지막으로 만들 수 있는 하나였다), 사용자 이름을 "YouTube"로 하려다 이미 쓰이고 있어 "YouTube test"로 바꿔 agentmail.to 기본 도메인으로 인박스를 만들었다. 이렇게 만든 인박스는 Agent Mail 화면에서 실제 메일함처럼 열람하고 답장할 수도 있다. 이 계정을 그록봇과 연결하려면 마켓플레이스에서 Agent Mail 커넥터를 추가하고 계정 인증(로그인 후 권한 허용)을 거치면 된다.</p>
+<h4>메일이 오면 스스로 깨어나는 봇 만들기 — 웹훅 설정</h4>
+<p>Agent Mail 연결이 끝나면 "Stephanie"라는 새 봇을 만들고, 이 봇이 메일을 받을 때마다 자동으로 깨어나도록 루틴을 웹훅 방식으로 설정한다. 웹훅은 간단히 말해 한 앱에서 특정 사건(여기서는 새 메일 도착)이 생겼을 때 다른 앱에 자동으로 신호를 보내는 방식이다. 루틴을 만들고 나면 그록봇 쪽에서 웹훅 주소와 인증키를 확인할 수 있는데(촬영 중 이 화면이 한동안 표시되지 않는 버그가 있었고, 데스크톱 앱을 업데이트하고 나서야 정상적으로 나타났다), 이 주소와 키를 Agent Mail의 웹훅 설정 화면에 그대로 입력해야 한다. Agent Mail에서 새 엔드포인트를 추가하면서 그록봇에서 복사한 URL을 붙여넣고, 구독할 이벤트로는 "메시지 수신"만 체크했다. 인증을 위해 고급 설정의 커스텀 헤더에 이름은 "Authorization", 값은 "Bearer (한 칸 띄우고) 발급받은 키" 형식으로 직접 입력해서 저장했다. Nate는 이 웹훅 주소와 인증키를 API 키나 비밀번호처럼 절대 남에게 노출하면 안 된다고 따로 경고했는데, 이 두 정보만 있으면 누구든 해당 그록봇을 마음대로 조작할 수 있기 때문이다.</p>
+<h4>인박스가 여러 개일 때 서로 안 섞이게 필터링하기</h4>
+<p>문제는 그가 이미 트레이딩용 봇("Trader")과 인박스 하나를 쓰고 있었고, 이번에 만든 "YouTube test" 인박스와 웹훅까지 더해지면서 두 봇이 서로 상관없는 인박스의 메일에도 반응할 수 있게 된 것이다. 봇에게 "이 인박스로 온 메일만 처리해"라고 지시문으로 필터링시키는 방법도 되긴 하지만 깔끔한 방식은 아니라고 그는 지적했다. Agent Mail은 특정 인박스 ID로 웹훅을 한정하는 기능 자체는 있지만, 화면에 드롭다운 메뉴가 없어 코드로 직접 처리해야 한다. Nate는 이 상황을 AI 코딩 도구(Codex)에 설명해 자바스크립트 코드를 받았고, 이를 Agent Mail 웹훅의 "고급 &gt; 변환(transformation) 편집" 화면에 붙여넣어 저장했다. 이렇게 하면 그 웹훅은 오직 지정한 인박스로 들어온 메일에만 반응하게 된다.</p>
+<h4>실제로 작동하는지 테스트하기</h4>
+<p>마지막으로 실제 이메일을 보내 확인했다. "받았으면 확인 답장 주고, 제일 좋아하는 농담도 하나 알려줘"라는 내용으로 메일을 보내자 "Stephanie" 봇이 곧바로 반응해 처리를 시작했고, 같은 시점에 "Trader" 봇 쪽은 아무 반응이 없었다. 이는 웹훅 연결 자체와 인박스 필터링이 둘 다 정상 작동했다는 뜻이었다. Stephanie는 답장 메일에서 수신을 확인하고 짧은 농담("과학자들이 원자를 못 믿는 이유는, 원자가 모든 걸 지어내기 때문이다")을 남겼으며, 스스로 판단해 앞으로도 그 주소로 온 메일만 처리하도록 자신의 루틴을 업데이트했다. Nate는 이렇게 봇마다 전용 이메일을 쥐여주면, 봇끼리는 물론 다른 자동화나 코딩 에이전트가 이메일로 서로에게 작업을 지시하는 구조까지 확장할 수 있다고 마무리했다.</p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>자동화보다 분류 기준 설계가 먼저다</strong>: 어떤 메일을 어떤 카테고리로 보낼지, 무엇을 긴급으로 표시할지를 먼저 명확히 정해야 봇이 헷갈리지 않는다. 이 기준이 흐릿하면 아무리 좋은 봇을 붙여도 결과가 지저분해진다.</li><li><strong>전용 이메일 주소는 봇을 '이벤트로 깨어나는 존재'로 만든다</strong>: 정해진 시간마다 도는 자동화와 달리, 메일 수신이라는 사건이 생길 때만 작동하는 구조라 실시간성과 효율이 동시에 올라간다.</li><li><strong>노코드 자동화도 결국 약간의 코드가 필요한 지점이 있다</strong>: 여러 인박스·여러 봇을 함께 쓰면 특정 인박스만 걸러내는 필터링처럼 화면 UI로는 안 되는 부분이 나오는데, 이때 AI 코딩 도구에게 그 상황만 설명하고 코드를 받아 붙여넣는 정도로 해결할 수 있다.</li><li><strong>웹훅 주소·인증키는 비밀번호와 동급으로 취급해야 한다</strong>: 이 두 정보만 유출돼도 제3자가 봇을 마음대로 조작할 수 있으므로 화면 공유나 캡처에서 항상 가려야 한다.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li>본인 또는 담당 직원의 이메일함을 primary·notifications(알림)·outreach(외부 제안)·urgent(긴급) 네 가지 기준으로 나눠보고, 이 기준을 자동화 담당 업체에게 전달해 "매일 아침저녁으로 이렇게 라벨링하고 급한 메일만 요약해서 카카오톡이나 슬랙으로 보내줄 수 있는지" 물어보기.</li><li>Agent Mail(agentmail.to)처럼 AI 비서 전용 메일 주소를 발급해주는 서비스가 있다는 걸 알아두고, 고객 문의나 예약 확인처럼 반복적인 메일 응대를 맡길 전용 창구가 필요한지 검토해보기.</li><li>여러 자동화나 여러 담당자가 같은 메일함을 나눠 보고 있다면, 지금 그 구분이 사람이 매번 눈으로 걸러내는 방식인지 아니면 자동으로 필터링되는 방식인지 점검하고, 후자로 바꿀 수 있는지 자동화 업체에 문의해보기.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>업무를 같이 분해하고 4단계 중 지금 위치를 짚어 드려요.</p><span class="go">진단 콜 보기 →</span></a>
+    <a class="cross" href="../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>

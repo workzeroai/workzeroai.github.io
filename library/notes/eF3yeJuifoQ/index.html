@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Opus 5.5 vs GPT-6 Sol, 실전 10가지 맞대결 · 워크제로 자료실</title>
+<meta name="description" content="Nate Herk가 Claude Opus 5.5와 GPT-6 Sol(Soul)에게 웹사이트 제작부터 3D 게임, 코드베이스 검토, 브라우저 작업까지 10가지 실제 업무를 동일한 프롬프트로 맡겨본 결과, 가격이 3배 비싼 Opus 5.5가 7대 1로 압승했지만 코드 검토">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/eF3yeJuifoQ/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#533afd">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="Opus 5.5 vs GPT-6 Sol, 실전 10가지 맞대결">
+<meta property="og:description" content="Nate Herk가 Claude Opus 5.5와 GPT-6 Sol(Soul)에게 웹사이트 제작부터 3D 게임, 코드베이스 검토, 브라우저 작업까지 10가지 실제 업무를 동일한 프롬프트로 맡겨본 결과, 가격이 3배 비싼 Opus 5.5가 7대 1로 압승했지만 코드 검토">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/eF3yeJuifoQ/">
+<meta property="og:image" content="https://img.youtube.com/vi/eF3yeJuifoQ/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Opus 5.5 vs GPT-6 Sol, 실전 10가지 맞대결">
+<meta name="twitter:description" content="Nate Herk가 Claude Opus 5.5와 GPT-6 Sol(Soul)에게 웹사이트 제작부터 3D 게임, 코드베이스 검토, 브라우저 작업까지 10가지 실제 업무를 동일한 프롬프트로 맡겨본 결과, 가격이 3배 비싼 Opus 5.5가 7대 1로 압승했지만 코드 검토">
+<meta name="twitter:image" content="https://img.youtube.com/vi/eF3yeJuifoQ/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+:root{--primary:#533afd;--primary-deep:#4434d4;--primary-pale:#eceaff;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f6f9fc;--hair:#e3e8ee;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴">
+    <a href="../../tutoring/">1:1 과외</a><a href="../../build/">제작 문의</a>
+    <a class="on" href="../" aria-current="page">자료실</a>
+  </div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../">← 자료실</a>
+  <div class="head"><div class="m"><i>모델·도구</i><span>2026-09-23</span></div><h1>Opus 5.5 vs GPT-6 Sol, 실전 10가지 맞대결</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/eF3yeJuifoQ.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Nate Herk | AI Automation</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<span class="orig">원제 · I Tested Opus 5.5 vs. GPT-6 Sol on 10 Real Use Cases</span><br><a href="https://www.youtube.com/watch?v=eF3yeJuifoQ" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>비싼 모델이 항상 이기지 않는다</li><li>작업 성격에 따라 모델을 나눠 써야 한다</li><li>여러 AI 에이전트를 같은 작업 공간에서 돌릴 때는 격리 지시가 필수다</li></ul></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>Nate Herk가 Claude Opus 5.5와 GPT-6 Sol(Soul)에게 웹사이트 제작부터 3D 게임, 코드베이스 검토, 브라우저 작업까지 10가지 실제 업무를 동일한 프롬프트로 맡겨본 결과, 가격이 3배 비싼 Opus 5.5가 7대 1로 압승했지만 코드 검토처럼 정형화된 작업에서는 Sol이 20분의 1 비용으로 더 나은 결과를 낸 역전도 있었다.</p>
+<h3>전체 내용 정리</h3>
+<h4>가격표만 보면 Opus가 이길 것 같았지만, 직접 써봐야 알 수 있다</h4>
+<p>Opus 5.5는 입력 토큰 4달러, 출력 토큰 20달러로 가격이 책정돼 있고, GPT-6 Sol은 각각 2달러와 10달러로 정확히 절반이다. Nate는 "100달러가 있다면 Opus와 Sol 중 누구에게 썼을 때 더 나은 결과물을 얻을 수 있을까"라는 기준으로 모델을 평가한다고 밝히며, 비싸다고 무조건 낫다는 본능적 판단을 검증하기 위해 두 모델에 똑같은 프롬프트로 10가지 실전 과제를 맡겼다. 본격 비교에 앞서 진행한 워밍업 테스트에서는, 4시간 분량의 Fireflies 통화 녹취록 두 개를 위키에 정리하고 특정 언급 시점을 찾아내는 작업을 시켰다. Sol이 훨씬 빠르게 끝냈지만 정답 날짜(9월 14일)를 8월 17일로 잘못 답했고, Opus는 시간이 더 걸렸지만 정답을 맞혔다. 속도는 Sol, 정확도는 Opus라는 이번 실험 전체를 관통하는 패턴이 여기서부터 드러났다.</p>
+<h4>웹사이트·영상·릴스 같은 창의적 작업에서는 Opus가 3연승</h4>
+<p>첫 번째 과제인 스크롤 기반 레이어드 웹사이트 디자인에서는 Opus 결과물이 텍스트 애니메이션, 레이어 전환, 실제 제품 이미지 활용 면에서 더 고급스러웠고, Sol은 패키지 이미지를 어색하게 써서 완성도가 떨어졌다. 두 번째로는 100GB 분량의 AIS 라이브 이벤트 영상 자료를 주고 10월 행사 홍보용 30초 시즐릴을 만들게 했는데, Opus 버전이 음악·음향효과·속도감·화면전환의 레이어링이 훨씬 강렬했다. 세 번째는 하이퍼프레임으로 인스타그램 릴스를 편집·제작하는 과제였다. Sol의 결과물은 배경에 이상한 웅웅거리는 소음이 있고 애니메이션도 음악도 없어 그대로 올리기 어려운 수준이었던 반면, Opus 결과물은 확연히 더 나았다. 세 과제 모두 Opus가 이겼지만 비용은 각각 3배, 2배(+5달러), 4배(시간도 2배)로 계속 더 비쌌다.</p>
+<h4>같은 폴더에서 작업시키자 두 모델이 서로 파일을 덮어써버린 사고</h4>
+<p>네 번째 과제는 방대한 매출 데이터를 주고 구글 스프레드시트 분석 자료, 피치덱, 대시보드, 랜딩페이지를 만들게 하는 것이었다. 그런데 두 모델이 같은 프로젝트 폴더에서 작업하다가 서로의 파일을 감지하고 덮어쓰기 시작해, 결과물이 사실상 동일해져 버렸다. Nate는 "다른 에이전트의 작업을 건드리지 말라"는 지시를 프롬프트에 넣지 않은 자신의 실수라고 인정하며 이 과제는 승자를 정하지 않았다. 게다가 편집 중 비용 계산 오류를 발견해 Sol 쪽 총비용에서 약 19달러를 빼야 한다고 정정했다. 다섯 번째 과제인 3D 탐험 게임("Small Hours") 제작에서도 똑같은 문제가 재발했다. Sol 버전은 스토리와 분위기는 괜찮았지만 마우스가 화면 밖으로 나가면 시야 회전이 멈춰버리는 치명적 버그로 플레이 자체가 불가능했다. Opus 버전이 더 나아 보였지만 이 역시 파일 덮어쓰기로 결과가 오염된 상태라 공정한 비교로 보기 어려웠고, 최종 집계에서 두 과제 모두 제외됐다.</p>
+<h4>인터랙티브 3D 월드와 여행 일정 설계는 다시 Opus 승리</h4>
+<p>여섯 번째 과제는 "지난 100개 유튜브 영상 개념을 설명하는 3D 플레이 가능한 월드"를 만드는 것이었다. Opus는 미니어처 박물관을 모티브로 걸어다니며 가이드 캐릭터와 대화하고, 토큰이 어떻게 처리되는지 보여주는 인터랙티브 미니게임까지 포함한 완성도 높은 월드를 만들었다. Sol의 결과물은 이동감이 사실적이지 않고 오버레이도 제거되지 않는 등 인터페이스가 복잡해 금방 지루해졌다. 비용은 Opus가 60달러, Sol이 8.55달러로 7배 차이였지만 Nate는 결과물 격차가 그만큼 크다며 Opus 승을 줬다. 일곱 번째는 막연한 여행 아이디어("10월 한 달, AI 행사와 자연경관, 해외")를 3D 지구본 형태의 여행 일정으로 바꾸는 과제였다. 흥미롭게도 Sol은 질문을 던지며 요구사항을 더 구체화하려 했고 Nate는 이 방식을 개인적으로 선호한다고 밝혔다. 다만 실제 결과에서는 Opus가 만든 지구본 인터페이스가 더 매끄러웠고, 실제로 열리는 샌프란시스코 테크위크 같은 행사를 정확히 찾아내는 등 조사 품질도 더 신뢰할 만했다.</p>
+<h4>코드베이스 검토에서는 Sol이 20배 싼 비용으로 역전승</h4>
+<p>여덟 번째 과제는 성격이 완전히 달랐다. GPT-6 Astra가 설계한 대규모 코드베이스 실험에서 두 모델에게 실제 코드 수정·분석·보수를 시켰는데, Sol이 100점 만점에 100점(검사 항목 30개 전부 통과)을 받은 반면 Opus는 97점(1개 항목 누락)에 그쳤다. 게다가 Opus는 비용이 거의 20배 더 들고 속도도 2배 느렸다. 한 가지 재미있는 지점은 Sol이 보안 이슈를 감지하고 작업을 중단한 반면, 같은 프롬프트를 받은 Opus는 멈추지 않고 계속 진행했다는 점이다. 결국 Sol은 단 1달러로 이 과제를 더 좋은 성과로 끝냈다. Nate는 코드 검토·실행·수정처럼 빠르게 반복되는 작업에서는 Sol이 확실히 강점을 보인다고 평가했다.</p>
+<h4>마지막 브라우저 사용 과제 두 건도 Opus가 가져가며 7대1로 마무리</h4>
+<p>아홉 번째는 브라우저로 무료 스쿨 사이트에 강의 코스를 업로드하는 과제였다. 두 모델 다 비디오·설명·핵심 포인트·자료를 대체로 잘 정리했지만, Sol은 각 강의를 개별 초안으로 만들었고 Opus는 전체 코스를 하나의 초안으로 묶어 더 깔끔했다(다만 일부 링크를 중복으로 건 실수는 있었다). 이번엔 Opus가 더 빠르고 저렴하기까지 해서 승리를 가져갔다. 열 번째는 Canva의 그리기·페인팅 도구로 참고 이미지(Nate와 아담 샌들러 합성 이미지)를 재현하는 과제였다. Opus 결과물은 과거 다른 모델들의 시도보다도 훨씬 뛰어났지만, Sol은 규칙을 어기고 이미지 생성 기능으로 답을 대신하려 했고, 다시 시도해도 형편없는 수준의 결과만 냈다. 최종적으로 10개 과제 중 7개는 Opus 5.5가, 1개는 Sol이 이겼고(2개는 사고로 집계 제외), 전체 실험에서 Opus는 8시간 40분·213달러, Sol은 5시간 51분·74.46달러를 사용했다.</p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>비싼 모델이 항상 이기지 않는다</strong>: 코드 검토·실행처럼 정형화된 작업에서는 GPT-6 Sol이 20배 싼 비용으로 Claude Opus 5.5보다 더 좋은 점수를 받았다. 가격만 보고 모델을 고르면 특정 작업에서는 오히려 손해를 볼 수 있다.</li><li><strong>작업 성격에 따라 모델을 나눠 써야 한다</strong>: 창의성·판단이 필요한 디자인, 영상, 3D 월드 제작에서는 Opus가 확실히 앞섰고, 명확한 지시를 그대로 빠르게 실행하는 작업에는 Sol 계열이 강점을 보였다. Nate는 Opus를 오케스트레이터로 두고 Sol 계열을 실행 워커로 쓰는 조합을 언급했다.</li><li><strong>여러 AI 에이전트를 같은 작업 공간에서 돌릴 때는 격리 지시가 필수다</strong>: "다른 에이전트의 파일을 건드리지 말라"는 문구를 빼먹었더니 두 모델이 같은 폴더에서 서로의 결과물을 덮어써 두 개 과제의 비교 자체가 무효화됐다. 자동화를 여러 에이전트로 병렬 실행할 때 흔히 놓치는 함정이다.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li>반복 업무를 자동화 업체에 맡기고 있다면, "이 작업에 어떤 AI 모델을 쓰고 있고, 왜 그 모델을 골랐는지" 한 번 물어보고 비용 대비 결과 비교 자료를 요청해본다.</li><li>이미 운영 중인 자동화가 있다면, 같은 업무를 다른 모델(예: Claude 계열 vs GPT 계열)로도 한 번 돌려보게 하고 결과와 비용을 나란히 비교해달라고 요청한다 — 가격이 2배라고 결과가 2배 좋아지는 게 아니라는 걸 직접 확인할 수 있다.</li><li>여러 AI 에이전트나 자동화 도구가 같은 문서·폴더에서 동시에 작업하는 구조라면, "서로 결과물을 덮어쓰지 않게 격리돼 있는지"를 담당자에게 점검해달라고 요청한다.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>업무를 같이 분해하고 4단계 중 지금 위치를 짚어 드려요.</p><span class="go">진단 콜 보기 →</span></a>
+    <a class="cross" href="../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>

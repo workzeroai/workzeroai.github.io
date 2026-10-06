@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Grok Bot, 진짜다 — 알아야 할 것만 · 워크제로 자료실</title>
+<meta name="description" content="새로 나온 AI 에이전트 앱 그록 봇은 폰과 PC에서 완전히 동기화되는 여러 에이전트를 만들어 각자 전용 컴퓨터로 반복 업무를 처리하게 하고, 시간·이벤트 기반 자동화까지 프롬프트 한 줄로 만들 수 있는 도구다.">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/PQBYZQqan2g/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#533afd">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="Grok Bot, 진짜다 — 알아야 할 것만">
+<meta property="og:description" content="새로 나온 AI 에이전트 앱 그록 봇은 폰과 PC에서 완전히 동기화되는 여러 에이전트를 만들어 각자 전용 컴퓨터로 반복 업무를 처리하게 하고, 시간·이벤트 기반 자동화까지 프롬프트 한 줄로 만들 수 있는 도구다.">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/PQBYZQqan2g/">
+<meta property="og:image" content="https://img.youtube.com/vi/PQBYZQqan2g/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Grok Bot, 진짜다 — 알아야 할 것만">
+<meta name="twitter:description" content="새로 나온 AI 에이전트 앱 그록 봇은 폰과 PC에서 완전히 동기화되는 여러 에이전트를 만들어 각자 전용 컴퓨터로 반복 업무를 처리하게 하고, 시간·이벤트 기반 자동화까지 프롬프트 한 줄로 만들 수 있는 도구다.">
+<meta name="twitter:image" content="https://img.youtube.com/vi/PQBYZQqan2g/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+:root{--primary:#533afd;--primary-deep:#4434d4;--primary-pale:#eceaff;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f6f9fc;--hair:#e3e8ee;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴">
+    <a href="../../tutoring/">1:1 과외</a><a href="../../build/">제작 문의</a>
+    <a class="on" href="../" aria-current="page">자료실</a>
+  </div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../">← 자료실</a>
+  <div class="head"><div class="m"><i>에이전트</i><span>2026-08-12</span></div><h1>Grok Bot, 진짜다 — 알아야 할 것만</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/PQBYZQqan2g.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Nate Herk | AI Automation</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<span class="orig">원제 · Grok Bot is For Real. What You Need to Know.</span><br><a href="https://www.youtube.com/watch?v=PQBYZQqan2g" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>에이전트별 전용 컴퓨터가 반복 업무 자동화의 핵심</li><li>이름·타이틀·설명만으로 에이전트 간 업무 위임이 자동 작동한다</li><li>트리거 자동화 설정 속도가 기존 노코드 도구보다 훨씬 빠르다</li></ul></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>새로 나온 AI 에이전트 앱 그록 봇은 폰과 PC에서 완전히 동기화되는 여러 에이전트를 만들어 각자 전용 컴퓨터로 반복 업무를 처리하게 하고, 시간·이벤트 기반 자동화까지 프롬프트 한 줄로 만들 수 있는 도구다.</p>
+<h3>전체 내용 정리</h3>
+<h4>여러 대의 AI 에이전트를 폰과 PC에서 동시에 굴리는 앱이 나왔다</h4>
+<p>그록 봇은 윈도우, 맥, iOS에서 모두 설치할 수 있고 하나의 계정으로 로그인하면 대화 내용과 작업 상태가 실시간으로 동기화된다. 화면 왼쪽에 여러 에이전트를 나란히 두고 각각과 개별적으로 대화할 수 있으며, 에이전트끼리 서로 메시지를 주고받게 만드는 것도 가능하다. 처음 앱을 열면 첫 에이전트를 만들도록 안내하는데, 이름과 색상, 모양을 정하는 정도로 설정이 끝난다. 이 도구를 쓰려면 커서 얼트라 플랜에 가입해야 하며, 영상 후반부에서는 같은 도구를 허메스 에이전트라는 이름으로도 부른다.</p>
+<h4>에이전트마다 자기만의 컴퓨터가 있어서 브라우저를 대신 조작한다</h4>
+<p>각 에이전트 설정 화면 오른쪽에서는 이름, 타이틀, 설명과 함께 그 에이전트가 쓰는 전용 컴퓨터 화면을 볼 수 있다. 예시로 든 에이전트 클라우스는 스쿨 커뮤니티에 본인 계정으로 로그인된 상태로 지정한 게시물에 좋아요를 누르는 작업을 스스로 수행하고 있었다. 사용자가 직접 그 컴퓨터 화면에 들어가 유튜브에 로그인하거나 캡차를 통과하는 것도 가능하고, 파일 관리자와 터미널도 열 수 있다. "티치 어 태스크" 버튼을 누르면 사람이 직접 하는 작업을 녹화해서 그록 봇이 그대로 스킬로 만들어주는데, 이렇게 만든 스킬 중 하나가 스쿨 커뮤니티에 7일 챌린지 게시물을 올리는 작업이었다. 깃허브 저장소를 연결해두면 모든 에이전트가 그 저장소에 담긴 맥락을 공유해서 매번 처음부터 설명하지 않아도 된다.</p>
+<h4>에이전트마다 이름과 역할을 정해두면 서로 알아서 업무를 나눠준다</h4>
+<p>새 에이전트를 만들면 무엇을 도와줄지 물어보는 온보딩 절차를 거친다. 예시로 클라우스는 비서 역할, 데브는 AI 엔지니어 역할을 맡았는데, 클라우스에게 제품 개발을 요청하면 클라우스가 알아서 데브에게 작업을 위임한다. 에이전트를 만들 때 붙이는 이름, 타이틀, 설명은 다른 에이전트가 스킬을 찾아 쓰는 방식과 똑같이 작동해서, 한 에이전트가 처리할 수 없는 일이 생기면 설명이 일치하는 다른 에이전트에게 메시지를 보내 대신 처리하게 한다. 지메일, 구글 캘린더, 슬랙, 구글 드라이브, 클릭업 같은 서비스는 플러그인으로 연결하는데, 한 에이전트에서 한 번 연결해두면 모든 에이전트가 같은 연결을 공유해서 쓸 수 있다.</p>
+<h4>아침 브리핑 루틴을 프롬프트 한 줄로 만들어 매일 자동 실행시켰다</h4>
+<p>새 에이전트를 아침 플래너로 설정하면서 지메일과 구글 캘린더를 연결하고 평일 오전 7시에 오늘 일정과 지메일에서 처리할 항목을 정리해달라고 요청했다. 이렇게 만든 루틴은 클라우드에서 실행되기 때문에 컴퓨터나 폰이 꺼져 있어도 정해진 시간에 작동한다. 실제로 받은 샘플 결과에는 그날의 미팅 목록, 답장이 필요한 이메일, 목요일 예정된 통화에 대한 준비 제안, 오후 일정이 빡빡하니 점심이나 헬스 일정을 조정하라는 제안, 그리고 저녁에 예약된 식사 자리를 지키라는 조언까지 담겨 있었다. 별다른 세부 지시 없이 "매일 아침 일정을 계획하도록 도와줘"라는 한 문장만으로 이 정도 결과가 나왔고, 사용자가 피드백을 줄수록 점점 더 정교해진다고 설명한다.</p>
+<h4>슬랙 메시지가 올라오면 자동으로 알림을 만들어주는 트리거도 설정했다</h4>
+<p>시간 기반 루틴 외에 슬랙 메시지, 깃허브 이벤트, 팀즈 메시지 같은 실제 이벤트를 트리거로 쓰는 것도 가능하다. 슬랙의 특정 채널에 새 메시지가 올라오면 알려달라고 요청하자 그록 봇은 해당 채널을 찾아 트리거와 지시 내용을 스스로 구성했는데, 다만 작동하려면 그 슬랙 채널에 "/invite @cursor" 명령으로 봇을 초대하는 설정 단계가 필요했다. 초대를 마친 뒤 스폰서십 계약이 성사됐다는 테스트 메시지를 슬랙에 올리자, 몇 초 만에 그록 봇이 해당 내용을 요약해 알려줬다. 같은 작업을 n8n으로 만들면 15분, 클로드 코드로 만들면 7분 정도 걸렸을 텐데 이번에는 프롬프트 한 번, 2분 만에 끝났다고 비교한다.</p>
+<h4>에이전트들끼리 서로 대화하며 업무를 처리하고 그 내용을 폰에서도 그대로 확인할 수 있다</h4>
+<p>비서 역할인 클라우스에게 최근 유튜브 영상 관련 소식을 슬랙에서 확인해달라고 요청하면, 클라우스는 슬랙 미디어 담당 에이전트인 머니에게 직접 메시지를 보내 상황을 물어보고 답변을 받아 사용자에게 전달한다. 두 에이전트가 주고받은 대화는 사용자가 볼 수 있게 남아 있어서 어느 에이전트가 무엇을 물었고 어떻게 답했는지 그대로 확인 가능하다. 이 모든 상태는 폰에서도 동일하게 이어지기 때문에 컴퓨터를 끄고 나가도 폰으로 클라우스와 계속 대화할 수 있고, 클라우스가 쓰고 있는 컴퓨터 화면(브라우저)까지 폰에서 직접 조작할 수 있다.</p>
+<h4>딥워크에는 기존 도구를, 이동 중에는 그록 봇을 쓴다는 사용 기준을 제시했다</h4>
+<p>책상에 앉아 집중해서 코드를 짜거나 소프트웨어를 만드는 작업은 여전히 클로드 코드나 코덱스로 하고, 이동 중이거나 우버 뒷좌석, 여행지, 식당처럼 폰만 있는 상황에서는 그록 봇을 쓴다고 기준을 밝혔다. 이 도구는 백엔드에서 그록 모델을 쓰기 때문에 다른 모델을 선호하는 사람에게는 맞지 않을 수 있다고도 언급한다. 실제로 클라우스와 데브에게 대기자 명단 페이지를 만들어달라고 요청하는 시연도 보여주는데, 처음 나온 결과물은 브랜드 가이드라인을 반영하지 못해 색상이 어긋나 있었다. 클라우스는 왜 브랜드 가이드라인을 쓰지 않았는지 스스로 확인한 뒤 깃허브 저장소에서 가이드라인을 찾아 데브에게 다시 전달했고, 이 대화 내용도 그대로 사용자에게 공개됐다. 마지막으로 필요하지도 않은데 에이전트와 루틴을 무작정 늘리지 말고, 실제로 겪고 있는 병목이 무엇인지 먼저 판단하라고 조언하며 영상을 마친다.</p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>에이전트별 전용 컴퓨터가 반복 업무 자동화의 핵심</strong>: 각 에이전트가 독립된 브라우저·로그인 세션을 갖고 있어서, 사람이 하던 클릭·입력 작업을 그대로 녹화해 스킬로 재현할 수 있다. 이게 되면 로그인이 필요한 웹 작업(커뮤니티 관리, 리서치 등)도 자동화 대상이 된다.</li><li><strong>이름·타이틀·설명만으로 에이전트 간 업무 위임이 자동 작동한다</strong>: 하나의 만능 에이전트보다 역할이 좁고 설명이 명확한 여러 에이전트를 만드는 편이 낫다는 게 영상의 핵심 메시지다. 설명이 라우팅 기준이 되기 때문에, 역할을 세분화할수록 위임 정확도가 올라간다.</li><li><strong>트리거 자동화 설정 속도가 기존 노코드 도구보다 훨씬 빠르다</strong>: 슬랙 메시지 트리거를 프롬프트 한 번으로 2분 만에 만든 사례는, n8n(15분)이나 클로드 코드(7분) 대비 진입장벽이 크게 낮아졌다는 걸 보여준다. 자동화를 직접 설계하지 못하는 사람도 대화만으로 이벤트 기반 알림을 만들 수 있다는 뜻이다.</li><li><strong>모든 도구를 무조건 도입하기보다 실제 병목부터 판단해야 한다</strong>: 네이트(Nate) 스스로도 딥워크는 기존 도구로, 이동 중 업무만 이 도구로 나눠 쓴다고 선을 그었다. 새 자동화 도구를 들일 때는 "이게 지금 내 업무의 어떤 병목을 없애주는가"를 먼저 따져야 시간 낭비를 피할 수 있다.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li>이동 중이나 대기 시간에 폰으로 처리하는 반복 업무(이메일 확인, 일정 조율, 커뮤니티·SNS 관리 등)를 한 번 나열해보고, 그중 "로그인이 필요한 웹 작업"이 몇 개나 되는지 세어본다. 이 목록이 자동화 우선순위가 된다.</li><li>현재 혼자 처리 중인 업무를 "비서", "미디어 대응", "아침 브리핑"처럼 역할 단위로 3개만 쪼개보고, 각 역할에 어떤 서비스(이메일, 캘린더, 메신저 등) 연결이 필요한지 적어본다.</li><li>거래 중인 자동화 업체나 개발 담당자에게 "슬랙 메시지나 이메일 수신 같은 이벤트가 발생하면 자동으로 알림·요약해주는 루틴을 만들 수 있는지" 구체적으로 물어보고 견적과 소요 시간을 비교해본다.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>업무를 같이 분해하고 4단계 중 지금 위치를 짚어 드려요.</p><span class="go">진단 콜 보기 →</span></a>
+    <a class="cross" href="../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>

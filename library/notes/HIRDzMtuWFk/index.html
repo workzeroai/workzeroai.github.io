@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>앤트로픽 엔지니어의 조언: 에이전트 대신 뭘 만들어야 하나 · 워크제로 자료실</title>
+<meta name="description" content="앤트로픽 엔지니어들은 작업마다 새 에이전트를 만드는 대신, 하나의 범용 에이전트에 &quot;스킬(Skill)&quot;을 장착해 쓰는 방식으로 전환했다 — 이 영상은 그 배경과, 스킬을 실제로 잘 작동시키는 4가지 원칙을 정리한다.">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/HIRDzMtuWFk/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#533afd">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="앤트로픽 엔지니어의 조언: 에이전트 대신 뭘 만들어야 하나">
+<meta property="og:description" content="앤트로픽 엔지니어들은 작업마다 새 에이전트를 만드는 대신, 하나의 범용 에이전트에 &quot;스킬(Skill)&quot;을 장착해 쓰는 방식으로 전환했다 — 이 영상은 그 배경과, 스킬을 실제로 잘 작동시키는 4가지 원칙을 정리한다.">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/HIRDzMtuWFk/">
+<meta property="og:image" content="https://img.youtube.com/vi/HIRDzMtuWFk/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="앤트로픽 엔지니어의 조언: 에이전트 대신 뭘 만들어야 하나">
+<meta name="twitter:description" content="앤트로픽 엔지니어들은 작업마다 새 에이전트를 만드는 대신, 하나의 범용 에이전트에 &quot;스킬(Skill)&quot;을 장착해 쓰는 방식으로 전환했다 — 이 영상은 그 배경과, 스킬을 실제로 잘 작동시키는 4가지 원칙을 정리한다.">
+<meta name="twitter:image" content="https://img.youtube.com/vi/HIRDzMtuWFk/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+:root{--primary:#533afd;--primary-deep:#4434d4;--primary-pale:#eceaff;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f6f9fc;--hair:#e3e8ee;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴">
+    <a href="../../tutoring/">1:1 과외</a><a href="../../build/">제작 문의</a>
+    <a class="on" href="../" aria-current="page">자료실</a>
+  </div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../">← 자료실</a>
+  <div class="head"><div class="m"><i>에이전트</i><span>2026-09-13</span></div><h1>앤트로픽 엔지니어의 조언: 에이전트 대신 뭘 만들어야 하나</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/HIRDzMtuWFk.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Nate Herk | AI Automation</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<span class="orig">원제 · Anthropic Engineer Explains: What to Build Instead of AI Agents</span><br><a href="https://www.youtube.com/watch?v=HIRDzMtuWFk" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>&quot;에이전트&quot;가 아니라 &quot;범용 에이전트 + 스킬&quot; 구조로 이동한다</li><li>검증된 코드·스크립트는 반드시 재사용 가능한 형태로 저장해야 한다</li><li>AI의 첫 결과물을 사람이 검증하는 구조는 확장되지 않는다</li></ul></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>앤트로픽 엔지니어들은 작업마다 새 에이전트를 만드는 대신, 하나의 범용 에이전트에 "스킬(Skill)"을 장착해 쓰는 방식으로 전환했다 — 이 영상은 그 배경과, 스킬을 실제로 잘 작동시키는 4가지 원칙을 정리한다.</p>
+<h3>전체 내용 정리</h3>
+<h4>앤트로픽이 개별 에이전트 대신 "스킬" 구조로 전환한 이유</h4>
+<p>앤트로픽은 에이전트가 끝났다고 말한 게 아니라, 작업마다 별도의 에이전트를 새로 만드는 방식을 그만뒀다고 밝혔다. 스킬을 만든 두 엔지니어 배리 장(Barry Zhang)과 마헤시 무라그(Mahesh Murag)는, 밑바탕의 에이전트가 예상보다 훨씬 범용적으로 발전했기 때문에 더 이상 작업별로 에이전트를 따로 구축할 필요가 없어졌다고 설명한다. 이 구조를 이해하는 가장 쉬운 방법은 스마트폰이다. 프로세서와 운영체제는 소수의 회사가 만들고 사용자는 거의 건드리지 않지만, 앱을 골라 쓰는 것만으로 같은 하드웨어에 다양한 기능을 더할 수 있다. AI 스택도 똑같은 구조로 수렴하고 있다 — 모델은 프로세서, 에이전트 런타임은 운영체제, 스킬은 앱에 해당한다. 클로드 코드는 이미 파일을 읽고 코드를 쓰고 도구를 호출하는 범용 기능을 갖추고 있으므로, 프레젠테이션을 만들거나 회사를 조사하거나 링크드인 글을 쓸 때마다 이 기반을 처음부터 새로 만들 필요 없이, 그 작업에 필요한 과정·맥락·스크립트·예시를 담은 스킬만 얹어주면 된다.</p>
+<h4>원칙 1 — 이미 검증된 코드는 스킬 안에 저장해 재사용한다</h4>
+<p>첫 번째 원칙은 단순하다. 클로드가 같은 기술적 문제를 매번 처음부터 다시 풀게 하지 말라는 것이다. 앤트로픽 팀은 클로드가 슬라이드에 스타일을 입힐 때마다 사실상 동일한 파이썬 스크립트를 매번 새로 작성하는 걸 지켜봤고, 이 과정에서 토큰을 낭비할 뿐 아니라 매번 처음부터 다시 만들다 보니 결과가 실행할 때마다 조금씩 달라지는 문제까지 생겼다. 그래서 이들은 한 번 검증된 스크립트를 스킬 안에 저장해 "미래의 자신을 위한 도구"로 남겨두는 방식을 택했다 — 다음번엔 이미 검증된 버전을 그대로 실행하면 된다. 이건 개발자들이 오래전부터 써온 DRY(Don't Repeat Yourself) 원칙과 정확히 같다. 이 영상을 만든 크리에이터도 자신의 AI 운영체제 안에서 같은 렌더러·템플릿·스크립트를 계속 재사용하는데, 예를 들어 카드뉴스(캐러셀) 워크플로우는 슬라이드 렌더링 방식을 매번 새로 고민하지 않고 이미 작동하는 파일을 그대로 가리키게 만들어 클로드가 새 콘텐츠 작성에만 집중하도록 한다. 클로드가 마음에 드는 결과를 내는 스크립트를 짰다면, "방금 쓴 스크립트를 스킬의 스크립트 폴더에 저장하고 skill.md를 업데이트해서 다음부터는 이 파일을 실행하도록 해줘"라고 지시한 뒤, 같은 유형의 작업을 두 번 돌려 결과가 실제로 저장된 파일을 호출하는지 직접 비교 검증해야 한다.</p>
+<h4>원칙 2 — 점진적 공개를 위해 스킬 설명을 정밀하게 쓴다</h4>
+<p>두 번째 원칙은 스킬이 많아질수록 더 중요해진다 — 클로드가 지금 필요한 스킬을 정확히 찾아낼 수 있어야 한다는 것이다. 정비공이 타이어를 갈 때 공구함의 모든 도구를 꺼내놓지 않고 필요한 몇 개만 집어드는 것처럼, 클로드도 시작할 때 모든 스킬의 전체 지침·예시·스크립트를 다 읽지 않는다. 대신 각 스킬의 이름과 설명(YAML 프런트매터)만 먼저 훑어보고, 사용자의 프롬프트가 특정 설명과 일치할 때만 그 스킬의 전체 skill.md를 불러온다. 앤트로픽은 이를 "필요할 때만 정보를 불러오는" 점진적 공개(progressive disclosure)라 부르며, 이 덕분에 불필요한 지침이 작업 맥락에 쌓여 생기는 "컨텍스트 부식(context rot)"을 피할 수 있다. 하지만 이건 스킬 설명이 얼마나 명확한지에 전적으로 달려있다 — "콘텐츠 작성 도와줌"과 "마케팅 자산 생성"처럼 설명이 겹치면 클로드는 사실상 추측을 하게 된다. 그래서 각 스킬은 하나의 명확한 작업만 맡고, 설명에는 실제 사람이 쓸 법한 표현을 담아야 하며("카드뉴스, 캐러셀 슬라이드, 링크드인 게시물을 요청할 때 사용" 같은 식), 클로드 코드에게 "내 모든 스킬 설명을 검토해서 각각 무슨 일을 하는지, 언제 실행돼야 하는지, 다른 스킬과 어디서 겹치는지 알려주고 모호한 설명만 다시 써줘"라고 시킨 뒤, 직접 트리거되어야 할 요청·다르게 표현했지만 트리거돼야 할 요청·절대 트리거되면 안 되는 무관한 요청 세 가지로 테스트해볼 수 있다.</p>
+<h4>원칙 3 — 실수를 그때그때 고치지 말고 스킬 자체를 업데이트해 학습시킨다</h4>
+<p>세 번째 원칙은 교정한 내용을 그 순간에만 쓰고 버리지 말라는 것이다. 클로드에게 "고쳐줘"라고만 말하고 넘어가면 그 순간의 출력은 고쳐지지만 근본적인 프로세스는 여전히 고장 난 채로 남는다. 이 영상 제작자는 클로드가 존재하는 파일을 못 찾는다고 하면 그냥 경로를 알려주고 넘어가지 않고, 클로드에게 어디를 검색했는지, 왜 놓쳤는지 되짚게 한 뒤 라우팅이나 스킬 자체를 업데이트해서 다음 실행이 처음부터 올바른 곳에서 시작하도록 만든다고 설명한다. 앤트로픽은 스킬을 이런 지속적 학습의 발판으로 설계했다 — 클로드가 한 번 기록해둔 것은 미래의 자신이 효율적으로 활용할 수 있어야 한다는 것이 원칙이다. 다만 스킬은 모든 대화를 통째로 기억하는 게 아니라 특정 작업에 필요한 절차적 지식만 저장하므로, 프로세스 자체가 잘못됐다면 skill.md의 지침을 고치고, 클로드가 사용자의 톤·브랜드·예시를 놓친다면 레퍼런스 파일을 추가하고, 같은 실수가 반복된다면 그 실수를 명확히 막는 규칙을 추가한 뒤 같은 작업을 다시 돌려 검증해야 한다. 또한 스킬은 특정 모델에 종속되지 않는 오픈 포맷이므로, 같은 스킬 폴더를 다른 호환 에이전트 환경(예: 코덱스나 허메스 에이전트 등)에서도 테스트해보고, 결과가 무너지면 숨겨진 전제나 빠진 예시, 특정 모델만 이해하는 지시문을 찾아 다듬어야 한다.</p>
+<h4>원칙 4 — 결과를 내놓기 전에 반드시 검증 루프를 거치게 한다</h4>
+<p>네 번째 원칙이 영상에서 가장 강조하는 부분이다. 스킬은 첫 시도를 결과물로 내놓고 끝내면 안 된다. 대부분의 AI 워크플로우가 가진 가장 큰 공백은, AI가 작업의 70~80%만 해놓고 "다 됐다"고 말하면 사람이 나머지 20~30%를 일일이 수작업으로 메꿔야 한다는 점이다. 하지만 사람이 결과물을 어떻게 검증하는지 스스로 알고 있다면, 그 체크리스트를 스킬 안에 그대로 심어 AI가 더 많은 격차를 스스로 메우게 할 수 있다. 예를 들어 슬라이드 덱이라면 각 슬라이드를 이미지로 렌더링해 스크린샷을 직접 확인하고 잘리거나 읽기 어려운 부분을 고쳐 다시 렌더링하게 하고, 리서치 리포트라면 원문 출처를 열어 주장과 근거를 대조하고 검증되지 않은 내용은 제거하게 하며, 광고 카피처럼 주관적인 콘텐츠라면 초보자·회의적인 구매자·실제 타깃 독자 같은 여러 페르소나 서브에이전트가 각자의 관점에서 검토하고 반복적으로 지적되는 문제만 강하게 반영하게 한다. 여기서 검증이란 클로드가 자기 결과물을 보고 "괜찮아 보인다"고 말하는 게 아니라 스크린샷·테스트 결과·출처·참고 예시·다른 관점의 피드백처럼 첫 초안 바깥의 증거가 있어야 한다는 뜻이며, "최종 결과를 내놓기 전에 수용 기준을 정의하고, 초안을 만들고, 관련 검증 방법으로 점검하고, 발견한 모든 문제를 고친 뒤 한 번 더 점검해서 기준을 통과했을 때만 결과를 반환하라"는 지시를 거의 모든 스킬에 넣을 수 있다.</p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>"에이전트"가 아니라 "범용 에이전트 + 스킬" 구조로 이동한다</strong>: 작업마다 새 에이전트를 만드는 대신 하나의 범용 에이전트에 스킬(프로세스·스크립트·예시)을 장착하는 게 앤트로픽이 실제로 검증한 방향이다 — 자동화를 설계할 때 매번 새 봇을 만들 필요가 없다는 뜻.</li><li><strong>검증된 코드·스크립트는 반드시 재사용 가능한 형태로 저장해야 한다</strong>: 같은 결과물을 만들 때마다 AI가 처음부터 다시 만들게 두면 토큰도 낭비되고 결과 일관성도 떨어진다 — 한 번 검증된 산출물은 "자산"으로 고정해야 한다.</li><li><strong>AI의 첫 결과물을 사람이 검증하는 구조는 확장되지 않는다</strong>: 검증 체크리스트(스크린샷 확인, 출처 대조, 페르소나 리뷰)를 프로세스 안에 미리 심어두는 것이 AI 결과물의 신뢰도를 실질적으로 높이는 유일한 방법이다.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li>지금 반복해서 쓰고 있는 AI 자동화 작업(슬라이드·카피·리서치 요약 등) 중 하나를 골라, AI에게 "방금 만든 결과물을 만들어낸 스크립트나 프롬프트를 별도 파일로 저장하고, 다음번엔 이 파일을 그대로 재사용하도록 지시문을 업데이트해줘"라고 요청해본다.</li><li>현재 쓰고 있는 AI 프롬프트·스킬 설명이 여러 개라면, "각 설명이 언제 트리거돼야 하는지, 서로 겹치는 부분이 있는지 점검해줘"라고 AI에게 감사(audit)를 맡겨본다.</li><li>다음번에 AI 결과물이 마음에 안 들어 "고쳐줘"라고만 말하기 전에, 무엇이 잘못됐는지 원인(프로세스 문제인지·맥락 부족인지·규칙 부재인지·코드 오류인지)을 먼저 진단하게 하고, 그 답을 프롬프트나 지침 문서에 영구히 반영해본다.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>업무를 같이 분해하고 4단계 중 지금 위치를 짚어 드려요.</p><span class="go">진단 콜 보기 →</span></a>
+    <a class="cross" href="../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>

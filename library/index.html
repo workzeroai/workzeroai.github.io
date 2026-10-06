@@ -97,6 +97,9 @@ background:radial-gradient(40% 55% at 18% 55%,#ffd9a8 0,transparent 70%),radial-
 .paneNote a{color:var(--primary);font-weight:800}
 .paneNote b{display:block;font-size:12.5px;font-weight:800;color:var(--primary-deep);margin-bottom:5px}
 .nlist{list-style:none;display:grid;gap:14px}
+.nmore{margin-top:20px;display:grid;place-items:center}
+.nmoreBtn{min-width:200px;height:48px;padding:0 22px;border-radius:99px;border:1px solid var(--hair);background:#fff;color:var(--ink2);font-weight:800;font-size:14px;box-shadow:var(--sh1);transition:.2s}
+.nmoreBtn:hover{border-color:var(--primary);color:var(--primary)}
 .nitem{overflow:hidden;display:block;transition:transform .2s var(--ease),box-shadow .2s}
 a.nitem:active{transform:scale(.995)}
 .nth{position:relative;aspect-ratio:16/9;background:var(--soft)}
@@ -186,6 +189,7 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0;border-
       <p class="paneNote"><b id="nUpd"></b>매일 밤 자동으로 모으고 정리한 AI 소식이에요. <a href="../build/#cases">어떻게 만드는지 보기 →</a></p>
       <div class="fchips" id="nchips"></div>
       <ul class="nlist" id="nlist"></ul>
+      <div class="nmore" id="nmoreWrap" hidden><button class="nmoreBtn" id="nmore" type="button"></button></div>
       <p class="empty" id="nEmpty" hidden>아직 올라온 글이 없어요.</p>
     </div>
   </div>
@@ -260,10 +264,19 @@ function note(n){
     <div class="ngo">읽어보기 →</div></div></a></li>`;
 }
 let ntag='전체';
+// 글이 100편을 넘어 한 번에 다 그리면 썸네일까지 전부 받아 느려진다. 12편씩 끊어 보여준다.
+const NPAGE = 12;
+let nshown = NPAGE;
+function notesFor(){
+  return ntag==='전체' ? DATA.notes : DATA.notes.filter(n=>(n.topic||'AI 소식')===ntag);
+}
 function renderNotes(){
-  const list = ntag==='전체' ? DATA.notes : DATA.notes.filter(n=>(n.topic||'AI 소식')===ntag);
-  $('#nlist').innerHTML = list.map(note).join('');
+  const list = notesFor();
+  $('#nlist').innerHTML = list.slice(0, nshown).map(note).join('');
   $('#nEmpty').hidden = list.length>0;
+  const rest = Math.max(0, list.length - nshown);
+  $('#nmoreWrap').hidden = rest === 0;
+  $('#nmore').textContent = '더 보기 (' + rest + '편 남음)';
 }
 function updStamp(){
   const ready=DATA.notes.filter(n=>n.ready&&n.url);
@@ -275,7 +288,7 @@ function renderNChips(){
   const tags=['전체',...new Set(DATA.notes.map(n=>n.topic||'AI 소식'))];
   $('#nchips').innerHTML = tags.map(t=>`<button class="fchip${t===ntag?' on':''}" data-t="${esc(t)}">${esc(t)}</button>`).join('');
   $('#nchips').querySelectorAll('.fchip').forEach(b=>b.addEventListener('click',()=>{
-    ntag=b.dataset.t; renderNChips(); renderNotes();
+    ntag=b.dataset.t; nshown=NPAGE; renderNChips(); renderNotes();
   }));
 }
 function renderFiles(){
@@ -296,6 +309,8 @@ function setTab(name,push){
   if(push && location.hash!=='#'+name) history.replaceState(null,'','#'+name);
 }
 document.querySelectorAll('.lib-tab').forEach(t=>t.addEventListener('click',()=>setTab(t.dataset.tab,true)));
+
+$('#nmore').addEventListener('click',()=>{ nshown += NPAGE; renderNotes(); });
 
 fetch('items.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw 0;return r.json()}).then(d=>{
   DATA={files:d.files||[],notes:d.notes||[]};

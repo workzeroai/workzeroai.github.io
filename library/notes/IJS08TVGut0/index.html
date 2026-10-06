@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>돈 한 푼 안 내고 AI 에이전트 쓰는 법 · 워크제로 자료실</title>
+<meta name="description" content="&quot;프리버프(Freebuff)&quot;라는 신생 플랫폼은 신용카드 없이, 광고만 보면 GPT·GLM·딥시크 같은 프론티어 AI 코딩 에이전트를 하루 최대 20시간까지 공짜로 쓰게 해주는데, Nick이 직접 사이트 제작과 게임 제작을 시켜보며 이 &quot;광고로 값을 치르는 AI 코딩&quot;">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/IJS08TVGut0/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#533afd">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="돈 한 푼 안 내고 AI 에이전트 쓰는 법">
+<meta property="og:description" content="&quot;프리버프(Freebuff)&quot;라는 신생 플랫폼은 신용카드 없이, 광고만 보면 GPT·GLM·딥시크 같은 프론티어 AI 코딩 에이전트를 하루 최대 20시간까지 공짜로 쓰게 해주는데, Nick이 직접 사이트 제작과 게임 제작을 시켜보며 이 &quot;광고로 값을 치르는 AI 코딩&quot;">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/IJS08TVGut0/">
+<meta property="og:image" content="https://img.youtube.com/vi/IJS08TVGut0/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="돈 한 푼 안 내고 AI 에이전트 쓰는 법">
+<meta name="twitter:description" content="&quot;프리버프(Freebuff)&quot;라는 신생 플랫폼은 신용카드 없이, 광고만 보면 GPT·GLM·딥시크 같은 프론티어 AI 코딩 에이전트를 하루 최대 20시간까지 공짜로 쓰게 해주는데, Nick이 직접 사이트 제작과 게임 제작을 시켜보며 이 &quot;광고로 값을 치르는 AI 코딩&quot;">
+<meta name="twitter:image" content="https://img.youtube.com/vi/IJS08TVGut0/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+:root{--primary:#533afd;--primary-deep:#4434d4;--primary-pale:#eceaff;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f6f9fc;--hair:#e3e8ee;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴">
+    <a href="../../tutoring/">1:1 과외</a><a href="../../build/">제작 문의</a>
+    <a class="on" href="../" aria-current="page">자료실</a>
+  </div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../">← 자료실</a>
+  <div class="head"><div class="m"><i>에이전트</i><span>2026-09-15</span></div><h1>돈 한 푼 안 내고 AI 에이전트 쓰는 법</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/IJS08TVGut0.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Nick Saraev</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<span class="orig">원제 · The 100% Free Way To Use AI Agents</span><br><a href="https://www.youtube.com/watch?v=IJS08TVGut0" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>광고 기반 과금이 AI 접근성 격차를 좁힐 수 있다</li><li>무료 챗봇 모델도 코딩 에이전트로 전환하면 가치가 달라진다</li><li>결과물의 완성도보다 &quot;누구나 접근 가능해졌다&quot;는 구조 자체가 뉴스거리다</li></ul></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>"프리버프(Freebuff)"라는 신생 플랫폼은 신용카드 없이, 광고만 보면 GPT·GLM·딥시크 같은 프론티어 AI 코딩 에이전트를 하루 최대 20시간까지 공짜로 쓰게 해주는데, Nick이 직접 사이트 제작과 게임 제작을 시켜보며 이 "광고로 값을 치르는 AI 코딩" 모델이 실제로 쓸 만한지 확인해본다.</p>
+<h3>전체 내용 정리</h3>
+<h4>프리버프란 무엇인가 — 돈 대신 광고를 보는 AI 코딩 플랫폼</h4>
+<p>프리버프는 오픈코드(OpenCode)나 코덱스(Codex) 같은 기존 AI 코딩 툴이 연간 120~240달러씩 구독료를 받는 것과 달리, 사용자가 화면 하단 광고를 보는 대가로 AI 에이전트 토큰을 완전히 무료로 제공하는 서비스다. Nick은 이 채널이 프리버프와 어떤 제휴도 없다고 밝히면서, 돈이 없는 사람도 AI 에이전트를 쓸 수 있게 됐다는 점이 흥미로워 소개한다고 설명한다. 신용카드 등록이나 챗GPT 같은 별도 구독 없이 구글 계정만으로 가입이 가능하고, 맥용 데스크톱 앱을 내려받아 바로 사용을 시작할 수 있다. 아이폰용 앱도 있어 외출 중에도 같은 방식으로 코딩을 이어갈 수 있다.</p>
+<h4>어떤 모델을 얼마나 쓸 수 있나 — 라인업과 벤치마크</h4>
+<p>프리버프에서 제공하는 모델은 GPT 5.6 루나(하루 5시간 무료), 딥시크(DeepSeek) V4.1 플래시(6시간), 뮤즈 스파크(Muse Spark) 1.2, 그리고 GLM 5.3 플래시(최대 20시간)까지 다양하다. Nick이 예전에 벤치마크했던 GLM 5.3은 지능 점수 45점으로, 클로드 페이블(Claude Fable) 5.1의 53점에는 못 미치지만 코딩 용도로는 충분히 쓸 만한 수준이라고 평가한다. 딥시크 V4.1 플래시도 40점으로 GPT 6 아스트라(53점)에는 못 미치지만 준수한 편이다. 특히 GPT 5.6 루나 같은 모델은 원래 챗봇으로만 무료로 쓸 수 있었는데, 프리버프 덕분에 이 모델로 실제 코드를 짜는 "빌드"까지 가능해졌다는 점을 그는 "중요한 진전"이라고 강조한다.</p>
+<h4>크레딧 시스템과 가입 과정 — "프리벅스"는 매일 자정에 리필된다</h4>
+<p>프리버프의 과금 단위는 "프리벅스(Freebucks)"라는 하루치 무료 크레딧으로, 태평양시간 기준 매일 자정에 새로 채워진다. 모아뒀다 비싼 모델에 몰아 쓰거나, 매일 저렴한 모델만 골라 쓰는 것도 가능하다. 모델당 요금은 1시간 세션을 시작하는 순간 한 번만 차감되는 방식이며, GLM 5.3 플래시는 시간당 5달러(=하루 20시간), GPT 5.6 루나는 시간당 20달러 상당으로 책정돼 있다. Nick은 가입 후 프로젝트 폴더 이름을 관행대로 "project"라 짓고, 화면 하단에 노출되는 광고(예: 반려견 사료 브랜드 광고)를 직접 보여주며 "과하게 방해되는 수준은 아니다"라고 평가한다.</p>
+<h4>실전 테스트 — 원페이지 사이트와 막대인간 걷기 게임</h4>
+<p>첫 테스트에서 그는 GPT 5.6 루나에게 "Nick Saraev를 검색해서 멋있어 보이는 원페이지 사이트를 만들되 디자인이 과하지 않게 해달라"고 요청한다. 화면 우측에는 코드 변경 사항(diff), 파일 미리보기, 터미널까지 갖춘 제법 완성도 있는 IDE 인터페이스가 뜨고, 빌드 모드와 플랜 모드를 오갈 수 있는 기능도 확인된다. 이어서 그는 두 번째 탭을 열어 GLM 5.3 플래시에게 "아주 단순한 막대인간 걷기 게임을 만들어달라"고 요청하는데, 원래 "탭 1개만 사용 가능"이라는 안내가 있었음에도 실제로는 동시에 두 세션을 돌리는 데 성공한다. 다만 두 에이전트를 동시에 실행하자 노트북이 뜨거워지고 팬 소음이 커지는 현상이 발생했다고 언급한다.</p>
+<h4>결과는 어땠나 — 그리고 이게 왜 중요한가</h4>
+<p>완성된 원페이지 사이트는 디자인과 카피라이팅 모두 평범한 수준이었고, 막대인간 게임도 캐릭터가 그냥 걷기만 하는 매우 기초적인 결과물이었다고 그는 솔직하게 인정한다. 그럼에도 그는 이번 영상의 핵심은 "결과물의 완성도"가 아니라 "돈 한 푼 없이, 신용카드 등록도 없이 프론티어급 AI 코딩 에이전트를 무제한에 가깝게 써봤다는 사실 자체"라고 강조한다. 그는 지난 4년간 AI 에이전트 확산의 가장 큰 문제가 "프론티어 지능에는 큰 비용이 든다"는 점이었다고 지적하며, 자신처럼 클로드 페이블이나 아스트로 같은 고가 모델을 마음껏 쓰는 사람과, 비용 때문에 "AI가 별로 안 좋다"고 느끼는 사람 사이의 격차를 프리버프 같은 서비스가 조금이나마 좁혀줄 수 있다는 기대를 밝히며 영상을 마무리한다.</p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>광고 기반 과금이 AI 접근성 격차를 좁힐 수 있다</strong>: 구독료가 부담스러운 사람들도 광고 시청만으로 GPT·GLM 같은 고성능 모델을 하루 수십 시간씩 쓸 수 있게 되면서, "돈 있는 사람만 좋은 AI를 쓴다"는 구조에 균열이 생기고 있다.</li><li><strong>무료 챗봇 모델도 코딩 에이전트로 전환하면 가치가 달라진다</strong>: GPT 5.6 루나처럼 원래 대화용으로만 무료였던 모델을, 프리버프는 실제 코드를 작성·실행하는 에이전트 용도로 열어줘 같은 모델의 활용 범위를 넓혔다.</li><li><strong>결과물의 완성도보다 "누구나 접근 가능해졌다"는 구조 자체가 뉴스거리다</strong>: 이번에 만든 사이트와 게임은 품질이 뛰어나지 않았지만, 비용 장벽이 사라졌다는 사실만으로도 1인 사업자나 비개발자가 AI 실험을 시작해볼 명분이 생긴다.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li>프리버프(freebuff.com) 웹사이트에 접속해 구글 계정으로 가입하고, 신용카드 등록 없이 하루 무료 크레딧으로 어떤 모델들을 쓸 수 있는지 직접 확인해보기.</li><li>맥이라면 프리버프 데스크톱 앱을 내려받아, "내 소개 페이지를 간단하게 만들어줘"처럼 쉬운 문장으로 AI에게 한 페이지짜리 웹사이트 제작을 시켜보고, 평소 유료로 쓰던 AI 도구와 결과물 품질을 비교해보기.</li><li>광고 시청형 무료 AI 도구를 업무에 실험적으로 도입하기 전에, 함께 일하는 개발 외주업체나 자동화 담당자에게 "이런 광고 기반 무료 AI 코딩 서비스도 검토해볼 만한지" 한 번 물어보고 비용 절감 여지를 점검해보기.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>업무를 같이 분해하고 4단계 중 지금 위치를 짚어 드려요.</p><span class="go">진단 콜 보기 →</span></a>
+    <a class="cross" href="../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>

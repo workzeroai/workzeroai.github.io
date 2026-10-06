@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>OpenAI engineers just showed how they prompt GPT-6 Astra... · 워크제로 자료실</title>
+<title>오픈AI 엔지니어가 직접 공개한 GPT-6 Astra 프롬프트법 · 워크제로 자료실</title>
 <meta name="description" content="OpenAI가 직접 공개한 GPT-6 Astra 프롬프트 가이드에서 Nick Puru가 추린 6가지 팁 — 자료를 주고, 글쓰기 스타일을 지정하고, &quot;도와줄래?&quot;를 실행 지시로 바꾸고, 완료 기준을 정의하고, &quot;깊이 생각해&quot; 문구를 지우고, 옛 맞춤 지침을 정리하라. ">
 <link rel="canonical" href="https://workzeroai.github.io/library/notes/xfHbePnyiks/">
 <link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
@@ -12,12 +12,12 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="워크제로">
 <meta property="og:locale" content="ko_KR">
-<meta property="og:title" content="OpenAI engineers just showed how they prompt GPT-6 Astra...">
+<meta property="og:title" content="오픈AI 엔지니어가 직접 공개한 GPT-6 Astra 프롬프트법">
 <meta property="og:description" content="OpenAI가 직접 공개한 GPT-6 Astra 프롬프트 가이드에서 Nick Puru가 추린 6가지 팁 — 자료를 주고, 글쓰기 스타일을 지정하고, &quot;도와줄래?&quot;를 실행 지시로 바꾸고, 완료 기준을 정의하고, &quot;깊이 생각해&quot; 문구를 지우고, 옛 맞춤 지침을 정리하라. ">
 <meta property="og:url" content="https://workzeroai.github.io/library/notes/xfHbePnyiks/">
 <meta property="og:image" content="https://img.youtube.com/vi/xfHbePnyiks/maxresdefault.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="OpenAI engineers just showed how they prompt GPT-6 Astra...">
+<meta name="twitter:title" content="오픈AI 엔지니어가 직접 공개한 GPT-6 Astra 프롬프트법">
 <meta name="twitter:description" content="OpenAI가 직접 공개한 GPT-6 Astra 프롬프트 가이드에서 Nick Puru가 추린 6가지 팁 — 자료를 주고, 글쓰기 스타일을 지정하고, &quot;도와줄래?&quot;를 실행 지시로 바꾸고, 완료 기준을 정의하고, &quot;깊이 생각해&quot; 문구를 지우고, 옛 맞춤 지침을 정리하라. ">
 <meta name="twitter:image" content="https://img.youtube.com/vi/xfHbePnyiks/maxresdefault.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,6 +47,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
 .src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
 .src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
 .keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
 .keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
 .keys ul{list-style:none;display:grid;gap:9px}
@@ -110,8 +111,8 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
   </div></div></nav>
 <main>
 <div class="rd"><a class="back" href="../">← 자료실</a>
-  <div class="head"><div class="m"><i>모델·도구</i><span>2026-10-02</span></div><h1>OpenAI engineers just showed how they prompt GPT-6 Astra...</h1></div>
-  <figure style="margin:0 0 24px"><img src="../thumb/xfHbePnyiks.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Nick Puru</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<br><a href="https://www.youtube.com/watch?v=xfHbePnyiks" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>더 똑똑한 모델일수록 옛 습관이 독이 된다</li><li>품질은 사고 설정이 아니라 입력에서 나온다</li><li>&#x27;완료&#x27;를 정의하면 AI가 스스로 검수한다</li></ul></div>
+  <div class="head"><div class="m"><i>모델·도구</i><span>2026-10-02</span></div><h1>오픈AI 엔지니어가 직접 공개한 GPT-6 Astra 프롬프트법</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/xfHbePnyiks.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Nick Puru</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<span class="orig">원제 · OpenAI engineers just showed how they prompt GPT-6 Astra...</span><br><a href="https://www.youtube.com/watch?v=xfHbePnyiks" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>더 똑똑한 모델일수록 옛 습관이 독이 된다</li><li>품질은 사고 설정이 아니라 입력에서 나온다</li><li>&#x27;완료&#x27;를 정의하면 AI가 스스로 검수한다</li></ul></div>
   <div class="bd">
 <h3>한 줄 요약</h3>
 <p>OpenAI가 직접 공개한 GPT-6 Astra 프롬프트 가이드에서 Nick Puru가 추린 6가지 팁 — 자료를 주고, 글쓰기 스타일을 지정하고, "도와줄래?"를 실행 지시로 바꾸고, 완료 기준을 정의하고, "깊이 생각해" 문구를 지우고, 옛 맞춤 지침을 정리하라. 일부는 이전 모델에서 통하던 습관과 정반대다.</p>

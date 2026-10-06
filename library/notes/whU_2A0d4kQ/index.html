@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>이제 영상 편집하는데 시간낭비하지 마세요 · 워크제로 자료실</title>
+<meta name="description" content="캡컷(CapCut)으로 촬영·1차 자막까지는 수동으로 진행하고, 그 이후 인트로 편집(컷 전환, 애니메이션, 스타일)은 캡컷 프로젝트의 드래프트 파일 경로를 직접 지정한 AI 에이전트(클로드/GPT)에게 맡기는 반자동(하이브리드) 영상 편집 워크플로우를 처음부터 끝까지">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/whU_2A0d4kQ/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#533afd">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="이제 영상 편집하는데 시간낭비하지 마세요">
+<meta property="og:description" content="캡컷(CapCut)으로 촬영·1차 자막까지는 수동으로 진행하고, 그 이후 인트로 편집(컷 전환, 애니메이션, 스타일)은 캡컷 프로젝트의 드래프트 파일 경로를 직접 지정한 AI 에이전트(클로드/GPT)에게 맡기는 반자동(하이브리드) 영상 편집 워크플로우를 처음부터 끝까지">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/whU_2A0d4kQ/">
+<meta property="og:image" content="https://img.youtube.com/vi/whU_2A0d4kQ/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="이제 영상 편집하는데 시간낭비하지 마세요">
+<meta name="twitter:description" content="캡컷(CapCut)으로 촬영·1차 자막까지는 수동으로 진행하고, 그 이후 인트로 편집(컷 전환, 애니메이션, 스타일)은 캡컷 프로젝트의 드래프트 파일 경로를 직접 지정한 AI 에이전트(클로드/GPT)에게 맡기는 반자동(하이브리드) 영상 편집 워크플로우를 처음부터 끝까지">
+<meta name="twitter:image" content="https://img.youtube.com/vi/whU_2A0d4kQ/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+:root{--primary:#533afd;--primary-deep:#4434d4;--primary-pale:#eceaff;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f6f9fc;--hair:#e3e8ee;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴">
+    <a href="../../tutoring/">1:1 과외</a><a href="../../build/">제작 문의</a>
+    <a class="on" href="../" aria-current="page">자료실</a>
+  </div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../">← 자료실</a>
+  <div class="head"><div class="m"><i>에이전트</i><span>2026-09-22</span></div><h1>이제 영상 편집하는데 시간낭비하지 마세요</h1></div>
+  <div class="src"><b>출처 · 투쏠ㅣAI 에이전트</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<br><a href="https://www.youtube.com/watch?v=whU_2A0d4kQ" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>편집 툴 자체의 AI 자막 기능을 믿지 말 것</li><li>파일 경로 하나가 에이전트 자동화 여부를 가른다</li><li>가이드와 수치 기준이 없으면 AI는 대충 만든다</li></ul></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>캡컷(CapCut)으로 촬영·1차 자막까지는 수동으로 진행하고, 그 이후 인트로 편집(컷 전환, 애니메이션, 스타일)은 캡컷 프로젝트의 드래프트 파일 경로를 직접 지정한 AI 에이전트(클로드/GPT)에게 맡기는 반자동(하이브리드) 영상 편집 워크플로우를 처음부터 끝까지 실제로 보여주는 영상이다.</p>
+<h3>전체 내용 정리</h3>
+<h4>100% 자동화가 아닌 "하이브리드" 편집을 하는 이유</h4>
+<p>발표자는 캡컷을 사용하면서 GPT 또는 클로드와 함께 영상을 편집하지만 100% 자동화는 아니라고 못 박는다. 촬영은 미리 쭉 녹화해두고, 컷 편집(불필요한 부분 잘라내기) 자체는 수동으로 직접 한다. AI가 컷을 잡아줄 수는 있지만 본인이 말이 빠르고 발음이 정확하지 않아 AI가 부정확하게 잡는 경우가 많기 때문이다. 그래서 촬영 후 컴퓨터로 옮겨 완전한 폴더를 만드는 것까지는 사람이 하고, 이후 인트로처럼 디자인·애니메이션이 들어가는 구간부터 AI 에이전트에게 넘긴다.</p>
+<h4>캡컷 프로젝트 세팅과 편집 구간 지정</h4>
+<p>캡컷을 켜고 새 프로젝트를 만든 뒤, 촬영해둔 폴더 전체를 그대로 업로드한다. 이후 실제로 편집이 필요한 구간까지 타임라인에 빼놓으면 1차 준비가 끝난다. 프로젝트 이름은 날짜 기준으로 바꿔둔다(예: "9월 18일 인트로 촬영"). 발표자는 원래 "아스트라"라는 도구/모델을 쓰고 싶었지만 사용량이 1%밖에 남지 않아, 이번 영상에서는 "클로드 페이블 5.1"로 작업을 진행했다고 밝힌다.</p>
+<h4>자막 추출은 캡컷 대신 별도 전사 사이트로</h4>
+<p>캡컷 자체 AI 자막 생성 기능을 써보면 품질이 매우 떨어진다("쓰레기처럼 나온다")고 지적한다. 많은 사람이 쓰는 "부루" 같은 툴 대신, 발표자는 "터보스크라이브"라는 사이트를 이용한다. 하루 3건까지 무료이며 한국어 전사 품질이 특히 좋다고 설명한다. 대시보드에서 파일을 업로드하고 모델을 "고래" 모델(가장 정확하다고 언급)로 선택해 전사하면, 캡컷 자체 자막보다 훨씬 깔끔한 스크립트가 나온다. 전사 결과 중 틀린 단어가 있으면 전사 편집 화면에서 해당 문장을 클릭해 바로 수정할 수 있고, 완료되면 SRT 파일을 다운로드한다.</p>
+<h4>캡컷으로 돌아와 자막 스타일 입히기</h4>
+<p>다운로드한 SRT 파일을 캡컷의 "캡션 추가" 기능으로 불러와 넣으면 문장 단위로 깔끔하게 자막이 배치된다(무료 버전이라 워터마크성 표시가 한 줄 붙는 점은 감안). 텍스트 스타일은 프리텐다드 엑스트라 볼드체를 기본으로 쓰고, 스타일 목록 중 네 번째 스타일에서 불투명도(흐림) 값을 조정해 깔끔한 자막 스타일을 완성한다.</p>
+<h4>AI 에이전트가 캡컷 프로젝트를 직접 편집할 수 있게 만드는 핵심: 드래프트 파일 경로</h4>
+<p>이 영상에서 가장 핵심적인 단계로 소개되는 부분이다. 캡컷을 완전히 종료한 뒤, 사용자 PC의 캡컷 폴더 안에서 "유저 데이터 &gt; 프로젝트" 경로를 따라가면 "LV 에디터 드래프트"라는 폴더가 있다. 이 폴더의 경로를 알고 있으면, 클로드나 GPT 같은 AI가 그 경로에 있는 드래프트(JSON) 파일을 직접 열어 읽고 써서 실제 캡컷 편집 내용을 바꿀 수 있게 된다. 경로를 직접 찾기 어려운 사람은 클로드 코워크에서 캡컷 폴더를 프로젝트 폴더로 추가한 뒤 "LV 에디터점(com) 폴더를 찾아주고 경로를 알려줘"라고 요청하면 빠르게 경로를 얻을 수 있다고 안내한다.</p>
+<h4>미리 만들어둔 "캡컷 에디 에이전트"에게 인트로 편집을 요청</h4>
+<p>발표자는 자신만의 프레임워크로 구성한 "캡컷 에디 에이전트"를 미리 만들어두었고, 이를 ABC 클럽에 올려 다운로드할 수 있게 할 예정이라고 언급한다. 클로드에서 해당 에이전트 폴더를 지정하고, 앞서 찾은 LV 에디터 드래프트 경로를 복사해 붙여넣은 뒤, 먼저 "이 인트로를 인식할 수 있는지 확인해줘"라고 요청한다. 에이전트는 드래프트 폴더를 스스로 열어 구조와 타임라인을 확인하고, 드래프트 JSON 파일을 직접 읽고 쓸 수 있어 자막 수정·트랙 추가·세그먼트 배치가 파일 처리 단위로 가능하다고 응답한다.</p>
+<p>이어서 구체적인 편집 지시를 준다: 브랜드 가이드라인 색상은 체리필터 색으로 지정하고, 문장(어절) 단위마다 화면 전환이 최소 2~3번씩 일어나야 시청자 이탈을 막을 수 있다는 기준을 준다. 또한 클로드 페이블 5.1 내부의 기본 스타일 지침(카이달)을 크게 따를 필요는 없으니 먼저 러프하게 결과를 뽑아달라고 요청한다. 인트로 폴더와 SRT 파일을 업로드한 뒤, 계획은 페이블 5.1로 세우되 실제 구현은 클로드 오프스(Opus) 4.5 모델로 진행하도록 지정해서 요청한다. 계획이 나오면 검토 후 모델을 오프스로 바꾸고 추론 강도를 "높음"으로 설정해 실행을 지시한다. 에이전트는 작업을 마친 뒤 캡컷을 종료하고 드래프트에 결과를 주입하며, 드래프트 JSON을 다시 읽어 트랙 순서와 타이밍을 검증했다고 보고한다.</p>
+<h4>결과를 보며 반복 피드백으로 다듬기</h4>
+<p>캡컷을 다시 열어 확인해보니 기존 영상 위에 새 인트로가 얹혀 나온다. 첫 결과는 컷이 너무 많아 "너무 난잡하다"는 문제가 있었고, 발표자는 컷수를 절반 이하로 줄이고 "한 어절 동안 이어가다 세 어절마다 한 번 전환" 같은 패턴으로, 전체 컷수를 15컷 이하로 줄여달라고 다시 요청한다. 재작업 결과는 훨씬 깔끔해졌다.</p>
+<p>비교 실험으로, 자신이 만든 에이전트 가이드 없이 그냥 클로드 페이블 5.1에만 맡겨본 결과도 보여준다. 이 경우에는 컷 구분이나 편집 없이 원본 영상을 거의 그대로 이어붙인 수준의 결과물이 나왔다. 이를 통해 리모션(Remotion) 같은 렌더링 엔진은 그냥 맡기기만 해서는 좋은 결과가 나오지 않고, 구체적인 가이드와 예시를 함께 줘야 한다는 점을 강조한다. 참고로 캡컷 에디터 작업에는 리모션과 하이퍼프레임 두 가지를 쓸 수 있는데, 발표자는 주로 리모션을 활용한다고 밝힌다.</p>
+<p>마지막으로 화면 중앙에 보이는 검은색 띠 형태의 요소가 마음에 들지 않아, 이를 빼고 다른 애니메이션으로 대체해달라고 말로 요청해 다시 렌더링을 받는다. 수정 결과는 이전보다 훨씬 깔끔해졌고, 발표자는 이후에도 마음에 안 드는 부분을 캡처해서 지정하거나 말로 설명하는 방식으로 계속 다듬어나갈 수 있다고 설명한다. 이렇게 캡컷에서 편집이 끝나면 내보내기(추가 수정 후 내보내기) 후 유튜브에 업로드하는 것으로 마무리된다.</p>
+<h4>하이브리드 방식을 선호하는 이유</h4>
+<p>발표자는 영상 전공자가 아닌 사람들에게는 완전 자동화보다 직접 고칠 부분은 고치고 AI에게 맡길 부분은 맡기는 하이브리드 방식이 더 현실적이라고 말한다. 또한 편집 요청을 타이핑 대신 말로 설명해 AI에게 전달하는 방식이 타이핑보다 훨씬 빠르고, 구조적으로 정리된 형태로 전달된다는 점도 이 워크플로우의 장점으로 언급한다. 이 말로 하는 전달 과정이 없었다면 촬영·편집 시간이 훨씬 더 길어졌을 것이라고 말한다.</p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>편집 툴 자체의 AI 자막 기능을 믿지 말 것</strong>: 캡컷 내장 자막 생성은 품질이 낮아, 별도 전사 전문 서비스(터보스크라이브 등)로 SRT를 뽑아 다시 넣는 우회 경로가 실제로는 훨씬 결과물이 깔끔하다.</li><li><strong>파일 경로 하나가 에이전트 자동화 여부를 가른다</strong>: 캡컷의 "LV 에디터 드래프트" 폴더 경로만 AI에게 넘겨주면, AI가 드래프트 JSON을 직접 읽고 써서 실제 캡컷 프로젝트를 조작할 수 있다. 이런 내부 파일 경로를 찾아 넘기는 것이 편집 도구를 AI 에이전트화하는 핵심 열쇠다.</li><li><strong>가이드와 수치 기준이 없으면 AI는 대충 만든다</strong>: 브랜드 컬러, 전환 빈도, 컷수 상한 같은 구체적인 기준을 주지 않고 그냥 "만들어줘"라고 하면 리모션 같은 엔진도 컷 구분조차 안 된 부실한 결과를 내놓는다. 반복적인 피드백(컷수 줄이기, 특정 요소 제거)으로 결과를 다듬어가는 과정이 필수다.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li>터보스크라이브(TurboScribe) 사이트에서 자신의 영상 파일을 업로드하고 "고래" 모델로 전사한 뒤 SRT를 다운로드해, 쓰던 편집 툴 자체 자막 기능 대신 자막 소스로 써본다(하루 3건 무료).</li><li>자신이 쓰는 편집 툴(캡컷 등)의 사용자 데이터 폴더에서 프로젝트 드래프트 파일이 저장되는 경로를 찾아 메모해둔다 — 못 찾으면 클로드 코워크에 편집 툴 폴더를 추가하고 "드래프트 저장 폴더를 찾아서 경로를 알려줘"라고 요청한다.</li><li>AI에게 영상 편집이나 디자인 결과물을 요청할 때 "브랜드 컬러는 이 색으로", "전환은 몇 번마다", "컷수는 몇 개 이하로" 같은 구체적 수치 기준을 먼저 주고, 결과를 본 뒤 마음에 안 드는 요소를 짚어 말로 다시 수정 요청하는 반복 피드백 방식으로 진행해본다.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>업무를 같이 분해하고 4단계 중 지금 위치를 짚어 드려요.</p><span class="go">진단 콜 보기 →</span></a>
+    <a class="cross" href="../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>

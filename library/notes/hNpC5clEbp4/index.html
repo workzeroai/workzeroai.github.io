@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>클로드가 모션 디자인을 해결했다 (AI 티 나는 결과물 탈출) · 워크제로 자료실</title>
+<meta name="description" content="Jack이 Claude(클로드)와 영상 생성 도구 Higgsfield만으로 컬러 그레이딩, 모션 B-roll, 트랜지션까지 만들어내는 3단계 디자인 워크플로우를 보여주는 영상으로, 핵심은 &quot;잘 만든 디자인을 찾아 → 그대로 만들고 → 스킬로 코드화해 언제든 재사용한다&quot;">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/hNpC5clEbp4/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#533afd">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="클로드가 모션 디자인을 해결했다 (AI 티 나는 결과물 탈출)">
+<meta property="og:description" content="Jack이 Claude(클로드)와 영상 생성 도구 Higgsfield만으로 컬러 그레이딩, 모션 B-roll, 트랜지션까지 만들어내는 3단계 디자인 워크플로우를 보여주는 영상으로, 핵심은 &quot;잘 만든 디자인을 찾아 → 그대로 만들고 → 스킬로 코드화해 언제든 재사용한다&quot;">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/hNpC5clEbp4/">
+<meta property="og:image" content="https://img.youtube.com/vi/hNpC5clEbp4/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="클로드가 모션 디자인을 해결했다 (AI 티 나는 결과물 탈출)">
+<meta name="twitter:description" content="Jack이 Claude(클로드)와 영상 생성 도구 Higgsfield만으로 컬러 그레이딩, 모션 B-roll, 트랜지션까지 만들어내는 3단계 디자인 워크플로우를 보여주는 영상으로, 핵심은 &quot;잘 만든 디자인을 찾아 → 그대로 만들고 → 스킬로 코드화해 언제든 재사용한다&quot;">
+<meta name="twitter:image" content="https://img.youtube.com/vi/hNpC5clEbp4/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+:root{--primary:#533afd;--primary-deep:#4434d4;--primary-pale:#eceaff;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f6f9fc;--hair:#e3e8ee;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴">
+    <a href="../../tutoring/">1:1 과외</a><a href="../../build/">제작 문의</a>
+    <a class="on" href="../" aria-current="page">자료실</a>
+  </div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../">← 자료실</a>
+  <div class="head"><div class="m"><i>자동화</i><span>2026-08-26</span></div><h1>클로드가 모션 디자인을 해결했다 (AI 티 나는 결과물 탈출)</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/hNpC5clEbp4.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Jack Roberts</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<span class="orig">원제 · Claude Just Solved Motion Design (Destroy AI Slop)</span><br><a href="https://www.youtube.com/watch?v=hNpC5clEbp4" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>&quot;찾기 → 만들기 → 코드화&quot; 루프가 재현성의 핵심이다</li><li>AI에게 &quot;왜 이게 좋아 보이는가&quot;를 분해시키는 것이 프롬프트보다 강하다</li><li>AI는 만능이 아니라 역할 분담 대상이다</li></ul></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>Jack이 Claude(클로드)와 영상 생성 도구 Higgsfield만으로 컬러 그레이딩, 모션 B-roll, 트랜지션까지 만들어내는 3단계 디자인 워크플로우를 보여주는 영상으로, 핵심은 "잘 만든 디자인을 찾아 → 그대로 만들고 → 스킬로 코드화해 언제든 재사용한다"는 루프다.</p>
+<h3>전체 내용 정리</h3>
+<h4>AI 슬롭이 나오는 이유는 도구와 시스템을 안 쓰기 때문이다</h4>
+<p>Jack은 대부분의 사람이 AI로 조잡한 결과물("AI slop")만 얻는 이유를 "AI를 그냥 챗봇처럼 다루기 때문"이라고 말한다. 모델 자체는 이미 충분히 좋아졌고, 문제는 올바른 도구(tools)와 올바른 시스템(systems)을 안 쓴다는 것이다. 이 둘은 둘 다 아주 단순하다고 강조한다. 이 영상에서 보여주는 그래픽, 모션, 트랜지션은 전부 Claude로 만들었고, 관통하는 원리는 하나다. 훌륭한 디자인을 찾고(find), 그 디자인을 만들고(build), 그다음 코드화(codify)해서 원할 때마다 다시 쓴다. 그는 이걸 갈수록 강력해지는 3개 레벨로 나눠 설명한다.</p>
+<h4>레벨 1: Claude가 LUT를 다뤄 컬러 그레이딩을 대신한다</h4>
+<p>첫 번째 레벨은 컬러 그레이딩(color grading, 영상 색 보정)이다. Jack은 예전에 유튜브 편집을 배울 때 LUT(Look-Up Table, 색 보정 프리셋)를 잔뜩 받아 밝기 등을 일일이 맞추느라 복잡했다고 회상한다. 지금은 Claude가 직접 리서치를 해서 시스템을 통째로 만들어준다. 그는 자신의 "디자인 운영체제(design OS)" 안에 LUT 시스템을 하나 만들어뒀는데, "영상을 줄 테니 컬러 그레이딩을 하고 여러 옵션을 만들어달라"고 프롬프트를 준 결과물이다. 어떤 영상이든 업로드하면 Claude가 화면에 존재하는 색들(ink, olive, shadow, skin, window, leaf 등)을 식별하고, 추천 보정과 그 차이를 보여준다. 예: 초록빛 반사광(green spill) 제거, 피부톤을 차가운 톤에서 자연스럽게, 창문 디테일 복원, 검은 부분이 뭉개지지 않게 유지. 보정 강도(intensity)도 낮춰가며 차이를 확인할 수 있다. 전문 컬러리스트 없이 이 작업 하나를 통째로 Claude에게 넘길 수 있다는 뜻이다.</p>
+<h4>레벨 2: 모션 영상 B-roll을 Higgsfield + Claude로 만든다</h4>
+<p>두 번째 레벨은 모션 영상, 즉 인스타그램·유튜브용 B-roll(보조 영상)을 재현 가능한 스타일로 뽑아내는 것이다. 먼저 할 일은 "예쁜 것을 찾는 것"이다. Jack은 마음에 드는 애니메이션을 하나 찾아 "이걸 1992년 + JR 버전으로 바꿔줘", "이제 와이드로 만들어줘"라고 요청했고, 파티클 이펙트가 들어간 결과물을 얻었다. 제작에는 영상 생성 도구 Higgsfield를 쓴다. 연결 방법은 Higgsfield 화면의 연결 정보를 스크린샷으로 찍어(또는 정보를 복사해) Claude에 붙여넣고 "Higgsfield CLI에 연결해서 같이 이미지·영상을 생성하자"고 말하는 것이다. 그러면 플랫폼이 열리고 로그인하면 최신 영상·이미지 모델을 쓸 수 있다. 이 애니메이션 한 편을 만드는 데 약 2달러가 들었고, 색 보정·타이포·프레임 편집을 별도 소프트웨어 없이 Claude가 이어붙여 완성했다.</p>
+<h4>레벨 2의 실제 방법: 무드보드 → design loop 스킬 → 스킬로 코드화</h4>
+<p>그냥 "이거 만들어줘"라고 하면 처참하게 실패한다고 Jack은 못 박는다. 그래서 쓰는 전략이 있다. 1단계는 영감(inspiration)을 찾는 것으로, 그가 지금 가장 즐겨 쓰는 곳은 savee.com이고 Pinterest도 좋은 예다. 여러 영상·이미지를 저장해 스타일과 창작 방향(creative direction)을 담은 무드보드를 만든다. 그다음 Claude에 "이런 스타일을 원한다, 첫 번째 이미지의 애니메이션과 두 번째 이미지의 색 조합이 좋다, 아래 스킬을 써서 만들어줘"라고 말하며 무료 "design loop 스킬"을 함께 붙여넣는다(영상 설명란 두 번째 링크, 이메일 입력 후 무료 제공). 결과물이 나오면 그가 하는 핵심 작업은 역설계(reverse engineering)다. 어떤 디자인을 보고 "이게 왜 좋아 보이는가"를 Claude에게 단계별로 분해시킨다. 이미지 크기, 컬러 그레이딩, 초점(focal point)이 무엇인지 물으면 더 나은 출력이 나온다. 한 예시는 20장의 사진으로 이뤄졌고, 초점이 가운데로 모이고 이미지가 깜빡이는(flicker) 구조였다. Jack은 이렇게 정리한다. "하나의 그레이딩이 모든 걸 붙여준다 — 하이라이트에서 초록이 빨강 위에 있고, 그림자는 깊고 깨끗하게, 그레인(grain, 필름 입자)이 모든 이음매를 덮는다." 앞으로 쓸 방법론: 만들기 전에 측정하라, 전체에 하나의 그레이딩, 사진 한 장에 피사체 하나, 2~3프레임씩 홀드, 짧은 세트를 루프, 정확히 한 번만 끊어라. 완성되면 Claude에 "이걸 언제든 쓸 수 있는 스킬로 만들어줘"라고 하면 스킬로 변환된다. 같은 방식으로 이미지를 주고 "이걸 배경으로 만들어줘"라고 해 움직이는 모션 배경도 만든다.</p>
+<h4>레벨 3: 트랜지션은 에셋을 다운로드해 design OS에 넣고 AI 편집기처럼 쓴다</h4>
+<p>세 번째 레벨은 트랜지션(transition, 장면 전환)이다. Jack은 직접 실험해본 결과 Claude 자체는 트랜지션을 아직 잘 만들지 못한다고 말한다. 대신 모션 디자인 에셋을 파는 웹사이트에서 마음에 드는 전환 효과들을 다운로드해 온다(필름 번, 라이트 릭, 밀리미터 샷 등). 이걸 design OS에 "트랜지션 탭"으로 추가해두면, 아무 클립이나 업로드했을 때 컷(cut) 지점을 스캔해서 실제로 컷을 넣어준다. 사실상 전체를 훑어주는 AI 편집기를 갖는 셈이다. 원하면 그냥 전환 효과 라이브러리로 두고 편집할 때마다 꺼내 써도 된다. Jack은 마지막에 "이 기술로 할 수 있는 가장 강력한 활용 사례"를 다음에 이어서 함께 해보자며 영상을 맺는다.</p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>"찾기 → 만들기 → 코드화" 루프가 재현성의 핵심이다</strong>: 좋은 결과를 한 번 얻는 데서 멈추지 않고, Claude에 "이걸 스킬로 만들어줘"라고 해서 다음부터 한 줄 호출로 재사용한다. 일회성 산출물과 자산(asset)의 차이가 여기서 갈린다.</li><li><strong>AI에게 "왜 이게 좋아 보이는가"를 분해시키는 것이 프롬프트보다 강하다</strong>: 이미지 크기, 컬러 그레이딩, 초점을 하나씩 질문해 원리를 뽑아내면, 그 원리가 그대로 재현 가능한 규칙이 된다. "더 좋게 만들어줘"보다 "이 요소를 분석해줘"가 더 나은 출력을 만든다.</li><li><strong>AI는 만능이 아니라 역할 분담 대상이다</strong>: 컬러 그레이딩·컷 감지는 Claude가 잘하지만 트랜지션 생성은 아직 약하다. 잘하는 부분은 맡기고 약한 부분은 기존 에셋을 사서 채우는 식의 현실적 분업이 결과 품질을 지킨다.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li>반복적으로 만드는 시각 결과물(예: SNS 카드뉴스, 썸네일, 문서 표지) 하나를 골라, 마음에 드는 레퍼런스를 3~5개 모아 무드보드를 만든 뒤 Claude에게 "이 디자인들이 왜 좋아 보이는지 요소별(색, 여백, 초점, 타이포)로 분해해줘"라고 물어본다.</li><li>그 분해 결과를 바탕으로 Claude에게 "이 규칙을 재사용 가능한 체크리스트(또는 스킬)로 정리해줘"라고 요청해, 다음 제작부터 매번 같은 기준을 적용할 수 있게 만든다.</li><li>외주나 협업으로 영상·디자인을 맡기고 있다면, 담당 업체에 "레퍼런스 무드보드를 주면 그 스타일을 규칙으로 문서화해서 재현 가능하게 관리해줄 수 있는지" 물어보고, 매번 새로 설명하는 비용을 줄인다.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>업무를 같이 분해하고 4단계 중 지금 위치를 짚어 드려요.</p><span class="go">진단 콜 보기 →</span></a>
+    <a class="cross" href="../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>

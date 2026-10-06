@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Codex 사용량 한도, 두 번 다시 안 터뜨리는 법 · 워크제로 자료실</title>
+<meta name="description" content="Nick Puru가 Codex 사용량 한도를 훨씬 오래 쓰는 방법을 정리했다. 사용량을 눈으로 확인하고, 작업에 맞는 작은 모델을 고르고, 채팅을 새로 열고, 프롬프트를 구체적으로 쓰는 것이 핵심이다. 서브에이전트로 아끼라는 흔한 조언은 오히려 토큰을 더 태울 수 있다">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/13_-mbhsbpE/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#533afd">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="Codex 사용량 한도, 두 번 다시 안 터뜨리는 법">
+<meta property="og:description" content="Nick Puru가 Codex 사용량 한도를 훨씬 오래 쓰는 방법을 정리했다. 사용량을 눈으로 확인하고, 작업에 맞는 작은 모델을 고르고, 채팅을 새로 열고, 프롬프트를 구체적으로 쓰는 것이 핵심이다. 서브에이전트로 아끼라는 흔한 조언은 오히려 토큰을 더 태울 수 있다">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/13_-mbhsbpE/">
+<meta property="og:image" content="https://img.youtube.com/vi/13_-mbhsbpE/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Codex 사용량 한도, 두 번 다시 안 터뜨리는 법">
+<meta name="twitter:description" content="Nick Puru가 Codex 사용량 한도를 훨씬 오래 쓰는 방법을 정리했다. 사용량을 눈으로 확인하고, 작업에 맞는 작은 모델을 고르고, 채팅을 새로 열고, 프롬프트를 구체적으로 쓰는 것이 핵심이다. 서브에이전트로 아끼라는 흔한 조언은 오히려 토큰을 더 태울 수 있다">
+<meta name="twitter:image" content="https://img.youtube.com/vi/13_-mbhsbpE/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+:root{--primary:#533afd;--primary-deep:#4434d4;--primary-pale:#eceaff;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f6f9fc;--hair:#e3e8ee;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴">
+    <a href="../../tutoring/">1:1 과외</a><a href="../../build/">제작 문의</a>
+    <a class="on" href="../" aria-current="page">자료실</a>
+  </div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../">← 자료실</a>
+  <div class="head"><div class="m"><i>에이전트</i><span>2026-09-30</span></div><h1>Codex 사용량 한도, 두 번 다시 안 터뜨리는 법</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/13_-mbhsbpE.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Nick Puru</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<span class="orig">원제 · How to Never Run Out of Codex Usage Limit (Even on GPT-6 Astra)</span><br><a href="https://www.youtube.com/watch?v=13_-mbhsbpE" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>채팅 길이가 곧 비용이다</li><li>비싼 모델은 어려운 일 전용으로</li><li>&quot;아끼는 기능&quot;이 오히려 토큰을 태울 수 있다</li></ul></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>Nick Puru가 Codex 사용량 한도를 훨씬 오래 쓰는 방법을 정리했다. 사용량을 눈으로 확인하고, 작업에 맞는 작은 모델을 고르고, 채팅을 새로 열고, 프롬프트를 구체적으로 쓰는 것이 핵심이다. 서브에이전트로 아끼라는 흔한 조언은 오히려 토큰을 더 태울 수 있다고 한다.</p>
+<h3>전체 내용 정리</h3>
+<h4>사용량 막대는 메시지 수가 아니라 토큰 수를 보여준다</h4>
+<p>토큰은 대략 3/4 단어 크기의 텍스트 조각이다. Codex는 프롬프트뿐 아니라 여는 모든 파일, 채팅에 출력되는 내용, 답변까지 전부 토큰으로 읽고 쓴다. 그래서 짧은 메시지 하나에 Codex가 파일 10개를 열면 막대가 확 오르고, 긴 메시지를 보내도 별 작업이 없으면 거의 안 움직인다. Nick은 자기 계정이 남은 사용량 0%에 주간 한도 초기화가 3일 뒤인 상태였다고 보여준다.</p>
+<h4>채팅은 쌓이는 종이 뭉치라서 오래 열어둘수록 메시지당 값이 비싸진다</h4>
+<p>Nick은 채팅을 "책상 위에 쌓이는 종이 뭉치"에 비유한다. 메시지를 보낼 때마다 새 페이지 한 장이 아니라 그때까지 쌓인 종이 뭉치 전체를 다시 읽는다. 그래서 아침부터 열어둔 채팅은 문제가 어려워진 게 아닌데도 메시지 한 통당 비용이 더 든다. 엔진도 변수인데, 가장 강력한 Astra는 OpenAI 요금표상 미드 엔진 프로모션 가격의 두 배 반이다.</p>
+<h4>먼저 무료로 사용량을 확인하는 세 가지 방법</h4>
+<p>첫째는 설정의 '사용량 및 청구'다. 남은 한도, 만료 시점, 남은 무료 초기화 횟수와 어떤 채팅이 토큰을 많이 썼는지 보이는 분석 화면이 여기에 있다. 둘째는 일반 설정에서 '컨텍스트 창 사용량 표시'를 켜는 것이다. 기본은 꺼져 있고, 켜면 작성창 옆에 지금 채팅이 258,000개 중 140,000개(54%)를 쓴 것처럼 종이 뭉치 높이가 보인다. 셋째는 컴퓨터에 있는 Codex 로그를 읽어 일별·모델별·세션별 토큰 사용량을 표로 보여주는 무료 추적 도구다. 표의 달러 금액은 API 가격 기준 추정치라 실제 구독 요금과 무관하니 토큰 수만 보면 된다.</p>
+<h4>어려운 일만 Astra에 맡기고 나머지는 작은 모델로</h4>
+<p>Nick은 예전에 파일 이름 변경, 목록 정리, 커밋 메시지까지 전부 가장 비싼 Astra에 맡겼다고 인정한다. 지금은 까다로운 버그나 추론이 필요한 일만 Astra에 맡기고, 나머지는 Terra, Soul, Luna 같은 하위 모델로 처리한다. 요금표상 Luna는 Astra 토큰의 약 50분의 1, Terra는 약 5분의 1 값이다. Codex가 자동으로 모델을 골라주지 않아서 드롭다운에서 직접 골라야 한다.</p>
+<h4>노력 수준·속도·울트라 설정은 처음에 정하고, 함부로 올리지 않는다</h4>
+<p>노력 수준 슬라이더는 라이트부터 울트라까지 있다. 라이트가 나쁜 설정은 아니지만, 한 번에 완료되지 못해 다시 돌리면 중간이나 높음보다 토큰이 두 배쯤 더 든다. 중간에 수준을 바꾸는 것도 공짜가 아니어서, 다음 메시지에서 전체 스택을 다시 읽는 비용이 그대로 청구된다. 빠른 모드는 일반 모드보다 토큰을 약 2.5배 쓰므로 급한 일이 아니면 꺼둔다. 울트라는 Astra에게 최대 사고 능력을 주고 일부를 함께 도는 하위 에이전트에 맡기기 때문에 한도를 훨씬 빨리 태운다.</p>
+<h4>새 작업은 새 채팅에서, 대신 이어갈 기록 파일을 남긴다</h4>
+<p>새 광고 만들기나 스프레드시트 업데이트처럼 새 일은 별도 채팅에서 시작해야 한다. 다만 새 채팅도 처음부터 다시 설정해야 하니 공짜는 아니다. 그래서 Nick은 프로젝트 안에 파일 하나를 두고 작업이 끝날 때마다 "끝낸 일과 다음에 할 일"을 기록해 둔다. 다음 날 새 채팅에 그 파일을 연결하면 끊긴 지점부터 이어진다. Codex는 채팅이 가득 차면 자동으로 압축하는데 이 압축도 별도 요청이라 비용이 든다. 작업 중 한도를 넘어도 계속된다고 OpenAI가 밝혔지만, 실제로는 중간에 멈추는 경우가 많아 완료를 기대하지 않는 편이 낫다.</p>
+<h4>플러그인·이미지·예약 작업·기타 기능은 꺼두거나 가볍게</h4>
+<p>MCP 서버는 쓸 때마다 메시지에 컨텍스트를 더하고 한도를 더 쓴다. 스킬은 호출될 때만 본문이 로드되고 평소에는 이름만 보여서 하나씩 쓰면 저렴하지만, 50개를 묶어 쓰면 비싸진다. OpenAI에 따르면 이미지를 쓰는 작업은 이미지 없는 작업보다 평균 3~5배 토큰을 쓴다. 매일 아침 도는 예약 작업이나 코드 리뷰도 토큰을 쓰므로 아주 가벼운 모델로 돌리고, 쓰지 않는 기능은 설정에서 꺼둔다.</p>
+<h4>프롬프트는 파일 경로·증상·기대 결과까지 한 줄에 담고, 답변은 짧게 시킨다</h4>
+<p>"가격 페이지 버튼이 안 돼, 고쳐줘"처럼 모호하게 시키면 AI가 원인을 찾느라 관계없는 파일까지 열고 읽는다. 그 내용은 채팅에 남아 이후 모든 메시지에 덧붙는다. 반면 "가격 페이지에서 세 요금제 버튼을 눌러도 반응이 없다, 결제 페이지가 열려야 한다, 파일은 이 컴포넌트 폴더에 있다, 고치고 뭐가 문제였는지 한 줄로 설명해"라고 쓰면 한 줄이어도 정보가 충분하다. 출력 토큰은 입력 토큰의 5배 값이라, 방금 한 일을 길게 설명하는 단락에 가장 비싼 요금을 내는 셈이다. OpenAI도 파일 이름을 지정하고 출력은 짧게 요청하라고 권한다.</p>
+<h4>서브에이전트는 작업을 싸게 해도, 체크인 때마다 비싼 본체가 다시 읽는다</h4>
+<p>"싼 서브에이전트에게 맡겨 사용량을 90% 줄이라"는 조언이 흔하다. 그러나 OpenAI 문서에도 서브에이전트는 같은 작업을 하는 단일 에이전트보다 토큰을 더 쓴다고 나와 있다. Nick이 세션 로그를 열어보니 메인 모델이 30초마다 47번 서브에이전트를 부르며 그때마다 약 15만 토큰을 썼고, 5시간 한도가 절반에서 30분 만에 0이 됐다. 서브에이전트 자체는 싸지만 그 위의 Astra가 체크인할 때마다 종이 뭉치 전체를 다시 읽는 것이 진짜 비용이었다.</p>
+<h4>남은 무료 초기화 횟수를 확인하고 만료 전에 쓴다</h4>
+<p>사용량이 0이면 설정의 사용량 및 청구에서 '사용량 제한 초기화'가 남았는지 본다. 이 초기화는 만료되므로 Nick은 자기 것이 10월 22일까지라고 보여준다. 결론은 더 큰 요금제가 꼭 필요한 게 아니라, 가진 한도를 낭비하지 않는 것이다. 간단한 일은 작은 모델로, 채팅은 깔끔하게, 안 쓰는 기능은 끄고, Codex에게 필요한 정보를 미리 주면 한도가 24시간 만에 바닥나느냐 7일, 14일을 가느냐가 갈린다.</p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>채팅 길이가 곧 비용이다</strong>: 한 채팅이 길어질수록 매 메시지가 전체 대화를 다시 읽어 비싸진다. 새 작업은 새 채팅으로 나누되 인계용 기록 파일을 남기면 손실이 적다.</li><li><strong>비싼 모델은 어려운 일 전용으로</strong>: 파일 정리나 커밋 메시지 같은 반복 작업까지 최상위 모델에 맡기면 한도가 가장 먼저 샌다. 요금표상 하위 모델은 최대 50분의 1 값이다.</li><li><strong>"아끼는 기능"이 오히려 토큰을 태울 수 있다</strong>: 서브에이전트는 저렴해 보여도 본체가 계속 체크인하면 한도를 훨씬 빨리 쓴다. 로그로 직접 확인하기 전까지는 조언을 그대로 믿으면 안 된다.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li>Codex 설정의 '사용량 및 청구'에 들어가 남은 한도, 만료 시점, 남은 초기화 횟수를 확인한다.</li><li>일반 설정에서 '컨텍스트 창 사용량 표시'를 켜고, 지금 열려 있는 가장 긴 채팅이 몇 %를 쓰는지 본다.</li><li>빠른 모드와 울트라, 쓰지 않는 플러그인·MCP를 꺼두고, 다음 요청부터 "파일 경로, 증상, 기대 결과, 짧게 답해"를 한 줄에 담아 시켜 본다.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>업무를 같이 분해하고 4단계 중 지금 위치를 짚어 드려요.</p><span class="go">진단 콜 보기 →</span></a>
+    <a class="cross" href="../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>

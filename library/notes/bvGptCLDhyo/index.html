@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>I Built Another Andrej Karpathy Using Claude · 워크제로 자료실</title>
+<title>클로드로 안드레이 카파시를 한 명 더 만들었다 · 워크제로 자료실</title>
 <meta name="description" content="Nate Herk가 Andrej Karpathy의 블로그·강의·GitHub·X 게시물 70만 단어 이상을 모아 LLM 위키로 정리하고, 거기서 뽑은 7가지 교육 원칙을 Claude Code 서브 에이전트(sub-agent)·스킬(skill)·실행 관문 훅(hook)으로">
 <link rel="canonical" href="https://workzeroai.github.io/library/notes/bvGptCLDhyo/">
 <link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
@@ -12,12 +12,12 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="워크제로">
 <meta property="og:locale" content="ko_KR">
-<meta property="og:title" content="I Built Another Andrej Karpathy Using Claude">
+<meta property="og:title" content="클로드로 안드레이 카파시를 한 명 더 만들었다">
 <meta property="og:description" content="Nate Herk가 Andrej Karpathy의 블로그·강의·GitHub·X 게시물 70만 단어 이상을 모아 LLM 위키로 정리하고, 거기서 뽑은 7가지 교육 원칙을 Claude Code 서브 에이전트(sub-agent)·스킬(skill)·실행 관문 훅(hook)으로">
 <meta property="og:url" content="https://workzeroai.github.io/library/notes/bvGptCLDhyo/">
 <meta property="og:image" content="https://img.youtube.com/vi/bvGptCLDhyo/maxresdefault.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="I Built Another Andrej Karpathy Using Claude">
+<meta name="twitter:title" content="클로드로 안드레이 카파시를 한 명 더 만들었다">
 <meta name="twitter:description" content="Nate Herk가 Andrej Karpathy의 블로그·강의·GitHub·X 게시물 70만 단어 이상을 모아 LLM 위키로 정리하고, 거기서 뽑은 7가지 교육 원칙을 Claude Code 서브 에이전트(sub-agent)·스킬(skill)·실행 관문 훅(hook)으로">
 <meta name="twitter:image" content="https://img.youtube.com/vi/bvGptCLDhyo/maxresdefault.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,6 +47,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
 .src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
 .src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
 .keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
 .keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
 .keys ul{list-style:none;display:grid;gap:9px}
@@ -110,8 +111,8 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
   </div></div></nav>
 <main>
 <div class="rd"><a class="back" href="../">← 자료실</a>
-  <div class="head"><div class="m"><i>에이전트</i><span>2026-10-05</span></div><h1>I Built Another Andrej Karpathy Using Claude</h1></div>
-  <figure style="margin:0 0 24px"><img src="../thumb/bvGptCLDhyo.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Nate Herk | AI Automation</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<br><a href="https://www.youtube.com/watch?v=bvGptCLDhyo" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>AI 품질은 모델이 아니라 시스템에 담긴 전문 지식이 결정한다</li><li>원문 더미보다 &#x27;연결된 위키&#x27;가 핵심이다</li><li>&quot;작동한다&quot;는 말 전에 실행을 강제하는 장치가 신뢰를 만든다</li></ul></div>
+  <div class="head"><div class="m"><i>에이전트</i><span>2026-10-05</span></div><h1>클로드로 안드레이 카파시를 한 명 더 만들었다</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/bvGptCLDhyo.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Nate Herk | AI Automation</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<span class="orig">원제 · I Built Another Andrej Karpathy Using Claude</span><br><a href="https://www.youtube.com/watch?v=bvGptCLDhyo" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>AI 품질은 모델이 아니라 시스템에 담긴 전문 지식이 결정한다</li><li>원문 더미보다 &#x27;연결된 위키&#x27;가 핵심이다</li><li>&quot;작동한다&quot;는 말 전에 실행을 강제하는 장치가 신뢰를 만든다</li></ul></div>
   <div class="bd">
 <h3>한 줄 요약</h3>
 <p>Nate Herk가 Andrej Karpathy의 블로그·강의·GitHub·X 게시물 70만 단어 이상을 모아 LLM 위키로 정리하고, 거기서 뽑은 7가지 교육 원칙을 Claude Code 서브 에이전트(sub-agent)·스킬(skill)·실행 관문 훅(hook)으로 바꾼 네 단계를 공개한다. 핵심은 사람을 흉내 내는 게 아니라 "그 전문가가 생각하고 가르치는 방식"을 복제해 내 프로젝트에 붙이는 것이다.</p>

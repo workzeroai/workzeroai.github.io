@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>2026년 콜드메일 세팅, 이게 정답이다 · 워크제로 자료실</title>
+<meta name="description" content="콜드 이메일 에이전시 운영자가 신규 클라이언트마다 도메인·메일박스를 몇 개나 쓰는지, 그리고 두 가지 인프라 도구(Zapmail, Hyperdrive 계열 툴)로 발송량을 어떻게 설계하는지 짧게 답한 클립.">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/hUxWv-gchLQ/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#533afd">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="2026년 콜드메일 세팅, 이게 정답이다">
+<meta property="og:description" content="콜드 이메일 에이전시 운영자가 신규 클라이언트마다 도메인·메일박스를 몇 개나 쓰는지, 그리고 두 가지 인프라 도구(Zapmail, Hyperdrive 계열 툴)로 발송량을 어떻게 설계하는지 짧게 답한 클립.">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/hUxWv-gchLQ/">
+<meta property="og:image" content="https://img.youtube.com/vi/hUxWv-gchLQ/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="2026년 콜드메일 세팅, 이게 정답이다">
+<meta name="twitter:description" content="콜드 이메일 에이전시 운영자가 신규 클라이언트마다 도메인·메일박스를 몇 개나 쓰는지, 그리고 두 가지 인프라 도구(Zapmail, Hyperdrive 계열 툴)로 발송량을 어떻게 설계하는지 짧게 답한 클립.">
+<meta name="twitter:image" content="https://img.youtube.com/vi/hUxWv-gchLQ/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+:root{--primary:#533afd;--primary-deep:#4434d4;--primary-pale:#eceaff;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f6f9fc;--hair:#e3e8ee;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴">
+    <a href="../../tutoring/">1:1 과외</a><a href="../../build/">제작 문의</a>
+    <a class="on" href="../" aria-current="page">자료실</a>
+  </div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../">← 자료실</a>
+  <div class="head"><div class="m"><i>AI 소식</i><span>2026-09-12</span></div><h1>2026년 콜드메일 세팅, 이게 정답이다</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/hUxWv-gchLQ.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Eugene Kadzina</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<span class="orig">원제 · The Best Cold Email Setup For 2026</span><br><a href="https://www.youtube.com/watch?v=hUxWv-gchLQ" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>정답은 없고 테스트만 있다</li><li>도메인당 총 발송량을 먼저 정하고 역산한다</li><li>여분 인프라를 항상 예열해둔다</li></ul></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>콜드 이메일 에이전시 운영자가 신규 클라이언트마다 도메인·메일박스를 몇 개나 쓰는지, 그리고 두 가지 인프라 도구(Zapmail, Hyperdrive 계열 툴)로 발송량을 어떻게 설계하는지 짧게 답한 클립.</p>
+<h3>전체 내용 정리</h3>
+<h4>도메인·메일박스 개수는 "정답"이 아니라 테스트로 정한다</h4>
+<p>신규 클라이언트를 받으면 업종에 따라 다르다는 원론적 답 대신, 실제로는 작은 카피와 큰 카피를 둘 다 테스트해보며 그 결과로 인프라 규모를 정한다고 말한다. 보통 신규 클라이언트는 하루 약 1,000통 발송을 기준으로 잡고, 비상시를 대비해 별도로 미리 예열(warm-up)해둔 여분의 인프라를 하나 더 대기시켜 둔다.</p>
+<h4>Zapmail: 도메인당 2개 메일박스, 메일박스당 하루 20통</h4>
+<p>Zapmail을 쓸 때는 도메인 하나에 메일박스 2개를 연결하고, 14일 예열 기간을 거쳐 메일박스당 하루 20통씩 발송하는 방식을 지난 2~3년간 유지해왔다고 밝힌다. 업계에는 도메인당 하루 35~60통까지 보내는 운영자들도 있다고 들었지만, 자신들에게는 "도메인 1개 + 메일박스 2개 + 메일박스당 20통" 조합이 가장 잘 맞았다고 강조한다.</p>
+<h4>Hyperdrive 계열 툴: 대기업처럼 보이게 만드는 대형 인프라</h4>
+<p>반대로 Hyperdrive 계열 툴은 도메인 하나에 메일박스를 25개 또는 50개까지 연결해 대기업 이메일 인프라를 흉내 내는 방식이다. 메일박스 25개짜리 도메인이면 메일박스당 하루 4통씩 보내 도메인 전체로는 하루 약 100통, 메일박스 50개짜리 도메인이면 메일박스당 2통씩 보내 역시 도메인당 하루 약 100통으로 맞춘다.</p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>정답은 없고 테스트만 있다</strong>: 도메인·메일박스 개수를 정할 때 업종별 공식을 찾기보다, 작은 규모와 큰 규모를 둘 다 실제로 돌려보고 반응을 비교하는 게 더 신뢰할 수 있는 방법이다.</li><li><strong>도메인당 총 발송량을 먼저 정하고 역산한다</strong>: 메일박스 개수가 다르더라도(2개든 50개든) 결과적으로 도메인당 하루 총 발송량을 100통 안팎으로 맞추는 게 핵심 설계 원칙으로 보인다.</li><li><strong>여분 인프라를 항상 예열해둔다</strong>: 메인 인프라에 문제가 생겼을 때 바로 투입할 수 있도록 별도로 예열된 백업 인프라를 상시 준비해두는 습관이 발송 중단 리스크를 줄인다.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li>콜드 이메일을 대행 업체에 맡기고 있다면, "우리 도메인당 메일박스는 몇 개고 메일박스당 하루 발송량은 얼마인가요"를 구체적으로 물어보고 업계 기준(도메인당 하루 약 100통 안팎)과 비교해본다.</li><li>신규 캠페인을 시작할 때 하나의 카피만 쓰지 말고, 업체에 "작은 버전과 큰 버전 두 가지로 테스트해달라"고 요청해본다.</li><li>메인 발송 계정 외에 예열된 백업 인프라가 있는지 담당 업체에 확인해본다.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>업무를 같이 분해하고 4단계 중 지금 위치를 짚어 드려요.</p><span class="go">진단 콜 보기 →</span></a>
+    <a class="cross" href="../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>

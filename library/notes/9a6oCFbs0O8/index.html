@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>지금 당장 챙겨야 할 깃허브 레포 7개 (GPT-6 Astra) · 워크제로 자료실</title>
+<meta name="description" content="Jack Roberts가 최근 한 달 사이 화제가 된 깃허브(GitHub) 오픈소스·도구 7개를 실제로 켜서 시연하며, 지구 실시간 관제부터 AI 에이전트 스킬 보안 검사, 빌드한 결과물을 바로 서비스로 배포하는 법, AI스러운 문장을 사람 냄새 나는 카피로 바꾸는 법">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/9a6oCFbs0O8/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#533afd">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="지금 당장 챙겨야 할 깃허브 레포 7개 (GPT-6 Astra)">
+<meta property="og:description" content="Jack Roberts가 최근 한 달 사이 화제가 된 깃허브(GitHub) 오픈소스·도구 7개를 실제로 켜서 시연하며, 지구 실시간 관제부터 AI 에이전트 스킬 보안 검사, 빌드한 결과물을 바로 서비스로 배포하는 법, AI스러운 문장을 사람 냄새 나는 카피로 바꾸는 법">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/9a6oCFbs0O8/">
+<meta property="og:image" content="https://img.youtube.com/vi/9a6oCFbs0O8/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="지금 당장 챙겨야 할 깃허브 레포 7개 (GPT-6 Astra)">
+<meta name="twitter:description" content="Jack Roberts가 최근 한 달 사이 화제가 된 깃허브(GitHub) 오픈소스·도구 7개를 실제로 켜서 시연하며, 지구 실시간 관제부터 AI 에이전트 스킬 보안 검사, 빌드한 결과물을 바로 서비스로 배포하는 법, AI스러운 문장을 사람 냄새 나는 카피로 바꾸는 법">
+<meta name="twitter:image" content="https://img.youtube.com/vi/9a6oCFbs0O8/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+:root{--primary:#533afd;--primary-deep:#4434d4;--primary-pale:#eceaff;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f6f9fc;--hair:#e3e8ee;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴">
+    <a href="../../tutoring/">1:1 과외</a><a href="../../build/">제작 문의</a>
+    <a class="on" href="../" aria-current="page">자료실</a>
+  </div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../">← 자료실</a>
+  <div class="head"><div class="m"><i>에이전트</i><span>2026-09-14</span></div><h1>지금 당장 챙겨야 할 깃허브 레포 7개 (GPT-6 Astra)</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/9a6oCFbs0O8.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Jack Roberts</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<span class="orig">원제 · 7 New Github Repos You Need NOW (GPT-6 Astra)</span><br><a href="https://www.youtube.com/watch?v=9a6oCFbs0O8" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>&quot;켜두기만 해도 되는 안전장치가 이미 나와 있다&quot;</li><li>&quot;만드는 것&quot;과 &quot;서비스로 내놓는 것&quot;은 다른 일이었는데, 그 간극이 사라지고 있다</li><li>AI 카피는 &quot;그럴싸함&quot;보다 &quot;구체성&quot;으로 승부해야 한다는 게 도구로 검증되고 있다</li></ul></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>Jack Roberts가 최근 한 달 사이 화제가 된 깃허브(GitHub) 오픈소스·도구 7개를 실제로 켜서 시연하며, 지구 실시간 관제부터 AI 에이전트 스킬 보안 검사, 빌드한 결과물을 바로 서비스로 배포하는 법, AI스러운 문장을 사람 냄새 나는 카피로 바꾸는 법, 여러 AI 모델을 함께 쓰는 법, 텍스트만으로 프로세스 다이어그램을 그리는 법까지 한 번에 훑어준다.</p>
+<h3>전체 내용 정리</h3>
+<h4>지구 전체를 대화형으로 들여다보는 실시간 관제 시스템, God's Eye View</h4>
+<p>God's Eye View는 항공기, 선박, 위성, 지진, CCTV 카메라 등 공개돼 있는 여러 실시간 데이터를 하나의 지도 위에 모아 보여주는 오픈소스 프로젝트다. 단순히 지도를 보는 게 아니라 AI 가이드에게 말을 걸어서 "펜타곤으로 데려가줘", "지금 가장 가까운 비행기 안으로 들어가줘", "조종석 모드로 바꿔줘", "근처 라디오 방송 틀어줘" 같은 요청을 하면 실제로 화면이 그 위치·모드로 전환되는 방식으로 작동한다(영상에서는 실제로 보스턴 WBUR 라디오가 재생되는 장면까지 시연됐다). 여러 공개 API 키를 연결하면 볼 수 있는 정보의 종류가 계속 늘어나며, 실시간 시각 스토리텔링 영상 제작이나 라이브 데모, 특정 지역 상황을 실시간으로 확인하는 용도에 특히 잘 맞는다. 깃허브 링크를 열어 챗GPT 아스트라(Astra) 같은 AI 코딩 도구에 넘기기만 하면 설치가 끝날 정도로 설정이 간단해서, 공개된 지 얼마 안 됐는데도 스타 수가 빠르게 늘고 있다.</p>
+<h4>엔비디아가 만든 에이전트 스킬 보안 검사 도구, Skill Spectre</h4>
+<p>Skill Spectre는 엔비디아(Nvidia)가 만든 도구로, 이미 설치해둔 AI 에이전트 스킬들을 스캔해서 숨겨진 지시문, 과도한 권한 요청, 데이터 유출 가능성이 있는지 검사하고 위험도 점수를 매겨준다. 현재 1만 7000개 이상의 스타를 받았을 만큼 신뢰도가 높은 프로젝트다. 사용법은 간단하다. 깃허브 저장소 URL을 복사한 뒤 AI에게 "내가 설치한 스킬을 전부 이 Skill Spectre로 검사해줘"라고 요청하면서 해당 저장소 주소를 함께 넘겨주면, AI가 설치된 스킬 목록을 하나씩 훑으며 안전한지, 뭔가 수상한 접근 권한을 요구하고 있진 않은지를 대신 확인해준다.</p>
+<h4>챗GPT·클로드에서 만든 결과물을 원클릭으로 실제 서비스로 만들어주는 Flute</h4>
+<p>Flute는 챗GPT나 클로드, 커서(Cursor) 같은 도구 안에서 만든 디자인·화면을 그대로 가져다가 클릭 한 번으로 실제 작동하는 앱으로 배포해주는 플랫폼이다. 로그인·회원가입 같은 인증, 폼 저장, 데이터베이스, 이메일·알림 발송까지 백엔드에 필요한 부분을 전부 대신 처리해줘서, "아이디어를 챗봇 안에서 만들었지만 실제로 쓸 수 있는 서비스로 만들려면 개발자가 필요하다"는 문제를 해결해준다. 영상에서는 챗GPT 안에서 신청 폼(회사명, 개선하고 싶은 점, 자동화하고 싶은 업무, 투자 관련 질문 등)을 만든 뒤, "이걸 Flute에 연결해서 앱으로 배포해줘"라고 요청하는 것만으로 인증 절차를 거쳐 실제 배포까지 이어지는 과정을 보여준다. 배포 후에는 Flute 쪽 대시보드에서 요금제·사용량을 확인할 수 있고, 무료 요금제로도 시작할 수 있다.</p>
+<h4>AI스러운 문장을 사람이 쓴 것처럼 바꿔주는 Slop Monster</h4>
+<p>Slop Monster는 Jack이 직접 만든 도구로, 어색한 "AI 문체(AI slop)"를 사람이 쓴 자연스러운 문장으로 다시 써주는 역할을 한다. 시중의 여러 AI 탐지·교정 도구의 좋은 부분만 모으고, 기존 도구들이 놓치던 "세일즈·마케팅 관점"까지 검사 항목에 추가한 것이 특징이다. 어휘 선택, AI 특유의 문장 구조, 문장부호 리듬, 그리고 AI가 유독 좋아하는 "세 가지 나열(rule of three)" 패턴까지 여러 기준으로 글을 채점하고, 스티브 크룩의 『Don't Make Me Think』, 대니얼 프리슬리, 알렉스 호르모지의 오퍼 이론 같은 카피라이팅 원칙을 근거로 다시 써준다. 예를 들어 "믿을 수 있고, 신뢰할 수 있고, 오래 가는"이라는 뻔한 문장은 "지붕널 하나당 못 6개, 모든 지붕널에 동일하게"처럼 구체적인 숫자가 들어간 문장으로, "업계 최고 수준의 자재로 비교 불가능한 보호력을 제공합니다"는 "바람·우박·햇빛 테스트를 통과한 제조사의 자재만 씁니다"처럼 검증 가능한 표현으로 바뀐다. 이메일이든 웹사이트 카피든 아무 텍스트나 붙여넣고 돌릴 수 있으며 완전 무료다.</p>
+<h4>두 AI를 동시에 쓰는 법 — 클로드x코덱스 루프와 딥시크 하네스</h4>
+<p>현재 가장 강력한 두 모델로 꼽히는 클로드 페이블(Fable) 5.1과 챗GPT 아스트라(Astra)를 동시에 굴리는 "클로드 x 코덱스 루프"는, 한쪽 모델이 계획을 짜면 다른 쪽 모델이 그 계획의 약점을 찾아내는 방식으로 서로 교차 검증하게 만드는 워크플로우다. 어떤 모델이든 각자의 사각지대가 있기 때문에, 의사결정이 중요하고 복잡한 빌드 작업일 때(전체 작업의 약 10% 정도) 이 루프를 켜두면 한쪽이 놓친 실수를 다른 쪽이 잡아낼 수 있다. 한편 딥시크(DeepSeek)는 최근 자체 "하네스(harness)"를 내놨는데, 이는 챗GPT 앱이나 클로드 앱처럼 모델을 감싸는 작업 환경(자동차에 비유하면 "차체")을 뜻하며, 모델(운전자)과 하네스(차)를 자유롭게 조합해 쓸 수 있다는 게 핵심이다. 딥시크 하네스는 파일, 터미널, 브라우저에 접근할 수 있고 완전히 커스터마이징 가능하며, 저렴한 딥시크 V4.1 모델을 음성 명령 한 번으로 바로 실행할 수 있어서(영상에서는 Glide라는 음성 입력 서비스로 시연) 다른 도구에서 토큰 한도에 자주 걸리는 사람에게 대안이 될 수 있다.</p>
+<h4>텍스트 설명만으로 프로세스 다이어그램을 그려주는 ArchiFi</h4>
+<p>ArchiFi(영상 발음상 "아키파이")는 평범한 문장으로 설명한 프로세스를 몇 초 만에 아키텍처·플로우 다이어그램으로 시각화해주는 도구다. 영상에서는 "알렉스 호르모지 방식의 최적 세일즈 시스템을 ArchiFi로 그려줘"라고 요청하자 마케팅 → 오퍼 제시 → 수요 창출 → 관심 확보로 이어지는 흐름도가 만들어지고, 각 단계를 펼치면 앞뒤로 연결된 세부 흐름까지 보여주는 과정을 시연한다. 클래식 모드, 시그널 플로우 모드, 다크 모드 등 여러 보기 방식을 지원하고 내보내기·공유도 가능하다. 복잡한 시스템(영상에서는 500단계짜리 프로세스 예시도 언급) 온보딩, 인수인계, 코드 리뷰처럼 "말로 설명하기보다 그림으로 보여주는 게 나은" 상황에 특히 유용하며 무료로 쓸 수 있다.</p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>"켜두기만 해도 되는 안전장치가 이미 나와 있다"</strong>: Skill Spectre처럼 설치한 AI 에이전트 스킬을 자동으로 점검해주는 도구가 이미 존재한다는 것 자체가, AI 에이전트를 업무에 들이는 사람이라면 이제 "잘 되나"만 볼 게 아니라 "안전한가"도 같이 확인해야 하는 단계에 왔다는 신호다.</li><li><strong>"만드는 것"과 "서비스로 내놓는 것"은 다른 일이었는데, 그 간극이 사라지고 있다</strong>: Flute처럼 챗봇 안에서 만든 결과물을 인증·데이터베이스까지 포함해 바로 배포해주는 도구가 나오면서, 비개발자도 "아이디어 → 실제 쓸 수 있는 서비스"까지 혼자 끝낼 수 있는 범위가 넓어지고 있다.</li><li><strong>AI 카피는 "그럴싸함"보다 "구체성"으로 승부해야 한다는 게 도구로 검증되고 있다</strong>: Slop Monster의 채점 기준(어휘, 문장 구조, 세 가지 나열 패턴, 세일즈 관점)은 AI가 쓴 글이 왜 밋밋하게 느껴지는지를 구조적으로 짚어주고, 그걸 숫자·구체적 근거로 바꾸라는 방향을 제시한다.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li>사용 중인 AI 에이전트·스킬이 있다면 깃허브에서 "nvidia skill-spectre"를 검색해 저장소 링크를 복사한 뒤, 평소 쓰는 챗GPT나 클로드에게 "내가 설치한 스킬을 전부 이 저장소로 검사해줘"라고 요청해 위험도를 한 번 점검해본다.</li><li>홈페이지 소개 문구나 최근 보낸 안내 이메일 한 통을 골라 Slop Monster(깃허브에서 "slop monster"로 검색)에 넣고, "믿을 수 있는", "최고의" 같은 뻔한 표현이 얼마나 구체적인 문장으로 바뀌는지 전후 비교를 해본다.</li><li>반복적으로 설명하기 번거로운 업무 프로세스(예: 신규 고객 온보딩 순서, 상담 문의 처리 흐름)를 한 문단으로 정리해 ArchiFi에 넣어보고, 그림으로 뽑힌 흐름도를 팀 공유용 자료로 저장해본다.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>업무를 같이 분해하고 4단계 중 지금 위치를 짚어 드려요.</p><span class="go">진단 콜 보기 →</span></a>
+    <a class="cross" href="../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>
