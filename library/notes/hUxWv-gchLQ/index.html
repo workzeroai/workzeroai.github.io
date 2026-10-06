@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>2026년 콜드메일 세팅, 이게 정답이다 · 워크제로 자료실</title>
-<meta name="description" content="콜드 이메일 에이전시 운영자가 신규 클라이언트마다 도메인·메일박스를 몇 개나 쓰는지, 그리고 두 가지 인프라 도구(Zapmail, Hyperdrive 계열 툴)로 발송량을 어떻게 설계하는지 짧게 답한 클립.">
+<meta name="description" content="콜드 이메일 에이전시 운영자가 **신규 클라이언트마다 도메인과 메일박스를 몇 개나 쓰는지**, 그리고 두 가지 인프라 도구(Zapmail, Hyperdrive 계열)로 발송량을 어떻게 설계하는지 짧게 답한 클립이에요.">
 <link rel="canonical" href="https://workzeroai.github.io/library/notes/hUxWv-gchLQ/">
 <link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
@@ -13,12 +13,12 @@
 <meta property="og:site_name" content="워크제로">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:title" content="2026년 콜드메일 세팅, 이게 정답이다">
-<meta property="og:description" content="콜드 이메일 에이전시 운영자가 신규 클라이언트마다 도메인·메일박스를 몇 개나 쓰는지, 그리고 두 가지 인프라 도구(Zapmail, Hyperdrive 계열 툴)로 발송량을 어떻게 설계하는지 짧게 답한 클립.">
+<meta property="og:description" content="콜드 이메일 에이전시 운영자가 **신규 클라이언트마다 도메인과 메일박스를 몇 개나 쓰는지**, 그리고 두 가지 인프라 도구(Zapmail, Hyperdrive 계열)로 발송량을 어떻게 설계하는지 짧게 답한 클립이에요.">
 <meta property="og:url" content="https://workzeroai.github.io/library/notes/hUxWv-gchLQ/">
 <meta property="og:image" content="https://img.youtube.com/vi/hUxWv-gchLQ/maxresdefault.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="2026년 콜드메일 세팅, 이게 정답이다">
-<meta name="twitter:description" content="콜드 이메일 에이전시 운영자가 신규 클라이언트마다 도메인·메일박스를 몇 개나 쓰는지, 그리고 두 가지 인프라 도구(Zapmail, Hyperdrive 계열 툴)로 발송량을 어떻게 설계하는지 짧게 답한 클립.">
+<meta name="twitter:description" content="콜드 이메일 에이전시 운영자가 **신규 클라이언트마다 도메인과 메일박스를 몇 개나 쓰는지**, 그리고 두 가지 인프라 도구(Zapmail, Hyperdrive 계열)로 발송량을 어떻게 설계하는지 짧게 답한 클립이에요.">
 <meta name="twitter:image" content="https://img.youtube.com/vi/hUxWv-gchLQ/maxresdefault.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
@@ -112,21 +112,25 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
 <main>
 <div class="rd"><a class="back" href="../">← 자료실</a>
   <div class="head"><div class="m"><i>AI 소식</i><span>2026-09-12</span></div><h1>2026년 콜드메일 세팅, 이게 정답이다</h1></div>
-  <figure style="margin:0 0 24px"><img src="../thumb/hUxWv-gchLQ.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Eugene Kadzina</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<span class="orig">원제 · The Best Cold Email Setup For 2026</span><br><a href="https://www.youtube.com/watch?v=hUxWv-gchLQ" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>정답은 없고 테스트만 있다</li><li>도메인당 총 발송량을 먼저 정하고 역산한다</li><li>여분 인프라를 항상 예열해둔다</li></ul></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/hUxWv-gchLQ.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Eugene Kadzina</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<span class="orig">원제 · The Best Cold Email Setup For 2026</span><br><a href="https://www.youtube.com/watch?v=hUxWv-gchLQ" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>정답은 없고 테스트만 있어요</li><li>도메인당 총 발송량을 먼저 정하고 역산해요</li><li>여분 인프라를 항상 예열해 둬요</li></ul></div>
   <div class="bd">
 <h3>한 줄 요약</h3>
-<p>콜드 이메일 에이전시 운영자가 신규 클라이언트마다 도메인·메일박스를 몇 개나 쓰는지, 그리고 두 가지 인프라 도구(Zapmail, Hyperdrive 계열 툴)로 발송량을 어떻게 설계하는지 짧게 답한 클립.</p>
+<p>콜드 이메일 에이전시 운영자가 <strong>신규 클라이언트마다 도메인과 메일박스를 몇 개나 쓰는지</strong>, 그리고 두 가지 인프라 도구(Zapmail, Hyperdrive 계열)로 발송량을 어떻게 설계하는지 짧게 답한 클립이에요.</p>
 <h3>전체 내용 정리</h3>
-<h4>도메인·메일박스 개수는 "정답"이 아니라 테스트로 정한다</h4>
-<p>신규 클라이언트를 받으면 업종에 따라 다르다는 원론적 답 대신, 실제로는 작은 카피와 큰 카피를 둘 다 테스트해보며 그 결과로 인프라 규모를 정한다고 말한다. 보통 신규 클라이언트는 하루 약 1,000통 발송을 기준으로 잡고, 비상시를 대비해 별도로 미리 예열(warm-up)해둔 여분의 인프라를 하나 더 대기시켜 둔다.</p>
-<h4>Zapmail: 도메인당 2개 메일박스, 메일박스당 하루 20통</h4>
-<p>Zapmail을 쓸 때는 도메인 하나에 메일박스 2개를 연결하고, 14일 예열 기간을 거쳐 메일박스당 하루 20통씩 발송하는 방식을 지난 2~3년간 유지해왔다고 밝힌다. 업계에는 도메인당 하루 35~60통까지 보내는 운영자들도 있다고 들었지만, 자신들에게는 "도메인 1개 + 메일박스 2개 + 메일박스당 20통" 조합이 가장 잘 맞았다고 강조한다.</p>
-<h4>Hyperdrive 계열 툴: 대기업처럼 보이게 만드는 대형 인프라</h4>
-<p>반대로 Hyperdrive 계열 툴은 도메인 하나에 메일박스를 25개 또는 50개까지 연결해 대기업 이메일 인프라를 흉내 내는 방식이다. 메일박스 25개짜리 도메인이면 메일박스당 하루 4통씩 보내 도메인 전체로는 하루 약 100통, 메일박스 50개짜리 도메인이면 메일박스당 2통씩 보내 역시 도메인당 하루 약 100통으로 맞춘다.</p>
+<h4>개수는 "정답"이 아니라 테스트로 정해요</h4>
+<p>신규 클라이언트를 받으면 업종에 따라 다르다는 원론적 답 대신, 실제로는 <strong>작은 카피와 큰 카피를 둘 다 테스트해 보며 그 결과로 인프라 규모를 정한다</strong>고 말합니다.</p>
+<p>보통 신규 클라이언트는 <strong>하루 약 1,000통 발송</strong>을 기준으로 잡아요. 그리고 비상시를 대비해 <strong>별도로 미리 예열(warm-up)해 둔 여분의 인프라를 하나 더 대기</strong>시켜 둡니다.</p>
+<h4>Zapmail: 도메인당 2개, 메일박스당 하루 20통</h4>
+<p>Zapmail을 쓸 때는 <strong>도메인 하나에 메일박스 2개</strong>를 연결하고, <strong>14일 예열 기간</strong>을 거쳐 <strong>메일박스당 하루 20통</strong>씩 발송하는 방식을 지난 2~3년간 유지해 왔다고 밝혀요.</p>
+<p>업계에는 도메인당 하루 35~60통까지 보내는 운영자들도 있다고 들었지만, 자신들에게는 <strong>"도메인 1개 + 메일박스 2개 + 메일박스당 20통"</strong> 조합이 가장 잘 맞았다고 강조합니다.</p>
+<h4>Hyperdrive 계열: 대기업처럼 보이게 하는 대형 인프라</h4>
+<p>반대로 Hyperdrive 계열 툴은 <strong>도메인 하나에 메일박스를 25개 또는 50개까지</strong> 연결해 대기업 이메일 인프라를 흉내 내는 방식이에요.</p>
+<p>계산이 재밌습니다.</p>
+<ul><li>메일박스 25개짜리 도메인 → 메일박스당 하루 <strong>4통</strong> → 도메인 전체로 하루 약 100통</li><li>메일박스 50개짜리 도메인 → 메일박스당 하루 <strong>2통</strong> → 역시 도메인당 하루 약 100통</li></ul>
 <h3>핵심 인사이트</h3>
-<ul><li><strong>정답은 없고 테스트만 있다</strong>: 도메인·메일박스 개수를 정할 때 업종별 공식을 찾기보다, 작은 규모와 큰 규모를 둘 다 실제로 돌려보고 반응을 비교하는 게 더 신뢰할 수 있는 방법이다.</li><li><strong>도메인당 총 발송량을 먼저 정하고 역산한다</strong>: 메일박스 개수가 다르더라도(2개든 50개든) 결과적으로 도메인당 하루 총 발송량을 100통 안팎으로 맞추는 게 핵심 설계 원칙으로 보인다.</li><li><strong>여분 인프라를 항상 예열해둔다</strong>: 메인 인프라에 문제가 생겼을 때 바로 투입할 수 있도록 별도로 예열된 백업 인프라를 상시 준비해두는 습관이 발송 중단 리스크를 줄인다.</li></ul>
+<ul><li><strong>정답은 없고 테스트만 있어요</strong>: 도메인과 메일박스 개수를 정할 때 업종별 공식을 찾기보다, 작은 규모와 큰 규모를 둘 다 실제로 돌려 보고 반응을 비교하는 게 더 신뢰할 수 있습니다.</li><li><strong>도메인당 총 발송량을 먼저 정하고 역산해요</strong>: 메일박스 개수가 다르더라도(2개든 50개든) 결과적으로 <strong>도메인당 하루 총 발송량을 100통 안팎으로 맞추는 게</strong> 핵심 설계 원칙으로 보입니다.</li><li><strong>여분 인프라를 항상 예열해 둬요</strong>: 메인 인프라에 문제가 생겼을 때 바로 투입할 수 있도록 별도로 예열된 백업을 상시 준비해 두는 습관이 발송 중단 리스크를 줄여 줍니다.</li></ul>
 <h3>오늘 당장 해볼 것</h3>
-<ol><li>콜드 이메일을 대행 업체에 맡기고 있다면, "우리 도메인당 메일박스는 몇 개고 메일박스당 하루 발송량은 얼마인가요"를 구체적으로 물어보고 업계 기준(도메인당 하루 약 100통 안팎)과 비교해본다.</li><li>신규 캠페인을 시작할 때 하나의 카피만 쓰지 말고, 업체에 "작은 버전과 큰 버전 두 가지로 테스트해달라"고 요청해본다.</li><li>메인 발송 계정 외에 예열된 백업 인프라가 있는지 담당 업체에 확인해본다.</li></ol>
+<ol><li>콜드 이메일을 대행 업체에 맡기고 있다면 <strong>"우리 도메인당 메일박스는 몇 개고 메일박스당 하루 발송량은 얼마인가요"</strong>를 구체적으로 물어보고, 업계 기준(도메인당 하루 약 100통 안팎)과 비교해 보세요.</li><li>신규 캠페인을 시작할 때 하나의 카피만 쓰지 말고 "작은 버전과 큰 버전 두 가지로 테스트해 달라"고 요청해 보세요.</li><li>메인 발송 계정 외에 <strong>예열된 백업 인프라가 있는지</strong> 담당 업체에 확인해 보세요.</li></ol>
   </div>
 </div>
 <div class="foot"><div class="rd">
