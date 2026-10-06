@@ -312,16 +312,15 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0 110px;b
 /* ── 히어로: 도구 카드 클러스터 ── */
 .art{width:100%;max-width:440px;margin:0 auto}
 .tools{position:relative;height:288px}
-.tools .zero{position:absolute;inset:0;display:grid;place-items:center;font:900 250px/1 "Pretendard","Noto Sans KR",sans-serif;color:rgba(13,37,61,.055);letter-spacing:-.06em;user-select:none;pointer-events:none}
 .tc{position:absolute;width:84px;background:#fff;border:1px solid rgba(13,37,61,.05);border-radius:20px;padding:11px 6px 9px;text-align:center;
   box-shadow:0 16px 34px -12px rgba(50,50,93,.34),0 4px 10px -4px rgba(0,0,0,.07);
   transform:rotate(var(--r));animation:flyin .7s var(--ease) both,bobz 5.6s ease-in-out infinite;animation-delay:var(--d),calc(var(--d) + .7s)}
-.tc img{width:42px;height:42px;object-fit:contain;display:block;margin:0 auto 6px}
+.tc img{width:46px;height:46px;object-fit:contain;display:block;margin:0 auto 6px;border-radius:11px}
 .tc span{display:block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;color:var(--mute);letter-spacing:-.02em}
 @keyframes flyin{from{opacity:0;transform:rotate(var(--r)) translateY(26px) scale(.86)}to{opacity:1;transform:rotate(var(--r)) translateY(0) scale(1)}}
 @keyframes bobz{0%,100%{transform:rotate(var(--r)) translateY(0)}50%{transform:rotate(var(--r)) translateY(-7px)}}
 .art-cap{margin-top:12px;text-align:center;font-size:13.5px;font-weight:700;color:var(--ink2)}
-@media (min-width:860px){.tools{height:320px}.tc{width:92px}.tc img{width:46px;height:46px}}
+@media (min-width:860px){.tools{height:320px}.tc{width:94px}.tc img{width:50px;height:50px;border-radius:12px}}
 
 /* ── (미사용) 이전 목업 ── */
 .shrink{padding:2px 2px 16px}
@@ -382,13 +381,12 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0 110px;b
     </div>
     <div class="art">
       <div class="tools">
-        <div class="zero" aria-hidden="true">0</div>
-        <div class="tc" style="left:4%;top:4px;--r:-9deg;--d:0.06s"><img src="logo/claude.png" alt="Claude" loading="lazy" width="42" height="42"><span>Claude</span></div>
-        <div class="tc" style="left:36%;top:-6px;--r:6deg;--d:0.13s"><img src="logo/chatgpt.png" alt="GPT" loading="lazy" width="42" height="42"><span>GPT</span></div>
-        <div class="tc" style="left:68%;top:12px;--r:-5deg;--d:0.2s"><img src="logo/notion.png" alt="노션" loading="lazy" width="42" height="42"><span>노션</span></div>
-        <div class="tc" style="left:0%;top:128px;--r:7deg;--d:0.27s"><img src="logo/sheets.png" alt="시트" loading="lazy" width="42" height="42"><span>시트</span></div>
-        <div class="tc" style="left:33%;top:142px;--r:-4deg;--d:0.34s"><img src="logo/ga4.png" alt="GA4" loading="lazy" width="42" height="42"><span>GA4</span></div>
-        <div class="tc" style="left:65%;top:130px;--r:9deg;--d:0.41s"><img src="logo/meta_ads.png" alt="광고관리자" loading="lazy" width="42" height="42"><span>광고관리자</span></div>
+        <div class="tc" style="left:4%;top:4px;--r:-9deg;--d:0.06s"><img src="logo/claude.png" alt="Claude" loading="lazy" width="46" height="46"><span>Claude</span></div>
+        <div class="tc" style="left:36%;top:-6px;--r:6deg;--d:0.13s"><img src="logo/chatgpt.png" alt="GPT" loading="lazy" width="46" height="46"><span>GPT</span></div>
+        <div class="tc" style="left:68%;top:12px;--r:-5deg;--d:0.2s"><img src="logo/notion.png" alt="노션" loading="lazy" width="46" height="46"><span>노션</span></div>
+        <div class="tc" style="left:0%;top:128px;--r:7deg;--d:0.27s"><img src="logo/sheets.png" alt="시트" loading="lazy" width="46" height="46"><span>시트</span></div>
+        <div class="tc" style="left:33%;top:142px;--r:-4deg;--d:0.34s"><img src="logo/ga4.png" alt="GA4" loading="lazy" width="46" height="46"><span>GA4</span></div>
+        <div class="tc" style="left:65%;top:130px;--r:9deg;--d:0.41s"><img src="logo/meta_ads.png" alt="광고관리자" loading="lazy" width="46" height="46"><span>광고관리자</span></div>
       </div>
       <p class="art-cap">내 업무에 맞는 도구를 골라, 끝까지 같이 만들어요</p>
     </div>
