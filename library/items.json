@@ -59,31 +59,52 @@
  ],
  "notes": [
   {
+   "video_id": "bvGptCLDhyo",
    "title": "I Built Another Andrej Karpathy Using Claude",
    "source": "Nate Herk | AI Automation",
    "date": "2026-10-05",
-   "summary": "Nate Herk가 Andrej Karpathy의 블로그·강의·GitHub·X 게시물 70만 단어 이상을 모아 LLM 위키로 정리하고, 거기서 뽑은 7가지 교육 원칙을 Claude Code 서브 에이전트(sub-agent)·스킬(skill)·실행 관문 훅(hook)으로",
+   "topic": "에이전트",
+   "summary": "Nate Herk가 Andrej Karpathy의 블로그·강의·GitHub·X 게시물 70만 단어 이상을 모아 LLM 위키로 정리하고, 거기서 뽑은 7가지 교육 원칙을 Claude Code 서브 에이전트(sub-agent)·스킬(skill)·실행 관문 훅(hook)으로 바꾼 네 단계를 공개한다. 핵심은 사람을 흉내 내는 게 아니라 \"그 전문가가 생각하고 가르치는 방식\"을 복제해 내 프로젝트에 붙이는 것이다.",
+   "points": [
+    "AI 품질은 모델이 아니라 시스템에 담긴 전문 지식이 결정한다",
+    "원문 더미보다 '연결된 위키'가 핵심이다",
+    "\"작동한다\"는 말 전에 실행을 강제하는 장치가 신뢰를 만든다"
+   ],
+   "thumb": "notes/thumb/bvGptCLDhyo.webp",
    "url": "notes/bvGptCLDhyo/",
-   "ready": true,
-   "video_id": "bvGptCLDhyo"
+   "ready": true
   },
   {
+   "video_id": "9C5hLJ1bIzk",
    "title": "I Tested ChatGPT's New Business Platform. Should You Switch?",
    "source": "Liam Ottley",
    "date": "2026-10-05",
-   "summary": "OpenAI가 Dev Day에서 팀 전체와 AI 에이전트가 한곳에서 일하는 'ChatGPT 비즈니스 플랫폼'을 내놓았고, Liam Ottley가 자기 회사를 직접 옮겨 테스트했다. 결론은 \"1인용 AI에서 멀티플레이어 AI로의 전환은 분명한 다음 단계지만, 옮기는 비용",
+   "topic": "에이전트",
+   "summary": "OpenAI가 Dev Day에서 팀 전체와 AI 에이전트가 한곳에서 일하는 'ChatGPT 비즈니스 플랫폼'을 내놓았고, Liam Ottley가 자기 회사를 직접 옮겨 테스트했다. 결론은 \"1인용 AI에서 멀티플레이어 AI로의 전환은 분명한 다음 단계지만, 옮기는 비용이 크니 작게 시작하고 우연이 아니라 의도를 가지고 플랫폼을 고르라\"는 것이다.",
+   "points": [
+    "AI 도입의 진짜 난제는 '1인용→팀 전체' 전환이다",
+    "플랫폼은 편하지만 '잠금 효과'가 있다",
+    "도구가 평준화될수록 가치는 설정·전략·교육으로 이동한다"
+   ],
+   "thumb": "notes/thumb/9C5hLJ1bIzk.webp",
    "url": "notes/9C5hLJ1bIzk/",
-   "ready": true,
-   "video_id": "9C5hLJ1bIzk"
+   "ready": true
   },
   {
+   "video_id": "638GQZ9UZ4w",
    "title": "Is AI Automation Still Worth It in 2027?",
    "source": "Nick Saraev",
    "date": "2026-10-05",
-   "summary": "AI 자동화로 1천만 달러 가까이 번 Nick Saraev가 \"AI 자동화는 영원하지 않다\"고 경고하면서도, 모든 지식 노동이 자동화되는 세상에선 자동화를 하는 산업이 가장 오래 살아남는다고 결론 내린다. 2027년은 역사상 가장 돈이 되는 해이자 하락의 시작점이 될 ",
+   "topic": "자동화",
+   "summary": "AI 자동화로 1천만 달러 가까이 번 Nick Saraev가 \"AI 자동화는 영원하지 않다\"고 경고하면서도, 모든 지식 노동이 자동화되는 세상에선 자동화를 하는 산업이 가장 오래 살아남는다고 결론 내린다. 2027년은 역사상 가장 돈이 되는 해이자 하락의 시작점이 될 것이며, 구현보다 교육·컨설팅, 기술보다 영업·마케팅으로 무게를 옮기라고 조언한다.",
+   "points": [
+    "\"만들 줄 안다\"의 가치는 빠르게 0에 수렴한다",
+    "지식 격차로 버는 장사는 끝나 간다",
+    "자동화 산업은 오히려 가장 오래 버틴다, 단 형태가 바뀐다"
+   ],
+   "thumb": "notes/thumb/638GQZ9UZ4w.webp",
    "url": "notes/638GQZ9UZ4w/",
-   "ready": true,
-   "video_id": "638GQZ9UZ4w"
+   "ready": true
   },
   {
    "title": "i promise you, setting up AIOS can blow up your business!",
@@ -91,7 +112,11 @@
    "date": "2026-10-04",
    "summary": "",
    "url": "",
-   "ready": false
+   "ready": false,
+   "topic": "자동화",
+   "points": [],
+   "thumb": "",
+   "video_id": ""
   },
   {
    "title": "Every Codex Concept Explained for Non-Coders",
@@ -99,7 +124,11 @@
    "date": "2026-10-03",
    "summary": "",
    "url": "",
-   "ready": false
+   "ready": false,
+   "topic": "AI 소식",
+   "points": [],
+   "thumb": "",
+   "video_id": ""
   },
   {
    "title": "How I Learn Complex Skills & Difficult Subjects So Fast with AI",
@@ -107,7 +136,11 @@
    "date": "2026-10-03",
    "summary": "",
    "url": "",
-   "ready": false
+   "ready": false,
+   "topic": "AI 소식",
+   "points": [],
+   "thumb": "",
+   "video_id": ""
   },
   {
    "title": "Claude Opus 5.5 Just Changed Design Forever (5 Insane Use Cases)",
@@ -115,7 +148,11 @@
    "date": "2026-10-02",
    "summary": "",
    "url": "",
-   "ready": false
+   "ready": false,
+   "topic": "모델·도구",
+   "points": [],
+   "thumb": "",
+   "video_id": ""
   },
   {
    "title": "OpenAI engineers just showed how they prompt GPT-6 Astra...",
@@ -123,7 +160,11 @@
    "date": "2026-10-02",
    "summary": "",
    "url": "",
-   "ready": false
+   "ready": false,
+   "topic": "모델·도구",
+   "points": [],
+   "thumb": "",
+   "video_id": ""
   },
   {
    "title": "I Tested Codex's $500/mo Ultrafast. What You Need to Know.",
@@ -131,7 +172,11 @@
    "date": "2026-10-01",
    "summary": "",
    "url": "",
-   "ready": false
+   "ready": false,
+   "topic": "모델·도구",
+   "points": [],
+   "thumb": "",
+   "video_id": ""
   },
   {
    "title": "Claude Code Killed My Business in 6 Months",
@@ -139,7 +184,11 @@
    "date": "2026-10-01",
    "summary": "",
    "url": "",
-   "ready": false
+   "ready": false,
+   "topic": "에이전트",
+   "points": [],
+   "thumb": "",
+   "video_id": ""
   },
   {
    "title": "GPT-6-Astra on The New ULTRAFAST $500 Plan Is Scary...",
@@ -147,7 +196,11 @@
    "date": "2026-09-30",
    "summary": "",
    "url": "",
-   "ready": false
+   "ready": false,
+   "topic": "모델·도구",
+   "points": [],
+   "thumb": "",
+   "video_id": ""
   },
   {
    "title": "with no doubt, grokbot is the clear winner…",
@@ -155,7 +208,11 @@
    "date": "2026-09-30",
    "summary": "",
    "url": "",
-   "ready": false
+   "ready": false,
+   "topic": "AI 소식",
+   "points": [],
+   "thumb": "",
+   "video_id": ""
   }
  ]
 }
