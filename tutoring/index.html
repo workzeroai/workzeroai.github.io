@@ -189,7 +189,7 @@ details p{padding:0 18px 18px;font-size:14px;color:var(--ink2)}
 .flow{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:28px}
 .flow li{display:flex;gap:10px;align-items:flex-start;padding:14px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1)}
 .flow b{flex:none;width:24px;height:24px;border-radius:50%;background:var(--primary);color:#fff;display:grid;place-items:center;font-size:12px}
-.flow .fh{display:block;font-size:15px;font-weight:800;letter-spacing:-.02em;color:#fff}
+.flow .fh{display:block;font-size:15px;font-weight:800;letter-spacing:-.02em;color:#fff;line-height:1.35}
 .flow p{font-size:12px;color:#9fb6d4;margin-top:2px;line-height:1.45}
 .note-l{font-size:13px;color:#c8d6ea;margin-top:12px}
 .form{margin-top:28px;background:#0a1d31;border:1px solid rgba(255,255,255,.1);border-radius:18px;overflow:hidden}
@@ -271,8 +271,7 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0 110px;b
 /* ── 이 수업이 아닌 것 ── */
 .nots{list-style:none;display:grid;gap:8px;margin-top:28px}
 .nots li{padding:18px 18px 18px 48px;font-size:15px;font-weight:800;position:relative}
-.nots li::before{content:"";position:absolute;left:18px;top:22px;width:18px;height:18px;border-radius:50%;border:2px solid var(--ruby)}
-.nots li::after{content:"";position:absolute;left:21px;top:30px;width:12px;height:2px;background:var(--ruby);transform:rotate(-45deg)}
+.nots li::before{content:"";position:absolute;left:18px;top:19px;width:22px;height:22px;border-radius:50%;background:var(--ruby) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M3.2 3.2 L8.8 8.8 M8.8 3.2 L3.2 8.8' stroke='%23fff' stroke-width='2.1' stroke-linecap='round'/%3E%3C/svg%3E") center/12px 12px no-repeat;box-shadow:0 3px 8px -2px rgba(234,34,97,.45)}
 .nots span{display:block;font-size:13px;font-weight:600;color:var(--ink2);margin-top:5px;line-height:1.55}
 
 /* ── 준비물 ── */
@@ -414,7 +413,7 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0 110px;b
         <p class="story">네이버·구글·카카오 광고를 직접 운영하던 퍼포먼스 마케터였어요. 매일 반복되는 리포트를 줄이다가 자동화를 시작했고, 지금은 회사에서 DX 자동화 담당으로 일하면서 크몽에서 자동화 외주를 납품하고 있어요. 그래서 마케터가 어디서 막히는지 알아요.</p>
       </div>
     </div>
-    <div class="prime-card rv"><div class="pm">PRIME</div><div><b>크몽 Prime 선정</b><p>포트폴리오와 고객 평가를 거쳐 상위 2%로 엄선된 우수 서비스예요.</p></div></div>
+    <div class="prime-card rv"><div class="pm">PRIME</div><div><b>크몽 Prime 선정</span><p>포트폴리오와 고객 평가를 거쳐 상위 2%로 엄선된 우수 서비스예요.</p></div></div>
     <div class="careers">
       <div class="career rv"><span class="tag">MARKETING</span><h3>네이버·구글·카카오 광고 운영</h3><p class="cap">이전 · 퍼포먼스 마케터</p><ul><li>검색광고·퍼포먼스 광고 직접 운영</li><li>마케팅 ROI·데이터 분석</li></ul></div>
       <div class="career rv"><span class="tag">AUTOMATION</span><h3>기업 Airtable DB 설계</h3><p class="cap">현재 · 기업 DX 자동화 담당</p><ul><li>기업 데이터베이스 구조 설계·관리</li><li>반복업무 프로세스 자동화 구축</li></ul></div>
@@ -652,10 +651,10 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0 110px;b
     <h2 class="rv">아래 양식을 복사해서<br>보내주세요</h2>
     <p class="sub rv">어느 채널이든 괜찮아요. 내용을 보고 맞는 레벨과 일정을 제안드려요.</p>
     <ol class="flow rv">
-      <li><b>1</b><div><b class="fh">문의</b><p>양식을 DM이나 오픈채팅으로 보내요</p></div></li>
-      <li><b>2</b><div><b class="fh">상담</b><p>레벨과 일정을 같이 정해요</p></div></li>
-      <li><b>3</b><div><b class="fh">결제</b><p>결제 링크를 보내드려요 (카드 가능)</p></div></li>
-      <li><b>4</b><div><b class="fh">첫 수업</b><p>줌 링크를 받고 시작해요</p></div></li>
+      <li><b>1</b><div><span class="fh">문의</span><p>양식을 DM이나 오픈채팅으로 보내요</p></div></li>
+      <li><b>2</b><div><span class="fh">상담</span><p>레벨과 일정을 같이 정해요</p></div></li>
+      <li><b>3</b><div><span class="fh">결제</span><p>결제 링크를 보내드려요 (카드 가능)</p></div></li>
+      <li><b>4</b><div><span class="fh">첫 수업</span><p>줌 링크를 받고 시작해요</p></div></li>
     </ol>
     <p class="note-l rv">문의만 해도 결제되지 않아요. 상담 후에 결정하세요.</p>
     <div class="form rv">
@@ -695,7 +694,7 @@ const lvres=document.getElementById('lvres');
 function setLv(i){tabs.forEach((t,k)=>t.classList.toggle('on',k==i));panels.forEach((p,k)=>p.classList.toggle('on',k==i))}
 function showLv(i){
   const v=LV[i];
-  lvres.innerHTML='<b>'+v.n+' — '+v.t+'</b><p>'+v.d+'</p><p style="font-weight:800;color:var(--primary-deep)">'+v.p+'</p><a class="go" href="#contact" data-lv="'+v.key+'">'+v.n+' 과정으로 문의하기 →</a>';
+  lvres.innerHTML='<b>'+v.n+' — '+v.t+'</span><p>'+v.d+'</p><p style="font-weight:800;color:var(--primary-deep)">'+v.p+'</p><a class="go" href="#contact" data-lv="'+v.key+'">'+v.n+' 과정으로 문의하기 →</a>';
   lvres.hidden=false;
   lvres.querySelector('a').addEventListener('click',()=>setFormLevel(v.key));
 }
