@@ -308,6 +308,31 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0 110px;b
   .prep ul{grid-template-columns:1fr 1fr}
   .add{grid-template-columns:1fr auto auto}
 }
+
+/* ── 히어로 목업: 시간이 줄어드는 막대 ── */
+.shrink{padding:2px 2px 16px}
+.shrink-t{font-size:13px;font-weight:800;color:var(--mute)}
+.bar-row{display:grid;grid-template-columns:20px 1fr auto;align-items:center;gap:10px;margin-top:10px}
+.bl{font-size:12px;font-weight:800;color:var(--mute)}
+.bl.on{color:var(--mint)}
+.bar{height:30px;border-radius:8px}
+.bar.before{background:#cfd8e4;width:100%}
+.bar.after{background:var(--mint);width:8%;animation:shrinkbar 1.5s var(--ease) .6s both}
+@keyframes shrinkbar{from{width:100%}to{width:8%}}
+.bv{font:900 15px/1 "Pretendard","Noto Sans KR",sans-serif;color:var(--mute);white-space:nowrap}
+.bv.hi{color:var(--mint);font-size:19px}
+.mini{border-top:1px solid var(--hair);padding-top:12px;display:grid;gap:9px}
+.mini div{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:13px}
+.mini span{color:var(--ink2);font-weight:700}
+.mini b{color:var(--mint);font-weight:800;white-space:nowrap}
+
+/* ── 스크롤 유도 ── */
+.hero .cuewrap{display:block;margin-top:44px}
+.cue{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:9px;font-size:13px;font-weight:800;color:var(--mute)}
+.cue i{width:32px;height:32px;border-radius:50%;background:#fff;border:1px solid var(--hair);box-shadow:var(--sh1);display:grid;place-items:center;animation:bob 1.9s ease-in-out infinite}
+.cue i::after{content:"";width:8px;height:8px;border:2.2px solid var(--primary);border-top:0;border-left:0;transform:rotate(45deg) translate(-2px,-2px)}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+@media (prefers-reduced-motion:reduce){.bar.after,.cue i{animation:none}}
 </style>
 </head>
 <body>
@@ -344,17 +369,26 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0 110px;b
     <div class="win rv" aria-hidden="true">
       <div class="win-h"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span>내 반복업무</span></div>
       <div class="win-b">
-        <div class="task"><div class="t">일일 광고 리포트 정리<small>엑셀 피벗 · 매일 아침</small></div><div class="r">30분<b>→ 1분</b></div></div>
-        <div class="task"><div class="t">검색광고 키워드 순위 확인<small>사람이 직접 검색</small></div><div class="r">수작업<b>→ 자동</b></div></div>
-        <div class="task"><div class="t">흩어진 사업부 엑셀 데이터<small>매번 찾고 합치기</small></div><div class="r">흩어짐<b>→ 한 DB</b></div></div>
+        <div class="shrink">
+          <div class="shrink-t">매일 아침 광고 리포트 정리</div>
+          <div class="bar-row"><span class="bl">전</span><div class="bar before"></div><b class="bv">30분</b></div>
+          <div class="bar-row"><span class="bl on">후</span><div class="bar after"></div><b class="bv hi">1분</b></div>
+        </div>
+        <div class="mini">
+          <div><span>검색광고 키워드 순위 확인</span><b>수작업 → 자동</b></div>
+          <div><span>흩어진 사업부 엑셀 데이터</span><b>흩어짐 → 한 DB</b></div>
+        </div>
       </div>
-      <div class="win-f"><i class="live"></i>실제로 줄여 본 업무예요</div>
+      <div class="win-f"><i class="live"></i>제가 실제로 줄여 본 업무예요</div>
     </div>
+  </div>
+  <div class="wrap cuewrap">
+    <a class="cue" href="#fit"><span>나도 될까 싶다면</span><i aria-hidden="true"></i></a>
   </div>
 </section>
 
 <!-- 2. FIT -->
-<section>
+<section id="fit">
   <div class="wrap">
     <span class="eyebrow rv">FOR YOU</span>
     <h2 class="rv">이런 분께 맞아요</h2>
