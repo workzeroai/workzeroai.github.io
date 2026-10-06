@@ -5,6 +5,23 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>워크제로 1:1 자동화 과외</title>
 <meta name="description" content="마케터 출신 자동화 담당자가 내 업무 그대로 알려주는 1:1 자동화 과외. Claude부터 n8n, Claude Code까지.">
+<link rel="canonical" href="https://workzeroai.github.io/tutoring/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#533afd">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="워크제로 1:1 자동화 과외">
+<meta property="og:description" content="마케터 출신 자동화 담당자가 내 업무 그대로 알려주는 1:1 자동화 과외. Claude부터 n8n, Claude Code까지.">
+<meta property="og:url" content="https://workzeroai.github.io/tutoring/">
+<meta property="og:image" content="https://workzeroai.github.io/og/tutoring.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="워크제로 1:1 자동화 과외">
+<meta name="twitter:description" content="마케터 출신 자동화 담당자가 내 업무 그대로 알려주는 1:1 자동화 과외. Claude부터 n8n, Claude Code까지.">
+<meta name="twitter:image" content="https://workzeroai.github.io/og/tutoring.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
 <style>
@@ -16,6 +33,7 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6;word-break:keep-all;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+[hidden]{display:none!important}
 .wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
 section{padding:72px 0;position:relative}
 .eyebrow{display:inline-block;font:800 12px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.12em;color:var(--primary);background:var(--primary-pale);padding:7px 12px;border-radius:99px;margin-bottom:14px}
@@ -54,17 +72,11 @@ background:radial-gradient(40% 55% at 18% 55%,#ffd9a8 0,transparent 70%),radial-
 .hero h1{font-size:34px;line-height:1.28}
 .hero .sub{font-size:17px;margin-top:16px}
 .hero .ctas{display:grid;gap:10px;margin-top:28px}
-.win{background:#fff;border-radius:18px;box-shadow:var(--sh2);overflow:hidden;border:1px solid var(--hair)}
-.win-h{height:40px;background:var(--soft);border-bottom:1px solid var(--hair);display:flex;align-items:center;padding:0 14px;gap:6px;font-size:12px;color:var(--mute);font-weight:800}
 .dot{width:10px;height:10px;border-radius:50%;background:#d6dde8}
-.win-h span{margin-left:8px}
-.win-b{padding:16px;display:grid;gap:10px}
-.task{display:grid;grid-template-columns:1fr auto;align-items:center;gap:10px;padding:12px 14px;border-radius:12px;background:var(--soft);font-size:14px;font-weight:700}
 .task .t{display:flex;flex-direction:column;gap:2px}
 .task .t small{font-size:12px;color:var(--mute);font-weight:600}
 .task .r{font-size:13px;font-weight:800;color:var(--mute);text-align:right;white-space:nowrap}
 .task .r b{display:block;color:var(--mint);font-size:15px}
-.win-f{padding:12px 16px;border-top:1px solid var(--hair);font-size:13px;color:var(--mute);display:flex;align-items:center;gap:8px}
 .live{width:8px;height:8px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 4px rgba(20,184,122,.18);animation:pulse 1.6s infinite}
 @keyframes pulse{50%{box-shadow:0 0 0 8px rgba(20,184,122,0)}}
 
@@ -98,7 +110,6 @@ background:radial-gradient(40% 55% at 18% 55%,#ffd9a8 0,transparent 70%),radial-
 .motto span{display:block;font-size:12px;font-weight:800;letter-spacing:.12em;color:#9fb6d4;margin-bottom:8px}
 
 /* proof */
-.gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:28px}
 .gallery .ph:first-child{grid-column:1/-1;aspect-ratio:16/10}
 .gallery .ph{aspect-ratio:1/1}
 .badge.prime{background:var(--ink);color:#fff;border-color:var(--ink)}
@@ -106,13 +117,7 @@ background:radial-gradient(40% 55% at 18% 55%,#ffd9a8 0,transparent 70%),radial-
 .prime-card .pm{flex:none;font:900 13px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.12em;padding:10px 12px;border-radius:10px;background:linear-gradient(135deg,#f5d58a,#e7b24f);color:#3a2a07}
 .prime-card b{font-size:17px}
 .prime-card p{font-size:13px;color:#c8d6ea;margin-top:2px}
-.session{display:flex;gap:10px;align-items:center;margin-top:14px;font-size:14px;color:var(--ink2);font-weight:700}
-.session::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--primary)}
-.reviews{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:28px calc(var(--gut)*-1) 0;padding:4px var(--gut) 12px;scrollbar-width:none}
-.reviews::-webkit-scrollbar{display:none}
-.review{flex:0 0 78%;max-width:320px;scroll-snap-align:start;padding:14px;display:grid;gap:12px}
 .review .ph{aspect-ratio:4/5}
-.review p{font-size:15px;font-weight:800;line-height:1.5}
 .review .cap{font-size:13px}
 .hint{font-size:12px;color:var(--mute);margin-top:4px}
 
@@ -184,7 +189,7 @@ details p{padding:0 18px 18px;font-size:14px;color:var(--ink2)}
 .flow{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:28px}
 .flow li{display:flex;gap:10px;align-items:flex-start;padding:14px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1)}
 .flow b{flex:none;width:24px;height:24px;border-radius:50%;background:var(--primary);color:#fff;display:grid;place-items:center;font-size:12px}
-.flow h4{font-size:15px;color:#fff}
+.flow .fh{display:block;font-size:15px;font-weight:800;letter-spacing:-.02em;color:#fff}
 .flow p{font-size:12px;color:#9fb6d4;margin-top:2px;line-height:1.45}
 .note-l{font-size:13px;color:#c8d6ea;margin-top:12px}
 .form{margin-top:28px;background:#0a1d31;border:1px solid rgba(255,255,255,.1);border-radius:18px;overflow:hidden}
@@ -223,17 +228,14 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0 110px;b
   .prof-top{grid-template-columns:160px 1fr}
   .avatar{width:160px;height:160px}
   .careers,.stats{grid-template-columns:repeat(3,1fr)}
-  .gallery{grid-template-columns:2fr 1fr 1fr}
   .gallery .ph:first-child{grid-column:auto;grid-row:span 2;aspect-ratio:auto}
-  .reviews{margin:28px 0 0;padding:4px 0 12px}
-  .review{flex-basis:300px}
   .lv-body{display:grid;grid-template-columns:.85fr 1.15fr;gap:20px;align-items:start}
   .lv-body .steps{margin-top:0}
   .methods{grid-template-columns:repeat(4,1fr)}
   .preview{margin:20px 0 0;padding:0 0 8px}
   .preview .ph{flex-basis:46%}
   .prices{grid-template-columns:repeat(4,1fr)}
-  .contact .ctas{grid-template-columns:1fr 1fr;max-width:560px}
+  .contact .ctas{grid-template-columns:1fr;max-width:380px}
   .form{max-width:560px}
   .flow{grid-template-columns:repeat(4,1fr)}
   .sticky{display:none}
@@ -323,21 +325,11 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0 110px;b
 @media (min-width:860px){.toolgrid{height:320px}.tc{width:94px}.tc img{width:50px;height:50px;border-radius:12px}}
 
 /* ── (미사용) 이전 목업 ── */
-.shrink{padding:2px 2px 16px}
-.shrink-t{font-size:13px;font-weight:800;color:var(--mute)}
-.bar-row{display:grid;grid-template-columns:20px 1fr auto;align-items:center;gap:10px;margin-top:10px}
-.bl{font-size:12px;font-weight:800;color:var(--mute)}
 .bl.on{color:var(--mint)}
-.bar{height:30px;border-radius:8px}
 .bar.before{background:#cfd8e4;width:100%}
 .bar.after{background:var(--mint);width:8%;animation:shrinkbar 1.5s var(--ease) .6s both}
 @keyframes shrinkbar{from{width:100%}to{width:8%}}
-.bv{font:900 15px/1 "Pretendard","Noto Sans KR",sans-serif;color:var(--mute);white-space:nowrap}
 .bv.hi{color:var(--mint);font-size:19px}
-.mini{border-top:1px solid var(--hair);padding-top:12px;display:grid;gap:9px}
-.mini div{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:13px}
-.mini span{color:var(--ink2);font-weight:700}
-.mini b{color:var(--mint);font-weight:800;white-space:nowrap}
 
 /* ── 스크롤 유도 ── */
 .hero .cuewrap{display:block;margin-top:44px}
@@ -660,10 +652,10 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0 110px;b
     <h2 class="rv">아래 양식을 복사해서<br>보내주세요</h2>
     <p class="sub rv">어느 채널이든 괜찮아요. 내용을 보고 맞는 레벨과 일정을 제안드려요.</p>
     <ol class="flow rv">
-      <li><b>1</b><div><h4>문의</h4><p>양식을 DM이나 오픈채팅으로 보내요</p></div></li>
-      <li><b>2</b><div><h4>상담</h4><p>레벨과 일정을 같이 정해요</p></div></li>
-      <li><b>3</b><div><h4>결제</h4><p>결제 링크를 보내드려요 (카드 가능)</p></div></li>
-      <li><b>4</b><div><h4>첫 수업</h4><p>줌 링크를 받고 시작해요</p></div></li>
+      <li><b>1</b><div><b class="fh">문의</b><p>양식을 DM이나 오픈채팅으로 보내요</p></div></li>
+      <li><b>2</b><div><b class="fh">상담</b><p>레벨과 일정을 같이 정해요</p></div></li>
+      <li><b>3</b><div><b class="fh">결제</b><p>결제 링크를 보내드려요 (카드 가능)</p></div></li>
+      <li><b>4</b><div><b class="fh">첫 수업</b><p>줌 링크를 받고 시작해요</p></div></li>
     </ol>
     <p class="note-l rv">문의만 해도 결제되지 않아요. 상담 후에 결정하세요.</p>
     <div class="form rv">
@@ -677,7 +669,7 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0 110px;b
     </div>
     <div class="ctas rv">
       <a class="btn pri" id="copyDm" href="https://ig.me/m/work__zero" target="_blank" rel="noopener">양식 복사하고 DM 열기</a>
-      <a class="btn kakao" href="#" data-todo="오픈채팅 링크" target="_blank" rel="noopener">카카오톡 오픈채팅</a>
+      <a class="btn kakao" hidden href="#" data-todo="오픈채팅 링크" target="_blank" rel="noopener">카카오톡 오픈채팅</a>
     </div>
     <p class="note">보통 하루 안에 답장드려요</p>
     <div class="last-review rv"><div class="ph">20%</div><p>처음 세 분은 수업 후 후기를 남겨 주시는 조건으로 20% 할인돼요.</p></div>
