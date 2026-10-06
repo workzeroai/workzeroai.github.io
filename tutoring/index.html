@@ -309,24 +309,19 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0 110px;b
   .add{grid-template-columns:1fr auto auto}
 }
 
-/* ── 히어로 모션그래픽: 루틴이 완성되어 계속 돈다 ── */
-.art{width:100%;max-width:500px;margin:0 auto;filter:drop-shadow(0 20px 44px rgba(50,50,93,.10))}
-.art svg{width:100%;height:auto;display:block;overflow:visible}
-.art .track{fill:none;stroke:#e4e9f2;stroke-width:2.8}
-.art .draw{fill:none;stroke:url(#rg);stroke-width:2.8;stroke-linecap:round;stroke-dasharray:653.5;animation:drawring 9s var(--ease) infinite}
-@keyframes drawring{0%{stroke-dashoffset:653.5}27%,100%{stroke-dashoffset:0}}
-.art .trail{fill:none;stroke:var(--mint);stroke-width:3;stroke-linecap:round;stroke-dasharray:62 591.5;stroke-dashoffset:62;opacity:0;animation:pipin 9s var(--ease) infinite}
-.art .pip{fill:var(--mint);opacity:0;animation:pipin 9s var(--ease) infinite}
-@keyframes pipin{0%,26%{opacity:0}34%,94%{opacity:1}100%{opacity:0}}
-.art .orbit{transform-box:view-box;transform-origin:240px 180px;animation:spin 4.6s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-.art .nd{fill:#fff;stroke:var(--primary);stroke-width:2.6;transform-box:fill-box;transform-origin:center;animation:pop 9s var(--ease) infinite;animation-delay:calc(var(--n)*.55s)}
-@keyframes pop{0%,2%{opacity:0;transform:scale(.4)}10%,96%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(.4)}}
-.art .nl{font:800 13px/1 "Pretendard","Noto Sans KR",sans-serif;fill:var(--mute);animation:nlin 9s var(--ease) infinite;animation-delay:calc(var(--n)*.55s)}
-@keyframes nlin{0%,4%{opacity:0}14%,96%{opacity:1}100%{opacity:0}}
-.art .ct-s{text-anchor:middle;font:800 12px/1 "Pretendard","Noto Sans KR",sans-serif;fill:var(--mute);letter-spacing:.04em}
-.art .ct-b{text-anchor:middle;font:900 22px/1 "Pretendard","Noto Sans KR",sans-serif;fill:var(--primary-deep);letter-spacing:-.03em}
-.art-cap{margin-top:14px;text-align:center;font-size:14px;font-weight:700;color:var(--ink2)}
+/* ── 히어로: 도구 카드 클러스터 ── */
+.art{width:100%;max-width:440px;margin:0 auto}
+.tools{position:relative;height:288px}
+.tools .zero{position:absolute;inset:0;display:grid;place-items:center;font:900 250px/1 "Pretendard","Noto Sans KR",sans-serif;color:rgba(13,37,61,.055);letter-spacing:-.06em;user-select:none;pointer-events:none}
+.tc{position:absolute;width:84px;background:#fff;border:1px solid rgba(13,37,61,.05);border-radius:20px;padding:11px 6px 9px;text-align:center;
+  box-shadow:0 16px 34px -12px rgba(50,50,93,.34),0 4px 10px -4px rgba(0,0,0,.07);
+  transform:rotate(var(--r));animation:flyin .7s var(--ease) both,bobz 5.6s ease-in-out infinite;animation-delay:var(--d),calc(var(--d) + .7s)}
+.tc img{width:42px;height:42px;object-fit:contain;display:block;margin:0 auto 6px}
+.tc span{display:block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;color:var(--mute);letter-spacing:-.02em}
+@keyframes flyin{from{opacity:0;transform:rotate(var(--r)) translateY(26px) scale(.86)}to{opacity:1;transform:rotate(var(--r)) translateY(0) scale(1)}}
+@keyframes bobz{0%,100%{transform:rotate(var(--r)) translateY(0)}50%{transform:rotate(var(--r)) translateY(-7px)}}
+.art-cap{margin-top:12px;text-align:center;font-size:13.5px;font-weight:700;color:var(--ink2)}
+@media (min-width:860px){.tools{height:320px}.tc{width:92px}.tc img{width:46px;height:46px}}
 
 /* ── (미사용) 이전 목업 ── */
 .shrink{padding:2px 2px 16px}
@@ -351,7 +346,7 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0 110px;b
 .cue i{width:32px;height:32px;border-radius:50%;background:#fff;border:1px solid var(--hair);box-shadow:var(--sh1);display:grid;place-items:center;animation:bob 1.9s ease-in-out infinite}
 .cue i::after{content:"";width:8px;height:8px;border:2.2px solid var(--primary);border-top:0;border-left:0;transform:rotate(45deg) translate(-2px,-2px)}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
-@media (prefers-reduced-motion:reduce){.bar.after,.cue i,.art .draw,.art .nd,.art .nl,.art .pip,.art .trail,.art .orbit{animation:none}.art .draw{stroke-dashoffset:0}.art .nd,.art .nl,.art .pip,.art .trail{opacity:1}}
+@media (prefers-reduced-motion:reduce){.bar.after,.cue i,.tc{animation:none}.tc{opacity:1}}
 </style>
 </head>
 <body>
@@ -385,35 +380,17 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0 110px;b
         <a class="btn sec" href="#level">내 레벨 커리큘럼 보기</a>
       </div>
     </div>
-    <div class="art" role="img" aria-label="내 업무를 쪼개고 AI에게 지시하고 결과를 검수해 자동 실행까지, 하나의 루틴이 완성되어 계속 도는 그림">
-      <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <defs>
-          <linearGradient id="rg" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#6f54ff"/><stop offset=".55" stop-color="#533afd"/><stop offset="1" stop-color="#2fb98c"/>
-          </linearGradient>
-          <radialGradient id="gl" cx=".5" cy=".5" r=".5">
-            <stop offset="0" stop-color="#533afd" stop-opacity=".10"/><stop offset="1" stop-color="#533afd" stop-opacity="0"/>
-          </radialGradient>
-        </defs>
-        <circle class="glow" cx="240" cy="180" r="150" fill="url(#gl)"/>
-        <circle class="track" cx="240" cy="180" r="104"/>
-        <circle class="draw" cx="240" cy="180" r="104" transform="rotate(-90 240 180)"/>
-        <g class="orbit">
-          <circle class="trail" cx="240" cy="180" r="104" transform="rotate(-90 240 180)"/>
-          <circle class="pip" cx="240" cy="76" r="7"/>
-        </g>
-        <circle class="nd" style="--n:0" cx="240" cy="76" r="7"/>
-        <circle class="nd" style="--n:1" cx="344" cy="180" r="7"/>
-        <circle class="nd" style="--n:2" cx="240" cy="284" r="7"/>
-        <circle class="nd" style="--n:3" cx="136" cy="180" r="7"/>
-        <text class="nl" style="--n:0" x="240" y="50" text-anchor="middle">내 업무 쪼개기</text>
-        <text class="nl" style="--n:1" x="360" y="185" text-anchor="start">AI에게 지시</text>
-        <text class="nl" style="--n:2" x="240" y="314" text-anchor="middle">결과 검수</text>
-        <text class="nl" style="--n:3" x="120" y="185" text-anchor="end">자동 실행</text>
-        <text class="ct-s" x="240" y="174">끝나면 남는 것</text>
-        <text class="ct-b" x="240" y="204">내 업무 루틴</text>
-      </svg>
-      <p class="art-cap">내 업무 하나를 골라, 끝까지 같이 만들어요</p>
+    <div class="art">
+      <div class="tools">
+        <div class="zero" aria-hidden="true">0</div>
+        <div class="tc" style="left:4%;top:4px;--r:-9deg;--d:0.06s"><img src="logo/claude.png" alt="Claude" loading="lazy" width="42" height="42"><span>Claude</span></div>
+        <div class="tc" style="left:36%;top:-6px;--r:6deg;--d:0.13s"><img src="logo/chatgpt.png" alt="GPT" loading="lazy" width="42" height="42"><span>GPT</span></div>
+        <div class="tc" style="left:68%;top:12px;--r:-5deg;--d:0.2s"><img src="logo/notion.png" alt="노션" loading="lazy" width="42" height="42"><span>노션</span></div>
+        <div class="tc" style="left:0%;top:128px;--r:7deg;--d:0.27s"><img src="logo/sheets.png" alt="시트" loading="lazy" width="42" height="42"><span>시트</span></div>
+        <div class="tc" style="left:33%;top:142px;--r:-4deg;--d:0.34s"><img src="logo/ga4.png" alt="GA4" loading="lazy" width="42" height="42"><span>GA4</span></div>
+        <div class="tc" style="left:65%;top:130px;--r:9deg;--d:0.41s"><img src="logo/meta_ads.png" alt="광고관리자" loading="lazy" width="42" height="42"><span>광고관리자</span></div>
+      </div>
+      <p class="art-cap">내 업무에 맞는 도구를 골라, 끝까지 같이 만들어요</p>
     </div>
   </div>
   <div class="wrap cuewrap">
