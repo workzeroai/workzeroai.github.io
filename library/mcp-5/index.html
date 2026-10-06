@@ -69,6 +69,16 @@ figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-
 .tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
 .tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
 .tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
 .cw{position:relative;margin:20px 0}
 .cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
 .cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
@@ -101,13 +111,13 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
 <figure><img src="img/01.webp" alt="커버" loading="lazy"></figure>
 <div class="lmnote"><p><strong>30초 요약</strong></p>
 <ol><li>Claude는 내 광고·매출·경쟁사 데이터를 못 보면 뻔한 답을 해요. MCP는 Claude를 실제 도구에 연결하는 방법이에요.</li><li>연결은 Claude 설정 → 커넥터에 <strong>주소 한 줄</strong>을 넣고 로그인하면 끝이에요. (Apify·Meta Ads·Notion)</li><li>연결한 다음에는 아래 <strong>바로 쓰는 프롬프트</strong>를 복사해서 채팅창에 붙여넣으면 돼요.</li></ol></div>
-<div class="tw"><table>
+<div class="tw hdr"><table>
 <tr><th>MCP</th><th>하는 일</th><th>연결 주소</th><th>난이도</th></tr>
-<tr><td>Apify</td><td>경쟁사 릴스·훅 수집</td><td><code>https://mcp.apify.com</code></td><td>쉬움</td></tr>
-<tr><td>Meta Ads</td><td>광고 성과 확인·수정</td><td><code>https://mcp.facebook.com/ads</code></td><td>보통</td></tr>
-<tr><td>Google Analytics</td><td>유입·전환·퍼널 분석 (읽기 전용)</td><td>로컬 설치 (Claude 데스크톱)</td><td>높음</td></tr>
-<tr><td>Google Sheets</td><td>보고서 시트 읽기·쓰기</td><td><code>https://sheetsmcp.googleapis.com/mcp/v1</code></td><td>높음</td></tr>
-<tr><td>Notion</td><td>기획 DB 읽기·등록</td><td><code>https://mcp.notion.com/mcp</code></td><td>쉬움</td></tr>
+<tr><td data-label="MCP">Apify</td><td data-label="하는 일">경쟁사 릴스·훅 수집</td><td data-label="연결 주소"><code>https://mcp.apify.com</code></td><td data-label="난이도">쉬움</td></tr>
+<tr><td data-label="MCP">Meta Ads</td><td data-label="하는 일">광고 성과 확인·수정</td><td data-label="연결 주소"><code>https://mcp.facebook.com/ads</code></td><td data-label="난이도">보통</td></tr>
+<tr><td data-label="MCP">Google Analytics</td><td data-label="하는 일">유입·전환·퍼널 분석 (읽기 전용)</td><td data-label="연결 주소">로컬 설치 (Claude 데스크톱)</td><td data-label="난이도">높음</td></tr>
+<tr><td data-label="MCP">Google Sheets</td><td data-label="하는 일">보고서 시트 읽기·쓰기</td><td data-label="연결 주소"><code>https://sheetsmcp.googleapis.com/mcp/v1</code></td><td data-label="난이도">높음</td></tr>
+<tr><td data-label="MCP">Notion</td><td data-label="하는 일">기획 DB 읽기·등록</td><td data-label="연결 주소"><code>https://mcp.notion.com/mcp</code></td><td data-label="난이도">쉬움</td></tr>
 </table></div>
 <p>추천 순서: <strong>쉬움부터</strong>. Notion → Apify → Meta Ads를 먼저 연결하고, GA4·Sheets는 Google Cloud 설정이 필요해서 마지막에 하세요.</p>
 <hr>

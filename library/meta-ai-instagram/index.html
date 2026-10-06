@@ -69,6 +69,16 @@ figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-
 .tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
 .tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
 .tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
 .cw{position:relative;margin:20px 0}
 .cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
 .cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
@@ -100,22 +110,22 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
   <div class="bd">
 <h3>바쁜 분들을 위한 요약</h3>
 <ul><li>ChatGPT·Claude는 기본 상태로는 내 인스타 데이터를 못 읽어요. Meta AI는 인스타 계정으로 가입하면 바로 읽어요.</li><li>연결은 <strong>인스타 계정으로 Meta AI 앱 다운로드 후 가입 → "내 계정 분석해줘" 한 문장</strong>이면 끝나요.</li><li>이 페이지의 프롬프트 12개를 복사해서 내 릴스 진단, 경쟁 계정 분석, 다음 달 캘린더, 저장 게시물 정리까지 해보세요.</li></ul>
-<div class="tw"><table>
+<div class="tw hdr"><table>
 <tr><th>하고 싶은 것</th><th>섹션</th><th>걸리는 시간</th></tr>
-<tr><td>Meta AI에 인스타 연결</td><td>2. 연결 방법</td><td>3분</td></tr>
-<tr><td>내 릴스가 왜 잘됐는지</td><td>3-1</td><td>1분</td></tr>
-<tr><td>경쟁 계정 훅·댓글 유도 분석</td><td>3-2</td><td>1분</td></tr>
-<tr><td>다음 달 콘텐츠 캘린더</td><td>3-3</td><td>1분</td></tr>
-<tr><td>저장해둔 게시물 정리</td><td>3-4</td><td>1분</td></tr>
+<tr><td data-label="하고 싶은 것">Meta AI에 인스타 연결</td><td data-label="섹션">2. 연결 방법</td><td data-label="걸리는 시간">3분</td></tr>
+<tr><td data-label="하고 싶은 것">내 릴스가 왜 잘됐는지</td><td data-label="섹션">3-1</td><td data-label="걸리는 시간">1분</td></tr>
+<tr><td data-label="하고 싶은 것">경쟁 계정 훅·댓글 유도 분석</td><td data-label="섹션">3-2</td><td data-label="걸리는 시간">1분</td></tr>
+<tr><td data-label="하고 싶은 것">다음 달 콘텐츠 캘린더</td><td data-label="섹션">3-3</td><td data-label="걸리는 시간">1분</td></tr>
+<tr><td data-label="하고 싶은 것">저장해둔 게시물 정리</td><td data-label="섹션">3-4</td><td data-label="걸리는 시간">1분</td></tr>
 </table></div>
 <hr>
 <h3>1. 왜 Meta AI인가요?</h3>
 <p>인스타 데이터는 Meta 안에 있어요. 그래서 Meta의 AI가 가장 적은 설정으로 읽을 수 있어요.</p>
-<div class="tw"><table>
+<div class="tw hdr"><table>
 <tr><th>도구</th><th>기본 상태에서 내 인스타 데이터</th><th>읽게 하려면</th></tr>
-<tr><td>ChatGPT</td><td>못 읽어요</td><td>MCP·커넥터(예: Apify MCP)를 따로 연결</td></tr>
-<tr><td>Claude</td><td>못 읽어요</td><td>MCP·커넥터를 따로 연결</td></tr>
-<tr><td>Meta AI</td><td>읽어요</td><td>인스타 계정으로 가입(아래 2번)</td></tr>
+<tr><td data-label="도구">ChatGPT</td><td data-label="기본 상태에서 내 인스타 데이터">못 읽어요</td><td data-label="읽게 하려면">MCP·커넥터(예: Apify MCP)를 따로 연결</td></tr>
+<tr><td data-label="도구">Claude</td><td data-label="기본 상태에서 내 인스타 데이터">못 읽어요</td><td data-label="읽게 하려면">MCP·커넥터를 따로 연결</td></tr>
+<tr><td data-label="도구">Meta AI</td><td data-label="기본 상태에서 내 인스타 데이터">읽어요</td><td data-label="읽게 하려면">인스타 계정으로 가입(아래 2번)</td></tr>
 </table></div>
 <div class="lmnote"><p>더 깊게 가고 싶다면: 여러 계정을 대량으로 수집해서 시트로 쌓는 건 Apify MCP 같은 도구가 더 맞아요.</p></div>
 <hr>

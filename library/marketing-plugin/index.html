@@ -69,6 +69,16 @@ figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-
 .tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
 .tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
 .tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
 .cw{position:relative;margin:20px 0}
 .cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
 .cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
@@ -102,15 +112,15 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
 <div class="lmnote"><p><strong>30초 요약</strong></p>
 <ul><li>Marketing 플러그인은 Anthropic이 직접 만든 마케팅용 플러그인이에요. 스킬 8개가 들어 있고, 그중 7개는 <code>/</code>로 바로 부르는 명령이에요.</li><li>Cowork에서 플러그인 하나만 추가하면 설치가 끝나요. 따로 코드를 칠 필요가 없어요.</li><li>브랜드 톤을 한 번 알려 두면 초안 쓰기와 검수에 그 기준이 들어가요. 아래에 바로 붙여 쓰는 요청문을 명령별로 정리했어요.</li></ul></div>
 <figure><img src="img/02.webp" alt="Cowork에서 / 치면 나오는 명령 7개" loading="lazy"><figcaption>Cowork에서 / 치면 나오는 명령 7개</figcaption></figure>
-<div class="tw"><table>
+<div class="tw hdr"><table>
 <tr><th>명령</th><th>하는 일</th><th>이럴 때</th></tr>
-<tr><td><code>/campaign-plan</code></td><td>목표·타깃·채널·주차별 캘린더·성과 지표가 들어간 캠페인 기획서</td><td>신규 런칭, 리드 모으기, 시즌 캠페인</td></tr>
-<tr><td><code>/draft-content</code></td><td>블로그·SNS·뉴스레터·랜딩페이지·보도자료 초안</td><td>채널별로 글을 빠르게 뽑을 때</td></tr>
-<tr><td><code>/brand-review</code></td><td>우리 브랜드 톤·용어·메시지에 맞는지 검수, 고친 문장까지</td><td>발행 직전 최종 확인</td></tr>
-<tr><td><code>/competitive-brief</code></td><td>경쟁사 포지셔닝·메시지 비교, 우리가 비어 있는 자리</td><td>경쟁사가 움직였을 때, 세일즈 자료</td></tr>
-<tr><td><code>/performance-report</code></td><td>지표·추세·개선 제안이 들어간 성과 리포트</td><td>주간·월간 보고</td></tr>
-<tr><td><code>/seo-audit</code></td><td>키워드·페이지·콘텐츠 공백·기술 점검</td><td>블로그·랜딩 검색 유입 점검</td></tr>
-<tr><td><code>/email-sequence</code></td><td>온보딩·너처링·드립 메일 여러 통</td><td>리드마그넷 이후 후속 메일</td></tr>
+<tr><td data-label="명령"><code>/campaign-plan</code></td><td data-label="하는 일">목표·타깃·채널·주차별 캘린더·성과 지표가 들어간 캠페인 기획서</td><td data-label="이럴 때">신규 런칭, 리드 모으기, 시즌 캠페인</td></tr>
+<tr><td data-label="명령"><code>/draft-content</code></td><td data-label="하는 일">블로그·SNS·뉴스레터·랜딩페이지·보도자료 초안</td><td data-label="이럴 때">채널별로 글을 빠르게 뽑을 때</td></tr>
+<tr><td data-label="명령"><code>/brand-review</code></td><td data-label="하는 일">우리 브랜드 톤·용어·메시지에 맞는지 검수, 고친 문장까지</td><td data-label="이럴 때">발행 직전 최종 확인</td></tr>
+<tr><td data-label="명령"><code>/competitive-brief</code></td><td data-label="하는 일">경쟁사 포지셔닝·메시지 비교, 우리가 비어 있는 자리</td><td data-label="이럴 때">경쟁사가 움직였을 때, 세일즈 자료</td></tr>
+<tr><td data-label="명령"><code>/performance-report</code></td><td data-label="하는 일">지표·추세·개선 제안이 들어간 성과 리포트</td><td data-label="이럴 때">주간·월간 보고</td></tr>
+<tr><td data-label="명령"><code>/seo-audit</code></td><td data-label="하는 일">키워드·페이지·콘텐츠 공백·기술 점검</td><td data-label="이럴 때">블로그·랜딩 검색 유입 점검</td></tr>
+<tr><td data-label="명령"><code>/email-sequence</code></td><td data-label="하는 일">온보딩·너처링·드립 메일 여러 통</td><td data-label="이럴 때">리드마그넷 이후 후속 메일</td></tr>
 </table></div>
 <hr>
 <h3>1. Marketing 플러그인이 뭐예요?</h3>
