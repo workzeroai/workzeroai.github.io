@@ -309,22 +309,24 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0 110px;b
   .add{grid-template-columns:1fr auto auto}
 }
 
-/* ── 히어로 모션그래픽: 30분이 1분으로 ── */
-.art{width:100%;max-width:520px;margin:0 auto;filter:drop-shadow(0 20px 44px rgba(50,50,93,.10))}
+/* ── 히어로 모션그래픽: 루틴이 완성되어 계속 돈다 ── */
+.art{width:100%;max-width:500px;margin:0 auto;filter:drop-shadow(0 20px 44px rgba(50,50,93,.10))}
 .art svg{width:100%;height:auto;display:block;overflow:visible}
-.art .lb{font:800 14px/1 "Pretendard","Noto Sans KR",sans-serif;fill:var(--mute)}
-.art .blk{fill:#dbe2ec;transform-box:fill-box;transform-origin:center;animation:dim 9s var(--ease) infinite;animation-delay:calc(var(--i)*.07s)}
-@keyframes dim{0%,6%{opacity:1;transform:scale(1)}22%,86%{opacity:.09;transform:scale(.55)}100%{opacity:1;transform:scale(1)}}
-.art .blk.keep{animation:dim 9s var(--ease) infinite,tint 9s var(--ease) infinite;animation-delay:calc(var(--i)*.07s),calc(var(--i)*.07s)}
-@keyframes tint{0%,6%{fill:#dbe2ec}24%,86%{fill:var(--mint)}100%{fill:#dbe2ec}}
-.art .blk.keep{animation-name:keepsize,tint}
-@keyframes keepsize{0%,100%{opacity:1;transform:scale(1)}24%,86%{opacity:1;transform:scale(1.06)}}
-.art .num{text-anchor:middle;font:900 38px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.04em}
-.art .num.was{fill:#9aa6b8;animation:numout 9s var(--ease) infinite}
-.art .num.now{fill:var(--mint);animation:numin 9s var(--ease) infinite}
-@keyframes numout{0%,10%{opacity:1}24%,88%{opacity:0}100%{opacity:1}}
-@keyframes numin{0%,16%{opacity:0}30%,86%{opacity:1}96%,100%{opacity:0}}
-.art-cap{margin-top:10px;text-align:center;font-size:13px;font-weight:700;color:var(--mute)}
+.art .track{fill:none;stroke:#e4e9f2;stroke-width:2.8}
+.art .draw{fill:none;stroke:url(#rg);stroke-width:2.8;stroke-linecap:round;stroke-dasharray:653.5;animation:drawring 9s var(--ease) infinite}
+@keyframes drawring{0%{stroke-dashoffset:653.5}27%,100%{stroke-dashoffset:0}}
+.art .trail{fill:none;stroke:var(--mint);stroke-width:3;stroke-linecap:round;stroke-dasharray:62 591.5;stroke-dashoffset:62;opacity:0;animation:pipin 9s var(--ease) infinite}
+.art .pip{fill:var(--mint);opacity:0;animation:pipin 9s var(--ease) infinite}
+@keyframes pipin{0%,26%{opacity:0}34%,94%{opacity:1}100%{opacity:0}}
+.art .orbit{transform-box:view-box;transform-origin:240px 180px;animation:spin 4.6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.art .nd{fill:#fff;stroke:var(--primary);stroke-width:2.6;transform-box:fill-box;transform-origin:center;animation:pop 9s var(--ease) infinite;animation-delay:calc(var(--n)*.55s)}
+@keyframes pop{0%,2%{opacity:0;transform:scale(.4)}10%,96%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(.4)}}
+.art .nl{font:800 13px/1 "Pretendard","Noto Sans KR",sans-serif;fill:var(--mute);animation:nlin 9s var(--ease) infinite;animation-delay:calc(var(--n)*.55s)}
+@keyframes nlin{0%,4%{opacity:0}14%,96%{opacity:1}100%{opacity:0}}
+.art .ct-s{text-anchor:middle;font:800 12px/1 "Pretendard","Noto Sans KR",sans-serif;fill:var(--mute);letter-spacing:.04em}
+.art .ct-b{text-anchor:middle;font:900 22px/1 "Pretendard","Noto Sans KR",sans-serif;fill:var(--primary-deep);letter-spacing:-.03em}
+.art-cap{margin-top:14px;text-align:center;font-size:14px;font-weight:700;color:var(--ink2)}
 
 /* ── (미사용) 이전 목업 ── */
 .shrink{padding:2px 2px 16px}
@@ -349,7 +351,7 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0 110px;b
 .cue i{width:32px;height:32px;border-radius:50%;background:#fff;border:1px solid var(--hair);box-shadow:var(--sh1);display:grid;place-items:center;animation:bob 1.9s ease-in-out infinite}
 .cue i::after{content:"";width:8px;height:8px;border:2.2px solid var(--primary);border-top:0;border-left:0;transform:rotate(45deg) translate(-2px,-2px)}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
-@media (prefers-reduced-motion:reduce){.bar.after,.cue i,.art .blk,.art .num{animation:none}.art .num.was{opacity:0}.art .blk{opacity:.12}.art .blk.keep{opacity:1;fill:var(--mint)}}
+@media (prefers-reduced-motion:reduce){.bar.after,.cue i,.art .draw,.art .nd,.art .nl,.art .pip,.art .trail,.art .orbit{animation:none}.art .draw{stroke-dashoffset:0}.art .nd,.art .nl,.art .pip,.art .trail{opacity:1}}
 </style>
 </head>
 <body>
@@ -383,43 +385,35 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0 110px;b
         <a class="btn sec" href="#level">내 레벨 커리큘럼 보기</a>
       </div>
     </div>
-    <div class="art" role="img" aria-label="매일 아침 30분 걸리던 광고 리포트 작업이 1분으로 줄어드는 그림">
-      <svg viewBox="0 0 480 352" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <text class="lb" x="38" y="32">매일 아침 광고 리포트 정리</text>
-        <rect class="blk" style="--i:0" x="38" y="58" width="58" height="34" rx="8"/>
-        <rect class="blk" style="--i:1" x="107" y="58" width="58" height="34" rx="8"/>
-        <rect class="blk" style="--i:2" x="176" y="58" width="58" height="34" rx="8"/>
-        <rect class="blk" style="--i:3" x="245" y="58" width="58" height="34" rx="8"/>
-        <rect class="blk" style="--i:4" x="314" y="58" width="58" height="34" rx="8"/>
-        <rect class="blk" style="--i:5" x="383" y="58" width="58" height="34" rx="8"/>
-        <rect class="blk" style="--i:6" x="38" y="103" width="58" height="34" rx="8"/>
-        <rect class="blk" style="--i:7" x="107" y="103" width="58" height="34" rx="8"/>
-        <rect class="blk" style="--i:8" x="176" y="103" width="58" height="34" rx="8"/>
-        <rect class="blk" style="--i:9" x="245" y="103" width="58" height="34" rx="8"/>
-        <rect class="blk" style="--i:10" x="314" y="103" width="58" height="34" rx="8"/>
-        <rect class="blk" style="--i:11" x="383" y="103" width="58" height="34" rx="8"/>
-        <rect class="blk" style="--i:12" x="38" y="148" width="58" height="34" rx="8"/>
-        <rect class="blk" style="--i:13" x="107" y="148" width="58" height="34" rx="8"/>
-        <rect class="blk" style="--i:14" x="176" y="148" width="58" height="34" rx="8"/>
-        <rect class="blk" style="--i:15" x="245" y="148" width="58" height="34" rx="8"/>
-        <rect class="blk" style="--i:16" x="314" y="148" width="58" height="34" rx="8"/>
-        <rect class="blk" style="--i:17" x="383" y="148" width="58" height="34" rx="8"/>
-        <rect class="blk" style="--i:18" x="38" y="193" width="58" height="34" rx="8"/>
-        <rect class="blk" style="--i:19" x="107" y="193" width="58" height="34" rx="8"/>
-        <rect class="blk" style="--i:20" x="176" y="193" width="58" height="34" rx="8"/>
-        <rect class="blk" style="--i:21" x="245" y="193" width="58" height="34" rx="8"/>
-        <rect class="blk" style="--i:22" x="314" y="193" width="58" height="34" rx="8"/>
-        <rect class="blk" style="--i:23" x="383" y="193" width="58" height="34" rx="8"/>
-        <rect class="blk" style="--i:24" x="38" y="238" width="58" height="34" rx="8"/>
-        <rect class="blk" style="--i:25" x="107" y="238" width="58" height="34" rx="8"/>
-        <rect class="blk" style="--i:26" x="176" y="238" width="58" height="34" rx="8"/>
-        <rect class="blk" style="--i:27" x="245" y="238" width="58" height="34" rx="8"/>
-        <rect class="blk" style="--i:28" x="314" y="238" width="58" height="34" rx="8"/>
-        <rect class="blk keep" style="--i:29" x="383" y="238" width="58" height="34" rx="8"/>
-        <text class="num was" x="240" y="332">30분</text>
-        <text class="num now" x="240" y="332">1분</text>
+    <div class="art" role="img" aria-label="내 업무를 쪼개고 AI에게 지시하고 결과를 검수해 자동 실행까지, 하나의 루틴이 완성되어 계속 도는 그림">
+      <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="rg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#6f54ff"/><stop offset=".55" stop-color="#533afd"/><stop offset="1" stop-color="#2fb98c"/>
+          </linearGradient>
+          <radialGradient id="gl" cx=".5" cy=".5" r=".5">
+            <stop offset="0" stop-color="#533afd" stop-opacity=".10"/><stop offset="1" stop-color="#533afd" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle class="glow" cx="240" cy="180" r="150" fill="url(#gl)"/>
+        <circle class="track" cx="240" cy="180" r="104"/>
+        <circle class="draw" cx="240" cy="180" r="104" transform="rotate(-90 240 180)"/>
+        <g class="orbit">
+          <circle class="trail" cx="240" cy="180" r="104" transform="rotate(-90 240 180)"/>
+          <circle class="pip" cx="240" cy="76" r="7"/>
+        </g>
+        <circle class="nd" style="--n:0" cx="240" cy="76" r="7"/>
+        <circle class="nd" style="--n:1" cx="344" cy="180" r="7"/>
+        <circle class="nd" style="--n:2" cx="240" cy="284" r="7"/>
+        <circle class="nd" style="--n:3" cx="136" cy="180" r="7"/>
+        <text class="nl" style="--n:0" x="240" y="50" text-anchor="middle">내 업무 쪼개기</text>
+        <text class="nl" style="--n:1" x="360" y="185" text-anchor="start">AI에게 지시</text>
+        <text class="nl" style="--n:2" x="240" y="314" text-anchor="middle">결과 검수</text>
+        <text class="nl" style="--n:3" x="120" y="185" text-anchor="end">자동 실행</text>
+        <text class="ct-s" x="240" y="174">끝나면 남는 것</text>
+        <text class="ct-b" x="240" y="204">내 업무 루틴</text>
       </svg>
-      <p class="art-cap">제가 실제로 줄여 본 업무예요</p>
+      <p class="art-cap">내 업무 하나를 골라, 끝까지 같이 만들어요</p>
     </div>
   </div>
   <div class="wrap cuewrap">
