@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>워크제로 1:1 자동화 과외</title>
+<meta name="description" content="마케터 출신 자동화 담당자가 내 업무 그대로 알려주는 1:1 자동화 과외. Claude부터 n8n, Claude Code까지.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+:root{--primary:#533afd;--primary-deep:#4434d4;--primary-pale:#eceaff;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f6f9fc;--hair:#e3e8ee;--mint:#14b87a;--ruby:#ea2261;
+--sh1:0 1px 3px rgba(0,55,112,.08);--sh2:0 15px 35px -10px rgba(50,50,93,.18),0 5px 15px -5px rgba(0,0,0,.08);
+--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+section{padding:72px 0;position:relative}
+.eyebrow{display:inline-block;font:800 12px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.12em;color:var(--primary);background:var(--primary-pale);padding:7px 12px;border-radius:99px;margin-bottom:14px}
+h1,h2,h3{letter-spacing:-.03em;font-weight:800;line-height:1.3}
+h2{font-size:28px}
+h3{font-size:19px}
+.sub{color:var(--ink2);font-size:16px;margin-top:12px}
+.cap{color:var(--mute);font-size:14px}
+em.k{font-style:normal;color:var(--primary)}
+.card{background:#fff;border:1px solid var(--hair);border-radius:20px;box-shadow:var(--sh1)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:54px;padding:0 24px;border-radius:14px;font-weight:800;font-size:16px;transition:transform .2s var(--ease),box-shadow .2s}
+.btn:active{transform:scale(.98)}
+.btn.pri{background:var(--primary);color:#fff;box-shadow:0 10px 24px -8px rgba(83,58,253,.6)}
+.btn.sec{background:#fff;border:1px solid var(--hair);color:var(--ink)}
+.btn.kakao{background:#fee500;color:#191600}
+.btn.full{width:100%}
+.ph{display:grid;place-items:center;text-align:center;background:repeating-linear-gradient(45deg,#f1f3f8 0 10px,#e9ecf3 10px 20px);color:var(--mute);font-size:13px;font-weight:700;border-radius:16px;border:1.5px dashed #c9d1de}
+
+/* top nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.82);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute)}
+.seg a.on{background:var(--ink);color:#fff}
+
+/* hero */
+.hero{padding:44px 0 64px;overflow:hidden}
+.mesh{position:absolute;left:-30%;right:-30%;top:-20%;height:70%;z-index:0;pointer-events:none;filter:blur(60px);opacity:.6;
+background:radial-gradient(40% 55% at 18% 55%,#ffd9a8 0,transparent 70%),radial-gradient(38% 60% at 42% 40%,#ffb4d8 0,transparent 70%),radial-gradient(40% 60% at 66% 55%,#b9a6ff 0,transparent 70%),radial-gradient(34% 55% at 88% 38%,#7fa9ff 0,transparent 70%);animation:drift 18s ease-in-out infinite alternate}
+@keyframes drift{from{transform:translateX(-3%)}to{transform:translateX(3%) scale(1.06)}}
+.hero .wrap{position:relative;z-index:1;display:grid;gap:36px}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.badge{font-size:12px;font-weight:800;padding:6px 11px;border-radius:99px;background:rgba(255,255,255,.85);border:1px solid var(--hair);color:var(--ink2)}
+.hero h1{font-size:34px;line-height:1.28}
+.hero .sub{font-size:17px;margin-top:16px}
+.hero .ctas{display:grid;gap:10px;margin-top:28px}
+.win{background:#fff;border-radius:18px;box-shadow:var(--sh2);overflow:hidden;border:1px solid var(--hair)}
+.win-h{height:40px;background:var(--soft);border-bottom:1px solid var(--hair);display:flex;align-items:center;padding:0 14px;gap:6px;font-size:12px;color:var(--mute);font-weight:800}
+.dot{width:10px;height:10px;border-radius:50%;background:#d6dde8}
+.win-h span{margin-left:8px}
+.win-b{padding:16px;display:grid;gap:10px}
+.task{display:grid;grid-template-columns:1fr auto;align-items:center;gap:10px;padding:12px 14px;border-radius:12px;background:var(--soft);font-size:14px;font-weight:700}
+.task .t{display:flex;flex-direction:column;gap:2px}
+.task .t small{font-size:12px;color:var(--mute);font-weight:600}
+.task .r{font-size:13px;font-weight:800;color:var(--mute);text-align:right;white-space:nowrap}
+.task .r b{display:block;color:var(--mint);font-size:15px}
+.win-f{padding:12px 16px;border-top:1px solid var(--hair);font-size:13px;color:var(--mute);display:flex;align-items:center;gap:8px}
+.live{width:8px;height:8px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 4px rgba(20,184,122,.18);animation:pulse 1.6s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 8px rgba(20,184,122,0)}}
+
+/* fit */
+.checks{display:grid;gap:10px;margin-top:28px}
+.check{display:flex;gap:12px;align-items:flex-start;padding:18px;font-size:16px;font-weight:700}
+.check i{flex:none;width:24px;height:24px;border-radius:50%;background:var(--primary);display:grid;place-items:center;margin-top:1px}
+.check i::after{content:"";width:9px;height:5px;border:2.5px solid #fff;border-top:0;border-right:0;transform:rotate(-45deg) translate(1px,-1px)}
+
+/* profile */
+.soft{background:var(--soft)}
+.prof-top{display:grid;gap:20px;margin-top:28px;align-items:center}
+.avatar{width:120px;height:120px;border-radius:50%}
+.prof-top .who{font-size:15px;color:var(--mute);font-weight:700}
+.prof-top .who b{color:var(--ink);font-size:20px;display:block;margin-bottom:2px}
+.story{font-size:16px;color:var(--ink2);margin-top:12px}
+.careers{display:grid;gap:12px;margin-top:28px}
+.career{padding:20px;border-radius:20px;background:#fff;border:1px solid var(--hair)}
+.career.hl{box-shadow:0 0 0 2px var(--primary)}
+.tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:var(--soft);color:var(--primary-deep)}
+.career h3{margin-top:12px;font-size:18px}
+.career .cap{margin-top:2px}
+.career ul{list-style:none;margin-top:12px;display:grid;gap:6px;font-size:14px;color:var(--ink2)}
+.career li::before{content:"✓";color:var(--primary);font-weight:900;margin-right:8px}
+.stats{display:grid;gap:12px;margin-top:28px}
+.stat{padding:20px;display:grid;gap:6px}
+.stat .n{font:900 30px/1.1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.03em;color:var(--primary)}
+.stat .n small{font-size:16px;color:var(--mute);font-weight:800}
+.stat p{font-size:14px;color:var(--ink2)}
+.motto{margin-top:28px;padding:24px;border-radius:20px;background:var(--ink);color:#fff;font-size:18px;font-weight:800;line-height:1.5}
+.motto span{display:block;font-size:12px;font-weight:800;letter-spacing:.12em;color:#9fb6d4;margin-bottom:8px}
+
+/* proof */
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:28px}
+.gallery .ph:first-child{grid-column:1/-1;aspect-ratio:16/10}
+.gallery .ph{aspect-ratio:1/1}
+.badge.prime{background:var(--ink);color:#fff;border-color:var(--ink)}
+.prime-card{display:flex;gap:14px;align-items:center;margin-top:28px;padding:18px 20px;border-radius:20px;background:linear-gradient(135deg,#0d253d,#1c1e54);color:#fff}
+.prime-card .pm{flex:none;font:900 13px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.12em;padding:10px 12px;border-radius:10px;background:linear-gradient(135deg,#f5d58a,#e7b24f);color:#3a2a07}
+.prime-card b{font-size:17px}
+.prime-card p{font-size:13px;color:#c8d6ea;margin-top:2px}
+.session{display:flex;gap:10px;align-items:center;margin-top:14px;font-size:14px;color:var(--ink2);font-weight:700}
+.session::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.reviews{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:28px calc(var(--gut)*-1) 0;padding:4px var(--gut) 12px;scrollbar-width:none}
+.reviews::-webkit-scrollbar{display:none}
+.review{flex:0 0 78%;max-width:320px;scroll-snap-align:start;padding:14px;display:grid;gap:12px}
+.review .ph{aspect-ratio:4/5}
+.review p{font-size:15px;font-weight:800;line-height:1.5}
+.review .cap{font-size:13px}
+.hint{font-size:12px;color:var(--mute);margin-top:4px}
+
+/* level */
+.quiz{margin-top:28px;padding:20px}
+.quiz h3{font-size:16px}
+.opts{display:grid;gap:8px;margin-top:14px}
+.opt{text-align:left;padding:14px 16px;border-radius:14px;border:1.5px solid var(--hair);font-size:15px;font-weight:700;background:#fff;transition:.2s}
+.opt.on{border-color:var(--primary);background:var(--primary-pale);color:var(--primary-deep)}
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:28px;background:var(--soft);padding:5px;border-radius:16px;border:1px solid var(--hair)}
+.tab{padding:12px 4px;border-radius:12px;font-weight:800;font-size:15px;color:var(--mute);transition:.25s var(--ease)}
+.tab.on{background:#fff;color:var(--ink);box-shadow:var(--sh1)}
+.panel{display:none;margin-top:16px}
+.panel.on{display:block;animation:fade .45s var(--ease)}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.lv-head{padding:22px;border-radius:20px;background:linear-gradient(135deg,#533afd,#7a5cff);color:#fff}
+.lv-head .tag{background:rgba(255,255,255,.18);color:#fff}
+.lv-head h3{font-size:22px;margin-top:12px}
+.lv-head p{font-size:15px;opacity:.9;margin-top:6px}
+.meta{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px}
+.meta div{background:rgba(255,255,255,.14);border-radius:12px;padding:10px 12px;font-size:13px}
+.meta b{display:block;font-size:15px}
+.steps{list-style:none;margin-top:12px;display:grid;gap:8px}
+.step{display:grid;grid-template-columns:44px 1fr;gap:12px;padding:16px;align-items:start}
+.step .no{width:44px;height:44px;border-radius:12px;background:var(--soft);display:grid;place-items:center;font:900 13px/1.1 "Pretendard","Noto Sans KR",sans-serif;color:var(--primary);text-align:center}
+.step .no.off{background:var(--ink);color:#fff}
+.step h4{font-size:16px;font-weight:800;letter-spacing:-.02em}
+.step p{font-size:14px;color:var(--ink2);margin-top:2px}
+.step .out{display:inline-block;margin-top:8px;font-size:12px;font-weight:800;color:var(--mint);background:#e7f8f1;padding:4px 9px;border-radius:8px}
+.result{margin-top:12px;padding:18px;border-radius:16px;border:1.5px dashed var(--primary);font-size:15px;font-weight:700;color:var(--primary-deep)}
+.result span{display:block;font-size:12px;letter-spacing:.1em;color:var(--mute);margin-bottom:4px}
+
+/* method */
+.methods{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:28px}
+.method{padding:18px}
+.method .ic{display:inline-block;font:900 12px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.06em;color:var(--primary);background:var(--primary-pale);padding:7px 9px;border-radius:8px}
+.method h3{font-size:16px;margin-top:8px}
+.method p{font-size:13px;color:var(--ink2);margin-top:4px}
+.preview{display:flex;gap:10px;overflow-x:auto;margin:20px calc(var(--gut)*-1) 0;padding:0 var(--gut) 8px;scrollbar-width:none}
+.preview::-webkit-scrollbar{display:none}
+.preview .ph{flex:0 0 82%;max-width:420px;aspect-ratio:16/9}
+
+/* price */
+.prices{display:grid;gap:12px;margin-top:28px}
+.price{padding:22px;position:relative}
+.price.best{box-shadow:0 0 0 2px var(--primary),var(--sh2)}
+.price .pop{position:absolute;top:-11px;right:18px;background:var(--primary);color:#fff;font-size:12px;font-weight:800;padding:5px 10px;border-radius:99px}
+.price h3{font-size:17px}
+.price .amt{font:900 30px/1.2 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.03em;margin-top:8px}
+.price .amt small{font-size:15px;font-weight:700;color:var(--mute)}
+.price ul{list-style:none;margin-top:12px;display:grid;gap:5px;font-size:14px;color:var(--ink2)}
+.price li::before{content:"·";margin-right:8px;color:var(--primary);font-weight:900}
+
+/* faq */
+.faq{margin-top:28px;display:grid;gap:8px}
+details{border:1px solid var(--hair);border-radius:16px;background:#fff}
+summary{list-style:none;padding:18px 48px 18px 18px;font-weight:800;font-size:15px;position:relative;cursor:pointer}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:22px;color:var(--primary);transition:.2s}
+details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+details p{padding:0 18px 18px;font-size:14px;color:var(--ink2)}
+
+/* contact */
+.contact{background:var(--ink);color:#fff;overflow:hidden}
+.contact .mesh{top:auto;bottom:-40%;opacity:.35}
+.contact .wrap{position:relative;z-index:1}
+.contact h2{color:#fff}
+.contact .sub{color:#c8d6ea}
+.flow{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:28px}
+.flow li{display:flex;gap:10px;align-items:flex-start;padding:14px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1)}
+.flow b{flex:none;width:24px;height:24px;border-radius:50%;background:var(--primary);color:#fff;display:grid;place-items:center;font-size:12px}
+.flow h4{font-size:15px;color:#fff}
+.flow p{font-size:12px;color:#9fb6d4;margin-top:2px;line-height:1.45}
+.note-l{font-size:13px;color:#c8d6ea;margin-top:12px}
+.form{margin-top:28px;background:#0a1d31;border:1px solid rgba(255,255,255,.1);border-radius:18px;overflow:hidden}
+.form-h{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.08);font-size:13px;font-weight:800;color:#9fb6d4}
+.copy{font-size:13px;font-weight:800;padding:8px 12px;border-radius:10px;background:rgba(255,255,255,.1);color:#fff}
+.copy.ok{background:var(--mint)}
+.form pre{padding:18px 16px;font:500 14px/1.9 "Pretendard","Noto Sans KR",sans-serif;color:#e6eefa;white-space:pre-wrap}
+.contact .ctas{display:grid;gap:10px;margin-top:20px}
+.contact .btn.sec{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:#fff}
+.contact .note{font-size:13px;color:#9fb6d4;margin-top:14px;text-align:center}
+.last-review{margin-top:28px;padding:18px;border-radius:18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:grid;grid-template-columns:72px 1fr;gap:14px;align-items:center}
+.last-review .ph{aspect-ratio:1;background:repeating-linear-gradient(45deg,#16304b 0 10px,#12283f 10px 20px);border-color:#2c4766;color:#7f97b5;font-size:11px}
+.last-review p{font-size:14px;font-weight:700;color:#e6eefa}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0 110px;border-top:1px solid rgba(255,255,255,.08)}
+
+/* sticky bar */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px var(--gut) calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--hair);transform:translateY(110%);transition:transform .35s var(--ease)}
+.sticky.show{transform:none}
+.sticky .btn{width:100%}
+
+/* reveal */
+@media (prefers-reduced-motion:reduce){.mesh,.live{animation:none}html{scroll-behavior:auto}}
+
+/* PC */
+@media (min-width:860px){
+  :root{--gut:32px}
+  section{padding:110px 0}
+  h2{font-size:40px}
+  .sub{font-size:18px}
+  .hero{padding:80px 0 110px}
+  .hero .wrap{grid-template-columns:1.1fr .9fr;align-items:center;gap:56px}
+  .hero h1{font-size:52px}
+  .hero .sub{font-size:19px}
+  .hero .ctas{grid-template-columns:auto auto;justify-content:start}
+  .checks{grid-template-columns:1fr 1fr}
+  .prof-top{grid-template-columns:160px 1fr}
+  .avatar{width:160px;height:160px}
+  .careers,.stats{grid-template-columns:repeat(3,1fr)}
+  .gallery{grid-template-columns:2fr 1fr 1fr}
+  .gallery .ph:first-child{grid-column:auto;grid-row:span 2;aspect-ratio:auto}
+  .reviews{margin:28px 0 0;padding:4px 0 12px}
+  .review{flex-basis:300px}
+  .lv-body{display:grid;grid-template-columns:.85fr 1.15fr;gap:20px;align-items:start}
+  .lv-body .steps{margin-top:0}
+  .methods{grid-template-columns:repeat(4,1fr)}
+  .preview{margin:20px 0 0;padding:0 0 8px}
+  .preview .ph{flex-basis:46%}
+  .prices{grid-template-columns:repeat(4,1fr)}
+  .contact .ctas{grid-template-columns:1fr 1fr;max-width:560px}
+  .form{max-width:560px}
+  .flow{grid-template-columns:repeat(4,1fr)}
+  .sticky{display:none}
+}
+
+/* ── 진단 결과 ── */
+.qres{margin-top:16px;padding:20px;border-radius:16px;background:var(--primary-pale);border:1.5px dashed var(--primary)}
+.qres b{display:block;font-size:18px;color:var(--primary-deep)}
+.qres p{font-size:14px;color:var(--ink2);margin-top:8px}
+.qres .go{display:inline-block;margin-top:14px;font-weight:800;color:var(--primary)}
+
+/* ── 첫 수강생 모집 ── */
+.recruit{margin-top:28px;padding:24px;border-radius:20px;background:var(--primary-pale);border:1.5px dashed var(--primary)}
+.recruit h3{font-size:18px;color:var(--primary-deep)}
+.recruit p{font-size:14px;color:var(--ink2);margin-top:10px}
+.recruit p b{color:var(--primary-deep)}
+
+/* ── 같이 만들기 ── */
+.pair{margin-top:28px;padding:24px;border-radius:24px;background:linear-gradient(135deg,#0d253d,#1c1e54);color:#fff}
+.pair .tag{background:rgba(255,255,255,.14);color:#c7b8ff}
+.pair h3{color:#fff;font-size:23px;margin-top:12px}
+.pair>p{font-size:15px;color:#c8d6ea;margin-top:8px}
+.pairprice{margin-top:18px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.pairprice .amt{font:900 30px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.03em}
+.pairprice small{font-size:14px;color:#9fb6d4;font-weight:700}
+.pairgrid{display:grid;gap:10px;margin-top:18px}
+.pairgrid div{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:14px 16px}
+.pairgrid b{display:block;font-size:14px}
+.pairgrid small{font-size:13px;color:#9fb6d4;display:block;margin-top:3px;line-height:1.5}
+.pairnote{margin-top:16px;font-size:13px;color:#9fb6d4;border-top:1px solid rgba(255,255,255,.12);padding-top:16px}
+.pair .btn{margin-top:18px}
+
+/* ── 이 수업이 아닌 것 ── */
+.nots{list-style:none;display:grid;gap:8px;margin-top:28px}
+.nots li{padding:18px 18px 18px 48px;font-size:15px;font-weight:800;position:relative}
+.nots li::before{content:"";position:absolute;left:18px;top:22px;width:18px;height:18px;border-radius:50%;border:2px solid var(--ruby)}
+.nots li::after{content:"";position:absolute;left:21px;top:30px;width:12px;height:2px;background:var(--ruby);transform:rotate(-45deg)}
+.nots span{display:block;font-size:13px;font-weight:600;color:var(--ink2);margin-top:5px;line-height:1.55}
+
+/* ── 준비물 ── */
+.prep{margin-top:28px;padding:22px;border-radius:20px;background:#fff;border:1px solid var(--hair)}
+.prep h3{font-size:17px}
+.prep ul{list-style:none;margin-top:14px;display:grid;gap:9px;font-size:14px;color:var(--ink2)}
+.prep li{padding-left:24px;position:relative}
+.prep li::before{content:"✓";position:absolute;left:0;color:var(--primary);font-weight:900}
+
+/* ── 가격 카드 버튼 · 같이 만들기 행 ── */
+.price{display:flex;flex-direction:column}
+.price ul{flex:1}
+.pick{margin-top:16px;width:100%;height:46px;border-radius:12px;background:var(--soft);border:1px solid var(--hair);font-size:14px;font-weight:800;color:var(--ink);display:inline-flex;align-items:center;justify-content:center}
+.price.best .pick{background:var(--primary);color:#fff;border-color:var(--primary)}
+.addon{display:grid;gap:12px;margin-top:12px}
+.add{padding:20px;display:grid;gap:12px;align-items:center}
+.add h3{font-size:17px}
+.add p{font-size:13px;color:var(--ink2);margin-top:4px}
+.add .amt{font:900 22px/1.2 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.add .amt small{display:block;font-size:13px;font-weight:700;color:var(--mute);margin-top:2px}
+
+/* ── 졸업 후 경로 ── */
+.path{display:grid;gap:10px;margin-top:28px}
+.pnode{padding:18px 20px;border-radius:18px;background:#fff;border:1px solid var(--hair);display:grid;grid-template-columns:38px 1fr auto;gap:14px;align-items:center}
+.pnode .pi{width:38px;height:38px;border-radius:11px;background:var(--primary-pale);color:var(--primary-deep);display:grid;place-items:center;font:900 12px/1 "Pretendard","Noto Sans KR",sans-serif}
+.pnode b{font-size:16px;display:block}
+.pnode small{font-size:13px;color:var(--mute);display:block;margin-top:2px;line-height:1.5}
+.pnode .pp{font-size:14px;font-weight:800;color:var(--primary);white-space:nowrap}
+.pnode.out{background:linear-gradient(135deg,var(--primary-pale),#fff)}
+.pnode.out .pi{background:var(--primary);color:#fff}
+
+@media (min-width:860px){
+  .pairgrid{grid-template-columns:repeat(3,1fr)}
+  .nots{grid-template-columns:repeat(3,1fr)}
+  .prep ul{grid-template-columns:1fr 1fr}
+  .add{grid-template-columns:1fr auto auto}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top">WORK<b>ZERO</b></a>
+    <div class="seg" role="tablist" aria-label="서비스 선택">
+      <a class="on" href="./" aria-current="page">1:1 과외</a>
+      <a href="../build/">제작 문의</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+
+<!-- 1. HERO -->
+<section class="hero">
+  <div class="mesh"></div>
+  <div class="wrap">
+    <div>
+      <div class="badges rv">
+        <span class="badge prime">크몽 Prime · 상위 2%</span>
+        <span class="badge">현직 DX 자동화 담당</span>
+        <span class="badge">마케터 출신</span>
+      </div>
+      <h1 class="rv">AI는 쓰는데,<br>왜 일은 <em class="k">그대로</em>일까요?</h1>
+      <p class="sub rv">마케터 출신 자동화 담당자가<br>내 업무 그대로, 1:1로 자동화를 알려드려요.</p>
+      <div class="ctas rv">
+        <a class="btn pri" href="#contact">상담 문의하기</a>
+        <a class="btn sec" href="#level">내 레벨 커리큘럼 보기</a>
+      </div>
+    </div>
+    <div class="win rv" aria-hidden="true">
+      <div class="win-h"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span>내 반복업무</span></div>
+      <div class="win-b">
+        <div class="task"><div class="t">일일 광고 리포트 정리<small>엑셀 피벗 · 매일 아침</small></div><div class="r">30분<b>→ 1분</b></div></div>
+        <div class="task"><div class="t">검색광고 키워드 순위 확인<small>사람이 직접 검색</small></div><div class="r">수작업<b>→ 자동</b></div></div>
+        <div class="task"><div class="t">흩어진 사업부 엑셀 데이터<small>매번 찾고 합치기</small></div><div class="r">흩어짐<b>→ 한 DB</b></div></div>
+      </div>
+      <div class="win-f"><i class="live"></i>실제로 줄여 본 업무예요</div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. FIT -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow rv">FOR YOU</span>
+    <h2 class="rv">이런 분께 맞아요</h2>
+    <div class="checks">
+      <div class="card check rv"><i></i>매주 같은 리포트를 손으로 만들고 있어요</div>
+      <div class="card check rv"><i></i>Claude를 쓰는데 채팅에서 끝나요</div>
+      <div class="card check rv"><i></i>튜토리얼은 따라 하는데, 내 업무엔 적용이 안 돼요</div>
+      <div class="card check rv"><i></i>자동화를 제대로 배워서 일로 연결하고 싶어요</div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. PROFILE -->
+<section class="soft" id="about">
+  <div class="wrap">
+    <span class="eyebrow rv">ABOUT</span>
+    <h2 class="rv">개발자가 아니라<br><em class="k">마케터</em>였어요</h2>
+    <div class="prof-top rv">
+      <div class="avatar ph">프로필<br>사진</div>
+      <div>
+        <div class="who"><b>제로</b>@work__zero</div>
+        <p class="story">네이버·구글·카카오 광고를 직접 운영하던 퍼포먼스 마케터였어요. 매일 반복되는 리포트를 줄이다가 자동화를 시작했고, 지금은 회사에서 DX 자동화 담당으로 일하면서 크몽에서 자동화 외주를 납품하고 있어요. 그래서 마케터가 어디서 막히는지 알아요.</p>
+      </div>
+    </div>
+    <div class="prime-card rv"><div class="pm">PRIME</div><div><b>크몽 Prime 선정</b><p>포트폴리오와 고객 평가를 거쳐 상위 2%로 엄선된 우수 서비스예요.</p></div></div>
+    <div class="careers">
+      <div class="career rv"><span class="tag">MARKETING</span><h3>네이버·구글·카카오 광고 운영</h3><p class="cap">이전 · 퍼포먼스 마케터</p><ul><li>검색광고·퍼포먼스 광고 직접 운영</li><li>마케팅 ROI·데이터 분석</li></ul></div>
+      <div class="career rv"><span class="tag">AUTOMATION</span><h3>기업 Airtable DB 설계</h3><p class="cap">현재 · 기업 DX 자동화 담당</p><ul><li>기업 데이터베이스 구조 설계·관리</li><li>반복업무 프로세스 자동화 구축</li></ul></div>
+      <div class="career hl rv"><span class="tag">AI AGENT · 외주</span><h3>Codex · Claude Code · MCP</h3><p class="cap">리서치부터 콘텐츠 제작까지 직접 실험</p><ul><li>조코딩 'AX 인재전쟁' 상위 10%</li><li>크몽 Prime '워크제로' 자동화 외주·납품</li></ul></div>
+    </div>
+    <div class="stats">
+      <div class="card stat rv"><div class="n">30분 <small>→</small> 1분</div><p>매일 하던 리포트 작업을 엑셀 피벗·VBA로 자동화</p></div>
+      <div class="card stat rv"><div class="n">20명<small>+</small></div><p>직접 만든 키워드 순위 자동화를 쓰는 마케터 수 (퇴사 후에도 사용 중)</p></div>
+      <div class="card stat rv"><div class="n">0 <small>→</small> 1</div><p>여러 사업부의 엑셀 데이터를 4개월간 정리해 Airtable DB·자동화 시스템 구축</p></div>
+    </div>
+    <div class="motto rv"><span>MOTTO</span>방향과 감, 기획과 검수는 사람의 몫.<br>실행은 AI의 몫.</div>
+  </div>
+</section>
+
+<!-- 4. PROOF -->
+<section id="proof">
+  <div class="wrap">
+    <span class="eyebrow rv">CLASS</span>
+    <h2 class="rv">실제 수업은<br>이런 모습이에요</h2>
+    <p class="sub rv">1회차에서 쓰는 수업 자료 일부예요.</p>
+    <div class="preview">
+      <div class="ph">수업 슬라이드 장면 1</div>
+      <div class="ph">수업 슬라이드 장면 2</div>
+      <div class="ph">수업 슬라이드 장면 3</div>
+    </div>
+    <p class="hint">← 옆으로 넘겨 보세요</p>
+    <div class="recruit rv">
+      <h3>지금은 첫 수강생을 모집하고 있어요</h3>
+      <p>과외는 올해 시작한 과정이라 아직 쌓인 후기가 없어요. 없는 후기를 지어내는 대신 그대로 적습니다. 대신 <b>처음 세 분께는 수업 후 후기를 남겨 주시는 조건으로 20% 할인</b>해 드려요.</p>
+      <p>자동화 외주 쪽 고객 평가는 위의 크몽 Prime 선정 근거로 확인하실 수 있어요.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5-6. LEVEL + CURRICULUM -->
+<section class="soft" id="level">
+  <div class="wrap">
+    <span class="eyebrow rv">CURRICULUM</span>
+    <h2 class="rv">내 레벨에 맞춰<br>시작해요</h2>
+    <p class="sub rv">모든 수업은 1:1이에요. 실습은 내 업무 하나를 정해서 끝까지 만들어요.</p>
+
+    <div class="card quiz rv">
+      <h3>지금 나는?</h3>
+      <div class="opts">
+        <button class="opt" data-lv="0">AI는 채팅으로만 써 봤어요</button>
+        <button class="opt" data-lv="1">Claude는 익숙한데, 알아서 돌아가는 자동화는 못 만들어요</button>
+        <button class="opt" data-lv="2">n8n·Claude Code로 만들어 봤고, 회사·외주로 넓히고 싶어요</button>
+      </div>
+    </div>
+    <div class="qres" id="lvres" hidden></div>
+
+    <div class="tabs" role="tablist">
+      <button class="tab on" data-tab="0" role="tab">기초</button>
+      <button class="tab" data-tab="1" role="tab">중급</button>
+      <button class="tab" data-tab="2" role="tab">고급</button>
+    </div>
+
+    <!-- 기초 -->
+    <div class="panel on" data-panel="0">
+      <div class="lv-body">
+        <div>
+          <div class="lv-head"><span class="tag">BASIC</span><h3>Claude로 내 업무 줄이기</h3><p>코드 없이 Claude만으로 내 반복업무를 루틴으로 만들어요.</p>
+            <div class="meta"><div>형식<b>온라인 4회</b></div><div>대상<b>AI 채팅만 써 본 분</b></div></div></div>
+          <div class="result"><span>끝나면 남는 것</span>매주 돌아가는 내 업무 루틴 2~3개</div>
+        </div>
+        <ol class="steps">
+          <li class="card step"><span class="no">1회</span><div><h4>자동화 전체 지도</h4><p>답하는 AI와 일하는 AI의 차이, 자동화의 세 층을 한 번에 봐요.</p><span class="out">내 반복업무 목록</span></div></li>
+          <li class="card step"><span class="no">2회</span><div><h4>Claude 제대로 쓰기</h4><p>프로젝트·지침·파일로 내 업무를 아는 Claude를 만들어요.</p><span class="out">내 업무 전용 Claude 프로젝트</span></div></li>
+          <li class="card step"><span class="no">3회</span><div><h4>내 자료와 연결하기</h4><p>커넥터로 구글 드라이브·노션·지메일을 Claude가 직접 읽고 쓰게 해요.</p><span class="out">리서치·리포트 루틴 1개</span></div></li>
+          <li class="card step"><span class="no">4회</span><div><h4>반복을 저장하기</h4><p>스킬과 예약 실행으로 루틴을 저장하고, 결과를 검수하는 습관을 만들어요.</p><span class="out">루틴 2~3개 + 다음 단계 로드맵</span></div></li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- 중급 -->
+    <div class="panel" data-panel="1">
+      <div class="lv-body">
+        <div>
+          <div class="lv-head"><span class="tag">INTERMEDIATE</span><h3>n8n + Claude Code로 자동화 만들기</h3><p>내 업무 자동화 하나를 트리거부터 알림까지 실제로 돌아가게 완성해요.</p>
+            <div class="meta"><div>형식<b>6주 · 온라인 4 + 오프라인 2</b></div><div>대상<b>Claude가 익숙한 분</b></div></div></div>
+          <div class="result"><span>끝나면 남는 것</span>실제로 돌아가는 자동화 1개 + 인수인계 문서 + 포트폴리오</div>
+        </div>
+        <ol class="steps">
+          <li class="card step"><span class="no">1주</span><div><h4>주제 선정 · 데이터 설계</h4><p>Claude Code 작업 환경을 세팅하고, 자동화할 데이터를 설계해요.</p><span class="out">주제 + DB 설계</span></div></li>
+          <li class="card step"><span class="no">2주</span><div><h4>n8n 첫 워크플로우</h4><p>노드·트리거·실행 기록을 익히며 첫 흐름을 만들어요.</p><span class="out">접수 → 저장 → 알림</span></div></li>
+          <li class="card step"><span class="no off">3주<br>오프</span><div><h4>Claude Code로 n8n 구축</h4><p>2시간 동안 옆에서 같이 만들어요. 혼자 하면 제일 많이 막히는 구간이에요.</p><span class="out">자동화 1층 완성</span></div></li>
+          <li class="card step"><span class="no">4주</span><div><h4>AI 연결</h4><p>프롬프트, JSON 출력, 비용 상한, 사람이 확인하는 승인 단계까지.</p><span class="out">AI 분류·생성 단계</span></div></li>
+          <li class="card step"><span class="no">5주</span><div><h4>Claude Code 심화</h4><p>스킬·MCP·예약 실행으로 노코드로 안 되는 부분을 풀어요.</p><span class="out">2층 루틴</span></div></li>
+          <li class="card step"><span class="no off">6주<br>오프</span><div><h4>운영 · 완성</h4><p>에러 알림, 로그, 인수인계 문서까지 실제 운영 기준으로 마무리해요.</p><span class="out">돌아가는 자동화 + 문서</span></div></li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- 고급 -->
+    <div class="panel" data-panel="2">
+      <div class="lv-body">
+        <div>
+          <div class="lv-head"><span class="tag">ADVANCED</span><h3>에이전트 시스템과 외주 실전</h3><p>여러 자동화를 하나의 시스템으로 묶고, 남의 업무를 진단해 설계하는 능력을 길러요.</p>
+            <div class="meta"><div>형식<b>상담 후 맞춤 4~6회</b></div><div>대상<b>회사 자동화·외주 목표</b></div></div></div>
+          <div class="result"><span>끝나면 남는 것</span>시스템 설계도 + 실전 납품 흐름 + 포트폴리오</div>
+        </div>
+        <ol class="steps">
+          <li class="card step"><span class="no">설계</span><div><h4>DX → AX 설계 순서</h4><p>데이터 정제 → DB 구축 → 자동화 → AI 에이전트 순서를 실제 사례로 익혀요.</p></div></li>
+          <li class="card step"><span class="no">시스템</span><div><h4>에이전트 루틴 운영</h4><p>여러 에이전트·MCP 연결, 예약 실행과 모니터링으로 시스템을 운영해요.</p></div></li>
+          <li class="card step"><span class="no">진단</span><div><h4>문제 정의 인터뷰</h4><p>실무자의 업무를 듣고 병목을 찾아 자동화할 곳을 정하는 법.</p></div></li>
+          <li class="card step"><span class="no">외주</span><div><h4>견적 · 납품 문서</h4><p>크몽에서 실제로 쓰는 견적·납품·인수인계 흐름을 그대로 배워요.</p></div></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6.5. PAIR BUILD -->
+<section id="pair">
+  <div class="wrap">
+    <span class="eyebrow rv">PAIR BUILD</span>
+    <h2 class="rv">배우기와 맡기기<br>사이가 필요하다면</h2>
+    <p class="sub rv">혼자 만들 자신은 없고, 그렇다고 통째로 맡기기에는 내용을 모르고 넘어가는 게 불안할 때.</p>
+    <div class="pair rv">
+      <span class="tag">같이 만들기</span>
+      <h3>제가 만드는 걸<br>옆에서 보면서 같이 완성해요</h3>
+      <p>제 화면을 공유하면서 실제로 돌아가는 자동화 하나를 만듭니다. 만드는 건 제가 하고, 왜 그렇게 하는지는 그때그때 설명해요. 끝나면 결과물과 고치는 법이 같이 남아요.</p>
+      <div class="pairprice"><span class="amt">65만 원</span><small>3주 · 주 1회 2시간 화상</small></div>
+      <div class="pairgrid">
+        <div><b>1주</b><small>업무를 쪼개고 무엇을 자동화할지 정해요. 계정·데이터 준비도 같이.</small></div>
+        <div><b>2주</b><small>같이 만들어요. 중간에 멈춰서 "여길 바꾸면 뭐가 바뀌는지"를 확인해요.</small></div>
+        <div><b>3주</b><small>예외 처리와 실패 알림을 붙이고, 직접 돌려 보면서 마무리해요.</small></div>
+      </div>
+      <p class="pairnote">범위는 <b>자동화 1개</b>로 고정돼요. 판단까지 맡기는 AI 에이전트나 여러 업무를 묶는 작업은 제작 문의로 안내드려요. 수업 사이에 과제가 있어서, 시간을 전혀 못 내시는 상황이면 맡기시는 편이 낫습니다.</p>
+      <a class="btn pri" href="#contact">같이 만들기 문의하기</a>
+    </div>
+  </div>
+</section>
+
+<!-- 7. METHOD -->
+<section class="soft">
+  <div class="wrap">
+    <span class="eyebrow rv">HOW</span>
+    <h2 class="rv">수업은 이렇게 진행돼요</h2>
+    <div class="methods">
+      <div class="card method rv"><div class="ic">1:1</div><h3>1:1 맞춤</h3><p>내 업무를 실습 주제로 써요</p></div>
+      <div class="card method rv"><div class="ic">ZOOM</div><h3>온라인 줌</h3><p>이론과 실습은 온라인으로</p></div>
+      <div class="card method rv"><div class="ic">강남</div><h3>오프라인 실습</h3><p>막히는 구간은 강남에서 같이</p></div>
+      <div class="card method rv"><div class="ic">과제</div><h3>매회 과제</h3><p>수업 사이에도 진도가 나가요</p></div>
+    </div>
+    <div class="prep rv">
+      <h3>첫 수업 전에 준비하실 것</h3>
+      <ul>
+        <li>노트북 (맥·윈도우 모두 괜찮아요)</li>
+        <li>Claude 계정 — 유료 요금제는 첫 수업에서 필요한지 같이 정해요</li>
+        <li>실습 주제로 쓸 반복 업무 1개</li>
+        <li>그 업무에서 실제로 쓰는 자료 샘플 (민감한 숫자·개인정보는 가리고)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 7.5. NOT -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow rv">HONESTLY</span>
+    <h2 class="rv">이 수업이 아닌 것</h2>
+    <p class="sub rv">먼저 말씀드리는 게 서로 편해요.</p>
+    <ul class="nots">
+      <li class="card">개발 부트캠프가 아니에요<span>코드를 읽고 쓰는 능력을 길러 드리는 과정이 아니라, AI에게 일을 맡기고 결과를 검수하는 방법을 배우는 과정이에요.</span></li>
+      <li class="card">제가 대신 만들어 드리는 과정이 아니에요<span>실습은 본인 손으로 합니다. 대신 만들어 주길 원하시면 "같이 만들기"나 제작 문의 쪽이 맞아요.</span></li>
+      <li class="card">수익이나 취업을 보장하지 않아요<span>고급 과정에서 외주 흐름을 다루지만, 그건 방법이지 결과 보장이 아니에요.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 8. PRICE -->
+<section class="soft" id="price">
+  <div class="wrap">
+    <span class="eyebrow rv">PRICE</span>
+    <h2 class="rv">가격</h2>
+    <p class="sub rv">상담에서 레벨과 일정을 정한 뒤 결제 링크를 보내드려요. 카드 결제도 돼요.</p>
+    <div class="prices">
+      <div class="card price rv"><h3>1회 수업</h3><div class="amt">5만 원 <small>/ 온라인 1시간</small></div><ul><li>막힌 문제 해결, 체험용</li><li>오프라인 실습 2시간 15만 원</li></ul><button class="pick" data-lv="단건 1회">이 과정으로 문의하기</button></div>
+      <div class="card price rv"><h3>기초</h3><div class="amt">18만 원 <small>/ 4회</small></div><ul><li>온라인 4회</li><li>Claude로 내 업무 루틴 만들기</li></ul><button class="pick" data-lv="기초">이 과정으로 문의하기</button></div>
+      <div class="card price best rv"><span class="pop">추천</span><h3>중급</h3><div class="amt">44만 원 <small>/ 6주</small></div><ul><li>온라인 4회 + 오프라인 실습 2회</li><li>주중 카톡 질문</li></ul><button class="pick" data-lv="중급">이 과정으로 문의하기</button></div>
+      <div class="card price rv"><h3>고급</h3><div class="amt">상담 후 <small>결정</small></div><ul><li>목표에 맞춰 4~6회 설계</li><li>회사 자동화·외주 실전</li></ul><button class="pick" data-lv="고급">이 과정으로 문의하기</button></div>
+    </div>
+    <div class="addon">
+      <div class="card add rv">
+        <div><h3>같이 만들기</h3><p>배우는 과정이 아니라, 결과물까지 같이 만드는 과정이에요. 범위는 자동화 1개로 고정됩니다.</p></div>
+        <div class="amt">65만 원<small>3주 · 주 1회 2시간</small></div>
+        <button class="pick" data-lv="같이 만들기" style="width:auto;padding:0 20px">문의하기</button>
+      </div>
+    </div>
+    <p class="hint" style="margin-top:16px">처음 세 분은 후기 작성 조건으로 20% 할인돼요. 결제는 상담 후 레피드 링크로 보내드립니다.</p>
+  </div>
+</section>
+
+<!-- 9. FAQ -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow rv">FAQ</span>
+    <h2 class="rv">자주 묻는 질문</h2>
+    <div class="faq rv">
+      <details><summary>코딩을 전혀 몰라도 되나요?</summary><p>네. 기초 과정은 코드 없이 진행해요. 중급부터 Claude Code를 쓰지만, 코드를 직접 짜는 게 아니라 AI에게 일을 맡기고 검수하는 방법을 배워요.</p></details>
+      <details><summary>꼭 Claude를 써야 하나요?</summary><p>수업은 Claude 중심으로 진행해요. 다만 모델은 계속 바뀌고, 중요한 건 AI에게 일을 맡기는 구조예요. 지금 쓰는 AI가 있다면 첫 상담에서 같이 정해요.</p></details>
+      <details><summary>유료 요금제가 꼭 필요한가요?</summary><p>기초 과정은 Claude 유료 요금제(Pro 이상)를 추천해요. 중급부터는 쓰는 양에 따라 달라서 상담 때 안내해 드려요.</p></details>
+      <details><summary>수업 시간과 장소는 어떻게 되나요?</summary><p>평일 저녁 위주로 진행해요. 온라인은 줌, 오프라인 실습은 서울 강남 근처예요.</p></details>
+      <details><summary>회사 업무 자료로 실습해도 되나요?</summary><p>네, 오히려 추천해요. 개인정보나 민감한 숫자는 가리고 진행해요.</p></details>
+      <details><summary>결제는 어떻게 하나요?</summary><p>상담이 끝나면 레피드 결제 링크를 보내드려요. 카드·간편결제가 되고, 계좌이체를 원하시면 말씀해 주세요.</p></details>
+      <details><summary>중간에 레벨을 바꿀 수 있나요?</summary><p>네. 진도를 보면서 조정해요. 기초를 듣다가 빠르게 넘어가고 싶으면 남은 회차를 중급 비용으로 전환할 수 있어요.</p></details>
+      <details><summary>수업 일정을 못 맞추게 되면요?</summary><p>수업 24시간 전까지 말씀해 주시면 일정 변경은 횟수 제한 없이 무료예요. 그보다 늦게 취소하시면 1회 차감돼요.</p></details>
+      <details><summary>환불 기준이 어떻게 되나요?</summary><p>첫 수업 전에 취소하시면 전액 환불해 드려요. 수업을 시작한 뒤에는 남은 회차만큼 환불됩니다. 전체 회차의 절반을 넘긴 뒤에는 환불 대신 일정 연기로만 도와드려요. 환불 사유는 묻지 않아요.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 9.5. PATH -->
+<section class="soft">
+  <div class="wrap">
+    <span class="eyebrow rv">PATH</span>
+    <h2 class="rv">끝나면<br>어디로 가나요</h2>
+    <p class="sub rv">꼭 끝까지 갈 필요는 없어요. 필요한 데까지만 하고 멈춰도 됩니다.</p>
+    <div class="path">
+      <div class="pnode rv"><span class="pi">기초</span><div><b>Claude로 내 업무 줄이기</b><small>매주 돌아가는 루틴 2~3개가 남아요</small></div><span class="pp">18만 원</span></div>
+      <div class="pnode rv"><span class="pi">중급</span><div><b>n8n + Claude Code로 자동화 만들기</b><small>실제로 돌아가는 자동화 1개와 포트폴리오</small></div><span class="pp">44만 원</span></div>
+      <div class="pnode rv"><span class="pi">같이</span><div><b>같이 만들기</b><small>직접 만들 시간이 부족하면 여기서 결과물까지</small></div><span class="pp">65만 원</span></div>
+      <div class="pnode rv"><span class="pi">고급</span><div><b>에이전트 시스템과 외주 실전</b><small>여러 자동화를 묶고, 남의 업무를 진단해 설계</small></div><span class="pp">상담 후</span></div>
+      <a class="pnode out rv" href="../build/"><span class="pi">맡기기</span><div><b>직접 하지 않기로 했다면</b><small>진단부터 자동화·AI 에이전트 구축까지 맡기실 수 있어요</small></div><span class="pp">제작 문의 →</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 10. CONTACT -->
+<section class="contact" id="contact">
+  <div class="mesh"></div>
+  <div class="wrap">
+    <span class="eyebrow rv">CONTACT</span>
+    <h2 class="rv">아래 양식을 복사해서<br>보내주세요</h2>
+    <p class="sub rv">어느 채널이든 괜찮아요. 내용을 보고 맞는 레벨과 일정을 제안드려요.</p>
+    <ol class="flow rv">
+      <li><b>1</b><div><h4>문의</h4><p>양식을 DM이나 오픈채팅으로 보내요</p></div></li>
+      <li><b>2</b><div><h4>상담</h4><p>레벨과 일정을 같이 정해요</p></div></li>
+      <li><b>3</b><div><h4>결제</h4><p>결제 링크를 보내드려요 (카드 가능)</p></div></li>
+      <li><b>4</b><div><h4>첫 수업</h4><p>줌 링크를 받고 시작해요</p></div></li>
+    </ol>
+    <p class="note-l rv">문의만 해도 결제되지 않아요. 상담 후에 결정하세요.</p>
+    <div class="form rv">
+      <div class="form-h">과외 문의 양식<button class="copy" id="copyBtn">복사하기</button></div>
+<pre id="formText">[과외 문의]
+· 하는 일:
+· 지금 쓰는 AI·도구:
+· 자동화하고 싶은 업무 1개:
+· 희망 레벨(모르면 비워두세요):
+· 가능한 요일·시간:</pre>
+    </div>
+    <div class="ctas rv">
+      <a class="btn pri" id="copyDm" href="https://ig.me/m/work__zero" target="_blank" rel="noopener">양식 복사하고 DM 열기</a>
+      <a class="btn kakao" href="#" data-todo="오픈채팅 링크" target="_blank" rel="noopener">카카오톡 오픈채팅</a>
+    </div>
+    <p class="note">보통 하루 안에 답장드려요</p>
+    <div class="last-review rv"><div class="ph">20%</div><p>처음 세 분은 수업 후 후기를 남겨 주시는 조건으로 20% 할인돼요.</p></div>
+  </div>
+</section>
+
+</main>
+
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+
+<div class="sticky" id="sticky"><a class="btn pri" href="#contact">상담 문의하기</a></div>
+
+<script>
+
+// level tabs + quiz
+const tabs=[...document.querySelectorAll('.tab')],panels=[...document.querySelectorAll('.panel')],opts=[...document.querySelectorAll('.opt')];
+const LV=[
+  {n:'기초',t:'Claude로 내 업무 줄이기',p:'온라인 4회 · 18만 원',d:'코드 없이 Claude만으로 반복업무를 루틴으로 만드는 과정이에요. 여기서 시작하시면 됩니다.',key:'기초'},
+  {n:'중급',t:'n8n + Claude Code로 자동화 만들기',p:'6주 · 44만 원',d:'알아서 돌아가는 자동화 하나를 트리거부터 알림까지 완성해요. 직접 만들 시간이 부족하면 "같이 만들기"도 보세요.',key:'중급'},
+  {n:'고급',t:'에이전트 시스템과 외주 실전',p:'맞춤 4~6회 · 상담 후 결정',d:'여러 자동화를 하나의 시스템으로 묶고, 남의 업무를 진단해 설계하는 단계예요. 목표에 맞춰 내용을 같이 짭니다.',key:'고급'}
+];
+const lvres=document.getElementById('lvres');
+function setLv(i){tabs.forEach((t,k)=>t.classList.toggle('on',k==i));panels.forEach((p,k)=>p.classList.toggle('on',k==i))}
+function showLv(i){
+  const v=LV[i];
+  lvres.innerHTML='<b>'+v.n+' — '+v.t+'</b><p>'+v.d+'</p><p style="font-weight:800;color:var(--primary-deep)">'+v.p+'</p><a class="go" href="#contact" data-lv="'+v.key+'">'+v.n+' 과정으로 문의하기 →</a>';
+  lvres.hidden=false;
+  lvres.querySelector('a').addEventListener('click',()=>setFormLevel(v.key));
+}
+tabs.forEach(t=>t.addEventListener('click',()=>setLv(t.dataset.tab)));
+opts.forEach(o=>o.addEventListener('click',()=>{opts.forEach(x=>x.classList.toggle('on',x===o));setLv(o.dataset.lv);showLv(+o.dataset.lv)}));
+
+// 가격 카드 → 문의 양식에 과정 채우기
+const formEl=document.getElementById('formText');
+const BASE=formEl.textContent;
+function setFormLevel(lv){
+  formEl.textContent=BASE.replace(/· 희망 레벨\(모르면 비워두세요\):.*/,'· 희망 레벨(모르면 비워두세요): '+lv);
+}
+document.querySelectorAll('.pick').forEach(b=>b.addEventListener('click',()=>{
+  setFormLevel(b.dataset.lv);
+  document.getElementById('contact').scrollIntoView({behavior:'smooth',block:'start'});
+}));
+
+// copy form
+function copyForm(){
+  try{const r=document.createRange();r.selectNodeContents(formEl);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(formEl.textContent)}catch(_){}}
+}
+const cb=document.getElementById('copyBtn');
+cb.addEventListener('click',()=>{
+  copyForm();
+  cb.textContent='복사됐어요';cb.classList.add('ok');setTimeout(()=>{cb.textContent='복사하기';cb.classList.remove('ok')},1800);
+});
+const dm=document.getElementById('copyDm');
+dm.addEventListener('click',()=>{copyForm();dm.textContent='복사했어요 · DM 여는 중';setTimeout(()=>{dm.textContent='양식 복사하고 DM 열기'},2500)});
+
+// sticky CTA: hero 지나면 보이고, 문의 섹션에선 숨김
+const sticky=document.getElementById('sticky');let pastHero=false,atContact=false;
+const upd=()=>sticky.classList.toggle('show',pastHero&&!atContact);
+new IntersectionObserver(([e])=>{pastHero=!e.isIntersecting;upd()}).observe(document.querySelector('.hero .ctas'));
+new IntersectionObserver(([e])=>{atContact=e.isIntersecting;upd()},{threshold:.05}).observe(document.getElementById('contact'));
+</script>
+</body>
+</html>
