@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>마케터 필살기 MCP 5선 · 워크제로 자료실</title>
+<meta name="description" content="Claude에 연결하는 주소와 바로 쓰는 프롬프트">
+<link rel="canonical" href="https://workzeroai.github.io/library/mcp-5/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#533afd">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="마케터 필살기 MCP 5선">
+<meta property="og:description" content="Claude에 연결하는 주소와 바로 쓰는 프롬프트">
+<meta property="og:url" content="https://workzeroai.github.io/library/mcp-5/">
+<meta property="og:image" content="https://workzeroai.github.io/library/thumb/mcp-5.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="마케터 필살기 MCP 5선">
+<meta name="twitter:description" content="Claude에 연결하는 주소와 바로 쓰는 프롬프트">
+<meta name="twitter:image" content="https://workzeroai.github.io/library/thumb/mcp-5.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+:root{--primary:#533afd;--primary-deep:#4434d4;--primary-pale:#eceaff;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f6f9fc;--hair:#e3e8ee;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴">
+    <a href="../../tutoring/">1:1 과외</a><a href="../../build/">제작 문의</a>
+    <a class="on" href="../" aria-current="page">자료실</a>
+  </div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../">← 자료실</a>
+  <div class="head"><div class="m"><i>실전 가이드</i><span>2026-09-27</span></div><h1>마케터 필살기 MCP 5선</h1></div>
+  
+  <div class="bd">
+<figure><img src="img/01.webp" alt="커버" loading="lazy"></figure>
+<div class="lmnote"><p><strong>30초 요약</strong></p>
+<ol><li>Claude는 내 광고·매출·경쟁사 데이터를 못 보면 뻔한 답을 해요. MCP는 Claude를 실제 도구에 연결하는 방법이에요.</li><li>연결은 Claude 설정 → 커넥터에 <strong>주소 한 줄</strong>을 넣고 로그인하면 끝이에요. (Apify·Meta Ads·Notion)</li><li>연결한 다음에는 아래 <strong>바로 쓰는 프롬프트</strong>를 복사해서 채팅창에 붙여넣으면 돼요.</li></ol></div>
+<div class="tw"><table>
+<tr><th>MCP</th><th>하는 일</th><th>연결 주소</th><th>난이도</th></tr>
+<tr><td>Apify</td><td>경쟁사 릴스·훅 수집</td><td><code>https://mcp.apify.com</code></td><td>쉬움</td></tr>
+<tr><td>Meta Ads</td><td>광고 성과 확인·수정</td><td><code>https://mcp.facebook.com/ads</code></td><td>보통</td></tr>
+<tr><td>Google Analytics</td><td>유입·전환·퍼널 분석 (읽기 전용)</td><td>로컬 설치 (Claude 데스크톱)</td><td>높음</td></tr>
+<tr><td>Google Sheets</td><td>보고서 시트 읽기·쓰기</td><td><code>https://sheetsmcp.googleapis.com/mcp/v1</code></td><td>높음</td></tr>
+<tr><td>Notion</td><td>기획 DB 읽기·등록</td><td><code>https://mcp.notion.com/mcp</code></td><td>쉬움</td></tr>
+</table></div>
+<p>추천 순서: <strong>쉬움부터</strong>. Notion → Apify → Meta Ads를 먼저 연결하고, GA4·Sheets는 Google Cloud 설정이 필요해서 마지막에 하세요.</p>
+<hr>
+<h3>1. MCP가 뭔가요?</h3>
+<p>지금은 광고 관리자에서 숫자를 복사해서 Claude에 붙여넣고, 답을 다시 시트에 옮기죠. Claude는 붙여넣은 것만 알고, 나머지는 모른 채로 답해요. MCP(Model Context Protocol)를 연결하면 Claude가 그 도구에 <strong>직접 접속</strong>해요. 광고 성과를 스스로 조회하고, 시트에 계산해서 넣고, 노션에 기록까지 해요.</p>
+<figure><img src="img/02.webp" alt="복붙 방식 vs MCP 연결" loading="lazy"><figcaption>복붙 방식 vs MCP 연결</figcaption></figure>
+<hr>
+<h3>2. 공통 준비: Claude에 커넥터 추가하는 법</h3>
+<p>모든 MCP는 같은 방법으로 연결해요.</p>
+<ol><li>Claude(웹 또는 데스크톱) 왼쪽 아래 프로필 → <strong>설정 → 커넥터</strong>로 들어가요.</li><li><strong>사용자 지정 커넥터 추가</strong>를 누르고, 이름과 <strong>연결 주소(URL)</strong> 를 붙여넣어요.</li><li><strong>추가</strong>를 누르면 해당 서비스 로그인 창이 떠요. 로그인하고 권한을 승인해요.</li><li>채팅할 때 입력창 왼쪽 아래 <strong>+ → 커넥터</strong>에서 쓸 커넥터를 켜요.</li></ol>
+<figure><img src="img/03.webp" alt="Claude 설정 → 커넥터" loading="lazy"><figcaption>Claude 설정 → 커넥터</figcaption></figure>
+<figure><img src="img/04.webp" alt="사용자 지정 커넥터 추가 창" loading="lazy"><figcaption>사용자 지정 커넥터 추가 창</figcaption></figure>
+<figure><img src="img/05.webp" alt="채팅에서 커넥터 켜기" loading="lazy"><figcaption>채팅에서 커넥터 켜기</figcaption></figure>
+<div class="lmnote"><ul><li>Claude <strong>무료 플랜은 커스텀 커넥터 1개</strong>까지, Pro·Max는 제한 없어요.</li><li>주소는 <strong>끝에 / 없이</strong> 그대로 붙여넣으세요.</li><li>연결은 설정 → 커넥터에서 언제든 해제할 수 있어요.</li></ul></div>
+<figure><img src="img/06.webp" alt="Claude 공식 도움말: 커스텀 커넥터" loading="lazy"><figcaption>Claude 공식 도움말: 커스텀 커넥터</figcaption></figure>
+<hr>
+<h3>3. Apify MCP: 경쟁사 릴스에서 잘 터진 훅 뽑기</h3>
+<figure><img src="img/07.webp" alt="Apify MCP 연결 카드" loading="lazy"><figcaption>Apify MCP 연결 카드</figcaption></figure>
+<ul><li><strong>연결 주소:</strong> <code>https://mcp.apify.com</code></li><li><strong>로그인:</strong> Apify 계정으로 로그인 후 승인 (계정이 없으면 가입)</li><li><strong>비용:</strong> Apify에서 스크레이퍼(Actor)를 실행할 때마다 Apify 크레딧이 쓰여요. 처음엔 <strong>결과 개수를 작게(20~30개)</strong> 지정하세요.</li></ul>
+<figure><img src="img/08.webp" alt="Apify 공식 문서" loading="lazy"><figcaption>Apify 공식 문서</figcaption></figure>
+<p><strong>바로 쓰는 프롬프트</strong></p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">Apify로 인스타그램 @경쟁사계정 의 최근 릴스 30개를 가져와줘.
+조회수 상위 5개의 첫 문장(훅), 영상 길이, 캡션 첫 줄을 표로 정리해줘.</code></pre></div>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">내 계정 @내계정 의 최근 릴스 20개를 가져와서
+평균 조회수보다 2배 이상 잘 된 릴스만 골라 공통점을 3가지로 정리해줘.</code></pre></div>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">경쟁사 3곳(@a, @b, @c)의 최근 한 달 게시물을 가져와서
+주제·형식(릴스/캐러셀)·게시 요일별로 비교표를 만들어줘. 계정당 30개까지만.</code></pre></div>
+<hr>
+<h3>4. Meta Ads MCP: 성과 보고, 돈 새는 광고 끄기</h3>
+<figure><img src="img/09.webp" alt="Meta Ads MCP 연결 카드" loading="lazy"><figcaption>Meta Ads MCP 연결 카드</figcaption></figure>
+<ul><li><strong>연결 주소:</strong> <code>https://mcp.facebook.com/ads</code> (Meta 공식)</li><li><strong>로그인:</strong> Meta 로그인 → 연결할 <strong>광고 계정과 비즈니스를 선택</strong> → 권한 승인</li><li><strong>할 수 있는 것:</strong> 캠페인·소재별 지출·노출·CTR·ROAS 리포트, 광고 생성·수정, 오디언스·카탈로그 관리, 픽셀·전환 API 진단</li><li><strong>안전장치:</strong> 새로 만드는 광고는 <strong>일시중지 상태</strong>로 만들어지고, 활성화 전에 Claude가 확인을 받아요. 광고를 끄는 요청은 광고 <strong>수정</strong> 기능으로 처리돼요.</li><li><strong>주의:</strong> Meta가 단계적으로 열고 있어서, 계정에 따라 아직 일부 기능이 안 보일 수 있어요.</li></ul>
+<figure><img src="img/10.webp" alt="Meta 공식 문서: Ads MCP Server" loading="lazy"><figcaption>Meta 공식 문서: Ads MCP Server</figcaption></figure>
+<figure><img src="img/11.webp" alt="Meta 공식 문서: 광고 생성·관리 도구" loading="lazy"><figcaption>Meta 공식 문서: 광고 생성·관리 도구</figcaption></figure>
+<p><strong>바로 쓰는 프롬프트</strong></p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">지난 7일 광고 계정의 캠페인별 지출, CTR, CPA, ROAS를 표로 보여줘.
+CPA가 높은 순서로 정렬해줘.</code></pre></div>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">CPA가 계정 평균보다 2배 이상 높은 광고를 찾아서 원인을 추정해주고,
+끌지 말지 추천해줘. 실제로 끄기 전에는 반드시 나한테 확인받아줘.</code></pre></div>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">성과가 가장 좋은 광고의 타깃은 그대로 두고, 문구만 바꾼 새 광고 2개를
+일시중지 상태로 만들어줘. 만든 뒤 차이점을 정리해줘.</code></pre></div>
+<hr>
+<h3>5. Google Analytics MCP: 결제 어디서 이탈하는지 찾기</h3>
+<figure><img src="img/12.webp" alt="Google Analytics MCP 연결 카드" loading="lazy"><figcaption>Google Analytics MCP 연결 카드</figcaption></figure>
+<ul><li><strong>공식 서버:</strong> Google이 만든 <code>google-analytics-mcp</code> (읽기 전용이라 설정을 바꾸지 않아요)</li><li><strong>연결 방식:</strong> 원격 주소가 없어서 <strong>내 컴퓨터에 설치</strong>해서 Claude 데스크톱과 연결해요. 이 5개 중 가장 어려워요.</li><li><strong>필요한 것:</strong> Google Cloud 프로젝트에서 Analytics Admin API·Data API 사용 설정, 내 컴퓨터의 Python과 Google 인증 설정</li><li><strong>할 수 있는 것:</strong> 계정·속성 조회, 리포트, <strong>퍼널 리포트</strong>, 실시간 리포트</li><li><strong>대안:</strong> 설치가 부담되면 GA4를 원격으로 연결해주는 외부 서비스도 있어요. 공식이 아니니 권한 범위를 꼭 확인하세요.</li></ul>
+<figure><img src="img/13.webp" alt="Google Analytics MCP 공식 저장소" loading="lazy"><figcaption>Google Analytics MCP 공식 저장소</figcaption></figure>
+<p><strong>바로 쓰는 프롬프트</strong></p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">지난 30일 상품 상세 → 장바구니 → 결제 시작 → 구매 퍼널을
+단계별 사용자 수와 이탈률로 보여줘. 이탈이 가장 큰 단계를 짚어줘.</code></pre></div>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">결제 단계 이탈률을 모바일과 PC로 나눠서 비교하고,
+차이가 큰 구간과 확인해볼 가설 3가지를 알려줘.</code></pre></div>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">지난주 대비 이번 주 유입 채널별 세션과 전환율 변화를 표로 요약해줘.</code></pre></div>
+<hr>
+<h3>6. Google Sheets MCP: 보고서 시트에 복붙 없이 꽂기</h3>
+<figure><img src="img/14.webp" alt="Google Sheets MCP 연결 카드" loading="lazy"><figcaption>Google Sheets MCP 연결 카드</figcaption></figure>
+<ul><li><strong>연결 주소:</strong> <code>https://sheetsmcp.googleapis.com/mcp/v1</code> (Google 공식, <strong>개발자 프리뷰</strong>)</li><li><strong>필요한 것:</strong> Google Workspace 개발자 프리뷰 프로그램 가입, Google Cloud 프로젝트에서 Sheets API·Sheets MCP API 사용 설정, OAuth 클라이언트 생성</li><li>OAuth 리디렉션 URI: <code>https://claude.ai/api/mcp/auth_callback</code></li><li>Claude 커넥터 추가 시 <strong>고급 설정</strong>에 OAuth Client ID·Secret 입력</li><li><strong>할 수 있는 것:</strong> 셀 값 읽기·쓰기, 수식 입력, 행·열 추가</li><li><strong>주의:</strong> 프리뷰 단계라 설정이 바뀔 수 있어요. 막히면 공식 문서를 먼저 확인하세요.</li></ul>
+<figure><img src="img/15.webp" alt="Google Sheets MCP 공식 문서" loading="lazy"><figcaption>Google Sheets MCP 공식 문서</figcaption></figure>
+<p><strong>바로 쓰는 프롬프트</strong></p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">&#x27;광고 보고서&#x27; 시트의 B2부터 날짜, 광고비, 매출을 채우고
+D열에는 ROAS 수식(매출 ÷ 광고비 × 100)을 넣어줘.</code></pre></div>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">Meta Ads에서 지난 7일 캠페인 성과를 가져와서
+&#x27;주간 리포트&#x27; 시트 맨 아래에 새 행으로 추가해줘.</code></pre></div>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">&#x27;광고 보고서&#x27; 시트의 이번 달 데이터를 읽고
+ROAS가 가장 낮은 캠페인 3개와 개선 아이디어를 정리해줘.</code></pre></div>
+<hr>
+<h3>7. Notion MCP: 실패한 광고 거르고 새 기획안 등록</h3>
+<figure><img src="img/16.webp" alt="Notion MCP 연결 카드" loading="lazy"><figcaption>Notion MCP 연결 카드</figcaption></figure>
+<ul><li><strong>연결 주소:</strong> <code>https://mcp.notion.com/mcp</code> (Notion 공식)</li><li><strong>더 쉬운 방법:</strong> Claude 커넥터 목록에서 <strong>Notion</strong>을 검색해서 바로 추가해도 돼요.</li><li><strong>로그인:</strong> Notion 로그인 → 연결할 워크스페이스·페이지 권한 승인</li><li><strong>할 수 있는 것:</strong> 문서·DB 검색과 읽기, 새 페이지·DB 행 만들기, 기존 문서 수정</li></ul>
+<figure><img src="img/17.webp" alt="Claude 커넥터 목록의 Notion" loading="lazy"><figcaption>Claude 커넥터 목록의 Notion</figcaption></figure>
+<p><strong>바로 쓰는 프롬프트</strong></p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">노션 &#x27;콘텐츠 기획 DB&#x27;에서 지난달 성과가 낮았던 항목을 찾아
+공통점을 3가지로 정리해줘.</code></pre></div>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">오늘 정리한 경쟁사 훅 분석을 바탕으로 &#x27;콘텐츠 기획 DB&#x27;에
+다음 주 기획안 3개를 새 행으로 등록해줘. 상태는 &#x27;아이디어&#x27;로 해줘.</code></pre></div>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">&#x27;주간 회의록&#x27; 페이지 맨 아래에 오늘 광고 점검 결과를 5줄로 요약해서 추가해줘.</code></pre></div>
+<hr>
+<h3>8. 5개를 이어서 쓰는 법</h3>
+<figure><img src="img/18.webp" alt="5단계 워크플로우" loading="lazy"><figcaption>5단계 워크플로우</figcaption></figure>
+<p>연결을 다 했다면 한 번에 이렇게 시켜보세요.</p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">이번 주 마케팅 점검을 해줘. 단계마다 결과를 짧게 보여주고 넘어가줘.
+1. Apify로 경쟁사 @a, @b 의 최근 릴스 20개씩 가져와서 잘 된 훅 5개 정리
+2. Google Analytics에서 지난 7일 결제 퍼널 이탈이 가장 큰 단계 찾기
+3. Meta Ads에서 CPA가 평균의 2배 이상인 광고 찾기 (끄기 전에 나한테 확인)
+4. 위 결과를 &#x27;주간 리포트&#x27; 시트에 새 행으로 정리
+5. 경쟁사 훅을 참고해서 다음 주 기획안 3개를 노션 &#x27;콘텐츠 기획 DB&#x27;에 등록</code></pre></div>
+<div class="lmnote"><p>방향과 판단은 사람이, 반복 실행은 AI가. 광고 끄기·예산 변경처럼 돈이 걸린 작업은 항상 <strong>확인받고 실행</strong>하게 하세요.</p></div>
+<hr>
+<h3>9. 자주 묻는 질문</h3>
+<p><strong>Q. 돈이 드나요?</strong> Claude 무료 플랜도 커스텀 커넥터 1개는 쓸 수 있고, Pro·Max는 제한이 없어요. Apify는 스크레이퍼를 실행할 때 Apify 크레딧이 쓰여요. 나머지 서비스는 각자의 요금 정책을 확인하세요. <strong>Q. 내 광고 계정을 연결해도 안전한가요?</strong> 연결할 때 뜨는 권한 화면에서 범위를 확인하고, Meta는 필요한 광고 계정만 선택하세요. 쓰기 작업(광고 수정, 시트·노션 기록)은 프롬프트에 "실행 전에 확인받아줘"를 넣는 습관을 들이세요. 연결은 설정 → 커넥터에서 언제든 해제할 수 있어요. <strong>Q. 연결했는데 Claude가 도구를 안 써요.</strong> 채팅 입력창 왼쪽 아래 <strong>+ → 커넥터</strong>에서 해당 커넥터가 켜져 있는지 확인하세요. 프롬프트에 "Apify로", "노션에서"처럼 도구 이름을 넣으면 더 잘 써요. <strong>Q. Meta Ads 주소를 넣었는데 안 돼요.</strong> 주소 끝에 <code>/</code>가 붙지 않았는지 확인하세요. Meta가 계정별로 순차 오픈 중이라, 아직 내 계정에 열리지 않았을 수도 있어요. <strong>Q. GA4·Sheets는 꼭 해야 하나요?</strong> Google Cloud 설정이 필요해서 어려운 편이에요. 먼저 Notion·Apify·Meta Ads 세 개로 시작하고, 익숙해지면 추가하세요.</p>
+<hr>
+<h3>공식 문서 링크</h3>
+<ul><li>Claude 커스텀 커넥터: <a href="https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp" target="_blank" rel="noopener">https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp</a></li><li>Apify MCP: <a href="https://docs.apify.com/platform/integrations/mcp" target="_blank" rel="noopener">https://docs.apify.com/platform/integrations/mcp</a></li><li>Meta Ads MCP: <a href="https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-overview" target="_blank" rel="noopener">https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-overview</a></li><li>Google Analytics MCP: <a href="https://github.com/googleanalytics/google-analytics-mcp" target="_blank" rel="noopener">https://github.com/googleanalytics/google-analytics-mcp</a></li><li>Google Sheets MCP: <a href="https://developers.google.com/workspace/sheets/api/guides/configure-mcp-server" target="_blank" rel="noopener">https://developers.google.com/workspace/sheets/api/guides/configure-mcp-server</a></li><li>Notion MCP: <a href="https://developers.notion.com/guides/mcp/get-started-with-mcp" target="_blank" rel="noopener">https://developers.notion.com/guides/mcp/get-started-with-mcp</a></li></ul>
+<p>*2026년 9월 27일 기준으로 공식 문서를 확인해 정리했어요. 서비스 정책은 바뀔 수 있어요.*</p>
+<hr>
+<p>더 많은 마케팅 자동화 방법은 인스타그램 <strong>@work__zero</strong> 에서 공유하고 있어요.</p>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>업무를 같이 분해하고 4단계 중 지금 위치를 짚어 드려요.</p><span class="go">진단 콜 보기 →</span></a>
+    <a class="cross" href="../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>

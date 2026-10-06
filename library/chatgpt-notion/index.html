@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ChatGPT × 노션 연동법 · 워크제로 자료실</title>
+<meta name="description" content="답변이 10배 똑똑해지는 MCP 연결과 실무 레시피">
+<link rel="canonical" href="https://workzeroai.github.io/library/chatgpt-notion/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#533afd">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="ChatGPT × 노션 연동법">
+<meta property="og:description" content="답변이 10배 똑똑해지는 MCP 연결과 실무 레시피">
+<meta property="og:url" content="https://workzeroai.github.io/library/chatgpt-notion/">
+<meta property="og:image" content="https://workzeroai.github.io/library/thumb/chatgpt-notion.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ChatGPT × 노션 연동법">
+<meta name="twitter:description" content="답변이 10배 똑똑해지는 MCP 연결과 실무 레시피">
+<meta name="twitter:image" content="https://workzeroai.github.io/library/thumb/chatgpt-notion.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+:root{--primary:#533afd;--primary-deep:#4434d4;--primary-pale:#eceaff;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f6f9fc;--hair:#e3e8ee;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴">
+    <a href="../../tutoring/">1:1 과외</a><a href="../../build/">제작 문의</a>
+    <a class="on" href="../" aria-current="page">자료실</a>
+  </div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../">← 자료실</a>
+  <div class="head"><div class="m"><i>실전 가이드</i><span>2026-09-19</span></div><h1>ChatGPT × 노션 연동법</h1></div>
+  
+  <div class="bd">
+<div class="lmnote"><p><strong>"ChatGPT한테 아무리 길게 프롬프트를 쳐도 왜 자꾸 뻔한 답변만 나올까요?"</strong><br><br> ChatGPT는 내 사업, 내 업무, 내 상황을 모르는 백지 상태에서 질문을 받기 때문입니다. 그래서 매번 인터넷의 흔한 유행어(남들의 기준)만 꺼내놓게 됩니다.<br><br> 해결책은 간단합니다. <strong>내 노션에 적어둔 업무/메모 문서 링크</strong>를 ChatGPT가 직접 읽게 만드는 것입니다.<br><br> 👉 <strong>설치는 30초면 끝납니다. 하지만 '진짜 내 업무에 활용하는 법'은 완전히 다릅니다. 오늘 당장 써먹을 수 있는 핵심만 3분 안에 정리해 드립니다.</strong></p></div>
+<hr>
+<h3>⚡ 바쁜 분들을 위한 3줄 요약 (30초 퀵스타트 공식)</h3>
+<p>이 글을 길게 읽으실 필요도 없습니다. 딱 <strong>3단계</strong>만 기억하세요:</p>
+<ol><li><strong>연결 (30초)</strong>: ChatGPT 사이드바에서 [플러그인 / Apps] ➔ <code>Notion</code> 연동 클릭</li><li><strong>복사 (5초)</strong>: 내 노션에서 아무 문서나 열고 우측 상단 <strong>[링크 복사(Share Link)]</strong> 클릭</li><li><strong>지시 (10초)</strong>: ChatGPT 채팅창에 아래처럼 한 줄만 던지면 끝! &gt; *<code>[노션링크] 이 문서 읽고, 내 기준에 맞춰서 [OOO] 해줘.</code>*</li></ol>
+<hr>
+<h2>Part 1. Before vs After: 챗봇과 에이전트의 결정적 차이</h2>
+<h4>❌ Before: 노션 연동 전 (일반 챗봇)</h4>
+<ul><li><strong>질문</strong>: *"이번 주 인스타에서 반응 좋을 만한 릴스 주제 5개만 추천해줘."*</li><li><strong>답변</strong>:</li><li><code>1. 요즘 내가 안 하는 5가지</code></li><li><code>2. 성공한 사람들의 아침 루틴</code></li><li><code>3. 퇴사 후 알게 된 현실...</code></li></ul>
+<figure><img src="img/01.webp" alt="Before: 일반 챗봇의 뻔한 답변" loading="lazy"><figcaption>Before: 일반 챗봇의 뻔한 답변</figcaption></figure>
+<blockquote><strong>문제점</strong>: 어디서나 볼 수 있는 흔한 밈일 뿐, <strong>진짜 '내 일'과 '내 경험'이 담긴 알짜배기 답변은 절대 나오지 않습니다.</strong> 매번 내 상황을 20줄씩 복붙하는 것도 지치죠.</blockquote>
+<hr>
+<h4>✅ After: 노션 연동 후 (내 문서를 읽는 전담 에이전트)</h4>
+<ul><li><strong>질문</strong>: *"내 노션 링크 읽고, 내 경험과 타깃에 맞춰 이번 주 릴스 주제 5개 뽑아줘."*</li><li><strong>답변</strong>:</li><li><code>1. 매일 30분짜리 엑셀 리포트 ➔ 버튼 1회 1분 단축 노하우</code> (반복 업무에 지친 마케터 타깃)</li><li><code>2. 광고 키워드 1,000개 수동 순위 검색 자동화한 과정</code></li><li><code>3. 매주 흩어진 마케팅 데이터 한곳에 모으기 (Airtable DB 구축 사례)</code></li></ul>
+<figure><img src="img/02.webp" alt="After: 노션 문서를 읽고 내 경험을 반영한 맞춤형 답변" loading="lazy"><figcaption>After: 노션 문서를 읽고 내 경험을 반영한 맞춤형 답변</figcaption></figure>
+<blockquote><strong>차이점</strong>: ChatGPT가 내 노션에 적힌 <strong>실제 업무 경험(엑셀 30분 ➔ 1분 단축)</strong>과 <strong>타깃(3~4년 차 마케터)</strong>, <strong>핵심 모토("방향은 사람, 실행은 AI")</strong>를 스스로 읽고 답변을 조합합니다.<br>단순 인턴 챗봇이 순식간에 <strong>내 업무 맥락을 100% 꿰뚫고 있는 똑똑한 대리</strong>로 진화합니다.</blockquote>
+<hr>
+<h2>Part 2. 3분 완성! ChatGPT × 노션(MCP) 연동 3단계</h2>
+<p>프로그램을 설치하거나 코딩을 할 필요가 전혀 없습니다. 클릭 몇 번이면 끝납니다.</p>
+<h4>📌 1단계: ChatGPT 사이드바에서 [플러그인] 선택</h4>
+<ol><li>ChatGPT 웹(<a href="https://chatgpt.com" target="_blank" rel="noopener">chatgpt.com</a>) 또는 데스크톱 앱에 접속합니다.</li><li>좌측 사이드바 메뉴에서 <strong><code>플러그인 (또는 Apps / 연결된 앱)</code></strong>을 클릭합니다.</li><li>스토어 검색창에 <strong><code>Notion</code></strong>을 검색합니다.</li></ol>
+<figure><img src="img/03.webp" alt="1단계: 사이드바 플러그인에서 Notion 선택" loading="lazy"><figcaption>1단계: 사이드바 플러그인에서 Notion 선택</figcaption></figure>
+<hr>
+<h4>📌 2단계: Notion 연동 승인 &amp; 워크스페이스 로그인</h4>
+<ol><li>Notion 카드에서 <strong><code>연결(Connect)</code></strong>을 누릅니다.</li><li>노션 로그인 창이 뜨면, 평소 쓰시는 계정으로 로그인합니다.</li><li>연결할 워크스페이스를 지정하고 <strong><code>계속하기</code></strong>를 누르면 끝!</li></ol>
+<figure><img src="img/04.webp" alt="2단계: Notion MCP 워크스페이스 연결 및 권한 승인" loading="lazy"><figcaption>2단계: Notion MCP 워크스페이스 연결 및 권한 승인</figcaption></figure>
+<div class="lmnote"><p><strong>💡 보안 안심 팁 (사생활 보호)</strong><br> "내 개인 일기나 회사 대외비 문서까지 ChatGPT가 다 보면 어쩌죠?"<br> 걱정하지 마세요! 노션 연동 시 <strong>'특정 페이지나 전용 워크스페이스'만 선택해서 권한을 부여</strong>할 수 있습니다. ChatGPT와 협업할 전용 페이지 하나만 공유해 두시면 나머지 개인 문서는 100% 안전하게 격리됩니다.</p></div>
+<hr>
+<h4>📌 3단계: 1초 연결 검증 (테스트)</h4>
+<p>ChatGPT 채팅창에 아래처럼 짧게 입력해 보세요:</p>
+<blockquote>*"내 노션에서 최근 작성된 문서 목록 보여줘."*</blockquote>
+<p>상단에 노션 아이콘과 함께 문서 목록이 뜨면 성공입니다!</p>
+<hr>
+<h2>Part 3. 연동은 30초인데, 대체 어떤 문서를 읽혀야 할까요? (실전 레시피 3선)</h2>
+<p>거창한 매뉴얼을 새로 만들 필요가 없습니다. <strong>지금 여러분의 노션에 있는 문서 중 하나를 골라 링크만 복사</strong>해 보세요.</p>
+<hr>
+<h4>🍳 레시피 1. [비즈니스 &amp; 콘텐츠] 나만의 업무 경험 / 프로필 노트</h4>
+<p>*(영상 속 실제 사례)*</p>
+<ul><li><strong>노션에 적어둘 내용</strong>: 거창할 필요 없이 빈 페이지에 <strong>[내가 하는 일 / 내가 겪은 시행착오나 성공 경험 / 내가 추구하는 모토]</strong> 딱 3줄만 적어두세요. &gt; *(예: 릴스 영상 예시: 퍼포먼스 마케터 출신 / 엑셀 30분 걸리던 작업을 1분으로 자동화한 경험 / 모토: "방향은 사람, 실행은 AI")*</li><li><strong>ChatGPT에게 시킬 일</strong>: &gt; *<code>[노션링크] 이 문서 읽고, 내 경험과 모토가 드러나도록 이번 주 인스타 카드뉴스/릴스 기획 5개 뽑아줘.</code>*</li><li><strong>결과</strong>: 남들 다 하는 흔한 팁 대신, <strong>진짜 내 경험이 담긴 독보적인 콘텐츠 기획</strong>이 1초 만에 나옵니다.</li></ul>
+<hr>
+<h4>🍳 레시피 2. [업무 &amp; 프로젝트] 프로젝트 기획서 / 진행 상황 메모</h4>
+<ul><li><strong>노션에 적어둘 내용</strong>: 현재 진행 중인 프로젝트 개요, 회의 메모, 이번 달 마감 일정 등</li><li><strong>ChatGPT에게 시킬 일</strong>: &gt; *<code>[노션링크] 이 프로젝트 문서 읽고, 오늘 팀원들에게 공유할 슬랙(Slack) 공지문 3줄 요약본 작성해줘.</code>* &gt; *<code>[노션링크] 이 내용 바탕으로 다음 주까지 마쳐야 할 우선순위 과제 3개만 추려줘.</code>*</li><li><strong>결과</strong>: 문서를 일일이 설명할 필요 없이, 진행 맥락에 100% 들어맞는 커뮤니케이션 문서가 완성됩니다.</li></ul>
+<hr>
+<h4>🍳 레시피 3. [학습 &amp; 리서치] 스터디 노트 / 아티클 스크랩북</h4>
+<ul><li><strong>노션에 적어둘 내용</strong>: 평소 유익해서 스크랩해 둔 아티클, 책 요약, 강의 필기 노트 등</li><li><strong>ChatGPT에게 시킬 일</strong>: &gt; *<code>[노션링크] 내가 정리해 둔 스터디 노트 읽고, 핵심 인사이트 3개와 내가 당장 실행해 볼 수 있는 액션 플랜 뽑아줘.</code>*</li><li><strong>결과</strong>: 읽고 잊어버리던 노션 속 메모가 <strong>즉시 실행 가능한 나만의 액션 플랜</strong>으로 바뀝니다.</li></ul>
+<hr>
+<h2>Part 4. [양방향 워크플로우] 읽기(Read) ➔ 쓰기/업데이트(Write) 마법의 1줄 프롬프트</h2>
+<p>ChatGPT가 문서를 읽는 것(Read)에서 끝나면 절반만 쓰는 것입니다. <strong>대화로 완성된 결과물을 내 노션에 직접 새 페이지로 만들거나, 기존 문서에 차곡차곡 덧붙여(Write/Update) 보세요.</strong></p>
+<hr>
+<h4>1️⃣ [읽기 (Read)] 내 노션 문서 읽히기</h4>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">[내 노션 문서 링크 붙여넣기]
+
+위 노션 문서 먼저 꼼꼼히 읽어줘.
+문서에 적힌 내 기준과 맥락을 바탕으로 [원하는 작업]을 해줘.</code></pre></div>
+<hr>
+<h4>2️⃣ [새 페이지 만들기 (Create Page)] 작업 결과를 노션에 새 페이지로 저장</h4>
+<p>ChatGPT와 티키타카를 나누며 좋은 기획안이나 글이 완성되었다면, 복붙할 필요 없이 이렇게 명령하세요:</p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">방금 완성한 내용을 내 노션 워크스페이스의 [저장하고 싶은 상위 페이지 이름] 하위에
+&quot;[오늘날짜] OOO 최종 기획안&quot;이라는 제목의 새로운 페이지로 바로 생성해줘.</code></pre></div>
+<blockquote>👉 ChatGPT가 노션 MCP를 통해 내 워크스페이스에 <strong>클릭 가능한 새 노션 페이지를 즉시 생성</strong>해 줍니다.</blockquote>
+<hr>
+<h4>3️⃣ [기존 문서에 덧붙이기 (Append / Update)] 기존 문서 맨 아래에 자동 기록</h4>
+<p>아까 읽혔던 프로젝트 문서나 일기장 아래에 회의록이나 결정 사항을 덧붙이고 싶을 때:</p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">오늘 논의해서 결정된 핵심 실행 과제 3개를,
+아까 읽었던 [기존 노션 페이지 이름] 문서 맨 아래에
+&#x27;📌 추가된 실행 계획&#x27;이라는 토글 블록으로 덧붙여서 업데이트해줘.</code></pre></div>
+<blockquote>👉 기존 노션 문서를 열어둘 필요도 없이, <strong>채팅창에서 내 노션 문서가 실시간으로 업데이트</strong>됩니다.</blockquote>
+<hr>
+<h2>Part 5. 자주 묻는 질문 (FAQ)</h2>
+<p><strong>Q1. 노션을 연결하면 내 개인 일기나 비밀 문서도 ChatGPT가 다 보나요?</strong></p>
+<ul><li><strong>A. 전혀 그렇지 않습니다.</strong> 노션 MCP는 연결 시 사용자가 허용한 워크스페이스 및 페이지만 접근할 수 있으며, 사용자가 직접 링크를 주거나 명시적으로 지시한 페이지만 안전하게 호출합니다.</li></ul>
+<p><strong>Q2. ChatGPT 무료 버전(Free)에서도 노션 연동이 가능한가요?</strong></p>
+<ul><li><strong>A.</strong> 공식 플러그인/Apps 연동은 OpenAI 정책상 유료 플랜(Plus, Team, Pro)에서 지원됩니다.</li><li>💡 <strong>무료 사용자를 위한 꿀팁</strong>: 유료 구독이 없으시다면, 노션 페이지의 내용을 전체 복사(Ctrl+A)해서 ChatGPT 채팅창에 한 번 붙여넣고 *"이 문서를 내 기준 문서로 기억하고 답변해줘"*라고 입력하시면 거의 동일한 혜택을 누리실 수 있습니다!</li></ul>
+<p><strong>Q3. 스마트폰 모바일 앱에서도 작동하나요?</strong></p>
+<ul><li><strong>A.</strong> 네! PC 브라우저에서 최초 1회 연동을 완료해 두시면, 스마트폰의 공식 ChatGPT 모바일 앱에서도 노션 링크를 넣었을 때 똑같이 문서를 읽고 답변합니다.</li></ul>
+<hr>
+<div class="lmnote"><p><strong>"방향과 감, 기획과 검수는 사람의 몫. 실행은 AI의 몫입니다."</strong><br><br> 매번 똑같은 프롬프트를 치느라 시간을 낭비하지 마세요. 내 기준 문서를 노션에 두고, ChatGPT에게 읽히고 쓰게 만드는 순간 여러분만의 든든한 24시간 전담 AI 대리가 완성됩니다.<br><br> 더 많은 실전 AI 워크플로우와 자동화 사례는 인스타그램 <a href="https://www.instagram.com/work__zero/" target="_blank" rel="noopener"><strong>@work__zero</strong></a>에서 계속 확인하실 수 있습니다. 궁금한 점은 언제든 편하게 DM 남겨주세요!</p></div>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>업무를 같이 분해하고 4단계 중 지금 위치를 짚어 드려요.</p><span class="go">진단 콜 보기 →</span></a>
+    <a class="cross" href="../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>

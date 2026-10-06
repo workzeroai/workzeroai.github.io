@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>앤트로픽 Marketing 플러그인 · 워크제로 자료실</title>
+<meta name="description" content="Cowork 설치부터 명령 7개 바로 쓰는 요청문까지">
+<link rel="canonical" href="https://workzeroai.github.io/library/marketing-plugin/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#533afd">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="앤트로픽 Marketing 플러그인">
+<meta property="og:description" content="Cowork 설치부터 명령 7개 바로 쓰는 요청문까지">
+<meta property="og:url" content="https://workzeroai.github.io/library/marketing-plugin/">
+<meta property="og:image" content="https://workzeroai.github.io/library/thumb/marketing-plugin.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="앤트로픽 Marketing 플러그인">
+<meta name="twitter:description" content="Cowork 설치부터 명령 7개 바로 쓰는 요청문까지">
+<meta name="twitter:image" content="https://workzeroai.github.io/library/thumb/marketing-plugin.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+:root{--primary:#533afd;--primary-deep:#4434d4;--primary-pale:#eceaff;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f6f9fc;--hair:#e3e8ee;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴">
+    <a href="../../tutoring/">1:1 과외</a><a href="../../build/">제작 문의</a>
+    <a class="on" href="../" aria-current="page">자료실</a>
+  </div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../">← 자료실</a>
+  <div class="head"><div class="m"><i>실전 가이드</i><span>2026-10-05</span></div><h1>앤트로픽 Marketing 플러그인</h1></div>
+  
+  <div class="bd">
+<figure><img src="img/01.webp" alt="앤트로픽 Marketing 플러그인 실전 가이드" loading="lazy"><figcaption>앤트로픽 Marketing 플러그인 실전 가이드</figcaption></figure>
+<div class="lmnote"><p><strong>30초 요약</strong></p>
+<ul><li>Marketing 플러그인은 Anthropic이 직접 만든 마케팅용 플러그인이에요. 스킬 8개가 들어 있고, 그중 7개는 <code>/</code>로 바로 부르는 명령이에요.</li><li>Cowork에서 플러그인 하나만 추가하면 설치가 끝나요. 따로 코드를 칠 필요가 없어요.</li><li>브랜드 톤을 한 번 알려 두면 초안 쓰기와 검수에 그 기준이 들어가요. 아래에 바로 붙여 쓰는 요청문을 명령별로 정리했어요.</li></ul></div>
+<figure><img src="img/02.webp" alt="Cowork에서 / 치면 나오는 명령 7개" loading="lazy"><figcaption>Cowork에서 / 치면 나오는 명령 7개</figcaption></figure>
+<div class="tw"><table>
+<tr><th>명령</th><th>하는 일</th><th>이럴 때</th></tr>
+<tr><td><code>/campaign-plan</code></td><td>목표·타깃·채널·주차별 캘린더·성과 지표가 들어간 캠페인 기획서</td><td>신규 런칭, 리드 모으기, 시즌 캠페인</td></tr>
+<tr><td><code>/draft-content</code></td><td>블로그·SNS·뉴스레터·랜딩페이지·보도자료 초안</td><td>채널별로 글을 빠르게 뽑을 때</td></tr>
+<tr><td><code>/brand-review</code></td><td>우리 브랜드 톤·용어·메시지에 맞는지 검수, 고친 문장까지</td><td>발행 직전 최종 확인</td></tr>
+<tr><td><code>/competitive-brief</code></td><td>경쟁사 포지셔닝·메시지 비교, 우리가 비어 있는 자리</td><td>경쟁사가 움직였을 때, 세일즈 자료</td></tr>
+<tr><td><code>/performance-report</code></td><td>지표·추세·개선 제안이 들어간 성과 리포트</td><td>주간·월간 보고</td></tr>
+<tr><td><code>/seo-audit</code></td><td>키워드·페이지·콘텐츠 공백·기술 점검</td><td>블로그·랜딩 검색 유입 점검</td></tr>
+<tr><td><code>/email-sequence</code></td><td>온보딩·너처링·드립 메일 여러 통</td><td>리드마그넷 이후 후속 메일</td></tr>
+</table></div>
+<hr>
+<h3>1. Marketing 플러그인이 뭐예요?</h3>
+<p>클로드에게 마케팅 일을 시키면 매번 "기획서는 이런 구성으로, 톤은 이렇게"를 설명해야 했죠. Marketing 플러그인은 그 설명을 미리 넣어 둔 묶음이에요. 기획서·초안·검수·경쟁사 분석 같은 마케터 업무마다 어떤 순서로, 어떤 항목을 채워야 하는지가 스킬로 들어 있어요.</p>
+<ul><li>만든 곳: <strong>Anthropic</strong> (claude.ai 플러그인 화면 "Anthropic 작성", 버전 1.2.0)</li><li>구성: <strong>스킬 8개</strong> — 그중 7개는 <code>/</code> 명령, 1개(content-creation, 채널별 글쓰기 가이드)는 필요할 때 자동으로 쓰여요</li><li>연결할 수 있는 도구: Slack, Canva, Figma, HubSpot, Notion, Ahrefs, Similarweb, Klaviyo 등</li><li>라이선스: Apache-2.0 (GitHub <code>anthropics/knowledge-work-plugins</code>)</li></ul>
+<figure><img src="img/03.webp" alt="공식 플러그인 페이지 — Install in Cowork · Made by Anthropic" loading="lazy"><figcaption>공식 플러그인 페이지 — Install in Cowork · Made by Anthropic</figcaption></figure>
+<h3>2. 준비물</h3>
+<div class="lmnote"><p><strong>필요한 것</strong></p>
+<ul><li>유료 Claude 플랜 (Pro, Max, Team, Enterprise) — 플러그인과 Cowork 모두 유료 플랜에서 쓸 수 있어요</li><li>Cowork: Claude 데스크톱(macOS·Windows) 또는 claude.ai 웹(beta, Pro·Max·Team)</li><li>Enterprise는 관리자가 허용해야 웹·모바일 Cowork를 쓸 수 있어요</li></ul></div>
+<figure><img src="img/04.webp" alt="공식 도움말 — Cowork 사용 가능 플랜과 화면" loading="lazy"><figcaption>공식 도움말 — Cowork 사용 가능 플랜과 화면</figcaption></figure>
+<figure><img src="img/05.webp" alt="공식 도움말 — 플러그인은 모든 유료 플랜에서 사용" loading="lazy"><figcaption>공식 도움말 — 플러그인은 모든 유료 플랜에서 사용</figcaption></figure>
+<h3>3. 설치 3단계 (Cowork)</h3>
+<ol><li>claude.ai(또는 데스크톱 앱)에서 <strong>사용자 지정 → 스킬 → 탐색</strong>으로 들어가요.</li><li><strong>Marketing</strong>(제작: Anthropic) 카드의 <strong>+</strong> 를 눌러요.</li><li>오른쪽 위 토글이 켜지고 "Marketing이(가) 설치되어 사용할 수 있습니다."가 뜨면 끝이에요. <strong>Cowork에서 사용해 보기</strong>를 누르면 바로 Cowork 화면으로 가요.</li></ol>
+<figure><img src="img/06.webp" alt="탐색 화면 — 가장 많이 설치된 스킬 목록의 Marketing (2026-10-05 기준 2.2M회 설치)" loading="lazy"><figcaption>탐색 화면 — 가장 많이 설치된 스킬 목록의 Marketing (2026-10-05 기준 2.2M회 설치)</figcaption></figure>
+<figure><img src="img/07.webp" alt="설치 후 화면 — Anthropic 작성 · 8 스킬 · 토글 켜짐" loading="lazy"><figcaption>설치 후 화면 — Anthropic 작성 · 8 스킬 · 토글 켜짐</figcaption></figure>
+<figure><img src="img/08.webp" alt="설치 완료 알림" loading="lazy"><figcaption>설치 완료 알림</figcaption></figure>
+<figure><img src="img/09.webp" alt="Cowork 입력창 — 채팅/Cowork 전환" loading="lazy"><figcaption>Cowork 입력창 — 채팅/Cowork 전환</figcaption></figure>
+<p>설치가 잘 됐는지는 Cowork 입력창에 <code>/</code> 한 글자만 쳐 보면 알 수 있어요. 목록 아래쪽 <strong>Marketing</strong> 구역에 명령 7개가 보이면 성공이에요.</p>
+<figure><img src="img/10.webp" alt="실제 Cowork &quot;/&quot; 메뉴 — Marketing 구역 명령 7개" loading="lazy"><figcaption>실제 Cowork &quot;/&quot; 메뉴 — Marketing 구역 명령 7개</figcaption></figure>
+<div class="lmnote"><p><strong>Claude Code를 쓴다면</strong> 같은 플러그인을 터미널에서도 설치할 수 있어요. claude.ai에서 추가한 플러그인은 같은 계정으로 로그인한 Claude Code에서도 쓸 수 있어요.</p></div>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">claude plugin marketplace add anthropics/knowledge-work-plugins
+claude plugin install marketing@knowledge-work-plugins</code></pre></div>
+<figure><img src="img/11.webp" alt="공식 README — 설치 명령과 명령 7개" loading="lazy"><figcaption>공식 README — 설치 명령과 명령 7개</figcaption></figure>
+<h3>4. 브랜드 톤 한 번 설정하기</h3>
+<p>README에 따르면 브랜드 톤·스타일 가이드·타깃 페르소나를 설정해 두면 <code>/draft-content</code>와 <code>/brand-review</code>가 매번 묻지 않고 그 기준을 적용해요. 설정이 없을 때는 스킬이 먼저 "브랜드 가이드가 있나요?" 하고 물어보고, 없으면 일반적인 톤으로 써요.</p>
+<figure><img src="img/12.webp" alt="브랜드 톤 한 번 설정 3단계" loading="lazy"><figcaption>브랜드 톤 한 번 설정 3단계</figcaption></figure>
+<div class="lmnote"><p><strong>정직한 메모</strong> 공식 문서에는 "로컬 설정 파일에 넣는다"고만 나오고, Cowork 안에서 그 파일의 정확한 위치는 나와 있지 않아요. 그래서 확실한 두 가지 방법을 안내해요.</p>
+<ul><li>처음 쓸 때 아래 브랜드 가이드를 붙여넣기 (스킬이 직접 물어보는 방식이라 확실해요)</li><li>계속 쓸 거라면 플러그인을 우리 회사용으로 고쳐 두기 (플러그인은 파일 기반이라 톤·용어를 스킬에 넣을 수 있어요 — README "Making Them Yours")</li></ul></div>
+<p><strong>브랜드 가이드 만들기 요청문</strong> (Cowork에 그대로 붙여넣기)</p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">우리 브랜드 가이드를 한 장으로 정리해줘. 아래 정보로 시작하고 빈 곳은 질문해줘.
+- 브랜드/서비스: (예: 클로드 업무 자동화를 알려주는 인스타그램 계정)
+- 타깃: (예: 클로드를 업무에 쓰는 국내 마케터)
+- 톤 3단어: (예: 친절한, 짧은, 실용적인)
+- 쓰는 말 / 안 쓰는 말: (예: &quot;~예요&quot; 사용 / &quot;엄청난, 혁신적인&quot; 같은 과장어 금지)
+- 핵심 메시지 3개:
+- 잘 쓴 예시 문장 2개:
+결과는 /draft-content 와 /brand-review 에 그대로 붙일 수 있게 항목별 목록으로.</code></pre></div>
+<h3>5. 명령별 바로 쓰는 요청문</h3>
+<h4>/campaign-plan — 캠페인 기획서</h4>
+<p>목표, 타깃, 기간은 꼭 넣어 주세요. 빠지면 스킬이 먼저 물어봐요. 예산과 채널을 넣으면 예산 배분과 채널 전략까지 나와요.</p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">/campaign-plan
+목표: 신제품 런칭 4주 동안 무료 체험 신청 늘리기
+타깃: 30대 직장인, 퇴근 후 자기계발에 관심 많은 사람
+기간: 4주
+예산: 300만 원
+채널: 인스타그램 릴스, 네이버 블로그, 카카오 채널
+한국어로 작성해줘.</code></pre></div>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">/campaign-plan
+이번 시즌 프로모션 기획서를 써줘. 지난 캠페인 결과는 아래 붙인 표를 참고해.
+목표: 재구매율 올리기 / 타깃: 최근 6개월 구매 고객 / 기간: 3주
+(지난 캠페인 결과 표 붙여넣기)</code></pre></div>
+<h4>/draft-content — 콘텐츠 초안</h4>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">/draft-content
+유형: 인스타그램 캐러셀 문구 (7장)
+주제: 클로드로 주간 보고서 쓰는 법
+타깃: 보고서 쓰는 데 시간이 오래 걸리는 주니어 마케터
+핵심 메시지: 데이터만 붙이면 초안은 클로드가, 판단은 사람이
+톤: 친절하고 짧게</code></pre></div>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">/draft-content
+위 캠페인 기획서의 1주차 콘텐츠를 채널별로 초안 써줘. 블로그 1편, 릴스 대본 2개, 카카오 채널 메시지 1개.</code></pre></div>
+<h4>/brand-review — 브랜드 검수</h4>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">/brand-review
+아래 광고 카피를 우리 브랜드 가이드 기준으로 검수해줘. 심각도별로 나누고, 고친 문장도 같이 줘.
+(브랜드 가이드 붙여넣기)
+(검수할 카피 붙여넣기)</code></pre></div>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">/brand-review
+이번 주 발행할 게시물 3개를 한꺼번에 검수해줘. 과장 표현, 근거 없는 주장, 빠진 고지 문구가 있으면 표시해줘.</code></pre></div>
+<h4>/competitive-brief — 경쟁사 분석</h4>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">/competitive-brief
+경쟁사: A사, B사
+우리: 클로드 업무 자동화 교육 계정, 타깃은 국내 마케터
+각자 어떤 메시지로 포지셔닝하고 있는지 비교하고, 아무도 말하지 않는 빈자리를 3개 찾아줘.</code></pre></div>
+<h4>/performance-report — 성과 리포트</h4>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">/performance-report
+지난주 인스타그램 성과를 리포트로 만들어줘. 아래 표가 데이터야.
+핵심 지표 3개, 잘된 콘텐츠와 이유, 다음 주에 바꿀 것 3개로 정리해줘.
+(게시물별 조회수·저장·댓글 표 붙여넣기)</code></pre></div>
+<h4>/seo-audit — SEO 진단</h4>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">/seo-audit
+우리 블로그 글 주소: (URL)
+타깃 키워드: 클로드 마케팅 활용
+경쟁 글과 비교해서 빠진 내용, 제목·소제목 개선안, 추가할 키워드를 알려줘.</code></pre></div>
+<h4>/email-sequence — 이메일 시퀀스</h4>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">/email-sequence
+리드마그넷(노션 가이드)을 받은 사람에게 보낼 후속 메일 3통을 써줘.
+1통: 가이드 활용법 / 2통: 실전 사례 / 3통: 다음 자료 예고
+톤: 친절하고 짧게, 각 메일 200자 안팎, 제목 후보 2개씩.</code></pre></div>
+<h3>6. 실제로 돌려 본 결과 (/campaign-plan)</h3>
+<p>릴스에 나온 기획서는 실제로 Cowork에서 돌린 결과예요. 2026년 10월 5일, 아래 입력으로 실행했고 8분 35초 만에 기획서가 나왔어요.</p>
+<figure><img src="img/13.webp" alt="실제 입력" loading="lazy"></figure>
+<p>나온 기획서는 10개 섹션이었어요: 캠페인 개요 · 타깃 오디언스 · 핵심 메시지 · 채널 전략 · 주차별 콘텐츠 캘린더 · 필요 에셋 · 성과 지표 · 예산 배분 · 리스크와 대응 · 다음 단계.</p>
+<figure><img src="img/14.webp" alt="결과 — 캠페인 개요와 타깃" loading="lazy"><figcaption>결과 — 캠페인 개요와 타깃</figcaption></figure>
+<figure><img src="img/15.webp" alt="결과 — 주차별 캘린더와 필요 에셋" loading="lazy"><figcaption>결과 — 주차별 캘린더와 필요 에셋</figcaption></figure>
+<figure><img src="img/16.webp" alt="결과 — 리스크와 대응, 다음 단계" loading="lazy"><figcaption>결과 — 리스크와 대응, 다음 단계</figcaption></figure>
+<div class="lmnote"><p><strong>결과를 읽을 때 주의할 점</strong> 기획서 속 목표 숫자(신청 건수 등)는 Claude가 "기준 데이터 없이 잡은 가정"이라고 스스로 적어 둔 값이에요. 지난 성과 데이터를 같이 붙이면 훨씬 현실적인 숫자가 나와요.</p></div>
+<h3>7. 이어서 쓰기 — 기획부터 성과까지 한 대화에서</h3>
+<figure><img src="img/17.webp" alt="기획 → 초안 → 검수 → 성과" loading="lazy"><figcaption>기획 → 초안 → 검수 → 성과</figcaption></figure>
+<p>한 대화 안에서 앞 결과를 다음 명령의 재료로 쓰면 돼요.</p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">/campaign-plan 으로 4주 캠페인 기획서를 먼저 써줘. (목표·타깃·기간·예산 입력)
+기획서가 나오면 1주차 콘텐츠를 /draft-content 로 채널별 초안까지 써주고,
+그 초안을 /brand-review 로 우리 브랜드 가이드 기준 검수해줘.
+마지막으로 4주 뒤 /performance-report 에 쓸 지표 표 양식도 만들어줘.</code></pre></div>
+<h3>8. 자주 묻는 질문</h3>
+<div class="lmnote"><p><strong>무료로 쓸 수 있나요?</strong> 플러그인 자체는 공개돼 있지만(Apache-2.0), Claude에서 플러그인과 Cowork를 쓰려면 유료 플랜(Pro, Max, Team, Enterprise)이 필요해요.</p></div>
+<div class="lmnote"><p><strong>한국어로 되나요?</strong> 네. 요청문 끝에 "한국어로 작성해줘"를 붙이면 한국어로 나와요. 위 실제 실행도 한국어로 받았어요.</p></div>
+<div class="lmnote"><p><strong>/ 를 쳐도 명령이 안 보여요.</strong></p>
+<ul><li>입력창 아래가 <strong>Cowork</strong>로 선택돼 있는지 확인해요</li><li>사용자 지정 화면에서 Marketing 토글이 켜져 있는지 확인해요</li><li>목록을 아래로 내리면 Marketing 구역이 따로 있어요</li></ul></div>
+<div class="lmnote"><p><strong>Canva나 Notion이랑도 연결되나요?</strong> 플러그인 커넥터 목록에 Canva, Figma, Notion, HubSpot 등이 들어 있어요. 연결하면 해당 도구의 자료를 읽거나 결과를 넣는 데 쓸 수 있어요. 각 도구 계정 연결은 따로 필요해요.</p></div>
+<h3>9. 공식 링크</h3>
+<ul><li>플러그인 페이지: <a href="https://claude.com/plugins/marketing" target="_blank" rel="noopener">https://claude.com/plugins/marketing</a></li><li>플러그인 원본(README): <a href="https://github.com/anthropics/knowledge-work-plugins/tree/main/marketing" target="_blank" rel="noopener">https://github.com/anthropics/knowledge-work-plugins/tree/main/marketing</a></li><li>플러그인 사용 안내: <a href="https://support.claude.com/en/articles/13837440" target="_blank" rel="noopener">https://support.claude.com/en/articles/13837440</a></li><li>Cowork 사용 가능 플랜: <a href="https://support.claude.com/en/articles/13455879-use-claude-cowork-on-team-and-enterprise-plans" target="_blank" rel="noopener">https://support.claude.com/en/articles/13455879-use-claude-cowork-on-team-and-enterprise-plans</a></li></ul>
+<hr>
+<p>기준 날짜: 2026년 10월 5일 (설치 수·화면은 바뀔 수 있어요) 만든 사람: @work__zero — 클로드로 마케팅 일을 줄이는 방법을 릴스로 올려요. 팔로우해 두면 다음 편도 바로 받아볼 수 있어요.</p>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>업무를 같이 분해하고 4단계 중 지금 위치를 짚어 드려요.</p><span class="go">진단 콜 보기 →</span></a>
+    <a class="cross" href="../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>

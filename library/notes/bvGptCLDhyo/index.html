@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>I Built Another Andrej Karpathy Using Claude · 워크제로 자료실</title>
+<meta name="description" content="Nate Herk가 Andrej Karpathy의 블로그·강의·GitHub·X 게시물 70만 단어 이상을 모아 LLM 위키로 정리하고, 거기서 뽑은 7가지 교육 원칙을 Claude Code 서브 에이전트(sub-agent)·스킬(skill)·실행 관문 훅(hook)으로">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/bvGptCLDhyo/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#533afd">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="I Built Another Andrej Karpathy Using Claude">
+<meta property="og:description" content="Nate Herk가 Andrej Karpathy의 블로그·강의·GitHub·X 게시물 70만 단어 이상을 모아 LLM 위키로 정리하고, 거기서 뽑은 7가지 교육 원칙을 Claude Code 서브 에이전트(sub-agent)·스킬(skill)·실행 관문 훅(hook)으로">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/bvGptCLDhyo/">
+<meta property="og:image" content="https://workzeroai.github.io/og/library.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="I Built Another Andrej Karpathy Using Claude">
+<meta name="twitter:description" content="Nate Herk가 Andrej Karpathy의 블로그·강의·GitHub·X 게시물 70만 단어 이상을 모아 LLM 위키로 정리하고, 거기서 뽑은 7가지 교육 원칙을 Claude Code 서브 에이전트(sub-agent)·스킬(skill)·실행 관문 훅(hook)으로">
+<meta name="twitter:image" content="https://workzeroai.github.io/og/library.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+:root{--primary:#533afd;--primary-deep:#4434d4;--primary-pale:#eceaff;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f6f9fc;--hair:#e3e8ee;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴">
+    <a href="../../tutoring/">1:1 과외</a><a href="../../build/">제작 문의</a>
+    <a class="on" href="../" aria-current="page">자료실</a>
+  </div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../">← 자료실</a>
+  <div class="head"><div class="m"><i>읽을거리</i><span>2026-10-05</span></div><h1>I Built Another Andrej Karpathy Using Claude</h1></div>
+  <div class="src"><b>출처 · Nate Herk | AI Automation</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<br><a href="https://www.youtube.com/watch?v=bvGptCLDhyo" target="_blank" rel="noopener">원본 영상 보기 →</a></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>Nate Herk가 Andrej Karpathy의 블로그·강의·GitHub·X 게시물 70만 단어 이상을 모아 LLM 위키로 정리하고, 거기서 뽑은 7가지 교육 원칙을 Claude Code 서브 에이전트(sub-agent)·스킬(skill)·실행 관문 훅(hook)으로 바꾼 네 단계를 공개한다. 핵심은 사람을 흉내 내는 게 아니라 "그 전문가가 생각하고 가르치는 방식"을 복제해 내 프로젝트에 붙이는 것이다.</p>
+<h3>전체 내용 정리</h3>
+<h4>목소리 복제가 아니라 '가르치는 방식'을 복제한 에이전트</h4>
+<p>Andrej Karpathy는 2015년 OpenAI 창립 멤버였고, 이후 테슬라에서 약 5년간 AI 부문을 이끌며 오토파일럿(Autopilot) 컴퓨터 비전 팀을 지휘했다. 그 뒤 교육에 전념하려고 유레카 랩스(Eureka Labs)를 세웠고, 영상에 따르면 올해 5월부터는 Anthropic 사전 학습(pre-training) 팀에서 일하고 있다. Nate가 만든 것은 그의 음성 복제본도, 말투 흉내도 아니다. 그의 저서·블로그·강연에서 나온 일곱 가지 원칙을 따라 "Karpathy처럼 설명하고 가르치는" 에이전트다. 가장 작은 버전부터 만들기, 실행 전에 결과 예측하기, 망가진 버전 보여주기, 직접 돌려보지 않은 코드는 넘기지 않기 같은 원칙이 들어간다.</p>
+<h4>왜 이런 에이전트가 필요한가: AI의 "그럴듯하지만 틀린" 습관</h4>
+<p>Claude에게 모르는 것을 설명해 달라고 하면 과하게 설명하거나, 설명 도중 내용을 지어내기도 한다. 결국 배운 건 없고 더 막막해진다. 고객용 결과물이라면 코드를 배포한 뒤 문제가 생겼을 때 고치지도, 설명하지도 못하는 상황이 된다. Karpathy 본인도 작년 8월, Claude Code가 코드를 짜는 동안 옆에서 가르쳐 주길 바랐지만 AI가 설명보다 코드 작성에만 집중해 전혀 안 됐다고 공개적으로 말한 적이 있다. 더 큰 이유는 AI 결과물의 품질이 시스템에 담긴 전문 지식에 달려 있다는 점이다. 모든 분야 전문가가 될 수는 없지만, 실제 전문가의 말을 전부 모아 Claude가 쓸 수 있게 정리하고 이해될 때까지 대화하는 건 가능하다. 이 방식은 좋아하는 영업 강사, 작가, 돈 내고 배우는 코치에게도 똑같이 적용할 수 있다.</p>
+<h4>1단계: 원본 자료 수집과 LLM 위키 구성</h4>
+<p>Claude Code에서 총 여섯 개 프롬프트를 쓴다. 먼저 블로그, 강의 녹취록, GitHub 저장소, X 게시물을 긁어온다. 유튜브 자막은 무료 파이썬 패키지인 YouTube Transcript API와 yt-dlp로, X 게시물은 유료 API인 twitterapi.io로 가져왔는데 2023년 이후 거의 모든 게시물을 가져오는 데 1달러 정도 들었다. 소스마다 에이전트 하나씩 병렬로 돌려 45분~1시간 만에 70만 단어 이상이 모였다. 다만 정리 안 된 글 더미는 "건초 더미에서 바늘 찾기"라서, Karpathy가 지난 4월 제안한 방식(LLM이 원본은 건드리지 않고 모두 읽어 페이지별로 연결하고 색인·로그를 유지하는 위키, gist로 공개)을 그대로 적용했다. 결과적으로 Karpathy의 뇌를 Karpathy 본인이 제안한 LLM 위키 메모리 시스템에 담은 셈이다. Obsidian은 시각화 레이어일 뿐 필수는 아니다. 위키에는 소스별 페이지와 주제·원칙·규칙·설명 방식·디버깅 방식 페이지가 있고, 모든 규칙은 출처로, 모든 출처는 그것이 뒷받침하는 규칙으로 연결된다.</p>
+<h4>2단계: 출처가 붙은 7가지 규칙 추출</h4>
+<p>"과거에 한 말을 아는 것"을 넘어 "그처럼 생각하게" 만드는 단계다. 위키에서 규칙을 뽑되, Claude가 지어내지 않도록 모든 규칙을 정확한 인용구와 출처에 연결하게 했다. 도출된 일곱 가지는 ① 직접 만들어 보지 않으면 이해한 게 아니다 ② 일차 항(first-order term)을 우선하라 — 가장 중요한 핵심을 찾아 작동시키고 한 번에 하나씩 추가 ③ 예측하고, 실행하고, 비교하라 — 대부분은 학습이 되지만 눈에 띄지 않게 조금 나빠지기 때문 ④ 잘못된 버전을 먼저 보여줘라 — 그는 녹화 중 자기 버그를 일부러 남긴다 ⑤ 주장하지 말고 증명하라 ⑥ 무엇을 가정했는지 밝혀라 — Claude Code에 대한 그의 가장 큰 불만은 모델이 잘못된 가정을 하고 확인 없이 실행해 버린다는 점 ⑦ 단순한 것이 더 좋다. 인용구를 누르면 타임스탬프나 원문 페이지가 열리고, 출처가 없으면 에이전트는 Karpathy 발언을 바탕으로 추론한 것임을 밝혀야 한다.</p>
+<h4>3단계: 서브 에이전트·스킬·실행 관문 훅으로 만들기</h4>
+<p>네 번째 프롬프트로 파일 두 개를 만든다. 하나는 서브 에이전트로, 별도 지침·메모리·컨텍스트 윈도우를 가진 독립 Claude 인스턴스라 작업을 넘길 때 전체 대화를 끌고 가지 않는다. 안에는 일곱 가지 규칙, 대화 방식, 매 작업마다 도는 루프가 들어 있는 "미니 Karpathy 에이전트"다. 다른 하나는 스킬로, /karpathy-teach에 막힌 부분을 적으면 규칙이 적용된 에이전트로 넘어가 규칙별 체크리스트로 답변을 평가해 보여준다. 다섯 번째 프롬프트로는 실행 관문(run gate)을 추가한다. 에이전트가 턴을 끝내려 할 때 즉시 도는 작은 스크립트인 훅(hook)이 있어서, 코드를 짜고 실행하지 않았다면 "작동한다고 말하기 전에 먼저 실행해"라며 답변을 막는다. 검증 루프를 기본으로 내장하는 셈이고, 이 훅도 직접 코딩할 필요 없이 프롬프트로 요청하면 된다.</p>
+<h4>4단계: 실제 사례로 테스트하고 계속 학습시키기</h4>
+<p>첫 테스트는 LLM이 텍스트를 숫자로 바꾸는 바이트 페어 토크나이저(byte pair tokenizer)를 만들고 원리를 알려달라는 요청이었다. 에이전트는 코드 전에 "완료 기준"부터 적고, 작은 입력에서 작동하는 최소 버전을 만들고, 실행 전 예상 결과를 말한 뒤 실행해 실제 출력을 보여줬다. 이어서 어떤 버전이 왜 오류가 나는지 보여주고 고친 다음, 실행한 작업·결과·변경 사항과 단계별로 따른 규칙을 정리했다. 두 번째는 검토 기능이다. Claude가 짜준 유튜브 댓글 수집 스크립트는 Claude 테스트에선 잘 돌았지만, 에이전트가 코드를 읽고 일반 Windows 터미널의 이모지에서 충돌할 거라 예측했고 실제로 파일을 쓰기도 전에 멈췄다. 에이전트는 불필요한 부분을 걸러내 배포 가능한 형태로 정리하고, 줄인 버전이 같은 문제를 잡아내는지 두 버전을 나란히 돌려 증명했다. 마지막으로 시스템은 계속 배운다. /karpathy-ingest에 링크 하나를 넣으면 소스 페이지를 만들고 관련 페이지·색인·로그를 갱신하는데, 지난 7월 Karpathy가 올린 "10분 동안 음성으로 횡설수설하고 모델이 정리하게 하는" 게시물을 넣자 6번 규칙에 "요청이 모호하면 추측 대신 질문하라"는 동작이 추가됐다. 출처 하나뿐이던 규칙이 두 번째 출처를 얻어 진짜 규칙이 된 것이다.</p>
+<h4>정리: 사고는 외주 줘도 이해는 외주 줄 수 없다</h4>
+<p>네 단계를 요약하면 한 사람의 머릿속 전부를 Claude에게 주고 위키로 정리했고, 인용이 붙은 규칙으로 바꿨고, 말하기 전에 실행하게 했고, 실제 사례로 테스트한 것이다. Nate는 Karpathy가 올해 한 말 "사고는 외주를 줄 수 있어도 이해까지 외주를 줄 수는 없다"로 마무리한다. 모든 분야의 전문가가 될 필요는 없지만, 전문가를 데려와 그 지식 위에서 더 발전할 수는 있다.</p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>AI 품질은 모델이 아니라 시스템에 담긴 전문 지식이 결정한다</strong>: 내가 전문가가 아니어도 실제 전문가의 원문을 모아 구조화하면, AI가 "그럴듯한 답"이 아니라 근거 있는 답을 내게 만들 수 있다.</li><li><strong>원문 더미보다 '연결된 위키'가 핵심이다</strong>: 70만 단어를 그대로 던지면 건초 더미가 된다. 규칙↔출처가 서로 연결된 구조여야 AI가 지어내지 않고, 새 자료가 들어올 때마다 규칙이 강화된다.</li><li><strong>"작동한다"는 말 전에 실행을 강제하는 장치가 신뢰를 만든다</strong>: 훅으로 실행 검증을 의무화하면 Claude 환경에선 되지만 고객 환경에선 깨지는(Windows 이모지 충돌 같은) 문제를 배포 전에 잡을 수 있다.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li>내가 가장 신뢰하는 업계 전문가(강사·작가·코치) 한 명을 정하고, 그 사람의 블로그·유튜브·책 목록을 한 문서에 링크로 모아둔다.</li><li>ChatGPT나 Claude 프로젝트에 그 자료 몇 개를 넣고 "이 사람이 반복해서 강조하는 원칙 5개를 정확한 인용과 출처를 붙여 정리해줘, 출처 없으면 추론이라고 표시해줘"라고 요청해 본다.</li><li>자동화 업체나 AI 결과물을 납품받을 때 "작동한다고 하기 전에 실제 우리 환경(운영체제·브라우저·데이터)에서 실행해 본 결과를 보여달라"고 검수 기준에 명시한다.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>업무를 같이 분해하고 4단계 중 지금 위치를 짚어 드려요.</p><span class="go">진단 콜 보기 →</span></a>
+    <a class="cross" href="../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>

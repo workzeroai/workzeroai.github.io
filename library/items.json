@@ -3,63 +3,58 @@
  "files": [
   {
    "slug": "marketing-plugin",
+   "notion": "3f012e3c-61c9-81e6-b84d-c3d5fadca470",
    "title": "앤트로픽 Marketing 플러그인",
    "desc": "Cowork 설치부터 명령 7개 바로 쓰는 요청문까지",
    "tag": "실전 가이드",
    "date": "2026-10-05",
    "thumb": "thumb/marketing-plugin.webp",
-   "url": "",
-   "ready": false
-  },
-  {
-   "slug": "competitor-reel",
-   "title": "클로드로 인스타 계정 분석하기",
-   "desc": "클로드는 인스타 숫자를 못 봐요. Apify MCP로 연결하는 법",
-   "tag": "실전 가이드",
-   "date": "2026-10-06",
-   "thumb": "",
-   "url": "",
-   "ready": false
-  },
-  {
-   "slug": "marketer-toolkit-5",
-   "title": "클로드 쓰는 마케터 필살템 5개",
-   "desc": "기획부터 영상까지, 깔아두면 바로 쓰는 것들",
-   "tag": "템플릿",
-   "date": "2026-10-04",
-   "thumb": "thumb/marketer-toolkit-5.webp",
-   "url": "",
-   "ready": false
+   "url": "marketing-plugin/",
+   "ready": true
   },
   {
    "slug": "claude-design-3",
+   "notion": "3ef12e3c-61c9-81e5-b11d-cb773bd1ee17",
    "title": "클로드로 디자인할 때 설치할 3가지",
    "desc": "설치 순서와 바로 쓰는 프롬프트",
    "tag": "실전 가이드",
    "date": "2026-10-03",
    "thumb": "thumb/claude-design-3.webp",
-   "url": "",
-   "ready": false
+   "url": "claude-design-3/",
+   "ready": true
   },
   {
    "slug": "meta-ai-instagram",
+   "notion": "3ea12e3c-61c9-8132-bd75-d716f2542051",
    "title": "마케터용 Meta AI 인스타 분석",
    "desc": "연결 방법 + 바로 쓰는 프롬프트 12개",
-   "tag": "템플릿",
+   "tag": "실전 가이드",
    "date": "2026-09-28",
    "thumb": "thumb/meta-ai-instagram.webp",
-   "url": "",
-   "ready": false
+   "url": "meta-ai-instagram/",
+   "ready": true
+  },
+  {
+   "slug": "mcp-5",
+   "notion": "3e812e3c-61c9-8147-bcca-db80668433e0",
+   "title": "마케터 필살기 MCP 5선",
+   "desc": "Claude에 연결하는 주소와 바로 쓰는 프롬프트",
+   "tag": "실전 가이드",
+   "date": "2026-09-27",
+   "thumb": "thumb/mcp-5.webp",
+   "url": "mcp-5/",
+   "ready": true
   },
   {
    "slug": "chatgpt-notion",
-   "title": "AI 답변이 뻔하다면 내 노션부터",
-   "desc": "커넥터로 내 자료를 읽게 만드는 순서",
+   "notion": "3e112e3c-61c9-81f2-b7a6-f51f1c0d51f1",
+   "title": "ChatGPT × 노션 연동법",
+   "desc": "답변이 10배 똑똑해지는 MCP 연결과 실무 레시피",
    "tag": "실전 가이드",
    "date": "2026-09-19",
    "thumb": "thumb/chatgpt-notion.webp",
-   "url": "",
-   "ready": false
+   "url": "chatgpt-notion/",
+   "ready": true
   }
  ],
  "notes": [
@@ -67,25 +62,28 @@
    "title": "I Built Another Andrej Karpathy Using Claude",
    "source": "Nate Herk | AI Automation",
    "date": "2026-10-05",
-   "summary": "",
-   "url": "",
-   "ready": false
+   "summary": "Nate Herk가 Andrej Karpathy의 블로그·강의·GitHub·X 게시물 70만 단어 이상을 모아 LLM 위키로 정리하고, 거기서 뽑은 7가지 교육 원칙을 Claude Code 서브 에이전트(sub-agent)·스킬(skill)·실행 관문 훅(hook)으로",
+   "url": "notes/bvGptCLDhyo/",
+   "ready": true,
+   "video_id": "bvGptCLDhyo"
   },
   {
    "title": "I Tested ChatGPT's New Business Platform. Should You Switch?",
    "source": "Liam Ottley",
    "date": "2026-10-05",
-   "summary": "",
-   "url": "",
-   "ready": false
+   "summary": "OpenAI가 Dev Day에서 팀 전체와 AI 에이전트가 한곳에서 일하는 'ChatGPT 비즈니스 플랫폼'을 내놓았고, Liam Ottley가 자기 회사를 직접 옮겨 테스트했다. 결론은 \"1인용 AI에서 멀티플레이어 AI로의 전환은 분명한 다음 단계지만, 옮기는 비용",
+   "url": "notes/9C5hLJ1bIzk/",
+   "ready": true,
+   "video_id": "9C5hLJ1bIzk"
   },
   {
    "title": "Is AI Automation Still Worth It in 2027?",
    "source": "Nick Saraev",
    "date": "2026-10-05",
-   "summary": "",
-   "url": "",
-   "ready": false
+   "summary": "AI 자동화로 1천만 달러 가까이 번 Nick Saraev가 \"AI 자동화는 영원하지 않다\"고 경고하면서도, 모든 지식 노동이 자동화되는 세상에선 자동화를 하는 산업이 가장 오래 살아남는다고 결론 내린다. 2027년은 역사상 가장 돈이 되는 해이자 하락의 시작점이 될 ",
+   "url": "notes/638GQZ9UZ4w/",
+   "ready": true,
+   "video_id": "638GQZ9UZ4w"
   },
   {
    "title": "i promise you, setting up AIOS can blow up your business!",

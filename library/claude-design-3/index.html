@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>클로드로 디자인할 때 설치할 3가지 · 워크제로 자료실</title>
+<meta name="description" content="설치 순서와 바로 쓰는 프롬프트">
+<link rel="canonical" href="https://workzeroai.github.io/library/claude-design-3/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#533afd">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="클로드로 디자인할 때 설치할 3가지">
+<meta property="og:description" content="설치 순서와 바로 쓰는 프롬프트">
+<meta property="og:url" content="https://workzeroai.github.io/library/claude-design-3/">
+<meta property="og:image" content="https://workzeroai.github.io/library/thumb/claude-design-3.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="클로드로 디자인할 때 설치할 3가지">
+<meta name="twitter:description" content="설치 순서와 바로 쓰는 프롬프트">
+<meta name="twitter:image" content="https://workzeroai.github.io/library/thumb/claude-design-3.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+:root{--primary:#533afd;--primary-deep:#4434d4;--primary-pale:#eceaff;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f6f9fc;--hair:#e3e8ee;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴">
+    <a href="../../tutoring/">1:1 과외</a><a href="../../build/">제작 문의</a>
+    <a class="on" href="../" aria-current="page">자료실</a>
+  </div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../">← 자료실</a>
+  <div class="head"><div class="m"><i>실전 가이드</i><span>2026-10-03</span></div><h1>클로드로 디자인할 때 설치할 3가지</h1></div>
+  
+  <div class="bd">
+<figure><img src="img/01.webp" alt="커버" loading="lazy"></figure>
+<div class="lmnote"><p><strong>이 가이드는 이런 분을 위해 썼어요</strong> 코딩을 한 번도 안 해 봤어도 괜찮아요. 명령어를 외울 필요도 없어요. 전부 <strong>Claude 앱 안에서 클릭하고, 이 페이지의 문장을 복사해서 붙여넣기만</strong> 하면 돼요. 중간에 에러가 나도 정상이에요. 맨 아래 "막히면 이렇게"를 보세요.</p></div>
+<div class="lmnote"><p><strong>30초 요약</strong></p>
+<ol><li>클로드에게 웹사이트를 그냥 시키면 몇 번을 다시 해도 거의 같은 모양이 나와요. "좋은 디자인"의 기준이 없어서예요.</li><li>기준을 넣어 주는 무료 도구 3개를 차례로 붙이면 돼요. <strong>frontend-design → DESIGN.md → Impeccable</strong></li><li>설치는 Claude 앱의 <strong>Code 탭</strong>에서 클릭 몇 번이면 끝나요.</li></ol></div>
+<figure><img src="img/02.webp" alt="전체 흐름" loading="lazy"></figure>
+<p><strong>준비물 체크</strong></p>
+<ul><li>Claude 유료 플랜 (Pro 이상). 무료 플랜에서는 Code 탭을 쓸 수 없어요.</li><li>Mac 또는 Windows 컴퓨터</li><li>30분 정도</li></ul>
+<hr>
+<h3>1. 왜 그냥 시키면 다 똑같을까요?</h3>
+<p>같은 부탁을 도구 없이 세 번 해 봤어요. <code>AI 회의록 요약 서비스 '노트원'의 랜딩페이지 만들어줘.</code></p>
+<figure><img src="img/03.webp" alt="같은 요청 3번" loading="lazy"><figcaption>같은 요청 3번</figcaption></figure>
+<p>못생긴 건 아닌데, 세 번 다 모양이 거의 같아요. 왼쪽에 큰 제목, 오른쪽에 카드, 파란 버튼 두 개. 기준을 따로 주지 않으면 클로드는 가장 무난한 평균값을 만들어요. 도구를 하나씩 붙이면 이렇게 달라져요. 같은 부탁에 도구만 바꿔 붙인 실제 결과예요.</p>
+<figure><img src="img/04.webp" alt="도구를 하나씩 붙인 결과" loading="lazy"><figcaption>도구를 하나씩 붙인 결과</figcaption></figure>
+<hr>
+<h3>2. 준비: Claude 앱에서 Code 탭 열기</h3>
+<p>Code 탭은 클로드가 <strong>내 컴퓨터 폴더 안에 직접 파일을 만들어 주는</strong> 곳이에요. 채팅에서 코드를 복사해 붙여넣을 필요가 없어요. "웹사이트 만들어줘" 하면 폴더에 파일이 생겨요.</p>
+<h4>① Claude 앱 설치하고 Code 탭 누르기</h4>
+<ol><li><a href="https://claude.com/download" target="_blank" rel="noopener">https://claude.com/download</a> 에서 내 컴퓨터(Mac / Windows)에 맞는 앱을 받아 설치해요.</li><li>앱을 열고 평소 쓰는 Claude 계정으로 로그인해요.</li><li>위쪽 가운데에 있는 <strong>Code</strong> 탭을 눌러요.</li></ol>
+<figure><img src="img/05.webp" alt="Code 탭" loading="lazy"><figcaption>Code 탭</figcaption></figure>
+<div class="lmnote"><p><strong>"업그레이드"라는 창이 떠요</strong> Code 탭은 유료 플랜(Pro 이상)에서만 열려요. 플랜을 올린 뒤 앱을 껐다 켜면 돼요.</p></div>
+<figure><img src="img/06.webp" alt="공식 안내: 앱 내려받기" loading="lazy"><figcaption>공식 안내: 앱 내려받기</figcaption></figure>
+<h4>② 작업할 폴더 고르기</h4>
+<ol><li>먼저 바탕화면에 빈 폴더를 하나 만들어요. 이름은 아무거나 괜찮아요. 예: <code>내-첫-웹사이트</code></li><li>Code 탭에서 <strong>Local</strong>을 고르고 <strong>Select folder</strong>를 눌러 방금 만든 폴더를 골라요.</li><li>"이 폴더를 믿나요?"처럼 물어보면 <strong>예(Yes)</strong>를 눌러요. 내가 만든 빈 폴더라서 괜찮아요.</li></ol>
+<figure><img src="img/07.webp" alt="폴더 고르기" loading="lazy"><figcaption>폴더 고르기</figcaption></figure>
+<h4>③ 말로 시키기</h4>
+<ol><li>아래 입력창에 하고 싶은 일을 한국어로 쓰거나, 이 가이드의 문장을 복사해서 붙여넣어요.</li><li><strong>Enter</strong>를 누르면 클로드가 일을 시작해요.</li><li>"파일을 만들어도 될까요?"라고 물으면 <strong>Accept(허용)</strong>를 눌러요. 내 폴더에 파일을 만들기 전에 확인하는 거예요.</li></ol>
+<figure><img src="img/08.webp" alt="말로 시키기" loading="lazy"><figcaption>말로 시키기</figcaption></figure>
+<h4>④ 결과 열어 보기</h4>
+<ol><li>Finder(맥) 또는 파일 탐색기(윈도우)에서 아까 만든 폴더를 열어요.</li><li>새로 생긴 <strong>index.html</strong>을 더블클릭하면 인터넷 브라우저에서 웹사이트가 열려요.</li><li>고치고 싶은 곳은 다시 입력창에 말로 하면 돼요. 예: "버튼 색을 더 진하게 해줘"</li></ol>
+<figure><img src="img/09.webp" alt="결과 열어 보기" loading="lazy"><figcaption>결과 열어 보기</figcaption></figure>
+<div class="lmnote"><p><strong>여기까지 왔으면 반은 끝났어요</strong> 이제 도구 3개만 붙이면 돼요. 하나당 5분이면 충분해요.</p></div>
+<hr>
+<h3>3. ① frontend-design: 디자인 방향부터 잡아 주는 도구</h3>
+<figure><img src="img/10.webp" alt="frontend-design 카드" loading="lazy"><figcaption>frontend-design 카드</figcaption></figure>
+<p>Anthropic(클로드를 만든 회사)이 직접 만든 공식 도구예요. 웹사이트를 만들 때 "흔한 AI 스타일"을 피하고, 주제에 맞는 색·글꼴·배치를 먼저 정하게 해 줘요. 한 번 설치하면 웹사이트를 만들 때마다 알아서 써요.</p>
+<h4>설치 (클릭 3번)</h4>
+<ol><li>입력창 옆 <strong>+</strong> 버튼을 눌러요.</li><li><strong>Plugins</strong> → <strong>Add plugin</strong>을 눌러요.</li><li>검색창에 <code>frontend-design</code>을 입력하고, 나온 항목을 눌러 설치해요. 설치 범위를 물으면 <strong>나(user)</strong>를 고르세요. 그러면 어느 폴더에서든 써요.</li></ol>
+<figure><img src="img/11.webp" alt="frontend-design 설치" loading="lazy"><figcaption>frontend-design 설치</figcaption></figure>
+<div class="lmnote"><p><strong>목록에 안 보여요</strong> 검색어를 <code>frontend</code>까지만 쳐 보세요. 만든 곳(By)이 <strong>Anthropic</strong>인지 확인하고 설치하면 돼요.</p></div>
+<h4>전과 후</h4>
+<figure><img src="img/12.webp" alt="그냥 vs frontend-design" loading="lazy"><figcaption>그냥 vs frontend-design</figcaption></figure>
+<p>모양 자체가 달라졌어요. 손글씨 취소선, 노트 느낌처럼 "회의록"이라는 주제에서 나온 장식이 들어가요.</p>
+<h4>바로 쓰는 프롬프트 (복사해서 붙여넣기)</h4>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">AI 회의록 요약 서비스 &#x27;노트원&#x27;의 랜딩페이지 만들어줘. index.html 파일 하나로.
+사용자 수·평점·가격 같은 숫자는 지어내지 마.
+만들기 전에 어떤 디자인 방향으로 갈지 한 줄로 먼저 알려줘.</code></pre></div>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">[내 서비스 이름]의 소개 페이지 첫 화면을 만들어줘. 보는 사람은 [누구]야.
+흔한 AI 템플릿처럼 보이지 않게, 이 서비스 주제에서만 나올 수 있는 디자인 포인트를 하나 넣어줘.</code></pre></div>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">지금 만든 페이지를 세 가지 다른 분위기로 제안해줘.
+각각 색·글꼴·배치를 한 줄씩 설명해 주고, 내가 고른 걸로 다시 만들어줘.</code></pre></div>
+<hr>
+<h3>4. ② DESIGN.md: 유명 브랜드의 디자인 규칙 빌려 오기</h3>
+<figure><img src="img/13.webp" alt="Awesome Design MD 카드" loading="lazy"><figcaption>Awesome Design MD 카드</figcaption></figure>
+<p>Stripe, Notion, Claude 같은 유명 서비스의 디자인 규칙(색, 글꼴, 여백, 버튼 모양)을 글로 정리한 <strong>파일 모음</strong>이에요. 마음에 드는 브랜드의 파일 하나를 작업 폴더에 넣으면, 클로드가 그 규칙을 따라 만들어요. 설치할 건 없어요.</p>
+<h4>넣는 법 A: 클로드에게 시키기 (추천)</h4>
+<p>아래 문장을 그대로 복사해서 보내세요. 이 가이드에서 쓴 claude 스타일 파일이에요.</p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">아래 주소의 파일을 이 폴더에 DESIGN.md라는 이름으로 저장해줘.
+https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/claude/DESIGN.md</code></pre></div>
+<p>인터넷에서 파일을 받아도 되냐고 물으면 <strong>Allow(허용)</strong>를 누르면 돼요.</p>
+<figure><img src="img/14.webp" alt="DESIGN.md 넣기" loading="lazy"><figcaption>DESIGN.md 넣기</figcaption></figure>
+<h4>넣는 법 B: 직접 내려받기</h4>
+<ol><li><a href="https://getdesign.md" target="_blank" rel="noopener">https://getdesign.md</a> 에서 마음에 드는 브랜드를 골라요.</li><li>브랜드 페이지의 <strong>Download DESIGN.md</strong> 버튼을 눌러요.</li><li>내려받은 파일을 작업 폴더(예: 바탕화면의 <code>내-첫-웹사이트</code>)로 옮겨요.</li></ol>
+<figure><img src="img/15.webp" alt="Download DESIGN.md 버튼" loading="lazy"><figcaption>Download DESIGN.md 버튼</figcaption></figure>
+<h4>전과 후</h4>
+<figure><img src="img/16.webp" alt="frontend-design vs + DESIGN.md" loading="lazy"><figcaption>frontend-design vs + DESIGN.md</figcaption></figure>
+<p>claude 스타일 파일을 넣었더니 크림색 배경, 세리프 제목, 주황빛 버튼이 그대로 들어갔어요.</p>
+<h4>어떤 브랜드를 고를까요?</h4>
+<figure><img src="img/17.webp" alt="DESIGN.md 3종 비교" loading="lazy"><figcaption>DESIGN.md 3종 비교</figcaption></figure>
+<ul><li>파일만 바꿔도 분위기가 확 바뀌어요.</li><li>내 서비스 분위기와 맞는 걸 고르세요. 차분한 서비스라면 claude처럼 따뜻한 톤, 세련된 IT 서비스라면 linear처럼 어두운 톤이 어울려요.</li><li>브랜드를 그대로 베끼는 용도는 아니에요. 분위기만 빌려 오는 참고용으로 쓰세요.</li><li>파일을 바꾸면 새로 어색한 부분이 생길 수 있어요. 그건 ③ Impeccable로 정리해요.</li></ul>
+<h4>바로 쓰는 프롬프트</h4>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">이 폴더의 DESIGN.md 규칙(색·글꼴·여백)을 따라서
+&#x27;노트원&#x27; 랜딩페이지를 index.html 파일 하나로 만들어줘. 숫자는 지어내지 마.</code></pre></div>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">DESIGN.md를 읽고 이 브랜드 디자인의 핵심을 5줄로 쉽게 요약해줘.
+그다음 지금 index.html에서 이 규칙과 다른 부분을 찾아서 고쳐줘.</code></pre></div>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">내 서비스는 [한 줄 설명]이야. getdesign.md에 있는 브랜드 중에서
+분위기가 어울리는 후보 3개를 이유와 함께 추천해줘.</code></pre></div>
+<hr>
+<h3>5. ③ Impeccable: 어색한 부분을 찾아서 다듬는 도구</h3>
+<figure><img src="img/18.webp" alt="Impeccable 카드" loading="lazy"><figcaption>Impeccable 카드</figcaption></figure>
+<p>다 만든 페이지에서 어색한 부분(글자가 잘 안 보이는 색, 흔한 아이콘 카드, 제목 줄바꿈이 이상한 곳 등)을 찾아서 정리해 주는 도구예요. 마지막 마무리 담당이에요.</p>
+<h4>설치 (클로드에게 시키기)</h4>
+<p>아래 문장을 복사해서 보내세요.</p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">npx impeccable install 을 실행해서 Impeccable을 이 폴더에 설치해줘.
+안 되면 이유를 쉬운 말로 알려주고, 내가 해야 할 일을 순서대로 알려줘.</code></pre></div>
+<ol><li>명령을 실행해도 되냐고 물으면 <strong>Allow(허용)</strong>를 눌러요.</li><li>설치가 끝나면 왼쪽에서 <strong>새 세션</strong>을 열어요. 새로 연 대화부터 Impeccable이 보여요.</li></ol>
+<figure><img src="img/19.webp" alt="Impeccable 설치" loading="lazy"><figcaption>Impeccable 설치</figcaption></figure>
+<div class="lmnote"><p><strong>"Node.js가 없어요"라고 하면</strong> Impeccable을 설치하려면 Node.js라는 프로그램이 먼저 있어야 해요.</p>
+<ol><li><a href="https://nodejs.org" target="_blank" rel="noopener">https://nodejs.org</a> 에 들어가서 <strong>LTS</strong>라고 적힌 버튼으로 내려받아요.</li><li>내려받은 파일을 더블클릭하고 계속 "다음"을 누르면 설치돼요.</li><li>Claude 앱을 껐다 켠 뒤, 위 문장을 다시 보내세요.</li></ol></div>
+<div class="lmnote"><p><strong>설치하면 생기는 일 (원래 그런 거예요)</strong> Impeccable은 클로드가 파일을 고칠 때마다 디자인을 자동으로 검사하는 기능을 같이 켜요. 그래서 작업 중에 "Checking UI changes" 같은 문구가 보일 수 있어요. 끄고 싶으면 클로드에게 "Impeccable 자동 검사 꺼줘"라고 하면 돼요.</p></div>
+<h4>쓰는 법</h4>
+<p>페이지를 다 만든 뒤 새 세션 입력창에 이렇게 보내세요.</p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">/impeccable polish index.html</code></pre></div>
+<p>입력창에 <code>/</code>를 치면 쓸 수 있는 명령 목록이 떠요. 거기서 impeccable을 골라도 돼요.</p>
+<h4>전과 후</h4>
+<figure><img src="img/20.webp" alt="polish 전 vs 후" loading="lazy"><figcaption>polish 전 vs 후</figcaption></figure>
+<p>마무리 전에는 검사에서 고칠 곳이 23개 나왔고, 마무리 후에는 0개가 됐어요. 흔한 아이콘 카드가 깔끔한 한 줄로 바뀌고, 제목 위의 작은 글씨가 빠지고, 버튼 글씨가 더 잘 보이게 바뀌었어요.</p>
+<div class="lmnote"><p><strong>"0개"가 곧 "완벽한 디자인"은 아니에요</strong> 이 검사는 정해진 규칙만 봐요. 서비스 분위기와 맞는지는 못 봐요. 마지막 판단은 내 눈으로 직접 보고 하세요.</p></div>
+<h4>바로 쓰는 프롬프트</h4>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">/impeccable polish index.html
+제목이 한 글자만 다음 줄로 넘어가지 않게 해주고 (컴퓨터, 휴대폰 화면 둘 다),
+디자인 분위기와 문구는 그대로 둬. 숫자나 이모지는 새로 넣지 마.</code></pre></div>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">/impeccable critique index.html
+처음 보는 사람이 5초 안에 무슨 서비스인지 알 수 있는지 평가해 주고,
+가장 먼저 고칠 세 가지만 골라서 고쳐줘.</code></pre></div>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">지금 페이지에서 어색한 부분을 찾아서 쉬운 말로 설명해줘.
+고칠 것과 일부러 둔 것을 나눠서, 고칠 것만 고쳐줘.</code></pre></div>
+<hr>
+<h3>6. 3개를 한 번에 쓰는 순서</h3>
+<ol><li><strong>frontend-design</strong> 설치 (처음 한 번만)</li><li>새 작업 폴더에 <strong>DESIGN.md</strong> 넣기</li><li>아래 프롬프트를 복사해서 보내기</li><li>다 되면 새 세션에서 <strong>/impeccable polish index.html</strong></li><li>index.html을 더블클릭해서 보고, 마음에 안 드는 곳은 말로 고치기</li></ol>
+<h4>한 번에 시키는 프롬프트</h4>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">이 폴더의 DESIGN.md 규칙(색·글꼴·여백)을 따르고, frontend-design 스킬로 디자인 방향을 잡아서
+[내 서비스 이름]의 랜딩페이지를 index.html 파일 하나로 만들어줘.
+보는 사람은 [누구]이고, 가장 강조할 내용은 [한 줄]이야.
+사용자 수·평점·가격 같은 숫자는 지어내지 마.</code></pre></div>
+<hr>
+<h3>7. 막히면 이렇게</h3>
+<figure><img src="img/21.webp" alt="막히면 이것만 기억하세요" loading="lazy"><figcaption>막히면 이것만 기억하세요</figcaption></figure>
+<p><strong>제일 중요한 한 가지.</strong> 빨간 글씨나 에러가 나오면 당황하지 말고 클로드에게 그대로 말하세요.</p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">방금 에러가 났어. 뭐가 문제인지 쉬운 말로 설명하고, 대신 해결해줘.</code></pre></div>
+<p><strong>Code 탭을 누르면 "업그레이드"가 나와요.</strong> Code 탭은 유료 플랜(Pro 이상)에서만 열려요. <strong>폴더를 고르는 창에서 뭘 눌러야 할지 모르겠어요.</strong> 바탕화면에 만든 빈 폴더를 한 번 누르고 "열기" 또는 "선택"을 누르면 돼요. <strong>자꾸 "허용할까요?"라고 물어봐요.</strong> 정상이에요. 내 컴퓨터에 파일을 만들거나 명령을 실행하기 전에 확인하는 거예요. 이 가이드대로 하는 중이라면 Accept / Allow를 누르면 돼요. <strong>+ 버튼에 Plugins가 없어요.</strong> Code 탭에서 <strong>Local</strong>로 연 세션인지 확인하세요. Cloud 세션에서는 플러그인 메뉴가 안 보여요. 앱이 오래된 버전이면 claude.com/download 에서 새로 받아 설치하세요. <strong>/impeccable이 목록에 안 떠요.</strong> 설치한 다음 <strong>새 세션</strong>을 열었는지 확인하세요. 그래도 안 되면 앱을 껐다 켜 보세요. <strong>도구를 붙였는데도 결과가 비슷해요.</strong> 부탁할 때 서비스 주제와 보는 사람을 한 줄 더 써 주세요. "흔한 AI 템플릿처럼 보이지 않게"라고 직접 말하는 것도 효과가 있어요. <strong>없는 숫자를 지어내요. ("구독자 12,400명", "평점 4.9" 같은)</strong> 실제로 실습 중에도 나왔어요. 부탁할 때 "숫자는 지어내지 마"를 꼭 넣으세요. <strong>돈이 더 드나요?</strong> 세 도구는 무료예요. Claude 유료 플랜 요금만 있으면 돼요.</p>
+<hr>
+<h3>공식 링크</h3>
+<ul><li>Claude 앱 내려받기: <a href="https://claude.com/download" target="_blank" rel="noopener">https://claude.com/download</a></li><li>Code 탭 시작 안내 (영어): <a href="https://code.claude.com/docs/en/desktop-quickstart" target="_blank" rel="noopener">https://code.claude.com/docs/en/desktop-quickstart</a></li><li>frontend-design: <a href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins/frontend-design" target="_blank" rel="noopener">https://github.com/anthropics/claude-plugins-official/tree/main/plugins/frontend-design</a></li><li>DESIGN.md 모음: <a href="https://getdesign.md" target="_blank" rel="noopener">https://getdesign.md</a> · <a href="https://github.com/VoltAgent/awesome-design-md" target="_blank" rel="noopener">https://github.com/VoltAgent/awesome-design-md</a></li><li>Impeccable: <a href="https://github.com/pbakaus/impeccable" target="_blank" rel="noopener">https://github.com/pbakaus/impeccable</a></li><li>Node.js: <a href="https://nodejs.org" target="_blank" rel="noopener">https://nodejs.org</a></li></ul>
+<p>기준 날짜: 2026-10-04 (공식 문서 확인 + 직접 설치·실행) 만든 사람: @work__zero</p>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>업무를 같이 분해하고 4단계 중 지금 위치를 짚어 드려요.</p><span class="go">진단 콜 보기 →</span></a>
+    <a class="cross" href="../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>
