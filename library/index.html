@@ -238,12 +238,11 @@ function card(f){
     <div class="fmeta"><i>${esc(f.tag)}</i><span>${esc(f.date)}</span></div>
     <h3>${esc(f.title)}</h3><p>${esc(f.desc)}</p>${btn}</div></article>`;
 }
-const DAY=864e5;
 let newestReady=0;   // 읽을 수 있는 글 중 가장 최신 날짜
+// 매일 쌓이는 글이라 "며칠 이내" 로 잡으면 절반이 NEW 가 된다.
+// 가장 최근 날짜의 글만 표시해 신호를 살린다.
 function isNew(n){
-  if(!(n.ready && n.url) || !newestReady) return false;
-  const t=Date.parse(n.date);
-  return t && (newestReady-t) <= 2*DAY;
+  return !!(n.ready && n.url && newestReady && Date.parse(n.date) === newestReady);
 }
 function note(n){
   const badge = isNew(n) ? '<i class="new">NEW</i>' : '';

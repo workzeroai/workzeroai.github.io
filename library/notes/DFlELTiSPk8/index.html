@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Every Codex Concept Explained for Non-Coders · 워크제로 자료실</title>
+<meta name="description" content="코딩을 몰라도 Codex를 바로 쓸 수 있도록, Nate Herk가 프로젝트·agents.md부터 스킬·서브에이전트·예약 작업·음성 모드까지 18가지 핵심 개념을 기초→환경→제어·사용자 지정→도구·규모의 4파트로 실제 화면과 함께 설명한 입문 가이드다.">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/DFlELTiSPk8/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#533afd">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="Every Codex Concept Explained for Non-Coders">
+<meta property="og:description" content="코딩을 몰라도 Codex를 바로 쓸 수 있도록, Nate Herk가 프로젝트·agents.md부터 스킬·서브에이전트·예약 작업·음성 모드까지 18가지 핵심 개념을 기초→환경→제어·사용자 지정→도구·규모의 4파트로 실제 화면과 함께 설명한 입문 가이드다.">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/DFlELTiSPk8/">
+<meta property="og:image" content="https://img.youtube.com/vi/DFlELTiSPk8/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Every Codex Concept Explained for Non-Coders">
+<meta name="twitter:description" content="코딩을 몰라도 Codex를 바로 쓸 수 있도록, Nate Herk가 프로젝트·agents.md부터 스킬·서브에이전트·예약 작업·음성 모드까지 18가지 핵심 개념을 기초→환경→제어·사용자 지정→도구·규모의 4파트로 실제 화면과 함께 설명한 입문 가이드다.">
+<meta name="twitter:image" content="https://img.youtube.com/vi/DFlELTiSPk8/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+:root{--primary:#533afd;--primary-deep:#4434d4;--primary-pale:#eceaff;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f6f9fc;--hair:#e3e8ee;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴">
+    <a href="../../tutoring/">1:1 과외</a><a href="../../build/">제작 문의</a>
+    <a class="on" href="../" aria-current="page">자료실</a>
+  </div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../">← 자료실</a>
+  <div class="head"><div class="m"><i>에이전트</i><span>2026-10-03</span></div><h1>Every Codex Concept Explained for Non-Coders</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/DFlELTiSPk8.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Nate Herk | AI Automation</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<br><a href="https://www.youtube.com/watch?v=DFlELTiSPk8" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>AI의 기억은 &#x27;파일&#x27;로 만든다</li><li>목표를 주고 물러나는 쪽이 더 잘 된다</li><li>모든 작업에 최고 모델을 쓸 필요는 없다</li></ul></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>코딩을 몰라도 Codex를 바로 쓸 수 있도록, Nate Herk가 프로젝트·agents.md부터 스킬·서브에이전트·예약 작업·음성 모드까지 18가지 핵심 개념을 기초→환경→제어·사용자 지정→도구·규모의 4파트로 실제 화면과 함께 설명한 입문 가이드다.</p>
+<h3>전체 내용 정리</h3>
+<h4>프로젝트와 agents.md가 있으면 매번 나를 다시 설명할 필요가 없다</h4>
+<p>웹에서 ChatGPT나 Claude를 쓰면 새 대화를 열 때마다 나와 내 비즈니스, 이번 주에 하는 일을 다시 설명해야 한다. Codex의 프로젝트(Project)는 사실 컴퓨터 안의 폴더와 파일 묶음일 뿐인데, 여기에 규칙·자격 증명·진행 중인 작업 자료를 모아두면 Codex가 작업할수록 나를 더 잘 알게 된다. Nate는 'Herc 2'라는 프로젝트를 자신의 'AI 운영체제'로 쓰고 있고, "지난달 함께 작업한 내용을 요약해 줘"라고 하면 Codex가 이전 대화까지 훑어 YouTube 전략·AI 모델 테스트·웹사이트·비즈니스 운영 작업을 정리해 준다. 프로젝트마다 들어가는 agents.md는 겁먹을 필요 없는 마크다운(.md) 규칙 파일로, "너는 Nate Herk의 AI 운영체제야, 운영 업무 시간을 줄여 YouTube 제작에 집중하게 도와"처럼 역할과 운영 규칙을 적는다. 핵심은 '라우팅' 지도다 — 수천 개 파일 중 비즈니스 정보는 위키, 목소리(보이스)는 여기, 강좌 지식은 저기 하는 식으로 위치를 알려주고, Codex는 내 메시지를 읽기 전에 항상 agents.md부터 읽는다.</p>
+<h4>에이전트 루프와 /goal: 생각→도구 사용→응답을 목표 달성까지 반복한다</h4>
+<p>Codex, Claude Code, Hermes 같은 것을 '에이전트 하네스(agent harness)'라고 부르는데, 각각 고유한 에이전트 루프(agent loop)를 갖고 있기 때문이다. 질문을 받으면 생각·추론하고, 도구를 써서 행동하고, 다시 생각하는 과정을 반복한다. Codex에서는 이 과정을 펼쳐 볼 수 있는데, "최근 YouTube 영상에서 재밌는 댓글 3개만 알려줘"라고 하자 memory.md(규칙이 아닌 기억을 담은 파일)를 읽고 명령어를 실행해 YouTube 데이터를 가져오는 과정이 그대로 보였다. Nate가 가장 좋아하는 기능은 /goal로, 목표를 주면 장애물에 부딪혀도 다른 방법을 시도하며 달성할 때까지 반복한다. "자료 257개를 수집해 보고서 작성"처럼 객관적일수록 효과가 좋고, 이 영상의 모션 그래픽(인트로 1개+카드 18개)도 Hyperframes 프로젝트에서 /goal 프롬프트 하나로 만들었으며 모델이 스크린샷으로 직접 검수까지 했다. 요즘 모델은 똑똑해서 마이크로매니징하면 오히려 능력을 가두니, 위험한 일이 아니면 목표만 주고 한발 물러나라는 조언이다. Claude Code에서 넘어오는 경우엔 Claude.md를 복사해 agents.md로, 스킬과 설정을 .agents 폴더로 옮기면 되고, 이것도 "Codex에서 바로 쓸 수 있게 해줘"라고 시키면 알아서 한다.</p>
+<h4>로컬 vs 클라우드, 워크트리, .codex: 내 작업이 어디서 돌아가는지 알기</h4>
+<p>'로컬'은 지금 쓰는 기기에만 존재해 나만 접근할 수 있다는 뜻이다. Codex가 만든 결과물도 마찬가지라, 127.0.0.1:8008 같은 로컬호스트(localhost) 주소는 웹 주소처럼 보여도 남에게 보내면 열리지 않는다 — 초보인 척 localhost 링크를 잔뜩 자랑하는 농담 트윗이 돌았던 이유다. 로컬 모드에서는 Codex가 내 파일을 직접 만들고·고치고·옮기고 다운로드나 바탕화면 폴더에도 접근할 수 있고, 클라우드 모드를 고르면 샌드박스 환경이라 모델·권한 설정이 막힌다. Nate는 클라우드 모드를 거의 안 쓰는데, PC만 켜두면 ChatGPT 휴대폰 앱의 'remote'로 데스크톱 Codex 대화를 그대로 이어서 산책 중에도 "그 파일 이메일로 보내줘"라고 시킬 수 있기 때문이다. 워크트리(work tree)는 프로젝트 복사본을 만들어 메인 작업을 방해하지 않고 실험하는 기능으로, 소프트웨어 개발이 아니면 거의 쓸 일이 없다. .codex 폴더는 프로젝트 안(에이전트·워크플로우·config.toml)과 사용자 계정 아래 전역(메모리·세션·자동화) 두 곳에 있고, 평소 신경 쓸 필요는 없지만 헷갈리면 "방금 뭐 한 거야? 이걸 .codex에 넣어야 해?"라고 물으면 Codex가 자체 문서를 찾아 답한다.</p>
+<h4>모델·노력 수준·권한: 작업에 맞게 비용과 품질을 조절하는 다이얼</h4>
+<p>새 대화를 열 때는 물론 대화 중간에도 모델을 바꿀 수 있다. 지금은 GPT-6 Astra가 가장 강력하지만 주간 사용량을 가장 빨리 깎고, GPT-5.6 Sol, 5.6 Terra 순으로 가볍다. API 가격 기준 Astra는 입력 토큰 100만 개당 10달러, 출력 토큰 100만 개당 50달러지만, Codex 구독(월 20·100·200달러)은 사용 한도를 쓰는 방식이라 훨씬 싸다 — Nate는 월 200달러 구독으로 주간 한도를 다 쓰면 매달 약 14,000달러어치 추론을 얻는다고 계산했다. 한도를 넘으면 2,500·5,000·25,000 단위 Codex 크레딧을 산다. 토큰은 대략 4글자 또는 단어의 3/4이고(예: 274자 단락이 약 56토큰), 내가 넣는 프롬프트·PDF는 입력, 모델의 추론 과정을 포함한 모든 결과물은 출력이라 출력이 더 비싸다. 노력 수준(effort)은 낮음~아주 높음으로 올릴수록 똑똑해지고 비싸지며, 이메일 작성에 Astra 높음을 쓰는 건 과하고 5.6 Terra로 충분하다. 빠른 모드(Fast)는 1.5배 빠르지만 사용량을 더 쓴다. 권한은 '전체 액세스'(묻지 않고 실행하는 일종의 YOLO 모드), '승인 요청'(외부 파일 편집·인터넷 사용 때마다 확인), '자동 승인'(삭제·특정 API 호출처럼 위험한 것만 확인)으로 나뉘며, 처음엔 승인 요청으로 시작해 에이전트 루프에 익숙해지는 게 좋다.</p>
+<h4>스킬·.agents·플러그인: 한 번 잘 된 작업을 레시피로 저장하고 앱을 연결한다</h4>
+<p>스킬(skill)은 재사용 가능한 워크플로우, 즉 레시피다. 초콜릿칩 팬케이크를 태웠다면 "양면을 30초씩 덜 구워라"라고 레시피를 고치듯, 실행할 때마다 "이 부분은 좋고 저 부분은 별로야, 스킬 업데이트해"라고 피드백해 다듬는다. Nate가 YouTube 영상 파일 경로를 주자 Codex가 영상 설명·타임스탬프·LinkedIn 게시물을 만들고, 썸네일·제목·영상 스크린샷까지 배치한 X 아티클 초안을 저장했는데, 이게 가능했던 건 YouTube 설명·타임스탬프·LinkedIn 게시물·X 아티클 서식 등 6개 스킬 덕분이다. 스킬은 자연어로도, 슬래시 명령어로도 실행된다. 스킬은 .agents 폴더(프로젝트 수준 또는 사용자 전역)에 skill.md로 저장되는데, 맨 위 메타데이터(이름·언제 쓰는지)를 보고 Codex가 호출 여부를 판단하고 본문은 "설명은 짧게, 2~3문장 단락으로, 글머리 기호 쓰지 마" 같은 지침일 뿐이다. 스킬은 다른 스킬·에이전트·파이썬 파일·보이스 가이드라인 같은 컨텍스트 파일을 참조할 수도 있다. 플러그인(plugin) 탭에서는 Alpaca, Gmail, ClickUp, Clay, Google Drive, GitHub, Canva, LinkedIn 등을 로그인 한 번으로 연결하고, 플러그인이 없으면 .env 파일이나 API 키로 연결한다.</p>
+<h4>브라우저·사이트·서브에이전트·예약 작업·음성 모드: 규모를 키우는 도구들</h4>
+<p>내장 브라우저는 로그인 정보를 저장해 두기 때문에, 플러그인·API·MCP 서버가 없는 Skool 같은 서비스도 "저 계정 가서 보고서 뽑아줘"로 처리할 수 있고, GPT-6 Astra와 결합한 브라우저 사용 능력은 Nate가 써본 것 중 최고였다(Canva에서 사진을 보고 Nate를 그려 색칠하기도 했다). 사이트(Sites)는 로컬호스트로만 보이던 결과물을 클라우드에 올려 URL이 있는 누구나, 또는 로그인한 나만 볼 수 있게 하고, 분석 도구·자체 도메인·데이터베이스까지 지원해 Vercel이나 Squarespace를 대체할 수 있다("이걸 사이트로 만들어줘" 또는 /site). 서브에이전트(sub-agent)는 비싼 Astra의 두뇌를 아끼려고 조사를 5.6 Terra 모델의 작은 일꾼들에게 위임하는 기능으로, X·YouTube 펄스·X 드라마·오디언스 코멘트 등 5개 에이전트가 병렬로 조사해 보고했다. 예약 작업(scheduled task)은 정해진 시간에 Codex 세션에 프롬프트를 주입하는 것일 뿐이라 같은 파일·스킬·모델·에이전트 루프를 그대로 쓰며, Nate는 실제 돈 1만 달러로 트레이딩하는 7~8개 설정을 예약 작업으로 돌린다. 마지막 음성 모드(voice mode)로는 이 모든 걸 말로 제어할 수 있는데, "썸네일 만드는 새 스레드 시작하고 완성되면 채널 분석 스레드로 보내줘"라고 말하자 워크트리 채팅·에이전트 루프·목표 생성까지 스스로 엮어 썸네일을 다른 스레드로 전달했다.</p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>AI의 기억은 '파일'로 만든다</strong>: 프로젝트 폴더와 agents.md·memory.md·스킬이 결국 AI가 나를 아는 방식이다. 도구가 바뀌어도 로컬 파일은 남기 때문에 Claude Code든 Codex든 옮겨 쓸 수 있는 자산이 된다.</li><li><strong>목표를 주고 물러나는 쪽이 더 잘 된다</strong>: /goal처럼 객관적인 완료 기준을 주면 모델이 막혀도 스스로 우회해 끝낸다. 사사건건 지시하는 마이크로매니징은 똑똑한 모델의 능력을 오히려 가둔다.</li><li><strong>모든 작업에 최고 모델을 쓸 필요는 없다</strong>: 모델·노력 수준·빠른 모드·서브에이전트 모델 지정은 결국 비용 다이얼이다. 이메일은 가벼운 모델, 조사는 저렴한 서브에이전트, 판단은 비싼 모델로 나누는 게 한도를 지키는 법이다.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li>지금 쓰는 AI 도구(ChatGPT 프로젝트, Claude 프로젝트 등)에 "나는 누구고, 무슨 일을 하고, 이렇게 일해줘"를 담은 규칙 메모 한 장을 만들어 프로젝트 지침에 붙여 넣는다.</li><li>매주 반복하는 글쓰기 작업 하나(예: 상담 후기 정리, 블로그 요약)를 골라, 결과가 마음에 들 때 "이 방식을 그대로 다음에도 쓸 수 있게 단계별 지침으로 정리해 줘"라고 요청해 나만의 레시피로 저장한다.</li><li>자동화를 맡기는 업체가 있다면 "어떤 작업에 어떤 모델을 쓰고, 월 사용 한도와 비용은 어떻게 관리하나요?"라고 물어 비싼 모델이 불필요한 작업에 쓰이고 있지 않은지 확인한다.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>업무를 같이 분해하고 4단계 중 지금 위치를 짚어 드려요.</p><span class="go">진단 콜 보기 →</span></a>
+    <a class="cross" href="../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>
