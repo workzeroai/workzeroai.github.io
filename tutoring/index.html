@@ -69,7 +69,12 @@ background:radial-gradient(40% 55% at 18% 55%,#ffd9a8 0,transparent 70%),radial-
 @keyframes drift{from{transform:translateX(-3%)}to{transform:translateX(3%) scale(1.06)}}
 .hero .wrap{position:relative;z-index:1;display:grid;gap:36px}
 .badges{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
-.badge{font-size:12px;font-weight:800;padding:6px 11px;border-radius:99px;background:rgba(255,255,255,.85);border:1px solid var(--hair);color:var(--ink2)}
+.badge{position:relative;font-size:12px;font-weight:800;padding:6px 11px;border-radius:99px;background:rgba(255,255,255,.85);border:1px solid var(--hair);color:var(--ink2)}
+/* 현직 — 브랜드 퍼플, 앞의 점이 "지금 하고 있다"는 표시 */
+.badge.b-now{display:inline-flex;align-items:center;gap:5px;background:var(--primary-pale);border-color:rgba(83,58,253,.22);color:var(--primary-deep)}
+.badge.b-now::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--primary);box-shadow:0 0 0 3px rgba(83,58,253,.14)}
+/* 출신 — 민트. 지난 경력이라 점은 넣지 않는다 */
+.badge.b-past{background:#e7f8f1;border-color:rgba(20,184,122,.24);color:#0e8a5c}
 .hero h1{font-size:34px;line-height:1.28}
 .hero .sub{font-size:17px;margin-top:16px}
 .hero .ctas{display:grid;gap:10px;margin-top:28px}
@@ -113,7 +118,13 @@ background:radial-gradient(40% 55% at 18% 55%,#ffd9a8 0,transparent 70%),radial-
 /* proof */
 .gallery .ph:first-child{grid-column:1/-1;aspect-ratio:16/10}
 .gallery .ph{aspect-ratio:1/1}
-.badge.prime{background:var(--ink);color:#fff;border-color:var(--ink)}
+/* 크몽 Prime — 골드 글자 + 좌→우로 한 번 지나가는 광택.
+   광택은 ::after 가 글자 뒤(z-index 0)를 지나가므로 가독성을 해치지 않는다.
+   한 주기에 26%만 움직이고 나머지는 화면 밖에서 쉬게 해 산만해지지 않도록 했다. */
+.badge.prime{overflow:hidden;background:linear-gradient(145deg,#14110a,#262010 52%,#14110a);border-color:rgba(214,176,94,.42);box-shadow:0 1px 12px -2px rgba(191,149,63,.3)}
+.badge.prime b{position:relative;z-index:1;font-weight:800;color:#e3c377;background:linear-gradient(96deg,#c89a44,#f6e4ab 52%,#c89a44);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.badge.prime::after{content:"";position:absolute;top:0;bottom:0;left:0;width:34%;pointer-events:none;background:linear-gradient(100deg,transparent,rgba(255,249,228,.5),transparent);transform:translateX(-170%);animation:sheen 5.4s var(--ease) infinite}
+@keyframes sheen{0%{transform:translateX(-170%)}26%,100%{transform:translateX(430%)}}
 .prime-card{display:flex;gap:14px;align-items:center;margin-top:28px;padding:18px 20px;border-radius:20px;background:linear-gradient(135deg,#0d253d,#1c1e54);color:#fff}
 .prime-card .pm{flex:none;font:900 13px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.12em;padding:10px 12px;border-radius:10px;background:linear-gradient(135deg,#f5d58a,#e7b24f);color:#3a2a07}
 .prime-card b{font-size:17px}
@@ -212,7 +223,7 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0 110px;b
 .sticky .btn{width:100%}
 
 /* reveal */
-@media (prefers-reduced-motion:reduce){.mesh,.live{animation:none}html{scroll-behavior:auto}}
+@media (prefers-reduced-motion:reduce){.mesh,.live{animation:none}html{scroll-behavior:auto}.badge.prime::after{animation:none;opacity:0}}
 
 /* PC */
 @media (min-width:860px){
@@ -361,9 +372,9 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0 110px;b
   <div class="wrap">
     <div>
       <div class="badges rv">
-        <span class="badge prime">크몽 Prime · 상위 2%</span>
-        <span class="badge">현직 DX 자동화 담당</span>
-        <span class="badge">마케터 출신</span>
+        <span class="badge prime"><b>크몽 Prime · 상위 2%</b></span>
+        <span class="badge b-now">현직 DX 자동화 담당</span>
+        <span class="badge b-past">마케터 출신</span>
       </div>
       <h1 class="rv">AI는 쓰는데,<br>왜 일은 <em class="k">그대로</em>일까요?</h1>
       <p class="sub rv">마케터 출신 자동화 담당자가<br>내 업무 그대로, 1:1로 자동화를 알려드려요.</p>
