@@ -58,7 +58,8 @@ em.k{font-style:normal;color:var(--primary)}
 .logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
 .logo b{color:var(--primary)}
 .seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
-.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute)}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
 .seg a.on{background:var(--ink);color:#fff}
 
 /* hero */
@@ -344,9 +345,10 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0 110px;b
 <nav class="nav">
   <div class="wrap">
     <a class="logo" href="#top">WORK<b>ZERO</b></a>
-    <div class="seg" role="tablist" aria-label="서비스 선택">
+    <div class="seg" role="tablist" aria-label="메뉴">
       <a class="on" href="./" aria-current="page">1:1 과외</a>
       <a href="../build/">제작 문의</a>
+      <a href="../library/">자료실</a>
     </div>
   </div>
 </nav>
@@ -413,7 +415,7 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0 110px;b
         <p class="story">네이버·구글·카카오 광고를 직접 운영하던 퍼포먼스 마케터였어요. 매일 반복되는 리포트를 줄이다가 자동화를 시작했고, 지금은 회사에서 DX 자동화 담당으로 일하면서 크몽에서 자동화 외주를 납품하고 있어요. 그래서 마케터가 어디서 막히는지 알아요.</p>
       </div>
     </div>
-    <div class="prime-card rv"><div class="pm">PRIME</div><div><b>크몽 Prime 선정</span><p>포트폴리오와 고객 평가를 거쳐 상위 2%로 엄선된 우수 서비스예요.</p></div></div>
+    <div class="prime-card rv"><div class="pm">PRIME</div><div><b>크몽 Prime 선정</b><p>포트폴리오와 고객 평가를 거쳐 상위 2%로 엄선된 우수 서비스예요.</p></div></div>
     <div class="careers">
       <div class="career rv"><span class="tag">MARKETING</span><h3>네이버·구글·카카오 광고 운영</h3><p class="cap">이전 · 퍼포먼스 마케터</p><ul><li>검색광고·퍼포먼스 광고 직접 운영</li><li>마케팅 ROI·데이터 분석</li></ul></div>
       <div class="career rv"><span class="tag">AUTOMATION</span><h3>기업 Airtable DB 설계</h3><p class="cap">현재 · 기업 DX 자동화 담당</p><ul><li>기업 데이터베이스 구조 설계·관리</li><li>반복업무 프로세스 자동화 구축</li></ul></div>
@@ -694,7 +696,7 @@ const lvres=document.getElementById('lvres');
 function setLv(i){tabs.forEach((t,k)=>t.classList.toggle('on',k==i));panels.forEach((p,k)=>p.classList.toggle('on',k==i))}
 function showLv(i){
   const v=LV[i];
-  lvres.innerHTML='<b>'+v.n+' — '+v.t+'</span><p>'+v.d+'</p><p style="font-weight:800;color:var(--primary-deep)">'+v.p+'</p><a class="go" href="#contact" data-lv="'+v.key+'">'+v.n+' 과정으로 문의하기 →</a>';
+  lvres.innerHTML='<b>'+v.n+' — '+v.t+'</b><p>'+v.d+'</p><p style="font-weight:800;color:var(--primary-deep)">'+v.p+'</p><a class="go" href="#contact" data-lv="'+v.key+'">'+v.n+' 과정으로 문의하기 →</a>';
   lvres.hidden=false;
   lvres.querySelector('a').addEventListener('click',()=>setFormLevel(v.key));
 }

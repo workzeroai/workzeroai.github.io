@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>워크제로 자료실</title>
+<meta name="description" content="만들면서 쓴 템플릿·체크리스트·실전 가이드를 그대로 둡니다. 매일 자동으로 모으고 정리한 AI 소식도 함께. 전부 무료예요.">
+<link rel="canonical" href="https://workzeroai.github.io/library/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#533afd">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="워크제로 자료실">
+<meta property="og:description" content="만들면서 쓴 템플릿·체크리스트·실전 가이드를 그대로 둡니다. 전부 무료예요.">
+<meta property="og:url" content="https://workzeroai.github.io/library/">
+<meta property="og:image" content="https://workzeroai.github.io/og/library.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="워크제로 자료실">
+<meta name="twitter:description" content="만들면서 쓴 템플릿·체크리스트·실전 가이드를 그대로 둡니다. 전부 무료예요.">
+<meta name="twitter:image" content="https://workzeroai.github.io/og/library.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+:root{--primary:#533afd;--primary-deep:#4434d4;--primary-pale:#eceaff;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f6f9fc;--hair:#e3e8ee;--mint:#14b87a;
+--sh1:0 1px 3px rgba(0,55,112,.08);--sh2:0 15px 35px -10px rgba(50,50,93,.18),0 5px 15px -5px rgba(0,0,0,.08);
+--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+[hidden]{display:none!important}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+section{padding:64px 0;position:relative}
+.eyebrow{display:inline-block;font:800 12px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.12em;color:var(--primary);background:var(--primary-pale);padding:7px 12px;border-radius:99px;margin-bottom:14px}
+h1,h2,h3{letter-spacing:-.03em;font-weight:800;line-height:1.3}
+h2{font-size:28px}
+.sub{color:var(--ink2);font-size:16px;margin-top:12px}
+.card{background:#fff;border:1px solid var(--hair);border-radius:20px;box-shadow:var(--sh1)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:54px;padding:0 24px;border-radius:14px;font-weight:800;font-size:16px;transition:transform .2s var(--ease)}
+.btn:active{transform:scale(.98)}
+.btn.pri{background:var(--primary);color:#fff;box-shadow:0 10px 24px -8px rgba(83,58,253,.6)}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.82);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+
+/* hero */
+.hero{padding:40px 0 34px;overflow:hidden}
+.mesh{position:absolute;left:-30%;right:-30%;top:-40%;height:120%;z-index:0;pointer-events:none;filter:blur(60px);opacity:.55;
+background:radial-gradient(40% 55% at 18% 55%,#ffd9a8 0,transparent 70%),radial-gradient(38% 60% at 42% 40%,#ffb4d8 0,transparent 70%),radial-gradient(40% 60% at 66% 55%,#b9a6ff 0,transparent 70%),radial-gradient(34% 55% at 88% 38%,#7fa9ff 0,transparent 70%)}
+.hero .wrap{position:relative;z-index:1}
+.hero h1{font-size:30px;line-height:1.3}
+.hero .sub{font-size:16px;margin-top:12px}
+
+/* 탭 */
+.lib-tabs{display:grid;grid-template-columns:1fr 1fr;gap:6px;background:var(--soft);padding:5px;border-radius:16px;border:1px solid var(--hair);position:sticky;top:calc(60px + env(safe-area-inset-top,0px));z-index:40}
+.lib-tab{padding:12px 4px;border-radius:12px;font-weight:800;font-size:15px;color:var(--mute);transition:.25s var(--ease)}
+.lib-tab span{font-size:12px;color:#aab6c6;margin-left:4px}
+.lib-tab.on{background:#fff;color:var(--ink);box-shadow:var(--sh1)}
+.lib-tab.on span{color:var(--primary)}
+.lib-pane{display:none;margin-top:24px}
+.lib-pane.on{display:block;animation:fade .4s var(--ease)}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* 필터 칩 */
+.fchips{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:20px}
+.fchip{font-size:13px;font-weight:800;padding:9px 14px;border-radius:99px;border:1px solid var(--hair);background:#fff;color:var(--mute);transition:.2s}
+.fchip.on{background:var(--primary);border-color:var(--primary);color:#fff}
+
+/* 자료 카드 */
+.fgrid{display:grid;gap:14px}
+.fcard{display:flex;flex-direction:column;overflow:hidden}
+.fthumb{aspect-ratio:4/5;background:linear-gradient(140deg,#eceaff,#e2ecff 55%,#ffe6f0);display:grid;place-items:center;padding:22px;text-align:center;position:relative}
+.fthumb img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.fthumb span{font:800 17px/1.4 "Pretendard","Noto Sans KR",sans-serif;color:var(--primary-deep);letter-spacing:-.03em}
+.fbody{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+.fmeta{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:800;color:var(--mute)}
+.fmeta i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.fcard h3{font-size:17px;margin-top:10px}
+.fcard p{font-size:14px;color:var(--ink2);margin-top:6px;flex:1}
+.fbtn{margin-top:16px;height:44px;border-radius:12px;display:grid;place-items:center;font-weight:800;font-size:14px;background:var(--primary);color:#fff}
+.fbtn.soon{background:var(--soft);color:var(--mute);border:1px solid var(--hair);cursor:default}
+
+/* 읽을거리 */
+.paneNote{font-size:14px;color:var(--ink2);background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:14px 16px;margin-bottom:18px}
+.paneNote a{color:var(--primary);font-weight:800}
+.nlist{list-style:none;display:grid;gap:10px}
+.nitem{padding:18px 20px}
+.nitem .nm{font-size:12px;font-weight:800;color:var(--mute)}
+.nitem h3{font-size:16px;margin-top:7px;line-height:1.45}
+.nitem p{font-size:13.5px;color:var(--ink2);margin-top:6px}
+.nitem .soonx{display:inline-block;margin-top:10px;font-size:12px;font-weight:800;color:var(--mute);background:var(--soft);border:1px solid var(--hair);padding:5px 10px;border-radius:99px}
+
+.empty{padding:44px 20px;text-align:center;font-size:14px;color:var(--mute);font-weight:700;background:var(--soft);border:1px dashed var(--hair);border-radius:16px}
+
+/* 하단 3갈래 */
+.soft{background:var(--soft)}
+.crosses{display:grid;gap:12px;margin-top:28px}
+.cross{display:block;padding:24px;border-radius:24px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:10px}
+.cross h3{font-size:18px}
+.cross p{font-size:15px;color:var(--ink2);margin-top:6px}
+.cross .go{display:inline-block;margin-top:14px;font-weight:800;color:var(--primary)}
+
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0;border-top:1px solid rgba(255,255,255,.08)}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.lib-pane.on{animation:none}}
+@media (min-width:640px){.fgrid{grid-template-columns:1fr 1fr}}
+@media (min-width:860px){
+  :root{--gut:32px}
+  section{padding:88px 0}
+  h2{font-size:38px}
+  .hero{padding:64px 0 44px}
+  .hero h1{font-size:44px}
+  .hero .sub{font-size:18px}
+  .fgrid{grid-template-columns:repeat(3,1fr)}
+  .crosses{grid-template-columns:repeat(3,1fr)}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top">WORK<b>ZERO</b></a>
+    <div class="seg" role="tablist" aria-label="메뉴">
+      <a href="../tutoring/">1:1 과외</a>
+      <a href="../build/">제작 문의</a>
+      <a class="on" href="./" aria-current="page">자료실</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+
+<section class="hero">
+  <div class="mesh"></div>
+  <div class="wrap">
+    <span class="eyebrow">LIBRARY</span>
+    <h1>만들면서 쓴 것들을<br>그대로 둡니다</h1>
+    <p class="sub">템플릿 · 체크리스트 · 실전 가이드. 전부 무료예요.</p>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="lib-tabs" role="tablist">
+      <button class="lib-tab on" data-tab="files" role="tab">자료실 <span id="cFiles"></span></button>
+      <button class="lib-tab" data-tab="notes" role="tab">읽을거리 <span id="cNotes"></span></button>
+    </div>
+
+    <div class="lib-pane on" data-pane="files">
+      <div class="fchips" id="chips"></div>
+      <div class="fgrid" id="fgrid"></div>
+      <p class="empty" id="fEmpty" hidden>해당하는 자료가 아직 없어요.</p>
+    </div>
+
+    <div class="lib-pane" data-pane="notes">
+      <p class="paneNote">매일 밤 자동으로 모으고 정리한 AI 소식이에요. <a href="../build/#cases">어떻게 만드는지 보기 →</a></p>
+      <ul class="nlist" id="nlist"></ul>
+      <p class="empty" id="nEmpty" hidden>아직 올라온 글이 없어요.</p>
+    </div>
+  </div>
+</section>
+
+<section class="soft">
+  <div class="wrap">
+    <span class="eyebrow">NEXT</span>
+    <h2>자료만으로<br>부족하다면</h2>
+    <div class="crosses">
+      <a class="cross" href="../tutoring/#level">
+        <span class="tag">배우기</span>
+        <h3>직접 만들고 싶다면</h3>
+        <p>내 업무를 실습 주제로 쓰는 1:1 과외. Claude 기초부터 에이전트까지.</p>
+        <span class="go">직접 배우러 가기 →</span>
+      </a>
+      <a class="cross" href="../tutoring/#pair">
+        <span class="tag">같이 만들기</span>
+        <h3>같이 만들면서 배우고 싶다면</h3>
+        <p>제가 만드는 걸 옆에서 보면서 함께 완성해요. 결과물도, 고치는 법도 남습니다.</p>
+        <span class="go">같이 만드는 법 보기 →</span>
+      </a>
+      <a class="cross" href="../build/#contact">
+        <span class="tag">맡기기</span>
+        <h3>그냥 맡기고 싶다면</h3>
+        <p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게 말씀드려요.</p>
+        <span class="go">그냥 맡기기 →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>String(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let DATA={files:[],notes:[]},tag='전체';
+
+function card(f){
+  const thumb = f.thumb
+    ? `<div class="fthumb"><img src="${esc(f.thumb)}" alt="" loading="lazy"></div>`
+    : `<div class="fthumb"><span>${esc(f.title)}</span></div>`;
+  const btn = f.ready && f.url
+    ? `<a class="fbtn" href="${esc(f.url)}">자료 보기 →</a>`
+    : `<span class="fbtn soon">준비 중</span>`;
+  return `<article class="card fcard">${thumb}<div class="fbody">
+    <div class="fmeta"><i>${esc(f.tag)}</i><span>${esc(f.date)}</span></div>
+    <h3>${esc(f.title)}</h3><p>${esc(f.desc)}</p>${btn}</div></article>`;
+}
+function note(n){
+  const head = n.ready && n.url ? `<a href="${esc(n.url)}">${esc(n.title)}</a>` : esc(n.title);
+  return `<li class="card nitem"><div class="nm">${esc(n.date)}${n.source?' · '+esc(n.source):''}</div>
+    <h3>${head}</h3>${n.summary?`<p>${esc(n.summary)}</p>`:''}
+    ${n.ready&&n.url?'':'<span class="soonx">준비 중</span>'}</li>`;
+}
+function renderFiles(){
+  const list = tag==='전체' ? DATA.files : DATA.files.filter(f=>f.tag===tag);
+  $('#fgrid').innerHTML = list.map(card).join('');
+  $('#fEmpty').hidden = list.length>0;
+}
+function renderChips(){
+  const tags=['전체',...new Set(DATA.files.map(f=>f.tag).filter(Boolean))];
+  $('#chips').innerHTML = tags.map(t=>`<button class="fchip${t===tag?' on':''}" data-t="${esc(t)}">${esc(t)}</button>`).join('');
+  $('#chips').querySelectorAll('.fchip').forEach(b=>b.addEventListener('click',()=>{
+    tag=b.dataset.t; renderChips(); renderFiles();
+  }));
+}
+function setTab(name,push){
+  document.querySelectorAll('.lib-tab').forEach(t=>t.classList.toggle('on',t.dataset.tab===name));
+  document.querySelectorAll('.lib-pane').forEach(p=>p.classList.toggle('on',p.dataset.pane===name));
+  if(push && location.hash!=='#'+name) history.replaceState(null,'','#'+name);
+}
+document.querySelectorAll('.lib-tab').forEach(t=>t.addEventListener('click',()=>setTab(t.dataset.tab,true)));
+
+fetch('items.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw 0;return r.json()}).then(d=>{
+  DATA={files:d.files||[],notes:d.notes||[]};
+  $('#cFiles').textContent=DATA.files.length;
+  $('#cNotes').textContent=DATA.notes.length;
+  renderChips(); renderFiles();
+  $('#nlist').innerHTML=DATA.notes.map(note).join('');
+  $('#nEmpty').hidden=DATA.notes.length>0;
+  if(location.hash==='#notes') setTab('notes',false);
+}).catch(()=>{
+  $('#fEmpty').textContent='자료를 불러오지 못했어요. 잠시 후 다시 열어 주세요.';
+  $('#fEmpty').hidden=false;
+  $('#nEmpty').textContent='자료를 불러오지 못했어요.';
+  $('#nEmpty').hidden=false;
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+{
+ "updated": "2026-10-06",
+ "files": [
+  {
+   "slug": "marketing-plugin",
+   "title": "앤트로픽 Marketing 플러그인",
+   "desc": "Cowork 설치부터 명령 7개 바로 쓰는 요청문까지",
+   "tag": "실전 가이드",
+   "date": "2026-10-05",
+   "thumb": "thumb/marketing-plugin.webp",
+   "url": "",
+   "ready": false
+  },
+  {
+   "slug": "competitor-reel",
+   "title": "클로드로 인스타 계정 분석하기",
+   "desc": "클로드는 인스타 숫자를 못 봐요. Apify MCP로 연결하는 법",
+   "tag": "실전 가이드",
+   "date": "2026-10-06",
+   "thumb": "",
+   "url": "",
+   "ready": false
+  },
+  {
+   "slug": "marketer-toolkit-5",
+   "title": "클로드 쓰는 마케터 필살템 5개",
+   "desc": "기획부터 영상까지, 깔아두면 바로 쓰는 것들",
+   "tag": "템플릿",
+   "date": "2026-10-04",
+   "thumb": "thumb/marketer-toolkit-5.webp",
+   "url": "",
+   "ready": false
+  },
+  {
+   "slug": "claude-design-3",
+   "title": "클로드로 디자인할 때 설치할 3가지",
+   "desc": "설치 순서와 바로 쓰는 프롬프트",
+   "tag": "실전 가이드",
+   "date": "2026-10-03",
+   "thumb": "thumb/claude-design-3.webp",
+   "url": "",
+   "ready": false
+  },
+  {
+   "slug": "meta-ai-instagram",
+   "title": "마케터용 Meta AI 인스타 분석",
+   "desc": "연결 방법 + 바로 쓰는 프롬프트 12개",
+   "tag": "템플릿",
+   "date": "2026-09-28",
+   "thumb": "thumb/meta-ai-instagram.webp",
+   "url": "",
+   "ready": false
+  },
+  {
+   "slug": "chatgpt-notion",
+   "title": "AI 답변이 뻔하다면 내 노션부터",
+   "desc": "커넥터로 내 자료를 읽게 만드는 순서",
+   "tag": "실전 가이드",
+   "date": "2026-09-19",
+   "thumb": "thumb/chatgpt-notion.webp",
+   "url": "",
+   "ready": false
+  }
+ ],
+ "notes": [
+  {
+   "title": "I Built Another Andrej Karpathy Using Claude",
+   "source": "Nate Herk | AI Automation",
+   "date": "2026-10-05",
+   "summary": "",
+   "url": "",
+   "ready": false
+  },
+  {
+   "title": "I Tested ChatGPT's New Business Platform. Should You Switch?",
+   "source": "Liam Ottley",
+   "date": "2026-10-05",
+   "summary": "",
+   "url": "",
+   "ready": false
+  },
+  {
+   "title": "Is AI Automation Still Worth It in 2027?",
+   "source": "Nick Saraev",
+   "date": "2026-10-05",
+   "summary": "",
+   "url": "",
+   "ready": false
+  },
+  {
+   "title": "i promise you, setting up AIOS can blow up your business!",
+   "source": "Nick Puru",
+   "date": "2026-10-04",
+   "summary": "",
+   "url": "",
+   "ready": false
+  },
+  {
+   "title": "Every Codex Concept Explained for Non-Coders",
+   "source": "Nate Herk | AI Automation",
+   "date": "2026-10-03",
+   "summary": "",
+   "url": "",
+   "ready": false
+  },
+  {
+   "title": "How I Learn Complex Skills & Difficult Subjects So Fast with AI",
+   "source": "Nick Saraev",
+   "date": "2026-10-03",
+   "summary": "",
+   "url": "",
+   "ready": false
+  },
+  {
+   "title": "Claude Opus 5.5 Just Changed Design Forever (5 Insane Use Cases)",
+   "source": "Ben AI",
+   "date": "2026-10-02",
+   "summary": "",
+   "url": "",
+   "ready": false
+  },
+  {
+   "title": "OpenAI engineers just showed how they prompt GPT-6 Astra...",
+   "source": "Nick Puru",
+   "date": "2026-10-02",
+   "summary": "",
+   "url": "",
+   "ready": false
+  },
+  {
+   "title": "I Tested Codex's $500/mo Ultrafast. What You Need to Know.",
+   "source": "Nate Herk | AI Automation",
+   "date": "2026-10-01",
+   "summary": "",
+   "url": "",
+   "ready": false
+  },
+  {
+   "title": "Claude Code Killed My Business in 6 Months",
+   "source": "Eugene Kadzina",
+   "date": "2026-10-01",
+   "summary": "",
+   "url": "",
+   "ready": false
+  },
+  {
+   "title": "GPT-6-Astra on The New ULTRAFAST $500 Plan Is Scary...",
+   "source": "Nick Saraev",
+   "date": "2026-09-30",
+   "summary": "",
+   "url": "",
+   "ready": false
+  },
+  {
+   "title": "with no doubt, grokbot is the clear winner…",
+   "source": "Nick Puru",
+   "date": "2026-09-30",
+   "summary": "",
+   "url": "",
+   "ready": false
+  }
+ ]
+}

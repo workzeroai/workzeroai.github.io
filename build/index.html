@@ -58,7 +58,8 @@ em.k{font-style:normal;color:var(--primary)}
 .logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
 .logo b{color:var(--primary)}
 .seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
-.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute)}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
 .seg a.on{background:var(--ink);color:#fff}
 
 /* hero */
@@ -429,9 +430,10 @@ a.prime-card{color:#fff}
 <nav class="nav">
   <div class="wrap">
     <a class="logo" href="#top">WORK<b>ZERO</b></a>
-    <div class="seg" role="tablist" aria-label="서비스 선택">
+    <div class="seg" role="tablist" aria-label="메뉴">
       <a href="../tutoring/">1:1 과외</a>
       <a class="on" href="./" aria-current="page">제작 문의</a>
+      <a href="../library/">자료실</a>
     </div>
   </div>
 </nav>
@@ -685,7 +687,7 @@ a.prime-card{color:#fff}
   <div class="wrap">
     <span class="eyebrow">TRUST</span>
     <h2>크몽 Prime 전문가예요</h2>
-    <a class="prime-card" href="https://kmong.com/gig/687654" target="_blank" rel="noopener"><div class="pm">PRIME</div><div><b>크몽 Prime 선정</span><p>포트폴리오와 고객 평가를 거쳐 상위 2%로 엄선된 우수 서비스예요. 크몽에서 보기 →</p></div></a>
+    <a class="prime-card" href="https://kmong.com/gig/687654" target="_blank" rel="noopener"><div class="pm">PRIME</div><div><b>크몽 Prime 선정</b><p>포트폴리오와 고객 평가를 거쳐 상위 2%로 엄선된 우수 서비스예요. 크몽에서 보기 →</p></div></a>
     <div class="reviews">
       <div class="card review"><div class="ph">크몽 리뷰 캡처 1</div><p>"리뷰 핵심 한 문장이 들어갈 자리예요."</p><span class="cap">크몽 구매 고객</span></div>
       <div class="card review"><div class="ph">크몽 리뷰 캡처 2</div><p>"리뷰 핵심 한 문장이 들어갈 자리예요."</p><span class="cap">크몽 구매 고객</span></div>
@@ -722,13 +724,13 @@ a.prime-card{color:#fff}
     <span class="eyebrow">PROCESS</span>
     <h2>진행 과정</h2>
     <ol class="timeline">
-      <li><b>문의</span><p>양식을 복사해서 DM이나 오픈채팅으로 보내요</p></li>
-      <li><b>무료 상담</span><p>데이터가 어디서 들어오고 어디로 나가야 하는지 같이 확인해요</p></li>
-      <li><b>범위·견적</span><p>순서가 안 잡혔으면 진단 콜을, 범위가 명확하면 바로 견적을 드려요</p></li>
-      <li><b>결제</span><p>결제 링크를 보내드려요. 카드 결제도 돼요</p></li>
-      <li><b>구축</span><p>계정 연동, 테스트, 예외 처리까지 진행해요</p></li>
-      <li><b>시연·인수인계</span><p>화상으로 보여드리고 운영 매뉴얼을 드려요</p></li>
-      <li><b>지원 기간</span><p>납품 후 2주 동안 오류를 무상으로 대응해요</p></li>
+      <li><b>문의</b><p>양식을 복사해서 DM이나 오픈채팅으로 보내요</p></li>
+      <li><b>무료 상담</b><p>데이터가 어디서 들어오고 어디로 나가야 하는지 같이 확인해요</p></li>
+      <li><b>범위·견적</b><p>순서가 안 잡혔으면 진단 콜을, 범위가 명확하면 바로 견적을 드려요</p></li>
+      <li><b>결제</b><p>결제 링크를 보내드려요. 카드 결제도 돼요</p></li>
+      <li><b>구축</b><p>계정 연동, 테스트, 예외 처리까지 진행해요</p></li>
+      <li><b>시연·인수인계</b><p>화상으로 보여드리고 운영 매뉴얼을 드려요</p></li>
+      <li><b>지원 기간</b><p>납품 후 2주 동안 오류를 무상으로 대응해요</p></li>
     </ol>
     <div class="diag">
       <h3>될지 모르는 일은 작게 먼저</h3>
@@ -984,7 +986,7 @@ function showRes(){
   else if(shape==='0'){t='STEP 2 · 업무 자동화';p='순서가 늘 같은 일이라면 에이전트까지 갈 필요가 없어요. n8n으로 연결하는 쪽이 더 싸고 더 안정적입니다.';}
   else{t='STEP 3 · AI 에이전트';p='자료를 읽고 그때그때 골라내야 하는 업무라서 에이전트가 맞아요. 에이전트가 추려서 올리면 보고 고르기만 하시면 돼요.'+(data==='1'?' 다만 자료가 흩어져 있으니, 진단에서 먼저 정리가 필요한지 같이 확인해요.':'');}
   if(owner==='0')p+=' 그리고 결과를 승인할 사람이 정해져 있어야 해요. 상담에서 그 부분부터 같이 정합니다.';
-  qres.innerHTML='<b>'+t+'</span><p>'+p+'</p><p class="qsub">정확한 순서와 할 일은 아래 진단 콜에서 문서로 정리해 드려요.</p><a class="go" href="#contact">이 결과 그대로 보내기 →</a>';
+  qres.innerHTML='<b>'+t+'</b><p>'+p+'</p><p class="qsub">정확한 순서와 할 일은 아래 진단 콜에서 문서로 정리해 드려요.</p><a class="go" href="#contact">이 결과 그대로 보내기 →</a>';
   qres.hidden=false;
 }
 
