@@ -96,6 +96,18 @@ background:radial-gradient(40% 55% at 18% 55%,#ffd9a8 0,transparent 70%),radial-
 .paneNote{font-size:14px;color:var(--ink2);background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:14px 16px;margin-bottom:18px}
 .paneNote a{color:var(--primary);font-weight:800}
 .paneNote b{display:block;font-size:12.5px;font-weight:800;color:var(--primary-deep);margin-bottom:5px}
+/* 글이 127편이라 주제 칩만으로는 못 찾는다. 검색 + 채널(11개라 칩 대신 드롭다운)을 더했다. */
+.nfilt{display:grid;grid-template-columns:1fr;gap:9px;margin-bottom:12px}
+@media (min-width:620px){.nfilt{grid-template-columns:1fr 230px}}
+#nq,#nch{width:100%;height:46px;border:1px solid var(--hair);border-radius:12px;background-color:#fff;font:700 14px/1 inherit;font-family:inherit;color:var(--ink);-webkit-appearance:none;appearance:none}
+#nq{padding:0 14px 0 40px;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748d' stroke-width='2.4' stroke-linecap='round'><circle cx='11' cy='11' r='7'/><path d='M20 20l-3.6-3.6'/></svg>");background-repeat:no-repeat;background-position:left 14px center;background-size:17px}
+#nq::placeholder{color:var(--mute);font-weight:600}
+#nch{padding:0 38px 0 14px;color:var(--ink2);background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748d' stroke-width='2.6' stroke-linecap='round'><path d='M6 9l6 6 6-6'/></svg>");background-repeat:no-repeat;background-position:right 12px center;background-size:18px}
+#nq:focus,#nch:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(83,58,253,.12)}
+.nres{display:flex;align-items:center;gap:10px;margin:0 0 14px;font-size:13px;font-weight:700;color:var(--mute)}
+.nres:empty{display:none}
+.nres b{color:var(--primary-deep)}
+.nres button{font:800 12.5px/1 inherit;font-family:inherit;color:var(--primary);text-decoration:underline;background:none;border:0;padding:0;cursor:pointer}
 .nlist{list-style:none;display:grid;gap:14px}
 .nmore{margin-top:20px;display:grid;place-items:center}
 .nmoreBtn{min-width:200px;height:48px;padding:0 22px;border-radius:99px;border:1px solid var(--hair);background:#fff;color:var(--ink2);font-weight:800;font-size:14px;box-shadow:var(--sh1);transition:.2s}
@@ -187,7 +199,12 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0;border-
 
     <div class="lib-pane" data-pane="notes">
       <p class="paneNote"><b id="nUpd"></b>매일 밤 자동으로 모으고 정리한 AI 소식이에요. <a href="../build/#cases">어떻게 만드는지 보기 →</a></p>
+      <div class="nfilt">
+        <input id="nq" type="search" placeholder="제목·내용으로 검색" autocomplete="off" aria-label="글 검색">
+        <select id="nch" aria-label="채널 선택"></select>
+      </div>
       <div class="fchips" id="nchips"></div>
+      <p class="nres" id="nres"></p>
       <ul class="nlist" id="nlist"></ul>
       <div class="nmore" id="nmoreWrap" hidden><button class="nmoreBtn" id="nmore" type="button"></button></div>
       <p class="empty" id="nEmpty" hidden>아직 올라온 글이 없어요.</p>
@@ -263,17 +280,45 @@ function note(n){
     <h3>${esc(n.title)}</h3>${n.summary?`<p>${esc(n.summary)}</p>`:''}${keys}
     <div class="ngo">읽어보기 →</div></div></a></li>`;
 }
-let ntag='전체';
+let ntag='전체', nch='전체', nq='';
 // 글이 100편을 넘어 한 번에 다 그리면 썸네일까지 전부 받아 느려진다. 12편씩 끊어 보여준다.
 const NPAGE = 12;
 let nshown = NPAGE;
+// 주제·채널·검색어를 모두 만족하는 것만 남긴다. 검색은 번역 전 원제까지 훑는다
+// (영어 제목으로 기억하고 찾는 경우가 있다).
 function notesFor(){
-  return ntag==='전체' ? DATA.notes : DATA.notes.filter(n=>(n.topic||'AI 소식')===ntag);
+  const q = nq.trim().toLowerCase();
+  return DATA.notes.filter(n=>{
+    if(ntag!=='전체' && (n.topic||'AI 소식')!==ntag) return false;
+    if(nch!=='전체' && (n.source||'')!==nch) return false;
+    if(!q) return true;
+    return [n.title,n.title_orig,n.summary,n.source,(n.points||[]).join(' ')]
+      .join(' ').toLowerCase().includes(q);
+  });
+}
+function filtersOn(){ return ntag!=='전체' || nch!=='전체' || !!nq.trim(); }
+function resetFilters(){
+  ntag='전체'; nch='전체'; nq=''; nshown=NPAGE;
+  $('#nq').value=''; $('#nch').value='전체';
+  renderNChips(); renderNotes();
+}
+// 채널 목록은 글 수가 많은 순으로. 각 항목에 편수를 적어 어디에 글이 몰려 있는지 바로 보이게 한다.
+function renderNChannels(){
+  const c={};
+  DATA.notes.forEach(n=>{ const k=n.source||'기타'; c[k]=(c[k]||0)+1; });
+  const opts=Object.entries(c).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]));
+  $('#nch').innerHTML = `<option value="전체">채널 전체 (${DATA.notes.length})</option>`
+    + opts.map(([k,v])=>`<option value="${esc(k)}">${esc(k)} (${v})</option>`).join('');
 }
 function renderNotes(){
   const list = notesFor();
   $('#nlist').innerHTML = list.slice(0, nshown).map(note).join('');
   $('#nEmpty').hidden = list.length>0;
+  $('#nEmpty').textContent = filtersOn()
+    ? '조건에 맞는 글이 없어요. 필터를 줄여 보세요.' : '아직 올라온 글이 없어요.';
+  $('#nres').innerHTML = filtersOn()
+    ? `전체 ${DATA.notes.length}편 중 <b>${list.length}편</b>`
+      + `<button type="button" id="nreset">필터 초기화</button>` : '';
   const rest = Math.max(0, list.length - nshown);
   $('#nmoreWrap').hidden = rest === 0;
   $('#nmore').textContent = '더 보기 (' + rest + '편 남음)';
@@ -311,13 +356,17 @@ function setTab(name,push){
 document.querySelectorAll('.lib-tab').forEach(t=>t.addEventListener('click',()=>setTab(t.dataset.tab,true)));
 
 $('#nmore').addEventListener('click',()=>{ nshown += NPAGE; renderNotes(); });
+$('#nq').addEventListener('input',e=>{ nq=e.target.value; nshown=NPAGE; renderNotes(); });
+$('#nch').addEventListener('change',e=>{ nch=e.target.value; nshown=NPAGE; renderNotes(); });
+// 초기화 버튼은 매번 다시 그려지므로 부모에 한 번만 건다.
+$('#nres').addEventListener('click',e=>{ if(e.target.id==='nreset') resetFilters(); });
 
 fetch('items.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw 0;return r.json()}).then(d=>{
   DATA={files:d.files||[],notes:d.notes||[]};
   $('#cFiles').textContent=DATA.files.length;
   $('#cNotes').textContent=DATA.notes.length;
   renderChips(); renderFiles();
-  updStamp(); renderNChips(); renderNotes();
+  updStamp(); renderNChannels(); renderNChips(); renderNotes();
   if(location.hash==='#notes') setTab('notes',false);
 }).catch(()=>{
   $('#fEmpty').textContent='자료를 불러오지 못했어요. 잠시 후 다시 열어 주세요.';

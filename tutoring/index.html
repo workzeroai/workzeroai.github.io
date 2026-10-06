@@ -70,11 +70,12 @@ background:radial-gradient(40% 55% at 18% 55%,#ffd9a8 0,transparent 70%),radial-
 .hero .wrap{position:relative;z-index:1;display:grid;gap:36px}
 .badges{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
 .badge{position:relative;font-size:12px;font-weight:800;padding:6px 11px;border-radius:99px;background:rgba(255,255,255,.85);border:1px solid var(--hair);color:var(--ink2)}
-/* 현직 — 브랜드 퍼플, 앞의 점이 "지금 하고 있다"는 표시 */
-.badge.b-now{display:inline-flex;align-items:center;gap:5px;background:var(--primary-pale);border-color:rgba(83,58,253,.22);color:var(--primary-deep)}
-.badge.b-now::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--primary);box-shadow:0 0 0 3px rgba(83,58,253,.14)}
-/* 출신 — 민트. 지난 경력이라 점은 넣지 않는다 */
-.badge.b-past{background:#e7f8f1;border-color:rgba(20,184,122,.24);color:#0e8a5c}
+/* 경력 한 줄. 알약을 세 개 늘어놓으면 390px 에서 하나만 줄바꿈되고 색도 서로 경쟁한다.
+   골드 배지만 알약으로 남기고 나머지는 조용한 텍스트로 내렸다. */
+.creds{display:flex;align-items:center;gap:8px;margin:-6px 0 18px;font-size:12.5px;font-weight:700;color:var(--mute);letter-spacing:-.01em;white-space:nowrap}
+.creds i{flex:none;width:3px;height:3px;border-radius:50%;background:#c6cfdb}
+.creds em{display:inline-flex;align-items:center;gap:6px;font-style:normal;font-weight:800;color:var(--ink2)}
+.creds em::before{content:"";flex:none;width:5px;height:5px;border-radius:50%;background:var(--primary);box-shadow:0 0 0 3px rgba(83,58,253,.14)}
 .hero h1{font-size:34px;line-height:1.28}
 .hero .sub{font-size:17px;margin-top:16px}
 .hero .ctas{display:grid;gap:10px;margin-top:28px}
@@ -373,9 +374,8 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0 110px;b
     <div>
       <div class="badges rv">
         <span class="badge prime"><b>크몽 Prime · 상위 2%</b></span>
-        <span class="badge b-now">현직 DX 자동화 담당</span>
-        <span class="badge b-past">마케터 출신</span>
       </div>
+      <p class="creds rv">마케터 출신<i></i><em>현직 DX 자동화 담당</em></p>
       <h1 class="rv">AI는 쓰는데,<br>왜 일은 <em class="k">그대로</em>일까요?</h1>
       <p class="sub rv">마케터 출신 자동화 담당자가<br>내 업무 그대로, 1:1로 자동화를 알려드려요.</p>
       <div class="ctas rv">
