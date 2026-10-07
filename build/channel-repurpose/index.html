@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>글 쓰는 시간보다 옮기는 시간이 더 걸린다면 · 워크제로 제작 문의</title>
-<meta name="description" content="한 번 쓴 글을 채널마다 다시 쓰는 일을 넘깁니다. 주 3회 발행 기준 월 16~21시간을 돌려받습니다.">
+<title>이 자동화는 실제로 이렇게 만들어집니다 · 워크제로 제작 문의</title>
+<meta name="description" content="원문 하나를 채널별 초안으로 바꿔 예약 대기열에 넣는 시스템. 어떤 도구로 무엇을 하는지, 고객이 보는 화면은 무엇인지 전부 공개합니다.">
 <link rel="canonical" href="https://workzeroai.github.io/build/channel-repurpose/">
 <link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
@@ -12,13 +12,13 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="워크제로">
 <meta property="og:locale" content="ko_KR">
-<meta property="og:title" content="글 쓰는 시간보다 옮기는 시간이 더 걸린다면">
-<meta property="og:description" content="한 번 쓴 글을 채널마다 다시 쓰는 일을 넘깁니다. 주 3회 발행 기준 월 16~21시간을 돌려받습니다.">
+<meta property="og:title" content="이 자동화는 실제로 이렇게 만들어집니다">
+<meta property="og:description" content="원문 하나를 채널별 초안으로 바꿔 예약 대기열에 넣는 시스템. 어떤 도구로 무엇을 하는지, 고객이 보는 화면은 무엇인지 전부 공개합니다.">
 <meta property="og:url" content="https://workzeroai.github.io/build/channel-repurpose/">
 <meta property="og:image" content="https://workzeroai.github.io/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="글 쓰는 시간보다 옮기는 시간이 더 걸린다면">
-<meta name="twitter:description" content="한 번 쓴 글을 채널마다 다시 쓰는 일을 넘깁니다. 주 3회 발행 기준 월 16~21시간을 돌려받습니다.">
+<meta name="twitter:title" content="이 자동화는 실제로 이렇게 만들어집니다">
+<meta name="twitter:description" content="원문 하나를 채널별 초안으로 바꿔 예약 대기열에 넣는 시스템. 어떤 도구로 무엇을 하는지, 고객이 보는 화면은 무엇인지 전부 공개합니다.">
 <meta name="twitter:image" content="https://workzeroai.github.io/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
@@ -185,6 +185,32 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
 .asr li::before{content:"";position:absolute;left:19px;top:25px;width:11px;height:6px;border:2.4px solid #0f9b6c;border-top:0;border-right:0;transform:rotate(-45deg)}
 .asr b{display:block;font-size:15px;color:#0b4f38;margin-bottom:4px}
 .asr p{font-size:14px;color:#13624a;margin:0}
+.stk{display:grid;gap:11px;margin:16px 0}
+.stkr{padding:18px 20px;border-radius:16px;background:#fff;border:1px solid var(--hair)}
+.stkh{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:8px}
+.stkh b{font:900 17px/1.2 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.stkh i{font-style:normal;font:800 12px/1 "Pretendard","Noto Sans KR",sans-serif;color:var(--primary-deep);background:var(--primary-pale);padding:6px 10px;border-radius:99px}
+.stkr p{font-size:14.5px;color:var(--ink2);margin:0}
+.faq2{display:grid;gap:8px;margin:16px 0}
+.faq2 details{border:1px solid var(--hair);border-radius:14px;background:#fff}
+.faq2 summary{list-style:none;padding:17px 46px 17px 18px;font-weight:800;font-size:15px;position:relative;cursor:pointer}
+.faq2 summary::-webkit-details-marker{display:none}
+.faq2 summary::after{content:"+";position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:21px;color:var(--primary)}
+.faq2 details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+.faq2 p{padding:0 18px 18px;font-size:14.5px;color:var(--ink2);margin:0}
+.prep{display:grid;gap:12px;margin:16px 0}
+.prep>div{padding:19px 21px;border-radius:16px;border:1px solid var(--hair);background:#fff}
+.prep h4{font:800 13px/1 "Pretendard","Noto Sans KR",sans-serif;color:var(--mute);margin-bottom:12px;letter-spacing:.06em}
+.prep ul{list-style:none;display:grid;gap:8px;margin:0;padding:0}
+.prep li{padding-left:24px;position:relative;font-size:14.5px;color:var(--ink2)}
+.prep li::before{content:"";position:absolute;left:3px;top:8px;width:8px;height:8px;border-radius:50%;background:var(--primary-pale);border:2px solid var(--primary)}
+.cost{margin:16px 0;padding:20px;border-radius:16px;background:#fff;border:1px solid var(--hair)}
+.costr{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--hair);font-size:14.5px}
+.costr:last-of-type{border-bottom:0}
+.costr span{color:var(--ink2)}
+.costr b{font-weight:800;white-space:nowrap}
+.costt{margin-top:14px;padding-top:14px;border-top:2px solid var(--primary-pale);font-size:15px;color:var(--primary-deep);font-weight:700}
+@media(min-width:720px){.prep{grid-template-columns:1fr 1fr}}
 .guard{margin:18px 0;padding:22px;border-radius:18px;background:var(--soft);border:1px solid var(--hair)}
 .guard p{font-size:15px;color:var(--ink2)}
 .gorigin{margin-top:16px;padding-top:14px;border-top:1px solid var(--hair);font-size:13px;color:var(--mute);font-style:italic}
@@ -197,36 +223,35 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
   <div class="seg" role="tablist" aria-label="메뉴"><a href="../../tutoring/">1:1 과외</a><a class="on" href="../../build/" aria-current="page">제작 문의</a><a href="../../library/">자료실</a></div></div></nav>
 <main>
 <div class="rd"><a class="back" href="../../build/#agents">← 만드는 것들</a>
-  <div class="head"><div class="m"><span class="rbadge live"><i></i>같은 구조로 4개월째 운영 중</span><span class="rkind">자동화로 만드는 것</span></div><h1>글 쓰는 시간보다 옮기는 시간이 더 걸린다면</h1></div>
+  <div class="head"><div class="m"><span class="rbadge live"><i></i>같은 스택으로 크몽에서 판매 중</span><span class="rkind">자동화로 만드는 것</span></div><h1>이 자동화는 실제로 이렇게 만들어집니다</h1></div>
   
   <div class="bd">
-<p>글 하나 쓰는 데 2시간. 그걸 Threads용으로 자르고, 인스타용으로 줄이고, 링크드인용으로 고쳐 쓰는 데 <strong>또 1시간 40분</strong>.</p>
-<p>만드는 시간이 아니라 <strong>만든 걸 옮기는 시간</strong>입니다. 그리고 이 시간은 늘 뒤로 밀려요. 안 급하니까요. 그래서 공들여 쓴 글이 결국 한 채널에만 올라가고 끝납니다.</p>
-<p>이 1시간 40분을 <strong>10분으로 줄입니다.</strong> 읽고, 고치고, 발행 버튼 누르는 시간만 남겨요.</p>
-<h2>무엇이 달라지나</h2>
-<ul class="ben"><li><b>옮기는 시간이 1/10로 줄어듭니다</b><p>주 3회·채널 3개로 발행한다면 <strong>월 16~21시간</strong>을 돌려받습니다. 아래에 계산 전제를 적어뒀어요. 숫자가 다르면 그 숫자로 다시 계산하시면 됩니다. 월 16~21시간이면 <strong>글을 하나 더 쓰거나, 미뤄둔 채널 하나를 더 여는 데</strong> 쓸 수 있는 시간이에요.</p></li><li><b>한 번 쓴 글이 3개 채널로 나갑니다</b><p>시간이 없어서 한 채널에만 올리고 끝나던 글이 전부 나갑니다. 글을 더 쓰지 않고 <strong>노출 기회만 채널 수만큼</strong> 늘어나요.</p></li><li><b>채널마다 모양이 흔들리지 않습니다</b><p>카드를 몇 개로 자를지, 한 장에 몇 자를 담을지, 줄바꿈을 어디서 할지가 규칙으로 고정됩니다. 사람이 그때그때 감으로 자르면 글마다 모양이 달라지고, 그게 쌓이면 브랜드가 흐려져요.</p></li></ul>
-<h2>얼마나 줄어드나</h2>
-<div class="sv"><div class="svassume"><span>주 3회 발행</span><span>채널 3개 (Threads·인스타그램·링크드인)</span><span>채널당 변환·예약 30~40분</span></div><div class="svrows"><div class="svr now"><span>지금 옮기는 데</span><b>월 18~24시간</b></div><div class="svr nxt"><span>바뀐 뒤</span><b>월 2~3시간</b></div><div class="svr win"><span>돌려받는 시간</span><b>월 16~21시간</b></div></div><p class="svnote">전제를 넣고 계산한 <strong>추정</strong>이에요. 담당자 시급을 3만 원으로 환산하면 월 48~63만 원어치입니다. 발행 횟수나 채널 수가 다르면 상담 때 그 숫자로 같이 계산해 드려요.</p></div>
-<h2>하루가 이렇게 바뀝니다</h2>
-<div class="ba2"><div class="now"><h4>지금</h4><ol class="tl"><li><span>원문을 쓰고 승인합니다</span></li><li><span>Threads용으로 문단을 자르고 길이를 줄이고 줄바꿈을 다시 넣습니다</span><i>30~40분</i></li><li><span>인스타용으로 다시 줄이고 해시태그를 붙입니다</span><i>30~40분</i></li><li><span>링크드인용으로 톤을 바꿔 다시 씁니다</span><i>30~40분</i></li><li><span>채널마다 예약 화면에 들어가 하나씩 시간을 지정합니다</span><i>10분</i></li><li><span>어느 글이 어디 올라갔는지 따로 적어 둡니다</span><i>5분</i></li></ol></div><div class="nxt"><h4>바뀌면</h4><ol class="tl"><li><span>원문을 쓰고 승인합니다</span></li><li><span>채널별 초안이 예약 대기열에 들어가 있습니다</span><i>자동</i></li><li><span>초안을 읽고 고칩니다</span><i>10분</i></li><li><span>발행 버튼을 누릅니다</span></li><li><span>무엇이 어디에 몇 시에 올라갔는지 기록이 남습니다</span><i>자동</i></li></ol></div></div>
-<h2>어떻게 만드나</h2>
-<ul class="flow"><li><div><b>원문이 승인되면 시작</b><p>'승인' 상태가 트리거입니다. 매일 정해진 시각으로 걸 수도 있어요.</p></div></li><li><div><b>채널 규칙으로 다시 쓰기</b><p>글자 수 한도, 카드 분할 개수, 줄바꿈 단위, 링크 위치가 전부 규칙입니다. 이 규칙은 기존에 잘 나간 글에서 역산해 만듭니다.</p></div></li><li><div><b>내보내기 전에 검사</b><p>글자 수 초과, 빈 카드, 깨진 링크를 확인합니다. 하나라도 걸리면 초안을 만들지 않고 멈춥니다.</p></div></li><li><div><b>예약 대기열에 초안으로 적재</b><p>날짜·시간은 지정하되 <strong>발행 상태로 바꾸지 않습니다.</strong> 발행 버튼은 끝까지 사람이 누릅니다.</p></div></li><li><div><b>기록 남기기</b><p>어떤 원문이 어느 채널에 언제 들어갔는지 한 줄 남깁니다. 이게 다음 달 '뭐가 잘 나갔나'의 재료가 돼요.</p></div></li></ul>
-<p><span class="rtools">원문 → Threads · 인스타그램 · 링크드인 초안</span></p>
-<h2>왜 이렇게 만드나</h2>
-<p class="whyc">자동화를 만들 줄 아는 곳은 많아요. 제가 다르게 하는 건 세 가지입니다.</p>
-<ul class="why"><li><b>만들어 본 사람이 아니라, 매일 돌리는 사람입니다</b><p>대부분은 납품하고 끝납니다. 저는 같은 구조를 제 콘텐츠 파이프라인에서 <strong>4개월째 매일</strong> 돌려요. 그래서 '만들 때 생기는 문제'가 아니라 <strong>'석 달 뒤에 생기는 문제'</strong>를 압니다. 플랫폼이 정책을 바꾸거나, 아무도 안 보는 사이에 멈추거나 하는 것들이요.</p></li><li><b>마케팅 업무를 아는 사람이 만듭니다</b><p>마케터 출신이고 지금도 DX 자동화를 담당하고 있어요. '왜 이 수치를 이 주기로 봐야 하는지', '이 글이 왜 이 채널에선 안 먹히는지'를 <strong>설명하지 않으셔도 됩니다.</strong> 업무 용어로 바로 이야기할 수 있어요.</p></li><li><b>멈춘 걸 아는 구조까지 같이 드립니다</b><p>자동화는 만드는 것보다 <strong>멈춘 걸 아는 게</strong> 어렵습니다. 그런데 이걸 만들어 주는 곳은 드물어요. 납품할 때 '이게 멈추면 어떻게 아는지'를 같이 보여드리고 넘깁니다.</p></li></ul>
-<h2>정말 되나요?</h2>
-<div class="proof"><p>이 구조는 제 콘텐츠 파이프라인에서 <strong>4개월째 사람 손 없이</strong> 돌고 있습니다. 보여드릴 수 있는 건 남의 사례가 아니라 매일 돌아가는 제 것입니다.</p><ul><li>16개 채널에서 새 글을 감지해 <strong>132편</strong>을 자동 생성, <strong>129편</strong>을 공개했습니다</li><li>매일 00:00 감지 → 00:30 변환·게시 → 07:00 발송까지 무인으로 이어집니다</li><li>같은 변환·적재 구조를 Threads 타래글에 적용했고, 카드 분할·줄바꿈 규칙도 거기서 다듬은 것입니다</li></ul></div>
+<p>자동화를 맡길 때 가장 불안한 건 <strong>안이 안 보인다는 것</strong>입니다. 뭘 만드는지 모르는 채로 돈을 내고, 받고 나서도 어떻게 돌아가는지 모르죠.</p>
+<p>그래서 이 페이지는 <strong>만드는 과정을 그대로 공개</strong>합니다. 어떤 도구를 왜 쓰는지, 고객님이 실제로 보게 될 화면은 무엇인지, 월 운영비는 얼마인지까지요.</p>
+<p>개발을 모르셔도 읽으실 수 있게 썼습니다.</p>
+<h2>무슨 도구로 만드나</h2>
+<p class="rvnote">쓰는 도구는 다섯 개입니다. 각각이 무슨 일을 하는지 먼저 보세요.</p>
+<div class="stk"><div class="stkr"><div class="stkh"><b>n8n</b><i>작업 순서를 실행</i></div><p>작업 순서를 블록으로 그려두면 그대로 실행하는 프로그램이에요. <strong>엑셀 매크로의 인터넷 버전</strong>이라고 보시면 됩니다. '원문이 들어오면 → 글자 수를 세고 → 채널별로 바꾸고 → 예약함에 넣어라'를 그림으로 그려둡니다.</p></div><div class="stkr"><div class="stkh"><b>Airtable</b><i>고객님이 보는 화면</i></div><p>엑셀처럼 생겼지만 버튼·상태·알림이 붙는 데이터베이스예요. <strong>실제로 만지시는 화면이 여기 하나뿐</strong>입니다. 초안을 읽고, 고치고, 발행 시간을 정하는 곳이에요.</p></div><div class="stkr"><div class="stkh"><b>OpenAI API</b><i>채널별로 바꿔 쓰기</i></div><p>ChatGPT를 사람이 아니라 <strong>프로그램이 대신 부르는 방식</strong>이에요. 같은 모델인데 사람이 창을 열지 않아도 자동으로 호출됩니다.</p></div><div class="stkr"><div class="stkh"><b>예약 발행 도구</b><i>정해진 시각에 올리기</i></div><p>Threads·인스타그램은 공식 예약 기능이 제한적이라 전용 도구를 씁니다(Publer 등). 대기열에 넣어두면 정해진 시각에 올라가요.</p></div><div class="stkr"><div class="stkh"><b>Railway</b><i>24시간 켜두는 서버</i></div><p>n8n을 계속 돌리려면 꺼지지 않는 컴퓨터가 필요해요. <strong>고객님 노트북을 켜둘 필요가 없게</strong> 하는 장치입니다.</p></div></div>
+<h2>원문 하나가 초안이 되기까지</h2>
+<p class="rvnote">원문 하나가 채널별 초안이 되기까지 5단계를 지납니다.</p>
+<ul class="flow"><li><div><b>원문이 &#x27;승인&#x27;으로 바뀌면 시작</b><p>Airtable에서 상태를 '승인'으로 바꾸는 순간 n8n이 깨어납니다. 매일 정해진 시각으로 걸 수도 있어요.</p></div></li><li><div><b>채널 규칙에 맞춰 다시 쓰기</b><p>글자 수 한도, 카드 분할 개수, 줄바꿈 위치, 링크 자리를 <strong>규칙으로 미리 정해두고</strong> OpenAI에 그 규칙과 함께 넘깁니다. 매번 감으로 자르지 않아요.</p></div></li><li><div><b>내보내기 전에 기계가 검사</b><p>글자 수 초과, 빈 카드, 깨진 링크를 확인합니다. 하나라도 걸리면 <strong>초안을 만들지 않고 멈춥니다.</strong> 잘못된 걸 만들어 두는 것보다 안 만드는 게 낫거든요.</p></div></li><li><div><b>Airtable에 초안으로 쌓기</b><p>고객님이 읽고 고칠 수 있게 올라옵니다. 이 단계에서 <strong>사람이 반드시 한 번 봅니다.</strong></p></div></li><li><div><b>승인하면 예약 대기열로</b><p>발행 시간을 정하면 예약 도구로 넘어갑니다. 발행 후 성공·실패와 링크가 다시 Airtable에 기록돼요.</p></div></li></ul>
+<h2>고객님이 보시는 화면</h2>
+<div class="proof"><p>고객님이 실제로 보게 되는 화면은 <strong>Airtable 하나</strong>입니다.</p><ul><li>n8n 화면은 안 보셔도 됩니다. 제가 만들고 제가 고칩니다</li><li>표에서 초안을 읽고, 고칠 곳만 고치고, 발행 시간을 입력하면 끝이에요</li><li>어떤 글이 어느 채널에 언제 올라갔는지 같은 표에 쌓입니다</li><li>개발자용 화면이 아니라 <strong>비기술 운영자가 바로 쓸 수 있는 구조</strong>로 설계합니다</li></ul></div>
+<h2>왜 이 도구인가</h2>
+<p class="rvnote">도구 선택에는 이유가 있습니다. 상담 때 자주 받는 질문입니다.</p>
+<div class="faq2"><details><summary>왜 Make가 아니라 n8n인가요?</summary><p>Make로도 됩니다. 다만 조건 분기가 많아지고 API를 직접 붙여야 할 때 n8n이 유리해요. 채널마다 규칙이 다른 작업은 분기가 금방 늘어납니다. Make를 쓰시던 분이면 상담 때 말씀해 주세요.</p></details><details><summary>왜 Notion이 아니라 Airtable인가요?</summary><p>Notion도 가능하지만 기본은 Airtable을 권합니다. <strong>상태 관리와 검수 흐름</strong>이 장기 운영에 더 편해요. 이미 Notion으로 돌아가는 팀이면 상담 후 가능 여부를 확인합니다.</p></details><details><summary>왜 완전 자동으로 발행하지 않나요?</summary><p>기술적으로는 됩니다. 권하지 않을 뿐이에요. AI 글 품질과 플랫폼 정책을 같이 보면 <strong>검수 단계를 남기는 쪽이 장기적으로 안전</strong>합니다. 발행된 글은 플랫폼에 따라 수정·삭제가 막히기도 하고요.</p></details></div>
 <h2>자동화가 어느 날 조용히 멈추면, 며칠 만에 아시겠어요?</h2>
-<div class="guard"><p>대부분은 몇 주 뒤에 압니다. 매일 '정상 종료'로 찍히는데 결과물만 0건이면, <strong>그날 올릴 게 없었던 건지 망가진 건지 구분이 안 되거든요.</strong> 자동화를 맡기고 가장 손해 보는 경우가 이겁니다.</p><ul class="rrule"><li>단계를 쪼개고, 각 단계가 끝날 때마다 상태를 파일에 남깁니다(<code>pending → 변환됨 → 적재됨</code>)</li><li><strong>"0건"과 "실패"를 구분해서</strong> 알립니다. 이 둘이 같아 보이면 조용한 실패가 또 생겨요</li><li>실패한 건은 상태를 되돌리지 않습니다. 그대로 두면 다음 실행이 알아서 다시 집습니다</li><li>납품할 때 <strong>"이게 멈춘 걸 어떻게 아는지"</strong>를 같이 보여드리고 넘깁니다</li></ul><p class="gorigin">이 규칙은 제 시스템이 25일간 조용히 실패하고 나서 만든 것입니다. 같은 일을 고객 건에서 겪게 하고 싶지 않아요.</p></div>
-<h2>맡기면 어떻게 되나요</h2>
-<p class="rvnote">크몽에서 받은 리뷰 <strong>5건, 평점 5.0</strong>입니다. 건수가 많진 않아요. 그래서 그대로 적습니다.</p>
-<div class="rvs"><figure><blockquote>믿고 맡기시면 깔끔하게 일해주시네요</blockquote><figcaption>크몽 구매 고객</figcaption></figure><figure><blockquote>정말 친절하시고 물어보는 모든것들 끝까지 해결해 주시기 위해서 최선을 다하시고 무엇보다 결과물이 너무 깔끔합니다. 작업 생길때마다 앞으로 계속 함께하고 싶습니다.</blockquote><figcaption>크몽 구매 고객</figcaption></figure><figure><blockquote>복작한 과정임에도 빠르고 정확하게 응대해주셔서 결과또한 대만족입니다</blockquote><figcaption>크몽 구매 고객</figcaption></figure></div>
-<ul class="asr"><li><b>상담은 무료예요</b><p>되는 일과 안 되는 일을 먼저 말씀드립니다. 안 되는 거면 안 된다고 해요.</p></li><li><b>납품 후 2주는 무상으로 대응합니다</b><p>넘겨드린 뒤 생기는 오류는 2주 동안 비용 없이 고칩니다.</p></li><li><b>진단을 먼저 받으셨다면 진단비는 빼 드려요</b><p>진단 콜(30만 원) 후 구축으로 이어지면 전액 차감합니다. 진단만 받고 직접 만드셔도 됩니다.</p></li></ul>
+<div class="guard"><p>자동화에서 제일 손해 보는 경우가 이겁니다. 매일 '정상 종료'로 찍히는데 결과물만 0건이면, <strong>그날 올릴 게 없었던 건지 망가진 건지 구분이 안 되거든요.</strong></p><ul class="rrule"><li>발행 로그를 남깁니다 — 성공·실패·발행 링크가 Airtable에 쌓입니다</li><li>실패하면 알림이 갑니다(이메일 또는 협의한 채널)</li><li>단계마다 상태를 남겨서 <strong>어디까지 갔는지</strong>가 보입니다</li><li>납품할 때 <strong>"이게 멈춘 걸 어떻게 아는지"</strong>를 같이 보여드리고 넘깁니다</li></ul><p class="gorigin">제 콘텐츠 시스템이 예약 도구 API 차단으로 25일간 조용히 실패한 적이 있습니다. 그 뒤로 로그와 알림을 기본에 넣습니다.</p></div>
+<h2>시작하려면 필요한 것</h2>
+<p class="rvnote">시작하려면 아래가 필요합니다. 없으시면 상담 때 같이 준비해요.</p>
+<div class="prep"><div><h4>꼭 필요해요</h4><ul><li>올릴 채널 계정 (Threads는 인스타그램·페이스북 연동 필요)</li><li>Airtable 계정 — 무료로 시작 가능합니다</li><li>OpenAI API Key — 글을 바꿔 쓰는 데 씁니다</li><li>예약 발행 도구 계정</li><li>n8n 실행 환경 (Railway 또는 n8n Cloud)</li></ul></div><div><h4>있으면 좋아요</h4><ul><li>기존에 올려서 반응이 좋았던 글 3~5개 — 채널 규칙을 여기서 역산합니다</li><li>브랜드 톤과 쓰면 안 되는 표현 정리</li></ul></div></div>
+<h2>매달 나가는 돈</h2>
+<p class="rvnote">제작비와 별개로 <strong>매달 나가는 돈</strong>이 있습니다. 고객님 계정에서 직접 나가고, 저를 거치지 않아요.</p>
+<div class="cost"><div class="costr"><span>Railway 또는 n8n Cloud</span><b>월 7,000~17,000원</b></div><div class="costr"><span>OpenAI API</span><b>월 1,000~5,000원</b></div><div class="costr"><span>Airtable</span><b>무료~유료 (데이터량에 따라)</b></div><div class="costr"><span>예약 발행 도구</span><b>플랜별 상이</b></div><div class="costt">하루 3건 발행 기준 <strong>월 2~5만 원</strong> 수준입니다. 발행량이 늘면 같이 늘어나요.</div></div>
 <h2>안 되는 것</h2>
-<ul class="lim"><li><b>발행까지는 자동화하지 않습니다</b><p>요청하시면 가능하지만 권하지 않아요. 변환이 한 번 잘못되면 그대로 계정에 올라가고, 플랫폼에 따라 발행된 글은 수정·삭제가 막힙니다.</p></li><li><b>채널 규칙을 먼저 정해야 합니다</b><p>'우리 Threads는 카드 몇 개, 한 장에 몇 자'가 없으면 자동화할 대상이 없습니다. 안 정해져 있으면 잘 나간 글에서 역산하는 것부터 같이 합니다.</p></li><li><b>원문 품질을 올려주지는 않습니다</b><p>변환은 형식을 맞추는 일이에요. 원문이 약하면 약한 글이 세 개 생깁니다.</p></li></ul>
-<h2>만드는 과정</h2>
-<ul class="proc"><li><b>1주차</b><div>채널별 규칙을 글로 고정합니다. 길이·분할·줄바꿈·링크 위치. 기존에 잘 나간 글을 샘플로 역산해요.</div></li><li><b>2주차</b><div>변환과 검사를 만들고 과거 글 10편으로 돌려봅니다. 사람이 쓴 것과 나란히 놓고 비교합니다.</div></li><li><b>3주차</b><div>예약 대기열 연동과 상태 기록을 붙입니다. 멈췄을 때 어떻게 알게 되는지까지 확인하고 넘겨드려요.</div></li></ul>
+<ul class="lim"><li><b>계정 제재가 없다고 보장하지 않습니다</b><p>플랫폼 정책이 바뀌거나 계정 설정에 따라 생길 수 있어요. 발생하면 가능한 범위에서 확인해 드리지만, 막아드린다고 말씀드릴 수는 없습니다.</p></li><li><b>다계정 동시 운영은 별도입니다</b><p>계정이 여러 개면 구조가 달라집니다. 상담에서 따로 봐야 해요.</p></li><li><b>원문 품질을 올려주지는 않습니다</b><p>변환은 형식을 맞추는 일이에요. 원문이 약하면 약한 글이 채널 수만큼 생깁니다.</p></li><li><b>타인 콘텐츠를 긁어오는 구조는 만들지 않습니다</b><p>요청하셔도 안 합니다.</p></li></ul>
+<h2>만드는 순서</h2>
+<ul class="proc"><li><b>1단계</b><div>상담에서 범위를 정합니다. 채널 몇 개, 하루 몇 건, 소재는 직접 넣는지.</div></li><li><b>2단계</b><div>계정·API 준비 상태를 확인합니다. 여기가 늦어지면 일정도 같이 밀려요.</div></li><li><b>3단계</b><div>Airtable 구조를 설계합니다 — 고객님이 보실 화면입니다.</div></li><li><b>4단계</b><div>n8n 워크플로우를 만들고 채널 규칙을 넣습니다.</div></li><li><b>5단계</b><div>테스트 콘텐츠로 실제 발행까지 돌려봅니다.</div></li><li><b>6단계</b><div>화면공유로 사용법을 안내합니다. 완료 후 7일 이내 기본 오류는 무상으로 확인해요.</div></li></ul>
 <div class="rcta"><p class="pn">STEP 2 · 업무 자동화</p><div class="amt">80만 원~</div><p class="pn">상담은 무료예요 · 보통 하루 안에 답장드려요</p><div class="btns"><a class="p1" href="../../build/#contact" data-ev="recipe-cta-contact">이것도 되나요? 물어보기</a><a class="p2" href="../../build/#price" data-ev="recipe-cta-price">단계별 비용 보기</a></div></div>
   </div>
 </div>
