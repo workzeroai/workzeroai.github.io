@@ -227,6 +227,10 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0 110px;b
 .svcs{display:grid;gap:12px;margin-top:28px}
 .svc{padding:20px;display:grid;gap:10px}
 .svc h3{font-size:18px}
+.svc.has{transition:.2s}
+.svc.has:hover{transform:translateY(-2px);box-shadow:var(--sh2);border-color:var(--primary)}
+.svc.has h3{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.svcgo{flex:none;font-style:normal;font:800 12px/1.6 "Pretendard","Noto Sans KR",sans-serif;color:var(--primary);background:var(--primary-pale);padding:3px 9px;border-radius:99px}
 .ba{display:grid;grid-template-columns:52px 1fr;gap:10px;align-items:start;font-size:14px;color:var(--ink2)}
 .ba span{font-size:12px;font-weight:800;text-align:center;padding:4px 0;border-radius:8px}
 .ba .b{background:var(--soft);color:var(--mute)}
@@ -552,12 +556,12 @@ a.prime-card{color:#fff}
         <div class="ba"><span class="a">바뀌면</span><p>접수 → DB 기록 → 담당자 알림 → 접수 확인 안내까지 자동으로 이어집니다</p></div>
         <div class="tools">폼 · 메일 → 노션 · 에어테이블 · 슬랙 · 문자</div>
       </article>
-      <article class="card svc">
-        <h3>채널 변환·예약 적재</h3>
+      <a class="card svc has" href="channel-repurpose/" data-ev="svc-channel-repurpose">
+        <h3>채널 변환·예약 적재<i class="svcgo">자세히 →</i></h3>
         <div class="ba"><span class="b">지금</span><p>글 하나를 채널마다 다시 쓰고 하나씩 예약해요</p></div>
         <div class="ba"><span class="a">바뀌면</span><p>승인된 원문을 채널 문법에 맞게 바꿔 예약 대기열에 초안으로 넣어 둬요</p></div>
         <div class="tools">원문 → Threads · 인스타그램 · 링크드인 초안</div>
-      </article>
+      </a>
     </div>
 
     <h3 class="grp ag">에이전트로 만드는 것 <span>· 읽고 추려내야 하는 일</span></h3>
@@ -568,24 +572,24 @@ a.prime-card{color:#fff}
         <div class="ba"><span class="a">바뀌면</span><p>매체별 수치 취합 → 전주 대비 계산 → 이상 신호와 다음 액션 후보가 담긴 리포트가 도착해요</p></div>
         <div class="tools">GA4 · Meta · Google Ads · 네이버 검색광고 → 노션 · 슬랙</div>
       </article>
-      <article class="card svc">
-        <h3>경쟁사·시장 리서치 에이전트</h3>
+      <a class="card svc has" href="research-agent/" data-ev="svc-research-agent">
+        <h3>경쟁사·시장 리서치 에이전트<i class="svcgo">자세히 →</i></h3>
         <div class="ba"><span class="b">지금</span><p>경쟁사 사이트, 광고, 트렌드를 시간 날 때 손으로 찾아봐요</p></div>
         <div class="ba"><span class="a">바뀌면</span><p>정해둔 경쟁사와 키워드를 주기적으로 모아 변화와 적용 아이디어를 정리해 줘요</p></div>
         <div class="tools">경쟁사 페이지 · 광고 레퍼런스 · 키워드 → 노션 · 시트</div>
-      </article>
+      </a>
       <article class="card svc">
         <h3>콘텐츠 기획·캘린더 에이전트</h3>
         <div class="ba"><span class="b">지금</span><p>매주 무엇을 올릴지 회의하고, 캘린더를 손으로 채워요</p></div>
         <div class="ba"><span class="a">바뀌면</span><p>트렌드와 지난 성과를 보고 다음 주 콘텐츠 후보와 초안을 캘린더에 올려 둬요</p></div>
         <div class="tools">아이디어 · 트렌드 · 지난 성과 → 노션 캘린더</div>
       </article>
-      <article class="card svc">
-        <h3>브랜드 품질 검수 에이전트</h3>
+      <a class="card svc has" href="quality-agent/" data-ev="svc-quality-agent">
+        <h3>브랜드 품질 검수 에이전트<i class="svcgo">자세히 →</i></h3>
         <div class="ba"><span class="b">지금</span><p>올리기 전에 톤, 금지어, 필수 문구를 사람이 매번 확인해요</p></div>
         <div class="ba"><span class="a">바뀌면</span><p>브랜드 기준으로 콘텐츠를 채점하고, 고칠 곳과 수정안을 먼저 알려줘요</p></div>
         <div class="tools">브랜드 가이드 · 콘텐츠 초안 → 점수표 · 수정안</div>
-      </article>
+      </a>
       <article class="card svc">
         <h3>리뷰·고객 목소리(VoC) 에이전트</h3>
         <div class="ba"><span class="b">지금</span><p>리뷰와 문의가 쌓이지만 다시 읽을 시간이 없어요</p></div>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>시간 날 때 찾아보던 걸 매일 받아보기 · 워크제로 자료실</title>
+<meta name="description" content="정해둔 경쟁사와 키워드를 주기적으로 모아 변화와 적용 아이디어를 정리해 줍니다.">
+<link rel="canonical" href="https://workzeroai.github.io/build/research-agent/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#533afd">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="시간 날 때 찾아보던 걸 매일 받아보기">
+<meta property="og:description" content="정해둔 경쟁사와 키워드를 주기적으로 모아 변화와 적용 아이디어를 정리해 줍니다.">
+<meta property="og:url" content="https://workzeroai.github.io/build/research-agent/">
+<meta property="og:image" content="https://workzeroai.github.io/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="시간 날 때 찾아보던 걸 매일 받아보기">
+<meta name="twitter:description" content="정해둔 경쟁사와 키워드를 주기적으로 모아 변화와 적용 아이디어를 정리해 줍니다.">
+<meta name="twitter:image" content="https://workzeroai.github.io/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+:root{--primary:#533afd;--primary-deep:#4434d4;--primary-pale:#eceaff;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f6f9fc;--hair:#e3e8ee;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+
+.rbadge{display:inline-flex;align-items:center;gap:7px;font:800 12px/1 "Pretendard","Noto Sans KR",sans-serif;padding:8px 13px;border-radius:99px;margin-bottom:14px}
+.rbadge.live{background:#e7f8f1;color:#0b6b4a}
+.rbadge.live i{width:7px;height:7px;border-radius:50%;background:#14b87a;animation:rp 2s infinite}
+.rbadge.blueprint{background:var(--soft);color:var(--mute)}
+@keyframes rp{0%,100%{opacity:1}50%{opacity:.35}}
+.head .m{flex-wrap:wrap}
+.rbadge{white-space:nowrap}
+.rkind{white-space:nowrap;display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:var(--primary-pale);color:var(--primary-deep);margin-left:7px}
+.ben{display:grid;gap:12px;margin:18px 0 8px}
+.ben li{list-style:none;padding:18px 20px;border-radius:16px;background:var(--primary-pale);border:1px solid var(--hair)}
+.ben b{display:block;font-size:16px;color:var(--primary-deep);margin-bottom:6px}
+.ben p{font-size:14.5px;color:var(--ink2);margin:0}
+.ba2{display:grid;gap:12px;margin:18px 0}
+.ba2>div{padding:18px 20px;border-radius:16px;border:1px solid var(--hair)}
+.ba2 .now{background:#fff}
+.ba2 .nxt{background:linear-gradient(135deg,#0d253d,#1c1e54);color:#fff;border-color:transparent}
+.ba2 h4{font:800 13px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.08em;margin-bottom:12px;color:var(--mute)}
+.ba2 .nxt h4{color:#9fb6d4}
+.ba2 ol{margin:0;padding-left:19px;display:grid;gap:7px;font-size:14.5px;color:var(--ink2)}
+.ba2 .nxt ol{color:#e6eefa}
+.flow{display:grid;gap:10px;margin:18px 0;counter-reset:fw}
+.flow li{list-style:none;display:grid;grid-template-columns:30px 1fr;gap:13px;align-items:start;padding:16px 18px;border-radius:14px;border:1px solid var(--hair);background:#fff}
+.flow li::before{counter-increment:fw;content:counter(fw);width:30px;height:30px;border-radius:9px;background:var(--primary);color:#fff;font:900 13px/30px "Pretendard","Noto Sans KR",sans-serif;text-align:center}
+.flow b{display:block;font-size:15px;margin-bottom:4px}
+.flow p{font-size:14px;color:var(--ink2);margin:0}
+.rbroke{margin:18px 0;padding:22px;border-radius:18px;background:#fff6f6;border:1px solid #f3d4d4}
+.rbroke p{font-size:15px;color:#6b2b2b}
+.rbroke p strong{color:#a51c1c}
+.rrule{margin-top:16px;padding-top:16px;border-top:1px solid #f3d4d4;display:grid;gap:9px}
+.rrule li{list-style:none;padding-left:25px;position:relative;font-size:14.5px;color:var(--ink2)}
+.rrule li::before{content:"";position:absolute;left:2px;top:7px;width:9px;height:5px;border:2.2px solid var(--mint);border-top:0;border-right:0;transform:rotate(-45deg)}
+.lim{display:grid;gap:11px;margin:18px 0}
+.lim li{list-style:none;padding:17px 19px;border-radius:14px;background:var(--soft);border:1px solid var(--hair)}
+.lim b{display:block;font-size:15px;margin-bottom:5px}
+.lim p{font-size:14px;color:var(--ink2);margin:0}
+.proc{display:grid;gap:10px;margin:18px 0}
+.proc li{list-style:none;display:grid;grid-template-columns:64px 1fr;gap:14px;align-items:start;font-size:14.5px;color:var(--ink2)}
+.proc b{font:900 13px/1.5 "Pretendard","Noto Sans KR",sans-serif;color:var(--primary-deep)}
+.rcta{margin-top:34px;padding:26px 22px;border-radius:20px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);text-align:center}
+.rcta .amt{font:900 30px/1.2 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.03em;margin:6px 0 2px}
+.rcta .pn{font-size:13px;font-weight:800;color:var(--mute)}
+.rcta .btns{display:grid;gap:9px;margin-top:18px}
+.rcta a{display:block;padding:15px;border-radius:13px;font-weight:800;font-size:15px;text-decoration:none}
+.rcta .p1{background:var(--primary);color:#fff}
+.rcta .p2{background:#fff;color:var(--primary-deep);border:1.5px solid var(--hair)}
+.foot .cross{text-decoration:none}
+.rtools{display:inline-block;margin-top:10px;font-size:13px;font-weight:700;color:var(--mute);background:var(--soft);padding:9px 13px;border-radius:10px}
+@media(min-width:720px){.ba2{grid-template-columns:1fr 1fr}.rcta .btns{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴"><a href="../../tutoring/">1:1 과외</a><a class="on" href="../../build/" aria-current="page">제작 문의</a><a href="../../library/">자료실</a></div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../../build/#agents">← 만드는 것들</a>
+  <div class="head"><div class="m"><span class="rbadge live"><i></i>제 시스템에서 운영 중 · 16개 채널 자동 감시</span><span class="rkind">에이전트로 만드는 것</span></div><h1>시간 날 때 찾아보던 걸 매일 받아보기</h1></div>
+  
+  <div class="bd">
+<p>경쟁사 리서치는 안 하면 티가 안 나서 제일 먼저 밀립니다. 그러다 분기에 한 번 몰아서 보게 되고, 그때는 이미 늦죠.</p>
+<p>이 에이전트는 <strong>매일 조금씩 보는 쪽</strong>을 맡습니다. 사람이 하는 일은 '무엇을 볼지' 정하는 것과 '이건 우리한테 의미 있다'를 고르는 것입니다.</p>
+<h2>얻는 것</h2>
+<ul class="ben"><li><b>밀리지 않습니다</b><p>리서치는 중요한데 안 급해서 밀립니다. 매일 정해진 시각에 도는 구조로 바꾸면 밀릴 수가 없어요. 제 경우 16개 채널을 매일 00:00에 확인하고, 지금까지 262건을 잡았습니다.</p></li><li><b>놓친 걸 나중에 알 수 있습니다</b><p>사람이 손으로 보면 안 본 것과 보고 넘긴 것이 구분되지 않습니다. 감지한 것 전부에 상태를 남기면, 나중에 '이건 왜 안 다뤘지'를 되짚을 수 있어요.</p></li><li><b>요약이 아니라 &#x27;그래서 뭘 할지&#x27;가 옵니다</b><p>새 소식 목록만 오면 결국 안 읽습니다. 변화에 더해 '우리한테 적용한다면 이것'까지 붙여야 읽히고 쓰입니다.</p></li></ul>
+<h2>지금, 그리고 바뀌면</h2>
+<div class="ba2"><div class="now"><h4>지금</h4><ol><li>시간 날 때 경쟁사 사이트와 광고를 둘러봅니다</li><li>괜찮아 보이는 걸 메모나 북마크에 넣어둡니다</li><li>바쁘면 몇 주씩 건너뜁니다</li><li>나중에 보면 뭘 봤고 뭘 안 봤는지 모릅니다</li></ol></div><div class="nxt"><h4>바뀌면</h4><ol><li>정해둔 시각에 대상 목록을 전부 확인합니다</li><li>지난번과 달라진 것만 추립니다</li><li>변화 + 그렇게 본 이유 + 우리에게 적용할 아이디어가 정리됩니다</li><li>확인한 것 전부에 상태가 남습니다. 건너뛴 것도 왜 건너뛰었는지 남아요</li></ol></div></div>
+<h2>어떻게 만드나</h2>
+<ul class="flow"><li><div><b>대상 고정</b><p>경쟁사 페이지, 광고 레퍼런스, 키워드, 채널을 목록으로 만듭니다. 대상이 흐릿하면 결과도 흐릿합니다.</p></div></li><li><div><b>감지</b><p>정해진 시각에 목록을 돌며 지난번과 달라진 것만 집어냅니다. 전부 다시 읽지 않고 '변한 것'만 봅니다.</p></div></li><li><div><b>수집</b><p>달라진 항목의 본문·자막·설명을 가져옵니다. 못 가져오는 건(접근 차단, 자막 없음) 건너뛰되 <strong>건너뛴 이유를 남깁니다.</strong></p></div></li><li><div><b>정리</b><p>무엇이 어떻게 달라졌는지, 왜 의미 있는지, 우리라면 뭘 해볼지로 정리합니다.</p></div></li><li><div><b>적재</b><p>노션이나 시트에 쌓습니다. 쌓이면 그 자체가 '우리 시장은 이렇게 움직였다'는 기록이 됩니다.</p></div></li></ul>
+<p><span class="rtools">경쟁사 페이지 · 광고 레퍼런스 · 키워드 → 노션 · 시트</span></p>
+<h2>망가지면</h2>
+<div class="rbroke"><p>리서치 자동화의 실패는 대부분 조용합니다. <strong>아무것도 안 오는 게 정상처럼 보이기 때문</strong>이에요.</p>
+<p>제 경우 2026년 8월에 감지·작성·발송을 한 번에 처리하던 구조가 며칠간 조용히 실패해, 6개 채널의 새 영상이 어디에도 기록되지 않은 채 통째로 누락된 적이 있습니다. 아무 알림도 안 왔어요. 그날 올라온 게 없는 것과 구분이 안 됐으니까요.</p><ul class="rrule"><li>감지와 처리를 분리합니다. 감지는 '찾았다'까지만 하고 큐에 넣습니다.</li><li>감지 건수를 매번 보고합니다. '0건'도 보고해야 '안 돈 것'과 구분됩니다.</li><li>가져오지 못한 항목은 이유와 함께 남깁니다(접근 차단·자막 없음·응답 오류).</li><li>실패한 항목의 상태를 되돌리지 않습니다. 다음 실행이 자동으로 다시 집습니다.</li></ul></div>
+<h2>안 되는 것</h2>
+<ul class="lim"><li><b>막아둔 곳은 못 봅니다</b><p>로그인이 필요하거나 수집을 막아둔 사이트가 있습니다. 공개된 것만 봅니다. 뚫는 방법을 쓰지 않아요.</p></li><li><b>&#x27;왜 저렇게 했을까&#x27;는 추측입니다</b><p>경쟁사 화면이 바뀐 건 사실이지만 의도는 알 수 없습니다. 추측은 추측이라고 적습니다.</p></li><li><b>대상을 안 정하면 못 만듭니다</b><p>'경쟁사 전부'는 대상이 아닙니다. 어디를, 무엇을, 얼마나 자주 볼지가 정해져야 시작할 수 있어요.</p></li><li><b>많이 모은다고 좋아지지 않습니다</b><p>매일 30건이 오면 안 읽습니다. 몇 건까지가 읽히는 양인지를 정하고 거기 맞춰 거릅니다.</p></li></ul>
+<h2>만드는 과정</h2>
+<ul class="proc"><li><b>1주차</b><div>볼 대상과 주기를 확정합니다. 결과를 어디에 쌓을지, 한 번에 몇 건까지 받을지도 같이 정해요.</div></li><li><b>2주차</b><div>감지와 수집을 만들고 2주치 과거 데이터로 돌려봅니다. 놓치는 게 있는지 손으로 대조합니다.</div></li><li><b>3주차</b><div>정리 품질을 조이고(무엇을 추리고 무엇을 버릴지), 0건 보고와 실패 알림을 붙여 넘겨드립니다.</div></li></ul>
+<div class="rcta"><p class="pn">STEP 3 · AI 에이전트</p><div class="amt">180만 원~</div><p class="pn">상담은 무료예요 · 보통 하루 안에 답장드려요</p><div class="btns"><a class="p1" href="../../build/#contact" data-ev="recipe-cta-contact">이것도 되나요? 물어보기</a><a class="p2" href="../../build/#price" data-ev="recipe-cta-price">단계별 비용 보기</a></div></div>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이런 걸 만들고 싶다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../build/#agents" data-ev="recipe-foot-menu"><span class="tag">다른 것도</span><h3>어떤 것들을 만드나</h3><p>자동화 3가지와 에이전트 5가지를 한 화면에서 비교해요.</p><span class="go">목록 보기 →</span></a>
+    <a class="cross" href="../../build/#diagnosis" data-ev="recipe-foot-quiz"><span class="tag">순서부터</span><h3>내 단계는 어디인가</h3><p>세 가지만 답하면 4단계 중 지금 위치를 알려드려요. 무료예요.</p><span class="go">진단해보기 →</span></a>
+    <a class="cross" href="../../build/#contact" data-ev="recipe-foot-contact"><span class="tag">물어보기</span><h3>이것도 되나요?</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../../build/#agents" style="color:var(--primary);font-weight:800">← 만드는 것들 전체 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>
