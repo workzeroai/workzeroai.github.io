@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>글 하나를 채널마다 다시 쓰지 않기 · 워크제로 제작 문의</title>
-<meta name="description" content="승인된 원문을 채널 문법에 맞게 바꿔 예약 대기열에 초안으로 넣습니다. 발행 버튼은 끝까지 사람이 누릅니다.">
+<title>글 쓰는 시간보다 옮기는 시간이 더 걸린다면 · 워크제로 제작 문의</title>
+<meta name="description" content="한 번 쓴 글을 채널마다 다시 쓰는 일을 넘깁니다. 주 3회 발행 기준 월 16~21시간을 돌려받습니다.">
 <link rel="canonical" href="https://workzeroai.github.io/build/channel-repurpose/">
 <link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
@@ -12,13 +12,13 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="워크제로">
 <meta property="og:locale" content="ko_KR">
-<meta property="og:title" content="글 하나를 채널마다 다시 쓰지 않기">
-<meta property="og:description" content="승인된 원문을 채널 문법에 맞게 바꿔 예약 대기열에 초안으로 넣습니다. 발행 버튼은 끝까지 사람이 누릅니다.">
+<meta property="og:title" content="글 쓰는 시간보다 옮기는 시간이 더 걸린다면">
+<meta property="og:description" content="한 번 쓴 글을 채널마다 다시 쓰는 일을 넘깁니다. 주 3회 발행 기준 월 16~21시간을 돌려받습니다.">
 <meta property="og:url" content="https://workzeroai.github.io/build/channel-repurpose/">
 <meta property="og:image" content="https://workzeroai.github.io/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="글 하나를 채널마다 다시 쓰지 않기">
-<meta name="twitter:description" content="승인된 원문을 채널 문법에 맞게 바꿔 예약 대기열에 초안으로 넣습니다. 발행 버튼은 끝까지 사람이 누릅니다.">
+<meta name="twitter:title" content="글 쓰는 시간보다 옮기는 시간이 더 걸린다면">
+<meta name="twitter:description" content="한 번 쓴 글을 채널마다 다시 쓰는 일을 넘깁니다. 주 3회 발행 기준 월 16~21시간을 돌려받습니다.">
 <meta name="twitter:image" content="https://workzeroai.github.io/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
@@ -148,6 +148,31 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
 .rcta .p2{background:#fff;color:var(--primary-deep);border:1.5px solid var(--hair)}
 .foot .cross{text-decoration:none}
 .rtools{display:inline-block;margin-top:10px;font-size:13px;font-weight:700;color:var(--mute);background:var(--soft);padding:9px 13px;border-radius:10px}
+.sv{margin:18px 0;padding:22px;border-radius:18px;background:#fff;border:1px solid var(--hair)}
+.svassume{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px}
+.svassume span{font:800 12px/1 "Pretendard","Noto Sans KR",sans-serif;color:var(--mute);background:var(--soft);padding:7px 11px;border-radius:99px}
+.svrows{display:grid;gap:9px}
+.svr{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 17px;border-radius:13px}
+.svr span{font-size:14.5px;font-weight:700;color:var(--ink2)}
+.svr b{font:900 19px/1.1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em;white-space:nowrap}
+.svr.now{background:var(--soft)}
+.svr.nxt{background:var(--soft)}
+.svr.win{background:linear-gradient(135deg,var(--primary),#6d4bff);color:#fff}
+.svr.win span{color:#ddd6ff}
+.svr.win b{font-size:22px}
+.svnote{margin-top:14px;font-size:13px;color:var(--mute);line-height:1.6}
+.tl{list-style:none;padding:0;display:grid;gap:9px}
+.tl li{display:flex;align-items:baseline;justify-content:space-between;gap:12px;font-size:14.5px}
+.tl li i{flex:none;font-style:normal;font:800 12px/1 "Pretendard","Noto Sans KR",sans-serif;padding:5px 9px;border-radius:7px;background:#ffe9e9;color:#a51c1c}
+.nxt .tl li i{background:rgba(255,255,255,.16);color:#9ff0cd}
+.proof{margin:18px 0;padding:22px;border-radius:18px;background:#e7f8f1;border:1px solid #bfe9d7}
+.proof p{font-size:15.5px;color:#0b4f38;margin:0 0 14px}
+.proof ul{list-style:none;display:grid;gap:9px;margin:0;padding:0}
+.proof li{padding-left:25px;position:relative;font-size:14.5px;color:#13624a}
+.proof li::before{content:"";position:absolute;left:2px;top:7px;width:9px;height:5px;border:2.2px solid #0f9b6c;border-top:0;border-right:0;transform:rotate(-45deg)}
+.guard{margin:18px 0;padding:22px;border-radius:18px;background:var(--soft);border:1px solid var(--hair)}
+.guard p{font-size:15px;color:var(--ink2)}
+.gorigin{margin-top:16px;padding-top:14px;border-top:1px solid var(--hair);font-size:13px;color:var(--mute);font-style:italic}
 @media(min-width:720px){.ba2{grid-template-columns:1fr 1fr}.rcta .btns{grid-template-columns:1fr 1fr}}
 </style>
 </head>
@@ -157,26 +182,29 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
   <div class="seg" role="tablist" aria-label="메뉴"><a href="../../tutoring/">1:1 과외</a><a class="on" href="../../build/" aria-current="page">제작 문의</a><a href="../../library/">자료실</a></div></div></nav>
 <main>
 <div class="rd"><a class="back" href="../../build/#agents">← 만드는 것들</a>
-  <div class="head"><div class="m"><span class="rbadge live"><i></i>제 시스템에서 운영 중 · 실패 사고 포함</span><span class="rkind">자동화로 만드는 것</span></div><h1>글 하나를 채널마다 다시 쓰지 않기</h1></div>
+  <div class="head"><div class="m"><span class="rbadge live"><i></i>같은 구조로 4개월째 운영 중</span><span class="rkind">자동화로 만드는 것</span></div><h1>글 쓰는 시간보다 옮기는 시간이 더 걸린다면</h1></div>
   
   <div class="bd">
-<p>글을 하나 쓰면 끝이 아니죠. Threads용으로 자르고, 인스타용으로 줄이고, 링크드인용으로 고쳐 쓰고, 각각 예약까지 걸어야 합니다. 쓰는 시간보다 옮기는 시간이 더 걸리는 일이 자주 생깁니다.</p>
-<p>이 자동화는 <strong>원문 하나를 채널별 초안으로 바꿔 예약 대기열에 넣어두는 것</strong>까지 합니다. 발행은 하지 않습니다. 이유는 아래에 적었어요.</p>
-<h2>얻는 것</h2>
-<ul class="ben"><li><b>옮겨 적는 시간이 사라집니다</b><p>원문을 승인하면 채널별 초안이 대기열에 들어가 있습니다. 사람이 하는 일은 읽고 고치고 발행 버튼을 누르는 것뿐이에요.</p></li><li><b>채널마다 형식이 흔들리지 않습니다</b><p>카드 몇 개로 자를지, 한 장에 몇 자를 담을지, 줄바꿈을 어디서 할지를 규칙으로 고정합니다. 사람이 그때그때 감으로 자르면 글마다 모양이 달라져요.</p></li><li><b>발행 사고가 구조적으로 막힙니다</b><p>자동으로 나가는 건 초안까지입니다. 잘못 만들어진 글이 사람 눈을 거치지 않고 계정에 올라가는 경로 자체를 두지 않아요.</p></li></ul>
-<h2>지금, 그리고 바뀌면</h2>
-<div class="ba2"><div class="now"><h4>지금</h4><ol><li>원문을 쓰고 승인합니다</li><li>Threads용으로 문단을 자르고, 길이를 줄이고, 줄바꿈을 다시 넣습니다</li><li>인스타용으로 다시 줄이고 해시태그를 붙입니다</li><li>채널마다 예약 화면에 들어가 하나씩 시간을 지정합니다</li><li>어느 글이 어느 채널에 올라갔는지 따로 적어 둡니다</li></ol></div><div class="nxt"><h4>바뀌면</h4><ol><li>원문을 승인합니다</li><li>채널별 문법에 맞게 변환된 초안이 예약 대기열에 들어갑니다</li><li>사람은 초안을 읽고 고치고 발행 버튼을 누릅니다</li><li>무엇이 어느 채널에 몇 시에 올라갔는지 기록이 남습니다</li></ol></div></div>
+<p>글 하나 쓰는 데 2시간. 그걸 Threads용으로 자르고, 인스타용으로 줄이고, 링크드인용으로 고쳐 쓰는 데 <strong>또 1시간 40분</strong>.</p>
+<p>만드는 시간이 아니라 <strong>만든 걸 옮기는 시간</strong>입니다. 그리고 이 시간은 늘 뒤로 밀려요. 안 급하니까요. 그래서 공들여 쓴 글이 결국 한 채널에만 올라가고 끝납니다.</p>
+<p>이 1시간 40분을 <strong>10분으로 줄입니다.</strong> 읽고, 고치고, 발행 버튼 누르는 시간만 남겨요.</p>
+<h2>무엇이 달라지나</h2>
+<ul class="ben"><li><b>옮기는 시간이 1/10로 줄어듭니다</b><p>주 3회·채널 3개로 발행한다면 <strong>월 16~21시간</strong>을 돌려받습니다. 아래에 계산 전제를 적어뒀어요. 숫자가 다르면 그 숫자로 다시 계산하시면 됩니다.</p></li><li><b>한 번 쓴 글이 3개 채널로 나갑니다</b><p>시간이 없어서 한 채널에만 올리고 끝나던 글이 전부 나갑니다. 글을 더 쓰지 않고 <strong>노출 기회만 채널 수만큼</strong> 늘어나요.</p></li><li><b>채널마다 모양이 흔들리지 않습니다</b><p>카드를 몇 개로 자를지, 한 장에 몇 자를 담을지, 줄바꿈을 어디서 할지가 규칙으로 고정됩니다. 사람이 그때그때 감으로 자르면 글마다 모양이 달라지고, 그게 쌓이면 브랜드가 흐려져요.</p></li></ul>
+<h2>얼마나 줄어드나</h2>
+<div class="sv"><div class="svassume"><span>주 3회 발행</span><span>채널 3개 (Threads·인스타그램·링크드인)</span><span>채널당 변환·예약 30~40분</span></div><div class="svrows"><div class="svr now"><span>지금 옮기는 데</span><b>월 18~24시간</b></div><div class="svr nxt"><span>바뀐 뒤</span><b>월 2~3시간</b></div><div class="svr win"><span>돌려받는 시간</span><b>월 16~21시간</b></div></div><p class="svnote">전제를 넣고 계산한 <strong>추정</strong>이에요. 담당자 시급을 3만 원으로 환산하면 월 48~63만 원어치입니다. 발행 횟수나 채널 수가 다르면 상담 때 그 숫자로 같이 계산해 드려요.</p></div>
+<h2>하루가 이렇게 바뀝니다</h2>
+<div class="ba2"><div class="now"><h4>지금</h4><ol class="tl"><li><span>원문을 쓰고 승인합니다</span></li><li><span>Threads용으로 문단을 자르고 길이를 줄이고 줄바꿈을 다시 넣습니다</span><i>30~40분</i></li><li><span>인스타용으로 다시 줄이고 해시태그를 붙입니다</span><i>30~40분</i></li><li><span>링크드인용으로 톤을 바꿔 다시 씁니다</span><i>30~40분</i></li><li><span>채널마다 예약 화면에 들어가 하나씩 시간을 지정합니다</span><i>10분</i></li><li><span>어느 글이 어디 올라갔는지 따로 적어 둡니다</span><i>5분</i></li></ol></div><div class="nxt"><h4>바뀌면</h4><ol class="tl"><li><span>원문을 쓰고 승인합니다</span></li><li><span>채널별 초안이 예약 대기열에 들어가 있습니다</span><i>자동</i></li><li><span>초안을 읽고 고칩니다</span><i>10분</i></li><li><span>발행 버튼을 누릅니다</span></li><li><span>무엇이 어디에 몇 시에 올라갔는지 기록이 남습니다</span><i>자동</i></li></ol></div></div>
 <h2>어떻게 만드나</h2>
-<ul class="flow"><li><div><b>트리거</b><p>원문이 '승인' 상태가 되면 시작합니다. 시각 기준(매일 몇 시)으로 걸 수도 있어요.</p></div></li><li><div><b>변환</b><p>채널별 규칙으로 다시 씁니다. 글자 수 한도, 카드 분할 개수, 줄바꿈 단위, 링크 위치가 전부 규칙입니다.</p></div></li><li><div><b>검증</b><p>글자 수 초과, 빈 카드, 깨진 링크를 변환 직후에 확인합니다. 하나라도 걸리면 초안을 만들지 않고 멈춥니다.</p></div></li><li><div><b>적재</b><p>예약 대기열에 <strong>초안</strong>으로 넣습니다. 날짜·시간은 지정하되 발행 상태로 바꾸지 않습니다.</p></div></li><li><div><b>기록</b><p>어떤 원문이 어느 채널에 언제 들어갔는지 한 줄 남깁니다. 이 기록이 다음 단계의 입력이 됩니다.</p></div></li></ul>
+<ul class="flow"><li><div><b>원문이 승인되면 시작</b><p>'승인' 상태가 트리거입니다. 매일 정해진 시각으로 걸 수도 있어요.</p></div></li><li><div><b>채널 규칙으로 다시 쓰기</b><p>글자 수 한도, 카드 분할 개수, 줄바꿈 단위, 링크 위치가 전부 규칙입니다. 이 규칙은 기존에 잘 나간 글에서 역산해 만듭니다.</p></div></li><li><div><b>내보내기 전에 검사</b><p>글자 수 초과, 빈 카드, 깨진 링크를 확인합니다. 하나라도 걸리면 초안을 만들지 않고 멈춥니다.</p></div></li><li><div><b>예약 대기열에 초안으로 적재</b><p>날짜·시간은 지정하되 <strong>발행 상태로 바꾸지 않습니다.</strong> 발행 버튼은 끝까지 사람이 누릅니다.</p></div></li><li><div><b>기록 남기기</b><p>어떤 원문이 어느 채널에 언제 들어갔는지 한 줄 남깁니다. 이게 다음 달 '뭐가 잘 나갔나'의 재료가 돼요.</p></div></li></ul>
 <p><span class="rtools">원문 → Threads · 인스타그램 · 링크드인 초안</span></p>
-<h2>망가지면</h2>
-<div class="rbroke"><p>2026년 9월 11일, 쓰던 예약 도구(Buffer)의 API가 쓰기를 막았습니다.</p>
-<p>문제는 막혔다는 게 아니라 <strong>25일 동안 몰랐다는 것</strong>입니다. 작업은 매일 정상 종료로 찍혔고, 실제로 만들어진 초안만 0건이었어요. 로그에는 실패가 안 남고 "오늘 할 일 없음"처럼 보였습니다.</p>
-<p>원인은 그 전부터였습니다. 감지·작성·발행을 한 번에 처리하던 구조라, 중간에 끊기면 <strong>어디까지 갔는지가 아무 데도 안 남았습니다.</strong> 2026년 8월에도 같은 이유로 6개 채널의 새 글이 통째로 누락된 적이 있어요.</p><ul class="rrule"><li>단계를 쪼갭니다. 감지 / 변환 / 적재를 따로 돌립니다.</li><li>각 단계가 끝날 때마다 상태를 파일에 남깁니다(<code>pending → content_ready → draft_created</code>).</li><li>실패하면 상태를 되돌리지 않습니다. 그대로 두면 다음 실행이 알아서 이어받아요.</li><li>"오늘 0건"과 "오늘 실패"를 구분해 알립니다. 이 둘이 같아 보이면 조용한 실패가 또 생깁니다.</li></ul></div>
+<h2>정말 되나요?</h2>
+<div class="proof"><p>이 구조는 제 콘텐츠 파이프라인에서 <strong>4개월째 사람 손 없이</strong> 돌고 있습니다. 보여드릴 수 있는 건 남의 사례가 아니라 매일 돌아가는 제 것입니다.</p><ul><li>16개 채널에서 새 글을 감지해 <strong>132편</strong>을 자동 생성, <strong>129편</strong>을 공개했습니다</li><li>매일 00:00 감지 → 00:30 변환·게시 → 07:00 발송까지 무인으로 이어집니다</li><li>같은 변환·적재 구조를 Threads 타래글에 적용했고, 카드 분할·줄바꿈 규칙도 거기서 다듬은 것입니다</li></ul></div>
+<h2>자동화가 어느 날 조용히 멈추면, 며칠 만에 아시겠어요?</h2>
+<div class="guard"><p>대부분은 몇 주 뒤에 압니다. 매일 '정상 종료'로 찍히는데 결과물만 0건이면, <strong>그날 올릴 게 없었던 건지 망가진 건지 구분이 안 되거든요.</strong> 자동화를 맡기고 가장 손해 보는 경우가 이겁니다.</p><ul class="rrule"><li>단계를 쪼개고, 각 단계가 끝날 때마다 상태를 파일에 남깁니다(<code>pending → 변환됨 → 적재됨</code>)</li><li><strong>"0건"과 "실패"를 구분해서</strong> 알립니다. 이 둘이 같아 보이면 조용한 실패가 또 생겨요</li><li>실패한 건은 상태를 되돌리지 않습니다. 그대로 두면 다음 실행이 알아서 다시 집습니다</li><li>납품할 때 <strong>"이게 멈춘 걸 어떻게 아는지"</strong>를 같이 보여드리고 넘깁니다</li></ul><p class="gorigin">이 규칙은 제 시스템이 25일간 조용히 실패하고 나서 만든 것입니다. 같은 일을 고객 건에서 겪게 하고 싶지 않아요.</p></div>
 <h2>안 되는 것</h2>
-<ul class="lim"><li><b>발행까지는 자동화하지 않습니다</b><p>요청하시면 가능합니다. 다만 권하지 않아요. 변환이 한 번 잘못되면 그대로 계정에 올라가고, 플랫폼에 따라 발행된 글은 API로 수정·삭제가 막혀 있습니다. 실제로 겪었습니다.</p></li><li><b>플랫폼 API 정책에 묶입니다</b><p>예약 도구나 플랫폼이 정책을 바꾸면 그날로 멈출 수 있습니다. 그래서 '멈춘 걸 바로 아는 것'을 같이 만듭니다.</p></li><li><b>원문 품질을 올려주지는 않습니다</b><p>변환은 형식을 맞추는 일입니다. 원문이 약하면 채널별로 약한 글이 세 개 생길 뿐이에요. 글 자체의 품질은 다음 레시피(품질 검수)가 담당합니다.</p></li><li><b>채널 규칙을 먼저 정해야 합니다</b><p>'우리 Threads는 카드 몇 개, 한 장에 몇 자'가 정해져 있지 않으면 자동화할 대상이 없습니다. 안 정해져 있으면 그걸 같이 정하는 것부터 시작합니다.</p></li></ul>
+<ul class="lim"><li><b>발행까지는 자동화하지 않습니다</b><p>요청하시면 가능하지만 권하지 않아요. 변환이 한 번 잘못되면 그대로 계정에 올라가고, 플랫폼에 따라 발행된 글은 수정·삭제가 막힙니다.</p></li><li><b>채널 규칙을 먼저 정해야 합니다</b><p>'우리 Threads는 카드 몇 개, 한 장에 몇 자'가 없으면 자동화할 대상이 없습니다. 안 정해져 있으면 잘 나간 글에서 역산하는 것부터 같이 합니다.</p></li><li><b>원문 품질을 올려주지는 않습니다</b><p>변환은 형식을 맞추는 일이에요. 원문이 약하면 약한 글이 세 개 생깁니다.</p></li></ul>
 <h2>만드는 과정</h2>
-<ul class="proc"><li><b>1주차</b><div>채널별 규칙을 글로 고정합니다. 길이·분할·줄바꿈·링크 위치. 기존에 잘 나간 글을 샘플로 역산해요.</div></li><li><b>2주차</b><div>변환과 검증을 만들고 과거 글 10편으로 돌려봅니다. 사람이 쓴 것과 나란히 놓고 비교합니다.</div></li><li><b>3주차</b><div>예약 대기열 연동과 상태 기록을 붙입니다. 실패했을 때 어떻게 알게 되는지까지 확인하고 넘겨드립니다.</div></li></ul>
+<ul class="proc"><li><b>1주차</b><div>채널별 규칙을 글로 고정합니다. 길이·분할·줄바꿈·링크 위치. 기존에 잘 나간 글을 샘플로 역산해요.</div></li><li><b>2주차</b><div>변환과 검사를 만들고 과거 글 10편으로 돌려봅니다. 사람이 쓴 것과 나란히 놓고 비교합니다.</div></li><li><b>3주차</b><div>예약 대기열 연동과 상태 기록을 붙입니다. 멈췄을 때 어떻게 알게 되는지까지 확인하고 넘겨드려요.</div></li></ul>
 <div class="rcta"><p class="pn">STEP 2 · 업무 자동화</p><div class="amt">80만 원~</div><p class="pn">상담은 무료예요 · 보통 하루 안에 답장드려요</p><div class="btns"><a class="p1" href="../../build/#contact" data-ev="recipe-cta-contact">이것도 되나요? 물어보기</a><a class="p2" href="../../build/#price" data-ev="recipe-cta-price">단계별 비용 보기</a></div></div>
   </div>
 </div>
