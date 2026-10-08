@@ -48,7 +48,6 @@ em.k{font-style:normal;color:var(--primary)}
 .btn:active{transform:scale(.98)}
 .btn.pri{background:var(--primary);color:#fff;box-shadow:0 10px 24px -8px rgba(83,58,253,.6)}
 .btn.sec{background:#fff;border:1px solid var(--hair);color:var(--ink)}
-.btn.kakao{background:#fee500;color:#191600}
 .btn.full{width:100%}
 .ph{display:grid;place-items:center;text-align:center;background:repeating-linear-gradient(45deg,#f1f3f8 0 10px,#e9ecf3 10px 20px);color:var(--mute);font-size:13px;font-weight:700;border-radius:16px;border:1.5px dashed #c9d1de}
 
@@ -116,6 +115,10 @@ background:radial-gradient(40% 55% at 18% 55%,#ffd9a8 0,transparent 70%),radial-
 .reviews::-webkit-scrollbar{display:none}
 .review{flex:0 0 78%;max-width:320px;scroll-snap-align:start;padding:14px;display:grid;gap:12px}
 .review .ph{aspect-ratio:4/5}
+.rstar{font-size:15px;letter-spacing:2px;color:#ffb400;line-height:1}
+.rstar b{margin-left:6px;font-size:13px;color:var(--mute);letter-spacing:0}
+.rsum{margin-top:18px;font-size:14px;color:var(--mute)}
+.rsum b{color:var(--ink)}
 .review p{font-size:15px;font-weight:800;line-height:1.5}
 .review .cap{font-size:13px}
 .hint{font-size:12px;color:var(--mute);margin-top:4px}
@@ -241,6 +244,7 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0 110px;b
 .cases::-webkit-scrollbar{display:none}
 .case{flex:0 0 84%;max-width:340px;scroll-snap-align:start;padding:16px;display:flex;flex-direction:column;gap:10px}
 .case .shot{aspect-ratio:16/10;max-width:100%}
+img.shot{width:100%;height:auto;display:block;border-radius:14px;background:#06090F}
 .case .tag{align-self:flex-start}
 .case h3{font-size:17px}
 .case dl{display:grid;grid-template-columns:36px 1fr;gap:6px 10px;font-size:13px}
@@ -646,7 +650,7 @@ a.prime-card{color:#fff}
 
     <div class="cases">
       <article class="card case">
-        <div class="ph shot">작업 화면 캡처 자리</div>
+        <img class="shot" src="img/cases/threads.png" alt="업종별 Threads 콘텐츠 자동화 구조 — Make·Claude·Airtable이 Threads로 연결" width="800" height="500" loading="lazy" decoding="async">
         <span class="tag">외주 · 콘텐츠</span>
         <h3>업종별 Threads 콘텐츠 자동화</h3>
         <dl>
@@ -657,7 +661,7 @@ a.prime-card{color:#fff}
         <p class="cap">한의원 · 미디어 · 법무법인</p>
       </article>
       <article class="card case">
-        <div class="ph shot">작업 화면 캡처 자리</div>
+        <img class="shot" src="img/cases/agency.png" alt="마케팅 대행사 콘텐츠 시스템 구조 — Claude와 n8n이 Airtable로 연결" width="800" height="500" loading="lazy" decoding="async">
         <span class="tag">외주 · 콘텐츠</span>
         <h3>마케팅 대행사 콘텐츠 시스템</h3>
         <dl>
@@ -668,7 +672,7 @@ a.prime-card{color:#fff}
         <p class="cap">마케팅 대행사</p>
       </article>
       <article class="card case">
-        <div class="ph shot">작업 화면 캡처 자리</div>
+        <img class="shot" src="img/cases/adreport.png" alt="일일 광고 리포트 자동화 — 엑셀 기반" width="800" height="500" loading="lazy" decoding="async">
         <span class="tag">회사 · 리포트</span>
         <h3>일일 광고 리포트 자동화</h3>
         <dl>
@@ -679,7 +683,7 @@ a.prime-card{color:#fff}
         <p class="cap">퍼포먼스 마케팅 팀</p>
       </article>
       <article class="card case">
-        <div class="ph shot">작업 화면 캡처 자리</div>
+        <img class="shot" src="img/cases/keyword.png" alt="검색광고 키워드 순위 자동화 — 스프레드시트 기반" width="800" height="500" loading="lazy" decoding="async">
         <span class="tag">회사 · 모니터링</span>
         <h3>검색광고 키워드 순위 자동화</h3>
         <dl>
@@ -690,7 +694,7 @@ a.prime-card{color:#fff}
         <p class="cap">마케팅 조직 전체</p>
       </article>
       <article class="card case">
-        <div class="ph shot">작업 화면 캡처 자리</div>
+        <img class="shot" src="img/cases/unifieddb.png" alt="사업부 데이터 통합 DB 구조 — 흩어진 엑셀이 Airtable로 모임" width="800" height="500" loading="lazy" decoding="async">
         <span class="tag">회사 · 운영 시스템</span>
         <h3>사업부 데이터 통합 DB</h3>
         <dl>
@@ -710,11 +714,14 @@ a.prime-card{color:#fff}
   <div class="wrap">
     <span class="eyebrow">TRUST</span>
     <h2>크몽 Prime 전문가예요</h2>
-    <a class="prime-card" href="https://kmong.com/gig/687654" target="_blank" rel="noopener"><div class="pm">PRIME</div><div><b>크몽 Prime 선정</b><p>포트폴리오와 고객 평가를 거쳐 상위 2%로 엄선된 우수 서비스예요. 크몽에서 보기 →</p></div></a>
+    <div class="prime-card"><div class="pm">PRIME</div><div><b>크몽 Prime 선정</b><p>포트폴리오와 고객 평가를 거쳐 상위 2%로 엄선된 우수 서비스예요.</p></div></div>
+    <p class="rsum"><b>리뷰 5건 · 평점 5.0</b> — 크몽에 공개된 구매 고객 후기예요. 원문 그대로 옮겼어요.</p>
     <div class="reviews">
-      <div class="card review"><div class="ph">크몽 리뷰 캡처 1</div><p>"리뷰 핵심 한 문장이 들어갈 자리예요."</p><span class="cap">크몽 구매 고객</span></div>
-      <div class="card review"><div class="ph">크몽 리뷰 캡처 2</div><p>"리뷰 핵심 한 문장이 들어갈 자리예요."</p><span class="cap">크몽 구매 고객</span></div>
-      <div class="card review"><div class="ph">크몽 리뷰 캡처 3</div><p>"리뷰 핵심 한 문장이 들어갈 자리예요."</p><span class="cap">크몽 구매 고객</span></div>
+      <div class="card review"><div class="rstar">★★★★★<b>5.0</b></div><p>&ldquo;정말 친절하시고 물어보는 모든것들 끝까지 해결해 주시기 위해서 최선을 다하시고 무엇보다 결과물이 너무 깔끔합니다. 작업 생길때마다 앞으로 계속 함께하고 싶습니다.&rdquo;</p><span class="cap">JH***** · 크몽 구매 고객</span></div>
+      <div class="card review"><div class="rstar">★★★★★<b>5.0</b></div><p>&ldquo;이 분 최고의 전문가이십니다! 완벽하게 만들어 주셨습니다 생산성이 말도 안되게 좋아질 것 같습니다&rdquo;</p><span class="cap">K6***** · 크몽 구매 고객</span></div>
+      <div class="card review"><div class="rstar">★★★★★<b>5.0</b></div><p>&ldquo;복작한 과정임에도 빠르고 정확하게 응대해주셔서 결과또한 대만족입니다~ 감사합니다~!&rdquo;</p><span class="cap">모든***** · 크몽 구매 고객</span></div>
+      <div class="card review"><div class="rstar">★★★★★<b>5.0</b></div><p>&ldquo;믿고 맡기시면 깔끔하게 일해주시네요&rdquo;</p><span class="cap">긍정***** · 크몽 구매 고객</span></div>
+      <div class="card review"><div class="rstar">★★★★★<b>5.0</b></div><p>&ldquo;친절하시고 빠른 답변으로 작업하는 동안 만족했습니다!!&rdquo;</p><span class="cap">멋있***** · 크몽 구매 고객</span></div>
     </div>
   </div>
 </section>
@@ -971,7 +978,6 @@ a.prime-card{color:#fff}
     </div>
     <div class="ctas">
       <a class="btn pri" id="copyDm" href="https://ig.me/m/work__zero" target="_blank" rel="noopener">양식 복사하고 DM 열기</a>
-      <a class="btn kakao" hidden href="#" data-todo="제작 문의 오픈채팅 링크" target="_blank" rel="noopener">카카오톡 오픈채팅</a>
     </div>
     <p class="note">보통 하루 안에 답장드려요</p>
   </div>
