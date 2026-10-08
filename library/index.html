@@ -64,7 +64,7 @@ background:radial-gradient(40% 55% at 18% 55%,#ffd9a8 0,transparent 70%),radial-
 .hero .sub{font-size:16px;margin-top:12px}
 
 /* 탭 */
-.lib-tabs{display:grid;grid-template-columns:1fr 1fr;gap:6px;background:var(--soft);padding:5px;border-radius:16px;border:1px solid var(--hair);position:sticky;top:calc(60px + env(safe-area-inset-top,0px));z-index:40}
+.lib-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;background:var(--soft);padding:5px;border-radius:16px;border:1px solid var(--hair);position:sticky;top:calc(60px + env(safe-area-inset-top,0px));z-index:40}
 .lib-tab{padding:12px 4px;border-radius:12px;font-weight:800;font-size:15px;color:var(--mute);transition:.25s var(--ease)}
 .lib-tab span{font-size:12px;color:#aab6c6;margin-left:4px}
 .lib-tab.on{background:#fff;color:var(--ink);box-shadow:var(--sh1)}
@@ -80,6 +80,19 @@ background:radial-gradient(40% 55% at 18% 55%,#ffd9a8 0,transparent 70%),radial-
 
 /* 자료 카드 */
 .fgrid{display:grid;gap:14px}
+.cgrid{display:grid;gap:16px}
+.ccard{overflow:hidden;display:block}
+.ccard .cthumb{aspect-ratio:1.91/1;background:var(--soft);overflow:hidden}
+.ccard .cthumb img{width:100%;height:100%;object-fit:cover;display:block;transition:.35s var(--ease)}
+.ccard:hover .cthumb img{transform:scale(1.03)}
+.ccard .cbody{padding:16px 18px 18px;display:grid;gap:7px;min-width:0}
+.ccard .cmeta{display:flex;gap:8px;align-items:center;font-size:12px;color:var(--mute);flex-wrap:wrap}
+.ccard .cmeta i{font-style:normal;background:var(--soft);color:var(--primary);font-weight:800;padding:3px 8px;border-radius:999px}
+.ccard h3{font-size:18px;line-height:1.38;margin:0;word-break:keep-all}
+.ccard p{font-size:14px;line-height:1.62;color:var(--mute);margin:0;word-break:keep-all}
+.ccard .cbtn{margin-top:4px;font-weight:800;font-size:14px;color:var(--primary)}
+.cnote{font-size:14px;color:var(--mute);margin:0 0 16px;line-height:1.6}
+@media (min-width:720px){.cgrid{grid-template-columns:1fr 1fr}}
 .fcard{display:flex;flex-direction:column;overflow:hidden}
 .fthumb{aspect-ratio:4/5;background:linear-gradient(140deg,#eceaff,#e2ecff 55%,#ffe6f0);display:grid;place-items:center;padding:22px;text-align:center;position:relative}
 .fthumb img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
@@ -188,6 +201,7 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0;border-
   <div class="wrap">
     <div class="lib-tabs" role="tablist">
       <button class="lib-tab on" data-tab="files" role="tab">자료실 <span id="cFiles"></span></button>
+      <button class="lib-tab" data-tab="columns" role="tab">칼럼 <span id="cColumns"></span></button>
       <button class="lib-tab" data-tab="notes" role="tab">읽을거리 <span id="cNotes"></span></button>
     </div>
 
@@ -195,6 +209,12 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0;border-
       <div class="fchips" id="chips"></div>
       <div class="fgrid" id="fgrid"></div>
       <p class="empty" id="fEmpty" hidden>해당하는 자료가 아직 없어요.</p>
+    </div>
+
+    <div class="lib-pane" data-pane="columns">
+      <p class="cnote">직접 만들고 돌려 보면서 숫자로 확인한 것들을 정리해 둡니다. 실측 데이터와 차트를 그대로 공개해요.</p>
+      <div class="cgrid" id="cgrid"></div>
+      <p class="empty" id="cEmpty" hidden>아직 올라온 칼럼이 없어요.</p>
     </div>
 
     <div class="lib-pane" data-pane="notes">
@@ -258,6 +278,27 @@ function card(f){
   return `<article class="card fcard">${thumb}<div class="fbody">
     <div class="fmeta"><i>${esc(f.tag)}</i><span>${esc(f.date)}</span></div>
     <h3>${esc(f.title)}</h3><p>${esc(f.desc)}</p>${btn}</div></article>`;
+}
+function col(c){
+  // 썸네일(OG 카드)에 제목이 이미 크게 들어가 있어, 있으면 본문 제목은 생략한다.
+  // 링크의 접근성 이름은 img alt 로 유지한다.
+  const thumb = c.thumb
+    ? `<div class="cthumb"><img src="${esc(c.thumb)}" alt="${esc(c.title)}" loading="lazy"></div>` : '';
+  const head = c.thumb ? '' : `<h3>${esc(c.title)}</h3>`;
+  const meta = [c.tag && `<i>${esc(c.tag)}</i>`, c.date && `<span>${esc(c.date)}</span>`,
+                c.read && `<span>${esc(c.read)}</span>`].filter(Boolean).join('');
+  const btn = c.ready && c.url
+    ? `<span class="cbtn">읽어 보기 →</span>` : `<span class="cbtn">준비 중</span>`;
+  const inner = `${thumb}<div class="cbody"><div class="cmeta">${meta}</div>${head}
+    <p>${esc(c.desc)}</p>${btn}</div>`;
+  return c.ready && c.url
+    ? `<a class="card ccard" href="${esc(c.url)}">${inner}</a>`
+    : `<article class="card ccard">${inner}</article>`;
+}
+function renderColumns(){
+  const list = (DATA.columns||[]).slice().sort((a,b)=>String(b.date).localeCompare(String(a.date)));
+  $('#cgrid').innerHTML = list.map(col).join('');
+  $('#cEmpty').hidden = list.length>0;
 }
 let newestReady=0;   // 읽을 수 있는 글 중 가장 최신 날짜
 // 매일 쌓이는 글이라 "며칠 이내" 로 잡으면 절반이 NEW 가 된다.
@@ -362,15 +403,19 @@ $('#nch').addEventListener('change',e=>{ nch=e.target.value; nshown=NPAGE; rende
 $('#nres').addEventListener('click',e=>{ if(e.target.id==='nreset') resetFilters(); });
 
 fetch('items.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw 0;return r.json()}).then(d=>{
-  DATA={files:d.files||[],notes:d.notes||[]};
+  DATA={files:d.files||[],columns:d.columns||[],notes:d.notes||[]};
   $('#cFiles').textContent=DATA.files.length;
   $('#cNotes').textContent=DATA.notes.length;
-  renderChips(); renderFiles();
+  $('#cColumns').textContent=DATA.columns.length;
+  renderChips(); renderFiles(); renderColumns();
   updStamp(); renderNChannels(); renderNChips(); renderNotes();
   if(location.hash==='#notes') setTab('notes',false);
+  if(location.hash==='#columns') setTab('columns',false);
 }).catch(()=>{
   $('#fEmpty').textContent='자료를 불러오지 못했어요. 잠시 후 다시 열어 주세요.';
   $('#fEmpty').hidden=false;
+  $('#cEmpty').textContent='칼럼을 불러오지 못했어요.';
+  $('#cEmpty').hidden=false;
   $('#nEmpty').textContent='자료를 불러오지 못했어요.';
   $('#nEmpty').hidden=false;
 });
