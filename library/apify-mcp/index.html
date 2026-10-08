@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>클로드로 인스타 계정 분석하기 · 워크제로 자료실</title>
+<meta name="description" content="Apify MCP 연결부터 바로 쓰는 요청문 5개까지">
+<link rel="canonical" href="https://workzeroai.github.io/library/apify-mcp/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#533afd">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="클로드로 인스타 계정 분석하기">
+<meta property="og:description" content="Apify MCP 연결부터 바로 쓰는 요청문 5개까지">
+<meta property="og:url" content="https://workzeroai.github.io/library/apify-mcp/">
+<meta property="og:image" content="https://workzeroai.github.io/library/thumb/apify-mcp.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="클로드로 인스타 계정 분석하기">
+<meta name="twitter:description" content="Apify MCP 연결부터 바로 쓰는 요청문 5개까지">
+<meta name="twitter:image" content="https://workzeroai.github.io/library/thumb/apify-mcp.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+:root{--primary:#533afd;--primary-deep:#4434d4;--primary-pale:#eceaff;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f6f9fc;--hair:#e3e8ee;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴"><a href="../../tutoring/">1:1 과외</a><a href="../../build/">제작 문의</a><a class="on" href="../../library/" aria-current="page">자료실</a></div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../../library/">← 자료실</a>
+  <div class="head"><div class="m"><i>실전 가이드</i><span>2026-10-07</span></div><h1>클로드로 인스타 계정 분석하기</h1></div>
+  
+  <div class="bd">
+<figure><img src="img/01.webp" alt="클로드로 인스타 계정 분석하기" loading="lazy"><figcaption>클로드로 인스타 계정 분석하기</figcaption></figure>
+<div class="lmnote"><p><strong>30초 요약</strong></p>
+<ul><li>인스타그램은 AI·자동 접근을 정책으로 막아 둬서, 클로드에게 링크만 주면 조회수·좋아요·댓글을 못 읽어요.</li><li>Apify MCP를 커넥터로 한 번 연결하면, 공개 계정의 릴스 수치를 표로 받아와요. 설치는 없어요.</li><li>아래 요청문 5개를 순서대로 쓰면 경쟁 계정 표 → 터진 릴스 해부 → 계정 비교 → 내 계정 진단 → 다음 기획까지 이어져요.</li></ul></div>
+<hr>
+<h3>1. 왜 클로드 혼자서는 안 될까요?</h3>
+<p>인스타그램은 사이트 규칙 파일(<code>instagram.com/robots.txt</code>)에 "허가 없는 자동 수집 금지"를 적어 두고, ClaudeBot을 포함한 자동 접근을 전부 막아 두었어요(<code>Disallow: /</code>). 그래서 클로드에게 링크를 줘도 페이지를 읽지 못하고, 숫자를 가져오지 못해요. 직접 보려면 릴스를 하나씩 눌러서 숫자를 옮겨 적어야 하죠. Apify는 공개된 인스타 데이터를 모아 주는 도구예요. 여기에 MCP 연결을 붙이면 클로드가 대화 중에 Apify를 직접 불러서 숫자를 받아와요.</p>
+<figure><img src="img/02.webp" alt="클로드 혼자 vs Apify 연결" loading="lazy"><figcaption>클로드 혼자 vs Apify 연결</figcaption></figure>
+<figure><img src="img/03.webp" alt="받을 수 있는 것과 못 받는 것" loading="lazy"><figcaption>받을 수 있는 것과 못 받는 것</figcaption></figure>
+<div class="lmnote"><p><strong>못 하는 것도 알고 쓰세요</strong></p>
+<ul><li>도달·저장 수·시청 지속·건너뛰기 같은 <strong>인사이트는 계정 주인만</strong> 봐요. Apify로도 못 가져와요.</li><li><strong>공개 계정</strong>만 돼요. 비공개 계정은 안 나와요.</li><li>숫자는 <strong>가져온 순간의 값</strong>이에요. 조회수는 계속 늘어요.</li></ul></div>
+<h3>2. 준비물</h3>
+<div class="lmnote"><p><strong>필요한 것</strong></p>
+<ul><li>Claude 계정 (커스텀 커넥터는 Free·Pro·Max·Team·Enterprise 모두 가능, Free는 커넥터 1개까지)</li><li>Apify 계정 (무료 가입, 카드 등록 없음)</li></ul></div>
+<p>Apify 무료 플랜은 매달 \$5(약 7,000원, 1달러=1,400원으로 가정한 환산)만큼 쓸 수 있어요. 릴스 수집기(Instagram Reel Scraper)는 릴스 1,000개에 \$1부터예요. 공식 페이지 기준으로 무료 \$5면 약 2,000개를 가져올 수 있어요. 계정 하나에 30개씩이면 60곳이 넘어요. 한도를 넘으면 다음 달까지 멈추고 따로 결제되지는 않아요.</p>
+<figure><img src="img/04.webp" alt="Apify 요금 — Free 플랜 월 \$5" loading="lazy"><figcaption>Apify 요금 — Free 플랜 월 \$5</figcaption></figure>
+<figure><img src="img/05.webp" alt="Instagram Reel Scraper — 릴스 1,000개당 \$1부터" loading="lazy"><figcaption>Instagram Reel Scraper — 릴스 1,000개당 \$1부터</figcaption></figure>
+<h3>3. 연결하기 — 화면 보면서 따라 하세요</h3>
+<figure><img src="img/06.webp" alt="연결 3단계 한눈에" loading="lazy"><figcaption>연결 3단계 한눈에</figcaption></figure>
+<h4>1단계. 사용자 지정 열기</h4>
+<p>claude.ai 왼쪽 메뉴에서 ① <strong>사용자 지정</strong>을 눌러요.</p>
+<figure><img src="img/07.webp" alt="① 왼쪽 메뉴 → 사용자 지정" loading="lazy"><figcaption>① 왼쪽 메뉴 → 사용자 지정</figcaption></figure>
+<h4>2단계. 커스텀 커넥터 추가 누르기</h4>
+<p>① 위쪽 탭에서 <strong>커넥터</strong>를 누르고, ② 오른쪽 위 <strong>+ 추가</strong>를 누른 뒤, ③ <strong>커스텀 커넥터 추가</strong>를 골라요.</p>
+<figure><img src="img/08.webp" alt="① 커넥터 탭 → ② + 추가 → ③ 커스텀 커넥터 추가" loading="lazy"><figcaption>① 커넥터 탭 → ② + 추가 → ③ 커스텀 커넥터 추가</figcaption></figure>
+<h4>3단계. 이름과 주소 넣기</h4>
+<p>① 이름 칸에 <code>Apify</code> (아무 이름이나 괜찮아요), ② MCP 서버 URL 칸에 <code>https://mcp.apify.com</code> 을 넣고, ③ <strong>계속</strong>을 눌러요.</p>
+<figure><img src="img/09.webp" alt="① 이름 → ② 주소 → ③ 계속" loading="lazy"><figcaption>① 이름 → ② 주소 → ③ 계속</figcaption></figure>
+<h4>4단계. 로그인 방식 확인 → 추가</h4>
+<p>다음 화면에서 로그인 방식과 인증 설정이 나와요. 처음이라면 <strong>권장 항목(기본값) 그대로</strong> 두고 마지막 <strong>추가</strong> 버튼을 누르면 돼요. 커넥터는 이 버튼을 눌러야 만들어져요(Claude 공식 도움말 기준).</p>
+<h4>5단계. Apify 로그인 → 허용</h4>
+<p>Apify 로그인 창이 열리면 로그인하고 권한 요청에서 허용을 눌러요. 계정이 없으면 여기서 무료로 가입하면 돼요. 연결되면 커넥터 목록의 상태 칸에 ✓가 생겨요.</p>
+<figure><img src="img/10.webp" alt="Apify 로그인 → 허용 → 연결 끝" loading="lazy"><figcaption>Apify 로그인 → 허용 → 연결 끝</figcaption></figure>
+<figure><img src="img/11.webp" alt="연결된 모습 — 주소와 도구 권한 (이름은 제가 붙인 것이라 철자가 달라요)" loading="lazy"><figcaption>연결된 모습 — 주소와 도구 권한 (이름은 제가 붙인 것이라 철자가 달라요)</figcaption></figure>
+<h4>6단계. 채팅에서 Apify 켜기</h4>
+<p>새 채팅 입력창에서 ① 왼쪽 아래 <strong>+</strong> → ② <strong>커넥터</strong> → ③ <strong>Apify</strong> 스위치를 켜요. 이제 계정 주소를 주고 요청하면 돼요.</p>
+<figure><img src="img/12.webp" alt="① + → ② 커넥터 → ③ Apify 켜기" loading="lazy"><figcaption>① + → ② 커넥터 → ③ Apify 켜기</figcaption></figure>
+<div class="lmnote"><p><strong>어디서 쓰느냐에 따라 달라요</strong></p>
+<ul><li><strong>claude.ai 웹</strong>: 위처럼 커스텀 커넥터로 추가해요. 커넥터 둘러보기에서 "Apify"를 검색하면 데스크톱 확장 프로그램과 Claude Code 플러그인으로만 나와요(2026-10-07 확인).</li><li><strong>Claude 데스크톱</strong>: 둘러보기의 Apify(데스크톱 확장 프로그램)를 설치해도 돼요.</li></ul></div>
+<figure><img src="img/13.webp" alt="커넥터 둘러보기에서 Apify 검색 결과 — 데스크톱 확장 프로그램 · Claude Code 플러그인" loading="lazy"><figcaption>커넥터 둘러보기에서 Apify 검색 결과 — 데스크톱 확장 프로그램 · Claude Code 플러그인</figcaption></figure>
+<h3>4. 실제로 돌려 봤어요</h3>
+<p>아래 요청문을 그대로 보냈을 때 나온 결과예요. 예시가 아니라 제 계정(@work__zero)으로 실제로 돌린 화면이에요.</p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">인스타그램 @work__zero 계정의 최근 릴스 12개를 Apify로 가져와서 조회수, 좋아요, 댓글, 길이, 게시일을 표로 만들어줘. 조회수 높은 순으로 정렬하고, 상위 릴스의 공통점을 3줄로 정리해줘. 가져올 릴스 수는 12개로 제한해줘.</code></pre></div>
+<figure><img src="img/14.webp" alt="요청 → Apify Instagram Reel Scraper 실행 → 조회수순 표" loading="lazy"><figcaption>요청 → Apify Instagram Reel Scraper 실행 → 조회수순 표</figcaption></figure>
+<figure><img src="img/15.webp" alt="상위 릴스 공통점 정리" loading="lazy"><figcaption>상위 릴스 공통점 정리</figcaption></figure>
+<p>12개를 요청했는데 가져온 릴스는 5개였어요. 클로드가 그 점을 먼저 짚어 주고, 더 가져오는 방법(<code>apify/instagram-scraper</code>)까지 제안했어요. 숫자는 2026-10-07에 가져온 값이에요.</p>
+<h3>5. 바로 쓰는 요청문 5개</h3>
+<figure><img src="img/16.webp" alt="요청문 5개" loading="lazy"><figcaption>요청문 5개</figcaption></figure>
+<p><code>@계정명</code> 자리만 바꿔서 쓰세요. 처음엔 가져올 개수를 작게(12~30개) 잡으면 비용도 적고 빨라요.</p>
+<h4>① 경쟁 계정 릴스 표</h4>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">인스타그램 @계정명 의 최근 릴스 30개를 Apify(instagram-reel-scraper)로 가져와줘.
+조회수, 좋아요, 댓글, 길이(초), 게시일, 캡션 첫 줄을 표로 만들고 조회수 높은 순으로 정렬해줘.
+가져올 개수는 30개로 제한하고, 숫자가 비어 있는 릴스는 따로 표시해줘.</code></pre></div>
+<h4>② 터진 릴스 해부</h4>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">방금 표에서 조회수 상위 3개와 하위 3개를 비교해줘.
+주제, 캡션 첫 줄(훅), 길이, 댓글 유도 문구(CTA)가 어떻게 다른지 표로 정리하고,
+상위 3개의 공통점을 3줄로 말해줘. 숫자로 확인되지 않는 건 추측이라고 표시해줘.</code></pre></div>
+<h4>③ 계정 2~3개 비교</h4>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">@계정A, @계정B, @계정C 의 최근 릴스를 각각 30개씩 가져와서 비교해줘.
+계정별로 조회수 평균, 중앙값, 5만 회 이상 릴스 비율, 평균 길이를 표로 만들고,
+팔로워 수가 다르니 계정 안에서의 상위 20% 릴스 주제를 따로 비교해줘.</code></pre></div>
+<h4>④ 내 계정 진단</h4>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">내 계정 @내계정 의 최근 릴스 20개를 가져와서 아래 기준표로 등급을 매겨줘.
+보통(중앙값) 6천 / 준수 1만 / 좋음 1.6만 / 잘 나옴 3만 / 대박 5만 이상.
+등급별 개수와, 준수 이상 릴스와 미만 릴스의 차이(주제·길이·훅)를 정리해줘.</code></pre></div>
+<h4>⑤ 다음 기획 3개</h4>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">위에서 찾은 터진 릴스 공통점을 내 계정 주제(예: 업무 자동화)에 맞게 바꿔서
+다음 릴스 기획 3개를 써줘. 각 기획마다 첫 문장(1.5초 안에 끝나는 훅), 장면 5개, 댓글 키워드를 넣어줘.
+경쟁 계정의 문장을 그대로 베끼지 말고 구조만 가져와줘.</code></pre></div>
+<h3>6. 숫자 읽는 법 — 성과 기준표</h3>
+<figure><img src="img/17.webp" alt="성과 기준표" loading="lazy"><figcaption>성과 기준표</figcaption></figure>
+<p>제가 9월에 벤치마크 계정 7곳의 릴스 248개를 직접 뽑아 보고 만든 기준이에요. 팔로워 2.5천~1.2만 계정의 협찬 아닌 릴스 76개 분포라서, 이 정도 규모 계정이라면 <strong>1만 회면 준수, 3만 회면 잘 나온 편</strong>이에요. 벤치마크용으로 고른 잘 되는 계정들이라 평균보다 조금 높게 잡혀 있어요.</p>
+<h3>7. 빠지기 쉬운 함정 4개</h3>
+<figure><img src="img/18.webp" alt="주의할 점" loading="lazy"></figure>
+<ul><li><strong>협찬 릴스</strong>: 광고 집행분이 섞여 조회수가 튈 수 있어요. 캡션에 #광고·제작지원이 있으면 따로 빼고 보세요.</li><li><strong>조회 제한</strong>: 일부 릴스는 숫자가 비어 나와요. 제가 뽑은 248개 중 18개가 그랬어요.</li><li><strong>그 순간 값</strong>: 조회수는 계속 늘어요. 여러 계정을 비교할 땐 같은 날 뽑으세요.</li><li><strong>팔로워 차이</strong>: 큰 계정과 그대로 비교하지 말고, 계정 안에서 순위를 보세요.</li></ul>
+<h3>8. 벤치마크 시트 템플릿</h3>
+<figure><img src="img/19.webp" alt="벤치마크 시트" loading="lazy"><figcaption>벤치마크 시트</figcaption></figure>
+<p>구글 시트 첫 줄에 아래 11개 열을 만들어 두고, 요청문 ①의 결과를 그대로 붙여 넣으면 계정이 늘어날수록 비교가 쉬워져요. A~G는 Apify가 가져오는 값, H~K는 클로드에게 분류를 맡기는 값이에요.</p>
+<div class="tw hdr"><table>
+<tr><th>열</th><th>이름</th><th>채우는 곳</th></tr>
+<tr><td data-label="열">A</td><td data-label="이름">계정</td><td data-label="채우는 곳">Apify</td></tr>
+<tr><td data-label="열">B</td><td data-label="이름">릴스 링크</td><td data-label="채우는 곳">Apify</td></tr>
+<tr><td data-label="열">C</td><td data-label="이름">게시일</td><td data-label="채우는 곳">Apify</td></tr>
+<tr><td data-label="열">D</td><td data-label="이름">길이(초)</td><td data-label="채우는 곳">Apify</td></tr>
+<tr><td data-label="열">E</td><td data-label="이름">조회수</td><td data-label="채우는 곳">Apify</td></tr>
+<tr><td data-label="열">F</td><td data-label="이름">좋아요</td><td data-label="채우는 곳">Apify</td></tr>
+<tr><td data-label="열">G</td><td data-label="이름">댓글</td><td data-label="채우는 곳">Apify</td></tr>
+<tr><td data-label="열">H</td><td data-label="이름">주제</td><td data-label="채우는 곳">Claude</td></tr>
+<tr><td data-label="열">I</td><td data-label="이름">훅 첫 문장</td><td data-label="채우는 곳">Claude</td></tr>
+<tr><td data-label="열">J</td><td data-label="이름">CTA 키워드</td><td data-label="채우는 곳">Claude</td></tr>
+<tr><td data-label="열">K</td><td data-label="이름">협찬 여부</td><td data-label="채우는 곳">Claude (캡션 기준)</td></tr>
+</table></div>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">위 표를 구글 시트에 붙여 넣을 수 있게 탭으로 구분된 텍스트로 바꿔줘.
+열 순서: 계정, 릴스 링크, 게시일, 길이(초), 조회수, 좋아요, 댓글, 주제, 훅 첫 문장, CTA 키워드, 협찬 여부</code></pre></div>
+<h3>9. 자주 묻는 것</h3>
+<div class="lmnote"><p><strong>비용이 갑자기 많이 나오진 않나요?</strong> 무료 플랜은 월 \$5를 넘으면 멈춰요. 요청문에 "가져올 개수는 30개로 제한"처럼 개수를 꼭 적으세요.</p></div>
+<div class="lmnote"><p><strong>계정 정보가 넘어가나요?</strong> Apify 연결은 Apify 계정 로그인(OAuth)만 해요. 인스타 계정 로그인은 필요 없고, 공개된 정보만 가져와요.</p></div>
+<div class="lmnote"><p><strong>인스타 약관상 괜찮나요?</strong> 인스타 약관은 허가 없는 자동 수집을 금지해요. 공개 계정의 숫자만, 적은 양으로, 분석 목적으로 쓰고, 개인정보(댓글 작성자 정보 등)는 모으지 마세요. 판단과 책임은 쓰는 사람에게 있어요.</p></div>
+<div class="lmnote"><p><strong>"이 URL을 가진 커넥터가 이미 존재합니다"가 떠요</strong> 이미 Apify가 연결돼 있다는 뜻이에요. 새로 추가하지 말고 6단계(채팅에서 켜기)로 바로 가면 돼요.</p></div>
+<figure><img src="img/20.webp" alt="이미 연결돼 있을 때 나오는 안내" loading="lazy"><figcaption>이미 연결돼 있을 때 나오는 안내</figcaption></figure>
+<div class="lmnote"><p><strong>안 될 때는요?</strong> 채팅에서 + → 커넥터에 Apify가 켜져 있는지 먼저 보세요. 숫자가 비어 나오면 그 릴스가 조회 제한일 수 있어요. 다른 릴스로 다시 시도해 보세요.</p></div>
+<h3>공식 링크</h3>
+<ul><li>Apify MCP 문서: <a href="https://docs.apify.com/platform/integrations/mcp" target="_blank" rel="noopener">https://docs.apify.com/platform/integrations/mcp</a></li><li>Instagram Reel Scraper: <a href="https://apify.com/apify/instagram-reel-scraper" target="_blank" rel="noopener">https://apify.com/apify/instagram-reel-scraper</a></li><li>Apify 요금: <a href="https://apify.com/pricing" target="_blank" rel="noopener">https://apify.com/pricing</a></li><li>Claude 커스텀 커넥터 도움말: <a href="https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp" target="_blank" rel="noopener">https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp</a></li></ul>
+<p>기준 날짜: 2026-10-07 · 만든 사람: @work__zero</p>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>세 가지만 답하면 4단계 중 지금 위치를 바로 알려드려요. 무료예요.</p><span class="go">내 단계 진단하기 →</span></a>
+    <a class="cross" href="../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../../library/" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>
