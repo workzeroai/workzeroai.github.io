@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-06",
+  "updated": "2026-10-08",
   "files": [
     {
       "slug": "marketing-plugin",
@@ -78,6 +78,17 @@
       "read": "12분",
       "thumb": "../reports/ai-reels-insights/og.png",
       "url": "../reports/ai-reels-insights/",
+      "ready": true
+    },
+    {
+      "slug": "youtube-300-formula",
+      "title": "채널을 만들기 전에 경쟁 채널 300개를 먼저 봤습니다",
+      "desc": "구독자 165만 유튜버가 정체를 숨기고 30일간 새 채널을 키운 기록을 뜯어봤어요. 베껴야 할 건 30만이라는 숫자가 아니라 분석 → 공식 → 테스트 → 판정의 순서였어요.",
+      "tag": "성장 사례",
+      "date": "2026-10-08",
+      "read": "13분",
+      "thumb": "../reports/youtube-300-formula/og.png",
+      "url": "../reports/youtube-300-formula/",
       "ready": true
     }
   ],
