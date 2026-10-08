@@ -204,7 +204,7 @@ footer { font-size: 13px; color: var(--muted); display: grid; gap: 6px; border-t
     <ul class="plain">
       <li><strong>끝까지 봐서 퍼진 게 아니에요.</strong> 35초 중 평균 6초를 봤고, 첫 2초에 4분의 3이 떠났어요. 그런데도 저장이 좋아요의 5.4배였어요 — 사람들은 “좋다”가 아니라 “나중에 써야 한다”로 반응했어요.</li>
       <li><strong>조회의 65%가 둘째 날 이후에 나왔어요.</strong> 게다가 늦게 본 사람일수록 더 저장하고 더 팔로우했어요. 첫날 숫자로 성패를 판단하면 안 돼요.</li>
-      <li><strong>댓글 CTA는 조회수를 올리지 않아요.</strong> 본 사람을 팔로워로 바꾸는 장치예요. 조회를 만드는 건 1~2단계(타깃 + 후킹)이고, 팔로워를 만드는 건 4~5단계예요. 다만 <strong>댓글 1,130개의 절반은 리틀리 자동 답글</strong>이라, 댓글 수를 사람 반응으로 읽으면 두 배로 부풀려 보게 돼요(<a href="#s-littly">댓글 수 보정</a>).</li>
+      <li><strong>퍼뜨린 레버와 팔로워를 만든 레버는 달라요.</strong> 퍼뜨린 건 저장·공유(좋아요의 7.4배)이고, 팔로워를 만든 건 댓글 CTA예요. 제 데이터에서 CTA 있는 릴스는 댓글이 7.3배 많지만 조회수 중앙값은 36% 낮았어요 — 댓글을 노린다고 더 퍼지진 않아요.</li>
     </ul>
   </section>
 
@@ -372,11 +372,9 @@ footer { font-size: 13px; color: var(--muted); display: grid; gap: 6px; border-t
 <text class="c-note" x="0" y="171.0">당시 팔로워는 25~34세가 64%였어요. 조회자는 <tspan class="c-formula-t">35~54세가 48.7%</tspan>로 팔로워층보다 나이가 많아요.</text>
 <text class="c-note" x="0" y="186.0">도구를 고르는 실무 리드급까지 닿았다는 신호예요.</text></svg></div>
   </section>
-  </div>
-  <div class="part" id="part2">
-    <div class="part-head"><span class="part-k">PART 2</span><h2 class="part-t">왜 퍼졌나</h2><p class="part-d">숫자 뒤에 있는 이유를 해석해요.</p></div>
   <section id="s-littly">
-    <h2>댓글 1,130개 중 절반은 자동 답글이에요</h2>
+    <h2>댓글 수 읽는 법 — 절반은 자동 답글이에요</h2>
+    <p class="note">이 글에서 유일한 <strong>측정 보정</strong>이에요. 확산의 원인이 아니라, 아래 숫자를 잘못 읽지 않기 위한 안내예요.</p>
     <p>이 릴스의 댓글 CTA는 손으로 돌리는 게 아니라 <strong>리틀리(Lit.link)로 전부 자동화</strong>돼 있어요. 흐름은 이래요.</p>
     <div class="autoflow" role="img" aria-label="리틀리 자동화 흐름. 사용자가 댓글을 쓰면 리틀리가 DM 확인 안내 답글을 자동으로 달고, 사용자가 팔로우한 뒤 DM 버튼을 누르면 자료 링크가 자동 발송된다."><div class="anode"><span class="who">사용자</span><span class="what">댓글 작성</span><span class="det">영상에서 안내한 키워드를 댓글로 남겨요</span></div><div class="anode auto"><span class="who">리틀리 자동</span><span class="what">댓글에 답글</span><span class="det">“DM 확인해주세요” 답글이 자동으로 달려요</span></div><div class="anode"><span class="who">사용자</span><span class="what">팔로우</span><span class="det">자료를 받으려면 팔로우가 조건이에요</span></div><div class="anode"><span class="who">사용자</span><span class="what">DM 버튼 클릭</span><span class="det">받은 DM에서 버튼을 눌러요</span></div><div class="anode auto"><span class="who">리틀리 자동</span><span class="what">자료 링크 발송</span><span class="det">영상에서 말한 자료가 자동으로 전달돼요</span></div></div>
     <p>2번이 <strong>인스타 댓글 수로 같이 집계돼요.</strong> 댓글 하나마다 자동 답글이 하나씩 붙으니, 인스타가 보여 주는 1,130개의 절반가량은 제가 단 답글이에요. 댓글을 “사람의 반응”으로 읽으면 두 배로 부풀려 보게 돼요.</p>
@@ -402,6 +400,49 @@ footer { font-size: 13px; color: var(--muted); display: grid; gap: 6px; border-t
     <p class="note">이 자동화는 앞으로 올리는 릴스에도 계속 써요. 그래서 <strong>이 계정의 댓글 수는 언제나 두 배로 보인다</strong>고 생각하고 읽어야 해요. 다음 릴스를 이 릴스와 비교할 때는 양쪽 다 같은 조건이라 그대로 비교하면 되고, 다른 계정과 비교할 때만 보정이 필요해요.</p>
     <p class="note">AI 정보 계정 비교(아래 PART 4의 CTA 차트)도 같은 한계가 있어요. 다른 계정들이 매니챗 같은 자동 답글을 쓰고 있으면 그쪽 댓글 수도 같이 부풀려져 있어서, 절대 수준이 아니라 <strong>CTA 있음과 없음의 방향 차이</strong>로만 읽어야 해요.</p>
   </section>
+  </div>
+  <div class="part" id="part2">
+    <div class="part-head"><span class="part-k">PART 2</span><h2 class="part-t">왜 퍼졌나</h2><p class="part-d">숫자 뒤에 있는 이유를 해석해요.</p></div>
+  <section id="s-signals">
+    <h2>퍼지게 한 신호와, 데려온 신호는 달라요</h2>
+    <p>“왜 퍼졌나”를 한 가지로 답하긴 어려워요. 다만 신호를 두 묶음으로 나눠 보면 역할이 꽤 분명하게 갈려요.</p>
+    <div class="figure"><svg class="chart-svg" viewBox="0 0 720 336" role="img" aria-label="조회한 사람 1,000명당 행동. 퍼지게 한 신호는 저장 28.0 공유 9.0 리포스트 1.7, 내 계정으로 데려온 신호는 댓글 12.7 프로필 방문 10.2 팔로우 10.2. 좋아요는 5.2다." style="font-size:12px">
+<text class="c-note" x="0" y="12.0">조회한 사람 1,000명당</text>
+<line class="c-ref" x1="250.4" x2="250.4" y1="21.6" y2="292.8"/>
+<text class="c-note" x="250.4" y="28.8" text-anchor="middle">좋아요 5.2</text>
+<text class="c-label" x="0" y="46.8">퍼지게 한 신호</text>
+<text class="c-note" x="0" y="76.1" style="fill:var(--fg)">저장</text>
+<rect class="c-seg-acc" x="168.0" y="63.4" width="442.2" height="17.3" rx="3"><title>저장 · 1,251건 · 1,000명당 28.0</title></rect>
+<text class="c-val" x="720.0" y="76.8" text-anchor="end">28.0</text>
+<text class="c-note" x="0" y="107.3" style="fill:var(--fg)">공유</text>
+<rect class="c-seg-acc" x="168.0" y="94.6" width="141.8" height="17.3" rx="3"><title>공유 · 401건 · 1,000명당 9.0</title></rect>
+<text class="c-val" x="720.0" y="108.0" text-anchor="end">9.0</text>
+<text class="c-note" x="0" y="138.5" style="fill:var(--fg)">리포스트</text>
+<rect class="c-seg-acc" x="168.0" y="125.8" width="27.2" height="17.3" rx="3"><title>리포스트 · 77건 · 1,000명당 1.7</title></rect>
+<text class="c-val" x="720.0" y="139.2" text-anchor="end">1.7</text>
+<text class="c-label" x="0" y="176.4">내 계정으로 데려온 신호</text>
+<text class="c-note" x="0" y="205.7" style="fill:var(--fg)">댓글 (자동 답글 뺀 수)</text>
+<rect class="c-seg" x="168.0" y="193.0" width="199.7" height="17.3" rx="3"><title>댓글 (자동 답글 뺀 수) · 565건 · 1,000명당 12.7</title></rect>
+<text class="c-val" x="720.0" y="206.4" text-anchor="end">12.7</text>
+<text class="c-note" x="0" y="236.9" style="fill:var(--fg)">프로필 방문</text>
+<rect class="c-seg" x="168.0" y="224.2" width="160.8" height="17.3" rx="3"><title>프로필 방문 · 455건 · 1,000명당 10.2</title></rect>
+<text class="c-val" x="720.0" y="237.6" text-anchor="end">10.2</text>
+<text class="c-note" x="0" y="268.1" style="fill:var(--fg)">팔로우</text>
+<rect class="c-seg" x="168.0" y="255.4" width="161.2" height="17.3" rx="3"><title>팔로우 · 456건 · 1,000명당 10.2</title></rect>
+<text class="c-val" x="720.0" y="268.8" text-anchor="end">10.2</text>
+<line class="c-grid" x1="0" x2="720" y1="301.2" y2="301.2"/>
+<text class="c-note" x="0" y="318.0">보통 가장 많은 건 좋아요예요. 여기선 <tspan class="c-formula-t">저장·공유·리포스트를 합치면 좋아요의 7.4배</tspan>로, 이 릴스가 열흘 내내 추천된 것과 같이 움직인 쪽이에요.</text>
+<text class="c-note" x="0" y="333.6">아래쪽 셋은 퍼뜨린 신호가 아니라, 본 사람이 계정으로 넘어온 결과예요. 두 묶음은 다른 레버라 따로 봐야 해요.</text>
+</svg></div>
+    <ul class="plain">
+      <li><strong>퍼뜨린 쪽은 저장이에요.</strong> 조회한 사람 1,000명당 저장 28.0건으로 좋아요(5.2)의 5.4배예요. 보통은 좋아요가 제일 많은데 거꾸로 됐어요. 공유 9.0, 리포스트 1.7까지 합치면 좋아요의 7.4배고, 이 릴스가 열흘 내내 비팔로워에게 추천된 흐름과 같이 움직인 건 이쪽이에요.</li>
+      <li><strong>댓글은 퍼뜨린 신호가 아니에요.</strong> 제가 모은 AI 정보 계정 릴스 127개를 보면, 키워드 CTA가 있는 릴스는 댓글이 7.3배 많은데 <strong>조회수 중앙값은 오히려 36% 낮아요</strong>(PART 4 차트). 댓글을 많이 받는다고 더 퍼지지 않았어요.</li>
+      <li><strong>댓글·프로필 방문·팔로우는 결과예요.</strong> 퍼진 다음에 본 사람 중 일부가 계정으로 넘어온 거지, 이게 노출을 만든 건 아니에요. 세 숫자가 10~13으로 비슷하게 묶이는 것도 같은 흐름에서 나온 신호라서예요.</li>
+      <li class="note">인스타가 각 신호에 어떤 가중치를 주는지는 공개돼 있지 않아요. 여기서 말하는 건 <strong>같이 움직였다</strong>는 관찰이지, 인과를 증명한 건 아니에요.</li>
+    </ul>
+    <p>그래서 이 릴스를 한 줄로 설명하면 <strong>“마케터가 저장하고 동료에게 보낼 이유가 확실했던 영상”</strong>이에요. 댓글 자동화는 그렇게 모인 사람을 팔로워로 바꾸는 <em>뒷단</em> 장치고, 확산의 원인은 아니에요.</p>
+  </section>
+
 
   <section id="why">
     <h2>데이터로 본 이유 (해석)</h2>
