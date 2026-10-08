@@ -159,6 +159,17 @@ footer { font-size: 13px; color: var(--muted); display: grid; gap: 6px; border-t
 .farrow.down { text-align: center; margin: -8px 0; }
 .fresult { background: var(--accent-soft); border: 1px solid var(--accent); border-radius: 10px; padding: 14px; display: flex; gap: 8px; justify-content: center; align-items: baseline; font-size: 16px; font-weight: 600; }
 .fresult b { font-family: var(--font-num); color: var(--accent); }
+/* ===== 리틀리 자동화 흐름 ===== */
+.autoflow { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 7px; }
+.anode { border: 1px solid var(--line); border-radius: 9px; padding: 12px 11px; background: var(--surface); display: grid; gap: 6px; align-content: start; }
+.anode.auto { background: var(--accent-soft); border-color: var(--accent); }
+.anode .who { font-size: 11px; letter-spacing: .04em; color: var(--muted); }
+.anode.auto .who { color: var(--accent); font-weight: 600; }
+.anode .what { font-size: 14px; line-height: 1.4; font-weight: 500; }
+.anode .det { font-size: 12px; color: var(--muted); line-height: 1.45; }
+@media (max-width: 680px) { .autoflow { grid-template-columns: 1fr 1fr; } }
+.corr { border-left: 3px solid var(--warn); padding-left: 14px; display: grid; gap: 8px; }
+.corr .h { font-weight: 600; }
 @media (max-width: 620px) {
   .toc ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .formula { grid-template-columns: 1fr; gap: 8px; }
@@ -193,7 +204,7 @@ footer { font-size: 13px; color: var(--muted); display: grid; gap: 6px; border-t
     <ul class="plain">
       <li><strong>끝까지 봐서 퍼진 게 아니에요.</strong> 35초 중 평균 6초를 봤고, 첫 2초에 4분의 3이 떠났어요. 그런데도 저장이 좋아요의 5.4배였어요 — 사람들은 “좋다”가 아니라 “나중에 써야 한다”로 반응했어요.</li>
       <li><strong>조회의 65%가 둘째 날 이후에 나왔어요.</strong> 게다가 늦게 본 사람일수록 더 저장하고 더 팔로우했어요. 첫날 숫자로 성패를 판단하면 안 돼요.</li>
-      <li><strong>댓글 CTA는 조회수를 올리지 않아요.</strong> 본 사람을 팔로워로 바꾸는 장치예요. 조회를 만드는 건 1~2단계(타깃 + 후킹)이고, 팔로워를 만드는 건 4~5단계예요.</li>
+      <li><strong>댓글 CTA는 조회수를 올리지 않아요.</strong> 본 사람을 팔로워로 바꾸는 장치예요. 조회를 만드는 건 1~2단계(타깃 + 후킹)이고, 팔로워를 만드는 건 4~5단계예요. 다만 <strong>댓글 1,130개의 절반은 리틀리 자동 답글</strong>이라, 댓글 수를 사람 반응으로 읽으면 두 배로 부풀려 보게 돼요(<a href="#s-littly">댓글 수 보정</a>).</li>
     </ul>
   </section>
 
@@ -231,7 +242,7 @@ footer { font-size: 13px; color: var(--muted); display: grid; gap: 6px; border-t
         </tbody>
       </table>
     </div>
-    <p class="note">비율은 인스타 인사이트 화면에 나온 값이에요. 첫날 조회는 전체의 35%였고, 공개 재생수 기준으로 약 2.5일째 33,380회, 이후 하루 2천 회 안팎씩 꾸준히 늘었어요.</p>
+    <p class="note">비율은 인스타 인사이트 화면에 나온 값이에요. 첫날 조회는 전체의 35%였고, 공개 재생수 기준으로 약 2.5일째 33,380회, 이후 하루 2천 회 안팎씩 꾸준히 늘었어요. <strong>댓글 325 · 1,130은 리틀리 자동 답글이 절반쯤 섞인 값이에요 — <a href="#s-littly">댓글 수 보정</a> 참고.</strong></p>
     <div class="figure"><svg class="chart-svg" viewBox="0 0 720 297" role="img" aria-label="24시간 대비 10일 증가 배수. 조회는 2.8배인데 프로필 방문 3.6배, 댓글 3.5배, 팔로우 3.4배, 저장 3.3배로 더 크다." style="font-size:12px"><line class="c-ref" x1="508.2" x2="508.2" y1="8.4" y2="252.0"/>
 <text class="c-note" x="508.2" y="3.6" text-anchor="middle">조회 2.8배</text>
 <text class="c-label" x="0" y="34.1">프로필 방문</text>
@@ -291,7 +302,7 @@ footer { font-size: 13px; color: var(--muted); display: grid; gap: 6px; border-t
     <ul class="plain">
       <li>인스타가 반응 좋은 사람들과 비슷한 사람을 골라 더 보여 주면서, 뒤로 갈수록 관심 있는 사람에게 닿은 것으로 봐요. 해석이고 확인된 원인은 아니에요.</li>
       <li>평균 시청은 화면에 초 단위로 반올림돼 나와서 2~10일째 값은 범위로만 적었어요.</li>
-      <li>이 표는 인사이트 숫자로 직접 나눠 계산해서, 위 표의 인스타 표시 비율과 소수점이 조금 달라요(저장 2.4% → 2.5%).</li>
+      <li>이 표는 인사이트 숫자로 직접 나눠 계산해서, 위 표의 인스타 표시 비율과 소수점이 조금 달라요(저장 2.4% → 2.5%). 댓글 행(2.1% → 2.8%)은 자동 답글을 빼면 수준이 절반(약 1.05% → 1.4%)이지만 <strong>상승 폭은 그대로예요</strong>.</li>
     </ul>
     <div class="figure"><svg class="chart-svg" viewBox="0 0 720 230" role="img" aria-label="조회한 사람 대비 반응률. 저장 2.5에서 3.0퍼센트, 댓글 2.1에서 2.8퍼센트, 팔로우 0.86에서 1.11퍼센트로 모두 올랐다." style="font-size:12px">
 <text class="c-label" x="112.0" y="13.2" text-anchor="middle">저장</text>
@@ -364,6 +375,33 @@ footer { font-size: 13px; color: var(--muted); display: grid; gap: 6px; border-t
   </div>
   <div class="part" id="part2">
     <div class="part-head"><span class="part-k">PART 2</span><h2 class="part-t">왜 퍼졌나</h2><p class="part-d">숫자 뒤에 있는 이유를 해석해요.</p></div>
+  <section id="s-littly">
+    <h2>댓글 1,130개 중 절반은 자동 답글이에요</h2>
+    <p>이 릴스의 댓글 CTA는 손으로 돌리는 게 아니라 <strong>리틀리(Lit.link)로 전부 자동화</strong>돼 있어요. 흐름은 이래요.</p>
+    <div class="autoflow" role="img" aria-label="리틀리 자동화 흐름. 사용자가 댓글을 쓰면 리틀리가 DM 확인 안내 답글을 자동으로 달고, 사용자가 팔로우한 뒤 DM 버튼을 누르면 자료 링크가 자동 발송된다."><div class="anode"><span class="who">사용자</span><span class="what">댓글 작성</span><span class="det">영상에서 안내한 키워드를 댓글로 남겨요</span></div><div class="anode auto"><span class="who">리틀리 자동</span><span class="what">댓글에 답글</span><span class="det">“DM 확인해주세요” 답글이 자동으로 달려요</span></div><div class="anode"><span class="who">사용자</span><span class="what">팔로우</span><span class="det">자료를 받으려면 팔로우가 조건이에요</span></div><div class="anode"><span class="who">사용자</span><span class="what">DM 버튼 클릭</span><span class="det">받은 DM에서 버튼을 눌러요</span></div><div class="anode auto"><span class="who">리틀리 자동</span><span class="what">자료 링크 발송</span><span class="det">영상에서 말한 자료가 자동으로 전달돼요</span></div></div>
+    <p>2번이 <strong>인스타 댓글 수로 같이 집계돼요.</strong> 댓글 하나마다 자동 답글이 하나씩 붙으니, 인스타가 보여 주는 1,130개의 절반가량은 제가 단 답글이에요. 댓글을 “사람의 반응”으로 읽으면 두 배로 부풀려 보게 돼요.</p>
+    <div class="table-box">
+      <table>
+        <thead><tr><th>댓글 관련 지표</th><th class="r">인스타 표시</th><th class="r">자동 답글 제외(추정)</th></tr></thead>
+        <tbody>
+          <tr><td>댓글 수 (10일)</td><td class="r">1,130</td><td class="r">약 565</td></tr>
+          <tr><td>재생 1,000회당 댓글</td><td class="r">22.3개</td><td class="r">약 11.1개</td></tr>
+          <tr><td>조회한 사람 대비</td><td class="r">2.53%</td><td class="r">약 1.27%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">“절반”은 운영자 확인 기준이에요. 키워드가 아닌 일반 댓글에는 답글이 안 달리니 실제 사용자 댓글은 565개보다 조금 많을 수 있어요. 정확한 수는 댓글을 전수 수집해 작성자별로 세어야 알 수 있고, 아직 하지 않았어요.</p>
+    <div class="corr">
+      <p class="h">그래도 바뀌지 않는 것</p>
+      <ul class="plain">
+        <li><strong>증가 배수(3.5배)는 그대로예요.</strong> 24시간 때도 10일 때도 같은 자동화가 돌았으니 분자·분모가 같이 절반이 돼요.</li>
+        <li><strong>첫날 → 2~10일째 상승 추세도 그대로예요.</strong> 수준만 절반이고 기울기는 안 변해요.</li>
+        <li><strong>릴스 5편 사이의 비교도 유효해요.</strong> 다섯 편 모두 같은 리틀리 자동화를 걸어 뒀다면 전부 같은 비율로 부풀려진 거라, 편 간 높낮이는 그대로예요. <em>다만 이건 확인이 필요해요.</em></li>
+      </ul>
+    </div>
+    <p class="note">AI 정보 계정 비교(아래 PART 4의 CTA 차트)도 같은 한계가 있어요. 다른 계정들이 매니챗 같은 자동 답글을 쓰고 있으면 그쪽 댓글 수도 같이 부풀려져 있어서, 절대 수준이 아니라 <strong>CTA 있음과 없음의 방향 차이</strong>로만 읽어야 해요.</p>
+  </section>
+
   <section id="why">
     <h2>데이터로 본 이유 (해석)</h2>
     <ol class="reasons">
@@ -650,7 +688,7 @@ footer { font-size: 13px; color: var(--muted); display: grid; gap: 6px; border-t
 </svg></div>
     <ul class="plain">
       <li><strong>같은 공식 두 편이 둘 다 2만 회를 넘었어요.</strong> 디자인 편은 3일 만에 2만을 넘겼어요. 다만 아직 두 편이라 공식이 통한다고 단정하진 않아요.</li>
-      <li><strong>재생 1,000회당 댓글은 다섯 편 모두 16~26개로 비슷해요.</strong> 댓글 CTA는 본 사람 중 댓글 다는 비율을 만들 뿐, 몇 명이 보느냐는 바꾸지 못했어요. 6개 AI 계정 릴스 251개를 따로 분석했을 때도 같은 결과였어요.</li>
+      <li><strong>재생 1,000회당 댓글은 다섯 편 모두 16~26개로 비슷해요.</strong> 댓글 CTA는 본 사람 중 댓글 다는 비율을 만들 뿐, 몇 명이 보느냐는 바꾸지 못했어요. 6개 AI 계정 릴스 251개를 따로 분석했을 때도 같은 결과였어요. <em>이 표의 댓글 수에도 리틀리 자동 답글이 포함돼 있어요 — 절대 수준은 절반쯤으로 보고, 편 간 비교로만 읽어 주세요(<a href="#s-littly">댓글 수 보정</a>).</em></li>
       <li>차이를 만든 건 첫 문장과 주제였어요. “직무 + 도구 목록”은 퍼졌고, “막혔죠?” 같은 질문형이나 도구 기능 설명형은 퍼지지 않았어요.</li>
     </ul>
   </section>
@@ -851,7 +889,7 @@ footer { font-size: 13px; color: var(--muted); display: grid; gap: 6px; border-t
   <section id="formula-funnel">
     <h2>공식 6단계가 실제로 만든 숫자</h2>
     <p>앞에서 본 숫자를 공식 단계에 하나씩 붙이면 이렇게 돼요. 각 단계가 실제로 얼마나 작동했는지 한 장으로 보는 그림이에요.</p>
-    <div class="figure"><svg class="chart-svg" viewBox="0 0 720 554" role="img" aria-label="공식 6단계별 10일 실측 수치. 조회 50,773회에서 3초까지 20.2퍼센트가 남고, 저장 1,251 댓글 1,130 팔로우 456으로 이어졌다." style="font-size:12px">
+    <div class="figure"><svg class="chart-svg" viewBox="0 0 720 554" role="img" aria-label="공식 6단계별 10일 실측 수치. 조회 50,773회에서 3초까지 20.2퍼센트가 남고, 저장 1,251, 사용자 댓글 약 565, 팔로우 456으로 이어졌다." style="font-size:12px">
 <text class="c-label" x="0" y="13.2">도달·시청</text>
 <line class="c-grid" x1="0" x2="720" y1="22.8" y2="22.8"/>
 <text class="c-note" x="720" y="42.0" text-anchor="end">막대 폭은 로그 눈금</text>
@@ -875,9 +913,9 @@ footer { font-size: 13px; color: var(--muted); display: grid; gap: 6px; border-t
 <text class="c-val" x="460.8" y="242.4">저장 1,251 · 2.80%</text>
 <text class="c-stepno" x="0" y="307.7">4</text>
 <text class="c-label" x="18.0" y="307.7">CTA로 댓글 유도</text>
-<text class="c-note" x="18.0" y="326.4">재생 1,000회당 22.3개</text>
-<rect class="c-seg" x="198.0" y="294.0" width="98.1" height="19.2" rx="3"><title>CTA로 댓글 유도 · 댓글 1,130 · 2.53%</title></rect>
-<text class="c-val" x="460.8" y="308.4">댓글 1,130 · 2.53%</text>
+<text class="c-note" x="18.0" y="326.4">인스타 표시 1,130 — 절반은 리틀리 자동 답글</text>
+<rect class="c-seg" x="198.0" y="294.0" width="70.0" height="19.2" rx="3"><title>CTA로 댓글 유도 · 사용자 댓글 약 565 · 1.27%</title></rect>
+<text class="c-val" x="460.8" y="308.4">사용자 댓글 약 565 · 1.27%</text>
 <text class="c-stepno" x="0" y="373.7">5</text>
 <text class="c-label" x="18.0" y="373.7">댓글에 자료 자동 발송</text>
 <text class="c-note" x="18.0" y="392.4">소개 링크 클릭 19</text>
