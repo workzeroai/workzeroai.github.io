@@ -47,6 +47,12 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
 .src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
 .src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
 .bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
 .bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
 .bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
@@ -99,13 +105,10 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
 <body>
 <nav class="nav"><div class="wrap">
   <a class="logo" href="../../tutoring/">WORK<b>ZERO</b></a>
-  <div class="seg" role="tablist" aria-label="메뉴">
-    <a href="../../tutoring/">1:1 과외</a><a href="../../build/">제작 문의</a>
-    <a class="on" href="../" aria-current="page">자료실</a>
-  </div></div></nav>
+  <div class="seg" role="tablist" aria-label="메뉴"><a href="../../tutoring/">1:1 과외</a><a href="../../build/">제작 문의</a><a class="on" href="../../library/" aria-current="page">자료실</a></div></div></nav>
 <main>
-<div class="rd"><a class="back" href="../">← 자료실</a>
-  <div class="head"><div class="m"><i>실전 가이드</i><span>2026-10-05</span></div><h1>앤트로픽 Marketing 플러그인</h1></div>
+<div class="rd"><a class="back" href="../../library/">← 자료실</a>
+  <div class="head"><div class="m"><i>실전 가이드</i><span>2026-10-09</span></div><h1>앤트로픽 Marketing 플러그인</h1></div>
   
   <div class="bd">
 <figure><img src="img/01.webp" alt="앤트로픽 Marketing 플러그인 실전 가이드" loading="lazy"><figcaption>앤트로픽 Marketing 플러그인 실전 가이드</figcaption></figure>
@@ -209,7 +212,8 @@ claude plugin install marketing@knowledge-work-plugins</code></pre></div>
 1통: 가이드 활용법 / 2통: 실전 사례 / 3통: 다음 자료 예고
 톤: 친절하고 짧게, 각 메일 200자 안팎, 제목 후보 2개씩.</code></pre></div>
 <h3>6. 실제로 돌려 본 결과 (/campaign-plan)</h3>
-<p>릴스에 나온 기획서는 실제로 Cowork에서 돌린 결과예요. 2026년 10월 5일, 아래 입력으로 실행했고 8분 35초 만에 기획서가 나왔어요.</p>
+<p>릴스에 나온 기획서는 실제로 Cowork에서 돌린 결과예요. 2026년 10월 5일, 아래 입력으로 실행했어요.</p>
+<div class="lmnote"><p><strong>제 경험</strong><br>저도 이걸로 기획서 쓰는 시간이 절반이 됐어요. 혼자 쓰면 2시간 걸리던 캠페인 기획서가 이제 1시간이면 끝나요.</p></div>
 <figure><img src="img/13.webp" alt="실제 입력" loading="lazy"></figure>
 <p>나온 기획서는 10개 섹션이었어요: 캠페인 개요 · 타깃 오디언스 · 핵심 메시지 · 채널 전략 · 주차별 콘텐츠 캘린더 · 필요 에셋 · 성과 지표 · 예산 배분 · 리스크와 대응 · 다음 단계.</p>
 <figure><img src="img/14.webp" alt="결과 — 캠페인 개요와 타깃" loading="lazy"><figcaption>결과 — 캠페인 개요와 타깃</figcaption></figure>
@@ -242,7 +246,7 @@ claude plugin install marketing@knowledge-work-plugins</code></pre></div>
     <a class="cross" href="../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>세 가지만 답하면 4단계 중 지금 위치를 바로 알려드려요. 무료예요.</p><span class="go">내 단계 진단하기 →</span></a>
     <a class="cross" href="../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
   </div>
-  <p style="margin-top:22px"><a href="../" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+  <p style="margin-top:22px"><a href="../../library/" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
 </div></div>
 <footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
 </main>

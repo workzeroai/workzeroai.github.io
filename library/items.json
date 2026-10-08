@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-08",
+ "updated": "2026-10-09",
  "files": [
   {
    "slug": "apify-mcp",
@@ -18,7 +18,7 @@
    "title": "앤트로픽 Marketing 플러그인",
    "desc": "Cowork 설치부터 명령 7개 바로 쓰는 요청문까지",
    "tag": "실전 가이드",
-   "date": "2026-10-05",
+   "date": "2026-10-09",
    "thumb": "thumb/marketing-plugin.webp",
    "url": "marketing-plugin/",
    "ready": true
