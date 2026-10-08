@@ -1,0 +1,937 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="팔로워 1천 명이 안 되는 계정의 릴스 한 편이 10일 만에 조회 5만 회를 넘겼어요. 인스타 인사이트 24시간·10일 비교와, 같은 공식을 다시 써 본 결과까지 정리한 분석 보고서.">
+<meta name="author" content="워크제로">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="마케터 MCP 5선 릴스는 왜 퍼졌나">
+<meta property="og:description" content="팔로워 1천 명이 안 되는 계정의 릴스 한 편이 10일 만에 조회 5만 회를 넘겼어요. 인스타 인사이트 24시간·10일 비교와, 같은 공식을 다시 써 본 결과까지 정리한 분석 보고서.">
+<meta property="og:url" content="https://workzeroai.github.io/reports/marketer-mcp-5/">
+<meta property="og:image" content="https://workzeroai.github.io/reports/marketer-mcp-5/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://workzeroai.github.io/reports/marketer-mcp-5/">
+<title>마케터 MCP 5선 회고</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* Layout: single reading column (~68ch), report rhythm; figures in mono, one sky-blue accent for the hit reel */
+:root {
+  --bg: #F6F8FA;
+  --surface: #FFFFFF;
+  --fg: #16202B;
+  --muted: #5B6875;
+  --line: #DCE3EA;
+  --accent: #1A8FD6;
+  --accent-soft: #E3F1FB;
+  --warn: #C2410C;
+  --bar-dim: #B9C6D2;
+  --dot: #8597A8;
+  --on-accent: #FFFFFF;
+  --on-dim: #16202B;
+  --font-body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  --font-num: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F151B; --surface: #161E26; --fg: #E6EDF3; --muted: #94A3B2; --line: #26323D;
+    --accent: #5BB8F0; --accent-soft: #15324A; --warn: #F08A5D; --bar-dim: #3A4A59; --dot: #7F93A6; --on-accent: #0F151B; --on-dim: #E6EDF3;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0F151B; --surface: #161E26; --fg: #E6EDF3; --muted: #94A3B2; --line: #26323D;
+  --accent: #5BB8F0; --accent-soft: #15324A; --warn: #F08A5D; --bar-dim: #3A4A59; --dot: #7F93A6; --on-accent: #0F151B; --on-dim: #E6EDF3;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 16px; line-height: 1.7; }
+.wrap { max-width: 760px; margin: 0 auto; padding-inline: 20px; padding-block: 40px 64px; display: grid; gap: 44px; }
+header { display: grid; gap: 10px; }
+.eyebrow { font-size: 13px; letter-spacing: .06em; color: var(--muted); }
+h1 { font-size: clamp(26px, 5vw, 34px); line-height: 1.3; margin: 0; text-wrap: balance; font-weight: 700; }
+h2 { font-size: 21px; margin: 0 0 12px; text-wrap: balance; }
+h3 { font-size: 16px; margin: 0 0 4px; }
+p { margin: 0; }
+section { display: grid; gap: 14px; }
+.lede { font-size: 18px; background: var(--accent-soft); border-radius: 10px; padding: 18px 20px; }
+.lede strong { color: var(--fg); }
+.num { font-family: var(--font-num); font-variant-numeric: tabular-nums; }
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.stat { background: var(--surface); padding: 14px 14px 12px; display: grid; gap: 2px; min-width: 0; }
+.stat .v { font-family: var(--font-num); font-size: 22px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.stat .k { font-size: 13px; color: var(--muted); }
+@media (max-width: 560px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.note { font-size: 13px; color: var(--muted); }
+.table-box { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; min-width: 520px; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-weight: 500; color: var(--muted); font-size: 13px; }
+tr:last-child td { border-bottom: 0; }
+td.r, th.r { text-align: right; font-family: var(--font-num); font-variant-numeric: tabular-nums; }
+tr.hit td { background: var(--accent-soft); }
+ol.reasons, ul.plain { margin: 0; padding-left: 1.3em; display: grid; gap: 10px; }
+ol.reasons li::marker { font-family: var(--font-num); color: var(--accent); }
+.weak { border-left: 3px solid var(--warn); padding-left: 14px; display: grid; gap: 8px; }
+.chart { display: grid; gap: 10px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px; }
+.row { display: grid; grid-template-columns: minmax(0, 11em) minmax(0, 1fr) 5.2em; gap: 10px; align-items: center; font-size: 14px; }
+.row .lbl { min-width: 0; overflow-wrap: anywhere; }
+.track { height: 14px; background: transparent; position: relative; }
+.bar { height: 100%; background: var(--bar-dim); border-radius: 0 3px 3px 0; }
+.row.hit .bar { background: var(--accent); }
+.row .val { text-align: right; font-family: var(--font-num); font-variant-numeric: tabular-nums; }
+@media (max-width: 520px) { .row { grid-template-columns: minmax(0, 1fr) 4.8em; } .row .track { grid-column: 1 / -1; grid-row: 2; } }
+.take { display: grid; gap: 14px; }
+.take > div { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+.take p { color: var(--muted); font-size: 15px; }
+a { color: var(--accent); }
+footer { font-size: 13px; color: var(--muted); display: grid; gap: 6px; border-top: 1px solid var(--line); padding-top: 18px; }
+.flow { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; counter-reset: step; }
+.flow li { counter-increment: step; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; font-size: 14px; display: flex; gap: 8px; align-items: baseline; }
+.flow li::before { content: counter(step); font-family: var(--font-num); color: var(--accent); font-weight: 600; }
+.flow li.end { background: var(--accent-soft); border-color: var(--accent); }
+.voice { display: grid; gap: 12px; }
+.voice p { max-width: 68ch; }
+.check { font-size: 14px; color: var(--muted); border-top: 1px dashed var(--line); padding-top: 10px; }
+
+.chart-svg { width: 100%; height: auto; display: block; overflow: visible; font-family: var(--font-body); }
+.chart-svg .c-grid { stroke: var(--line); stroke-width: 1; }
+.chart-svg .c-ref { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 3 3; }
+.chart-svg .c-tick { fill: var(--muted); font-family: var(--font-num); font-variant-numeric: tabular-nums; }
+.chart-svg .c-note { fill: var(--muted); }
+.chart-svg .c-label { fill: var(--fg); font-weight: 500; }
+.chart-svg .c-band { fill: var(--accent-soft); }
+.chart-svg .c-line { fill: none; stroke: var(--accent); stroke-width: 2; stroke-linejoin: round; }
+.chart-svg .c-acc-line { stroke: var(--accent); stroke-width: 2; }
+.chart-svg .c-acc-line.thick { stroke-width: 3; stroke-linecap: round; }
+.chart-svg .c-dot { fill: var(--dot); stroke: var(--surface); stroke-width: 1.5; }
+.chart-svg .c-dot-acc { fill: var(--accent); stroke: var(--surface); stroke-width: 2; }
+.chart-svg .c-hit { fill: transparent; }
+.chart-svg .c-seg { fill: var(--bar-dim); }
+.chart-svg .c-seg-acc { fill: var(--accent); }
+.chart-svg .c-on-seg { fill: var(--on-dim); font-weight: 500; }
+.chart-svg .c-on-acc { fill: var(--on-accent); font-weight: 500; }
+.chart-svg .c-link { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 2 3; }
+.chart-svg .c-formula { fill: none; stroke: var(--accent); stroke-width: 1.4; }
+.chart-svg .c-formula-t { fill: var(--accent); font-weight: 600; }
+.chart-svg .c-stepno { fill: var(--accent); font-family: var(--font-num); font-weight: 700; }
+.chart-svg .c-val { fill: var(--fg); font-family: var(--font-num); font-variant-numeric: tabular-nums; font-weight: 600; }
+.chart-svg .c-warn-line { stroke: var(--warn); stroke-width: 3; stroke-linecap: round; }
+.chart-svg .c-dot-warn { fill: var(--warn); stroke: var(--surface); stroke-width: 2; }
+.chart-svg .c-delta { fill: var(--accent); font-family: var(--font-num); font-weight: 700; font-size: 1.35em; }
+.chart-svg .c-delta.warn { fill: var(--warn); }
+.legend { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; font-size: 13px; color: var(--muted); }
+.legend i { width: 13px; height: 13px; border-radius: 3px; display: inline-block; margin-right: 5px; vertical-align: -1px; }
+.medline { font-size: 15px; }
+.medline .num { font-weight: 600; }
+.chart-svg circle:hover, .chart-svg rect:hover { opacity: .8; }
+.figure { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px 16px 14px; overflow-x: auto; }
+.figure .chart-svg { min-width: 520px; }
+
+/* ===== 보고서 구조 ===== */
+.part { display: grid; gap: 26px; }
+.part-head { border-top: 2px solid var(--accent); padding-top: 14px; display: grid; gap: 4px; }
+.part-k { font-family: var(--font-num); font-size: 12px; letter-spacing: .1em; color: var(--accent); font-weight: 600; }
+.part-t { font-size: 25px; margin: 0; font-weight: 700; }
+.part-d { color: var(--muted); font-size: 15px; }
+.toc { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 20px 22px; }
+.toc h2 { font-size: 15px; color: var(--muted); font-weight: 500; margin-bottom: 12px; }
+.toc ol { margin: 0; padding-left: 1.2em; display: grid; gap: 10px; font-size: 15px; }
+.toc ol ol, .toc ul { margin: 6px 0 0; padding-left: 1em; display: grid; gap: 4px; list-style: none; }
+.toc ul li { font-size: 14px; color: var(--muted); }
+.toc ul li::before { content: "·"; margin-right: 6px; color: var(--line); }
+.toc a { text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+.toc b { font-family: var(--font-num); font-size: 12px; letter-spacing: .08em; color: var(--accent); margin-right: 6px; }
+.summary { background: var(--accent-soft); border-radius: 10px; padding: 22px 24px; }
+.summary h2 { font-size: 17px; }
+.summary .plain { gap: 12px; font-size: 15px; }
+
+/* ===== 공식 플로우 ===== */
+.formula { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 10px; align-items: stretch; }
+.fstage { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; display: flex; flex-direction: column; gap: 9px; }
+.fstage-k { font-size: 12px; letter-spacing: .05em; color: var(--muted); }
+.fstage-d { font-size: 12.5px; color: var(--muted); border-top: 1px dashed var(--line); padding-top: 8px; margin-top: auto; }
+.fstep { display: flex; gap: 8px; align-items: baseline; font-size: 15px; line-height: 1.45; }
+.fstep b { font-family: var(--font-num); color: var(--accent); font-weight: 700; flex: none; }
+.farrow { align-self: center; color: var(--muted); font-size: 18px; }
+.farrow.down { text-align: center; margin: -8px 0; }
+.fresult { background: var(--accent-soft); border: 1px solid var(--accent); border-radius: 10px; padding: 14px; display: flex; gap: 8px; justify-content: center; align-items: baseline; font-size: 16px; font-weight: 600; }
+.fresult b { font-family: var(--font-num); color: var(--accent); }
+@media (max-width: 620px) {
+  .formula { grid-template-columns: 1fr; gap: 8px; }
+  .farrow { transform: rotate(90deg); justify-self: center; margin: -2px 0; }
+  .part-t { font-size: 21px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">@work__zero · 인스타그램 릴스 · 2026-10-07 기준</div>
+    <h1>마케터 MCP 5선 릴스는 왜 퍼졌나</h1>
+    <p class="note">팔로워 1천 명이 안 되는 계정의 릴스 한 편이 10일 만에 조회 5만 회를 넘겼어요. 인스타 인사이트를 게시 24시간 뒤와 10일 뒤 두 번 캡처해 나란히 놓고, 같은 공식을 다시 써 본 결과까지 정리했어요.</p>
+  </header>
+  <p class="lede"><strong>한 줄 결론:</strong> 끝까지 봐서 퍼진 영상이 아니에요. 평균 시청은 35초 중 6초였어요. 대신 <strong>마케터가 저장하고 동료에게 보낼 이유</strong>가 확실했고, 저장·공유·팔로우 신호가 비팔로워 추천을 열흘 동안 계속 키운 것으로 보여요.</p>
+  <section id="formula">
+    <h2>제가 정리한 공식</h2>
+    <div class="formula" role="img" aria-label="공식 6단계. 멈춰 세우기(1 명확한 타깃 부르기, 2 3초 안에 후킹) → 전달하기(3 정보는 쉽고 명확하게) → 전환하기(4 CTA로 댓글 유도, 5 댓글에 자료 자동 발송) → 결과 6 유입·팔로워 증가"><div class="fstage"><span class="fstage-k">멈춰 세우기</span><div class="fstep"><b>1</b><span>명확한 타깃 부르기</span></div><div class="fstep"><b>2</b><span>3초 안에 후킹</span></div><p class="fstage-d">넘기려는 손가락을 멈추게 하는 구간</p></div><div class="farrow" aria-hidden="true">→</div><div class="fstage"><span class="fstage-k">전달하기</span><div class="fstep"><b>3</b><span>정보는 쉽고 명확하게</span></div><p class="fstage-d">멈춘 사람에게 쓸모를 넘기는 구간</p></div><div class="farrow" aria-hidden="true">→</div><div class="fstage"><span class="fstage-k">전환하기</span><div class="fstep"><b>4</b><span>CTA로 댓글 유도</span></div><div class="fstep"><b>5</b><span>댓글에 자료 자동 발송</span></div><p class="fstage-d">본 사람을 팔로워로 바꾸는 구간</p></div></div><div class="farrow down" aria-hidden="true">↓</div><div class="fresult"><b>6</b><span>유입·팔로워 증가</span></div><div class="voice">
+      <p><strong>조회수 5만 이상 나온 릴스를 벤치마킹해서 형식을 가져오고, 제 콘텐츠로 바꿨어요.</strong> 특정 타깃인 마케터를 불렀고, 앞 3초에 “마케터라면 이 5개는 무조건 하세요” 같은 문구로 시선을 붙잡아 다음 장면까지 보게 하는 데 집중했어요.</p>
+      <p><strong>같은 시기에 이 공식을 안 쓴 Meta AI 릴스는 조회수가 2천 회 정도(2,137회)였어요.</strong> 어떤 후킹을 쓰는지, 주제가 뭔지에 따라 반응이 극명하게 갈려요.</p>
+      <p><strong>결국 후킹으로 사람을 멈추게 해야 해요.</strong> 제 경험상 팔로워 위주로 보는 릴스는 평균 시청이 7~8초 정도인데, 비팔로워에게 넓게 퍼지면 4~6초로 줄어요. 이 릴스도 비팔로워가 98.9%였고 평균 6초였어요. 그 몇 초 안에 타깃이 반응할 메시지를 쉽고 명확하게 전달해야 해요.</p>
+      <p><strong>영상 길이는 조회수를 가르지 않았어요.</strong> AI 정보 계정 릴스 151개를 계정 평소 조회수 대비로 비교해 보니 길이와 조회수 사이에 뚜렷한 관계가 없었어요. 짧게 줄인다고 더 잘 되진 않았어요. 길이보다 앞 3초와 메시지가 중요해요.</p>
+      <p><strong>타깃 부르기, 3초 후킹, 쉬운 정보, 댓글 CTA, 댓글로 자료 자동 발송까지 이어지면</strong> 유입이 점점 늘면서 조회수와 팔로워가 같이 느는 구조가 돼요. CTA가 조회수를 직접 올리진 않지만, 본 사람을 팔로워로 바꿔 줘요. 이 릴스로 10일간 팔로우 456명이 생겼어요.</p>
+      <p><strong>AI·업무 정보 계정들을 보면 초반 성장은 대부분 이 공식으로 굳어져 있어요.</strong> 그리고 팔로워 1만 명을 넘기면 캐러셀로 브랜딩 단계로 넘어가는 흐름이에요.</p>
+      <p class="check">데이터로 같이 확인한 것: 길이는 계정 안에서 비교하면 조회수와 거의 관계가 없었고(아래 그래프), 길수록 재생당 댓글 비율은 낮았어요. 같은 공식을 써도 계정마다 성과 차이가 커서, 공식은 거의 기본값이지 이것만으로 터지는 보장은 아니에요.</p>
+    </div>
+  </section>
+
+  <section class="summary" id="summary">
+    <h2>3줄 요약</h2>
+    <ul class="plain">
+      <li><strong>끝까지 봐서 퍼진 게 아니에요.</strong> 35초 중 평균 6초를 봤고, 첫 2초에 4분의 3이 떠났어요. 그런데도 저장이 좋아요의 5.4배였어요 — 사람들은 “좋다”가 아니라 “나중에 써야 한다”로 반응했어요.</li>
+      <li><strong>조회의 65%가 둘째 날 이후에 나왔어요.</strong> 게다가 늦게 본 사람일수록 더 저장하고 더 팔로우했어요. 첫날 숫자로 성패를 판단하면 안 돼요.</li>
+      <li><strong>댓글 CTA는 조회수를 올리지 않아요.</strong> 본 사람을 팔로워로 바꾸는 장치예요. 조회를 만드는 건 1~2단계(타깃 + 후킹)이고, 팔로워를 만드는 건 4~5단계예요.</li>
+    </ul>
+  </section>
+
+  <nav class="toc" aria-label="목차"><h2>이 보고서의 구성</h2><ol>
+  <li><a href="#part1"><b>PART 1</b> 무슨 일이 있었나</a><ul><li><a href="#result-10d">10일 성과</a></li><li><a href="#d1-vs-d10">24시간과 10일 비교</a></li><li><a href="#late-viewers">첫날 이후에 본 사람들이 더 반응했어요</a></li><li><a href="#how-it-spread">어떻게 퍼졌나</a></li></ul></li>
+  <li><a href="#part2"><b>PART 2</b> 왜 퍼졌나</a><ul><li><a href="#why">데이터로 본 이유 (해석)</a></li></ul></li>
+  <li><a href="#part3"><b>PART 3</b> 영상을 뜯어보면</a><ul><li><a href="#scene-compare">원본과 장면 순서 비교</a></li><li><a href="#watched-6s">평균 6초 동안 본 장면</a></li></ul></li>
+  <li><a href="#part4"><b>PART 4</b> 공식이 진짜 통하나</a><ul><li><a href="#repeat-test">같은 공식으로 한 번 더 해 봤더니</a></li><li><a href="#length-vs-views">영상 길이와 조회수</a></li></ul></li>
+  <li><a href="#part5"><b>PART 5</b> 정리와 다음</a><ul><li><a href="#formula-funnel">공식 6단계가 실제로 만든 숫자</a></li><li><a href="#what-failed">안 된 것</a></li><li><a href="#takeaways">레클 멤버분들이 가져가실 만한 것</a></li></ul></li>
+  </ol></nav>
+  <div class="part" id="part1">
+    <div class="part-head"><span class="part-k">PART 1</span><h2 class="part-t">무슨 일이 있었나</h2><p class="part-d">10일 동안 숫자가 어떻게 움직였는지부터 봐요.</p></div>
+  <section id="result-10d">
+    <h2>10일 성과</h2>
+    <div class="stats">
+      <div class="stat"><span class="v">50,773</span><span class="k">조회</span></div>
+      <div class="stat"><span class="v">1,251</span><span class="k">저장</span></div>
+      <div class="stat"><span class="v">456</span><span class="k">팔로우</span></div>
+      <div class="stat"><span class="v">98.9%</span><span class="k">비팔로워 조회 비중</span></div>
+    </div>
+  </section>
+  <section id="d1-vs-d10">
+    <h2>24시간과 10일 비교</h2>
+    <div class="table-box">
+      <table>
+        <thead><tr><th>지표</th><th class="r">24시간</th><th class="r">10일</th><th class="r">늘어난 배수</th></tr></thead>
+        <tbody>
+          <tr><td>조회</td><td class="r">17,976</td><td class="r">50,773</td><td class="r">2.8배</td></tr>
+          <tr><td>조회한 사람</td><td class="r">15,423</td><td class="r">44,623</td><td class="r">2.9배</td></tr>
+          <tr><td>평균 시청</td><td class="r">4초</td><td class="r">6초</td><td class="r">+2초</td></tr>
+          <tr><td>저장</td><td class="r">380 · 2.4%</td><td class="r">1,251 · 2.8%</td><td class="r">3.3배</td></tr>
+          <tr><td>공유</td><td class="r">141 · 0.9%</td><td class="r">401 · 0.9%</td><td class="r">2.8배</td></tr>
+          <tr><td>댓글</td><td class="r">325 · 2.0%</td><td class="r">1,130 · 2.5%</td><td class="r">3.5배</td></tr>
+          <tr><td>리포스트</td><td class="r">22 · 0.1%</td><td class="r">77 · 0.2%</td><td class="r">3.5배</td></tr>
+          <tr><td>좋아요</td><td class="r">74 · 0.5%</td><td class="r">233 · 0.5%</td><td class="r">3.1배</td></tr>
+          <tr><td>팔로우</td><td class="r">133</td><td class="r">456</td><td class="r">3.4배</td></tr>
+          <tr><td>프로필 방문</td><td class="r">127</td><td class="r">455</td><td class="r">3.6배</td></tr>
+          <tr><td>소개 링크 클릭</td><td class="r">7</td><td class="r">19</td><td class="r">2.7배</td></tr>
+          <tr><td>건너뛰기</td><td class="r">83.1%</td><td class="r">82.9%</td><td class="r">거의 같음</td></tr>
+          <tr><td>비팔로워 비중</td><td class="r">98.6%</td><td class="r">98.9%</td><td class="r">거의 같음</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">비율은 인스타 인사이트 화면에 나온 값이에요. 첫날 조회는 전체의 35%였고, 공개 재생수 기준으로 약 2.5일째 33,380회, 이후 하루 2천 회 안팎씩 꾸준히 늘었어요.</p>
+    <div class="figure"><svg class="chart-svg" viewBox="0 0 720 297" role="img" aria-label="24시간 대비 10일 증가 배수. 조회는 2.8배인데 프로필 방문 3.6배, 댓글 3.5배, 팔로우 3.4배, 저장 3.3배로 더 크다." style="font-size:12px"><line class="c-ref" x1="508.2" x2="508.2" y1="8.4" y2="252.0"/>
+<text class="c-note" x="508.2" y="3.6" text-anchor="middle">조회 2.8배</text>
+<text class="c-label" x="0" y="34.1">프로필 방문</text>
+<rect class="c-seg-acc" x="90.0" y="21.0" width="537.7" height="18.0" rx="3"><title>프로필 방문 · 3.6배</title></rect>
+<text class="c-val" x="720.0" y="34.8" text-anchor="end">3.6배</text>
+<text class="c-label" x="0" y="64.1">댓글</text>
+<rect class="c-seg-acc" x="90.0" y="51.0" width="522.8" height="18.0" rx="3"><title>댓글 · 3.5배</title></rect>
+<text class="c-val" x="720.0" y="64.8" text-anchor="end">3.5배</text>
+<text class="c-label" x="0" y="94.1">팔로우</text>
+<rect class="c-seg-acc" x="90.0" y="81.0" width="507.9" height="18.0" rx="3"><title>팔로우 · 3.4배</title></rect>
+<text class="c-val" x="720.0" y="94.8" text-anchor="end">3.4배</text>
+<text class="c-label" x="0" y="124.1">저장</text>
+<rect class="c-seg-acc" x="90.0" y="111.0" width="492.9" height="18.0" rx="3"><title>저장 · 3.3배</title></rect>
+<text class="c-val" x="720.0" y="124.8" text-anchor="end">3.3배</text>
+<text class="c-label" x="0" y="154.1">좋아요</text>
+<rect class="c-seg" x="90.0" y="141.0" width="463.0" height="18.0" rx="3"><title>좋아요 · 3.1배</title></rect>
+<text class="c-val" x="720.0" y="154.8" text-anchor="end">3.1배</text>
+<text class="c-label" x="0" y="184.1">조회한 사람</text>
+<rect class="c-seg" x="90.0" y="171.0" width="433.2" height="18.0" rx="3"><title>조회한 사람 · 2.9배</title></rect>
+<text class="c-val" x="720.0" y="184.8" text-anchor="end">2.9배</text>
+<text class="c-label" x="0" y="214.1">조회</text>
+<rect class="c-seg" x="90.0" y="201.0" width="418.2" height="18.0" rx="3"><title>조회 · 2.8배</title></rect>
+<text class="c-val" x="720.0" y="214.8" text-anchor="end">2.8배</text>
+<text class="c-label" x="0" y="244.1">공유</text>
+<rect class="c-seg" x="90.0" y="231.0" width="418.2" height="18.0" rx="3"><title>공유 · 2.8배</title></rect>
+<text class="c-val" x="720.0" y="244.8" text-anchor="end">2.8배</text>
+<line class="c-grid" x1="0" x2="720" y1="277.2" y2="277.2"/>
+<text class="c-note" x="0" y="291.0">조회보다 <tspan class="c-formula-t">저장·팔로우·댓글·프로필 방문</tspan>이 더 빨리 늘었어요. 뒤늦게 본 사람일수록 더 많이 반응했다는 뜻이에요.</text></svg></div>
+  </section>
+  <section id="late-viewers">
+    <h2>첫날 이후에 본 사람들이 더 반응했어요</h2>
+    <p>조회는 2.8배 늘었는데 저장·댓글·팔로우는 3.3~3.5배 늘었어요. 둘째 날부터 열흘째까지 새로 본 약 29,200명만 따로 계산하면 이래요.</p>
+    <div class="figure"><svg class="chart-svg" viewBox="0 0 720 130" role="img" aria-label="전체 조회 50,773회 중 첫 24시간은 17,976회로 35.4퍼센트, 2일에서 10일째가 32,797회로 64.6퍼센트다." style="font-size:12px">
+<rect class="c-seg" x="0" y="26.400000000000002" width="253.4" height="43.2" rx="3"/>
+<rect class="c-seg-acc" x="256.4" y="26.400000000000002" width="463.6" height="43.2" rx="3"/>
+<text class="c-on-seg" x="127.5" y="52.3" text-anchor="middle">35.4%</text>
+<text class="c-on-acc" x="487.5" y="52.3" text-anchor="middle">64.6%</text>
+<text class="c-label" x="0" y="13.2">첫 24시간</text>
+<text class="c-label" x="720" y="13.2" text-anchor="end">2~10일째</text>
+<text class="c-val" x="0" y="90.0">17,976회</text>
+<text class="c-val" x="720" y="90.0" text-anchor="end">32,797회</text>
+<line class="c-grid" x1="0" x2="720" y1="94.8" y2="94.8"/>
+<text class="c-note" x="0" y="111.6">조회의 3분의 2가 첫날이 아니라 그 뒤에 나왔어요. 첫날 숫자로 성패를 판단하면 안 되는 이유예요.</text>
+<text class="c-note" x="0" y="127.2">중간 측정값: 공개 재생수 기준 약 2.5일째 33,380회. 이후 하루 2천 회 안팎씩 꾸준히 늘었어요.</text>
+</svg></div>
+    <div class="table-box">
+      <table>
+        <thead><tr><th>조회한 사람 대비</th><th class="r">첫 24시간</th><th class="r">2~10일째</th></tr></thead>
+        <tbody>
+          <tr><td>저장</td><td class="r">2.5%</td><td class="r">3.0%</td></tr>
+          <tr><td>댓글</td><td class="r">2.1%</td><td class="r">2.8%</td></tr>
+          <tr><td>팔로우</td><td class="r">0.86%</td><td class="r">1.11%</td></tr>
+          <tr><td>평균 시청 (추정)</td><td class="r">4초</td><td class="r">6~8초</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul class="plain">
+      <li>인스타가 반응 좋은 사람들과 비슷한 사람을 골라 더 보여 주면서, 뒤로 갈수록 관심 있는 사람에게 닿은 것으로 봐요. 해석이고 확인된 원인은 아니에요.</li>
+      <li>평균 시청은 화면에 초 단위로 반올림돼 나와서 2~10일째 값은 범위로만 적었어요.</li>
+      <li>이 표는 인사이트 숫자로 직접 나눠 계산해서, 위 표의 인스타 표시 비율과 소수점이 조금 달라요(저장 2.4% → 2.5%).</li>
+    </ul>
+    <div class="figure"><svg class="chart-svg" viewBox="0 0 720 230" role="img" aria-label="조회한 사람 대비 반응률. 저장 2.5에서 3.0퍼센트, 댓글 2.1에서 2.8퍼센트, 팔로우 0.86에서 1.11퍼센트로 모두 올랐다." style="font-size:12px">
+<text class="c-label" x="112.0" y="13.2" text-anchor="middle">저장</text>
+<line class="c-acc-line thick" x1="40.8" x2="183.2" y1="91.2" y2="76.8"/>
+<circle class="c-dot-acc" cx="40.8" cy="91.2" r="5.04"/>
+<circle class="c-dot-acc" cx="183.2" cy="76.8" r="5.04"/>
+<text class="c-val" x="40.8" y="114.0" text-anchor="middle">2.5%</text>
+<text class="c-val" x="183.2" y="63.6" text-anchor="middle">3.0%</text>
+<text class="c-tick" x="40.8" y="188.4" text-anchor="middle">첫 24h</text>
+<text class="c-tick" x="183.2" y="188.4" text-anchor="middle">2~10일</text>
+<text class="c-delta" x="112.0" y="211.2" text-anchor="middle" style="font-size:1.1em">+20%</text>
+<text class="c-label" x="360.0" y="13.2" text-anchor="middle">댓글</text>
+<line class="c-acc-line thick" x1="288.8" x2="431.2" y1="98.4" y2="76.8"/>
+<circle class="c-dot-acc" cx="288.8" cy="98.4" r="5.04"/>
+<circle class="c-dot-acc" cx="431.2" cy="76.8" r="5.04"/>
+<text class="c-val" x="288.8" y="121.2" text-anchor="middle">2.1%</text>
+<text class="c-val" x="431.2" y="63.6" text-anchor="middle">2.8%</text>
+<text class="c-tick" x="288.8" y="188.4" text-anchor="middle">첫 24h</text>
+<text class="c-tick" x="431.2" y="188.4" text-anchor="middle">2~10일</text>
+<text class="c-delta" x="360.0" y="211.2" text-anchor="middle" style="font-size:1.1em">+33%</text>
+<text class="c-label" x="608.0" y="13.2" text-anchor="middle">팔로우</text>
+<line class="c-acc-line thick" x1="536.8" x2="679.2" y1="96.3" y2="76.8"/>
+<circle class="c-dot-acc" cx="536.8" cy="96.3" r="5.04"/>
+<circle class="c-dot-acc" cx="679.2" cy="76.8" r="5.04"/>
+<text class="c-val" x="536.8" y="119.1" text-anchor="middle">0.86%</text>
+<text class="c-val" x="679.2" y="63.6" text-anchor="middle">1.11%</text>
+<text class="c-tick" x="536.8" y="188.4" text-anchor="middle">첫 24h</text>
+<text class="c-tick" x="679.2" y="188.4" text-anchor="middle">2~10일</text>
+<text class="c-delta" x="608.0" y="211.2" text-anchor="middle" style="font-size:1.1em">+29%</text>
+<line class="c-grid" x1="0" x2="720" y1="212.4" y2="212.4"/>
+<text class="c-note" x="0" y="228.0">조회한 사람 대비 비율이에요. 나중에 본 사람일수록 저장·댓글·팔로우를 더 많이 했어요.</text>
+</svg></div>
+  </section>
+  <section id="how-it-spread">
+    <h2>어떻게 퍼졌나</h2>
+    <ul class="plain">
+      <li>유입의 <span class="num">93.0%</span>가 릴스 탭(<span class="num">66.1%</span>)과 탐색 탭(<span class="num">26.9%</span>)이에요. 피드 <span class="num">2.5%</span>, 프로필 <span class="num">0.9%</span>. 기존 팔로워가 아니라 추천으로 처음 본 사람들이 대부분이에요.</li>
+      <li>조회자 연령은 25~34세 <span class="num">43.4%</span>, 35~44세 <span class="num">35.0%</span>, 45~54세 <span class="num">13.7%</span>. 24시간 때(35~54세 44.8%)보다 35~54세가 <span class="num">48.7%</span>로 더 늘었어요. 당시 팔로워(25~34세 64%)보다 연령대가 높아서, 도구를 고르는 실무 리드급까지 닿은 것으로 보여요.</li>
+      <li>올린 시각은 일요일 밤 자정 무렵이라 계정 활동 피크와 맞지 않았어요. 시간대 효과로 보기는 어려워요.</li>
+    </ul>
+    <div class="figure"><svg class="chart-svg" viewBox="0 0 720 118" role="img" aria-label="유입 경로. 릴스 탭 66.1퍼센트, 탐색 탭 26.9퍼센트로 합쳐 93퍼센트가 추천이고 피드는 2.5퍼센트, 프로필은 0.9퍼센트다." style="font-size:12px">
+<rect class="c-seg-acc" x="0.0" y="24.0" width="474.4" height="40.8" rx="2"><title>릴스 탭 66.1%</title></rect>
+<text class="c-on-acc" x="238.0" y="48.7" text-anchor="middle">릴스 탭 66.1%</text>
+<rect class="c-seg-acc" x="475.9" y="24.0" width="192.2" height="40.8" rx="2"><title>탐색 탭 26.9%</title></rect>
+<text class="c-on-acc" x="572.8" y="48.7" text-anchor="middle">탐색 탭 26.9%</text>
+<rect class="c-seg" x="669.6" y="24.0" width="16.5" height="40.8" rx="2"><title>피드 2.5%</title></rect>
+<rect class="c-seg" x="687.6" y="24.0" width="5.0" height="40.8" rx="2"><title>프로필 0.9%</title></rect>
+<rect class="c-seg" x="694.1" y="24.0" width="24.4" height="40.8" rx="2"><title>기타 3.6%</title></rect>
+<text class="c-label" x="0" y="12.0">추천으로 들어온 93.0%</text>
+<text class="c-note" x="720" y="12.0" text-anchor="end">피드·프로필 3.4%</text>
+<line class="c-grid" x1="0" x2="720" y1="94.8" y2="94.8"/>
+<text class="c-note" x="0" y="112.8">팔로워가 퍼뜨린 게 아니라 인스타 추천이 퍼뜨렸어요. 그래서 팔로워 수가 적어도 터질 수 있어요.</text>
+</svg></div>
+    <div class="figure"><svg class="chart-svg" viewBox="0 0 720 192" role="img" aria-label="조회자 연령 분포. 25에서 34세 43.4퍼센트, 35에서 44세 35.0퍼센트, 45에서 54세 13.7퍼센트." style="font-size:12px"><text class="c-label" x="0" y="34.1">25~34세</text>
+<rect class="c-seg-acc" x="132.0" y="21.0" width="456.2" height="18.0" rx="3"><title>25~34세 · 43.4%</title></rect>
+<text class="c-val" x="720.0" y="34.8" text-anchor="end">43.4%</text>
+<text class="c-label" x="0" y="64.1">35~44세</text>
+<rect class="c-seg-acc" x="132.0" y="51.0" width="367.9" height="18.0" rx="3"><title>35~44세 · 35.0%</title></rect>
+<text class="c-val" x="720.0" y="64.8" text-anchor="end">35.0%</text>
+<text class="c-label" x="0" y="94.1">45~54세</text>
+<rect class="c-seg-acc" x="132.0" y="81.0" width="144.0" height="18.0" rx="3"><title>45~54세 · 13.7%</title></rect>
+<text class="c-val" x="720.0" y="94.8" text-anchor="end">13.7%</text>
+<text class="c-label" x="0" y="124.1">그 외 (18~24 · 55+)</text>
+<rect class="c-seg" x="132.0" y="111.0" width="83.0" height="18.0" rx="3"><title>그 외 (18~24 · 55+) · 7.9%</title></rect>
+<text class="c-val" x="720.0" y="124.8" text-anchor="end">7.9%</text>
+<line class="c-grid" x1="0" x2="720" y1="157.2" y2="157.2"/>
+<text class="c-note" x="0" y="171.0">당시 팔로워는 25~34세가 64%였어요. 조회자는 <tspan class="c-formula-t">35~54세가 48.7%</tspan>로 팔로워층보다 나이가 많아요.</text>
+<text class="c-note" x="0" y="186.0">도구를 고르는 실무 리드급까지 닿았다는 신호예요.</text></svg></div>
+  </section>
+  </div>
+  <div class="part" id="part2">
+    <div class="part-head"><span class="part-k">PART 2</span><h2 class="part-t">왜 퍼졌나</h2><p class="part-d">숫자 뒤에 있는 이유를 해석해요.</p></div>
+  <section id="why">
+    <h2>데이터로 본 이유 (해석)</h2>
+    <ol class="reasons">
+      <li><strong>첫 문장에서 대상을 불렀어요.</strong> “클로드로 마케팅하고 있다면, 이 5개는 무조건 연결해야 돼요.” 마케터가 아니면 넘기고, 마케터는 멈추게 하는 문장이에요.</li>
+      <li><strong>5개짜리 완결 목록이 저장 이유가 됐어요.</strong> 한 번에 외우기 어려운 목록은 나중에 보려고 저장하게 돼요. 10일 동안 저장(1,251)이 좋아요(233)의 5배였어요.</li>
+      <li><strong>도구 이름보다 업무 결과를 보여줬어요.</strong> CPA, 결제 이탈률, ROAS처럼 마케터가 매일 보는 숫자로 장면마다 결과를 냈어요.</li>
+      <li><strong>동료에게 보내기 좋은 단위였어요.</strong> “우리도 이거 연결해 보자”라고 공유하기 쉬운 형태라 공유가 401번 나왔어요.</li>
+      <li><strong>검증된 구조를 빌리고, 내용은 직무 언어로 바꿨어요.</strong> 원본은 에브리AI의 ‘클로드 UI MCP 5선’ 릴스예요. 장면 전환 시점 차이가 평균 0.66초일 만큼 편집 구조는 거의 같고, 디자이너용 도구를 마케터 업무로 바꾼 게 차이예요.</li>
+    </ol>
+    <div class="figure"><svg class="chart-svg" viewBox="0 0 720 177" role="img" aria-label="저장 1,251 공유 401 좋아요 233 리포스트 77. 저장이 좋아요의 5.4배다." style="font-size:12px"><text class="c-label" x="0" y="34.1">저장</text>
+<rect class="c-seg-acc" x="90.0" y="21.0" width="567.6" height="18.0" rx="3"><title>저장 · 1,251</title></rect>
+<text class="c-val" x="720.0" y="34.8" text-anchor="end">1,251</text>
+<text class="c-label" x="0" y="64.1">공유</text>
+<rect class="c-seg-acc" x="90.0" y="51.0" width="181.9" height="18.0" rx="3"><title>공유 · 401</title></rect>
+<text class="c-val" x="720.0" y="64.8" text-anchor="end">401</text>
+<text class="c-label" x="0" y="94.1">좋아요</text>
+<rect class="c-seg" x="90.0" y="81.0" width="105.7" height="18.0" rx="3"><title>좋아요 · 233</title></rect>
+<text class="c-val" x="720.0" y="94.8" text-anchor="end">233</text>
+<text class="c-label" x="0" y="124.1">리포스트</text>
+<rect class="c-seg" x="90.0" y="111.0" width="34.9" height="18.0" rx="3"><title>리포스트 · 77</title></rect>
+<text class="c-val" x="720.0" y="124.8" text-anchor="end">77</text>
+<line class="c-grid" x1="0" x2="720" y1="157.2" y2="157.2"/>
+<text class="c-note" x="0" y="171.0">보통은 좋아요가 가장 많아요. 여기선 <tspan class="c-formula-t">저장이 좋아요의 5.4배</tspan>예요. “좋다”가 아니라 “나중에 써야 한다”는 반응이고, 추천을 밀어 올린 건 이쪽이에요.</text></svg></div>
+  </section>
+  </div>
+  <div class="part" id="part3">
+    <div class="part-head"><span class="part-k">PART 3</span><h2 class="part-t">영상을 뜯어보면</h2><p class="part-d">공식이 영상 안 어디에 어떻게 들어갔는지 봐요.</p></div>
+  <section id="scene-compare">
+    <h2>원본과 장면 순서 비교</h2>
+    <p>공식의 첫 단계인 “잘 된 릴스의 형식 가져오기”를 어떻게 했는지 보여 주는 그림이에요. 장면 8개의 순서와 길이가 거의 같고, 전환 시점 차이는 평균 0.66초예요. 바꾼 건 장면 안의 내용이에요. 디자이너용 도구 자리에 마케터 업무 도구를 넣었어요.</p>
+    <div class="figure"><svg class="chart-svg" viewBox="0 0 720 154" role="img" aria-label="원본 릴스와 WorkZero 릴스의 장면 8개 순서와 길이 비교. 전환 시점 차이는 평균 0.66초." style="font-size:12px">
+<line class="c-link" x1="139.3" y1="50.4" x2="133.3" y2="79.2"/>
+<line class="c-link" x1="238.9" y1="50.4" x2="227.0" y2="79.2"/>
+<line class="c-link" x1="332.0" y1="50.4" x2="314.9" y2="79.2"/>
+<line class="c-link" x1="416.9" y1="50.4" x2="402.8" y2="79.2"/>
+<line class="c-link" x1="501.1" y1="50.4" x2="501.8" y2="79.2"/>
+<line class="c-link" x1="607.1" y1="50.4" x2="594.8" y2="79.2"/>
+<line class="c-link" x1="655.6" y1="50.4" x2="636.1" y2="79.2"/>
+<text class="c-label" x="69.6" y="36.7" text-anchor="end">원본</text>
+<rect class="c-seg" x="79.0" y="14.4" width="59.3" height="36" rx="3"><title>원본 · 훅 · 0.00~3.47초</title></rect>
+<text class="c-on-seg" x="108.7" y="36.7" text-anchor="middle">훅</text>
+<rect class="c-seg" x="140.3" y="14.4" width="97.5" height="36" rx="3"><title>원본 · 도구 1 · 3.47~9.10초</title></rect>
+<text class="c-on-seg" x="189.1" y="36.7" text-anchor="middle">도구 1</text>
+<rect class="c-seg" x="239.9" y="14.4" width="91.2" height="36" rx="3"><title>원본 · 도구 2 · 9.10~14.37초</title></rect>
+<text class="c-on-seg" x="285.5" y="36.7" text-anchor="middle">도구 2</text>
+<rect class="c-seg" x="333.0" y="14.4" width="82.9" height="36" rx="3"><title>원본 · 도구 3 · 14.37~19.17초</title></rect>
+<text class="c-on-seg" x="374.5" y="36.7" text-anchor="middle">도구 3</text>
+<rect class="c-seg" x="417.9" y="14.4" width="82.2" height="36" rx="3"><title>원본 · 도구 4 · 19.17~23.93초</title></rect>
+<text class="c-on-seg" x="459.0" y="36.7" text-anchor="middle">도구 4</text>
+<rect class="c-seg" x="502.1" y="14.4" width="104.1" height="36" rx="3"><title>원본 · 도구 5 · 23.93~29.93초</title></rect>
+<text class="c-on-seg" x="554.1" y="36.7" text-anchor="middle">도구 5</text>
+<rect class="c-seg" x="608.1" y="14.4" width="46.4" height="36" rx="3"><title>원본 · 자료 · 29.93~32.67초</title></rect>
+<text class="c-on-seg" x="631.3" y="36.7" text-anchor="middle">자료</text>
+<rect class="c-seg" x="656.6" y="14.4" width="47.7" height="36" rx="3"><title>원본 · CTA · 32.67~35.48초</title></rect>
+<text class="c-on-seg" x="680.4" y="36.7" text-anchor="middle">CTA</text>
+<text class="c-label" x="69.6" y="101.5" text-anchor="end">WorkZero</text>
+<rect class="c-seg-acc" x="79.0" y="79.2" width="53.3" height="36" rx="3"><title>WorkZero · 훅 · 0.00~3.13초</title></rect>
+<text class="c-on-acc" x="105.7" y="101.5" text-anchor="middle">훅</text>
+<rect class="c-seg-acc" x="134.3" y="79.2" width="91.7" height="36" rx="3"><title>WorkZero · Apify · 3.13~8.43초</title></rect>
+<text class="c-on-acc" x="180.2" y="101.5" text-anchor="middle">Apify</text>
+<rect class="c-seg-acc" x="228.0" y="79.2" width="85.9" height="36" rx="3"><title>WorkZero · Meta Ads · 8.43~13.40초</title></rect>
+<text class="c-on-acc" x="271.0" y="101.5" text-anchor="middle">Meta Ads</text>
+<rect class="c-seg-acc" x="315.9" y="79.2" width="85.9" height="36" rx="3"><title>WorkZero · GA4 · 13.40~18.37초</title></rect>
+<text class="c-on-acc" x="358.8" y="101.5" text-anchor="middle">GA4</text>
+<rect class="c-seg-acc" x="403.8" y="79.2" width="97.0" height="36" rx="3"><title>WorkZero · Sheets · 18.37~23.97초</title></rect>
+<text class="c-on-acc" x="452.3" y="101.5" text-anchor="middle">Sheets</text>
+<rect class="c-seg-acc" x="502.8" y="79.2" width="91.0" height="36" rx="3"><title>WorkZero · Notion · 23.97~29.23초</title></rect>
+<text class="c-on-acc" x="548.3" y="101.5" text-anchor="middle">Notion</text>
+<rect class="c-seg-acc" x="595.8" y="79.2" width="39.4" height="36" rx="3"><title>WorkZero · 자료 · 29.23~31.57초</title></rect>
+<text class="c-on-acc" x="615.4" y="101.5" text-anchor="middle">자료</text>
+<rect class="c-seg-acc" x="637.1" y="79.2" width="60.6" height="36" rx="3"><title>WorkZero · CTA · 31.57~35.11초</title></rect>
+<text class="c-on-acc" x="667.4" y="101.5" text-anchor="middle">CTA</text>
+<text class="c-tick" x="78.0" y="133.2" text-anchor="middle">0초</text>
+<text class="c-tick" x="166.4" y="133.2" text-anchor="middle">5초</text>
+<text class="c-tick" x="254.8" y="133.2" text-anchor="middle">10초</text>
+<text class="c-tick" x="343.2" y="133.2" text-anchor="middle">15초</text>
+<text class="c-tick" x="431.6" y="133.2" text-anchor="middle">20초</text>
+<text class="c-tick" x="520.0" y="133.2" text-anchor="middle">25초</text>
+<text class="c-tick" x="608.4" y="133.2" text-anchor="middle">30초</text>
+<text class="c-tick" x="696.8" y="133.2" text-anchor="middle">35초</text>
+<text class="c-note" x="78.0" y="151.2">WorkZero의 도구 1~5는 Apify, Meta Ads, GA4, Sheets, Notion이에요.</text>
+</svg></div>
+  </section>
+  <section id="watched-6s">
+    <h2>평균 6초 동안 본 장면</h2>
+    <p>첫 2초에 4분의 3이 넘겨요. 평균 6초면 훅과 첫 번째 도구(Apify) 장면 절반까지예요. 나머지 4개 도구는 대부분이 못 봤는데도 저장이 1,251개 나왔어요. 저장은 앞부분만 보고 “나중에 다시 보자”는 판단에서 나온 것으로 봐요.</p>
+    <div class="figure"><svg class="chart-svg" viewBox="0 0 720 389" role="img" aria-label="35초 유지율 곡선과 장면 구간. 첫 2초에 약 75%가 이탈하고 평균 시청은 6초로 훅과 첫 번째 도구 장면 일부에 해당한다." style="font-size:12px">
+<rect class="c-band" x="48.0" y="40.8" width="111.8" height="266.4"/>
+<line class="c-grid" x1="48" x2="702.0" y1="268.8" y2="268.8"/>
+<text class="c-tick" x="42.0" y="273.0" text-anchor="end">0%</text>
+<line class="c-grid" x1="48" x2="702.0" y1="211.8" y2="211.8"/>
+<text class="c-tick" x="42.0" y="216.0" text-anchor="end">25%</text>
+<line class="c-grid" x1="48" x2="702.0" y1="154.8" y2="154.8"/>
+<text class="c-tick" x="42.0" y="159.0" text-anchor="end">50%</text>
+<line class="c-grid" x1="48" x2="702.0" y1="97.8" y2="97.8"/>
+<text class="c-tick" x="42.0" y="102.0" text-anchor="end">75%</text>
+<line class="c-grid" x1="48" x2="702.0" y1="40.8" y2="40.8"/>
+<text class="c-tick" x="42.0" y="45.0" text-anchor="end">100%</text>
+<line class="c-ref" x1="122.5" x2="122.5" y1="40.8" y2="268.8"/>
+<text class="c-note" x="117.7" y="24.0" text-anchor="end">24시간 평균 4초</text>
+<line class="c-acc-line" x1="159.8" x2="159.8" y1="40.8" y2="268.8"/>
+<text class="c-label" x="164.6" y="24.0">10일 평균 6초</text>
+<polyline class="c-line" points="48.0,40.8 50.7,64.3 56.1,97.3 61.4,131.3 66.8,159.0 72.2,176.8 77.6,194.0 82.9,206.6 88.3,212.8 93.7,217.0 99.1,220.2 104.4,222.8 109.8,223.8 115.2,225.9 120.6,227.0 125.9,228.0 131.3,229.1 136.7,230.1 142.1,231.1 147.4,232.2 152.8,232.2 158.2,232.7 163.6,233.2 168.9,234.3 174.3,234.3 179.7,235.3 185.1,235.3 190.4,235.9 195.8,236.4 201.2,236.9 206.6,237.4 211.9,237.9 217.3,238.5 222.7,238.5 228.1,239.0 233.4,239.0 238.8,239.5 244.2,239.5 249.6,240.0 255.0,240.6 260.3,240.6 265.7,241.6 271.1,241.6 276.5,241.6 281.8,242.1 287.2,242.7 292.6,242.7 298.0,242.7 303.3,242.7 308.7,242.7 314.1,243.2 319.5,243.7 324.8,243.7 330.2,243.7 335.6,244.7 341.0,244.7 346.3,244.7 351.7,244.7 357.1,245.3 362.5,245.8 367.8,245.8 373.2,245.8 378.6,245.8 384.0,246.8 389.3,246.8 394.7,246.8 400.1,247.4 405.5,247.4 410.8,247.9 416.2,247.9 421.6,247.9 427.0,247.9 432.3,248.4 437.7,248.9 443.1,248.9 448.5,248.9 453.8,248.9 459.2,248.9 464.6,249.5 470.0,249.5 475.3,249.5 480.7,250.0 486.1,250.0 491.5,250.0 496.8,250.0 502.2,250.5 507.6,251.0 513.0,251.0 518.3,251.0 523.7,251.0 529.1,251.0 534.5,251.5 539.8,252.1 545.2,252.1 550.6,252.1 556.0,252.1 561.3,252.6 566.7,252.6 572.1,253.1 577.5,253.1 582.8,253.1 588.2,253.6 593.6,254.2 599.0,254.2 604.3,254.2 609.7,254.2 615.1,255.2 620.5,255.2 625.8,255.7 631.2,256.2 636.6,256.2 642.0,257.3 647.4,257.3 652.7,258.3 658.1,258.3 663.5,258.3 668.9,259.4 674.2,259.4 679.6,259.4 685.0,260.4 690.4,260.4 695.7,260.4 701.1,260.4"/>
+<circle class="c-dot-acc" cx="85.3" cy="206.6" r="4.800000000000001"/>
+<text class="c-label" x="169.4" y="210.8">← 2초 만에 약 25%만 남음</text>
+<text class="c-note" x="702.0" y="249.6" text-anchor="end">끝까지 약 4%</text>
+<circle class="c-hit" cx="48.0" cy="40.8" r="8.399999999999999"><title>0.0초 · 약 100%가 보는 중</title></circle>
+<circle class="c-hit" cx="56.1" cy="97.3" r="8.399999999999999"><title>0.4초 · 약 75%가 보는 중</title></circle>
+<circle class="c-hit" cx="66.8" cy="159.0" r="8.399999999999999"><title>1.0초 · 약 48%가 보는 중</title></circle>
+<circle class="c-hit" cx="77.6" cy="194.0" r="8.399999999999999"><title>1.6초 · 약 33%가 보는 중</title></circle>
+<circle class="c-hit" cx="88.3" cy="212.8" r="8.399999999999999"><title>2.2초 · 약 25%가 보는 중</title></circle>
+<circle class="c-hit" cx="99.1" cy="220.2" r="8.399999999999999"><title>2.7초 · 약 21%가 보는 중</title></circle>
+<circle class="c-hit" cx="109.8" cy="223.8" r="8.399999999999999"><title>3.3초 · 약 20%가 보는 중</title></circle>
+<circle class="c-hit" cx="120.6" cy="227.0" r="8.399999999999999"><title>3.9초 · 약 18%가 보는 중</title></circle>
+<circle class="c-hit" cx="131.3" cy="229.1" r="8.399999999999999"><title>4.5초 · 약 17%가 보는 중</title></circle>
+<circle class="c-hit" cx="142.1" cy="231.1" r="8.399999999999999"><title>5.1초 · 약 17%가 보는 중</title></circle>
+<circle class="c-hit" cx="152.8" cy="232.2" r="8.399999999999999"><title>5.6초 · 약 16%가 보는 중</title></circle>
+<circle class="c-hit" cx="163.6" cy="233.2" r="8.399999999999999"><title>6.2초 · 약 16%가 보는 중</title></circle>
+<circle class="c-hit" cx="174.3" cy="234.3" r="8.399999999999999"><title>6.8초 · 약 15%가 보는 중</title></circle>
+<circle class="c-hit" cx="185.1" cy="235.3" r="8.399999999999999"><title>7.4초 · 약 15%가 보는 중</title></circle>
+<circle class="c-hit" cx="195.8" cy="236.4" r="8.399999999999999"><title>7.9초 · 약 14%가 보는 중</title></circle>
+<circle class="c-hit" cx="206.6" cy="237.4" r="8.399999999999999"><title>8.5초 · 약 14%가 보는 중</title></circle>
+<circle class="c-hit" cx="217.3" cy="238.5" r="8.399999999999999"><title>9.1초 · 약 13%가 보는 중</title></circle>
+<circle class="c-hit" cx="228.1" cy="239.0" r="8.399999999999999"><title>9.7초 · 약 13%가 보는 중</title></circle>
+<circle class="c-hit" cx="238.8" cy="239.5" r="8.399999999999999"><title>10.2초 · 약 13%가 보는 중</title></circle>
+<circle class="c-hit" cx="249.6" cy="240.0" r="8.399999999999999"><title>10.8초 · 약 13%가 보는 중</title></circle>
+<circle class="c-hit" cx="260.3" cy="240.6" r="8.399999999999999"><title>11.4초 · 약 12%가 보는 중</title></circle>
+<circle class="c-hit" cx="271.1" cy="241.6" r="8.399999999999999"><title>12.0초 · 약 12%가 보는 중</title></circle>
+<circle class="c-hit" cx="281.8" cy="242.1" r="8.399999999999999"><title>12.6초 · 약 12%가 보는 중</title></circle>
+<circle class="c-hit" cx="292.6" cy="242.7" r="8.399999999999999"><title>13.1초 · 약 11%가 보는 중</title></circle>
+<circle class="c-hit" cx="303.3" cy="242.7" r="8.399999999999999"><title>13.7초 · 약 11%가 보는 중</title></circle>
+<circle class="c-hit" cx="314.1" cy="243.2" r="8.399999999999999"><title>14.3초 · 약 11%가 보는 중</title></circle>
+<circle class="c-hit" cx="324.8" cy="243.7" r="8.399999999999999"><title>14.9초 · 약 11%가 보는 중</title></circle>
+<circle class="c-hit" cx="335.6" cy="244.7" r="8.399999999999999"><title>15.4초 · 약 11%가 보는 중</title></circle>
+<circle class="c-hit" cx="346.3" cy="244.7" r="8.399999999999999"><title>16.0초 · 약 11%가 보는 중</title></circle>
+<circle class="c-hit" cx="357.1" cy="245.3" r="8.399999999999999"><title>16.6초 · 약 10%가 보는 중</title></circle>
+<circle class="c-hit" cx="367.8" cy="245.8" r="8.399999999999999"><title>17.2초 · 약 10%가 보는 중</title></circle>
+<circle class="c-hit" cx="378.6" cy="245.8" r="8.399999999999999"><title>17.7초 · 약 10%가 보는 중</title></circle>
+<circle class="c-hit" cx="389.3" cy="246.8" r="8.399999999999999"><title>18.3초 · 약 10%가 보는 중</title></circle>
+<circle class="c-hit" cx="400.1" cy="247.4" r="8.399999999999999"><title>18.9초 · 약 9%가 보는 중</title></circle>
+<circle class="c-hit" cx="410.8" cy="247.9" r="8.399999999999999"><title>19.5초 · 약 9%가 보는 중</title></circle>
+<circle class="c-hit" cx="421.6" cy="247.9" r="8.399999999999999"><title>20.1초 · 약 9%가 보는 중</title></circle>
+<circle class="c-hit" cx="432.3" cy="248.4" r="8.399999999999999"><title>20.6초 · 약 9%가 보는 중</title></circle>
+<circle class="c-hit" cx="443.1" cy="248.9" r="8.399999999999999"><title>21.2초 · 약 9%가 보는 중</title></circle>
+<circle class="c-hit" cx="453.8" cy="248.9" r="8.399999999999999"><title>21.8초 · 약 9%가 보는 중</title></circle>
+<circle class="c-hit" cx="464.6" cy="249.5" r="8.399999999999999"><title>22.4초 · 약 8%가 보는 중</title></circle>
+<circle class="c-hit" cx="475.3" cy="249.5" r="8.399999999999999"><title>22.9초 · 약 8%가 보는 중</title></circle>
+<circle class="c-hit" cx="486.1" cy="250.0" r="8.399999999999999"><title>23.5초 · 약 8%가 보는 중</title></circle>
+<circle class="c-hit" cx="496.8" cy="250.0" r="8.399999999999999"><title>24.1초 · 약 8%가 보는 중</title></circle>
+<circle class="c-hit" cx="507.6" cy="251.0" r="8.399999999999999"><title>24.7초 · 약 8%가 보는 중</title></circle>
+<circle class="c-hit" cx="518.3" cy="251.0" r="8.399999999999999"><title>25.3초 · 약 8%가 보는 중</title></circle>
+<circle class="c-hit" cx="529.1" cy="251.0" r="8.399999999999999"><title>25.8초 · 약 8%가 보는 중</title></circle>
+<circle class="c-hit" cx="539.8" cy="252.1" r="8.399999999999999"><title>26.4초 · 약 7%가 보는 중</title></circle>
+<circle class="c-hit" cx="550.6" cy="252.1" r="8.399999999999999"><title>27.0초 · 약 7%가 보는 중</title></circle>
+<circle class="c-hit" cx="561.3" cy="252.6" r="8.399999999999999"><title>27.6초 · 약 7%가 보는 중</title></circle>
+<circle class="c-hit" cx="572.1" cy="253.1" r="8.399999999999999"><title>28.1초 · 약 7%가 보는 중</title></circle>
+<circle class="c-hit" cx="582.8" cy="253.1" r="8.399999999999999"><title>28.7초 · 약 7%가 보는 중</title></circle>
+<circle class="c-hit" cx="593.6" cy="254.2" r="8.399999999999999"><title>29.3초 · 약 6%가 보는 중</title></circle>
+<circle class="c-hit" cx="604.3" cy="254.2" r="8.399999999999999"><title>29.9초 · 약 6%가 보는 중</title></circle>
+<circle class="c-hit" cx="615.1" cy="255.2" r="8.399999999999999"><title>30.4초 · 약 6%가 보는 중</title></circle>
+<circle class="c-hit" cx="625.8" cy="255.7" r="8.399999999999999"><title>31.0초 · 약 6%가 보는 중</title></circle>
+<circle class="c-hit" cx="636.6" cy="256.2" r="8.399999999999999"><title>31.6초 · 약 6%가 보는 중</title></circle>
+<circle class="c-hit" cx="647.4" cy="257.3" r="8.399999999999999"><title>32.2초 · 약 5%가 보는 중</title></circle>
+<circle class="c-hit" cx="658.1" cy="258.3" r="8.399999999999999"><title>32.8초 · 약 5%가 보는 중</title></circle>
+<circle class="c-hit" cx="668.9" cy="259.4" r="8.399999999999999"><title>33.3초 · 약 4%가 보는 중</title></circle>
+<circle class="c-hit" cx="679.6" cy="259.4" r="8.399999999999999"><title>33.9초 · 약 4%가 보는 중</title></circle>
+<circle class="c-hit" cx="690.4" cy="260.4" r="8.399999999999999"><title>34.5초 · 약 4%가 보는 중</title></circle>
+<circle class="c-hit" cx="701.1" cy="260.4" r="8.399999999999999"><title>35.1초 · 약 4%가 보는 중</title></circle>
+<rect class="c-seg-acc" x="49.0" y="278.4" width="56.3" height="28.8" rx="3"><title>훅 · 0.0~3.1초</title></rect>
+<text class="c-on-acc" x="77.2" y="297.1" text-anchor="middle">훅</text>
+<rect class="c-seg-acc" x="107.3" y="278.4" width="96.7" height="28.8" rx="3"><title>Apify · 3.1~8.4초</title></rect>
+<text class="c-on-acc" x="155.7" y="297.1" text-anchor="middle">Apify</text>
+<rect class="c-seg" x="206.0" y="278.4" width="90.6" height="28.8" rx="3"><title>Meta Ads · 8.4~13.4초</title></rect>
+<text class="c-on-seg" x="251.3" y="297.1" text-anchor="middle">Meta Ads</text>
+<rect class="c-seg" x="298.6" y="278.4" width="90.6" height="28.8" rx="3"><title>GA4 · 13.4~18.4초</title></rect>
+<text class="c-on-seg" x="343.9" y="297.1" text-anchor="middle">GA4</text>
+<rect class="c-seg" x="391.2" y="278.4" width="102.3" height="28.8" rx="3"><title>Sheets · 18.4~24.0초</title></rect>
+<text class="c-on-seg" x="442.3" y="297.1" text-anchor="middle">Sheets</text>
+<rect class="c-seg" x="495.5" y="278.4" width="96.0" height="28.8" rx="3"><title>Notion · 24.0~29.2초</title></rect>
+<text class="c-on-seg" x="543.5" y="297.1" text-anchor="middle">Notion</text>
+<rect class="c-seg" x="593.5" y="278.4" width="41.6" height="28.8" rx="3"><title>자료 · 29.2~31.6초</title></rect>
+<text class="c-on-seg" x="614.3" y="297.1" text-anchor="middle">자료</text>
+<rect class="c-seg" x="637.1" y="278.4" width="63.9" height="28.8" rx="3"><title>CTA · 31.6~35.1초</title></rect>
+<text class="c-on-seg" x="669.0" y="297.1" text-anchor="middle">CTA</text>
+<rect class="c-formula" x="49.0" y="312.6" width="56.3" height="21.6" rx="3"/>
+<text class="c-formula-t" x="77.2" y="327.5" text-anchor="middle">1·2</text>
+<rect class="c-formula" x="107.3" y="312.6" width="484.2" height="21.6" rx="3"/>
+<text class="c-formula-t" x="349.4" y="327.5" text-anchor="middle">단계 3  정보는 쉽고 명확하게</text>
+<rect class="c-formula" x="593.5" y="312.6" width="107.5" height="21.6" rx="3"/>
+<text class="c-formula-t" x="647.2" y="327.5" text-anchor="middle">4·5</text>
+<text class="c-tick" x="42.0" y="296.9" text-anchor="end">장면</text>
+<text class="c-tick" x="42.0" y="327.5" text-anchor="end">공식</text>
+<circle class="c-dot-acc" cx="636.1" cy="256.2" r="4.800000000000001"/>
+<text class="c-label" x="628.9" y="231.0" text-anchor="end">CTA 장면 도달 5.5%</text>
+<text class="c-tick" x="48.0" y="352.2" text-anchor="middle">0초</text>
+<text class="c-tick" x="141.1" y="352.2" text-anchor="middle">5초</text>
+<text class="c-tick" x="234.3" y="352.2" text-anchor="middle">10초</text>
+<text class="c-tick" x="327.4" y="352.2" text-anchor="middle">15초</text>
+<text class="c-tick" x="420.5" y="352.2" text-anchor="middle">20초</text>
+<text class="c-tick" x="513.7" y="352.2" text-anchor="middle">25초</text>
+<text class="c-tick" x="606.8" y="352.2" text-anchor="middle">30초</text>
+<text class="c-tick" x="700.0" y="352.2" text-anchor="middle">35초</text>
+<text class="c-note" x="48" y="370.2"><tspan class="c-formula-t">단계 1·2</tspan> 명확한 타깃 부르기 + 3초 안에 후킹   ·   <tspan class="c-formula-t">단계 3</tspan> 정보는 쉽고 명확하게   ·   <tspan class="c-formula-t">단계 4·5</tspan> CTA로 댓글 유도 + 자료 자동 발송</text>
+<text class="c-note" x="48" y="385.8">유지율 선은 인스타 인사이트 그래프를 따라 그린 근사치예요. 아래 막대는 장면 순서, 테두리는 공식 단계예요.</text>
+</svg></div>
+  </section>
+  </div>
+  <div class="part" id="part4">
+    <div class="part-head"><span class="part-k">PART 4</span><h2 class="part-t">공식이 진짜 통하나</h2><p class="part-d">한 편의 우연인지 확인하려고 다시 해 보고, 다른 계정 데이터와 맞춰 봤어요.</p></div>
+  <section id="repeat-test">
+    <h2>같은 공식으로 한 번 더 해 봤더니</h2>
+    <p>한 편만 터진 건지 확인하려고, 10/4에 같은 공식(“클로드로 OO한다면, 이 N개는 무조건” + 도구 목록 + 키워드 댓글)으로 디자인 도구 3개 릴스를 올렸어요. 길이는 25초로 줄였어요.</p>
+    <div class="chart" role="img" aria-label="계정 릴스 5편의 공개 재생수 비교. 마케터 MCP 5선 50,751회, 디자인 도구 3개 21,183회, Aside 3,011회, Meta AI 2,137회, ChatGPT 노션 433회">
+      <div class="legend"><span><i style="background:var(--accent)"></i>공식 적용 2편</span><span><i style="background:var(--bar-dim)"></i>미적용 3편</span></div>
+      <p class="medline">중앙값 <span class="num" style="color:var(--accent)">35,967</span> vs <span class="num">2,137</span> — <strong style="color:var(--accent)">16.8배</strong></p>
+      <div class="row hit"><span class="lbl">마케터 MCP 5선 (9/27)</span><div class="track"><div class="bar" style="width:100%"></div></div><span class="val">50,751</span></div>
+      <div class="row hit"><span class="lbl">디자인 도구 3개 (10/4)</span><div class="track"><div class="bar" style="width:41.7%"></div></div><span class="val">21,183</span></div>
+      <div class="row"><span class="lbl">Aside 브라우저 (9/24)</span><div class="track"><div class="bar" style="width:5.9%"></div></div><span class="val">3,011</span></div>
+      <div class="row"><span class="lbl">Meta AI 인스타 (9/29)</span><div class="track"><div class="bar" style="width:4.2%"></div></div><span class="val">2,137</span></div>
+      <div class="row"><span class="lbl">ChatGPT 노션 (9/20)</span><div class="track"><div class="bar" style="width:0.9%"></div></div><span class="val">433</span></div>
+    </div>
+    <div class="table-box">
+      <table>
+        <thead><tr><th>릴스</th><th>첫 문장</th><th class="r">경과</th><th class="r">재생</th><th class="r">댓글</th><th class="r">1,000회당 댓글</th></tr></thead>
+        <tbody>
+          <tr class="hit"><td>마케터 MCP 5선</td><td>클로드로 마케팅하고 있다면, 이 5개는</td><td class="r">10일</td><td class="r">50,751</td><td class="r">1,130</td><td class="r">22.3</td></tr>
+          <tr class="hit"><td>디자인 도구 3개</td><td>클로드로 디자인한다면, 이 세 개는</td><td class="r">3일</td><td class="r">21,183</td><td class="r">446</td><td class="r">21.1</td></tr>
+          <tr><td>Aside 브라우저</td><td>도구 기능 설명형</td><td class="r">13일</td><td class="r">3,011</td><td class="r">49</td><td class="r">16.3</td></tr>
+          <tr><td>Meta AI 인스타</td><td>ChatGPT로 막혔죠? Meta AI는 됩니다</td><td class="r">8일</td><td class="r">2,137</td><td class="r">56</td><td class="r">26.2</td></tr>
+          <tr><td>ChatGPT 노션</td><td>아직도 노션 복붙하고 계신가요?</td><td class="r">17일</td><td class="r">433</td><td class="r">8</td><td class="r">18.5</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="figure"><svg class="chart-svg" viewBox="0 0 720 288" role="img" aria-label="WorkZero 릴스 5편의 재생수와 재생 1,000회당 댓글. 재생수는 100배 넘게 차이 나지만 댓글 비율은 16~26개로 비슷하다." style="font-size:12px">
+<rect class="c-band" x="50.400000000000006" y="47.5" width="651.6" height="76.8"/>
+<line class="c-grid" x1="50.400000000000006" x2="702.0" y1="247.2" y2="247.2"/>
+<text class="c-tick" x="44.400000000000006" y="251.4" text-anchor="end">0개</text>
+<line class="c-grid" x1="50.400000000000006" x2="702.0" y1="170.4" y2="170.4"/>
+<text class="c-tick" x="44.400000000000006" y="174.6" text-anchor="end">10개</text>
+<line class="c-grid" x1="50.400000000000006" x2="702.0" y1="93.6" y2="93.6"/>
+<text class="c-tick" x="44.400000000000006" y="97.8" text-anchor="end">20개</text>
+<line class="c-grid" x1="50.400000000000006" x2="702.0" y1="16.8" y2="16.8"/>
+<text class="c-tick" x="44.400000000000006" y="21.0" text-anchor="end">30개</text>
+<text class="c-note" x="702.0" y="41.5" text-anchor="end">다섯 편 모두 16~26개</text>
+<text class="c-tick" x="50.4" y="265.2" text-anchor="middle">100회</text>
+<text class="c-tick" x="267.6" y="265.2" text-anchor="middle">1천회</text>
+<text class="c-tick" x="484.8" y="265.2" text-anchor="middle">1만회</text>
+<text class="c-tick" x="702.0" y="265.2" text-anchor="middle">10만회</text>
+<text class="c-note" x="376.2" y="284.4" text-anchor="middle">가로: 공개 재생수(로그 눈금) · 세로: 재생 1,000회당 댓글</text>
+<circle class="c-dot-acc big" cx="638.0" cy="75.9" r="7.2"><title>마케터 MCP 5선 · 50,751회 · 1,000회당 22.3개</title></circle>
+<text class="c-label" x="646.4" y="60.3" text-anchor="end">마케터 MCP 5선 <tspan class="c-tick">50,751회</tspan></text>
+<circle class="c-dot-acc big" cx="555.6" cy="85.2" r="7.2"><title>디자인 도구 3개 · 21,183회 · 1,000회당 21.1개</title></circle>
+<text class="c-label" x="542.4" y="89.4" text-anchor="end">디자인 도구 3개 <tspan class="c-tick">21,183회</tspan></text>
+<circle class="c-dot big" cx="371.6" cy="122.0" r="7.2"><title>Aside 브라우저 · 3,011회 · 1,000회당 16.3개</title></circle>
+<text class="c-label" x="383.6" y="143.6" text-anchor="start">Aside 브라우저 <tspan class="c-tick">3,011회</tspan></text>
+<circle class="c-dot big" cx="339.2" cy="46.0" r="7.2"><title>Meta AI 인스타 · 2,137회 · 1,000회당 26.2개</title></circle>
+<text class="c-label" x="351.2" y="34.0" text-anchor="start">Meta AI 인스타 <tspan class="c-tick">2,137회</tspan></text>
+<circle class="c-dot big" cx="188.6" cy="105.1" r="7.2"><title>ChatGPT 노션 · 433회 · 1,000회당 18.5개</title></circle>
+<text class="c-label" x="200.6" y="93.1" text-anchor="start">ChatGPT 노션 <tspan class="c-tick">433회</tspan></text>
+</svg></div>
+    <div class="figure"><svg class="chart-svg" viewBox="0 0 720 283" role="img" aria-label="키워드 CTA 유무 비교. 재생 1,000회당 댓글은 2.4개에서 17.6개로 오르지만, 조회수 중앙값은 13,224회에서 8,393회로 내려간다." style="font-size:12px">
+<text class="c-label" x="0.0" y="13.2">재생 1,000회당 댓글</text>
+<line class="c-grid" x1="0.0" x2="330.0" y1="22.8" y2="22.8"/>
+<line class="c-acc-line thick" x1="74.4" x2="255.6" y1="178.9" y2="64.8"/>
+<circle class="c-dot-acc" cx="74.4" cy="178.9" r="6.0"/>
+<text class="c-val" x="74.4" y="202.9" text-anchor="middle">없음 2.4개</text>
+<circle class="c-dot-acc" cx="255.6" cy="64.8" r="6.0"/>
+<text class="c-val" x="255.6" y="51.6" text-anchor="middle">있음 17.6개</text>
+<text class="c-tick" x="74.4" y="219.6" text-anchor="middle">CTA 없음</text>
+<text class="c-tick" x="255.6" y="219.6" text-anchor="middle">CTA 있음</text>
+<text class="c-delta" x="165.0" y="243.6" text-anchor="middle">7.3배 ↑</text>
+<text class="c-label" x="390.0" y="13.2">릴스 조회수 중앙값</text>
+<line class="c-grid" x1="390.0" x2="720.0" y1="22.8" y2="22.8"/>
+<line class="c-warn-line" x1="464.4" x2="645.6" y1="64.8" y2="113.0"/>
+<circle class="c-dot-warn" cx="464.4" cy="64.8" r="6.0"/>
+<text class="c-val" x="464.4" y="51.6" text-anchor="middle">없음 13,224회</text>
+<circle class="c-dot-warn" cx="645.6" cy="113.0" r="6.0"/>
+<text class="c-val" x="645.6" y="137.0" text-anchor="middle">있음 8,393회</text>
+<text class="c-tick" x="464.4" y="219.6" text-anchor="middle">CTA 없음</text>
+<text class="c-tick" x="645.6" y="219.6" text-anchor="middle">CTA 있음</text>
+<text class="c-delta warn" x="555.0" y="243.6" text-anchor="middle">37% ↓</text>
+<line class="c-grid" x1="0" x2="720" y1="256.8" y2="256.8"/>
+<text class="c-note" x="0" y="277.2">AI 정보 계정 5곳 · 협찬 아닌 릴스 127개(CTA 있음 98 · 없음 29). A 계정은 CTA와 상관없이 댓글이 많아 제외했어요.</text>
+</svg></div>
+    <ul class="plain">
+      <li><strong>같은 공식 두 편이 둘 다 2만 회를 넘었어요.</strong> 디자인 편은 3일 만에 2만을 넘겼어요. 다만 아직 두 편이라 공식이 통한다고 단정하진 않아요.</li>
+      <li><strong>재생 1,000회당 댓글은 다섯 편 모두 16~26개로 비슷해요.</strong> 댓글 CTA는 본 사람 중 댓글 다는 비율을 만들 뿐, 몇 명이 보느냐는 바꾸지 못했어요. 6개 AI 계정 릴스 251개를 따로 분석했을 때도 같은 결과였어요.</li>
+      <li>차이를 만든 건 첫 문장과 주제였어요. “직무 + 도구 목록”은 퍼졌고, “막혔죠?” 같은 질문형이나 도구 기능 설명형은 퍼지지 않았어요.</li>
+    </ul>
+  </section>
+  <section id="length-vs-views">
+    <h2>영상 길이와 조회수</h2>
+    <p>AI 정보 계정 6곳의 협찬 아닌 릴스 151개를, 각 계정의 평소 조회수(중앙값) 대비 몇 배 나왔는지로 놓고 길이와 비교했어요. 계정마다 팔로워 규모가 달라서 그냥 조회수로 비교하면 계정 차이가 섞이기 때문이에요.</p>
+    <div class="figure"><svg class="chart-svg" viewBox="0 0 720 360" role="img" aria-label="AI 정보 계정 유기 릴스 151개의 영상 길이와 계정 중앙값 대비 조회수. 계정별로 비교하면 길이와 조회수는 뚜렷한 관계가 없다." style="font-size:12px">
+<rect class="c-band" x="214.2" y="28.799999999999997" width="98.3" height="273.6"/>
+<text class="c-note" x="263.3" y="21.6" text-anchor="middle">25~40초</text>
+<line class="c-grid" x1="50.400000000000006" x2="705.6" y1="258.8" y2="258.8"/>
+<text class="c-tick" x="44.400000000000006" y="263.0" text-anchor="end">0.1배</text>
+<line class="c-ref" x1="50.400000000000006" x2="705.6" y1="186.4" y2="186.4"/>
+<text class="c-tick" x="44.400000000000006" y="190.6" text-anchor="end">1배</text>
+<line class="c-grid" x1="50.400000000000006" x2="705.6" y1="114.0" y2="114.0"/>
+<text class="c-tick" x="44.400000000000006" y="118.2" text-anchor="end">10배</text>
+<line class="c-grid" x1="50.400000000000006" x2="705.6" y1="41.6" y2="41.6"/>
+<text class="c-tick" x="44.400000000000006" y="45.8" text-anchor="end">100배</text>
+<text class="c-note" x="705.6" y="180.4" text-anchor="end">계정 평소 수준(중앙값)</text>
+<circle class="c-dot" cx="249.6" cy="294.7" r="4.3"><title>30초 · 그 계정 평소의 0.032배</title></circle>
+<circle class="c-dot" cx="532.6" cy="263.2" r="4.3"><title>74초 · 그 계정 평소의 0.087배</title></circle>
+<circle class="c-dot" cx="205.0" cy="250.0" r="4.3"><title>24초 · 그 계정 평소의 0.13배</title></circle>
+<circle class="c-dot" cx="131.0" cy="234.0" r="4.3"><title>12초 · 그 계정 평소의 0.22배</title></circle>
+<circle class="c-dot" cx="266.0" cy="232.5" r="4.3"><title>33초 · 그 계정 평소의 0.23배</title></circle>
+<circle class="c-dot" cx="176.2" cy="229.8" r="4.3"><title>19초 · 그 계정 평소의 0.25배</title></circle>
+<circle class="c-dot" cx="218.1" cy="219.6" r="4.3"><title>26초 · 그 계정 평소의 0.35배</title></circle>
+<circle class="c-dot" cx="224.0" cy="214.3" r="4.3"><title>26초 · 그 계정 평소의 0.41배</title></circle>
+<circle class="c-dot" cx="319.7" cy="213.9" r="4.3"><title>41초 · 그 계정 평소의 0.42배</title></circle>
+<circle class="c-dot" cx="331.5" cy="211.4" r="4.3"><title>43초 · 그 계정 평소의 0.45배</title></circle>
+<circle class="c-dot" cx="427.8" cy="210.7" r="4.3"><title>58초 · 그 계정 평소의 0.46배</title></circle>
+<circle class="c-dot" cx="216.8" cy="210.2" r="4.3"><title>25초 · 그 계정 평소의 0.47배</title></circle>
+<circle class="c-dot" cx="207.6" cy="210.2" r="4.3"><title>24초 · 그 계정 평소의 0.47배</title></circle>
+<circle class="c-dot" cx="285.6" cy="209.0" r="4.3"><title>36초 · 그 계정 평소의 0.49배</title></circle>
+<circle class="c-dot" cx="315.8" cy="208.9" r="4.3"><title>40초 · 그 계정 평소의 0.49배</title></circle>
+<circle class="c-dot" cx="248.9" cy="208.3" r="4.3"><title>30초 · 그 계정 평소의 0.5배</title></circle>
+<circle class="c-dot" cx="216.8" cy="207.4" r="4.3"><title>25초 · 그 계정 평소의 0.51배</title></circle>
+<circle class="c-dot" cx="272.5" cy="205.8" r="4.3"><title>34초 · 그 계정 평소의 0.54배</title></circle>
+<circle class="c-dot" cx="317.1" cy="205.6" r="4.3"><title>41초 · 그 계정 평소의 0.54배</title></circle>
+<circle class="c-dot" cx="385.2" cy="205.3" r="4.3"><title>51초 · 그 계정 평소의 0.55배</title></circle>
+<circle class="c-dot" cx="238.4" cy="205.2" r="4.3"><title>29초 · 그 계정 평소의 0.55배</title></circle>
+<circle class="c-dot" cx="387.8" cy="205.0" r="4.3"><title>52초 · 그 계정 평소의 0.55배</title></circle>
+<circle class="c-dot" cx="243.7" cy="204.6" r="4.3"><title>30초 · 그 계정 평소의 0.56배</title></circle>
+<circle class="c-dot" cx="129.7" cy="204.2" r="4.3"><title>12초 · 그 계정 평소의 0.57배</title></circle>
+<circle class="c-dot" cx="221.4" cy="203.4" r="4.3"><title>26초 · 그 계정 평소의 0.58배</title></circle>
+<circle class="c-dot" cx="229.3" cy="203.1" r="4.3"><title>27초 · 그 계정 평소의 0.59배</title></circle>
+<circle class="c-dot" cx="159.8" cy="202.3" r="4.3"><title>17초 · 그 계정 평소의 0.6배</title></circle>
+<circle class="c-dot" cx="224.7" cy="201.5" r="4.3"><title>27초 · 그 계정 평소의 0.62배</title></circle>
+<circle class="c-dot" cx="341.3" cy="201.4" r="4.3"><title>44초 · 그 계정 평소의 0.62배</title></circle>
+<circle class="c-dot" cx="191.9" cy="201.4" r="4.3"><title>22초 · 그 계정 평소의 0.62배</title></circle>
+<circle class="c-dot" cx="267.3" cy="201.2" r="4.3"><title>33초 · 그 계정 평소의 0.62배</title></circle>
+<circle class="c-dot" cx="203.1" cy="200.3" r="4.3"><title>23초 · 그 계정 평소의 0.64배</title></circle>
+<circle class="c-dot" cx="190.6" cy="199.7" r="4.3"><title>21초 · 그 계정 평소의 0.66배</title></circle>
+<circle class="c-dot" cx="200.4" cy="199.4" r="4.3"><title>23초 · 그 계정 평소의 0.66배</title></circle>
+<circle class="c-dot" cx="232.5" cy="198.5" r="4.3"><title>28초 · 그 계정 평소의 0.68배</title></circle>
+<circle class="c-dot" cx="212.2" cy="198.0" r="4.3"><title>25초 · 그 계정 평소의 0.69배</title></circle>
+<circle class="c-dot" cx="166.4" cy="197.8" r="4.3"><title>18초 · 그 계정 평소의 0.7배</title></circle>
+<circle class="c-dot" cx="187.3" cy="197.3" r="4.3"><title>21초 · 그 계정 평소의 0.71배</title></circle>
+<circle class="c-dot" cx="219.4" cy="197.2" r="4.3"><title>26초 · 그 계정 평소의 0.71배</title></circle>
+<circle class="c-dot" cx="233.9" cy="196.9" r="4.3"><title>28초 · 그 계정 평소의 0.72배</title></circle>
+<circle class="c-dot" cx="191.3" cy="196.7" r="4.3"><title>22초 · 그 계정 평소의 0.72배</title></circle>
+<circle class="c-dot" cx="313.1" cy="196.5" r="4.3"><title>40초 · 그 계정 평소의 0.73배</title></circle>
+<circle class="c-dot" cx="271.9" cy="196.3" r="4.3"><title>34초 · 그 계정 평소의 0.73배</title></circle>
+<circle class="c-dot" cx="283.0" cy="195.7" r="4.3"><title>36초 · 그 계정 평소의 0.74배</title></circle>
+<circle class="c-dot" cx="235.2" cy="195.7" r="4.3"><title>28초 · 그 계정 평소의 0.74배</title></circle>
+<circle class="c-dot" cx="196.5" cy="194.8" r="4.3"><title>22초 · 그 계정 평소의 0.77배</title></circle>
+<circle class="c-dot" cx="314.4" cy="193.6" r="4.3"><title>40초 · 그 계정 평소의 0.79배</title></circle>
+<circle class="c-dot" cx="241.7" cy="193.5" r="4.3"><title>29초 · 그 계정 평소의 0.8배</title></circle>
+<circle class="c-dot" cx="243.7" cy="193.4" r="4.3"><title>30초 · 그 계정 평소의 0.8배</title></circle>
+<circle class="c-dot" cx="157.9" cy="193.3" r="4.3"><title>16초 · 그 계정 평소의 0.8배</title></circle>
+<circle class="c-dot" cx="680.0" cy="193.2" r="4.3"><title>96초 · 그 계정 평소의 0.81배</title></circle>
+<circle class="c-dot" cx="246.3" cy="193.0" r="4.3"><title>30초 · 그 계정 평소의 0.81배</title></circle>
+<circle class="c-dot" cx="163.7" cy="192.7" r="4.3"><title>17초 · 그 계정 평소의 0.82배</title></circle>
+<circle class="c-dot" cx="269.2" cy="192.4" r="4.3"><title>33초 · 그 계정 평소의 0.83배</title></circle>
+<circle class="c-dot" cx="238.4" cy="191.9" r="4.3"><title>29초 · 그 계정 평소의 0.84배</title></circle>
+<circle class="c-dot" cx="270.5" cy="191.8" r="4.3"><title>34초 · 그 계정 평소의 0.84배</title></circle>
+<circle class="c-dot" cx="344.6" cy="191.7" r="4.3"><title>45초 · 그 계정 평소의 0.84배</title></circle>
+<circle class="c-dot" cx="245.6" cy="191.7" r="4.3"><title>30초 · 그 계정 평소의 0.85배</title></circle>
+<circle class="c-dot" cx="214.9" cy="191.1" r="4.3"><title>25초 · 그 계정 평소의 0.86배</title></circle>
+<circle class="c-dot" cx="355.7" cy="190.5" r="4.3"><title>47초 · 그 계정 평소의 0.88배</title></circle>
+<circle class="c-dot" cx="278.4" cy="190.4" r="4.3"><title>35초 · 그 계정 평소의 0.88배</title></circle>
+<circle class="c-dot" cx="381.9" cy="190.1" r="4.3"><title>51초 · 그 계정 평소의 0.89배</title></circle>
+<circle class="c-dot" cx="243.0" cy="188.9" r="4.3"><title>29초 · 그 계정 평소의 0.92배</title></circle>
+<circle class="c-dot" cx="239.8" cy="188.9" r="4.3"><title>29초 · 그 계정 평소의 0.92배</title></circle>
+<circle class="c-dot" cx="142.8" cy="188.6" r="4.3"><title>14초 · 그 계정 평소의 0.93배</title></circle>
+<circle class="c-dot" cx="320.3" cy="188.3" r="4.3"><title>41초 · 그 계정 평소의 0.94배</title></circle>
+<circle class="c-dot" cx="225.3" cy="188.3" r="4.3"><title>27초 · 그 계정 평소의 0.94배</title></circle>
+<circle class="c-dot" cx="547.0" cy="188.3" r="4.3"><title>76초 · 그 계정 평소의 0.94배</title></circle>
+<circle class="c-dot" cx="161.1" cy="188.1" r="4.3"><title>17초 · 그 계정 평소의 0.95배</title></circle>
+<circle class="c-dot" cx="235.2" cy="187.3" r="4.3"><title>28초 · 그 계정 평소의 0.97배</title></circle>
+<circle class="c-dot" cx="305.9" cy="187.1" r="4.3"><title>39초 · 그 계정 평소의 0.98배</title></circle>
+<circle class="c-dot" cx="232.5" cy="187.1" r="4.3"><title>28초 · 그 계정 평소의 0.98배</title></circle>
+<circle class="c-dot" cx="330.2" cy="186.7" r="4.3"><title>43초 · 그 계정 평소의 0.99배</title></circle>
+<circle class="c-dot" cx="174.9" cy="186.4" r="4.3"><title>19초 · 그 계정 평소의 1배</title></circle>
+<circle class="c-dot" cx="210.3" cy="186.4" r="4.3"><title>24초 · 그 계정 평소의 1배</title></circle>
+<circle class="c-dot" cx="276.4" cy="186.4" r="4.3"><title>34초 · 그 계정 평소의 1배</title></circle>
+<circle class="c-dot" cx="315.8" cy="186.4" r="4.3"><title>40초 · 그 계정 평소의 1배</title></circle>
+<circle class="c-dot" cx="312.5" cy="186.3" r="4.3"><title>40초 · 그 계정 평소의 1배</title></circle>
+<circle class="c-dot" cx="241.7" cy="185.6" r="4.3"><title>29초 · 그 계정 평소의 1배</title></circle>
+<circle class="c-dot" cx="276.4" cy="185.5" r="4.3"><title>34초 · 그 계정 평소의 1배</title></circle>
+<circle class="c-dot" cx="204.4" cy="185.5" r="4.3"><title>24초 · 그 계정 평소의 1배</title></circle>
+<circle class="c-dot" cx="266.0" cy="185.3" r="4.3"><title>33초 · 그 계정 평소의 1배</title></circle>
+<circle class="c-dot" cx="267.3" cy="184.5" r="4.3"><title>33초 · 그 계정 평소의 1.1배</title></circle>
+<circle class="c-dot" cx="191.3" cy="184.0" r="4.3"><title>22초 · 그 계정 평소의 1.1배</title></circle>
+<circle class="c-dot" cx="228.6" cy="182.2" r="4.3"><title>27초 · 그 계정 평소의 1.1배</title></circle>
+<circle class="c-dot" cx="223.4" cy="180.0" r="4.3"><title>26초 · 그 계정 평소의 1.2배</title></circle>
+<circle class="c-dot" cx="240.4" cy="179.8" r="4.3"><title>29초 · 그 계정 평소의 1.2배</title></circle>
+<circle class="c-dot" cx="265.3" cy="179.3" r="4.3"><title>33초 · 그 계정 평소의 1.3배</title></circle>
+<circle class="c-dot" cx="179.5" cy="178.8" r="4.3"><title>20초 · 그 계정 평소의 1.3배</title></circle>
+<circle class="c-dot" cx="336.7" cy="178.7" r="4.3"><title>44초 · 그 계정 평소의 1.3배</title></circle>
+<circle class="c-dot" cx="169.0" cy="178.2" r="4.3"><title>18초 · 그 계정 평소의 1.3배</title></circle>
+<circle class="c-dot" cx="277.8" cy="177.9" r="4.3"><title>35초 · 그 계정 평소의 1.3배</title></circle>
+<circle class="c-dot" cx="286.9" cy="175.6" r="4.3"><title>36초 · 그 계정 평소의 1.4배</title></circle>
+<circle class="c-dot" cx="232.5" cy="175.5" r="4.3"><title>28초 · 그 계정 평소의 1.4배</title></circle>
+<circle class="c-dot" cx="97.6" cy="175.3" r="4.3"><title>7초 · 그 계정 평소의 1.4배</title></circle>
+<circle class="c-dot" cx="218.8" cy="174.5" r="4.3"><title>26초 · 그 계정 평소의 1.5배</title></circle>
+<circle class="c-dot" cx="311.2" cy="174.4" r="4.3"><title>40초 · 그 계정 평소의 1.5배</title></circle>
+<circle class="c-dot" cx="211.6" cy="172.7" r="4.3"><title>25초 · 그 계정 평소의 1.5배</title></circle>
+<circle class="c-dot" cx="248.9" cy="171.1" r="4.3"><title>30초 · 그 계정 평소의 1.6배</title></circle>
+<circle class="c-dot" cx="226.6" cy="171.0" r="4.3"><title>27초 · 그 계정 평소의 1.6배</title></circle>
+<circle class="c-dot" cx="469.7" cy="169.7" r="4.3"><title>64초 · 그 계정 평소의 1.7배</title></circle>
+<circle class="c-dot" cx="374.1" cy="169.7" r="4.3"><title>49초 · 그 계정 평소의 1.7배</title></circle>
+<circle class="c-dot" cx="152.6" cy="168.7" r="4.3"><title>16초 · 그 계정 평소의 1.8배</title></circle>
+<circle class="c-dot" cx="290.2" cy="168.4" r="4.3"><title>37초 · 그 계정 평소의 1.8배</title></circle>
+<circle class="c-dot" cx="177.5" cy="168.3" r="4.3"><title>19초 · 그 계정 평소의 1.8배</title></circle>
+<circle class="c-dot" cx="144.7" cy="168.0" r="4.3"><title>14초 · 그 계정 평소의 1.8배</title></circle>
+<circle class="c-dot" cx="184.7" cy="167.9" r="4.3"><title>20초 · 그 계정 평소의 1.8배</title></circle>
+<circle class="c-dot" cx="319.0" cy="167.4" r="4.3"><title>41초 · 그 계정 평소의 1.8배</title></circle>
+<circle class="c-dot" cx="228.6" cy="167.3" r="4.3"><title>27초 · 그 계정 평소의 1.8배</title></circle>
+<circle class="c-dot" cx="241.1" cy="166.5" r="4.3"><title>29초 · 그 계정 평소의 1.9배</title></circle>
+<circle class="c-dot" cx="290.2" cy="165.8" r="4.3"><title>37초 · 그 계정 평소의 1.9배</title></circle>
+<circle class="c-dot" cx="277.1" cy="165.1" r="4.3"><title>35초 · 그 계정 평소의 2배</title></circle>
+<circle class="c-dot" cx="237.1" cy="164.2" r="4.3"><title>28초 · 그 계정 평소의 2배</title></circle>
+<circle class="c-dot" cx="152.0" cy="163.8" r="4.3"><title>16초 · 그 계정 평소의 2.1배</title></circle>
+<circle class="c-dot" cx="282.3" cy="162.1" r="4.3"><title>35초 · 그 계정 평소의 2.2배</title></circle>
+<circle class="c-dot" cx="204.4" cy="156.3" r="4.3"><title>24초 · 그 계정 평소의 2.6배</title></circle>
+<circle class="c-dot" cx="299.4" cy="154.4" r="4.3"><title>38초 · 그 계정 평소의 2.8배</title></circle>
+<circle class="c-dot" cx="183.4" cy="153.9" r="4.3"><title>20초 · 그 계정 평소의 2.8배</title></circle>
+<circle class="c-dot" cx="332.1" cy="151.2" r="4.3"><title>43초 · 그 계정 평소의 3.1배</title></circle>
+<circle class="c-dot" cx="294.8" cy="149.7" r="4.3"><title>37초 · 그 계정 평소의 3.2배</title></circle>
+<circle class="c-dot" cx="303.3" cy="149.5" r="4.3"><title>39초 · 그 계정 평소의 3.2배</title></circle>
+<circle class="c-dot" cx="147.4" cy="149.0" r="4.3"><title>15초 · 그 계정 평소의 3.3배</title></circle>
+<circle class="c-dot" cx="252.9" cy="149.0" r="4.3"><title>31초 · 그 계정 평소의 3.3배</title></circle>
+<circle class="c-dot" cx="218.8" cy="148.5" r="4.3"><title>26초 · 그 계정 평소의 3.3배</title></circle>
+<circle class="c-dot" cx="397.0" cy="145.3" r="4.3"><title>53초 · 그 계정 평소의 3.7배</title></circle>
+<circle class="c-dot" cx="292.8" cy="144.5" r="4.3"><title>37초 · 그 계정 평소의 3.8배</title></circle>
+<circle class="c-dot" cx="252.9" cy="144.3" r="4.3"><title>31초 · 그 계정 평소의 3.8배</title></circle>
+<circle class="c-dot" cx="332.1" cy="143.5" r="4.3"><title>43초 · 그 계정 평소의 3.9배</title></circle>
+<circle class="c-dot" cx="206.3" cy="141.4" r="4.3"><title>24초 · 그 계정 평소의 4.2배</title></circle>
+<circle class="c-dot" cx="339.3" cy="139.6" r="4.3"><title>44초 · 그 계정 평소의 4.4배</title></circle>
+<circle class="c-dot" cx="276.4" cy="139.4" r="4.3"><title>34초 · 그 계정 평소의 4.5배</title></circle>
+<circle class="c-dot" cx="187.3" cy="139.0" r="4.3"><title>21초 · 그 계정 평소의 4.5배</title></circle>
+<circle class="c-dot" cx="285.0" cy="138.5" r="4.3"><title>36초 · 그 계정 평소의 4.6배</title></circle>
+<circle class="c-dot" cx="350.5" cy="138.1" r="4.3"><title>46초 · 그 계정 평소의 4.6배</title></circle>
+<circle class="c-dot" cx="258.1" cy="138.0" r="4.3"><title>32초 · 그 계정 평소의 4.7배</title></circle>
+<circle class="c-dot" cx="286.3" cy="137.2" r="4.3"><title>36초 · 그 계정 평소의 4.8배</title></circle>
+<circle class="c-dot" cx="212.2" cy="134.8" r="4.3"><title>25초 · 그 계정 평소의 5.2배</title></circle>
+<circle class="c-dot" cx="296.1" cy="132.4" r="4.3"><title>38초 · 그 계정 평소의 5.6배</title></circle>
+<circle class="c-dot" cx="256.1" cy="117.3" r="4.3"><title>31초 · 그 계정 평소의 9배</title></circle>
+<circle class="c-dot" cx="161.1" cy="117.1" r="4.3"><title>17초 · 그 계정 평소의 9배</title></circle>
+<circle class="c-dot" cx="293.5" cy="116.9" r="4.3"><title>37초 · 그 계정 평소의 9.1배</title></circle>
+<circle class="c-dot" cx="334.8" cy="112.8" r="4.3"><title>43초 · 그 계정 평소의 10배</title></circle>
+<circle class="c-dot" cx="282.3" cy="91.9" r="4.3"><title>35초 · 그 계정 평소의 20배</title></circle>
+<circle class="c-dot" cx="220.8" cy="89.7" r="4.3"><title>26초 · 그 계정 평소의 22배</title></circle>
+<circle class="c-dot" cx="293.5" cy="88.2" r="4.3"><title>37초 · 그 계정 평소의 23배</title></circle>
+<circle class="c-dot" cx="241.1" cy="87.7" r="4.3"><title>29초 · 그 계정 평소의 23배</title></circle>
+<circle class="c-dot" cx="169.0" cy="83.6" r="4.3"><title>18초 · 그 계정 평소의 26배</title></circle>
+<circle class="c-dot" cx="276.4" cy="78.9" r="4.3"><title>34초 · 그 계정 평소의 30배</title></circle>
+<circle class="c-dot" cx="385.9" cy="62.0" r="4.3"><title>51초 · 그 계정 평소의 52배</title></circle>
+<circle class="c-dot" cx="397.0" cy="60.3" r="4.3"><title>53초 · 그 계정 평소의 55배</title></circle>
+<circle class="c-dot" cx="265.3" cy="39.7" r="4.3"><title>33초 · 그 계정 평소의 1.1e+02배</title></circle>
+<line class="c-acc-line thick" x1="53.4" x2="211.2" y1="186.4" y2="186.4"><title>0~25초 40개 · 중앙값 1.00배</title></line>
+<line class="c-acc-line thick" x1="217.2" x2="244.0" y1="191.1" y2="191.1"><title>25~30초 37개 · 중앙값 0.86배</title></line>
+<line class="c-acc-line thick" x1="250.0" x2="276.7" y1="184.9" y2="184.9"><title>30~35초 24개 · 중앙값 1.05배</title></line>
+<line class="c-acc-line thick" x1="282.7" x2="309.5" y1="152.0" y2="152.0"><title>35~40초 18개 · 중앙값 2.99배</title></line>
+<line class="c-acc-line thick" x1="315.5" x2="702.6" y1="188.3" y2="188.3"><title>40~초 32개 · 중앙값 0.94배</title></line>
+<text class="c-tick" x="50.4" y="320.4" text-anchor="middle">0초</text>
+<text class="c-tick" x="115.9" y="320.4" text-anchor="middle">10초</text>
+<text class="c-tick" x="181.4" y="320.4" text-anchor="middle">20초</text>
+<text class="c-tick" x="247.0" y="320.4" text-anchor="middle">30초</text>
+<text class="c-tick" x="312.5" y="320.4" text-anchor="middle">40초</text>
+<text class="c-tick" x="378.0" y="320.4" text-anchor="middle">50초</text>
+<text class="c-tick" x="443.5" y="320.4" text-anchor="middle">60초</text>
+<text class="c-tick" x="509.0" y="320.4" text-anchor="middle">70초</text>
+<text class="c-tick" x="574.6" y="320.4" text-anchor="middle">80초</text>
+<text class="c-tick" x="640.1" y="320.4" text-anchor="middle">90초</text>
+<text class="c-tick" x="705.6" y="320.4" text-anchor="middle">100초</text>
+<text class="c-note" x="50.400000000000006" y="340.8">점 하나가 릴스 하나(151개, 6개 계정, 협찬 제외). 세로는 그 계정 평소 조회수 대비 배수.</text>
+<text class="c-note" x="50.400000000000006" y="357.6">파란 선은 길이 구간별 중앙값이에요. 100초 이상은 100초 자리에 표시했어요.</text>
+</svg></div>
+    <ul class="plain">
+      <li>전체로 보면 길이와 조회수의 순위상관은 <span class="num">0.11</span>로 거의 관계가 없었어요. 짧은 릴스가 더 잘 되는 경향도 없었어요.</li>
+      <li>25~40초 구간만 보면 긴 쪽(35~40초)이 조금 높게 나오는데, 대부분 한 계정에서 나온 차이예요. 그 계정을 빼면 뚜렷하지 않아요.</li>
+      <li>그래서 길이를 줄이는 것보다 앞 몇 초 안에 핵심을 넣는 게 먼저라고 봐요.</li>
+    </ul>
+  </section>
+  </div>
+  <div class="part" id="part5">
+    <div class="part-head"><span class="part-k">PART 5</span><h2 class="part-t">정리와 다음</h2><p class="part-d">공식이 만든 숫자를 한 장으로 모으고, 안 된 것과 가져갈 것을 정리해요.</p></div>
+  <section id="formula-funnel">
+    <h2>공식 6단계가 실제로 만든 숫자</h2>
+    <p>앞에서 본 숫자를 공식 단계에 하나씩 붙이면 이렇게 돼요. 각 단계가 실제로 얼마나 작동했는지 한 장으로 보는 그림이에요.</p>
+    <div class="figure"><svg class="chart-svg" viewBox="0 0 720 554" role="img" aria-label="공식 6단계별 10일 실측 수치. 조회 50,773회에서 3초까지 20.2퍼센트가 남고, 저장 1,251 댓글 1,130 팔로우 456으로 이어졌다." style="font-size:12px">
+<text class="c-label" x="0" y="13.2">도달·시청</text>
+<line class="c-grid" x1="0" x2="720" y1="22.8" y2="22.8"/>
+<text class="c-note" x="720" y="42.0" text-anchor="end">막대 폭은 로그 눈금</text>
+<text class="c-stepno" x="0" y="66.5">1</text>
+<text class="c-label" x="18.0" y="66.5">명확한 타깃 부르기</text>
+<text class="c-note" x="18.0" y="85.2">비팔로워 98.9% · 릴스·탐색 탭 유입 93%</text>
+<rect class="c-seg-acc" x="198.0" y="52.8" width="252.0" height="19.2" rx="3"><title>명확한 타깃 부르기 · 조회 50,773</title></rect>
+<text class="c-val" x="460.8" y="67.2">조회 50,773</text>
+<text class="c-formula-t" x="396.1" y="99.5">↓ 3초까지 남은 비율 20.2%</text>
+<text class="c-stepno" x="0" y="132.5">2</text>
+<text class="c-label" x="18.0" y="132.5">3초 안에 후킹</text>
+<text class="c-note" x="18.0" y="151.2">1초 48.2% → 2초 25.7% → 3초 20.2%</text>
+<rect class="c-seg-acc" x="198.0" y="118.8" width="187.3" height="19.2" rx="3"><title>3초 안에 후킹 · 10,248명 · 20.2%</title></rect>
+<text class="c-val" x="460.8" y="133.2">10,248명 · 20.2%</text>
+<line class="c-grid" x1="0" x2="720" y1="194.4" y2="194.4"/>
+<text class="c-label" x="0" y="218.4">본 사람이 한 행동 <tspan class="c-note">(순서가 아니라 병렬 · 조회한 사람 44,623명 대비)</tspan></text>
+<text class="c-stepno" x="0" y="241.7">3</text>
+<text class="c-label" x="18.0" y="241.7">정보는 쉽고 명확하게</text>
+<text class="c-note" x="18.0" y="260.4">공유 401 · 0.90% — 좋아요 233의 5.4배</text>
+<rect class="c-seg" x="198.0" y="228.0" width="102.2" height="19.2" rx="3"><title>정보는 쉽고 명확하게 · 저장 1,251 · 2.80%</title></rect>
+<text class="c-val" x="460.8" y="242.4">저장 1,251 · 2.80%</text>
+<text class="c-stepno" x="0" y="307.7">4</text>
+<text class="c-label" x="18.0" y="307.7">CTA로 댓글 유도</text>
+<text class="c-note" x="18.0" y="326.4">재생 1,000회당 22.3개</text>
+<rect class="c-seg" x="198.0" y="294.0" width="98.1" height="19.2" rx="3"><title>CTA로 댓글 유도 · 댓글 1,130 · 2.53%</title></rect>
+<text class="c-val" x="460.8" y="308.4">댓글 1,130 · 2.53%</text>
+<text class="c-stepno" x="0" y="373.7">5</text>
+<text class="c-label" x="18.0" y="373.7">댓글에 자료 자동 발송</text>
+<text class="c-note" x="18.0" y="392.4">소개 링크 클릭 19</text>
+<rect class="c-seg" x="198.0" y="360.0" width="61.3" height="19.2" rx="3"><title>댓글에 자료 자동 발송 · 프로필 방문 455 · 1.02%</title></rect>
+<text class="c-val" x="460.8" y="374.4">프로필 방문 455 · 1.02%</text>
+<text class="c-stepno" x="0" y="439.7">6</text>
+<text class="c-label" x="18.0" y="439.7">유입·팔로워 증가</text>
+<text class="c-note" x="18.0" y="458.4">첫 24시간 133 → 10일 456 (3.4배)</text>
+<rect class="c-seg-acc" x="198.0" y="426.0" width="61.4" height="19.2" rx="3"><title>유입·팔로워 증가 · 팔로우 456 · 1.02%</title></rect>
+<text class="c-val" x="460.8" y="440.4">팔로우 456 · 1.02%</text>
+<line class="c-grid" x1="0" x2="720" y1="514.8" y2="514.8"/>
+<text class="c-note" x="0" y="532.8">같은 사람이 순서대로 내려간 게 아니라 단계별 행동 수예요.</text>
+<text class="c-note" x="0" y="549.6">5·6단계가 455 · 456으로 거의 같은 건, 프로필을 안 거치고 릴스에서 바로 팔로우한 사람이 있다는 뜻이에요.</text>
+</svg></div>
+    <ul class="plain">
+      <li><strong>가장 크게 깎이는 곳은 2단계예요.</strong> 조회 50,773회 중 3초를 넘긴 사람은 20.2%, 약 1만 명이에요. 나머지 4만 명에게는 아무것도 전달되지 않았어요. 개선 여지가 가장 큰 지점이기도 해요.</li>
+      <li><strong>3단계는 끝까지 안 봐도 작동했어요.</strong> 도구 5개 중 4개는 대부분이 못 봤는데 저장이 1,251개 나왔어요. 쓸모를 판단하는 데는 앞부분만으로 충분했다는 뜻이에요.</li>
+      <li><strong>5·6단계가 455 · 456으로 거의 같아요.</strong> 프로필을 들르지 않고 릴스 화면에서 바로 팔로우한 사람이 그만큼 있었다는 뜻이에요.</li>
+    </ul>
+  </section>
+  <section id="what-failed">
+    <h2>안 된 것</h2>
+    <div class="weak">
+      <p><strong>초반 이탈이 컸어요.</strong> 건너뛰기 82.9%로 10일이 지나도 그대로예요. 유지율 그래프를 보면 첫 2초 안에 4분의 3쯤 빠지고, 남은 사람은 끝까지 완만하게 줄어요. 실제 결과 장면이 3초가 지나서야 나와서, 첫 1.5초 안에 결과를 먼저 보여 줬어야 했어요.</p>
+      <p><strong>35초는 길었어요.</strong> 도구 5개를 각각 5초씩 보여 주니 뒤로 갈수록 반복 느낌이 들어요.</p>
+      <p><strong>좋아요율 0.5%.</strong> 쓸모는 인정받았지만 계정에 대한 호감은 약했어요. 소개 링크 클릭도 19번에 그쳤어요.</p>
+      <p><strong>내 포맷이 아니에요.</strong> 구조를 거의 그대로 가져와서, 다음부터는 오프닝 순서나 도구 수 중 하나는 바꿔야 한다고 정리했어요.</p>
+    </div>
+  </section>
+  <section id="takeaways">
+    <h2>레클 멤버분들이 가져가실 만한 것</h2>
+    <div class="take">
+      <div><h3>잘 된 릴스의 형식을 빌리고 내 타깃 내용으로 바꾸기</h3><p>조회수 5만 이상 나온 릴스 구조를 가져오되, 장면마다 내 타깃이 매일 보는 숫자와 결정으로 옮겨요.</p></div>
+      <div><h3>첫 3초에 타깃 이름 부르기</h3><p>“OO라면 이건 무조건” 한 줄로 대상이 아닌 사람은 걸러지고, 대상인 사람은 멈춰요. 넓게 부를수록 아무도 안 멈춰요.</p></div>
+      <div><h3>4~6초 안에 메시지 끝내기</h3><p>비팔로워는 평균 4~6초 봐요. 길이는 조회수와 상관없었으니, 길이를 줄이는 것보다 앞부분에 핵심을 쉽게 넣는 게 먼저예요.</p></div>
+      <div><h3>저장할 이유 만들기</h3><p>목록, 숫자, 받을 자료가 있으면 저장·공유가 생기고 추천이 이어져요. 이 릴스는 저장이 좋아요의 5배였어요.</p></div>
+      <div><h3>댓글 CTA + 자동 발송은 팔로워 전환 장치로 쓰기</h3><p>조회수를 올리는 장치는 아니지만, 본 사람을 팔로워로 바꿔요. 팔로우하고 댓글 남기면 자료를 보내는 흐름으로 10일간 팔로우 456명이 생겼어요.</p></div>
+      <div><h3>첫날 숫자로 판단하지 않기</h3><p>이 릴스는 조회의 65%가 둘째 날 이후에 나왔어요. 한 편이 터졌다고 기준을 올리지 말고, 같은 공식을 2~3번 더 써서 재현되는지 봐요.</p></div>
+    </div>
+  </section>
+  </div>
+  <footer>
+    <p>데이터: 인스타 인사이트 캡처 두 번(게시 약 24시간 뒤 2026-09-29, 10일 뒤 2026-10-07 23시), Apify 공개 재생수 조회(2026-10-07 22시경). 릴스 간 비교 표는 다섯 편 모두 같은 기준인 공개 재생수를 썼어요.</p>
+    <p>경과 일수가 릴스마다 달라서 재생수 비교는 초기 확산 강도를 보는 참고용이에요. 화면 속 CPA·ROAS 숫자는 예시 데이터였어요.</p>
+    <p>릴스: <a href="https://www.instagram.com/reel/Ddy3mMhzkUM/">마케터 MCP 5선</a> · 원본 구조: <a href="https://www.instagram.com/reel/DdbmaSfiGVx/">에브리AI 클로드 UI MCP 5선</a></p>
+  </footer>
+</div>
+</body>
+</html>
