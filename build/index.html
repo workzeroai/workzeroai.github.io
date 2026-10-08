@@ -223,7 +223,7 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0 110px;b
 .deliver ul{list-style:none;margin-top:10px;display:grid;gap:8px;font-size:14px;color:var(--ink2)}
 .deliver li{padding-left:22px;position:relative}
 .deliver li::before{content:"✓";position:absolute;left:0;color:var(--primary);font-weight:900}
-@media (min-width:860px){.svcs{grid-template-columns:repeat(3,1fr)}}
+@media (min-width:860px){.svcs{margin:28px 0 0;padding:4px 0 12px;flex-wrap:wrap}}
 
 .hero h1{font-size:32px}
 .pstep.now{background:var(--primary-pale);box-shadow:inset 0 0 0 1.5px var(--primary)}
@@ -231,7 +231,14 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0 110px;b
 .pstep .t small{font-size:12px;color:var(--mute);font-weight:600}
 .st.done{background:#e7f8f1;color:var(--mint)}
 .st.wait{background:var(--primary);color:#fff}
-.svcs{display:grid;gap:12px;margin-top:28px}
+.svcs{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:28px calc(var(--gut)*-1) 0;padding:4px var(--gut) 12px;scrollbar-width:none}
+.svcs::-webkit-scrollbar{display:none}
+.svc{flex:0 0 84%;max-width:330px;scroll-snap-align:start}
+.cnt{margin-left:auto;font-size:12px;font-weight:800;color:var(--primary);background:var(--primary-pale);border-radius:99px;padding:3px 10px}
+.grp:not(.ag) .cnt{color:var(--mute);background:var(--soft)}
+.dots{display:flex;gap:6px;justify-content:center;margin-top:2px}
+.dots i{width:6px;height:6px;border-radius:50%;background:var(--hair);transition:.2s}
+.dots i.on{background:var(--primary);width:18px;border-radius:99px}
 .svc{padding:20px;display:grid;gap:10px}
 .svc h3{font-size:18px}
 .svc.has{transition:.2s}
@@ -281,7 +288,8 @@ a.prime-card{color:#fff}
 .cross .go{display:inline-block;margin-top:14px;font-weight:800;color:var(--primary)}
 @media (min-width:860px){
   .hero h1{font-size:48px}
-  .svcs{grid-template-columns:1fr 1fr}
+  .svc{flex:0 1 calc(33.333% - 8px);max-width:none}
+.cnt{margin-left:4px}
   .cases{margin:28px 0 0;padding:4px 0 12px}
   .case{flex-basis:320px}
   .promises{grid-template-columns:repeat(4,1fr)}
@@ -550,7 +558,7 @@ a.prime-card{color:#fff}
     <h2>이런 것들을 만들어요</h2>
     <p class="sub">필요한 것부터 하나씩 만들어요. 아래 없는 업무도 상담해 드려요.</p>
 
-    <h3 class="grp">자동화로 만드는 것 <span>· 순서가 정해진 일</span></h3>
+    <h3 class="grp">자동화로 만드는 것 <span>· 순서가 정해진 일</span><b class="cnt">3</b></h3>
     <div class="svcs">
       <article class="card svc">
         <h3>성과 데이터 취합·발송</h3>
@@ -571,8 +579,9 @@ a.prime-card{color:#fff}
         <div class="tools">원문 → Threads · 인스타그램 · 링크드인 초안</div>
       </a>
     </div>
+    <div class="dots"></div>
 
-    <h3 class="grp ag">에이전트로 만드는 것 <span>· 읽고 추려내야 하는 일</span></h3>
+    <h3 class="grp ag">에이전트로 만드는 것 <span>· 읽고 추려내야 하는 일</span><b class="cnt">5</b></h3>
     <div class="svcs">
       <article class="card svc">
         <h3>주간 성과 리포트 에이전트</h3>
@@ -605,6 +614,7 @@ a.prime-card{color:#fff}
         <div class="tools">리뷰 · 댓글 · 문의 내역 → 인사이트 DB</div>
       </article>
     </div>
+    <div class="dots"></div>
     <div class="team">
       <span class="tag">AGENT TEAM</span>
       <h3>여러 에이전트를 한 팀으로</h3>
@@ -1110,6 +1120,28 @@ const sticky=document.getElementById('sticky');let pastHero=false,atContact=fals
 const upd=()=>sticky.classList.toggle('show',pastHero&&!atContact);
 new IntersectionObserver(([e])=>{pastHero=!e.isIntersecting;upd()}).observe(document.querySelector('.hero .ctas'));
 new IntersectionObserver(([e])=>{atContact=e.isIntersecting;upd()},{threshold:.05}).observe(document.getElementById('contact'));
+
+// 메뉴 슬라이더 점 — 카드 수만큼 점을 만들고, 가운데에 가장 가까운 카드를 표시한다.
+// 데스크톱처럼 스크롤이 없는 폭에서는 점을 숨긴다.
+document.querySelectorAll('.svcs').forEach(function(sl){
+  var dots = sl.nextElementSibling;
+  if (!dots || !dots.classList.contains('dots')) return;
+  var cards = Array.prototype.slice.call(sl.children);
+  cards.forEach(function(){ dots.appendChild(document.createElement('i')); });
+  var pips = Array.prototype.slice.call(dots.children);
+  function mark(){
+    var r = sl.getBoundingClientRect(), mid = r.left + r.width / 2, best = 0, gap = Infinity;
+    cards.forEach(function(el, i){
+      var b = el.getBoundingClientRect(), d = Math.abs(b.left + b.width / 2 - mid);
+      if (d < gap) { gap = d; best = i; }
+    });
+    pips.forEach(function(p, i){ p.classList.toggle('on', i === best); });
+  }
+  function fit(){ dots.style.display = sl.scrollWidth > sl.clientWidth + 4 ? '' : 'none'; }
+  sl.addEventListener('scroll', mark, { passive: true });
+  addEventListener('resize', function(){ fit(); mark(); }, { passive: true });
+  fit(); mark();
+});
 </script>
 </body>
 </html>
