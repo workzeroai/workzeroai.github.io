@@ -223,7 +223,6 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0 110px;b
 .deliver ul{list-style:none;margin-top:10px;display:grid;gap:8px;font-size:14px;color:var(--ink2)}
 .deliver li{padding-left:22px;position:relative}
 .deliver li::before{content:"✓";position:absolute;left:0;color:var(--primary);font-weight:900}
-@media (min-width:860px){.svcs{margin:28px 0 0;padding:4px 0 12px;flex-wrap:wrap}}
 
 .hero h1{font-size:32px}
 .pstep.now{background:var(--primary-pale);box-shadow:inset 0 0 0 1.5px var(--primary)}
@@ -231,13 +230,18 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0 110px;b
 .pstep .t small{font-size:12px;color:var(--mute);font-weight:600}
 .st.done{background:#e7f8f1;color:var(--mint)}
 .st.wait{background:var(--primary);color:#fff}
-.svcs{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:28px calc(var(--gut)*-1) 0;padding:4px var(--gut) 12px;scrollbar-width:none}
+.svcs{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:var(--gut);margin:28px calc(var(--gut)*-1) 0;padding:4px var(--gut) 12px;scrollbar-width:none}
 .svcs::-webkit-scrollbar{display:none}
 .svc{flex:0 0 84%;max-width:330px;scroll-snap-align:start}
 .svcart{width:100%;height:auto;display:block;border-radius:12px;background:#06090F}
 .cnt{margin-left:auto;font-size:12px;font-weight:800;color:var(--primary);background:var(--primary-pale);border-radius:99px;padding:3px 10px}
 .grp:not(.ag) .cnt{color:var(--mute);background:var(--soft)}
+.navs{display:flex;gap:8px;align-items:center;justify-content:center;margin-top:2px}
+.navs button{display:none;width:34px;height:34px;border-radius:50%;border:1px solid var(--hair);background:#fff;color:var(--ink);font:900 16px/1 sans-serif;cursor:pointer;place-items:center;transition:.15s}
+.navs button:hover:not(:disabled){border-color:var(--primary);color:var(--primary);box-shadow:var(--sh2)}
+.navs button:disabled{opacity:.3;cursor:default}
 .dots{display:flex;gap:6px;justify-content:center;margin-top:2px}
+.navs .dots{margin-top:0}
 .dots i{width:6px;height:6px;border-radius:50%;background:var(--hair);transition:.2s}
 .dots i.on{background:var(--primary);width:18px;border-radius:99px}
 .svc{padding:20px;display:grid;gap:10px}
@@ -289,8 +293,6 @@ a.prime-card{color:#fff}
 .cross .go{display:inline-block;margin-top:14px;font-weight:800;color:var(--primary)}
 @media (min-width:860px){
   .hero h1{font-size:48px}
-  .svc{flex:0 1 calc(33.333% - 8px);max-width:none}
-.cnt{margin-left:4px}
   .cases{margin:28px 0 0;padding:4px 0 12px}
   .case{flex-basis:320px}
   .promises{grid-template-columns:repeat(4,1fr)}
@@ -463,6 +465,15 @@ a.prime-card{color:#fff}
 .cue i::after{content:"";width:8px;height:8px;border:2.2px solid var(--primary);border-top:0;border-left:0;transform:rotate(45deg) translate(-2px,-2px)}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
 @media (prefers-reduced-motion:reduce){.cue i,.pstep.now,.tc{animation:none}.tc{opacity:1}}
+
+@media (min-width:860px){
+  /* 반드시 맨 끝 — 앞에 두면 기본 .svcs 규칙에 덮여 무효가 된다 */
+  .svcs{margin:28px 0 0;padding:4px 0 12px;scroll-padding-left:0}
+  .grp+.svcs{margin-top:14px}
+  .svc{flex:0 0 calc(33.333% - 8px);max-width:none}
+  .navs button{display:grid}
+  .cnt{margin-left:4px}
+}
 </style>
 </head>
 <body>
@@ -583,7 +594,7 @@ a.prime-card{color:#fff}
         <div class="tools">원문 → Threads · 인스타그램 · 링크드인 초안</div>
       </a>
     </div>
-    <div class="dots"></div>
+    <div class="navs"><button type="button" class="prev" aria-label="이전">&lsaquo;</button><div class="dots"></div><button type="button" class="next" aria-label="다음">&rsaquo;</button></div>
 
     <h3 class="grp ag">에이전트로 만드는 것 <span>· 읽고 추려내야 하는 일</span><b class="cnt">5</b></h3>
     <div class="svcs">
@@ -623,7 +634,7 @@ a.prime-card{color:#fff}
         <div class="tools">리뷰 · 댓글 · 문의 내역 → 인사이트 DB</div>
       </article>
     </div>
-    <div class="dots"></div>
+    <div class="navs"><button type="button" class="prev" aria-label="이전">&lsaquo;</button><div class="dots"></div><button type="button" class="next" aria-label="다음">&rsaquo;</button></div>
     <div class="team">
       <span class="tag">AGENT TEAM</span>
       <h3>여러 에이전트를 한 팀으로</h3>
@@ -1130,26 +1141,43 @@ const upd=()=>sticky.classList.toggle('show',pastHero&&!atContact);
 new IntersectionObserver(([e])=>{pastHero=!e.isIntersecting;upd()}).observe(document.querySelector('.hero .ctas'));
 new IntersectionObserver(([e])=>{atContact=e.isIntersecting;upd()},{threshold:.05}).observe(document.getElementById('contact'));
 
-// 메뉴 슬라이더 점 — 카드 수만큼 점을 만들고, 가운데에 가장 가까운 카드를 표시한다.
-// 데스크톱처럼 스크롤이 없는 폭에서는 점을 숨긴다.
+// 메뉴 슬라이더 — 점으로 위치를 보여 주고, 좌우 버튼으로 넘긴다.
+// PC 는 휠이 세로만 돌아 가로 스크롤을 못 하므로 버튼이 꼭 필요하다(버튼은 860px 이상에서만 보임).
 document.querySelectorAll('.svcs').forEach(function(sl){
-  var dots = sl.nextElementSibling;
-  if (!dots || !dots.classList.contains('dots')) return;
+  var navs = sl.nextElementSibling;
+  if (!navs || !navs.classList.contains('navs')) return;
+  var dots = navs.querySelector('.dots');
+  var prev = navs.querySelector('.prev');
+  var next = navs.querySelector('.next');
   var cards = Array.prototype.slice.call(sl.children);
   cards.forEach(function(){ dots.appendChild(document.createElement('i')); });
   var pips = Array.prototype.slice.call(dots.children);
-  function mark(){
-    var r = sl.getBoundingClientRect(), mid = r.left + r.width / 2, best = 0, gap = Infinity;
-    cards.forEach(function(el, i){
-      var b = el.getBoundingClientRect(), d = Math.abs(b.left + b.width / 2 - mid);
-      if (d < gap) { gap = d; best = i; }
-    });
-    pips.forEach(function(p, i){ p.classList.toggle('on', i === best); });
+
+  function at(){                                   // 화면에 보이는 맨 왼쪽 카드
+    // 가운데 기준으로 잡으면 PC 처럼 3장이 보일 때 시작부터 2번 점이 켜져 헷갈린다.
+    var left = sl.getBoundingClientRect().left + 4, best = cards.length - 1;
+    for (var i = 0; i < cards.length; i++) {
+      if (cards[i].getBoundingClientRect().right > left) { best = i; break; }
+    }
+    return best;
   }
-  function fit(){ dots.style.display = sl.scrollWidth > sl.clientWidth + 4 ? '' : 'none'; }
-  sl.addEventListener('scroll', mark, { passive: true });
-  addEventListener('resize', function(){ fit(); mark(); }, { passive: true });
-  fit(); mark();
+  function sync(){
+    var i = at();
+    pips.forEach(function(p, n){ p.classList.toggle('on', n === i); });
+    var max = sl.scrollWidth - sl.clientWidth;
+    prev.disabled = sl.scrollLeft <= 2;
+    next.disabled = sl.scrollLeft >= max - 2;
+    navs.style.display = max > 4 ? '' : 'none';    // 다 보이면 조작부를 숨긴다
+  }
+  function step(dir){
+    var w = cards[0] ? cards[0].offsetWidth + 12 : sl.clientWidth;
+    sl.scrollBy({ left: dir * w, behavior: 'smooth' });
+  }
+  prev.addEventListener('click', function(){ step(-1); });
+  next.addEventListener('click', function(){ step(1); });
+  sl.addEventListener('scroll', sync, { passive: true });
+  addEventListener('resize', sync, { passive: true });
+  sync();
 });
 </script>
 </body>
