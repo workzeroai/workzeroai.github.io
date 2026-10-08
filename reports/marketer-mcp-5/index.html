@@ -138,15 +138,12 @@ footer { font-size: 13px; color: var(--muted); display: grid; gap: 6px; border-t
 .part-k { font-family: var(--font-num); font-size: 12px; letter-spacing: .1em; color: var(--accent); font-weight: 600; }
 .part-t { font-size: 25px; margin: 0; font-weight: 700; }
 .part-d { color: var(--muted); font-size: 15px; }
-.toc { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 20px 22px; }
-.toc h2 { font-size: 15px; color: var(--muted); font-weight: 500; margin-bottom: 12px; }
-.toc ol { margin: 0; padding-left: 1.2em; display: grid; gap: 10px; font-size: 15px; }
-.toc ol ol, .toc ul { margin: 6px 0 0; padding-left: 1em; display: grid; gap: 4px; list-style: none; }
-.toc ul li { font-size: 14px; color: var(--muted); }
-.toc ul li::before { content: "·"; margin-right: 6px; color: var(--line); }
-.toc a { text-decoration: none; }
-.toc a:hover { text-decoration: underline; }
-.toc b { font-family: var(--font-num); font-size: 12px; letter-spacing: .08em; color: var(--accent); margin-right: 6px; }
+.toc { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; display: grid; gap: 12px; }
+.toc-k { font-size: 13px; color: var(--muted); }
+.toc ol { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.toc li a { display: flex; gap: 8px; align-items: baseline; text-decoration: none; color: var(--fg); font-size: 14.5px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 7px; }
+.toc li a:hover { border-color: var(--accent); }
+.toc b { font-family: var(--font-num); font-size: 12px; color: var(--accent); flex: none; }
 .summary { background: var(--accent-soft); border-radius: 10px; padding: 22px 24px; }
 .summary h2 { font-size: 17px; }
 .summary .plain { gap: 12px; font-size: 15px; }
@@ -163,6 +160,7 @@ footer { font-size: 13px; color: var(--muted); display: grid; gap: 6px; border-t
 .fresult { background: var(--accent-soft); border: 1px solid var(--accent); border-radius: 10px; padding: 14px; display: flex; gap: 8px; justify-content: center; align-items: baseline; font-size: 16px; font-weight: 600; }
 .fresult b { font-family: var(--font-num); color: var(--accent); }
 @media (max-width: 620px) {
+  .toc ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .formula { grid-template-columns: 1fr; gap: 8px; }
   .farrow { transform: rotate(90deg); justify-self: center; margin: -2px 0; }
   .part-t { font-size: 21px; }
@@ -199,13 +197,7 @@ footer { font-size: 13px; color: var(--muted); display: grid; gap: 6px; border-t
     </ul>
   </section>
 
-  <nav class="toc" aria-label="목차"><h2>이 보고서의 구성</h2><ol>
-  <li><a href="#part1"><b>PART 1</b> 무슨 일이 있었나</a><ul><li><a href="#result-10d">10일 성과</a></li><li><a href="#d1-vs-d10">24시간과 10일 비교</a></li><li><a href="#late-viewers">첫날 이후에 본 사람들이 더 반응했어요</a></li><li><a href="#how-it-spread">어떻게 퍼졌나</a></li></ul></li>
-  <li><a href="#part2"><b>PART 2</b> 왜 퍼졌나</a><ul><li><a href="#why">데이터로 본 이유 (해석)</a></li></ul></li>
-  <li><a href="#part3"><b>PART 3</b> 영상을 뜯어보면</a><ul><li><a href="#scene-compare">원본과 장면 순서 비교</a></li><li><a href="#watched-6s">평균 6초 동안 본 장면</a></li></ul></li>
-  <li><a href="#part4"><b>PART 4</b> 공식이 진짜 통하나</a><ul><li><a href="#repeat-test">같은 공식으로 한 번 더 해 봤더니</a></li><li><a href="#length-vs-views">영상 길이와 조회수</a></li></ul></li>
-  <li><a href="#part5"><b>PART 5</b> 정리와 다음</a><ul><li><a href="#formula-funnel">공식 6단계가 실제로 만든 숫자</a></li><li><a href="#what-failed">안 된 것</a></li><li><a href="#takeaways">레클 멤버분들이 가져가실 만한 것</a></li></ul></li>
-  </ol></nav>
+  <nav class="toc" aria-label="목차"><p class="toc-k">5개 파트 · 차트 12개 · 읽는 데 약 14분</p><ol><li><a href="#part1"><b>1</b><span>무슨 일이 있었나</span></a></li><li><a href="#part2"><b>2</b><span>왜 퍼졌나</span></a></li><li><a href="#part3"><b>3</b><span>영상을 뜯어보면</span></a></li><li><a href="#part4"><b>4</b><span>공식이 진짜 통하나</span></a></li><li><a href="#part5"><b>5</b><span>정리와 다음</span></a></li></ol></nav>
   <div class="part" id="part1">
     <div class="part-head"><span class="part-k">PART 1</span><h2 class="part-t">무슨 일이 있었나</h2><p class="part-d">10일 동안 숫자가 어떻게 움직였는지부터 봐요.</p></div>
   <section id="result-10d">
