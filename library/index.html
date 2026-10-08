@@ -200,9 +200,9 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0;border-
 <section style="padding-top:0">
   <div class="wrap">
     <div class="lib-tabs" role="tablist">
-      <button class="lib-tab on" data-tab="files" role="tab">자료실 <span id="cFiles"></span></button>
-      <button class="lib-tab" data-tab="columns" role="tab">칼럼 <span id="cColumns"></span></button>
-      <button class="lib-tab" data-tab="notes" role="tab">읽을거리 <span id="cNotes"></span></button>
+      <button class="lib-tab on" data-tab="files" role="tab">실전 가이드 <span id="cFiles"></span></button>
+      <button class="lib-tab" data-tab="columns" role="tab">뜯어보기 <span id="cColumns"></span></button>
+      <button class="lib-tab" data-tab="notes" role="tab">AI 소식 <span id="cNotes"></span></button>
     </div>
 
     <div class="lib-pane on" data-pane="files">
@@ -212,9 +212,9 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0;border-
     </div>
 
     <div class="lib-pane" data-pane="columns">
-      <p class="cnote">직접 만들고 돌려 보면서 숫자로 확인한 것들을 정리해 둡니다. 실측 데이터와 차트를 그대로 공개해요.</p>
+      <p class="cnote">직접 만들고 돌려 본 걸 숫자로 뜯어봤어요. 실측 데이터와 차트를 그대로 공개합니다.</p>
       <div class="cgrid" id="cgrid"></div>
-      <p class="empty" id="cEmpty" hidden>아직 올라온 칼럼이 없어요.</p>
+      <p class="empty" id="cEmpty" hidden>아직 뜯어본 글이 없어요.</p>
     </div>
 
     <div class="lib-pane" data-pane="notes">
@@ -414,7 +414,7 @@ fetch('items.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw 0;return r.json()
 }).catch(()=>{
   $('#fEmpty').textContent='자료를 불러오지 못했어요. 잠시 후 다시 열어 주세요.';
   $('#fEmpty').hidden=false;
-  $('#cEmpty').textContent='칼럼을 불러오지 못했어요.';
+  $('#cEmpty').textContent='글을 불러오지 못했어요.';
   $('#cEmpty').hidden=false;
   $('#nEmpty').textContent='자료를 불러오지 못했어요.';
   $('#nEmpty').hidden=false;
