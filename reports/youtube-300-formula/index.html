@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="구독자 165만 유튜버가 정체를 숨기고 새 채널을 만들어, 경쟁 채널 300개를 먼저 전수 분석해 공식을 뽑고 30일간 영상 단위로 테스트한 기록을 뜯어봤어요. 베껴야 할 건 숫자가 아니라 루프예요.">
+<meta name="author" content="워크제로">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="채널을 만들기 전에 경쟁 채널 300개를 먼저 봤습니다">
+<meta property="og:description" content="구독자 165만 유튜버가 정체를 숨기고 새 채널을 만들어, 경쟁 채널 300개를 먼저 전수 분석해 공식을 뽑고 30일간 영상 단위로 테스트한 기록을 뜯어봤어요. 베껴야 할 건 숫자가 아니라 루프예요.">
+<meta property="og:url" content="https://workzeroai.github.io/reports/youtube-300-formula/">
+<meta property="og:image" content="https://workzeroai.github.io/reports/youtube-300-formula/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://workzeroai.github.io/reports/youtube-300-formula/">
+<title>채널을 만들기 전에 경쟁 채널 300개를 먼저 봤습니다</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* Layout: single reading column (~68ch), report rhythm; figures in mono, one sky-blue accent for the hit reel */
+:root {
+  --bg: #F6F8FA;
+  --surface: #FFFFFF;
+  --fg: #16202B;
+  --muted: #5B6875;
+  --line: #DCE3EA;
+  --accent: #1A8FD6;
+  --accent-soft: #E3F1FB;
+  --warn: #C2410C;
+  --bar-dim: #B9C6D2;
+  --dot: #8597A8;
+  --on-accent: #FFFFFF;
+  --on-dim: #16202B;
+  --font-body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  --font-num: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F151B; --surface: #161E26; --fg: #E6EDF3; --muted: #94A3B2; --line: #26323D;
+    --accent: #5BB8F0; --accent-soft: #15324A; --warn: #F08A5D; --bar-dim: #3A4A59; --dot: #7F93A6; --on-accent: #0F151B; --on-dim: #E6EDF3;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0F151B; --surface: #161E26; --fg: #E6EDF3; --muted: #94A3B2; --line: #26323D;
+  --accent: #5BB8F0; --accent-soft: #15324A; --warn: #F08A5D; --bar-dim: #3A4A59; --dot: #7F93A6; --on-accent: #0F151B; --on-dim: #E6EDF3;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 16px; line-height: 1.7; }
+.wrap { max-width: 760px; margin: 0 auto; padding-inline: 20px; padding-block: 40px 64px; display: grid; gap: 44px; }
+header { display: grid; gap: 10px; }
+.eyebrow { font-size: 13px; letter-spacing: .06em; color: var(--muted); }
+h1 { font-size: clamp(26px, 5vw, 34px); line-height: 1.3; margin: 0; text-wrap: balance; font-weight: 700; }
+h2 { font-size: 21px; margin: 0 0 12px; text-wrap: balance; }
+h3 { font-size: 16px; margin: 0 0 4px; }
+p { margin: 0; }
+section { display: grid; gap: 14px; }
+.lede { font-size: 18px; background: var(--accent-soft); border-radius: 10px; padding: 18px 20px; }
+.lede strong { color: var(--fg); }
+.num { font-family: var(--font-num); font-variant-numeric: tabular-nums; }
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.stat { background: var(--surface); padding: 14px 14px 12px; display: grid; gap: 2px; min-width: 0; }
+.stat .v { font-family: var(--font-num); font-size: 22px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.stat .k { font-size: 13px; color: var(--muted); }
+@media (max-width: 560px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.note { font-size: 13px; color: var(--muted); }
+.table-box { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; min-width: 520px; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-weight: 500; color: var(--muted); font-size: 13px; }
+tr:last-child td { border-bottom: 0; }
+td.r, th.r { text-align: right; font-family: var(--font-num); font-variant-numeric: tabular-nums; }
+tr.hit td { background: var(--accent-soft); }
+ol.reasons, ul.plain { margin: 0; padding-left: 1.3em; display: grid; gap: 10px; }
+ol.reasons li::marker { font-family: var(--font-num); color: var(--accent); }
+.weak { border-left: 3px solid var(--warn); padding-left: 14px; display: grid; gap: 8px; }
+.chart { display: grid; gap: 10px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px; }
+.row { display: grid; grid-template-columns: minmax(0, 11em) minmax(0, 1fr) 5.2em; gap: 10px; align-items: center; font-size: 14px; }
+.row .lbl { min-width: 0; overflow-wrap: anywhere; }
+.track { height: 14px; background: transparent; position: relative; }
+.bar { height: 100%; background: var(--bar-dim); border-radius: 0 3px 3px 0; }
+.row.hit .bar { background: var(--accent); }
+.row .val { text-align: right; font-family: var(--font-num); font-variant-numeric: tabular-nums; }
+@media (max-width: 520px) { .row { grid-template-columns: minmax(0, 1fr) 4.8em; } .row .track { grid-column: 1 / -1; grid-row: 2; } }
+.take { display: grid; gap: 14px; }
+.take > div { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+.take p { color: var(--muted); font-size: 15px; }
+a { color: var(--accent); }
+footer { font-size: 13px; color: var(--muted); display: grid; gap: 6px; border-top: 1px solid var(--line); padding-top: 18px; }
+.flow { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; counter-reset: step; }
+.flow li { counter-increment: step; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; font-size: 14px; display: flex; gap: 8px; align-items: baseline; }
+.flow li::before { content: counter(step); font-family: var(--font-num); color: var(--accent); font-weight: 600; }
+.flow li.end { background: var(--accent-soft); border-color: var(--accent); }
+.voice { display: grid; gap: 12px; }
+.voice p { max-width: 68ch; }
+.check { font-size: 14px; color: var(--muted); border-top: 1px dashed var(--line); padding-top: 10px; }
+
+.chart-svg { width: 100%; height: auto; display: block; overflow: visible; font-family: var(--font-body); }
+.chart-svg .c-grid { stroke: var(--line); stroke-width: 1; }
+.chart-svg .c-ref { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 3 3; }
+.chart-svg .c-tick { fill: var(--muted); font-family: var(--font-num); font-variant-numeric: tabular-nums; }
+.chart-svg .c-note { fill: var(--muted); }
+.chart-svg .c-label { fill: var(--fg); font-weight: 500; }
+.chart-svg .c-band { fill: var(--accent-soft); }
+.chart-svg .c-line { fill: none; stroke: var(--accent); stroke-width: 2; stroke-linejoin: round; }
+.chart-svg .c-acc-line { stroke: var(--accent); stroke-width: 2; }
+.chart-svg .c-acc-line.thick { stroke-width: 3; stroke-linecap: round; }
+.chart-svg .c-dot { fill: var(--dot); stroke: var(--surface); stroke-width: 1.5; }
+.chart-svg .c-dot-acc { fill: var(--accent); stroke: var(--surface); stroke-width: 2; }
+.chart-svg .c-hit { fill: transparent; }
+.chart-svg .c-seg { fill: var(--bar-dim); }
+.chart-svg .c-seg-acc { fill: var(--accent); }
+.chart-svg .c-on-seg { fill: var(--on-dim); font-weight: 500; }
+.chart-svg .c-on-acc { fill: var(--on-accent); font-weight: 500; }
+.chart-svg .c-link { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 2 3; }
+.chart-svg .c-formula { fill: none; stroke: var(--accent); stroke-width: 1.4; }
+.chart-svg .c-formula-t { fill: var(--accent); font-weight: 600; }
+.chart-svg .c-stepno { fill: var(--accent); font-family: var(--font-num); font-weight: 700; }
+.chart-svg .c-val { fill: var(--fg); font-family: var(--font-num); font-variant-numeric: tabular-nums; font-weight: 600; }
+.chart-svg .c-warn-line { stroke: var(--warn); stroke-width: 3; stroke-linecap: round; }
+.chart-svg .c-dot-warn { fill: var(--warn); stroke: var(--surface); stroke-width: 2; }
+.chart-svg .c-delta { fill: var(--accent); font-family: var(--font-num); font-weight: 700; font-size: 1.35em; }
+.chart-svg .c-delta.warn { fill: var(--warn); }
+.legend { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; font-size: 13px; color: var(--muted); }
+.legend i { width: 13px; height: 13px; border-radius: 3px; display: inline-block; margin-right: 5px; vertical-align: -1px; }
+.medline { font-size: 15px; }
+.medline .num { font-weight: 600; }
+.chart-svg circle:hover, .chart-svg rect:hover { opacity: .8; }
+.figure { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px 16px 14px; overflow-x: auto; }
+.figure .chart-svg { min-width: 520px; }
+
+/* ===== 보고서 구조 ===== */
+.part { display: grid; gap: 26px; }
+.part-head { border-top: 2px solid var(--accent); padding-top: 14px; display: grid; gap: 4px; }
+.part-k { font-family: var(--font-num); font-size: 12px; letter-spacing: .1em; color: var(--accent); font-weight: 600; }
+.part-t { font-size: 25px; margin: 0; font-weight: 700; }
+.part-d { color: var(--muted); font-size: 15px; }
+.toc { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; display: grid; gap: 12px; }
+.toc-k { font-size: 13px; color: var(--muted); }
+.toc ol { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.toc li a { display: flex; gap: 8px; align-items: baseline; text-decoration: none; color: var(--fg); font-size: 14.5px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 7px; }
+.toc li a:hover { border-color: var(--accent); }
+.toc b { font-family: var(--font-num); font-size: 12px; color: var(--accent); flex: none; }
+.summary { background: var(--accent-soft); border-radius: 10px; padding: 22px 24px; }
+.summary h2 { font-size: 17px; }
+.summary .plain { gap: 12px; font-size: 15px; }
+
+/* ===== 공식 플로우 ===== */
+.formula { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 10px; align-items: stretch; }
+.fstage { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; display: flex; flex-direction: column; gap: 9px; }
+.fstage-k { font-size: 12px; letter-spacing: .05em; color: var(--muted); }
+.fstage-d { font-size: 12.5px; color: var(--muted); border-top: 1px dashed var(--line); padding-top: 8px; margin-top: auto; }
+.fstep { display: flex; gap: 8px; align-items: baseline; font-size: 15px; line-height: 1.45; }
+.fstep b { font-family: var(--font-num); color: var(--accent); font-weight: 700; flex: none; }
+.farrow { align-self: center; color: var(--muted); font-size: 18px; }
+.farrow.down { text-align: center; margin: -8px 0; }
+.fresult { background: var(--accent-soft); border: 1px solid var(--accent); border-radius: 10px; padding: 14px; display: flex; gap: 8px; justify-content: center; align-items: baseline; font-size: 16px; font-weight: 600; }
+.fresult b { font-family: var(--font-num); color: var(--accent); }
+/* ===== 리틀리 자동화 흐름 ===== */
+.autoflow { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 7px; }
+.anode { border: 1px solid var(--line); border-radius: 9px; padding: 12px 11px; background: var(--surface); display: grid; gap: 6px; align-content: start; }
+.anode.auto { background: var(--accent-soft); border-color: var(--accent); }
+.anode .who { font-size: 11px; letter-spacing: .04em; color: var(--muted); }
+.anode.auto .who { color: var(--accent); font-weight: 600; }
+.anode .what { font-size: 14px; line-height: 1.4; font-weight: 500; }
+.anode .det { font-size: 12px; color: var(--muted); line-height: 1.45; }
+@media (max-width: 680px) { .autoflow { grid-template-columns: 1fr 1fr; } }
+.corr { border-left: 3px solid var(--warn); padding-left: 14px; display: grid; gap: 8px; }
+.corr .h { font-weight: 600; }
+@media (max-width: 620px) {
+  .toc ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .formula { grid-template-columns: 1fr; gap: 8px; }
+  .farrow { transform: rotate(90deg); justify-self: center; margin: -2px 0; }
+  .part-t { font-size: 21px; }
+}
+
+.find { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; counter-reset: f; }
+.find li { counter-increment: f; display: grid; grid-template-columns: 2em minmax(0,1fr) auto; gap: 10px; align-items: baseline; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+.find li::before { content: counter(f); font-family: var(--font-num); color: var(--accent); font-weight: 600; }
+.chip { font-size: 12px; border-radius: 999px; padding: 2px 9px; border: 1px solid var(--line); color: var(--muted); white-space: nowrap; }
+.chip.s { color: var(--fg); border-color: var(--accent); background: var(--accent-soft); }
+@media (max-width: 520px) { .find li { grid-template-columns: 2em minmax(0,1fr); } .find .chip { grid-column: 2; justify-self: start; } }
+.figcap { font-size: 13px; color: var(--muted); border-top: 1px dashed var(--line); margin-top: 10px; padding-top: 9px; }
+.grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.grid2 .figure .chart-svg { min-width: 300px; }
+.grid2 h3 { font-size: 14px; color: var(--muted); font-weight: 500; margin: 0 0 8px; }
+@media (max-width: 640px) { .grid2 { grid-template-columns: minmax(0, 1fr); } }
+.toc ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.chart-svg .c-med { fill: var(--fg); stroke: var(--surface); stroke-width: 2; }
+
+/* 루프 도식 */
+.loop { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr; gap: 8px; align-items: stretch; }
+.lnode { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 13px 12px; display: grid; gap: 5px; align-content: start; }
+.lnode b { font-family: var(--font-num); color: var(--accent); font-weight: 700; font-size: 13px; }
+.lnode .lt { font-size: 15px; font-weight: 600; line-height: 1.35; }
+.lnode .ld { font-size: 12.5px; color: var(--muted); line-height: 1.45; }
+.larrow { align-self: center; color: var(--muted); font-size: 18px; }
+.loopback { font-size: 13px; color: var(--accent); text-align: center; }
+@media (max-width: 680px) { .loop { grid-template-columns: 1fr 1fr; } .larrow { display: none; } }
+
+/* 4축 카드 */
+.axes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.axes > div { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 13px 12px; display: grid; gap: 6px; align-content: start; }
+.axes .ak { font-size: 12px; letter-spacing: .05em; color: var(--accent); font-weight: 600; }
+.axes p { font-size: 13.5px; color: var(--muted); line-height: 1.5; }
+@media (max-width: 640px) { .axes { grid-template-columns: 1fr 1fr; } }
+
+/* 공식 5단계 */
+.fsteps { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; counter-reset: s; }
+.fsteps li { counter-increment: s; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; display: grid; grid-template-columns: 1.6em minmax(0, 11em) minmax(0, 1fr); gap: 10px; align-items: baseline; }
+.fsteps li::before { content: counter(s); font-family: var(--font-num); color: var(--accent); font-weight: 700; }
+.fsteps b { font-size: 15.5px; }
+.fsteps span { font-size: 14px; color: var(--muted); line-height: 1.5; }
+@media (max-width: 560px) { .fsteps li { grid-template-columns: 1.6em minmax(0, 1fr); } .fsteps span { grid-column: 2; } }
+
+/* 그래프 모양 5종 */
+.gshapes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.gcard { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 13px 13px 12px; display: grid; gap: 7px; align-content: start; }
+.gcard .gk { font-size: 14.5px; font-weight: 600; }
+.gcard .gi { font-size: 13px; color: var(--muted); line-height: 1.5; }
+.gcard .ga { font-size: 12.5px; color: var(--accent); border-top: 1px dashed var(--line); padding-top: 7px; }
+.spark { width: 100%; height: auto; display: block; overflow: visible; }
+.spark .c-grid { stroke: var(--line); stroke-width: 1; }
+.spark .c-line { fill: none; stroke: var(--accent); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+@media (max-width: 680px) { .gshapes { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 420px) { .gshapes { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">레이어드클럽 구조대 · 제로(@work__zero) · 2026-10-08</div>
+    <h1>채널을 만들기 전에 경쟁 채널 300개를 먼저 봤습니다</h1>
+    <p class="note">구독자 165만 명인 유튜버가 정체를 숨기고 완전히 새 채널을 만들어 30일을 운영한 기록을 뜯어봤어요. 공개된 영상 한 편의 자동 자막 전문을 근거로 했고, 숫자는 영상에서 직접 말한 것만 썼어요. 영상 캡처나 썸네일은 쓰지 않고, 도표는 전부 직접 그렸어요.</p>
+  </header>
+
+  <p class="lede"><strong>한 줄 결론:</strong> 베껴야 할 건 30만이라는 숫자가 아니라 <strong>순서</strong>예요. 만들기 전에 300개를 전수로 보고, 거기서 뽑은 공식을 합격선으로만 두고, 한 편에 변수 하나씩 바꾸고, 조회수 숫자가 아니라 <strong>그래프 모양</strong>으로 다음 행동을 정했어요.</p>
+
+  <section class="summary" id="summary">
+    <h2>3줄 요약</h2>
+    <ul class="plain">
+      <li><strong>채널을 만들기 전에 경쟁 채널 300개를 먼저 봤어요.</strong> 잘된 콘텐츠·편집 스타일·첫 화면·공통점 네 축으로, 시청자가 아니라 제작자 시점에서요. 아이디어가 아니라 검증된 패턴의 교집합에서 출발했어요.</li>
+      <li><strong>공식은 합격선이고, 승부는 테스트에서 났어요.</strong> 30일간 올린 영상이 사실상 순차 A/B예요. 한 편에 변수 하나씩 바꾸고, 조회수 숫자가 아니라 그래프 모양으로 다음 행동을 정했어요.</li>
+      <li><strong>조회수가 가장 낮았던 영상이 구독을 가장 많이 만들었어요.</strong> 563회에 구독 91명으로 전환율 16%예요. 도달을 만드는 영상과 전환을 만드는 영상은 따로 설계해야 한다는 뜻이에요.</li>
+    </ul>
+  </section>
+
+  <nav class="toc" aria-label="목차"><p class="toc-k">4개 파트 · 도표 7개 · 읽는 데 약 11분</p><ol><li><a href="#part1"><b>1</b><span>만들기 전에 한 일</span></a></li><li><a href="#part2"><b>2</b><span>공식과 테스트</span></a></li><li><a href="#part3"><b>3</b><span>무엇으로 판정했나</span></a></li><li><a href="#part4"><b>4</b><span>한계와 가져갈 것</span></a></li></ol></nav>
+
+  <section id="findings">
+    <h2>한눈에 보기</h2>
+    <ol class="find">
+      <li><span>채널 개설 <strong>전에</strong> 상위 경쟁 채널 300개를 전수 분석했어요.</span><span class="chip s">원문 그대로</span></li>
+      <li><span>공식 다섯 줄은 <strong>안 지키면 지는 조건</strong>이지, 지키면 이기는 조건이 아니에요.</span><span class="chip">해석</span></li>
+      <li><span>조회수 꼴찌 영상(563회)이 구독 <strong>91명</strong>을 만들었어요.</span><span class="chip s">원문 그대로</span></li>
+      <li><span>구독 유도는 “하느냐”가 아니라 <strong>“이유를 주느냐”</strong>의 문제였어요.</span><span class="chip s">원문 그대로</span></li>
+      <li><span>판정 기준이 조회수 숫자가 아니라 <strong>그래프 모양</strong>이에요.</span><span class="chip s">원문 그대로</span></li>
+      <li><span>쇼츠로 모은 구독자는 <strong>롱폼으로 넘어오지 않았어요</strong>(알림 기본 꺼짐).</span><span class="chip s">원문 그대로</span></li>
+      <li><span>결과 숫자는 재현 기대치로 삼으면 안 돼요 — 조건이 특수했어요.</span><span class="chip">한계</span></li>
+    </ol>
+    <p class="note">“원문 그대로”는 영상에서 직접 말한 것, “해석”은 제가 정리하면서 붙인 것, “한계”는 이 사례에만 해당하는 조건이에요. 하나의 채널 사례라 일반 법칙으로 읽으면 안 돼요.</p>
+  </section>
+
+  <div class="part" id="part1">
+    <div class="part-head"><span class="part-k">PART 1</span><h2 class="part-t">만들기 전에 한 일</h2><p class="part-d">결과부터 보고, 채널을 열기 전에 무엇을 했는지로 갑니다.</p></div>
+  <section id="timeline">
+    <h2>30일 동안 무슨 일이 있었나</h2>
+    <p>구독자 165만 명인 유튜버가 자기라는 걸 전혀 드러내지 않은 새 채널을 만들어 30일을 운영했어요. 목표는 시작할 때 숫자로 못 박았어요 — 한 달 안에 구독자 1만 명, 조회수 100만을 넘는 영상 하나, 그리고 수익 1원이라도 내기.</p>
+    <div class="figure"><svg class="chart-svg" viewBox="0 0 720 276" role="img" aria-label="30일 동안의 구독자 수 변화(로그 눈금). 3일차 8명에서 시작해 16일차 1,000명, 24일차 10만 명, 30일차 30만 명. 8~11일차에 405명에서 멈춘 정체 구간이 있다." style="font-size:12px">
+<rect class="c-band" x="208.0" y="28.8" width="67.5" height="206.4" rx="3"/>
+<text class="c-note" x="241.7" y="21.6" text-anchor="middle">정체 4일</text>
+<line class="c-grid" x1="50.400000000000006" x2="703.2" y1="222.5" y2="222.5"/>
+<text class="c-tick" x="44.4" y="226.7" text-anchor="end">10</text>
+<line class="c-grid" x1="50.400000000000006" x2="703.2" y1="180.4" y2="180.4"/>
+<text class="c-tick" x="44.4" y="184.6" text-anchor="end">100</text>
+<line class="c-grid" x1="50.400000000000006" x2="703.2" y1="138.3" y2="138.3"/>
+<text class="c-tick" x="44.4" y="142.5" text-anchor="end">1천</text>
+<line class="c-grid" x1="50.400000000000006" x2="703.2" y1="96.2" y2="96.2"/>
+<text class="c-tick" x="44.4" y="100.4" text-anchor="end">1만</text>
+<line class="c-grid" x1="50.400000000000006" x2="703.2" y1="54.1" y2="54.1"/>
+<text class="c-tick" x="44.4" y="58.3" text-anchor="end">10만</text>
+<text class="c-tick" x="50.4" y="253.2" text-anchor="middle">1일</text>
+<text class="c-tick" x="185.5" y="253.2" text-anchor="middle">7일</text>
+<text class="c-tick" x="343.0" y="253.2" text-anchor="middle">14일</text>
+<text class="c-tick" x="500.6" y="253.2" text-anchor="middle">21일</text>
+<text class="c-tick" x="703.2" y="253.2" text-anchor="middle">30일</text>
+<polyline class="c-line" points="95.4,226.6 117.9,193.1 140.4,177.6 185.5,157.0 230.5,154.9 275.5,149.1 298.0,146.5 343.0,144.3 388.1,138.3 410.6,118.3 433.1,108.9 455.6,101.3 500.6,88.8 523.1,74.4 545.6,57.8 568.1,54.1 658.2,41.5 703.2,34.1"/>
+<circle class="c-dot" cx="95.4" cy="226.6" r="3.1"><title>3일차 · 구독자 8명</title></circle>
+<circle class="c-dot" cx="117.9" cy="193.1" r="3.1"><title>4일차 · 구독자 50명</title></circle>
+<circle class="c-dot" cx="140.4" cy="177.6" r="3.1"><title>5일차 · 구독자 117명</title></circle>
+<circle class="c-dot" cx="185.5" cy="157.0" r="3.1"><title>7일차 · 구독자 360명</title></circle>
+<circle class="c-dot" cx="230.5" cy="154.9" r="3.1"><title>9일차 · 구독자 405명</title></circle>
+<circle class="c-dot" cx="275.5" cy="149.1" r="3.1"><title>11일차 · 구독자 555명</title></circle>
+<circle class="c-dot" cx="298.0" cy="146.5" r="3.1"><title>12일차 · 구독자 641명</title></circle>
+<circle class="c-dot" cx="343.0" cy="144.3" r="3.1"><title>14일차 · 구독자 720명</title></circle>
+<circle class="c-dot-acc" cx="388.1" cy="138.3" r="5.0"><title>16일차 · 구독자 1,000명</title></circle>
+<circle class="c-dot" cx="410.6" cy="118.3" r="3.1"><title>17일차 · 구독자 3,000명</title></circle>
+<circle class="c-dot" cx="433.1" cy="108.9" r="3.1"><title>18일차 · 구독자 5,000명</title></circle>
+<circle class="c-dot" cx="455.6" cy="101.3" r="3.1"><title>19일차 · 구독자 7,600명</title></circle>
+<circle class="c-dot" cx="500.6" cy="88.8" r="3.1"><title>21일차 · 구독자 15,000명</title></circle>
+<circle class="c-dot" cx="523.1" cy="74.4" r="3.1"><title>22일차 · 구독자 33,000명</title></circle>
+<circle class="c-dot" cx="545.6" cy="57.8" r="3.1"><title>23일차 · 구독자 82,000명</title></circle>
+<circle class="c-dot-acc" cx="568.1" cy="54.1" r="5.0"><title>24일차 · 구독자 100,000명</title></circle>
+<circle class="c-dot" cx="658.2" cy="41.5" r="3.1"><title>28일차 · 구독자 200,000명</title></circle>
+<circle class="c-dot-acc" cx="703.2" cy="34.1" r="5.0"><title>30일차 · 구독자 300,000명</title></circle>
+<text class="c-val" x="379.7" y="120.3" text-anchor="end">1,000명</text>
+<text class="c-note" x="379.7" y="133.5" text-anchor="end">(16일)</text>
+<text class="c-val" x="568.1" y="36.1" text-anchor="middle">10만</text>
+<text class="c-note" x="568.1" y="49.3" text-anchor="middle">(24일)</text>
+<text class="c-val" x="694.8" y="16.1" text-anchor="end">30만</text>
+<text class="c-note" x="694.8" y="29.3" text-anchor="end">(30일)</text>
+<text class="c-note" x="50.400000000000006" y="272.4">세로축 로그 눈금 · 영상에서 직접 언급된 시점만 이어 그렸어요</text>
+</svg><p class="figcap">16일차에 1,000명, 24일차에 10만 명, 30일차에 30만 명이에요. 눈여겨볼 곳은 오른쪽 끝이 아니라 8~11일차의 평평한 구간이에요.</p></div>
+    <ul class="plain">
+      <li><strong>세 목표를 모두 넘겼어요.</strong> 27일차에 수익 창출을 신청해 28일차에 승인됐고, 30일차 구독자는 30만 명이에요.</li>
+      <li><strong>그 뒤 2주를 더 운영한 결과</strong>는 구독자 68만 명, 총 조회수 6천만, 수익 1천만 원이 넘고 영상 평균 조회수는 270만이에요.</li>
+      <li><strong>비교 기준이 되는 숫자 하나</strong>가 있어요. 본인의 원래 채널은 구독자 1만 명을 모으는 데 1년 반이 걸렸어요. 이 채널은 16일이 걸렸어요.</li>
+    </ul>
+    <p class="note">자동 자막 기반이라 숫자 일부가 음성 인식으로 깨져 있었어요. 7일차·22일차 두 곳은 앞뒤 문맥으로 보정했고(360명, 3만 3천 명), 나머지 시점은 자막에 그대로 나온 값이에요.</p>
+  </section>
+  <section id="research-300">
+    <h2>채널을 만들기 전에 300개를 먼저 봤어요</h2>
+    <p>주제를 게임(마인크래프트)으로 정한 다음, <strong>채널을 개설하기도 전에</strong> 한국과 미국에서 가장 유명한 마인크래프트 유튜버 <strong>300명을 전부 구독</strong>하고 하루를 통째로 분석에 썼어요. 본 축은 네 개예요.</p>
+    <div class="axes"><div><span class="ak">성과</span><p>어떤 영상이 조회수가 잘 나왔는지</p></div><div><span class="ak">편집</span><p>편집 스타일은 어떻게 했는지</p></div><div><span class="ak">첫 화면</span><p>첫 화면은 어떻게 구성했는지</p></div><div><span class="ak">교집합</span><p>이들의 공통점은 무엇인지</p></div></div>
+    <ul class="plain">
+      <li><strong>관점을 명시해요.</strong> 시청자의 입장이 아니라 <strong>“같은 유튜버 입장”</strong>에서 시장을 조사했다고 말해요. 여기가 벤치마킹과 그냥 소비가 갈리는 지점이에요. 시청자로 보면 “재밌다·별로다”가 남고, 제작자로 보면 “이 사람은 왜 여기서 컷을 끊었나”가 남아요.</li>
+      <li><strong>순서가 핵심이에요.</strong> 아이디어에서 출발한 게 아니라 이미 검증된 패턴의 교집합에서 출발했어요. 채널 이름은 오히려 랜덤 생성기로 대충 정했고, 대신 프로필과 배너 색(노란색)에는 신경을 썼어요 — 기억에 남으려면 대표 색이 있어야 한다는 이유로요.</li>
+    </ul>
+    <p>이 영상에서 실제로 돌아간 건 30일 브이로그가 아니라 네 단계가 반복되는 루프예요.</p>
+    <div class="loop" role="img" aria-label="네 단계 루프. 1 전수 수집, 2 공식 추출, 3 영상 단위 테스트, 4 그래프로 판정, 그리고 다시 2번으로 돌아간다."><div class="lnode"><b>1</b><span class="lt">전수 수집</span><span class="ld">경쟁 상위 300개를 만들기 <em>전에</em></span></div><div class="larrow" aria-hidden="true">→</div><div class="lnode"><b>2</b><span class="lt">공식 추출</span><span class="ld">다섯 줄 규칙 — 합격선</span></div><div class="larrow" aria-hidden="true">→</div><div class="lnode"><b>3</b><span class="lt">영상 단위 테스트</span><span class="ld">한 편에 변수 하나</span></div><div class="larrow" aria-hidden="true">→</div><div class="lnode"><b>4</b><span class="lt">그래프로 판정</span><span class="ld">숫자가 아니라 모양으로</span></div></div><p class="loopback" aria-hidden="true">↺ 판정 결과를 들고 다시 ② 로</p>
+  </section>
+  </div>
+  <div class="part" id="part2">
+    <div class="part-head"><span class="part-k">PART 2</span><h2 class="part-t">공식과 테스트</h2><p class="part-d">300개에서 뽑은 규칙이 무엇이고, 그걸 어떻게 영상으로 검증했는지예요.</p></div>
+  <section id="formula">
+    <h2>뽑아낸 공식은 다섯 줄이에요</h2>
+    <p>300개에서 추린 규칙은 영상 안에서 반복해 나와요. 정리하면 이렇게 돼요.</p>
+    <ol class="fsteps"><li><b>0초 본론</b><span>시작하자마자 지체 없이 본론. 이탈을 막는 게 첫 목적</span></li><li><b>초반 자극</b><span>가장 자극적이고 궁금증을 유발하는 화면을 앞에</span></li><li><b>빠른 템포</b><span>다시 돌려 보게 만들어 시청 지속을 벌어온다</span></li><li><b>대중적인 주제</b><span>그 판을 아는 사람이면 누구나 관심 가질 소재</span></li><li><b>궁금한 결말</b><span>끝까지 봐야 답이 나오게</span></li></ol>
+    <ul class="plain">
+      <li><strong>이건 “지키면 이기는 조건”이 아니라 “안 지키면 지는 조건”이에요.</strong> 두 번째 영상을 일부러 마이너한 주제로 보내 놓고 “영상 하나 실수했다고 채널이 망하지 않는다”고 말하는 대목이 그 증거예요. 신경 써서 올린 영상보다 무심하게 올린 영상이 더 잘되는 경우도 많다고 덧붙여요.</li>
+      <li><strong>쇼츠 제목과 설명란은 공식에 아예 없어요.</strong> 짧게 쓰는 게 알고리즘에 유리해서가 아니라, 쇼츠는 제목을 보고 들어오는 사람이 거의 없어서 그냥 별생각 없이 적었다고 밝혀요.</li>
+    </ul>
+  </section>
+  <section id="ab-test">
+    <h2>한 편에 변수 하나씩 바꿨어요</h2>
+    <p>30일 동안 올린 영상들은 사실상 순차 A/B 테스트예요. 한 편마다 바꾼 변수가 뚜렷하고, 결과를 보고 다음 편을 정해요.</p>
+    <div class="table-box"><table><thead><tr><th class="r">영상</th><th>바꾼 변수</th><th>결과</th><th>다음 판단</th></tr></thead><tbody><tr><td class="r">1</td><td>대중 주제 + 공식 5줄</td><td>5시간 조회 800 · 구독 8</td><td>기준선 확보</td></tr><tr><td class="r">2</td><td>일부러 마이너한 정보성 주제</td><td>1번보다 저조</td><td>“한 편 실패는 비용이 아니다”</td></tr><tr class="hit"><td class="r">3</td><td>역발상 구독 유도</td><td>조회 563 · <b>구독 91</b></td><td>전환용 포맷 확정</td></tr><tr><td class="r">4</td><td>1번의 변주(사실상 복제)</td><td>떡상 후 급락</td><td>신생 채널 정상 그래프로 해석</td></tr><tr><td class="r">6</td><td>해외 포맷을 한국어로 현지화</td><td>20초인데도 반응</td><td>길이를 늘려 재시도</td></tr><tr class="hit"><td class="r">7</td><td>“1천 명 코앞” 이유 제공형 CTA</td><td>하루 만에 721 → 872</td><td>이유를 붙이면 움직인다</td></tr><tr><td class="r">9</td><td>구독자 카운터 간접 CTA</td><td>1,800 → 3,000+</td><td>간접 유도도 작동</td></tr><tr class="hit"><td class="r">11</td><td>구독 대신 <b>좋아요</b> 유도</td><td>6시간 27만 · 급상승 1위</td><td>유도 대상 자체가 변수</td></tr></tbody></table></div>
+    <ul class="plain">
+      <li><strong>실패한 편을 비용으로 치지 않아요.</strong> 2번 영상은 일부러 결이 다른 주제로 보냈고, 저조한 결과 자체가 “이 채널에 뭐가 안 맞는지”를 알려 주는 정보가 돼요.</li>
+      <li><strong>잘된 편은 바로 변주해요.</strong> 4번은 1번의 사실상 복제판이에요. 새로운 걸 만들기 전에 통한 걸 한 번 더 확인하는 순서예요.</li>
+      <li><strong>CTA도 변수로 다뤄요.</strong> 7번은 멘트에 이유를 붙였고, 9번은 화면 상단 카운터로 간접 유도했고, 11번은 유도 대상 자체를 구독에서 좋아요로 바꿨어요.</li>
+    </ul>
+  </section>
+  </div>
+  <div class="part" id="part3">
+    <div class="part-head"><span class="part-k">PART 3</span><h2 class="part-t">무엇으로 판정했나</h2><p class="part-d">조회수 숫자 말고 무엇을 보고 다음 행동을 정했는지가 여기 있어요.</p></div>
+  <section id="reach-vs-convert">
+    <h2>조회수가 가장 낮은 영상이 구독을 가장 많이 만들었어요</h2>
+    <p>3번 영상은 역발상에서 나왔어요. 사람들은 보통 이미 유명한 유튜버만 보지 신인을 굳이 찾아보지 않는다 — 그렇다면 <strong>신인이라는 사실 자체가 차별점</strong>이 된다는 거예요. 내용은 이 채널은 신생이라 구독자가 적지만 떡상할 테니 속는 셈 치고 구독하고, 안 되면 취소해도 좋다는 것이었어요.</p>
+    <div class="grid2">
+      <div class="figure"><h3>조회수와 구독자 수</h3><svg class="chart-svg" viewBox="0 0 340 139" role="img" aria-label="1번 영상과 3번 영상의 조회수와 구독자 수 비교. 1번은 조회 800회에 구독 8명, 3번은 조회 563회에 구독 91명." style="font-size:12px">
+<text class="c-label" x="2.4000000000000004" y="25.2">1번 · 대중 주제</text>
+<text class="c-tick" x="132.0" y="45.2" text-anchor="end">조회</text>
+<rect class="c-seg" x="138.0" y="32.4" width="146.8" height="18.0" rx="3"/>
+<text class="c-val" x="290.8" y="45.6">800회</text>
+<text class="c-tick" x="132.0" y="68.0" text-anchor="end">구독</text>
+<rect class="c-seg" x="138.0" y="55.2" width="2.0" height="18.0" rx="3"/>
+<text class="c-val" x="145.5" y="68.4">8명</text>
+<text class="c-label" x="2.4000000000000004" y="80.4">3번 · 역발상 구독 유도</text>
+<text class="c-tick" x="132.0" y="100.4" text-anchor="end">조회</text>
+<rect class="c-seg" x="138.0" y="87.6" width="103.3" height="18.0" rx="3"/>
+<text class="c-val" x="247.3" y="100.8">563회</text>
+<text class="c-tick" x="132.0" y="123.2" text-anchor="end">구독</text>
+<rect class="c-seg-acc" x="138.0" y="110.4" width="16.7" height="18.0" rx="3"/>
+<text class="c-val" x="160.7" y="123.6">91명</text>
+</svg><p class="figcap">3번은 당시 네 편 중 조회수 꼴찌였는데 구독자는 11배를 만들었어요.</p></div>
+      <div class="figure"><h3>구독 전환율</h3><svg class="chart-svg" viewBox="0 0 340 86" role="img" aria-label="구독 전환율 비교. 1번 영상 1.0퍼센트, 3번 영상 16.2퍼센트." style="font-size:12px">
+<text class="c-label" x="130.8" y="25.2" text-anchor="end">1번 · 대중 주제</text>
+<rect class="c-seg" x="138.0" y="9.6" width="8.4" height="22.8" rx="3"/>
+<text class="c-val" x="152.4" y="25.2">1.0%</text>
+<text class="c-label" x="130.8" y="63.6" text-anchor="end">3번 · 역발상 구독 유도</text>
+<rect class="c-seg-acc" x="138.0" y="48.0" width="136.4" height="22.8" rx="3"/>
+<text class="c-val" x="280.4" y="63.6">16.2%</text>
+</svg><p class="figcap">약 6명 중 1명이 구독을 눌렀어요. 1번 영상의 16배예요.</p></div>
+    </div>
+    <ul class="plain">
+      <li><strong>이런 영상은 뒷심으로 벌어요.</strong> 업로드 직후 조회수가 적어도 꾸준히 구독자를 유입시키는 역할을 해요. 실제로 8~11일차 정체기에 이 영상이 다시 알고리즘을 타면서 구독자를 끌어왔어요.</li>
+      <li><strong>도달이 넓어지면 전환율은 떨어져요.</strong> 정체기에 이 영상이 부스터를 받았을 때는 전환이 약 9명 중 1명으로 내려왔어요. 처음의 16%는 좁고 호의적인 시청자 집단에서 나온 값이에요.</li>
+      <li><strong>구독 유도는 “하느냐”가 아니라 “이유를 주느냐”의 문제예요.</strong> “재밌으셨다면 구독과 좋아요” 같은 멘트는 효과가 없고, 눌러야 하는 이유(1천 명이 코앞이다 · 초창기 구독자가 될 기회다 · 이게 빠를까 당신이 빠를까)를 줘야 움직였어요. 그러면서도 거부감이 들지 않을 만큼만 자연스럽게 녹여 치고 빠지는 걸 중요한 기술로 꼽아요.</li>
+    </ul>
+    <p class="note">두 영상의 측정 시점이 달라요. 1번은 업로드 5시간 뒤 값이고, 3번은 다음 날 확인한 값이에요. 전환율 비교는 방향으로만 읽어 주세요.</p>
+  </section>
+  <section id="graph-reading">
+    <h2>숫자가 아니라 그래프 모양으로 판정했어요</h2>
+    <p>조회수가 몇이냐가 아니라 <strong>실시간 조회수 그래프가 어떤 모양이냐</strong>로 다음 행동을 정해요. 영상에 나오는 다섯 가지를 모아 봤어요.</p>
+    <div class="gshapes"><div class="gcard"><span class="gk">급상승 후 급락</span><svg class="spark" viewBox="0 0 120 60" role="img" aria-hidden="true"><line class="c-grid" x1="4" y1="56" x2="116" y2="56"/><path class="c-line" d="M4,52 L20,46 L34,10 L44,8 L52,48 L116,52"/></svg><p class="gi">신생 쇼츠 채널의 <strong>정상</strong> 패턴이에요.</p><p class="ga">그대로 다음 편 진행</p></div><div class="gcard"><span class="gk">물결</span><svg class="spark" viewBox="0 0 120 60" role="img" aria-hidden="true"><line class="c-grid" x1="4" y1="56" x2="116" y2="56"/><path class="c-line" d="M4,46 L22,18 L38,42 L54,16 L72,40 L90,14 L116,32"/></svg><p class="gi">데이터가 쌓이는 중이에요.</p><p class="ga">유지</p></div><div class="gcard"><span class="gk">완만한 우상향</span><svg class="spark" viewBox="0 0 120 60" role="img" aria-hidden="true"><line class="c-grid" x1="4" y1="56" x2="116" y2="56"/><path class="c-line" d="M4,52 C30,50 60,38 116,12"/></svg><p class="gi">급상승보다 <strong>좋아요</strong>. 급상승은 급락 확률도 높아요.</p><p class="ga">같은 결로 반복</p></div><div class="gcard"><span class="gk">올랐다가 안 내려옴</span><svg class="spark" viewBox="0 0 120 60" role="img" aria-hidden="true"><line class="c-grid" x1="4" y1="56" x2="116" y2="56"/><path class="c-line" d="M4,52 L24,40 L44,18 C64,10 84,8 116,6"/></svg><p class="gi">알고리즘이 채널을 파악했다는 신호예요.</p><p class="ga">다음 편이 직전 기록을 넘어야 함</p></div><div class="gcard"><span class="gk">전 영상 동시 사망</span><svg class="spark" viewBox="0 0 120 60" role="img" aria-hidden="true"><line class="c-grid" x1="4" y1="56" x2="116" y2="56"/><path class="c-line" d="M4,50 L30,52 L56,51 L82,53 L116,52"/></svg><p class="gi">분석 구간인지 버림받은 건지 알 수 없어요.</p><p class="ga">판정 보류 · 업로드 중단</p></div></div>
+    <ul class="plain">
+      <li><strong>급상승보다 완만한 우상향이 좋아요.</strong> 급상승한 영상은 반대로 급락할 확률도 높아 불안정한 반면, 천천히 오르는 그래프는 갑자기 죽지 않는다고 설명해요.</li>
+      <li><strong>정체기는 신호가 아니라 기본값이에요.</strong> 8일차에 모든 영상이 동시에 죽고 구독자가 405명에서 멈췄을 때, 알고리즘이 채널을 분석하는 중이거나 버림받았거나 둘 중 하나로 보고 <strong>판정을 유보한 채 업로드를 멈췄어요.</strong> 이 루프에서 가장 따라 하기 어려운 부분이에요.</li>
+      <li><strong>“올랐다가 안 내려오는” 그래프는 신호탄이에요.</strong> 10번째 영상에서 이 모양이 나왔고, 시간당 6만 회(1분에 1천 명)까지 올라 5시간 만에 조회수 10만을 넘겼어요. 여기서 두 가지로 읽어요 — 알고리즘이 채널 파악을 끝냈다, 그리고 <strong>다음 영상이 진짜 중요하다.</strong> 기회를 받았으니 직전 기록을 넘겨 더 떡상할 수 있는 채널임을 증명해야 한다는 거예요.</li>
+    </ul>
+  </section>
+  </div>
+  <div class="part" id="part4">
+    <div class="part-head"><span class="part-k">PART 4</span><h2 class="part-t">한계와 가져갈 것</h2><p class="part-d">안 된 것과 베끼면 안 되는 조건을 짚고, 바로 쓸 수 있는 것으로 마무리해요.</p></div>
+  <section id="what-failed">
+    <h2>안 된 것 두 가지</h2>
+    <p>영상이 스스로 밝힌 실패예요. 둘 다 숫자가 잘 나온 부분보다 참고 가치가 커요.</p>
+    <div class="weak">
+      <p><strong>① 쇼츠 제목·설명란은 효과가 없었어요.</strong> 롱폼 기준의 “제목 최적화” 조언이 쇼츠에 그대로 오면 안 된다는 뜻이에요. 들어오는 경로 자체가 다르니까요.</p>
+      <p><strong>② 구독자 3만 명으로 올린 6분짜리 롱폼은 참패했어요.</strong> 원인이 분명해요 — <strong>쇼츠로 구독한 사람은 알림이 기본적으로 꺼져 있어요.</strong> 평소라면 알림 설정자가 초반에 몰려 그래프가 튀었다가 무난해지는데, 그 첫 봉우리가 아예 없었어요.</p>
+    </div>
+    <p>두 번째는 남의 이야기가 아니에요. <strong>릴스로 모은 팔로워가 카드뉴스·스레드·뉴스레터로 따라온다는 보장이 없다</strong>는 것과 정확히 같은 구조의 문제예요. 숫자로 쌓인 구독자가 진짜 자산인지는 포맷을 바꿔 봐야 알 수 있어요.</p>
+  </section>
+  <section id="dont-copy">
+    <h2>그대로 베끼면 안 되는 이유</h2>
+    <p>결과가 크다고 해서 그대로 재현되는 건 아니에요. 영상 안에서 확인되는 조건이 다섯 개 있어요.</p>
+    <ul class="plain">
+      <li><strong>제로에서 시작한 게 아니에요.</strong> 애초의 실험 설계가 “지금까지 쌓은 노하우를 가진 채로 무명으로 돌아간다면”이에요. 165만 채널 운영자의 판단력·편집 역량·시장 감각을 그대로 들고 들어갔어요.</li>
+      <li><strong>본인이 운을 인정해요.</strong> 마무리에서 이렇게까지 성장한 데에는 운이 좋았던 것도 있다고 직접 말해요.</li>
+      <li><strong>시점 호재가 있었어요.</strong> 마지막 주가 추석 연휴라 조회수가 잘 나올 거라고 본인이 영상 안에서 언급해요.</li>
+      <li><strong>니치 특성이 결과를 키웠어요.</strong> 마인크래프트는 연령대가 낮아 구독 유도 멘트가 유독 잘 먹혔다고 본인이 설명해요. 업무·B2B 니치에 같은 전환율을 기대할 근거는 없어요.</li>
+      <li><strong>한 번의 사례예요.</strong> 같은 공식으로 두 번째 채널을 돌려 본 재현 실험이 아니에요.</li>
+    </ul>
+    <p>그래서 가져갈 건 결과 숫자가 아니라 <strong>루프</strong>예요. 300개를 먼저 보고, 공식을 합격선으로 두고, 한 편에 변수 하나씩 바꾸고, 숫자 대신 모양으로 판정하는 순서요.</p>
+  </section>
+  <section id="cross-check">
+    <h2>제가 따로 분석한 릴스 151개와 겹치는 곳</h2>
+    <p>얼마 전에 AI 정보 계정 6곳의 유기 릴스 151개를 모아 분석했어요. 플랫폼도 지표도 다른데 <strong>독립적으로 같은 결론에 도달한 지점이 세 개</strong> 있었어요.</p>
+    <div class="table-box"><table><thead><tr><th>같은 결론</th><th>스토리 · 유튜브 쇼츠</th><th>워크제로 · 인스타 릴스</th></tr></thead><tbody><tr><td>CTA는 도달을 못 만들어요</td><td>구독 유도 영상이 조회수 꼴찌 (563회)</td><td>CTA 있는 쪽 재생수 중앙값이 오히려 낮음</td></tr><tr><td>훅·형식은 합격선일 뿐이에요</td><td>두 번째 영상을 일부러 실패시킴</td><td>같은 계정·같은 훅에서 31~67배 격차</td></tr><tr><td>계정/채널 단위 효과가 커요</td><td>“알고리즘이 채널을 파악하는” 시점이 존재</td><td>팔로워 규모 순위상관 0.58로 가장 강함</td></tr></tbody></table></div>
+    <p class="note">서로 다른 플랫폼에서 같은 방향이 나왔다는 건 참고가 되지만, 둘 다 관찰이지 실험이 아니에요. 인스타그램도 유튜브도 알고리즘 가중치는 공개돼 있지 않아요. 릴스 쪽 자세한 내용은 <a href="https://workzeroai.github.io/reports/ai-reels-insights/">AI 정보 릴스 151개 분석</a>에 있어요.</p>
+  </section>
+  <section id="takeaways">
+    <h2>그래서 이렇게 해 보세요</h2>
+    <div class="take">
+      <div><h3>만들기 전에 전수로 모으기</h3><p>내 니치 상위 계정을 수십~수백 단위로 한 번에 모아 같은 네 축(잘된 콘텐츠 · 편집 스타일 · 첫 화면 · 공통점)으로 표를 만들어요. 시청자가 아니라 제작자 시점으로요.</p></div>
+      <div><h3>공식은 합격선으로만 쓰기</h3><p>0초 본론·초반 자극·빠른 템포는 안 지키면 떨어지는 조건이에요. 지켰다고 터지는 게 아니니, 다 지킨 다음에는 주제와 변수 쪽에 시간을 써요.</p></div>
+      <div><h3>한 편에 변수 하나</h3><p>여러 개를 한꺼번에 바꾸면 뭐가 통했는지 알 수 없어요. 바꾼 것과 결과를 같은 표에 쌓아 두면 그 자체가 내 공식이 돼요.</p></div>
+      <div><h3>도달용과 전환용을 나누기</h3><p>다음 콘텐츠 한 편은 조회수를 포기하고 전환용으로만 설계해 봐요. 저장·팔로우·댓글만으로 판정하고, 조회수가 낮다고 실패로 치지 않아요.</p></div>
+      <div><h3>CTA에서 “부탁드려요”를 지우기</h3><p>눌러야 하는 이유 한 문장으로 바꾸고 같은 포맷 두 편을 비교해요. 거부감이 들지 않게 자연스럽게 녹이는 게 조건이에요.</p></div>
+      <div><h3>정체기에 판정을 미루기</h3><p>숫자가 멈췄다고 바로 포맷을 뒤집지 않아요. 그래프 모양을 기준으로 두고, 모양이 바뀌지 않으면 기다리는 쪽을 기본값으로 둬요.</p></div>
+    </div>
+  </section>
+  </div>
+  <footer>
+    <p>자료: 공개 영상 「유튜브가 운이 아니라는 걸 증명하기 위해 30일간 비밀 채널을 키워봤습니다」(채널 ‘스토리’)의 자동 자막 전문 13,892자. 모든 수치는 영상에서 직접 언급된 값이고, 자동 자막이 깨진 두 곳(7일차·22일차)만 앞뒤 문맥으로 보정했어요.</p>
+    <p>한계: 하나의 채널, 한 번의 사례예요. 조회수·구독 전환의 내부 지표는 채널 주인만 볼 수 있어서 영상에 나온 화면과 발언에 의존했어요. 유튜브 알고리즘의 가중치는 공개돼 있지 않아 이 글의 해석은 모두 관찰이고, 원인이라고 단정한 곳은 없어요.</p>
+    <p>영상 캡처·썸네일은 사용하지 않았어요. 도표 7개는 전부 전사 내용을 근거로 직접 그렸어요.</p>
+  </footer>
+</div>
+</body>
+</html>
