@@ -103,15 +103,26 @@
    "ready": true
   },
   {
-    "slug": "followers-57-to-1000",
-    "title": "14일 만에 팔로워 57명에서 1,000명으로",
-    "desc": "늘어난 팔로워의 72%는 릴스 두 편에서 왔어요. 두 편의 공통 구조와, 터진 다음 날 회고해서 고친 것까지 인사이트 숫자로 정리했어요.",
-    "tag": "성장 회고",
-    "date": "2026-10-09",
-    "read": "9분",
-    "thumb": "../reports/followers-57-to-1000/og.png",
-    "url": "../reports/followers-57-to-1000/",
-    "ready": true
+   "slug": "followers-57-to-1000",
+   "title": "14일 만에 팔로워 57명에서 1,000명으로",
+   "desc": "늘어난 팔로워의 72%는 릴스 두 편에서 왔어요. 두 편의 공통 구조와, 터진 다음 날 회고해서 고친 것까지 인사이트 숫자로 정리했어요.",
+   "tag": "성장 회고",
+   "date": "2026-10-09",
+   "read": "9분",
+   "thumb": "../reports/followers-57-to-1000/og.png",
+   "url": "../reports/followers-57-to-1000/",
+   "ready": true
+  },
+  {
+   "slug": "aside-publish-automation",
+   "title": "릴스 올리기 전 35단계, 클로드에게 넘긴 방법",
+   "desc": "리틀리 댓글 DM 자동화와 인스타 릴스 예약을 aside CLI로 맡겼어요. 클릭은 AI가, 마지막 버튼 하나만 제가 화면을 보고 정해요. 실제 지시문과 처음 틀린 곳까지 그대로 정리했어요.",
+   "tag": "자동화 기록",
+   "date": "2026-10-09",
+   "read": "6분",
+   "thumb": "../reports/aside-publish-automation/og.png",
+   "url": "../reports/aside-publish-automation/",
+   "ready": true
   }
  ],
  "notes": [

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>릴스 올리기 전 35단계, 클로드에게 넘긴 방법 · 워크제로 자료실</title>
+<meta name="description" content="리틀리 댓글 DM 자동화와 인스타 릴스 예약을 aside CLI로 맡긴 과정이에요. 실제로 쓴 지시문, 처음 돌렸을 때 틀린 곳, 스킬로 만든 방식까지 그대로 정리했어요.">
+<link rel="canonical" href="https://workzeroai.github.io/reports/aside-publish-automation/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#533afd">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="릴스 올리기 전 35단계, 클로드에게 넘긴 방법">
+<meta property="og:description" content="리틀리 댓글 DM 자동화와 인스타 릴스 예약을 aside CLI로 맡긴 과정이에요. 실제로 쓴 지시문, 처음 돌렸을 때 틀린 곳, 스킬로 만든 방식까지 그대로 정리했어요.">
+<meta property="og:url" content="https://workzeroai.github.io/reports/aside-publish-automation/">
+<meta property="og:image" content="https://workzeroai.github.io/reports/aside-publish-automation/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="릴스 올리기 전 35단계, 클로드에게 넘긴 방법">
+<meta name="twitter:description" content="리틀리 댓글 DM 자동화와 인스타 릴스 예약을 aside CLI로 맡긴 과정이에요. 실제로 쓴 지시문, 처음 돌렸을 때 틀린 곳, 스킬로 만든 방식까지 그대로 정리했어요.">
+<meta name="twitter:image" content="https://workzeroai.github.io/reports/aside-publish-automation/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+:root{--primary:#533afd;--primary-deep:#4434d4;--primary-pale:#eceaff;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f6f9fc;--hair:#e3e8ee;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+</style>
+<style>/* 워크제로 보고서 테마 — 사이트(workzeroai.github.io) 톤앤매너
+ *
+ * 사이트 쉘(convert.py CSS) 다음에 로드되어 보고서 전용 컴포넌트를 더한다.
+ * 보고서 SVG 차트는 색을 하드코딩하지 않고 아래 토큰을 참조하므로,
+ * 이 블록만 바꾸면 차트 전체가 같이 바뀐다.
+ *
+ * 결정 사항 (2026-10-08)
+ *  - 다크모드 없음. 사이트가 라이트 전용이라 맞춘다.
+ *  - 등폭 숫자는 표·차트에만. 본문은 사이트 본문 폰트를 그대로 쓴다.
+ *  - 경고색은 사이트에 없어 새로 둔다(#d9480f).
+ */
+:root{
+  /* 보고서 토큰 → 사이트 토큰 브리지 */
+  --accent:var(--primary); --accent-soft:var(--primary-pale); --accent-deep:var(--primary-deep);
+  --fg:var(--ink); --muted:var(--mute); --line:var(--hair);
+  --surface:#fff; --bg:var(--soft);
+  --bar-dim:#cfd6e4; --dot:#8e9bb3;
+  --warn:#d9480f; --warn-soft:#fff2ea;
+  --on-accent:#fff; --on-dim:var(--ink);
+  --font-num:"SFMono-Regular",ui-monospace,Menlo,Consolas,monospace;
+  /* 다계열 차트용(AI 릴스 보고서) — 퍼플 기준으로 조화 */
+  --k1:#533afd; --k2:#14b87a; --k3:#d9880f; --k4:#c2409a;
+  --paper:#fff; --photo:#273951; --hl:#f1f3f9; --hl2:#9aa5b8;
+}
+.num,.c-tick,.c-val,.c-delta,.stat .v,.medline .num,
+.bd td.r,.bd th.r,.tw td.r,.tw th.r{
+  font-family:var(--font-num); font-variant-numeric:tabular-nums;
+}
+
+/* ── 파트 구분 ─────────────────────────────── */
+.part{display:grid;gap:26px;margin:46px 0}
+/* grid 자식은 min-width:auto 라서 차트의 min-width:520px 이 레이아웃을 밀어낸다 */
+.part>*,.part section{min-width:0}
+.figure,.table-box,.chart,.grid2{max-width:100%}
+
+/* 사이트 CSS 는 footer 요소에 어두운 배경을 건다(footer{background:var(--ink)}).
+ * 보고서 본문에도 출처·한계용 <footer> 가 있어 그대로 어두워지고 글자가 묻힌다.
+ * 본문 안 푸터만 밝은 '출처·한계' 블록으로 되돌린다. */
+.bd footer{background:transparent;color:var(--mute);font-size:13px;line-height:1.7;
+  padding:18px 0 0;margin-top:42px;border-top:1px solid var(--hair);display:grid;gap:9px}
+.bd footer p{margin:0;color:var(--mute);font-size:13px;line-height:1.7}
+.bd footer a{color:var(--primary);font-weight:700}
+.bd footer strong{color:var(--ink)}
+.part-head{border-top:2px solid var(--primary);padding-top:14px;display:grid;gap:4px}
+.part-k{font-family:var(--font-num);font-size:12px;letter-spacing:.1em;color:var(--primary);font-weight:800}
+.part-t{font-size:25px;margin:0;font-weight:800;line-height:1.35;word-break:keep-all}
+.part-d{color:var(--mute);font-size:15px;margin:0}
+
+/* ── 목차 ─────────────────────────────────── */
+.toc{background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:18px 20px;display:grid;gap:12px;box-shadow:var(--sh1);margin:28px 0}
+.toc-k{font-size:13px;color:var(--mute);margin:0}
+.toc ol{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.toc li a{display:flex;gap:8px;align-items:baseline;text-decoration:none;color:var(--ink);font-size:14.5px;font-weight:700;padding:9px 11px;border:1px solid var(--hair);border-radius:11px;transition:.2s var(--ease)}
+.toc li a:hover{border-color:var(--primary);background:var(--primary-pale)}
+.toc b{font-family:var(--font-num);font-size:12px;color:var(--primary);flex:none}
+@media(max-width:620px){.toc ol{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* ── 요약·리드 ─────────────────────────────── */
+.summary{background:var(--primary-pale);border-radius:16px;padding:22px 24px;margin:28px 0}
+.summary h2{font-size:17px;margin:0 0 12px;border:0;padding:0}
+.lede{font-size:18px;line-height:1.7;background:var(--primary-pale);border-radius:14px;padding:18px 20px;margin:0 0 28px}
+.note{font-size:13.5px;color:var(--mute);line-height:1.65;margin:0}
+.check{font-size:14px;color:var(--mute);border-top:1px dashed var(--hair);padding-top:10px;margin:0}
+.eyebrow{font-size:13px;letter-spacing:.05em;color:var(--mute)}
+.voice{display:grid;gap:12px}
+
+/* ── 지표 타일 ─────────────────────────────── */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:16px;overflow:hidden;margin:4px 0}
+.stat{background:var(--surface);padding:15px 14px 13px;display:grid;gap:3px;min-width:0}
+.stat .v{font-size:22px;font-weight:800;line-height:1.2}
+.stat .k{font-size:13px;color:var(--mute)}
+@media(max-width:560px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* ── 표·그림 ───────────────────────────────── */
+.table-box{overflow-x:auto;border:1px solid var(--hair);border-radius:16px;background:var(--surface);box-shadow:var(--sh1);margin:4px 0}
+.table-box table{border-collapse:collapse;width:100%;font-size:14px;min-width:520px}
+.table-box th,.table-box td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--hair);vertical-align:top}
+.table-box th{font-weight:700;color:var(--mute);font-size:13px}
+.table-box tr:last-child td{border-bottom:0}
+.table-box td.r,.table-box th.r{text-align:right}
+.table-box tr.hit td{background:var(--primary-pale)}
+.figure{background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:18px 16px 14px;overflow-x:auto;box-shadow:var(--sh1);margin:4px 0}
+.figure .chart-svg{min-width:520px}
+.figcap{font-size:13px;color:var(--mute);line-height:1.6;margin:8px 2px 0}
+.chart{display:grid;gap:10px;background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:18px;box-shadow:var(--sh1)}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.grid2 .figure .chart-svg{min-width:300px}
+.grid2 h3{font-size:14px;color:var(--mute);font-weight:700;margin:0 0 8px}
+@media(max-width:640px){.grid2{grid-template-columns:minmax(0,1fr)}}
+
+/* ── 막대 행(HTML) ─────────────────────────── */
+.row{display:grid;grid-template-columns:minmax(0,11em) minmax(0,1fr) 5.2em;gap:10px;align-items:center;font-size:14px}
+.row .lbl{min-width:0;overflow-wrap:anywhere}
+.track{height:14px;position:relative}
+.bar{height:100%;background:var(--bar-dim);border-radius:0 4px 4px 0}
+.row.hit .bar{background:var(--primary)}
+.row .val{text-align:right;font-family:var(--font-num);font-variant-numeric:tabular-nums}
+@media(max-width:520px){.row{grid-template-columns:minmax(0,1fr) 4.8em}.row .track{grid-column:1/-1;grid-row:2}}
+.legend{display:flex;flex-wrap:wrap;gap:14px;align-items:center;font-size:13px;color:var(--mute)}
+.legend i{width:13px;height:13px;border-radius:4px;display:inline-block;margin-right:5px;vertical-align:-1px}
+.medline{font-size:15px}
+.medline .num{font-weight:800}
+
+/* ── 공식 플로우 ───────────────────────────── */
+.formula{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:10px;align-items:stretch}
+.fstage{background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:15px 17px;display:flex;flex-direction:column;gap:9px;box-shadow:var(--sh1)}
+.fstage-k{font-size:12px;letter-spacing:.05em;color:var(--mute)}
+.fstage-d{font-size:12.5px;color:var(--mute);border-top:1px dashed var(--hair);padding-top:9px;margin-top:auto}
+.fstep{display:flex;gap:8px;align-items:baseline;font-size:15px;line-height:1.45}
+.fstep b{font-family:var(--font-num);color:var(--primary);font-weight:800;flex:none}
+.farrow{align-self:center;color:var(--mute);font-size:18px}
+.farrow.down{text-align:center;margin:-6px 0}
+.fresult{background:var(--primary-pale);border:1px solid var(--primary);border-radius:16px;padding:15px;display:flex;gap:8px;justify-content:center;align-items:baseline;font-size:16px;font-weight:800}
+.fresult b{font-family:var(--font-num);color:var(--primary)}
+@media(max-width:620px){.formula{grid-template-columns:1fr;gap:8px}.farrow{transform:rotate(90deg);justify-self:center;margin:-2px 0}.part-t{font-size:21px}}
+
+/* ── 자동화 흐름 ───────────────────────────── */
+.autoflow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px}
+.anode{border:1px solid var(--hair);border-radius:14px;padding:13px 12px;background:var(--surface);display:grid;gap:6px;align-content:start;box-shadow:var(--sh1)}
+.anode.auto{background:var(--primary-pale);border-color:var(--primary);box-shadow:none}
+.anode .who{font-size:11px;letter-spacing:.04em;color:var(--mute)}
+.anode.auto .who{color:var(--primary);font-weight:800}
+.anode .what{font-size:14px;line-height:1.4;font-weight:700}
+.anode .det{font-size:12px;color:var(--mute);line-height:1.45}
+@media(max-width:680px){.autoflow{grid-template-columns:1fr 1fr}}
+
+/* ── 강조 블록 ─────────────────────────────── */
+.corr{border-left:3px solid var(--warn);padding-left:14px;display:grid;gap:8px}
+.corr .h{font-weight:800}
+.weak{border-left:3px solid var(--warn);padding-left:14px;display:grid;gap:8px}
+.take{display:grid;gap:14px}
+.take>div{background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:15px 17px;box-shadow:var(--sh1)}
+.take h3{font-size:16px;margin:0 0 4px}
+.take p{color:var(--mute);font-size:15px;margin:0}
+.plain,.reasons{margin:0;padding-left:1.3em;display:grid;gap:10px}
+.plain{list-style:disc}
+.reasons li::marker{font-family:var(--font-num);color:var(--primary)}
+.find{display:grid;gap:10px;margin:0;padding:0;list-style:none;counter-reset:f}
+.find li{counter-increment:f;display:grid;grid-template-columns:2em minmax(0,1fr) auto;gap:10px;align-items:baseline;background:var(--surface);border:1px solid var(--hair);border-radius:14px;padding:13px 15px;box-shadow:var(--sh1)}
+.find li::before{content:counter(f);font-family:var(--font-num);color:var(--primary);font-weight:800}
+.chip{font-size:11.5px;font-weight:800;padding:3px 9px;border-radius:999px;background:var(--hair);color:var(--mute);white-space:nowrap}
+.chip.s{background:var(--primary-pale);color:var(--primary)}
+
+/* ── 차트 SVG ──────────────────────────────── */
+.chart-svg{width:100%;height:auto;display:block;overflow:visible;font-family:inherit}
+.chart-svg .c-grid{stroke:var(--hair);stroke-width:1}
+.chart-svg .c-ref{stroke:var(--mute);stroke-width:1;stroke-dasharray:3 3}
+.chart-svg .c-tick{fill:var(--mute);font-size:12px}
+.chart-svg .c-note{fill:var(--mute)}
+.chart-svg .c-label{fill:var(--ink);font-weight:700}
+.chart-svg .c-val{fill:var(--ink);font-weight:800}
+.chart-svg .c-band{fill:var(--primary-pale)}
+.chart-svg .c-line{fill:none;stroke:var(--primary);stroke-width:2.2;stroke-linejoin:round}
+.chart-svg .c-acc-line{stroke:var(--primary);stroke-width:2}
+.chart-svg .c-acc-line.thick{stroke-width:3;stroke-linecap:round}
+.chart-svg .c-warn-line{stroke:var(--warn);stroke-width:3;stroke-linecap:round}
+.chart-svg .c-dot{fill:var(--dot);stroke:var(--surface);stroke-width:1.5}
+.chart-svg .c-dot-acc{fill:var(--primary);stroke:var(--surface);stroke-width:2}
+.chart-svg .c-dot-warn{fill:var(--warn);stroke:var(--surface);stroke-width:2}
+.chart-svg .c-dot.big,.chart-svg .c-dot-acc.big{stroke-width:2.5}
+.chart-svg .c-hit{fill:transparent}
+.chart-svg .c-seg{fill:var(--bar-dim)}
+.chart-svg .c-seg-acc{fill:var(--primary)}
+.chart-svg .c-on-seg{fill:var(--ink);font-weight:700}
+.chart-svg .c-on-acc{fill:#fff;font-weight:700}
+.chart-svg .c-link{stroke:var(--mute);stroke-width:1;stroke-dasharray:2 3}
+.chart-svg .c-formula{fill:none;stroke:var(--primary);stroke-width:1.4}
+.chart-svg .c-formula-t{fill:var(--primary);font-weight:800}
+.chart-svg .c-stepno{fill:var(--primary);font-family:var(--font-num);font-weight:800}
+.chart-svg .c-delta{fill:var(--primary);font-weight:800;font-size:1.35em}
+.chart-svg .c-delta.warn{fill:var(--warn)}
+.chart-svg .c-range{stroke:var(--dot);stroke-width:2;stroke-linecap:round}
+.chart-svg .c-med{fill:var(--ink);stroke:var(--surface);stroke-width:2}
+.chart-svg .c-k1{fill:var(--k1)}.chart-svg .c-k2{fill:var(--k2)}
+.chart-svg .c-k3{fill:var(--k3)}.chart-svg .c-k4{fill:var(--k4)}
+.chart-svg .c-kd{fill:var(--bar-dim)}
+.chart-svg .c-track{fill:none;stroke:var(--hair);stroke-width:1}
+.chart-svg .c-paper{fill:var(--paper);stroke:var(--hair)}
+.chart-svg .c-ink{fill:var(--ink)}.chart-svg .c-ink2{fill:var(--ink2)}
+.chart-svg .c-photo{fill:var(--photo)}
+.chart-svg .c-hl{fill:var(--hl)}.chart-svg .c-hl2{fill:var(--hl2)}
+.chart-svg circle:hover,.chart-svg rect:hover{opacity:.8}
+
+/* ── 루프 도식 (유튜브 300개 보고서) ─────────── */
+.loop{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;gap:8px;align-items:stretch}
+.lnode{background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:14px 13px;display:grid;gap:5px;align-content:start;box-shadow:var(--sh1)}
+.lnode b{font-family:var(--font-num);color:var(--primary);font-weight:800;font-size:13px}
+.lnode .lt{font-size:15px;font-weight:800;line-height:1.35}
+.lnode .ld{font-size:12.5px;color:var(--mute);line-height:1.45}
+.larrow{align-self:center;color:var(--mute);font-size:18px}
+.loopback{font-size:13px;color:var(--primary);text-align:center;font-weight:800;margin:0}
+@media(max-width:680px){.loop{grid-template-columns:1fr 1fr}.larrow{display:none}}
+
+/* ── 분석 축 카드 ──────────────────────────── */
+.axes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.axes>div{background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:14px 13px;display:grid;gap:6px;align-content:start;box-shadow:var(--sh1)}
+.axes .ak{font-size:12px;letter-spacing:.05em;color:var(--primary);font-weight:800}
+.axes p{font-size:13.5px;color:var(--mute);line-height:1.5;margin:0}
+@media(max-width:640px){.axes{grid-template-columns:1fr 1fr}}
+
+/* ── 번호 단계 목록 (.formula 의 .fstep 과 별개) ─ */
+.fsteps{list-style:none;margin:0;padding:0;display:grid;gap:8px;counter-reset:s}
+.fsteps li{counter-increment:s;background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:13px 15px;display:grid;grid-template-columns:1.6em minmax(0,11em) minmax(0,1fr);gap:10px;align-items:baseline;box-shadow:var(--sh1)}
+.fsteps li::before{content:counter(s);font-family:var(--font-num);color:var(--primary);font-weight:800}
+.fsteps b{font-size:15.5px;font-weight:800}
+.fsteps span{font-size:14px;color:var(--mute);line-height:1.5}
+@media(max-width:560px){.fsteps li{grid-template-columns:1.6em minmax(0,1fr)}.fsteps span{grid-column:2}}
+
+/* ── 그래프 모양 판정 카드 ──────────────────── */
+.gshapes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.gcard{background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:14px 14px 12px;display:grid;gap:7px;align-content:start;box-shadow:var(--sh1)}
+.gcard .gk{font-size:14.5px;font-weight:800}
+.gcard .gi{font-size:13px;color:var(--mute);line-height:1.5;margin:0}
+.gcard .ga{font-size:12.5px;color:var(--primary);font-weight:800;border-top:1px dashed var(--hair);padding-top:7px;margin:0}
+/* .spark 는 .chart-svg 가 아니라서 위 차트 규칙을 못 받는다. 선 스타일을 직접 준다. */
+.spark{width:100%;height:auto;display:block;overflow:visible}
+.spark .c-grid{stroke:var(--hair);stroke-width:1}
+.spark .c-line{fill:none;stroke:var(--primary);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:680px){.gshapes{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.gshapes{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴"><a href="../../tutoring/">1:1 과외</a><a href="../../build/">제작 문의</a><a class="on" href="../../library/" aria-current="page">자료실</a></div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../../library/#columns">← 뜯어보기</a>
+  <div class="head"><div class="m">제로(@work__zero) · 자동화 기록 · 2026-10-09</div><h1>릴스 올리기 전 35단계, 클로드에게 넘긴 방법</h1></div>
+  
+  <div class="bd">
+<p class="note" style="margin:-6px 0 26px">리틀리 댓글 DM 자동화와 인스타 릴스 예약을 aside CLI로 맡긴 과정이에요. 실제로 쓴 지시문, 처음 돌렸을 때 틀린 곳, 스킬로 만든 방식까지 그대로 정리했어요.</p>
+<p class="lede"><strong>한 줄 결론:</strong> 클릭은 AI가 하고, <strong>마지막 버튼 하나만 제가 화면을 보고 정해요.</strong> 이 한 줄을 지키니 맡겨도 불안하지 않았어요.</p>
+  <section class="summary" id="summary">
+    <h2>3줄 요약</h2>
+    <ul class="plain">
+      <li><strong>릴스마다 반복되는 리틀리 DM 세팅(21단계)과 인스타 예약(14단계)을 클로드에게 넘겼어요.</strong> 로그인된 브라우저를 터미널에서 다루는 aside CLI를 썼어요.</li>
+      <li><strong>규칙은 하나예요. 마지막 버튼 직전에 멈춘다.</strong> 저장·예약은 제가 최종 화면을 보고 OK 한 뒤에만 눌러요.</li>
+      <li><strong>첫 실행에서 내가 적은 단계와 다른 곳이 여섯 군데 나왔고,</strong> 그걸 반영해 바뀌는 값만 넘기면 되는 스킬 두 개로 만들었어요.</li>
+    </ul>
+  </section>
+  <nav class="toc" aria-label="목차"><p class="toc-k">4개 파트 · 도표 7개 · 읽는 데 약 6분</p><ol><li><a href="#part1"><b>1</b><span>무엇을 넘겼나</span></a></li><li><a href="#part2"><b>2</b><span>첫 실행</span></a></li><li><a href="#part3"><b>3</b><span>스킬로 굳히기</span></a></li><li><a href="#part4"><b>4</b><span>가져갈 것</span></a></li></ol></nav>
+  <div class="part" id="part1">
+    <div class="part-head"><span class="part-k">PART 1</span><h2 class="part-t">무엇을 넘겼나</h2></div>
+  <section id="what">
+    <h2>릴스 한 편마다 반복되던 두 가지</h2><div class="figure"><svg class="chart-svg" viewBox="0 0 720 101" role="img" aria-label="릴스 한 편 올리기 전 반복 단계. 리틀리 21단계, 인스타 예약 14단계. 지금 사람이 하는 일은 두 화면을 확인하고 OK 하는 2번." style="font-size:12px">
+<text class="c-label" x="172.8" y="22.2" text-anchor="end">리틀리 DM 자동화 세팅</text>
+<rect class="c-seg" x="180" y="7.2" width="430.5" height="21.6" rx="3"><title>리틀리 DM 자동화 세팅 · 21</title></rect>
+<text class="c-val" x="616.5" y="22.2">21단계</text>
+<text class="c-label" x="172.8" y="53.4" text-anchor="end">인스타 릴스 예약</text>
+<rect class="c-seg" x="180" y="38.4" width="287.0" height="21.6" rx="3"><title>인스타 릴스 예약 · 14</title></rect>
+<text class="c-val" x="473.0" y="53.4">14단계</text>
+<text class="c-label" x="172.8" y="84.6" text-anchor="end">사람이 하는 일 (확인 후 OK)</text>
+<rect class="c-seg-acc" x="180" y="69.6" width="41.0" height="21.6" rx="3"><title>사람이 하는 일 (확인 후 OK) · 2</title></rect>
+<text class="c-val" x="227.0" y="84.6">2번</text>
+</svg><p class="figcap">단계 수는 제가 평소 누르던 순서를 적어 둔 그대로예요. 지금 제가 하는 일은 두 화면을 보고 OK 하는 것뿐이에요.</p></div>
+    <p>릴스를 만들고 나면 올리기 전에 꼭 하는 일이 두 가지 있어요. 리틀리에서 <strong>댓글 → DM 자동화</strong>를 걸고, 인스타 웹에서 <strong>릴스 예약</strong>을 거는 일이에요. 매번 바뀌는 건 가이드 링크, DM 문구, 영상, 캡션 정도이고 나머지는 늘 같아요. 그래서 이 두 가지를 클로드에게 넘겼어요.</p>
+    <p>쓴 도구는 <strong>aside</strong>라는 AI 브라우저의 CLI예요. 내가 이미 로그인해 둔 브라우저를 터미널에서 조작할 수 있어서, 클로드가 리틀리·인스타 화면을 대신 눌러요. 단 <strong>되돌릴 수 없는 버튼(확인·예약)은 제가 화면을 보고 OK 한 뒤에만</strong> 눌러요.</p></section>
+  <section id="flow">
+    <h2>맡기는 방식: 멈추고, 보고, OK</h2><div class="loop" role="img" aria-label="네 단계. 단계를 말로 적기, 저장 직전까지 실행, 화면 확인, OK 후 한 번 클릭"><div class="lnode"><b>1</b><span class="lt">단계를 말로 적기</span><span class="ld">평소 누르는 순서 그대로. 바뀌는 값과 고정 값을 나눠요</span></div><span class="larrow">→</span><div class="lnode"><b>2</b><span class="lt">저장 직전까지 실행</span><span class="ld">AI가 입력하고 마지막 버튼 앞에서 멈춰요</span></div><span class="larrow">→</span><div class="lnode"><b>3</b><span class="lt">화면 확인</span><span class="ld">스크린샷과 입력값 대조표를 제가 봐요</span></div><span class="larrow">→</span><div class="lnode"><b>4</b><span class="lt">OK 후 한 번 클릭</span><span class="ld">누른 뒤 목록에 생겼는지까지 확인해요</span></div></div><p class="loopback">다음 릴스부터는 1번이 '링크·문구 두 개 바꾸기'로 줄어요</p>
+    <p>핵심은 <strong>"마지막 버튼 직전에 멈춰"</strong> 한 줄이에요. 리틀리의 '확인'을 누르면 다음 게시물에 자동화가 바로 걸리고, 인스타의 '예약'을 누르면 정해진 시간에 실제로 올라가요. 그래서 거기까지는 AI가 하고, 마지막 한 번은 제가 화면을 보고 정해요.</p></section>
+  </div>
+  <div class="part" id="part2">
+    <div class="part-head"><span class="part-k">PART 2</span><h2 class="part-t">첫 실행</h2><p class="part-d">평소 누르던 순서를 적어 주고, 마지막 버튼 앞에서 멈추게 했어요.</p></div>
+  <section id="littly">
+    <h2>① 리틀리 DM 자동화 — 내가 적은 21단계</h2><pre style="white-space:pre-wrap;word-break:break-all;background:var(--soft);border:1px solid var(--hair);border-radius:12px;padding:14px 16px;font-size:13px;line-height:1.65;margin:0">1. 리틀리 마케팅 &gt; 인스타그램 들어가서 팝업 &#x27;오늘 그만 보기&#x27; 클릭
+2. 무료 자동화 만들기 클릭
+3. 다음에 올릴 게시물을 자동화 할게요 클릭 → 다음
+5. 모든 댓글에 발송할게요 선택 확인 → 다음
+6. DM 메시지 붙여넣기 (팔로우 감사 문구는 쓰지 말 것)
+7. 메시지 버튼 3개 → 다음
+9~17. 버튼 1: 가이드 링크 / 버튼 2: 1:1 과외 / 버튼 3: 자동화 제작 문의 (이름·링크 입력, N/3 완료)
+18. &#x27;네, 답글을 남기고 싶어요&#x27; 확인 → 다음
+19. 최종 검수에서 &#x27;팔로우 요청 후 메시지 보내기&#x27; ON 확인
+20. 팔로우 안내 멘트 붙여넣기
+21. 확인 클릭</pre>
+    <p class="note">단계는 제가 처음 지시할 때 적은 그대로예요(일부 단계는 묶어서 줄였어요). 매번 바뀌는 건 <strong>가이드 링크</strong>와 <strong>DM 문구</strong> 두 개뿐이고, 버튼 3개(가이드 보러가기 · 1:1 과외 · 자동화 제작 문의)와 팔로우 안내 멘트는 고정이에요.</p>
+    <h3>처음 시킬 때 붙인 조건</h3><pre style="white-space:pre-wrap;word-break:break-all;background:var(--soft);border:1px solid var(--hair);border-radius:12px;padding:14px 16px;font-size:13px;line-height:1.65;margin:0">(서브에이전트에게 준 지시 중 핵심만)
+- aside CLI로 아래 단계를 진행해. 단, 마지막 &#x27;확인&#x27;은 누르지 말고
+  최종 검수 화면에서 멈춰. 화면 위에서 아래까지 스크린샷을 남겨.
+- 로그인·결제·약관 동의·기존 자동화 수정/삭제는 하지 마.
+  로그인이 풀렸거나 화면이 단계와 다르면 그 자리에서 멈추고 보고해.
+- 단계마다 &#x27;실제로 누른 버튼 문구&#x27;를 적어. 내가 적은 문구와 다를 수 있어.
+- 처음부터 다시 해야 하면, 반쯤 만든 자동화가 있는지 먼저 확인해서
+  두 개가 생기지 않게 해.</pre></section>
+  <section id="diff">
+    <h2>실제로 돌려 보니 내가 적은 것과 달랐던 곳</h2><div class="table-box"><table><thead><tr><th>어디서</th><th>내가 적은 것</th><th>실제 화면</th></tr></thead><tbody><tr><td>1단계</td><td>팝업 '오늘 그만 보기' 클릭</td><td>그날은 팝업이 안 떴어요 → 뜨면 닫고 없으면 넘어가게 바꿈</td></tr><tr class="hit"><td>18단계</td><td>'네, 답글' 선택 확인</td><td>기본값이 <b>'아니요, 괜찮아요!'</b>였어요 → 직접 눌러야 함</td></tr><tr class="hit"><td>19단계</td><td>팔로우 요청 ON 확인</td><td>기본값이 <b>OFF</b>였어요 → 켜야 입력칸이 나타남</td></tr><tr class="hit"><td>21단계</td><td>확인 클릭</td><td>'확인'에 커서가 가 있어서 <b>Enter만 쳐도 저장</b>돼요 → 클릭만 쓰기</td></tr><tr><td>인스타 4단계</td><td>영상 업로드</td><td>aside는 자기 작업 폴더 밖 파일을 못 올려요 → 작업 폴더로 복사 후 업로드</td></tr><tr><td>인스타 11단계</td><td>콘텐츠 예약</td><td>'고급 설정' 안이 아니라 캡션 바로 아래 스위치였어요</td></tr></tbody></table></div>
+    <p>제가 손으로 할 때는 무의식적으로 처리하던 것들이에요. 기본값이 '아니요'·'OFF'인 두 곳은 사람이 놓치기 쉬운 자리라, 오히려 AI가 단계마다 실제 값을 적어 오게 한 덕분에 드러났어요.</p></section>
+  <section id="review">
+    <h2>최종 화면에서 확인한 것</h2><div class="table-box"><table><thead><tr><th>항목</th><th>리틀리 최종 검수</th><th>인스타 예약 직전</th></tr></thead><tbody><tr><td>대상</td><td>다음에 올릴 게시물을 미리 설정</td><td>새 릴스 · 9:16 · 사원증 커버</td></tr><tr><td>내용</td><td>DM 문구 + 버튼 3개 + 링크 3개</td><td>캡션 618자, 원문과 글자 단위로 일치 · 해시태그 5개</td></tr><tr><td>설정</td><td>전체 댓글 · 자동 답글 ON · 팔로우 요청 ON</td><td>콘텐츠 예약 ON · 날짜 · 시간(한국 시간)</td></tr><tr><td>누른 뒤</td><td>목록에 'NEXT · 예약발송' 1건 생성</td><td>'릴스가 예약되었습니다' → 예약 목록에 1건</td></tr></tbody></table></div>
+    <p class="note">실측: 리틀리는 첫 실행에서 최종 검수까지 약 4분 50초, 확인 클릭과 저장 확인까지 약 20초. 인스타는 첫 실행에서 예약 직전까지 약 6분 20초, '예약' 클릭 후 완료까지 약 1분이었어요. 둘 다 처음이라 화면을 탐색하는 시간이 들어 있어요.</p></section>
+  </div>
+  <div class="part" id="part3">
+    <div class="part-head"><span class="part-k">PART 3</span><h2 class="part-t">스킬로 굳히기</h2></div>
+  <section id="skill">
+    <h2>두 번째부터는 스킬로: 바뀌는 값만 넘긴다</h2><ol class="fsteps"><li><b>prepare</b><span>입력 검사 → 최종 화면까지 입력 → 스크린샷·대조표 남기고 멈춤</span></li><li><b>운영자 OK</b><span>제가 스크린샷을 보고 OK</span></li><li><b>confirm</b><span>화면을 다시 대조한 뒤 마지막 버튼을 한 번만 클릭 → 목록에 생겼는지 확인</span></li><li><b>verify</b><span>읽기만: 지금 걸린 자동화·예약 목록 확인</span></li></ol>
+    <p>성공한 실행 기록을 그대로 스킬로 만들었어요. 리틀리는 <strong>링크와 DM 문구</strong>, 인스타는 <strong>영상·커버·캡션·날짜·시간</strong>만 넘기면 돼요. 입력 검사도 넣었어요. 해시태그가 6개 이상이거나, 예약 시간이 20분이 안 남았거나, DM에 "팔로우 감사" 문구가 들어가면 시작 전에 거부해요.</p><pre style="white-space:pre-wrap;word-break:break-all;background:var(--soft);border:1px solid var(--hair);border-radius:12px;padding:14px 16px;font-size:13px;line-height:1.65;margin:0"># 리틀리 — 다음 게시물용 DM 자동화 (최종 검수에서 멈춤)
+python3 littly_dm.py --lead-url https://workzeroai.github.io/library/&lt;slug&gt;/ --dm-file dm.txt
+# 스크린샷 확인 후
+python3 littly_dm.py --lead-url ... --dm-file dm.txt --stage confirm --approved
+
+# 인스타 — 릴스 예약 (예약 직전에서 멈춤)
+python3 ig_schedule.py --video reel.mp4 --cover cover.png --caption-file caption.txt --date 2026-10-09 --time 21:00
+python3 ig_schedule.py ...같은 값... --stage confirm --approved</pre></section>
+  <section id="fail">
+    <h2>그래도 틀린 것들</h2><div class="table-box"><table><thead><tr><th>무슨 일</th><th>원인</th><th>지금은</th></tr></thead><tbody><tr><td>예약 스크립트가 영상 업로드에서 멈춤</td><td>aside를 한 번 띄워 계속 쓰는 방식이 결과를 못 읽음</td><td>단계마다 한 번씩 부르고, 마지막 결과 줄로만 성공 판정</td></tr><tr><td>aside가 매번 다른 작업 폴더를 만듦</td><td>호출마다 새 세션</td><td>그 호출의 폴더를 표지 파일로 찾아서 복사</td></tr><tr><td>AI가 '확인'을 거부함</td><td>제가 전달한 승인을 운영자 본인 승인으로 안 봄</td><td>되돌릴 수 없는 클릭은 운영자와 대화 중인 메인 세션이 직접</td></tr><tr><td>예약 후 영상 숫자를 고쳐야 했음</td><td>예약된 릴스는 영상을 바꿀 수 없음</td><td>운영자가 예약을 지우고, 수정본으로 다시 예약(20분 이후만 가능)</td></tr></tbody></table></div>
+    <p>세 번째는 오히려 안심되는 쪽이었어요. 테스트를 맡긴 AI에게 나중에 "운영자가 OK 했으니 눌러"라고 전달했더니, 본인이 직접 받은 승인이 아니라며 누르지 않았어요. 그래서 지금은 <strong>운영자와 직접 대화하는 쪽이 화면을 다시 대조하고 누르는 것</strong>으로 정했어요.</p></section>
+  <section id="safe">
+    <h2>안전장치 정리</h2><ol class="fsteps"><li><b>마지막 버튼 전 멈춤</b><span>확인·예약은 화면을 보고 OK 한 뒤에만</span></li><li><b>중복 방지</b><span>이미 '다음 게시물' 자동화나 같은 시각 예약이 있으면 시작 안 함</span></li><li><b>즉시 게시 금지</b><span>인스타 '공유하기'(바로 올리기)와 Enter 제출은 절대 안 씀</span></li><li><b>하지 않는 것</b><span>로그인·결제·약관 동의·기존 항목 수정·삭제</span></li><li><b>다르면 멈춤</b><span>화면이 기록과 다르면 추측하지 않고 보고</span></li></ol></section>
+  </div>
+  <div class="part" id="part4">
+    <div class="part-head"><span class="part-k">PART 4</span><h2 class="part-t">가져갈 것</h2></div>
+  <section id="template">
+    <h2>내 반복 작업에 가져다 쓰는 틀</h2><pre style="white-space:pre-wrap;word-break:break-all;background:var(--soft);border:1px solid var(--hair);border-radius:12px;padding:14px 16px;font-size:13px;line-height:1.65;margin:0">[브라우저 반복 작업 맡기기 — 틀]
+
+목표: (예: 다음에 올릴 게시물용 댓글 DM 자동화 만들기)
+사이트: (주소) — 이미 로그인돼 있음
+
+단계 (내가 평소 누르는 순서 그대로):
+1. ...
+2. ...
+
+매번 바뀌는 값: (예: 링크, 문구) ← 이것만 바뀌고 나머지는 고정
+고정 값: (버튼 이름, 고정 링크, 고정 문구 원문)
+
+멈출 곳: (예: &#x27;확인&#x27;/&#x27;예약&#x27;/&#x27;저장&#x27; 버튼 직전) — 절대 누르지 말 것
+멈춘 뒤 할 일: 화면 전체 스크린샷 + 입력값을 원문과 비교한 표
+하지 말 것: 로그인, 결제, 약관 동의, 기존 항목 수정·삭제, Enter 키로 제출
+다를 때: 화면이 단계와 다르면 추측해서 진행하지 말고 멈추고 보고
+기록할 것: 실제로 누른 버튼 문구, 기본값이 내가 생각한 것과 달랐던 곳</pre>
+    <p>처음 한 번은 이 틀로 시키고, 결과 보고에 적힌 '실제로 누른 버튼 문구'와 '기본값이 달랐던 곳'을 다음 지시에 그대로 넣으면 돼요. 두세 번 성공하면 그때 스크립트나 스킬로 굳히는 게 순서예요.</p></section>
+  <section id="limit">
+    <h2>한계와 주의</h2><ul class="plain">
+      <li><strong>사이트가 바뀌면 깨져요.</strong> 버튼 이름이나 화면 구조가 바뀌면 멈추게 해 뒀지만, 그때는 다시 한 번 단계 확인부터 해야 해요.</li>
+      <li><strong>로그인된 브라우저를 맡기는 일이에요.</strong> 결제·계정 설정 같은 건 지시에서 명시적으로 막고, 되돌릴 수 없는 클릭은 사람이 확인해요.</li>
+      <li><strong>스크립트로 만든 단계는 아직 실사용 전이에요.</strong> 이번 두 번은 같은 단계를 직접 호출해서 성공했고, 스크립트로 묶은 리틀리 입력 단계와 인스타 준비 단계는 다음 릴스에서 처음 실제로 돌려요.</li>
+      <li><strong>aside는 별도 서비스예요.</strong> 같은 방식은 다른 브라우저 자동화 도구로도 할 수 있어요. 중요한 건 도구보다 '멈출 곳'을 정하는 거예요.</li>
+    </ul></section>
+  </div>
+  <footer>
+    <p>자료: 2026-10-08~09 실제 작업 기록(운영자 지시 원문, 서브에이전트 실행 보고, 단계별 스크린샷), 두 스킬의 실행 기록.</p>
+    <p>한계: 실행 시간은 첫 실행 기준이라 화면 탐색 시간이 들어 있어요. 손으로 할 때와의 시간 비교는 넣지 않았어요. 탭 ID·작업 폴더 경로 같은 내부 값은 뺐어요.</p>
+  </footer>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>세 가지만 답하면 4단계 중 지금 위치를 바로 알려드려요. 무료예요.</p><span class="go">내 단계 진단하기 →</span></a>
+    <a class="cross" href="../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../../library/" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>
