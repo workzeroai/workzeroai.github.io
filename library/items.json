@@ -123,6 +123,39 @@
    "thumb": "../reports/aside-publish-automation/og.png",
    "url": "../reports/aside-publish-automation/",
    "ready": true
+  },
+  {
+   "slug": "claude-reels-1-benchmark",
+   "title": "2주 만에 1,000명 ① 무엇을 베끼고, 어떻게 뜯었나",
+   "desc": "잘 된 릴스를 통째로 베꼈다가 한 번은 터지고 한 번은 망했어요. 지금은 실측으로 고르고, 소재를 먼저 정한 뒤, 여러 편에서 뼈대만 가져와요. 삽질부터 정착한 방식까지 정리했어요.",
+   "tag": "제작 기록",
+   "date": "2026-10-09",
+   "read": "11분",
+   "thumb": "../reports/claude-reels-1-benchmark/og.png",
+   "url": "../reports/claude-reels-1-benchmark/",
+   "ready": true
+  },
+  {
+   "slug": "claude-reels-2-adapt",
+   "title": "2주 만에 1,000명 ② 내 것으로 바꾸고, 반려를 규칙으로",
+   "desc": "다 만든 뒤에 한 번에 보다가 한 편에 버전이 15개까지 갔어요. 지금은 소재·훅·스틸 세 번만 정하고, 두 번 나온 지적은 AI가 매번 읽는 규칙으로 올려요.",
+   "tag": "제작 기록",
+   "date": "2026-10-09",
+   "read": "11분",
+   "thumb": "../reports/claude-reels-2-adapt/og.png",
+   "url": "../reports/claude-reels-2-adapt/",
+   "ready": true
+  },
+  {
+   "slug": "claude-reels-3-tools",
+   "title": "2주 만에 1,000명 ③ 매일 쓴 도구와 실제 프롬프트",
+   "desc": "음성·영상·썸네일·가이드·발행 도구가 2주 동안 거의 다 바뀌었어요. aside에 넘긴 실제 지시문과, 만드는 건 28분인데 한 편이 7~8시간 걸린 이유까지 정리했어요.",
+   "tag": "제작 기록",
+   "date": "2026-10-09",
+   "read": "11분",
+   "thumb": "../reports/claude-reels-3-tools/og.png",
+   "url": "../reports/claude-reels-3-tools/",
+   "ready": true
   }
  ],
  "notes": [
