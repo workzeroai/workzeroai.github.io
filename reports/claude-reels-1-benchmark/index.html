@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>2주 만에 1,000명 ① 무엇을 베끼고, 어떻게 뜯었나 · 워크제로 자료실</title>
-<meta name="description" content="14일 만에 팔로워 57명에서 1,000명이 된 과정을 세 편으로 나눠 정리해요. 결과 숫자는 지난 칼럼에 있고, 이번 시리즈는 그걸 어떻게 만들었는지예요. 처음부터 잘 한 게 아니라서, 삽질한 순서대로 쓰고 지금 정착한 방식을 따로 정리했어요. 1편은 벤치마크를 고르고 뜯는 단계예요.">
+<title>2주 만에 1,000명 ① 무엇을 벤치마킹하고, 어떻게 뜯었나 · 워크제로 자료실</title>
+<meta name="description" content="14일 만에 팔로워 57명에서 1,000명이 된 과정을 세 편으로 나눠 정리해요. 결과 숫자는 지난 칼럼에 있고, 이번 시리즈는 그걸 어떻게 만들었는지예요. 처음부터 잘 한 게 아니라서, 삽질한 순서대로 쓰고 지금 정착한 방식을 따로 정리했어요. 시리즈 전체의 뼈대는 잘 된 릴스를 벤치마킹하고(1편), 레퍼런스 삼아 나만의 콘텐츠로 다시 만들고(2편), 그 과정을 도구로 굳힌 것(3편)이에요. 1편은 벤치마크를 고르고 뜯는 단계예요.">
 <link rel="canonical" href="https://workzeroai.github.io/reports/claude-reels-1-benchmark/">
 <link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
@@ -12,13 +12,13 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="워크제로">
 <meta property="og:locale" content="ko_KR">
-<meta property="og:title" content="2주 만에 1,000명 ① 무엇을 베끼고, 어떻게 뜯었나">
-<meta property="og:description" content="14일 만에 팔로워 57명에서 1,000명이 된 과정을 세 편으로 나눠 정리해요. 결과 숫자는 지난 칼럼에 있고, 이번 시리즈는 그걸 어떻게 만들었는지예요. 처음부터 잘 한 게 아니라서, 삽질한 순서대로 쓰고 지금 정착한 방식을 따로 정리했어요. 1편은 벤치마크를 고르고 뜯는 단계예요.">
+<meta property="og:title" content="2주 만에 1,000명 ① 무엇을 벤치마킹하고, 어떻게 뜯었나">
+<meta property="og:description" content="14일 만에 팔로워 57명에서 1,000명이 된 과정을 세 편으로 나눠 정리해요. 결과 숫자는 지난 칼럼에 있고, 이번 시리즈는 그걸 어떻게 만들었는지예요. 처음부터 잘 한 게 아니라서, 삽질한 순서대로 쓰고 지금 정착한 방식을 따로 정리했어요. 시리즈 전체의 뼈대는 잘 된 릴스를 벤치마킹하고(1편), 레퍼런스 삼아 나만의 콘텐츠로 다시 만들고(2편), 그 과정을 도구로 굳힌 것(3편)이에요. 1편은 벤치마크를 고르고 뜯는 단계예요.">
 <meta property="og:url" content="https://workzeroai.github.io/reports/claude-reels-1-benchmark/">
 <meta property="og:image" content="https://workzeroai.github.io/reports/claude-reels-1-benchmark/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="2주 만에 1,000명 ① 무엇을 베끼고, 어떻게 뜯었나">
-<meta name="twitter:description" content="14일 만에 팔로워 57명에서 1,000명이 된 과정을 세 편으로 나눠 정리해요. 결과 숫자는 지난 칼럼에 있고, 이번 시리즈는 그걸 어떻게 만들었는지예요. 처음부터 잘 한 게 아니라서, 삽질한 순서대로 쓰고 지금 정착한 방식을 따로 정리했어요. 1편은 벤치마크를 고르고 뜯는 단계예요.">
+<meta name="twitter:title" content="2주 만에 1,000명 ① 무엇을 벤치마킹하고, 어떻게 뜯었나">
+<meta name="twitter:description" content="14일 만에 팔로워 57명에서 1,000명이 된 과정을 세 편으로 나눠 정리해요. 결과 숫자는 지난 칼럼에 있고, 이번 시리즈는 그걸 어떻게 만들었는지예요. 처음부터 잘 한 게 아니라서, 삽질한 순서대로 쓰고 지금 정착한 방식을 따로 정리했어요. 시리즈 전체의 뼈대는 잘 된 릴스를 벤치마킹하고(1편), 레퍼런스 삼아 나만의 콘텐츠로 다시 만들고(2편), 그 과정을 도구로 굳힌 것(3편)이에요. 1편은 벤치마크를 고르고 뜯는 단계예요.">
 <meta name="twitter:image" content="https://workzeroai.github.io/reports/claude-reels-1-benchmark/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
@@ -329,17 +329,17 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
   <div class="seg" role="tablist" aria-label="메뉴"><a href="../../tutoring/">1:1 과외</a><a href="../../build/">제작 문의</a><a class="on" href="../../library/" aria-current="page">자료실</a></div></div></nav>
 <main>
 <div class="rd"><a class="back" href="../../library/#columns">← 뜯어보기</a>
-  <div class="head"><div class="m">레이어드클럽 구조대 · 제로(@work__zero) · 시리즈 1/3 · 2026-10-09</div><h1>2주 만에 1,000명 ① 무엇을 베끼고, 어떻게 뜯었나</h1></div>
+  <div class="head"><div class="m">레이어드클럽 구조대 · 제로(@work__zero) · 시리즈 1/3 · 2026-10-09</div><h1>2주 만에 1,000명 ① 무엇을 벤치마킹하고, 어떻게 뜯었나</h1></div>
   
   <div class="bd">
-<p class="note" style="margin:-6px 0 26px">14일 만에 팔로워 57명에서 1,000명이 된 과정을 세 편으로 나눠 정리해요. 결과 숫자는 <a href="https://workzeroai.github.io/reports/followers-57-to-1000/">지난 칼럼</a>에 있고, 이번 시리즈는 그걸 어떻게 만들었는지예요. 처음부터 잘 한 게 아니라서, 삽질한 순서대로 쓰고 지금 정착한 방식을 따로 정리했어요. 1편은 벤치마크를 고르고 뜯는 단계예요.</p>
-<p class="lede"><strong>한 줄 결론:</strong> 처음엔 잘 된 릴스 한 편을 통째로 베꼈고, 한 번은 터지고 한 번은 망했어요. 지금은 <strong>실측으로 고르고, 소재를 먼저 정한 뒤, 여러 편에서 뼈대만</strong> 가져와요. 고르는 건 사람이, 모으고 재고 뜯는 건 AI가 해요.</p>
+<p class="note" style="margin:-6px 0 26px">14일 만에 팔로워 57명에서 1,000명이 된 과정을 세 편으로 나눠 정리해요. 결과 숫자는 <a href="https://workzeroai.github.io/reports/followers-57-to-1000/">지난 칼럼</a>에 있고, 이번 시리즈는 그걸 어떻게 만들었는지예요. 처음부터 잘 한 게 아니라서, 삽질한 순서대로 쓰고 지금 정착한 방식을 따로 정리했어요. 시리즈 전체의 뼈대는 <strong>잘 된 릴스를 벤치마킹하고(1편), 레퍼런스 삼아 나만의 콘텐츠로 다시 만들고(2편), 그 과정을 도구로 굳힌 것(3편)</strong>이에요. 1편은 벤치마크를 고르고 뜯는 단계예요.</p>
+<p class="lede"><strong>한 줄 결론:</strong> 처음엔 잘 된 릴스 한 편만 레퍼런스로 삼아 구성째 다시 만들었고, 한 번은 터지고 한 번은 망했어요. 지금은 <strong>실측으로 고르고, 소재를 먼저 정한 뒤, 여러 편에서 뼈대만</strong> 가져와 내 콘텐츠로 다시 만들어요. 고르는 건 사람이, 모으고 재고 뜯는 건 AI가 해요.</p>
 
   <section class="summary" id="summary">
     <h2>3줄 요약</h2>
     <ul class="plain">
-      <li><strong>처음엔 한 편을 0.1초 단위로 통째로 베꼈고, 터졌어요.</strong> 에브리AI 릴스를 355장으로 뜯어 하루 만에 세 AI를 거쳐 발행한 마케터 MCP 5선이 5만 회가 됐어요.</li>
-      <li><strong>같은 방법을 다시 쓰자 2천 회였어요.</strong> 형식은 잘 베꼈는데 소재가 틀렸어요. AI에게 ‘5만+ 릴스’를 골라 달라고 했더니 그것도 45%만 맞았어요.</li>
+      <li><strong>처음엔 잘 된 한 편을 0.1초 단위로 뜯어 구성째 다시 만들었고, 터졌어요.</strong> 에브리AI 릴스를 355장으로 뜯어 하루 만에 세 AI를 거쳐 발행한 마케터 MCP 5선이 5만 회가 됐어요.</li>
+      <li><strong>같은 방법을 다시 쓰자 2천 회였어요.</strong> 형식은 잘 가져왔는데 소재가 틀렸어요. AI에게 ‘5만+ 릴스’를 골라 달라고 했더니 그것도 45%만 맞았어요.</li>
       <li><strong>지금은 실측으로 고르고, 여러 편에서 뼈대만 재요.</strong> 실측 5만+, 그 계정 평소 대비 배수, 협찬 제외, 따라 할 수 있는 형식. 소재를 먼저 정하고, 그다음에 첫 7초와 장면 순서만 비교해요.</li>
     </ul>
   </section>
@@ -352,11 +352,11 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
     <p>릴스 한 편은 지금 아홉 단계를 거쳐요. 처음부터 이랬던 건 아니고, 2주 동안 고치면서 굳은 모양이에요. 사람이 정하는 곳은 ‘사람’ 칸뿐이에요.</p>
     <div class="table-box"><table><thead><tr><th class="r">#</th><th>단계</th><th>사람</th><th>AI</th><th>도구</th></tr></thead><tbody><tr class="hit"><td class="r">1</td><td>벤치마크 고르기</td><td>최종 선택</td><td>수집·실측·배수 계산</td><td>Apify MCP · WorkZero Bench</td></tr><tr class="hit"><td class="r">2</td><td>분해</td><td>-</td><td>프레임·전사·장면표·색 실측</td><td>ffmpeg · whisper · Playwright</td></tr><tr><td class="r">3</td><td>소재 정하기 (G1)</td><td><b>결정</b></td><td>후보 + 증거 한 줄</td><td>노션 보드</td></tr><tr><td class="r">4</td><td>훅 정하기 (G2)</td><td><b>결정</b></td><td>2안 제시</td><td>-</td></tr><tr><td class="r">5</td><td>대본·음성</td><td>-</td><td>대본, 음성 생성 위임</td><td>aside → CapCut · whisper</td></tr><tr><td class="r">6</td><td>영상 (G3)</td><td><b>스틸 확인</b></td><td>장면 코드·렌더</td><td>HyperFrames</td></tr><tr><td class="r">7</td><td>썸네일</td><td>시안 선택</td><td>시안 2~4개</td><td>커버 스크립트</td></tr><tr><td class="r">8</td><td>가이드·DM</td><td>공개 확인</td><td>리서치·원고·캡처·발행</td><td>공식 문서 · 자료실 · 리틀리</td></tr><tr><td class="r">9</td><td>발행·회고</td><td>예약 OK</td><td>예약 세팅, 48시간 회고</td><td>aside · Meta AI · 노션</td></tr></tbody></table></div><p class="note">색이 칠해진 1·2단계가 이번 편이에요. 3~6단계는 2편, 5~9단계의 도구는 3편에서 다뤄요.</p>
     <p>AI도 하나만 쓰지 않았어요. 잘하는 일이 달라서 역할을 나눴어요.</p>
-    <div class="table-box"><table><thead><tr><th>AI</th><th>역할</th><th>실제로 맡긴 일</th></tr></thead><tbody><tr><td><b>Claude Code</b></td><td>총괄</td><td>기획 문서·스킬·스크립트 작성, 다른 AI에게 일 나눠 주고 결과 검수. 9/27 저녁 첫 편 발행본을 다시 만들었고, 9/28부터 제작 과정을 ‘스킬’로 묶어 이후 편을 만들었어요.</td></tr><tr><td><b>Antigravity (Gemini)</b></td><td>손이 많이 가는 작업</td><td>원본 릴스 0.1초 프레임 분해와 1:1 클론(9/26), 마케터 MCP 5선 화면 제작(9/27), WorkZero Bench 기능 구현 워커.</td></tr><tr><td><b>Codex</b></td><td>두 번째 눈</td><td>기획서·대본을 원본과 대조해 검토(9/27), 24시간 성과 분석 초안.</td></tr><tr><td><b>Meta AI</b></td><td>내 계정 데이터</td><td>인스타 인사이트 조회. 남의 계정 숫자 추정은 틀려서 버렸어요(아래).</td></tr><tr><td><b>aside</b></td><td>브라우저 대신 눌러 주기</td><td>로그인이 필요한 일(CapCut 음성, 리틀리, 인스타 예약). 3편에서 자세히.</td></tr></tbody></table></div>
+    <div class="table-box"><table><thead><tr><th>AI</th><th>역할</th><th>실제로 맡긴 일</th></tr></thead><tbody><tr><td><b>Claude Code</b></td><td>총괄</td><td>기획 문서·스킬·스크립트 작성, 다른 AI에게 일 나눠 주고 결과 검수. 9/27 저녁 첫 편 발행본을 다시 만들었고, 9/28부터 제작 과정을 ‘스킬’로 묶어 이후 편을 만들었어요.</td></tr><tr><td><b>Antigravity (Gemini)</b></td><td>손이 많이 가는 작업</td><td>원본 릴스 0.1초 프레임 분해와 1:1 재현(9/26), 마케터 MCP 5선 화면 제작(9/27), WorkZero Bench 기능 구현 워커.</td></tr><tr><td><b>Codex</b></td><td>두 번째 눈</td><td>기획서·대본을 원본과 대조해 검토(9/27), 24시간 성과 분석 초안.</td></tr><tr><td><b>Meta AI</b></td><td>내 계정 데이터</td><td>인스타 인사이트 조회. 남의 계정 숫자 추정은 틀려서 버렸어요(아래).</td></tr><tr><td><b>aside</b></td><td>브라우저 대신 눌러 주기</td><td>로그인이 필요한 일(CapCut 음성, 리틀리, 인스타 예약). 3편에서 자세히.</td></tr></tbody></table></div>
   </section>
   </div>
   <div class="part" id="part2">
-    <div class="part-head"><span class="part-k">PART 2</span><h2 class="part-t">삽질기</h2><p class="part-d">통째로 베껴서 한 번 터지고, 같은 방법으로 한 번 망하고, AI 숫자를 믿었다가 틀린 2주 전반부예요.</p></div>
+    <div class="part-head"><span class="part-k">PART 2</span><h2 class="part-t">삽질기</h2><p class="part-d">한 편을 구성째 다시 만들어 한 번 터지고, 같은 방법으로 한 번 망하고, AI 숫자를 믿었다가 틀린 2주 전반부예요.</p></div>
   <section id="before">
     <h2>57명 시절 — 눈으로 보고 따라 만들기</h2>
     <p>9월 중순까지는 마음에 드는 릴스 한두 개를 눈으로 보고, 비슷한 느낌으로 도구 소개 영상을 만들었어요. ChatGPT×노션 연동, Aside 브라우저 에이전트 같은 주제였고, 영상은 Remotion이나 화면 녹화 줌으로 만들었어요.</p>
@@ -391,7 +391,7 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
     <p>말하는 단어에 맞춰 화면이 움직이는 순간도 표로 뽑았어요.</p>
     <div class="table-box"><table><thead><tr><th>움직임</th><th>언제</th><th>화면 변화</th><th>노린 것</th></tr></thead><tbody><tr><td>토글 연속 점등</td><td>훅 2.5초</td><td>토글 5개가 0.1초 간격으로 켜짐</td><td>‘5개가 준비됐다’는 완결 기대</td></tr><tr><td>강조 테두리</td><td>핵심 명사를 말할 때</td><td>회색 테두리 → 주황 2px</td><td>시선을 그 기능으로</td></tr><tr><td>타이핑 커서</td><td>‘요청문’을 말할 때</td><td>입력창에 한 글자씩(50ms)</td><td>정지 화면이 아니라 실제 구동처럼</td></tr><tr><td>팔로우 버튼 전환</td><td>‘팔로우하고’ 순간</td><td>파란 팔로우 → 팔로잉 ✓</td><td>손가락 행동을 미리 보여 줌</td></tr><tr><td>댓글 타이핑</td><td>‘댓글 남겨주세요’ 순간</td><td>댓글창에 ‘필요해요!’ 입력 후 게시</td><td>댓글 다는 장벽을 낮춤</td></tr></tbody></table></div>
     <p>그리고 이 분석으로 하루 만에 세 AI를 거쳐 발행까지 갔어요.</p>
-    <div class="table-box"><table><thead><tr><th>언제</th><th>누가</th><th>한 일</th></tr></thead><tbody><tr><td>9/26</td><td><b>Antigravity</b></td><td>원본 35.4초를 0.1초마다 355장으로 쪼개 분석하고, 움직임까지 1:1로 다시 만든 복제본 완성</td></tr><tr><td>9/27 낮</td><td><b>Antigravity</b></td><td>마케터용으로 바꾼 1차 영상. Remotion과 Playwright 두 방식으로 각각 렌더, 음성은 무료 TTS</td></tr><tr><td>9/27 오후</td><td><b>Codex</b></td><td>원본 분석 문서와 기획서를 대조해 검토(요청문은 아래)</td></tr><tr><td>9/27 저녁</td><td><b>Claude Code</b></td><td>HyperFrames로 다시 만들고, 도구 이름 영어 표기·CapCut 애덤 음성·1.25배속 35초로 수정, 캡션·가이드·썸네일·리틀리까지</td></tr><tr class="hit"><td>9/27 23:53</td><td><b>발행</b></td><td>10일 뒤 조회 5만 회</td></tr></tbody></table></div>
+    <div class="table-box"><table><thead><tr><th>언제</th><th>누가</th><th>한 일</th></tr></thead><tbody><tr><td>9/26</td><td><b>Antigravity</b></td><td>원본 35.4초를 0.1초마다 355장으로 쪼개 분석하고, 움직임까지 1:1로 다시 만든 재현본 완성</td></tr><tr><td>9/27 낮</td><td><b>Antigravity</b></td><td>마케터용으로 바꾼 1차 영상. Remotion과 Playwright 두 방식으로 각각 렌더, 음성은 무료 TTS</td></tr><tr><td>9/27 오후</td><td><b>Codex</b></td><td>원본 분석 문서와 기획서를 대조해 검토(요청문은 아래)</td></tr><tr><td>9/27 저녁</td><td><b>Claude Code</b></td><td>HyperFrames로 다시 만들고, 도구 이름 영어 표기·CapCut 애덤 음성·1.25배속 35초로 수정, 캡션·가이드·썸네일·리틀리까지</td></tr><tr class="hit"><td>9/27 23:53</td><td><b>발행</b></td><td>10일 뒤 조회 5만 회</td></tr></tbody></table></div>
     <div class="figure"><svg class="chart-svg" viewBox="0 0 720 154" role="img" aria-label="원본 릴스와 WorkZero 릴스의 장면 8개 순서와 길이 비교. 전환 시점 차이는 평균 0.66초." style="font-size:12px">
 <line class="c-link" x1="139.3" y1="50.4" x2="133.3" y2="79.2"/>
 <line class="c-link" x1="238.9" y1="50.4" x2="227.0" y2="79.2"/>
@@ -464,17 +464,17 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
    - 씬별 카피와 하단 증거 카드가 0.1초 만에 직관적으로 꽂히는가?
 3. 개선된 씬별 기획 및 카피 제안:
    - 원본의 빠르고 경쾌한 호흡(35초 완결, 씬당 4~5초)을 살리기 위해, 씬 1부터 8까지의 [중앙 자막(2~4단어)], [보이스오버 대사], [상단/하단 시각 요소]를 가장 완벽하고 날카로운 버전으로 재기획해주세요.</pre>
-    <p class="note">0.1초 단위 전수 분해와 1:1 복제는 결과적으로 과했어요. 실제 제작에 쓰인 건 세 칸 배치, 장면 순서와 길이, 단어에 맞춘 움직임 정도였어요. 그래도 한 번 통째로 뜯어 본 덕에 ‘뼈대가 뭔지’ 감을 잡았어요.</p>
+    <p class="note">0.1초 단위 전수 분해와 1:1 재현은 결과적으로 과했어요. 실제 제작에 쓰인 건 세 칸 배치, 장면 순서와 길이, 단어에 맞춘 움직임 정도였어요. 그래도 한 번 통째로 뜯어 본 덕에 ‘뼈대가 뭔지’ 감을 잡았어요.</p>
   </section>
   <section id="fail">
     <h2>같은 방법을 다시 썼더니 2천 회 (9/28~29)</h2>
-    <p>통째로 베끼는 방법이 통했다고 생각하고, 다음 편도 똑같이 했어요. 다른 계정의 릴스 한 편을 Apify로 받아서 그대로 다시 만들게 했어요. 그때 Claude에게 보낸 요청은 이 한 줄이었어요.</p>
+    <p>한 편을 레퍼런스로 삼아 구성째 다시 만드는 방법이 통했다고 생각하고, 다음 편도 똑같이 했어요. 다른 계정의 릴스 한 편을 Apify로 받아서 같은 구성으로 다시 만들게 했어요. 그때 Claude에게 보낸 요청은 이 한 줄이었어요.</p>
     <pre style="white-space:pre-wrap;word-break:break-all;background:var(--soft);border:1px solid var(--hair);border-radius:12px;padding:14px 16px;font-size:13px;line-height:1.65;margin:0">apify mcp으로 다음 영상 다운로드한 다음에 모션 그래픽 스킬을 써서 그대로 복제해봐.
 https://www.instagram.com/reel/…</pre>
     <ul class="plain">
       <li><strong>하루에 버전을 열 번 넘게 고쳤어요.</strong> 모션이 단조롭다, 훅이 약하다, 효과음이 없다 같은 이유로 버전 폴더가 15개까지 늘었어요.</li>
-      <li><strong>결과는 2,249회였어요.</strong> 형식은 잘 베꼈는데, 돌아보니 문제는 주제였어요. 첫 편이 ‘마케터가 연결할 도구 5개’였다면 이번엔 ‘Meta AI 하나로 인스타 분석’이라 쓸모가 좁았어요.</li>
-      <li>여기서 처음으로 <strong>형식을 아무리 잘 베껴도 소재가 틀리면 안 된다</strong>는 걸 알았어요. 그리고 형식만 다듬느라 쓴 하루가 아까웠어요.</li>
+      <li><strong>결과는 2,249회였어요.</strong> 형식은 잘 가져왔는데, 돌아보니 문제는 주제였어요. 첫 편이 ‘마케터가 연결할 도구 5개’였다면 이번엔 ‘Meta AI 하나로 인스타 분석’이라 쓸모가 좁았어요.</li>
+      <li>여기서 처음으로 <strong>형식을 아무리 잘 가져와도 소재가 틀리면 안 된다</strong>는 걸 알았어요. 그리고 형식만 다듬느라 쓴 하루가 아까웠어요.</li>
     </ul>
   </section>
   <section id="meta-fail">
@@ -530,7 +530,7 @@ https://www.instagram.com/reel/…</pre>
   </section>
   <section id="skeleton">
     <h2>정착 ② 통째로 말고, 여러 편에서 뼈대만</h2>
-    <p>디자인 도구 3개 편(10/4)부터는 한 편을 통째로 베끼지 않았어요. 에브리AI·게으른 빌더 릴스를 포함한 벤치마크 다섯 편을 같이 놓고 <strong>첫 7초만</strong> 비교했어요. 자막이 어디 놓이는지, 결과물을 몇 초 보여 주는지, 시청자가 궁금해할 고리를 어떻게 여는지를 봤어요.</p>
+    <p>디자인 도구 3개 편(10/4)부터는 레퍼런스를 한 편으로 두지 않았어요. 에브리AI·게으른 빌더 릴스를 포함한 벤치마크 다섯 편을 같이 놓고 <strong>첫 7초만</strong> 비교했어요. 자막이 어디 놓이는지, 결과물을 몇 초 보여 주는지, 시청자가 궁금해할 고리를 어떻게 여는지를 봤어요.</p>
     <ul class="plain">
       <li><strong>원본 계정의 도구 목록과 문장은 쓰지 않아요.</strong> 디자인 편의 도구 3개는 게으른 빌더가 소개한 조합과 1개만 겹치게 새로 골랐어요.</li>
       <li><strong>장면표에 남기는 항목:</strong> 첫 컷 길이, 결과물이 처음 보이는 시점, 자막 줄 수와 강조 방식, 카드 한 장의 글자 수, CTA 위치(전체의 87~94% 지점).</li>
@@ -561,7 +561,7 @@ https://www.instagram.com/reel/…</pre>
       <div><h3>남의 숫자는 원본에서</h3><p>AI에게 “잘 된 릴스 골라줘”라고 하지 말고 재생수를 직접 받아 오게 하세요. 짐작한 숫자는 절반이 틀렸어요.</p></div>
       <div><h3>그 계정 평소 대비로 보기</h3><p>조회수 절댓값보다 그 계정 중앙값의 몇 배인지가 형식의 힘에 더 가까워요.</p></div>
       <div><h3>한 번은 통째로, 그다음부턴 뼈대만</h3><p>처음 한 편은 끝까지 뜯어 보면 감이 와요. 두 번째부터는 여러 편의 첫 7초와 장면 순서만 비교해도 충분했어요.</p></div>
-      <div><h3>소재 먼저, 역기획은 나중</h3><p>형식을 잘 베껴도 소재가 틀리면 2천 회예요. 무엇을 말할지 정한 다음에 어떻게 보여 줄지를 뜯어요.</p></div>
+      <div><h3>소재 먼저, 역기획은 나중</h3><p>형식을 잘 가져와도 소재가 틀리면 2천 회예요. 무엇을 말할지 정한 다음에 어떻게 보여 줄지를 뜯어요.</p></div>
       <div><h3>검토는 다른 AI에게</h3><p>원본 분석 문서를 같이 주고 다른 AI에게 대조시키면 놓친 게 잘 보여요.</p></div>
     </div>
   </section>
@@ -574,7 +574,7 @@ https://www.instagram.com/reel/…</pre>
     </ul>
   </section>
   </div>
-  <nav class="toc" id="series" aria-label="시리즈 이동"><p class="toc-k">2주 만에 1,000명 시리즈 · 다음 편 → <a href="https://workzeroai.github.io/reports/claude-reels-2-adapt/">2편 · 내 것으로 바꾸고, 반려를 규칙으로</a></p><ol><li><a href="https://workzeroai.github.io/reports/claude-reels-1-benchmark/" aria-current="page"><b>1</b><span>무엇을 베끼고, 어떻게 뜯었나 (지금 글)</span></a></li><li><a href="https://workzeroai.github.io/reports/claude-reels-2-adapt/"><b>2</b><span>내 것으로 바꾸고, 반려를 규칙으로</span></a></li><li><a href="https://workzeroai.github.io/reports/claude-reels-3-tools/"><b>3</b><span>매일 쓴 도구와 실제 프롬프트</span></a></li></ol></nav>
+  <nav class="toc" id="series" aria-label="시리즈 이동"><p class="toc-k">2주 만에 1,000명 시리즈 · 다음 편 → <a href="https://workzeroai.github.io/reports/claude-reels-2-adapt/">2편 · 내 것으로 바꾸고, 반려를 규칙으로</a></p><ol><li><a href="https://workzeroai.github.io/reports/claude-reels-1-benchmark/" aria-current="page"><b>1</b><span>무엇을 벤치마킹하고, 어떻게 뜯었나 (지금 글)</span></a></li><li><a href="https://workzeroai.github.io/reports/claude-reels-2-adapt/"><b>2</b><span>내 것으로 바꾸고, 반려를 규칙으로</span></a></li><li><a href="https://workzeroai.github.io/reports/claude-reels-3-tools/"><b>3</b><span>매일 쓴 도구와 실제 프롬프트</span></a></li></ol></nav>
   <footer>
     <p>자료: Apify로 수집한 AI 정보 계정 7곳 릴스 251개(2026-09-30, Meta AI 후보 72개 포함), 원본 릴스 프레임 분석 문서(9/26~27), WorkZero Bench 수집 데이터(2026-10-09 조회), 각 릴스 기획서와 AI 세션 기록.</p>
     <p>한계: 벤치마크 기준은 릴스 세 편을 만들며 정리한 것이라 일반 법칙이 아니에요. 다른 계정 릴스는 화면을 싣지 않고 구조만 다시 그렸어요. 계정 평소 수준은 협찬을 뺀 릴스 재생수 중앙값이에요.</p>
