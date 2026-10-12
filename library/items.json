@@ -171,6 +171,23 @@
  ],
  "notes": [
   {
+   "video_id": "S6l3aRsecuE",
+   "title": "알렉산더 왕이 말하는 메타 Muse 제작기: 프로토타입 2주, 다듬기 7개월",
+   "title_orig": "Creating Muse: The Fastest-Growing AI Product Since ChatGPT | Alexandr Wang, Meta",
+   "source": "David Senra",
+   "date": "2026-10-11",
+   "topic": "AI 소식",
+   "summary": "메타 슈퍼인텔리전스 랩(MSL)을 이끄는 알렉산더 왕(Alexandr Wang)이 David Senra와 마주 앉아, 개인 에이전트 앱 Muse를 프로토타입 2주·다듬기 7개월 만에 내놓은 과정을 이야기해요. 한마디로 **\"코딩 에이전트 경쟁에 뛰어드는 대신 개인 에이전트에 걸었고 100개가 넘는 체크리스트로 모델을 끝까지 다듬었다\"**는 거예요. Scale AI를 떠나 메타로 온 결정과 200명 넘는 직속 보고 체계 이야기도 함께 나옵니다.",
+   "points": [
+    "남들이 몰리는 곳 대신 내가 유리한 곳을 골랐어요",
+    "\"좋아졌다\"는 느낌 대신 체크리스트로 출시를 정했어요",
+    "사람은 회사 말고 \"나한테 뭘 해 주는지\"에 반응해요"
+   ],
+   "thumb": "notes/thumb/S6l3aRsecuE.webp",
+   "url": "notes/S6l3aRsecuE/",
+   "ready": true
+  },
+  {
    "video_id": "npS5jzOoji8",
    "title": "앤트로픽은 클로드 스킬을 진짜 이렇게 만듭니다",
    "title_orig": "How Anthropic ACTUALLY Builds Claude Skills To Automate Work",
@@ -338,6 +355,23 @@
    ],
    "thumb": "notes/thumb/xfHbePnyiks.webp",
    "url": "notes/xfHbePnyiks/",
+   "ready": true
+  },
+  {
+   "video_id": "-SffBBo40bA",
+   "title": "OpenAI 엔지니어가 말하는 AI 시대에 몸값이 폭등중인 사람의 특징 | 시대의 흐름 Ep.1",
+   "title_orig": "OpenAI 엔지니어가 말하는 AI 시대에 몸값이 폭등중인 사람의 특징 | 시대의 흐름 Ep.1",
+   "source": "희야기 | HeeChan",
+   "date": "2026-10-01",
+   "topic": "AI 소식",
+   "summary": "AWS에서 시작해 마이크로소프트·페이스북·스타트업을 거쳐 지금은 OpenAI에서 엔지니어링 리드로 일하는 Jay가, AI 시대에 몸값을 올리는 사람의 공통점을 이야기해요. 답은 생각보다 단순했어요. **\"끝까지 파고드는 호기심, 그리고 직접 만들어 보는 경험\"**이 결국 기회와 보상을 끌고 온다는 거예요.",
+   "points": [
+    "호기심은 \"다음 단계\"까지 가야 몸값이 돼요",
+    "스킬보다 모델의 빈틈을 아는 게 오래가요",
+    "배움의 최단 경로는 외부 사용자에게 내놓는 제품이에요"
+   ],
+   "thumb": "notes/thumb/-SffBBo40bA.webp",
+   "url": "notes/-SffBBo40bA/",
    "ready": true
   },
   {

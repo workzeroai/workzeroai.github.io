@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>OpenAI 엔지니어가 말하는 AI 시대에 몸값이 폭등중인 사람의 특징 | 시대의 흐름 Ep.1 · 워크제로 자료실</title>
+<meta name="description" content="AWS에서 시작해 마이크로소프트·페이스북·스타트업을 거쳐 지금은 OpenAI에서 엔지니어링 리드로 일하는 Jay가, AI 시대에 몸값을 올리는 사람의 공통점을 이야기해요. 답은 생각보다 단순했어요. **&quot;끝까지 파고드는 호기심, 그리고 직접 만들어 보는 경험&quot;**이 결">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/-SffBBo40bA/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#533afd">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="OpenAI 엔지니어가 말하는 AI 시대에 몸값이 폭등중인 사람의 특징 | 시대의 흐름 Ep.1">
+<meta property="og:description" content="AWS에서 시작해 마이크로소프트·페이스북·스타트업을 거쳐 지금은 OpenAI에서 엔지니어링 리드로 일하는 Jay가, AI 시대에 몸값을 올리는 사람의 공통점을 이야기해요. 답은 생각보다 단순했어요. **&quot;끝까지 파고드는 호기심, 그리고 직접 만들어 보는 경험&quot;**이 결">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/-SffBBo40bA/">
+<meta property="og:image" content="https://img.youtube.com/vi/-SffBBo40bA/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="OpenAI 엔지니어가 말하는 AI 시대에 몸값이 폭등중인 사람의 특징 | 시대의 흐름 Ep.1">
+<meta name="twitter:description" content="AWS에서 시작해 마이크로소프트·페이스북·스타트업을 거쳐 지금은 OpenAI에서 엔지니어링 리드로 일하는 Jay가, AI 시대에 몸값을 올리는 사람의 공통점을 이야기해요. 답은 생각보다 단순했어요. **&quot;끝까지 파고드는 호기심, 그리고 직접 만들어 보는 경험&quot;**이 결">
+<meta name="twitter:image" content="https://img.youtube.com/vi/-SffBBo40bA/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+:root{--primary:#533afd;--primary-deep:#4434d4;--primary-pale:#eceaff;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f6f9fc;--hair:#e3e8ee;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴"><a href="../../../tutoring/">1:1 과외</a><a href="../../../build/">제작 문의</a><a class="on" href="../../../library/" aria-current="page">자료실</a></div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../../../library/">← 자료실</a>
+  <div class="head"><div class="m"><i>AI 소식</i><span>2026-10-01</span></div><h1>OpenAI 엔지니어가 말하는 AI 시대에 몸값이 폭등중인 사람의 특징 | 시대의 흐름 Ep.1</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/-SffBBo40bA.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · 희야기 | HeeChan</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<br><a href="https://www.youtube.com/watch?v=-SffBBo40bA" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>호기심은 &quot;다음 단계&quot;까지 가야 몸값이 돼요</li><li>스킬보다 모델의 빈틈을 아는 게 오래가요</li><li>배움의 최단 경로는 외부 사용자에게 내놓는 제품이에요</li></ul></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>AWS에서 시작해 마이크로소프트·페이스북·스타트업을 거쳐 지금은 OpenAI에서 엔지니어링 리드로 일하는 Jay가, AI 시대에 몸값을 올리는 사람의 공통점을 이야기해요. 답은 생각보다 단순했어요. <strong>"끝까지 파고드는 호기심, 그리고 직접 만들어 보는 경험"</strong>이 결국 기회와 보상을 끌고 온다는 거예요.</p>
+<h3>전체 내용 정리</h3>
+<h4>AWS에서 OpenAI까지, 연봉은 이렇게 올라갔어요</h4>
+<p>Jay는 아마존 AWS의 EC2(Elastic Compute Cloud) 부서에서 커리어를 시작했어요. 이후 마이크로소프트에서 컴퓨터 비전 제품을 키웠고 페이스북에서는 모금(fundraising)용 API를 다뤘습니다. 그다음 CRM 스타트업, YC(와이콤비네이터) 출신 스타트업 등 여러 곳을 거쳐 지금은 OpenAI에서 일하고 있어요.</p>
+<p>연봉 변화도 꽤 솔직하게 공개했어요. 첫 직장인 아마존에서 약 18만 달러, 애틀랜타의 마이크로소프트에서 20만~23만 달러, 페이스북에서 약 30만 달러였다고 해요. 스타트업 시절엔 주식 가치에 따라 50만 달러 안팎을 오갔고 OpenAI의 구체적인 숫자는 밝히지 않았지만 "괜찮은 수준"이라고만 했어요.</p>
+<h4>OpenAI 안에서 "OpenAI를 어떻게 쓰는지" 보여 주는 팀이에요</h4>
+<p>Jay가 속한 곳은 GTM(Go-To-Market, 영업·시장 진출) 조직 안의 이노베이션 랩이에요. 고객사들이 "API도 있고 Codex도 있는 건 알겠는데, 정작 OpenAI는 내부에서 어떻게 쓰나요?"라고 묻거든요. 그 질문에 직접 만들어서 답하는 팀이라고 보면 돼요.</p>
+<p>예를 들면 며칠 작업만으로 문서 검토를 자동화하거나, 이메일 발송·회의 내용 기억 같은 GTM 업무의 귀찮은 부분을 자동화해 보여 주는 식이에요. 어카운트 디렉터나 영업 담당자들이 에이전트와 메모리 기능으로 자기 업무를 자동화하도록 돕는 게 이 팀의 일이에요.</p>
+<h4>몸값을 정하는 건 "다음 단계까지 고민하는 호기심"이에요</h4>
+<p>몸값을 결정하는 게 기술력인지, 희소성인지, 고른 회사인지 묻자 Jay는 "전부 다"라고 답했어요. 그중에서도 지금 시대에 가장 중요한 건 <strong>호기심</strong>이라고 강조합니다. 모델의 능력을 어떻게 끌어낼지, AI가 사람들을 실제로 돕게 하려면 어떻게 해야 할지 같은 질문엔 아직 정답이 없거든요.</p>
+<p>그래서 몸값이 높은 사람은 이 질문을 떠올리는 데서 멈추지 않는다고 해요. <strong>"그럼 거기까지 어떻게 가지? 어떻게 하면 많은 사람에게 멋진 걸 내놓을 수 있지?"</strong>까지 한 단계 더 나아가요. Jay는 이게 개발자만의 이야기가 아니라 모든 직군에 해당하고 AI가 사회에 깊이 들어올수록 더 맞는 말이 된다고 봅니다.</p>
+<h4>같은 아메리카노도 어디서 파느냐에 따라 값이 달라요</h4>
+<p>실력을 키우는 것과 실력을 더 높게 쳐주는 시장으로 옮기는 것 중 뭐가 중요하냐는 질문에도 Jay는 "둘 다"라고 답했어요. 그리고 아메리카노 비유를 들었습니다. 마트에서 2달러짜리 아메리카노가 체이스 센터 경기장에선 12달러예요. 똑같은 커피인데도요.</p>
+<p>그러니 나를 12달러로 쳐주는 곳을 찾는 일도 필요해요. 다만 그 와중에도 계속 배우고 "이건 어떻게 돌아가지?" 하고 내부 원리까지 이해하려는 태도를 놓치면 안 된다는 게 Jay의 이야기예요.</p>
+<p>깊게 한 우물을 팔지, 넓게 여러 분야를 경험할지는 정답이 없다고 했어요. Jay 자신은 뭔가에 익숙해지면 지루해지는 편이라 클라우드·AI·컴퓨터 비전을 두루 거쳤고 그게 오히려 지원자로서 매력이 됐다고 해요. 한 분야만 깊게 파는 것도 그 사람만 아는 영역이 생긴다는 점에서 충분히 의미 있는 선택이라고 덧붙였습니다.</p>
+<h4>트렌드를 먼저 읽는 힘은 "쌓아 둔 맥락"에서 나와요</h4>
+<p>AWS에서 OpenAI로 흐름을 잘 탄 비결을 묻자, Jay는 <strong>맥락(context)</strong>을 꼽았어요. ChatGPT가 대중에게 나오기 몇 달 전부터 AI를 깊이 알던 사람들은 이미 "이건 세상을 바꾸겠다"고 느꼈대요. 그들이 미리 알 수 있었던 건 맥락이 많았기 때문이고요.</p>
+<p>VR·AR·메타버스처럼 반짝하고 식은 기술과 AI의 차이도 물었는데요. Jay는 그 기술들은 너무 일렀을 뿐 여전히 미래가 있다고 봐요. 다만 AI는 할 수 있는 일이 백만 가지라면 글래스는 십만 가지쯤이라는 비유를 들며 <strong>AI는 너무 다재다능해서 실패하기엔 너무 크다</strong>고 말합니다. 헤드셋을 써야 하는 메타버스와 달리, AI는 하드웨어든 법률이든 어디에나 들어갈 수 있으니까요.</p>
+<p>"프런티어 랩에 있으니 하는 말 아니냐"는 반론도 Jay가 먼저 꺼냈어요. 커리어의 90%는 연구소 밖에 있었다고 해요. 그 시기를 Jay는 <strong>"벽 바깥에서 배우기"</strong>라고 불러요. 벽 밖에서 충분히 배우면 안으로 들어갈 틈이 반드시 보인다고 장담해요.</p>
+<h4>OpenAI의 똑똑한 사람들은 "처음부터 끝까지" 이해하려고 해요</h4>
+<p>OpenAI에 와서 '똑똑한 사람'의 정의가 바뀌었냐는 질문에 Jay는 그렇다고 답했어요. 본인도 호기심이 많다고 생각했는데, 동료들은 그 백 배쯤이었대요. 요청 하나가 AI에 들어가서 어디를 거쳐 어떻게 처리되는지 Jay가 첫 단계만 안다면, 그 사람들은 전 과정을 알고 있었다고 해요. 제품 담당자조차도요.</p>
+<p>입사 전에 가장 과소평가했던 건 <strong>업무 흐름 속에 AI가 얼마나 깊이 들어가 있는지</strong>였다고 해요. 예전 회사들에선 만들고 AI를 좀 쓰고 출시하는 게 보통이었어요. 그런데 OpenAI에서는 설계·개발·출시·사용자 소통·팀 내 소통까지 모든 단계에 AI가 붙어 있었고 Jay는 그동안 자기 능력의 10%만 쓰고 있었다고 느꼈대요.</p>
+<p>그래서 Jay의 원칙은 단순해졌어요. <strong>"전부 자동화한다."</strong> 이메일 보내기가 싫거나 6개월 전 회의 내용을 기억하기 힘들다면 일단 Codex에 맡겨 보고 어디까지 되는지 확인해 보라는 거예요. 못 하면 오히려 놀랄 거라고까지 말했어요.</p>
+<h4>뭘 배울지 모르겠다면 로보틱스와 버티컬을 보래요</h4>
+<p>좀 더 구체적인 조언으로 Jay는 <strong>로보틱스</strong>를 꼽았어요. 시간을 되돌릴 수 있다면 로보틱스 공부에 시간을 더 쓰겠다고 해요. VR 같은 가상 세계가 세상 문제의 일부만 푼다면, 로보틱스는 그보다 몇 배 많은 문제를 풀 수 있다는 게 Jay의 개인적인 의견이에요. 하수구 청소, 바다 정화, 집안의 설거지·빨래를 로봇이 맡으면 사람은 좋아하는 일에 시간을 쓸 수 있겠죠.</p>
+<p>또 하나는 <strong>버티컬(특정 산업 특화) 제품</strong>이에요. Jay는 지금의 GPT-5.6 Sol 같은 기본 모델이 이미 엄청나게 좋은데, 사람들이 그 능력을 100% 쓰지 못하고 있다고 봐요. 그래서 법률·헬스케어·하드웨어처럼 한 분야에 올인해 현재 모델로 뛰어난 제품을 만드는 회사들이 늘고 있다고 해요.</p>
+<p>어떤 스킬이 가장 가치 있을지는 단정하기 어렵다고 했어요. 모델이 거의 매일 발전해서, 애써 익힌 스킬을 다음 버전 모델이 그냥 해 버리는 일이 생기거든요. 그래서 Jay는 <strong>모델이 어떻게 작동하는지 최대한 많이 알아 두면, 모델이 아직 못 하는 빈틈이 보인다</strong>고 말해요. 좋은 회사는 자기 분야의 문제를 잘 알면서 동시에 모델로 뭘 할 수 있고 뭘 못 하는지 아는 사람에게서 나온다고요.</p>
+<h4>20대로 돌아간다면 일단 "만들어 볼" 거래요</h4>
+<p>주 50시간을 커리어에 쓸 수 있는 20대 대학생이라면 어떻게 배분하겠냐는 질문에, Jay는 코딩·AI 도구·네트워킹·사이드 프로젝트가 다 섞여야 한다면서도 답은 분명했어요. <strong>만들어 보는 것만큼 잘 배우는 방법은 거의 없다</strong>는 거예요.</p>
+<p>못 만들어도, 잘 만들어도 상관없대요. 논문을 읽거나 수업을 듣고 잘한다고 느꼈던 건, 실제 외부 사용자에게 제품을 내놓는 순간 다 무너진다고 해요. 사용자는 누구인지, 어떻게 호스팅하고 어떻게 개발할지 같은 질문은 만들다 보면 자연스럽게 생기거든요. 제품이 망해도 괜찮아요. 그 과정에서 얻는 백 가지 통찰이 평생 쓰는 기반이 된다는 게 Jay의 이야기예요. 실제로 Jay가 함께 일한 최고의 엔지니어들은 대개 창업자이거나 제품을 직접 만들어 본 사람들이었다고 해요.</p>
+<p>함께 성장할 사람의 중요성도 언급했어요. 혼자 AI를 공부하는 건 멋지지만 고립되기 쉬워요. 연인이든 친한 친구든, 서로 지지하며 같이 크는 관계가 배우는 속도를 크게 끌어올린다고 봅니다.</p>
+<h4>연봉을 좇지 말라는 말, 후회에서 나왔어요</h4>
+<p>젊은 사람들이 절대 하지 말았으면 하는 선택으로 Jay는 <strong>연봉을 최우선에 두는 것</strong>을 꼽았어요. 초반엔 본인도 보상이 가장 중요하다고 생각했대요. 그런데 돌아보면, 훌륭한 엔지니어가 돈을 잘 버는 경우는 흔해도 돈을 우선한 사람이 수백만 명에게 영향을 주려는 엔지니어보다 더 버는 경우는 드물대요.</p>
+<p>"지금 그 자리에 있으니 쉽게 하는 말"로 들릴 수 있다는 것도 Jay는 인정했어요. 그래도 초반 몇 년을 보상에 과하게 맞춘 걸 후회한다고 해요. 그 시간을 탄탄한 엔지니어가 되는 데 썼다면 보상까지 포함해 훨씬 큰 결과가 돌아왔을 거라서, 지금도 그때를 만회하려 노력 중이래요. 멘티들에게도 똑같이 말한다고 해요. <strong>"과정을 믿어요. 배우는 데 집중하면 따라옵니다."</strong></p>
+<h4>아침의 Jay와 밤의 Jay가 달라야 해요</h4>
+<p>이미 높은 보상을 받는데도 계속 달리는 이유를 묻자, Jay는 자기만의 원칙을 소개했어요. 아침에 일어난 Jay와 그날 밤 잠드는 Jay가 조금이라도 달라져 있어야 한대요. 꼭 AI가 아니어도 돼요. 공원이 어떻게 지어졌는지 알게 되기만 해도, 밤의 Jay는 공원 짓는 법을 아는 사람이 되니까요.</p>
+<p>인생에서 가장 힘들었던 순간은 <strong>자기가 얼마나 모르는지 깨달았을 때</strong>였다고 해요. 다섯 살부터 코딩하고 세계적인 상을 받은 사람들 사이에서 심한 임포스터 신드롬(가면 증후군)을 겪었대요. 그런데 Jay는 그 디스트레스(distress, 나쁜 스트레스)를 유스트레스(eustress, 동기가 되는 좋은 스트레스)로 바꾸는 법을 배웠어요. "모르는 게 이렇게 많다니"를 "이렇게 배울 게 많다니"로 바꾼 거죠. 그 사람들이 아는 걸 나라고 못 배울 이유는 없으니까요.</p>
+<p>마지막으로 올해 서른이 된 Jay가 모두에게 던진 질문은 이거예요. <strong>"나는 세상에 어떤 영향을 주고 싶은가?"</strong> 삶은 너무 빨라서, 가끔은 멈춰서 숨을 고르고 이 질문을 던져 봐야 한다고요. 그 짧은 멈춤이 앞으로를 꽤 많이 바꿀 수 있다고요.</p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>호기심은 "다음 단계"까지 가야 몸값이 돼요</strong>: Jay가 말하는 호기심은 궁금해하는 데서 끝나지 않아요. "그럼 어떻게 만들지, 어떻게 많은 사람에게 내놓지"까지 이어질 때 시장이 알아봐 준다는 게 핵심이에요. 정답이 없는 AI 분야라서 더 그렇고요.</li><li><strong>스킬보다 모델의 빈틈을 아는 게 오래가요</strong>: 모델이 거의 매일 좋아지니 특정 스킬은 금방 자동화될 수 있어요. 대신 모델이 뭘 할 수 있고 뭘 못 하는지 꾸준히 아는 사람은 법률·헬스케어처럼 아직 비어 있는 버티컬 기회를 먼저 봅니다.</li><li><strong>배움의 최단 경로는 외부 사용자에게 내놓는 제품이에요</strong>: 읽고 듣는 공부는 제품을 실제로 내놓는 순간 많은 부분이 무너져요. 망해도 그 과정에서 얻는 통찰이 기반이 되고 Jay가 본 최고의 엔지니어들도 대부분 직접 만들어 본 사람들이었어요.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li>매주 반복하는 귀찮은 업무 하나(이메일 회신 초안, 지난 회의 내용 찾기 등)를 골라 Codex나 Claude 같은 AI에 그대로 맡겨 보세요. Jay 말처럼 "못 하면 놀랄" 정도인지 직접 확인하면 내가 AI를 몇 %나 쓰고 있었는지 감이 옵니다.</li><li>지금 쓰는 AI 도구가 내 업무에서 <strong>못 하는 것</strong> 세 가지를 메모해 보세요. 그 빈틈이 바로 Jay가 말한 "모델의 갭"이고 내 분야 지식과 겹치는 지점에서 새 상품이나 서비스 아이디어가 나옵니다.</li><li>이번 주에 아주 작은 결과물 하나를 만들어서 나 말고 다른 사람 한 명에게 써 보게 하세요. 랜딩 페이지든 자동화 하나든 괜찮아요. 남이 쓰는 순간 생기는 질문들이 책으로 배우는 것보다 훨씬 많은 걸 알려 줍니다.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>세 가지만 답하면 4단계 중 지금 위치를 바로 알려드려요. 무료예요.</p><span class="go">내 단계 진단하기 →</span></a>
+    <a class="cross" href="../../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../../../library/" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>
