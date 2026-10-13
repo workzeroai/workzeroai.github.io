@@ -8,7 +8,7 @@
 <link rel="canonical" href="https://workzeroai.github.io/library/">
 <link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
-<meta name="theme-color" content="#533afd">
+<meta name="theme-color" content="#2462e0">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="워크제로">
 <meta property="og:locale" content="ko_KR">
@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
 <style>
-:root{--primary:#533afd;--primary-deep:#4434d4;--primary-pale:#eceaff;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f6f9fc;--hair:#e3e8ee;--mint:#14b87a;
+:root{--primary:#2462e0;--primary-deep:#1a4fb8;--primary-pale:#e5effd;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f4f8fe;--hair:#dfe7f2;--mint:#14b87a;
 --sh1:0 1px 3px rgba(0,55,112,.08);--sh2:0 15px 35px -10px rgba(50,50,93,.18),0 5px 15px -5px rgba(0,0,0,.08);
 --ease:cubic-bezier(.16,1,.3,1);--gut:20px}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -43,7 +43,7 @@ h2{font-size:28px}
 .card{background:#fff;border:1px solid var(--hair);border-radius:20px;box-shadow:var(--sh1)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:54px;padding:0 24px;border-radius:14px;font-weight:800;font-size:16px;transition:transform .2s var(--ease)}
 .btn:active{transform:scale(.98)}
-.btn.pri{background:var(--primary);color:#fff;box-shadow:0 10px 24px -8px rgba(83,58,253,.6)}
+.btn.pri{background:var(--primary);color:#fff;box-shadow:0 10px 24px -8px rgba(36,98,224,.6)}
 
 /* nav */
 .nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.82);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
@@ -57,8 +57,8 @@ h2{font-size:28px}
 
 /* hero */
 .hero{padding:40px 0 34px;overflow:hidden}
-.mesh{position:absolute;left:-30%;right:-30%;top:-40%;height:120%;z-index:0;pointer-events:none;filter:blur(60px);opacity:.55;
-background:radial-gradient(40% 55% at 18% 55%,#ffd9a8 0,transparent 70%),radial-gradient(38% 60% at 42% 40%,#ffb4d8 0,transparent 70%),radial-gradient(40% 60% at 66% 55%,#b9a6ff 0,transparent 70%),radial-gradient(34% 55% at 88% 38%,#7fa9ff 0,transparent 70%)}
+.mesh{position:absolute;left:-30%;right:-30%;top:-40%;height:120%;z-index:0;pointer-events:none;filter:blur(60px);opacity:.7;
+background:radial-gradient(40% 55% at 18% 55%,#bfe0ff 0,transparent 70%),radial-gradient(38% 60% at 42% 40%,#8fc2ff 0,transparent 70%),radial-gradient(40% 60% at 66% 55%,#5f9dff 0,transparent 70%),radial-gradient(34% 55% at 88% 38%,#c8f1ff 0,transparent 70%)}
 .hero .wrap{position:relative;z-index:1}
 .hero h1{font-size:30px;line-height:1.3}
 .hero .sub{font-size:16px;margin-top:12px}
@@ -94,7 +94,7 @@ background:radial-gradient(40% 55% at 18% 55%,#ffd9a8 0,transparent 70%),radial-
 .cnote{font-size:14px;color:var(--mute);margin:0 0 16px;line-height:1.6}
 @media (min-width:720px){.cgrid{grid-template-columns:1fr 1fr}}
 .fcard{display:flex;flex-direction:column;overflow:hidden}
-.fthumb{aspect-ratio:4/5;background:linear-gradient(140deg,#eceaff,#e2ecff 55%,#ffe6f0);display:grid;place-items:center;padding:22px;text-align:center;position:relative}
+.fthumb{aspect-ratio:4/5;background:linear-gradient(140deg,#e5effd,#eef6ff 55%,#e1f6ff);display:grid;place-items:center;padding:22px;text-align:center;position:relative}
 .fthumb img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
 .fthumb span{font:800 17px/1.4 "Pretendard","Noto Sans KR",sans-serif;color:var(--primary-deep);letter-spacing:-.03em}
 .fbody{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
@@ -116,7 +116,7 @@ background:radial-gradient(40% 55% at 18% 55%,#ffd9a8 0,transparent 70%),radial-
 #nq{padding:0 14px 0 40px;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748d' stroke-width='2.4' stroke-linecap='round'><circle cx='11' cy='11' r='7'/><path d='M20 20l-3.6-3.6'/></svg>");background-repeat:no-repeat;background-position:left 14px center;background-size:17px}
 #nq::placeholder{color:var(--mute);font-weight:600}
 #nch{padding:0 38px 0 14px;color:var(--ink2);background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748d' stroke-width='2.6' stroke-linecap='round'><path d='M6 9l6 6 6-6'/></svg>");background-repeat:no-repeat;background-position:right 12px center;background-size:18px}
-#nq:focus,#nch:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(83,58,253,.12)}
+#nq:focus,#nch:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(36,98,224,.12)}
 .nres{display:flex;align-items:center;gap:10px;margin:0 0 14px;font-size:13px;font-weight:700;color:var(--mute)}
 .nres:empty{display:none}
 .nres b{color:var(--primary-deep)}
@@ -171,7 +171,7 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0;border-
   .crosses{grid-template-columns:repeat(3,1fr)}
   .nlist{grid-template-columns:1fr 1fr}
 }
-</style>
+/* WZ-COBALT-C */:root{--grad-btn:linear-gradient(135deg,#2b74f0 0%,#2462e0 50%,#1d55d6 100%);--gloss:radial-gradient(120% 90% at 30% 0%,rgba(255,255,255,.28) 0,rgba(255,255,255,0) 55%);--glow:0 12px 28px -10px rgba(36,98,224,.75),0 2px 6px -1px rgba(29,85,214,.35)}.btn.pri,.fbtn,.rcta .p1,.price.best .pick,.price .pop{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:var(--glow),inset 0 1px 0 rgba(255,255,255,.35)}.fchip.on{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:0 8px 18px -8px rgba(36,98,224,.8),inset 0 1px 0 rgba(255,255,255,.35)}.btn.pri:hover,.fbtn:hover,.rcta .p1:hover{filter:brightness(1.08) saturate(1.1)}.lv-head,.svr.win{background:var(--gloss),var(--grad-btn)}.eyebrow{background:linear-gradient(135deg,#e5effd,#d3e6ff);color:#1a4fb8}.logo b{color:#2b74f0}.fmeta i,.nm i{background:linear-gradient(135deg,#e5effd,#d6e7ff);color:#1a4fb8}.paneNote{background:linear-gradient(135deg,#eaf3ff 0%,#f7fbff 60%,#fff 100%);border-color:#d3e3fb}.keys{background:linear-gradient(135deg,#e5effd,#f2f8ff)}.nkeys span::before,.keys li::before{background:linear-gradient(135deg,#3b8cff,#1d55d6)}</style>
 <script src="/assets/wz.js" defer></script>
 </head>
 <body>
