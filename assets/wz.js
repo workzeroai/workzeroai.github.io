@@ -22,6 +22,9 @@
    공통 파라미터: page_type (tutoring / build / build_recipe / library / library_note /
                  library_guide / report / lesson / other) — GA4 에서는 content_group 으로도 들어간다.
 
+   유입 구분
+     utm_source/utm_medium 을 쓰거나, 간단히 ?from=dm|lm|bio — GA4 세션 소스에 그 값, 매체 wz_link 로 잡힌다.
+
    확인·제외
      ?wzdebug=1     콘솔에 [WZ] 로 찍히고 GA4 DebugView 에 뜬다.  콘솔에서 wzLog() 로 전체 확인.
      ?wzinternal=1  이 브라우저를 내부 트래픽으로 표시 — 이후 GA4·Clarity 로 아무것도 보내지 않는다.
@@ -59,7 +62,10 @@
     window.dataLayer = window.dataLayer || [];
     window.gtag = function () { dataLayer.push(arguments); };
     gtag("js", new Date());
-    gtag("config", GA, Object.assign({content_group: PAGE}, DEBUG ? {debug_mode: true} : {}));
+    // 우리 링크에 붙이는 ?from=dm|lm|bio 를 GA4 유입(세션 소스)으로 읽게 한다. utm_ 이 있으면 utm 이 우선.
+    const from = (q.match(/[?&]from=([\w-]{1,30})/) || [])[1];
+    const camp = from && !/[?&]utm_source=/.test(q) ? {campaign_source: from, campaign_medium: "wz_link"} : {};
+    gtag("config", GA, Object.assign({content_group: PAGE}, camp, DEBUG ? {debug_mode: true} : {}));
   }
   if (send && CLARITY) {
     (function (c, l, a, r, i, t, y) {
