@@ -171,6 +171,23 @@
  ],
  "notes": [
   {
+   "video_id": "XfdIhd1g6EI",
+   "title": "모델도 안 보고 1,000억 달러를 걸었다 — 저커버그·알렉산더 왕의 Muse Wonder",
+   "title_orig": "Muse Wonder: Zuckerberg and Wang's $100B AI",
+   "source": "Cheeky Pint",
+   "date": "2026-10-12",
+   "topic": "에이전트",
+   "summary": "마크 저커버그와 알렉산더 왕(Alexandr Wang)이 Stripe 공동창업자 John Collison의 팟캐스트 Cheeky Pint에 나와 메타의 새 프런티어 모델 Muse Wonder를 소개해요. 모델을 보기도 전에 1천억~2천억 달러 규모의 투자를 결정한 과정, \"모델이 곧 제품\"이라는 관점, 에이전트가 장을 보는 시대의 커머스, 그리고 1년 만에 연구소를 새로 세운 방식까지 한 번에 들을 수 있어요.",
+   "points": [
+    "모델이 곧 제품인 시대엔 '행동 명세'가 기획서예요",
+    "남이 만든 점수판 대신 내 고객 기준의 평가표를 만드세요",
+    "에이전트가 손님이 되는 시장이 열리고 있어요"
+   ],
+   "thumb": "notes/thumb/XfdIhd1g6EI.webp",
+   "url": "notes/XfdIhd1g6EI/",
+   "ready": true
+  },
+  {
    "video_id": "S6l3aRsecuE",
    "title": "알렉산더 왕이 말하는 메타 Muse 제작기: 프로토타입 2주, 다듬기 7개월",
    "title_orig": "Creating Muse: The Fastest-Growing AI Product Since ChatGPT | Alexandr Wang, Meta",
