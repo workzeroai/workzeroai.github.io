@@ -475,6 +475,7 @@ a.prime-card{color:#fff}
   .cnt{margin-left:4px}
 }
 </style>
+<script src="/assets/wz.js" defer></script>
 </head>
 <body>
 
@@ -1064,77 +1065,7 @@ function showRes(){
   qres.hidden=false;
 }
 
-/* ───────────────────────── 측정 (WZ) ─────────────────────────
-   어디까지 읽고 어디서 나가는지, 어떤 CTA를 누르는지 기록한다.
-   지금은 수집처가 없어 메모리에만 쌓인다(?wzdebug=1 로 확인).
-   GA4 측정 ID 를 아래 GA 에 넣으면 그 즉시 GA4 로 전송된다. */
-const WZ = (() => {
-  const GA = "";                      // ← 여기에 "G-XXXXXXXXXX" 넣으면 전송 시작
-  const log = [];
-  if (GA) {                           // GA4 로더는 ID가 있을 때만 붙인다
-    const t = document.createElement("script");
-    t.async = 1; t.src = "https://www.googletagmanager.com/gtag/js?id=" + GA;
-    document.head.appendChild(t);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function(){dataLayer.push(arguments)};
-    gtag("js", new Date()); gtag("config", GA);
-  }
-  const ev = (name, params) => {
-    const row = Object.assign({ev: name, t: Math.round(performance.now())}, params || {});
-    log.push(row);
-    if (GA && window.gtag) gtag("event", name, params || {});
-    if (location.search.indexOf("wzdebug=1") >= 0) console.log("[WZ]", row);
-  };
-  window.wzLog = () => log;           // 콘솔에서 wzLog() 로 확인
-  return {ev};
-})();
-
-try {
-  /* 들어온 경로 — 자료실에서 #diagnosis 로 바로 떨어지는 사람이 몇인지 */
-  WZ.ev("page_enter", {anchor: location.hash || "(top)", ref: document.referrer || "(none)"});
-
-  /* 섹션별 도달 — 한 번만 기록 */
-  const secName = sec => {
-    if (sec.id) return sec.id;
-    const h = sec.querySelector("h2");
-    return h ? h.textContent.replace(/\s+/g, " ").trim().slice(0, 20) : "(hero)";
-  };
-  const secs = [...document.querySelectorAll("main section")];
-  const seen = new Set();
-  const so = new IntersectionObserver(es => es.forEach(e => {
-    if (!e.isIntersecting) return;
-    const n = secName(e.target);
-    if (seen.has(n)) return;
-    seen.add(n);
-    WZ.ev("view_section", {section: n, order: secs.indexOf(e.target) + 1});
-  }), {threshold: .25});
-  secs.forEach(x => so.observe(x));
-
-  /* 스크롤 깊이 — 25/50/75/100% */
-  let deepest = 0;
-  const marks = [25, 50, 75, 100], hit = new Set();
-  addEventListener("scroll", () => {
-    const h = document.documentElement;
-    const pct = Math.min(100, Math.round(100 * (scrollY + innerHeight) / h.scrollHeight));
-    if (pct > deepest) deepest = pct;
-    marks.forEach(m => {if (pct >= m && !hit.has(m)) {hit.add(m); WZ.ev("scroll_depth", {pct: m})}});
-  }, {passive: true});
-
-  /* CTA 클릭 — data-ev 가 있으면 그 이름, 없으면 문구+목적지로 자동 라벨 */
-  addEventListener("click", e => {
-    const a = e.target.closest("a,button");
-    if (!a) return;
-    const label = a.dataset.ev
-      || (a.textContent.replace(/\s+/g, " ").trim().slice(0, 24) + " → " + (a.getAttribute("href") || a.id || "(btn)"));
-    WZ.ev("cta_click", {label: label, from: [...seen].pop() || "(top)"});
-  }, true);
-
-  /* 이탈 직전에 가장 깊었던 지점과 마지막 섹션을 한 번 더 */
-  addEventListener("visibilitychange", () => {
-    if (document.visibilityState === "hidden")
-      WZ.ev("leave", {deepest_pct: deepest, last_section: [...seen].pop() || "(top)"});
-  });
-} catch (err) { /* 측정이 페이지를 깨뜨리지 않게 */ }
+/* 측정은 공용 /assets/wz.js 가 맡는다 (publish.py 가 자동 삽입). 이 페이지 전용 이벤트만 WZ.ev 로 보낸다. */
 
 const sticky=document.getElementById('sticky');let pastHero=false,atContact=false;
 const upd=()=>sticky.classList.toggle('show',pastHero&&!atContact);
