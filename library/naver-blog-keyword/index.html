@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>클로드로 블로그 키워드 찾기 · 워크제로 자료실</title>
+<meta name="description" content="검색광고 API 키 발급부터 초안 받는 요청문까지">
+<link rel="canonical" href="https://workzeroai.github.io/library/naver-blog-keyword/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#2462e0">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="클로드로 블로그 키워드 찾기">
+<meta property="og:description" content="검색광고 API 키 발급부터 초안 받는 요청문까지">
+<meta property="og:url" content="https://workzeroai.github.io/library/naver-blog-keyword/">
+<meta property="og:image" content="https://workzeroai.github.io/library/thumb/naver-blog-keyword.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="클로드로 블로그 키워드 찾기">
+<meta name="twitter:description" content="검색광고 API 키 발급부터 초안 받는 요청문까지">
+<meta name="twitter:image" content="https://workzeroai.github.io/library/thumb/naver-blog-keyword.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+.tgl{margin:18px 0;border:1px solid var(--hair);border-radius:14px;background:var(--soft)}.tgl>summary{cursor:pointer;padding:14px 18px;font-weight:700;color:var(--ink);list-style:none}.tgl>summary::before{content:"▸ ";color:var(--primary)}.tgl[open]>summary::before{content:"▾ "}.tgl-in{padding:0 14px 14px}
+:root{--primary:#2462e0;--primary-deep:#1a4fb8;--primary-pale:#e5effd;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f4f8fe;--hair:#dfe7f2;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+/* WZ-COBALT-C */:root{--grad-btn:linear-gradient(135deg,#2b74f0 0%,#2462e0 50%,#1d55d6 100%);--gloss:radial-gradient(120% 90% at 30% 0%,rgba(255,255,255,.28) 0,rgba(255,255,255,0) 55%);--glow:0 12px 28px -10px rgba(36,98,224,.75),0 2px 6px -1px rgba(29,85,214,.35)}.btn.pri,.fbtn,.rcta .p1,.price.best .pick,.price .pop{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:var(--glow),inset 0 1px 0 rgba(255,255,255,.35)}.fchip.on{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:0 8px 18px -8px rgba(36,98,224,.8),inset 0 1px 0 rgba(255,255,255,.35)}.btn.pri:hover,.fbtn:hover,.rcta .p1:hover{filter:brightness(1.08) saturate(1.1)}.lv-head,.svr.win{background:var(--gloss),var(--grad-btn)}.eyebrow{background:linear-gradient(135deg,#e5effd,#d3e6ff);color:#1a4fb8}.logo b{color:#2b74f0}.fmeta i,.nm i{background:linear-gradient(135deg,#e5effd,#d6e7ff);color:#1a4fb8}.paneNote{background:linear-gradient(135deg,#eaf3ff 0%,#f7fbff 60%,#fff 100%);border-color:#d3e3fb}.keys{background:linear-gradient(135deg,#e5effd,#f2f8ff)}.nkeys span::before,.keys li::before{background:linear-gradient(135deg,#3b8cff,#1d55d6)}
+</style>
+<script src="/assets/wz.js" defer></script>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴"><a href="../../tutoring/">1:1 과외</a><a href="../../build/">제작 문의</a><a class="on" href="../../library/" aria-current="page">자료실</a></div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../../library/">← 자료실</a>
+  <div class="head"><div class="m"><i>실전 가이드</i><span>2026-10-15</span></div><h1>클로드로 블로그 키워드 찾기</h1></div>
+  
+  <div class="bd">
+<figure><img src="img/01.webp" alt="클로드로 블로그 키워드 찾기" loading="lazy"><figcaption>클로드로 블로그 키워드 찾기</figcaption></figure>
+<div class="lmnote"><p><strong>30초 요약</strong></p>
+<ul><li>블로그 키워드를 감으로 고르지 않고, 네이버 검색광고 API의 <strong>실제 검색수</strong>를 클로드에 붙여서 골라요.</li><li>키워드 하나를 넣으면 연관 키워드 수백~천여 개가 검색수와 함께 오고, 클로드가 "사려는 사람이 검색할 단어"만 추려 줘요.</li><li>상위 글 목록은 네이버 공식 검색 API로 가져오고, 그 구조대로 제목·소제목·사진 메모까지 초안을 받아요. 바로 붙여 쓰는 요청문과 스크립트 전문을 함께 넣었어요.</li><li>예시는 '다이어트도시락'이지만 <strong>클라이언트 업종 단어로 바꿔 넣으면 그대로 돼요.</strong> 대행사·인하우스 마케터용 키워드 제안서 요청문도 넣었어요(6절 ④).</li></ul></div>
+<figure><img src="img/02.webp" alt="전체 흐름 — 키 발급부터 초안까지 다섯 단계" loading="lazy"><figcaption>전체 흐름 — 키 발급부터 초안까지 다섯 단계</figcaption></figure>
+<div class="tw hdr"><table>
+<tr><th>단계</th><th>쓰는 것</th><th>필요한 것</th><th>걸리는 시간</th></tr>
+<tr><td data-label="단계">1. 검색수 키 발급</td><td data-label="쓰는 것">네이버 검색광고 API</td><td data-label="필요한 것">네이버 광고 계정</td><td data-label="걸리는 시간">5분</td></tr>
+<tr><td data-label="단계">2. 클로드에 연결</td><td data-label="쓰는 것">Claude Code</td><td data-label="필요한 것">Pro 이상 플랜</td><td data-label="걸리는 시간">10분</td></tr>
+<tr><td data-label="단계">3. 키워드 고르기</td><td data-label="쓰는 것">요청문</td><td data-label="필요한 것">—</td><td data-label="걸리는 시간">1분</td></tr>
+<tr><td data-label="단계">4. 상위 글 살펴보기</td><td data-label="쓰는 것">네이버 검색 API(블로그)</td><td data-label="필요한 것">네이버 개발자센터 계정</td><td data-label="걸리는 시간">10분</td></tr>
+<tr><td data-label="단계">5. 초안 받기</td><td data-label="쓰는 것">요청문</td><td data-label="필요한 것">—</td><td data-label="걸리는 시간">1분</td></tr>
+</table></div>
+<hr>
+<h3>1. 왜 검색수로 고르나</h3>
+<p>블로그 키워드를 "이게 많이 찾겠지" 하고 고르면, 막상 검색하는 사람이 거의 없는 단어에 글을 쓰게 될 때가 많아요. 반대로 검색수가 너무 큰 단어는 이미 쓴 글이 많아서 내 글이 묻혀요. 네이버 검색광고 API의 키워드 도구는 키워드마다 <strong>최근 30일 PC·모바일 검색수</strong>를 알려 줘요. 이 숫자를 클로드에 주면, 내 상품과 이어지면서 검색수도 적당한 단어를 골라 줘요.</p>
+<div class="lmnote"><p><strong>알아 두세요</strong></p>
+<ul><li>키워드 도구가 주는 "경쟁 정도(낮음·중간·높음)"는 <strong>PC 광고 입찰 경쟁</strong>이에요. 블로그 글이 많고 적음과는 다른 지표라, 블로그 키워드를 고를 때는 참고만 해요.</li><li>검색수가 10 미만인 키워드는 숫자 대신 <code>&lt;10</code>으로 와요.</li></ul></div>
+<hr>
+<h3>2. 시작 전 준비</h3>
+<div class="lmnote"><p><strong>이것만 확인하세요</strong></p>
+<ul><li><strong>네이버 광고 계정</strong>: 검색광고 광고주 계정이 있어야 API 키를 받을 수 있어요. 가입은 <code>searchad.naver.com</code>에서 해요.</li><li><strong>Claude Code</strong>: Pro, Max, Team, Enterprise 플랜에서 쓸 수 있어요. 무료 플랜에는 없어요.</li><li>터미널이 낯설면 Claude 데스크톱 앱에서 Claude Code를 써도 돼요.</li></ul></div>
+<p>Claude Code 설치(맥)는 터미널에 아래 한 줄이에요. 윈도우는 공식 문서의 PowerShell 명령을 쓰세요.</p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">curl -fsSL https://claude.ai/install.sh | bash</code></pre></div>
+<figure><img src="img/03.webp" alt="공식 문서 — Claude Code 설치와 필요한 플랜" loading="lazy"><figcaption>공식 문서 — Claude Code 설치와 필요한 플랜</figcaption></figure>
+<hr>
+<h3>3. 검색광고 API 키 발급</h3>
+<ol><li><code>ads.naver.com</code>에서 검색광고 광고 계정으로 들어가요.</li><li>왼쪽 메뉴 <strong>도구 → SA API 사용 관리</strong>를 눌러요.</li><li><strong>[네이버 검색광고 API 서비스 신청]</strong>을 누르고, 약관을 읽은 뒤 체크하고 <strong>[서비스 신청]</strong>을 눌러요.</li><li>화면에 <strong>엑세스라이선스</strong>, <strong>비밀키</strong>, <strong>CUSTOMER_ID</strong> 세 개가 나와요. 키 옆 [복사] 버튼으로 복사해요.</li></ol>
+<figure><img src="img/04.webp" alt="발급이 끝난 화면 — 왼쪽 도구 메뉴의 SA API 사용 관리, 키 두 개와 CUSTOMER_ID(가림 처리)" loading="lazy"><figcaption>발급이 끝난 화면 — 왼쪽 도구 메뉴의 SA API 사용 관리, 키 두 개와 CUSTOMER_ID(가림 처리)</figcaption></figure>
+<div class="lmnote"><p><strong>직접 해 보니</strong></p>
+<ul><li>광고가 비즈머니 부족으로 <strong>일시 중지된 계정에서도</strong> 신청·발급·호출이 모두 됐어요(2026년 10월 14일 확인). 광고를 돌리지 않아도 키를 받을 수 있었어요.</li><li>신청과 호출 과정에서 결제 단계는 없었어요. 요금 정책은 공식 문서에 따로 적혀 있지 않아서, 바뀌면 이 가이드도 고칠게요.</li></ul></div>
+<figure><img src="img/05.webp" alt="공식 문서 — API 라이선스와 비밀키 발급 방법" loading="lazy"><figcaption>공식 문서 — API 라이선스와 비밀키 발급 방법</figcaption></figure>
+<hr>
+<h3>4. 키를 안전하게 두기</h3>
+<p>키는 <strong>클로드 대화창에 붙여 넣지 말고</strong>, 내 컴퓨터 파일 하나에 넣어 두세요. 클로드에게는 "이 파일에서 읽어"라고만 말하면 돼요. 맥 터미널에서 아래 한 줄을 실행하면 빈 파일이 만들어지고 텍스트 편집기로 열려요.</p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">printf &#x27;NAVER_SEARCHAD_API_KEY=\nNAVER_SEARCHAD_SECRET_KEY=\nNAVER_SEARCHAD_CUSTOMER_ID=\nNAVER_CLIENT_ID=\nNAVER_CLIENT_SECRET=\n&#x27; &gt; ~/.config/naver-searchad.env &amp;&amp; chmod 600 ~/.config/naver-searchad.env &amp;&amp; open -e ~/.config/naver-searchad.env</code></pre></div>
+<p><code>=</code> 뒤에 복사한 값을 붙여 넣고 저장해요. 아래 두 줄(<code>NAVER_CLIENT_…</code>)은 5절에서 채워요.</p>
+<figure><img src="img/06.webp" alt="키 파일 — 값은 = 뒤에, 파일은 나만 읽게" loading="lazy"><figcaption>키 파일 — 값은 = 뒤에, 파일은 나만 읽게</figcaption></figure>
+<div class="lmnote"><p><strong>키가 새어 나갔다면</strong> SA API 사용 관리 화면에서 해당 키 옆 <strong>[재발급]</strong>을 누르면 이전 키는 쓸 수 없게 돼요.</p></div>
+<hr>
+<h3>5. Claude Code에 연결</h3>
+<p>방법은 두 가지예요. 요청문으로 클로드가 직접 만들게 하거나, 아래 토글의 완성 스크립트를 그대로 쓰세요. <strong>요청문 — 클로드가 스크립트를 만들게 하기</strong></p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">네이버 검색광고 API로 키워드 검색수를 가져오는 파이썬 스크립트 keywordstool.py를 만들어 줘.
+- 키는 ~/.config/naver-searchad.env 에서 읽어 (NAVER_SEARCHAD_API_KEY, NAVER_SEARCHAD_SECRET_KEY, NAVER_SEARCHAD_CUSTOMER_ID). 키 값은 화면에 출력하지 마.
+- GET https://api.searchad.naver.com/keywordstool 에 hintKeywords(쉼표 구분, 최대 5개, 띄어쓰기 없이)와 showDetail=1 을 보내.
+- 헤더는 X-Timestamp, X-API-KEY, X-Customer, X-Signature. 서명은 &quot;{timestamp}.GET./keywordstool&quot;을 비밀키로 HMAC-SHA256 해서 base64.
+- 결과는 JSON 파일로 저장하고, PC+모바일 합계가 큰 순으로 상위 20개를 표로 보여 줘. &quot;&lt;10&quot;은 5로 계산해.
+만들면 &quot;다이어트도시락&quot;으로 한 번 실행해서 결과를 보여 줘.</code></pre></div>
+<details class="tgl"><summary>완성 스크립트 — keywordstool.py (직접 붙여 쓰기)</summary><div class="tgl-in"><div class="cw"><button class="cbtn" type="button">복사</button><pre><code>&quot;&quot;&quot;네이버 검색광고 API 키워드 도구 — 연관 키워드별 최근 30일 검색수(PC·모바일)와 광고 경쟁 정도.
+
+    python3 keywordstool.py 다이어트도시락 --out keywords.json
+
+키는 ~/.config/naver-searchad.env 에서 읽어요. 키 값은 화면에 출력하지 않아요.
+공식 문서: https://naver.github.io/searchad-apidoc/
+&quot;&quot;&quot;
+import argparse, base64, hashlib, hmac, json, os, sys, time, urllib.parse, urllib.request
+
+ENV = os.path.expanduser(os.environ.get(&quot;NAVER_ENV_FILE&quot;, &quot;~/.config/naver-searchad.env&quot;))
+BASE = &quot;https://api.searchad.naver.com&quot;
+
+
+def load_env(path=ENV):
+    vals = {}
+    with open(path) as f:
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith(&quot;#&quot;) and &quot;=&quot; in line:
+                k, v = line.split(&quot;=&quot;, 1)
+                vals[k.strip()] = v.strip().strip(&#x27;&quot;&#x27;).strip(&quot;&#x27;&quot;)
+    need = [&quot;NAVER_SEARCHAD_API_KEY&quot;, &quot;NAVER_SEARCHAD_SECRET_KEY&quot;, &quot;NAVER_SEARCHAD_CUSTOMER_ID&quot;]
+    missing = [k for k in need if not vals.get(k)]
+    if missing:
+        sys.exit(f&quot;비어 있는 값: {&#x27;, &#x27;.join(missing)} ({path})&quot;)
+    return vals
+
+
+def call(method, uri, params, env):
+    ts = str(int(time.time() * 1000))
+    sig = base64.b64encode(hmac.new(env[&quot;NAVER_SEARCHAD_SECRET_KEY&quot;].encode(),
+                                    f&quot;{ts}.{method}.{uri}&quot;.encode(), hashlib.sha256).digest()).decode()
+    req = urllib.request.Request(f&quot;{BASE}{uri}?{urllib.parse.urlencode(params)}&quot;, method=method, headers={
+        &quot;X-Timestamp&quot;: ts, &quot;X-API-KEY&quot;: env[&quot;NAVER_SEARCHAD_API_KEY&quot;],
+        &quot;X-Customer&quot;: env[&quot;NAVER_SEARCHAD_CUSTOMER_ID&quot;], &quot;X-Signature&quot;: sig})
+    with urllib.request.urlopen(req, timeout=30) as r:
+        return r.status, json.load(r)
+
+
+def num(v):  # 검색수가 10 미만이면 &quot;&lt;10&quot; 문자열로 와요
+    return 5 if isinstance(v, str) else v
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument(&quot;keywords&quot;, nargs=&quot;+&quot;, help=&quot;최대 5개, 띄어쓰기 없이&quot;)
+    ap.add_argument(&quot;--out&quot;)
+    ap.add_argument(&quot;--top&quot;, type=int, default=15)
+    a = ap.parse_args()
+    kws = [k.replace(&quot; &quot;, &quot;&quot;) for k in a.keywords][:5]
+    try:
+        status, data = call(&quot;GET&quot;, &quot;/keywordstool&quot;, {&quot;hintKeywords&quot;: &quot;,&quot;.join(kws), &quot;showDetail&quot;: &quot;1&quot;}, load_env())
+    except urllib.error.HTTPError as e:
+        sys.exit(f&quot;HTTP {e.code}: {e.read().decode()[:300]}&quot;)
+    rows = data.get(&quot;keywordList&quot;, [])
+    if a.out:
+        with open(a.out, &quot;w&quot;) as f:
+            json.dump({&quot;queried_at&quot;: time.strftime(&quot;%Y-%m-%d %H:%M:%S&quot;), &quot;hint&quot;: kws, &quot;keywordList&quot;: rows}, f, ensure_ascii=False, indent=1)
+    rows.sort(key=lambda r: -(num(r[&quot;monthlyPcQcCnt&quot;]) + num(r[&quot;monthlyMobileQcCnt&quot;])))
+    print(f&quot;HTTP {status} · 연관 키워드 {len(rows)}개&quot;)
+    print(f&quot;{&#x27;키워드&#x27;:&lt;16}{&#x27;PC&#x27;:&gt;9}{&#x27;모바일&#x27;:&gt;10}{&#x27;합계&#x27;:&gt;10}  경쟁&quot;)
+    for r in rows[:a.top]:
+        pc, mo = r[&quot;monthlyPcQcCnt&quot;], r[&quot;monthlyMobileQcCnt&quot;]
+        print(f&quot;{r[&#x27;relKeyword&#x27;]:&lt;16}{str(pc):&gt;9}{str(mo):&gt;10}{num(pc)+num(mo):&gt;10,}  {r.get(&#x27;compIdx&#x27;,&#x27;&#x27;)}&quot;)
+
+
+if __name__ == &quot;__main__&quot;:
+    main()</code></pre></div>
+<p>실행: <code>python3 keywordstool.py 다이어트도시락 --out keywords.json</code></p></div></details>
+<figure><img src="img/07.webp" alt="실제 실행 결과 — 키워드 하나에 연관 키워드 1,200개" loading="lazy"><figcaption>실제 실행 결과 — 키워드 하나에 연관 키워드 1,200개</figcaption></figure>
+<figure><img src="img/08.webp" alt="공식 문서 — 키워드 도구 파라미터와 응답 필드" loading="lazy"><figcaption>공식 문서 — 키워드 도구 파라미터와 응답 필드</figcaption></figure>
+<hr>
+<h3>6. 키워드 고르기 — 바로 쓰는 요청문 4개</h3>
+<p><code>keywords.json</code>이 생겼다면 아래 요청문을 그대로 붙여 넣으세요. <code>{ }</code> 안만 내 상황으로 바꾸면 돼요. 업종 단어는 클라이언트마다 바꿔 넣으면 되고, 힌트 키워드는 한 번에 5개까지 넣을 수 있어요(예: <code>필라테스,요가,PT,헬스장,스트레칭</code>). <strong>① 구매형 — 바로 살 사람이 검색할 단어</strong></p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">keywords.json 은 네이버 검색광고 키워드 도구로 뽑은 연관 키워드야. {다이어트 도시락} 파는 사장님 블로그에 쓸 키워드 3개만 골라 줘.
+기준: {다이어트 도시락}과 바로 이어질 것, 월 검색수(PC+모바일) 1,000~10,000, 사려는 사람이 검색할 단어.
+compIdx는 광고 입찰 경쟁이라 참고만 해. 키워드 · 월 검색수 · 고른 이유 한 줄로 표 하나만 줘.</code></pre></div>
+<p><strong>② 정보형 — 사기 전에 알아보는 사람의 단어</strong></p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">keywords.json 에서 {다이어트 도시락}을 사기 전에 정보를 찾는 사람이 검색할 단어(방법, 추천, 비교, 후기, 칼로리 같은 말이 붙은 것) 3개를 골라 줘.
+월 검색수 500~10,000. 각 키워드로 쓸 글 제목 한 줄도 같이 줘.</code></pre></div>
+<p><strong>③ 지역형 — 동네 손님이 검색할 단어</strong></p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">keywords.json 에서 지역 이름이 들어간 키워드만 모아 줘. 그중 {성수동}이나 근처 지역과 {다이어트 도시락}이 같이 들어간 조합을 검색수 순으로 5개 골라 줘.
+없으면 hintKeywords에 &quot;{성수동다이어트도시락}&quot;을 넣어서 다시 뽑자고 말해 줘.</code></pre></div>
+<p><strong>④ 마케터용 — 클라이언트에게 보낼 키워드 제안서</strong></p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">keywords.json 은 {클라이언트 업종} 연관 키워드야. 클라이언트에게 보낼 블로그 키워드 제안서를 만들어 줘.
+- 구매형 3개, 정보형 3개, 지역형 3개로 나눠서 표로 (키워드 · 월 검색수 · PC/모바일 비율 · 고른 이유)
+- 맨 위에 &quot;이번 달 추천 1순위&quot; 한 줄과 이유
+- 검색수는 최근 30일 기준이고, 경쟁 정도는 광고 입찰 기준이라 참고만 했다고 표 아래에 적어 줘
+- 클라이언트가 읽을 문서니까 전문 용어는 풀어서 써 줘</code></pre></div>
+<p>클라이언트가 여러 곳이면 업종 단어만 바꿔 같은 요청문을 돌리면 돼요. 매달 같은 형식의 제안서가 나와요.</p>
+<figure><img src="img/09.webp" alt="실제 결과 — 구매형 요청문으로 고른 3개" loading="lazy"><figcaption>실제 결과 — 구매형 요청문으로 고른 3개</figcaption></figure>
+<div class="tw hdr"><table>
+<tr><th>키워드</th><th>월 검색수</th><th>클로드가 고른 이유</th></tr>
+<tr><td data-label="키워드">단백질도시락</td><td data-label="월 검색수">5,060</td><td data-label="클로드가 고른 이유">다이어트하는 사람이 성분을 따져 상품을 찾을 때 쓰는 단어</td></tr>
+<tr><td data-label="키워드">식단도시락</td><td data-label="월 검색수">2,060</td><td data-label="클로드가 고른 이유">식단 관리용으로 도시락을 사려는 사람이 쓰는 단어</td></tr>
+<tr><td data-label="키워드">다이어트도시락배달</td><td data-label="월 검색수">1,170</td><td data-label="클로드가 고른 이유">"배달"이 붙어 바로 주문할 사람이 쓰는 단어</td></tr>
+</table></div>
+<p>2026년 10월 14일 "다이어트도시락"으로 뽑은 실제 결과예요. 검색수는 최근 30일 기준이라 날마다 조금씩 달라요.</p>
+<hr>
+<h3>7. 상위 글 살펴보기</h3>
+<p>고른 키워드로 이미 상위에 있는 글이 어떤 모양인지 봐야 내 글 구조를 잡을 수 있어요. <strong>목록은 네이버 공식 검색 API로 가져오고, 본문은 직접 열어 봐요.</strong> <strong>① 네이버 개발자센터에서 키 받기</strong></p>
+<ol><li><code>developers.naver.com</code> → <strong>Application → 애플리케이션 등록</strong></li><li>사용 API에서 <strong>검색</strong>을 골라요.</li><li>등록하면 <strong>Client ID</strong>와 <strong>Client Secret</strong>이 나와요. 4절에서 만든 파일의 <code>NAVER_CLIENT_ID</code>, <code>NAVER_CLIENT_SECRET</code>에 넣어요.</li></ol>
+<p>검색 API는 하루 25,000번까지 부를 수 있어요.</p>
+<figure><img src="img/10.webp" alt="공식 문서 — 블로그 검색 API 요청 방법과 응답" loading="lazy"><figcaption>공식 문서 — 블로그 검색 API 요청 방법과 응답</figcaption></figure>
+<p><strong>② 상위 글 목록 받기 — 요청문</strong></p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">네이버 검색 API(블로그)로 &quot;{단백질도시락}&quot; 검색 결과 상위 10개 글 목록을 가져오는 파이썬 스크립트 blog_search.py를 만들어 줘.
+- GET https://openapi.naver.com/v1/search/blog.json, query, display=10, sort=sim
+- 헤더 X-Naver-Client-Id, X-Naver-Client-Secret. 키는 ~/.config/naver-searchad.env 의 NAVER_CLIENT_ID, NAVER_CLIENT_SECRET에서 읽고 출력하지 마.
+- 제목·요약·날짜·링크를 표로 보여 주고 top.json 으로 저장해.
+그다음 제목 10개의 공통점을 정리해 줘: 자주 들어간 단어, 후기·추천·비교 중 어떤 유형인지, &quot;직장인 점심&quot;처럼 상황을 넣었는지.</code></pre></div>
+<details class="tgl"><summary>완성 스크립트 — blog_search.py (직접 붙여 쓰기)</summary><div class="tgl-in"><div class="cw"><button class="cbtn" type="button">복사</button><pre><code>&quot;&quot;&quot;네이버 검색 API(블로그) — 키워드의 블로그 검색 결과 상위 글 목록(제목·요약·날짜·링크).
+
+    python3 blog_search.py 단백질도시락 --out top.json
+
+키는 ~/.config/naver-searchad.env 의 NAVER_CLIENT_ID, NAVER_CLIENT_SECRET 을 읽어요(네이버 개발자센터에서 발급).
+공식 문서: https://developers.naver.com/docs/serviceapi/search/blog/blog.md  (하루 25,000회)
+&quot;&quot;&quot;
+import argparse, html, json, os, re, sys, urllib.parse, urllib.request
+
+ENV = os.path.expanduser(os.environ.get(&quot;NAVER_ENV_FILE&quot;, &quot;~/.config/naver-searchad.env&quot;))
+
+
+def load_env(path=ENV):
+    vals = {}
+    with open(path) as f:
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith(&quot;#&quot;) and &quot;=&quot; in line:
+                k, v = line.split(&quot;=&quot;, 1)
+                vals[k.strip()] = v.strip().strip(&#x27;&quot;&#x27;).strip(&quot;&#x27;&quot;)
+    missing = [k for k in (&quot;NAVER_CLIENT_ID&quot;, &quot;NAVER_CLIENT_SECRET&quot;) if not vals.get(k)]
+    if missing:
+        sys.exit(f&quot;비어 있는 값: {&#x27;, &#x27;.join(missing)} ({path})&quot;)
+    return vals
+
+
+def clean(t):
+    return html.unescape(re.sub(r&quot;&lt;/?b&gt;&quot;, &quot;&quot;, t))
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument(&quot;keyword&quot;)
+    ap.add_argument(&quot;--n&quot;, type=int, default=10, help=&quot;가져올 글 수(최대 100)&quot;)
+    ap.add_argument(&quot;--out&quot;)
+    a = ap.parse_args()
+    env = load_env()
+    q = urllib.parse.urlencode({&quot;query&quot;: a.keyword, &quot;display&quot;: a.n, &quot;start&quot;: 1, &quot;sort&quot;: &quot;sim&quot;})
+    req = urllib.request.Request(f&quot;https://openapi.naver.com/v1/search/blog.json?{q}&quot;, headers={
+        &quot;X-Naver-Client-Id&quot;: env[&quot;NAVER_CLIENT_ID&quot;], &quot;X-Naver-Client-Secret&quot;: env[&quot;NAVER_CLIENT_SECRET&quot;]})
+    try:
+        with urllib.request.urlopen(req, timeout=20) as r:
+            data = json.load(r)
+    except urllib.error.HTTPError as e:
+        sys.exit(f&quot;HTTP {e.code}: {e.read().decode()[:300]}&quot;)
+    items = [{&quot;rank&quot;: i + 1, &quot;title&quot;: clean(x[&quot;title&quot;]), &quot;summary&quot;: clean(x[&quot;description&quot;]),
+              &quot;date&quot;: x[&quot;postdate&quot;], &quot;link&quot;: x[&quot;link&quot;]} for i, x in enumerate(data.get(&quot;items&quot;, []))]
+    if a.out:
+        json.dump({&quot;keyword&quot;: a.keyword, &quot;items&quot;: items}, open(a.out, &quot;w&quot;), ensure_ascii=False, indent=1)
+    print(f&quot;&#x27;{a.keyword}&#x27; 블로그 검색 결과 {data.get(&#x27;total&#x27;, 0):,}건 중 상위 {len(items)}개 (정확도순)&quot;)
+    for x in items:
+        print(f&quot;{x[&#x27;rank&#x27;]:&gt;2}. {x[&#x27;date&#x27;]} | {x[&#x27;title&#x27;][:50]}&quot;)
+
+
+if __name__ == &quot;__main__&quot;:
+    main()</code></pre></div>
+<p>실행: <code>python3 blog_search.py 단백질도시락 --out top.json</code></p></div></details>
+<p><strong>③ 본문은 직접 열어 보고 숫자만 메모</strong> API는 제목·요약·날짜까지만 줘요. 사진이 몇 장인지, 소제목을 썼는지는 <strong>상위 글 3~5개를 직접 열어 보고</strong> 아래처럼 적어서 클로드에 주세요.</p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">상위 글 메모
+1위: 사진 약 25장, 소제목 있음(종류별로 나눔), 글 길이 길다
+2위: 사진 약 15장, 소제목 있음(옵션 정리), 글 길이 중간
+3위: 사진 약 20장, 소제목 없음, 사진 + 짧은 문단</code></pre></div>
+<div class="lmnote"><p><strong>왜 본문은 직접 보나요</strong> 네이버는 블로그·검색 페이지에서 AI 봇의 자동 수집을 막아 두었어요(robots.txt). 그래서 이 가이드는 공식 API로 목록만 받고, 본문은 사람이 보는 방식으로 안내해요.</p></div>
+<hr>
+<h3>8. 초안 받기</h3>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">{단백질도시락}으로 쓸 우리 가게 블로그 글 초안을 써 줘.
+- 참고 1: top.json 상위 글 제목의 공통점
+- 참고 2: 아래 상위 글 메모
+{여기에 7절 메모 붙여 넣기}
+제목 1개, 소제목 5개, 소제목마다 들어갈 사진 1줄 메모.
+다른 블로그 문장은 쓰지 말고 구조만 참고해. 우리 가게 정보가 없는 곳은 {상품명} {가격}처럼 비워 둬.</code></pre></div>
+<figure><img src="img/11.webp" alt="실제 결과 — 제목 1개, 소제목 5개, 사진 메모" loading="lazy"><figcaption>실제 결과 — 제목 1개, 소제목 5개, 사진 메모</figcaption></figure>
+<hr>
+<h3>9. 한 번에 시키는 요청문</h3>
+<p>스크립트 두 개와 키 파일이 준비됐다면, 다음부터는 이 한 메시지면 돼요.</p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code data-lang="plain text">&quot;{다이어트도시락}&quot;으로 블로그 글 하나 준비해 줘.
+1) keywordstool.py로 연관 키워드를 뽑아 keywords.json에 저장해.
+2) 사려는 사람이 검색할 단어 중 월 검색수 1,000~10,000인 키워드 3개를 표로 골라 줘(경쟁 정도는 참고만).
+3) 그중 1위 키워드로 blog_search.py를 돌려 상위 10개 제목의 공통점을 정리해.
+4) 내가 상위 글 메모를 주면, 그 구조대로 제목 1개 + 소제목 5개 + 사진 메모 초안을 써 줘. 다른 블로그 문장은 쓰지 마.</code></pre></div>
+<hr>
+<h3>10. 자주 묻는 질문</h3>
+<p><strong>돈이 드나요?</strong> 검색광고 API는 신청·호출 과정에서 결제 단계가 없었어요(직접 확인). 네이버 검색 API는 하루 25,000번까지예요. Claude Code는 Pro 이상 유료 플랜이 필요해요. <strong>광고를 안 돌려도 되나요?</strong> 광고 계정은 있어야 해요. 광고가 일시 중지된 상태에서도 키 발급과 호출이 됐어요. <strong>검색수가 </strong><strong><code>&lt;10</code></strong><strong>으로 나와요.</strong> 최근 30일 검색수가 10 미만이라는 뜻이에요. 블로그 키워드로는 너무 작아요. <strong>경쟁 정도가 "높음"인데 써도 되나요?</strong> 경쟁 정도는 PC 광고 입찰 기준이에요. 블로그 글 경쟁과는 달라서, 상위 글을 직접 살펴보고 판단하는 게 정확해요. <strong>힌트 키워드는 몇 개까지 넣을 수 있나요?</strong> 한 번에 5개까지, 쉼표로 구분해요. 띄어쓰기는 빼고 넣어요. <strong>키가 새어 나간 것 같아요.</strong> 검색광고 키는 SA API 사용 관리에서 [재발급]을 누르세요. 이전 키는 쓸 수 없게 돼요.</p>
+<hr>
+<h3>11. 공식 링크</h3>
+<ul><li>네이버 검색광고 API 문서: <code>https://naver.github.io/searchad-apidoc/</code></li><li>네이버 광고시스템: <code>https://ads.naver.com</code></li><li>네이버 검색 API(블로그) 문서: <code>https://developers.naver.com/docs/serviceapi/search/blog/blog.md</code></li><li>Claude Code 설치: <code>https://code.claude.com/docs/en/setup</code></li></ul>
+<p>2026년 10월 15일 기준으로 확인했어요. · @work__zero</p>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>세 가지만 답하면 4단계 중 지금 위치를 바로 알려드려요. 무료예요.</p><span class="go">내 단계 진단하기 →</span></a>
+    <a class="cross" href="../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../../library/" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>
