@@ -182,6 +182,23 @@
  ],
  "notes": [
   {
+   "video_id": "8ZC1G1ezN5o",
+   "title": "연봉 100만 달러 직무가 온다 — AI 에이전트로 마케팅팀을 대신하는 '마케팅 엔지니어'",
+   "title_orig": "Marketing Engineer: The $1M Job with AI Agents",
+   "source": "Greg Isenberg",
+   "date": "2026-10-16",
+   "topic": "에이전트",
+   "summary": "Greg Isenberg가 앞으로 18~24개월 동안 테크 업계에서 가장 몸값이 높아질 사람으로 '마케팅 엔지니어'를 꼽아요. AI 에이전트·데이터·코드·안목으로 시장 신호를 영업 파이프라인으로 바꾸는 사람이에요. 마케팅의 네 시대, 가장 먼저 만들 '그로스 레포', 도구 조합, 에이전트 직무 기술서 쓰는 법, 냉난방 공조(HVAC) 소프트웨어 회사를 예로 든 시스템 6개, 돈 버는 길 4가지와 30일 학습 계획까지 담았어요.",
+   "points": [
+    "마케팅 기억은 대화창이 아니라 '그로스 레포'에 쌓으세요",
+    "에이전트마다 사람처럼 직무 기술서를 써 주세요",
+    "활동량 말고 결과로 재세요"
+   ],
+   "thumb": "notes/thumb/8ZC1G1ezN5o.webp",
+   "url": "notes/8ZC1G1ezN5o/",
+   "ready": true
+  },
+  {
    "video_id": "XfdIhd1g6EI",
    "title": "모델도 안 보고 1,000억 달러를 걸었다 — 저커버그·알렉산더 왕의 Muse Wonder",
    "title_orig": "Muse Wonder: Zuckerberg and Wang's $100B AI",
