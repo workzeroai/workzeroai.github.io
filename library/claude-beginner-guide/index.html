@@ -119,18 +119,21 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
 .dl p{margin:0;font-size:14px;color:var(--ink2);line-height:1.55}
 .dl .go{grid-column:2;justify-self:start;display:inline-flex;align-items:center;gap:8px;white-space:nowrap;padding:12px 20px;border-radius:12px;background:var(--gloss),var(--grad-btn);color:#fff;font-weight:800;font-size:15px;text-decoration:none;box-shadow:var(--glow)}
 .dl .go small{font-weight:600;opacity:.85;font-size:12.5px}
+figure.narrow{max-width:460px;margin-left:auto;margin-right:auto}
+a.zin{display:block;position:relative;cursor:zoom-in}
+@media (max-width:639px){a.zin::after{content:"크게 보기";position:absolute;right:8px;bottom:8px;padding:3px 8px;border-radius:999px;background:rgba(13,37,61,.72);color:#fff;font-size:11px;font-weight:700}}
 /* 한 줄짜리 복사 문장도 화면 폭에서 줄바꿈, 복사 버튼과 안 겹치게 */
 .cw pre{white-space:pre-wrap;padding-right:64px}.cw pre code{white-space:pre-wrap;word-break:keep-all;overflow-wrap:anywhere}
 @media (max-width:520px){.dl{grid-template-columns:72px 1fr;align-items:start}.dl img{width:72px}.dl .go{grid-column:1/-1;justify-self:stretch;justify-content:center}}
-</style><div class="dl"><img src="cover.webp" alt="클로드 처음 시작 가이드 표지" width="96"><div><div class="t">PDF 무료 다운로드</div><h2>21쪽 전체는 PDF로 받아 두세요</h2><p>이 페이지는 핵심 요약이에요. 화면 사진 단계, 용어 사전, 판정표까지 담긴 전체본은 PDF로 받아 인쇄하거나 휴대폰에 저장해 두고 보세요.</p></div><a class="go" href="claude_beginner_guide.pdf" download>PDF 내려받기 <small>21쪽 · 3.0MB</small></a></div>
+</style><div class="dl"><img src="cover.webp" alt="클로드 처음 시작 가이드 표지" width="96"><div><div class="t">PDF 무료 다운로드</div><h2>21쪽 전체는 PDF로 받아 두세요</h2><p>이 페이지는 핵심 요약이에요. 화면 사진 단계, 용어 사전, 판정표까지 담긴 전체본은 PDF로 받아 인쇄하거나 휴대폰에 저장해 두고 보세요.</p></div><a class="go" href="claude_beginner_guide.pdf" download>PDF 내려받기 <small>21쪽 · 2.9MB</small></a></div>
   <div class="bd">
 <div class="lmnote"><p><strong>이런 분을 위해 만들었어요.</strong> 클로드를 한 번도 안 써 봤거나, 가입만 해 두고 뭘 해야 할지 모르는 분. 이 페이지는 21쪽 PDF의 핵심만 모은 요약이에요. 화면 사진을 보면서 순서대로 따라 하면 일주일 안에 내 업무 하나를 클로드에게 맡길 수 있어요.</p></div>
 <p>클로드를 만든 회사 Anthropic이 무료로 공개한 공식 입문 강의 「Claude 101」(레슨 13개, 약 2시간 반)과 공식 도움말·요금 페이지, 실제 클로드 화면을 바탕으로 정리했어요. 화면 사진은 2026년 10월 18일에 찍었고, 개인정보는 흐리게 가렸어요.</p>
-<figure><img src="img/01.webp" alt="이 가이드의 순서 — 하루 30분이면 일주일 뒤 업무 하나를 맡길 수 있어요" loading="lazy"><figcaption>이 가이드의 순서 — 하루 30분이면 일주일 뒤 업무 하나를 맡길 수 있어요</figcaption></figure>
+<figure><a class="zin" href="img/01.webp" target="_blank" rel="noopener"><img src="img/01.webp" alt="이 가이드의 순서 — 하루 30분이면 일주일 뒤 업무 하나를 맡길 수 있어요" loading="lazy"></a><figcaption>이 가이드의 순서 — 하루 30분이면 일주일 뒤 업무 하나를 맡길 수 있어요</figcaption></figure>
 <h2>딱 세 개만 기억하세요</h2>
 <ol><li><strong>통째로 맡기기</strong> — 질문을 여러 번 쪼개지 말고, 받고 싶은 결과물을 설명해서 한 번에 맡기세요.</li><li><strong>세 줄 프롬프트</strong> — 배경 · 작업 · 규칙 세 줄만 넣으면 답이 내 상황에 맞춰져요.</li><li><strong>먼저 시험하기</strong> — 중요한 일은 내가 이미 해 본 일 다섯 개로 먼저 시험해 보고 맡기세요.</li></ol>
 <h2>1. 가입하고 열어 보기</h2>
-<figure><img src="img/02.webp" alt="claude.ai 첫 화면의 가입 버튼" loading="lazy"><figcaption>claude.ai 첫 화면의 가입 버튼</figcaption></figure>
+<figure class="narrow"><a class="zin" href="img/02.webp" target="_blank" rel="noopener"><img src="img/02.webp" alt="claude.ai 첫 화면의 가입 버튼" loading="lazy"></a><figcaption>claude.ai 첫 화면의 가입 버튼</figcaption></figure>
 <ol><li>인터넷 창에서 <code>claude.ai</code>에 들어가요.</li><li><strong>Google로 계속하기</strong> 또는 <strong>Apple로 계속하기</strong>를 누르면 가장 쉬워요.</li><li>이메일로 하려면 주소를 넣고 <strong>이메일로 계속하기</strong> → 받은편지함의 로그인 링크를 눌러요. 메일이 안 오면 스팸함에서 <code>@mail.anthropic.com</code>을 찾아보세요.</li><li>화면 안내에 따라 이름 등 몇 가지를 넣으면 첫 화면이 열려요.</li></ol>
 <p>컴퓨터(웹·Mac·Windows)와 휴대폰(iPhone·Android) 어디서든 같은 계정으로 쓰고, 대화가 이어져요. 앱은 <code>claude.com/download</code>에서 받아요.</p>
 <p><strong>무료 플랜에서도 돼요</strong></p>
@@ -139,19 +142,19 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
 <ul><li>리서치(여러 출처를 모아 보고서로)</li><li>Claude Code(개발 도구), Chrome 확장 · Microsoft 365 연동</li><li>가장 높은 성능 모델(Opus 등)</li><li>더 많은 사용량, 작업 맡기기 · 예약 실행</li></ul>
 <p>무료 플랜은 <strong>5시간마다</strong> 쓸 수 있는 양이 다시 채워져요. 돈이 드는 결정 전에는 <code>claude.com/pricing</code>을 한 번 더 확인하세요.</p>
 <h2>2. 화면 둘러보기</h2>
-<figure><img src="img/03.webp" alt="로그인하면 보이는 첫 화면 — 볼 곳은 번호 8개뿐이에요 (개인정보는 흐리게 가림)" loading="lazy"><figcaption>로그인하면 보이는 첫 화면 — 볼 곳은 번호 8개뿐이에요 (개인정보는 흐리게 가림)</figcaption></figure>
+<figure><a class="zin" href="img/03.webp" target="_blank" rel="noopener"><img src="img/03.webp" alt="로그인하면 보이는 첫 화면 — 볼 곳은 번호 8개뿐이에요 (개인정보는 흐리게 가림)" loading="lazy"></a><figcaption>로그인하면 보이는 첫 화면 — 볼 곳은 번호 8개뿐이에요 (개인정보는 흐리게 가림)</figcaption></figure>
 <ol><li><strong>새로 생성</strong> — 새 대화 시작. 주제가 바뀌거나 대화가 꼬였을 때도 여기서 새로</li><li><strong>프로젝트</strong> — 자료와 규칙을 넣어 두는 작업 폴더</li><li><strong>아티팩트</strong> — 클로드가 만들어 준 문서·표 같은 결과물 모음</li><li><strong>입력창</strong> — 부탁할 내용을 쓰는 곳. 줄을 바꾸려면 Shift+엔터</li><li><strong>+ 버튼</strong> — 파일·사진 올리기, 커넥터, 리서치 같은 도구</li><li><strong>모델 이름</strong> — 어떤 클로드와 대화할지. 처음엔 기본값 그대로</li><li><strong>유령 아이콘</strong> — 시크릿 채팅 — 기록이 남지 않고 학습에 쓰이지 않는 대화</li><li><strong>내 이름</strong> — 누르면 설정이 열려요</li></ol>
 <h3>처음 할 설정 두 가지</h3>
 <p><strong>① Claude 지침 — 내 소개 한 번만 적기.</strong> 내 이름 → 설정 → <strong>계정</strong> → <strong>Claude 지침</strong>. 여기 적은 내용은 모든 대화에 적용돼요.</p>
-<figure><img src="img/04.webp" alt="Claude 지침 칸 (사진의 이름·내용은 흐리게 가림)" loading="lazy"><figcaption>Claude 지침 칸 (사진의 이름·내용은 흐리게 가림)</figcaption></figure>
+<figure><a class="zin" href="img/04.webp" target="_blank" rel="noopener"><img src="img/04.webp" alt="Claude 지침 칸 (사진의 이름·내용은 흐리게 가림)" loading="lazy"></a><figcaption>Claude 지침 칸 (사진의 이름·내용은 흐리게 가림)</figcaption></figure>
 <div class="cw"><button class="cbtn" type="button">복사</button><pre><code>저는 ○○ 회사 마케팅팀에서 SNS를 맡고 있어요. 답은 짧게, 존댓말로, 결론부터 주세요.</code></pre></div>
 <p><strong>② 개인정보보호 — 내 대화를 학습에 쓸지 고르기.</strong> 설정 → <strong>개인정보보호</strong>에서 'Help improve our AI models'를 끄면 내 대화가 Claude 개선에 쓰이지 않아요.</p>
-<figure><img src="img/05.webp" alt="설정 → 개인정보보호 화면" loading="lazy"><figcaption>설정 → 개인정보보호 화면</figcaption></figure>
+<figure><a class="zin" href="img/05.webp" target="_blank" rel="noopener"><img src="img/05.webp" alt="설정 → 개인정보보호 화면" loading="lazy"></a><figcaption>설정 → 개인정보보호 화면</figcaption></figure>
 <h2>3. 첫 대화 — 같은 부탁을 두 번 해 보세요</h2>
 <p><strong>짧게 "신제품 소개 글 써 줘"</strong> 라고 하면, 어떤 제품인지·누구에게·어디에 올릴 건지 되물어요.</p>
-<figure><img src="img/06.webp" alt="짧게 물었을 때 — 바로 쓸 글 대신 질문이 돌아와요" loading="lazy"><figcaption>짧게 물었을 때 — 바로 쓸 글 대신 질문이 돌아와요</figcaption></figure>
+<figure><a class="zin" href="img/06.webp" target="_blank" rel="noopener"><img src="img/06.webp" alt="짧게 물었을 때 — 바로 쓸 글 대신 질문이 돌아와요" loading="lazy"></a><figcaption>짧게 물었을 때 — 바로 쓸 글 대신 질문이 돌아와요</figcaption></figure>
 <p><strong>배경 · 작업 · 규칙 세 줄로</strong> 물으면 첫 답에 바로 쓸 수 있는 글이 나와요.</p>
-<figure><img src="img/07.webp" alt="세 줄로 물었을 때 — 대상·분량·말투가 다 맞춰져 나와요" loading="lazy"><figcaption>세 줄로 물었을 때 — 대상·분량·말투가 다 맞춰져 나와요</figcaption></figure>
+<figure><a class="zin" href="img/07.webp" target="_blank" rel="noopener"><img src="img/07.webp" alt="세 줄로 물었을 때 — 대상·분량·말투가 다 맞춰져 나와요" loading="lazy"></a><figcaption>세 줄로 물었을 때 — 대상·분량·말투가 다 맞춰져 나와요</figcaption></figure>
 <div class="tw hdr"><table>
 <tr><th>답이 별로일 때</th><th>이렇게 말해요</th></tr>
 <tr><td data-label="답이 별로일 때">너무 길어요</td><td data-label="이렇게 말해요">"두 문단으로 줄여 줘"</td></tr>
@@ -162,16 +165,16 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
 </table></div>
 <h2>핵심 ① 통째로 맡기기</h2>
 <p>여러 단계짜리 일을 질문 여러 개로 쪼개면, 단계를 잇는 일은 결국 내가 해요. <strong>받고 싶은 결과물</strong>을 처음부터 설명하면 클로드가 계획하고, 만들어서 돌려줘요.</p>
-<figure><img src="img/08.webp" alt="질문을 쪼개는 대신 결과물을 한 번에 맡기기" loading="lazy"><figcaption>질문을 쪼개는 대신 결과물을 한 번에 맡기기</figcaption></figure>
+<figure><a class="zin" href="img/08.webp" target="_blank" rel="noopener"><img src="img/08.webp" alt="질문을 쪼개는 대신 결과물을 한 번에 맡기기" loading="lazy"></a><figcaption>질문을 쪼개는 대신 결과물을 한 번에 맡기기</figcaption></figure>
 <div class="cw"><button class="cbtn" type="button">복사</button><pre><code>(결과물 이름)을 만들어 주세요.
 재료: (올린 파일 / 붙여 넣은 내용 / 웹에서 찾기)
 들어갈 것: (항목 1), (항목 2), (항목 3)
 모양: (표 / 한 페이지 문서 / 슬라이드), 분량 (○쪽 / ○줄)
 누가 볼 건지: (팀장님 / 고객 / 나)</code></pre></div>
-<figure><img src="img/09.webp" alt="한 번 부탁한 결과 — 왼쪽은 대화, 오른쪽은 만들어진 문서 (이름과 링크는 흐리게 가림)" loading="lazy"><figcaption>한 번 부탁한 결과 — 왼쪽은 대화, 오른쪽은 만들어진 문서 (이름과 링크는 흐리게 가림)</figcaption></figure>
+<figure><a class="zin" href="img/09.webp" target="_blank" rel="noopener"><img src="img/09.webp" alt="한 번 부탁한 결과 — 왼쪽은 대화, 오른쪽은 만들어진 문서 (이름과 링크는 흐리게 가림)" loading="lazy"></a><figcaption>한 번 부탁한 결과 — 왼쪽은 대화, 오른쪽은 만들어진 문서 (이름과 링크는 흐리게 가림)</figcaption></figure>
 <h2>핵심 ② 세 줄 프롬프트</h2>
 <p>짧게 물으면 클로드는 내 상황을 몰라서 되묻거나 두루뭉술하게 답해요. <strong>배경 · 작업 · 규칙</strong> 세 줄만 넣으면 첫 답부터 내 상황에 맞춰져요.</p>
-<figure><img src="img/10.webp" alt="배경 · 작업 · 규칙 세 줄" loading="lazy"><figcaption>배경 · 작업 · 규칙 세 줄</figcaption></figure>
+<figure><a class="zin" href="img/10.webp" target="_blank" rel="noopener"><img src="img/10.webp" alt="배경 · 작업 · 규칙 세 줄" loading="lazy"></a><figcaption>배경 · 작업 · 규칙 세 줄</figcaption></figure>
 <div class="cw"><button class="cbtn" type="button">복사</button><pre><code>저는 (내 역할)이고, (왜 필요한지).
 (무엇을) 해 주세요.
 (누가 볼지) 대상이고, (모양·분량)으로, (말투)로 써 주세요.</code></pre></div>
@@ -182,10 +185,10 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
 </table></div>
 <h2>핵심 ③ 먼저 시험하기</h2>
 <p>중요한 일을 바로 맡기지 말고, <strong>결과를 이미 아는 지난 작업</strong>으로 먼저 시험하세요. 잘 맞는 일은 계속 맡기고, 여러 번 다듬어도 안 맞는 일은 내가 해요.</p>
-<figure><img src="img/11.webp" alt="지난 작업으로 시험하고 판정하기" loading="lazy"><figcaption>지난 작업으로 시험하고 판정하기</figcaption></figure>
+<figure><a class="zin" href="img/11.webp" target="_blank" rel="noopener"><img src="img/11.webp" alt="지난 작업으로 시험하고 판정하기" loading="lazy"></a><figcaption>지난 작업으로 시험하고 판정하기</figcaption></figure>
 <ol><li><strong>지난 작업 5~10개 고르기</strong> — 내가 쓴 메일, 만든 보고서처럼 정답을 아는 것</li><li><strong>같은 결과가 나오게 부탁하기</strong> — 그 일을 할 때 알던 사정까지 세 줄 프롬프트에 넣어서</li><li><strong>내 결과와 나란히 비교하기</strong> — 핵심을 잡았나? 말투가 맞나? 빠진 건?</li><li><strong>판정하기</strong> — 맞으면 '맡길 일', 고쳐도 안 맞으면 '내가 할 일'</li></ol>
 <h2>하루 30분, 7일 실습 플랜</h2>
-<figure><img src="img/12.webp" alt="7일 실습 플랜" loading="lazy"><figcaption>7일 실습 플랜</figcaption></figure>
+<figure><a class="zin" href="img/12.webp" target="_blank" rel="noopener"><img src="img/12.webp" alt="7일 실습 플랜" loading="lazy"></a><figcaption>7일 실습 플랜</figcaption></figure>
 <div class="tw hdr"><table>
 <tr><th>일차</th><th>할 일</th><th>끝났다고 볼 기준</th></tr>
 <tr><td data-label="일차">1일</td><td data-label="할 일">가입하고 앱 깔기. Claude 지침에 내 일과 원하는 말투 적기</td><td data-label="끝났다고 볼 기준">컴퓨터와 휴대폰에서 같은 대화가 보인다</td></tr>
@@ -230,7 +233,7 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
 <h2>공식 자료</h2>
 <ul><li>원문 강의 Claude 101: <a href="https://academy.claude.com/ko/courses/claude-101" target="_blank" rel="noopener">academy.claude.com/ko/courses/claude-101</a> — 무료, 한국어, 퀴즈를 풀면 수료 배지</li><li>공식 도움말: <a href="https://support.claude.com" target="_blank" rel="noopener">support.claude.com</a></li><li>요금: <a href="https://claude.com/pricing" target="_blank" rel="noopener">claude.com/pricing</a></li><li>앱 받기: <a href="https://claude.com/download" target="_blank" rel="noopener">claude.com/download</a></li></ul>
 <p>기준일 2026년 10월 18일. 클로드는 화면과 요금이 자주 바뀌어요. 버튼 위치가 조금 달라도 이름은 비슷하니 같은 이름을 찾아보세요.</p>
-<div class="dl"><img src="cover.webp" alt="클로드 처음 시작 가이드 표지" width="96"><div><div class="t">PDF 무료 다운로드</div><h2>따라 하다 막히면 PDF를 펼쳐 보세요</h2><p>가입부터 7일 실습까지 21쪽에 순서대로 담았어요.</p></div><a class="go" href="claude_beginner_guide.pdf" download>PDF 내려받기 <small>21쪽 · 3.0MB</small></a></div>
+<div class="dl"><img src="cover.webp" alt="클로드 처음 시작 가이드 표지" width="96"><div><div class="t">PDF 무료 다운로드</div><h2>따라 하다 막히면 PDF를 펼쳐 보세요</h2><p>가입부터 7일 실습까지 21쪽에 순서대로 담았어요.</p></div><a class="go" href="claude_beginner_guide.pdf" download>PDF 내려받기 <small>21쪽 · 2.9MB</small></a></div>
   </div>
 </div>
 <div class="foot"><div class="rd">
