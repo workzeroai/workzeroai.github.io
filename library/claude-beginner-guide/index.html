@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>클로드 처음 시작 가이드 · 워크제로 자료실</title>
+<meta name="description" content="공식 강의 Claude 101을 21쪽으로 — 가입 화면 사진, 복사해 쓰는 문장 12개, 7일 실습표">
+<link rel="canonical" href="https://workzeroai.github.io/library/claude-beginner-guide/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#2462e0">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="클로드 처음 시작 가이드">
+<meta property="og:description" content="공식 강의 Claude 101을 21쪽으로 — 가입 화면 사진, 복사해 쓰는 문장 12개, 7일 실습표">
+<meta property="og:url" content="https://workzeroai.github.io/library/claude-beginner-guide/">
+<meta property="og:image" content="https://workzeroai.github.io/library/thumb/claude-beginner-guide.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="클로드 처음 시작 가이드">
+<meta name="twitter:description" content="공식 강의 Claude 101을 21쪽으로 — 가입 화면 사진, 복사해 쓰는 문장 12개, 7일 실습표">
+<meta name="twitter:image" content="https://workzeroai.github.io/library/thumb/claude-beginner-guide.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+.tgl{margin:18px 0;border:1px solid var(--hair);border-radius:14px;background:var(--soft)}.tgl>summary{cursor:pointer;padding:14px 18px;font-weight:700;color:var(--ink);list-style:none}.tgl>summary::before{content:"▸ ";color:var(--primary)}.tgl[open]>summary::before{content:"▾ "}.tgl-in{padding:0 14px 14px}
+:root{--primary:#2462e0;--primary-deep:#1a4fb8;--primary-pale:#e5effd;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f4f8fe;--hair:#dfe7f2;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+/* WZ-COBALT-C */:root{--grad-btn:linear-gradient(135deg,#2b74f0 0%,#2462e0 50%,#1d55d6 100%);--gloss:radial-gradient(120% 90% at 30% 0%,rgba(255,255,255,.28) 0,rgba(255,255,255,0) 55%);--glow:0 12px 28px -10px rgba(36,98,224,.75),0 2px 6px -1px rgba(29,85,214,.35)}.btn.pri,.fbtn,.rcta .p1,.price.best .pick,.price .pop{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:var(--glow),inset 0 1px 0 rgba(255,255,255,.35)}.fchip.on{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:0 8px 18px -8px rgba(36,98,224,.8),inset 0 1px 0 rgba(255,255,255,.35)}.btn.pri:hover,.fbtn:hover,.rcta .p1:hover{filter:brightness(1.08) saturate(1.1)}.lv-head,.svr.win{background:var(--gloss),var(--grad-btn)}.eyebrow{background:linear-gradient(135deg,#e5effd,#d3e6ff);color:#1a4fb8}.logo b{color:#2b74f0}.fmeta i,.nm i{background:linear-gradient(135deg,#e5effd,#d6e7ff);color:#1a4fb8}.paneNote{background:linear-gradient(135deg,#eaf3ff 0%,#f7fbff 60%,#fff 100%);border-color:#d3e3fb}.keys{background:linear-gradient(135deg,#e5effd,#f2f8ff)}.nkeys span::before,.keys li::before{background:linear-gradient(135deg,#3b8cff,#1d55d6)}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴"><a href="../../tutoring/">1:1 과외</a><a href="../../build/">제작 문의</a><a class="on" href="../../library/" aria-current="page">자료실</a></div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../../library/">← 자료실</a>
+  <div class="head"><div class="m"><i>실전 가이드</i><span>2026-10-18</span></div><h1>클로드 처음 시작 가이드</h1></div>
+  <style>
+.dl{display:grid;grid-template-columns:96px 1fr;gap:14px 18px;align-items:center;margin:0 0 30px;padding:18px;border-radius:18px;background:var(--primary-pale);border:1px solid #cddcf6}
+.dl img{width:96px;border-radius:8px;box-shadow:0 8px 20px -8px rgba(13,37,61,.45)}
+.dl .t{font-size:13px;font-weight:800;color:var(--primary);letter-spacing:-.01em}
+.dl .bd-x h2,.dl h2{margin:4px 0 6px;padding:0;border:0;font-size:19px;font-weight:800;letter-spacing:-.03em;line-height:1.35;color:var(--ink)}
+.dl p{margin:0;font-size:14px;color:var(--ink2);line-height:1.55}
+.dl .go{grid-column:2;justify-self:start;display:inline-flex;align-items:center;gap:8px;white-space:nowrap;padding:12px 20px;border-radius:12px;background:var(--gloss),var(--grad-btn);color:#fff;font-weight:800;font-size:15px;text-decoration:none;box-shadow:var(--glow)}
+.dl .go small{font-weight:600;opacity:.85;font-size:12.5px}
+/* 한 줄짜리 복사 문장도 화면 폭에서 줄바꿈, 복사 버튼과 안 겹치게 */
+.cw pre{white-space:pre-wrap;padding-right:64px}.cw pre code{white-space:pre-wrap;word-break:keep-all;overflow-wrap:anywhere}
+@media (max-width:520px){.dl{grid-template-columns:72px 1fr;align-items:start}.dl img{width:72px}.dl .go{grid-column:1/-1;justify-self:stretch;justify-content:center}}
+</style><div class="dl"><img src="cover.webp" alt="클로드 처음 시작 가이드 표지" width="96"><div><div class="t">PDF 무료 다운로드</div><h2>21쪽 전체는 PDF로 받아 두세요</h2><p>이 페이지는 핵심 요약이에요. 화면 사진 단계, 용어 사전, 판정표까지 담긴 전체본은 PDF로 받아 인쇄하거나 휴대폰에 저장해 두고 보세요.</p></div><a class="go" href="claude_beginner_guide.pdf" download>PDF 내려받기 <small>21쪽 · 3.0MB</small></a></div>
+  <div class="bd">
+<div class="lmnote"><p><strong>이런 분을 위해 만들었어요.</strong> 클로드를 한 번도 안 써 봤거나, 가입만 해 두고 뭘 해야 할지 모르는 분. 이 페이지는 21쪽 PDF의 핵심만 모은 요약이에요. 화면 사진을 보면서 순서대로 따라 하면 일주일 안에 내 업무 하나를 클로드에게 맡길 수 있어요.</p></div>
+<p>클로드를 만든 회사 Anthropic이 무료로 공개한 공식 입문 강의 「Claude 101」(레슨 13개, 약 2시간 반)과 공식 도움말·요금 페이지, 실제 클로드 화면을 바탕으로 정리했어요. 화면 사진은 2026년 10월 18일에 찍었고, 개인정보는 흐리게 가렸어요.</p>
+<figure><img src="img/01.webp" alt="이 가이드의 순서 — 하루 30분이면 일주일 뒤 업무 하나를 맡길 수 있어요" loading="lazy"><figcaption>이 가이드의 순서 — 하루 30분이면 일주일 뒤 업무 하나를 맡길 수 있어요</figcaption></figure>
+<h2>딱 세 개만 기억하세요</h2>
+<ol><li><strong>통째로 맡기기</strong> — 질문을 여러 번 쪼개지 말고, 받고 싶은 결과물을 설명해서 한 번에 맡기세요.</li><li><strong>세 줄 프롬프트</strong> — 배경 · 작업 · 규칙 세 줄만 넣으면 답이 내 상황에 맞춰져요.</li><li><strong>먼저 시험하기</strong> — 중요한 일은 내가 이미 해 본 일 다섯 개로 먼저 시험해 보고 맡기세요.</li></ol>
+<h2>1. 가입하고 열어 보기</h2>
+<figure><img src="img/02.webp" alt="claude.ai 첫 화면의 가입 버튼" loading="lazy"><figcaption>claude.ai 첫 화면의 가입 버튼</figcaption></figure>
+<ol><li>인터넷 창에서 <code>claude.ai</code>에 들어가요.</li><li><strong>Google로 계속하기</strong> 또는 <strong>Apple로 계속하기</strong>를 누르면 가장 쉬워요.</li><li>이메일로 하려면 주소를 넣고 <strong>이메일로 계속하기</strong> → 받은편지함의 로그인 링크를 눌러요. 메일이 안 오면 스팸함에서 <code>@mail.anthropic.com</code>을 찾아보세요.</li><li>화면 안내에 따라 이름 등 몇 가지를 넣으면 첫 화면이 열려요.</li></ol>
+<p>컴퓨터(웹·Mac·Windows)와 휴대폰(iPhone·Android) 어디서든 같은 계정으로 쓰고, 대화가 이어져요. 앱은 <code>claude.com/download</code>에서 받아요.</p>
+<p><strong>무료 플랜에서도 돼요</strong></p>
+<ul><li>웹 · 데스크톱 · 휴대폰 채팅, 음성 모드</li><li>웹 검색, 파일 올리기 · 파일 만들기</li><li>아티팩트(문서 · 표 · 대시보드 등 결과물)</li><li>메모리 · 커넥터(다른 앱 연결)</li><li>프로젝트 최대 5개</li></ul>
+<p><strong>유료 플랜(Pro 이상)부터 돼요</strong></p>
+<ul><li>리서치(여러 출처를 모아 보고서로)</li><li>Claude Code(개발 도구), Chrome 확장 · Microsoft 365 연동</li><li>가장 높은 성능 모델(Opus 등)</li><li>더 많은 사용량, 작업 맡기기 · 예약 실행</li></ul>
+<p>무료 플랜은 <strong>5시간마다</strong> 쓸 수 있는 양이 다시 채워져요. 돈이 드는 결정 전에는 <code>claude.com/pricing</code>을 한 번 더 확인하세요.</p>
+<h2>2. 화면 둘러보기</h2>
+<figure><img src="img/03.webp" alt="로그인하면 보이는 첫 화면 — 볼 곳은 번호 8개뿐이에요 (개인정보는 흐리게 가림)" loading="lazy"><figcaption>로그인하면 보이는 첫 화면 — 볼 곳은 번호 8개뿐이에요 (개인정보는 흐리게 가림)</figcaption></figure>
+<ol><li><strong>새로 생성</strong> — 새 대화 시작. 주제가 바뀌거나 대화가 꼬였을 때도 여기서 새로</li><li><strong>프로젝트</strong> — 자료와 규칙을 넣어 두는 작업 폴더</li><li><strong>아티팩트</strong> — 클로드가 만들어 준 문서·표 같은 결과물 모음</li><li><strong>입력창</strong> — 부탁할 내용을 쓰는 곳. 줄을 바꾸려면 Shift+엔터</li><li><strong>+ 버튼</strong> — 파일·사진 올리기, 커넥터, 리서치 같은 도구</li><li><strong>모델 이름</strong> — 어떤 클로드와 대화할지. 처음엔 기본값 그대로</li><li><strong>유령 아이콘</strong> — 시크릿 채팅 — 기록이 남지 않고 학습에 쓰이지 않는 대화</li><li><strong>내 이름</strong> — 누르면 설정이 열려요</li></ol>
+<h3>처음 할 설정 두 가지</h3>
+<p><strong>① Claude 지침 — 내 소개 한 번만 적기.</strong> 내 이름 → 설정 → <strong>계정</strong> → <strong>Claude 지침</strong>. 여기 적은 내용은 모든 대화에 적용돼요.</p>
+<figure><img src="img/04.webp" alt="Claude 지침 칸 (사진의 이름·내용은 흐리게 가림)" loading="lazy"><figcaption>Claude 지침 칸 (사진의 이름·내용은 흐리게 가림)</figcaption></figure>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code>저는 ○○ 회사 마케팅팀에서 SNS를 맡고 있어요. 답은 짧게, 존댓말로, 결론부터 주세요.</code></pre></div>
+<p><strong>② 개인정보보호 — 내 대화를 학습에 쓸지 고르기.</strong> 설정 → <strong>개인정보보호</strong>에서 'Help improve our AI models'를 끄면 내 대화가 Claude 개선에 쓰이지 않아요.</p>
+<figure><img src="img/05.webp" alt="설정 → 개인정보보호 화면" loading="lazy"><figcaption>설정 → 개인정보보호 화면</figcaption></figure>
+<h2>3. 첫 대화 — 같은 부탁을 두 번 해 보세요</h2>
+<p><strong>짧게 "신제품 소개 글 써 줘"</strong> 라고 하면, 어떤 제품인지·누구에게·어디에 올릴 건지 되물어요.</p>
+<figure><img src="img/06.webp" alt="짧게 물었을 때 — 바로 쓸 글 대신 질문이 돌아와요" loading="lazy"><figcaption>짧게 물었을 때 — 바로 쓸 글 대신 질문이 돌아와요</figcaption></figure>
+<p><strong>배경 · 작업 · 규칙 세 줄로</strong> 물으면 첫 답에 바로 쓸 수 있는 글이 나와요.</p>
+<figure><img src="img/07.webp" alt="세 줄로 물었을 때 — 대상·분량·말투가 다 맞춰져 나와요" loading="lazy"><figcaption>세 줄로 물었을 때 — 대상·분량·말투가 다 맞춰져 나와요</figcaption></figure>
+<div class="tw hdr"><table>
+<tr><th>답이 별로일 때</th><th>이렇게 말해요</th></tr>
+<tr><td data-label="답이 별로일 때">너무 길어요</td><td data-label="이렇게 말해요">"두 문단으로 줄여 줘"</td></tr>
+<tr><td data-label="답이 별로일 때">너무 딱딱해요</td><td data-label="이렇게 말해요">"친구한테 말하듯 편하게 바꿔 줘"</td></tr>
+<tr><td data-label="답이 별로일 때">형식이 달라요</td><td data-label="이렇게 말해요">(원하는 모양을 붙여 넣고) "이 형식으로 다시"</td></tr>
+<tr><td data-label="답이 별로일 때">엉뚱해요</td><td data-label="이렇게 말해요">"내가 물은 건 X가 아니라 Y야" — 그래도 안 되면 '새로 생성'</td></tr>
+<tr><td data-label="답이 별로일 때">맞는지 모르겠어요</td><td data-label="이렇게 말해요">"출처를 달아 줘", "확실하지 않은 건 표시해 줘"</td></tr>
+</table></div>
+<h2>핵심 ① 통째로 맡기기</h2>
+<p>여러 단계짜리 일을 질문 여러 개로 쪼개면, 단계를 잇는 일은 결국 내가 해요. <strong>받고 싶은 결과물</strong>을 처음부터 설명하면 클로드가 계획하고, 만들어서 돌려줘요.</p>
+<figure><img src="img/08.webp" alt="질문을 쪼개는 대신 결과물을 한 번에 맡기기" loading="lazy"><figcaption>질문을 쪼개는 대신 결과물을 한 번에 맡기기</figcaption></figure>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code>(결과물 이름)을 만들어 주세요.
+재료: (올린 파일 / 붙여 넣은 내용 / 웹에서 찾기)
+들어갈 것: (항목 1), (항목 2), (항목 3)
+모양: (표 / 한 페이지 문서 / 슬라이드), 분량 (○쪽 / ○줄)
+누가 볼 건지: (팀장님 / 고객 / 나)</code></pre></div>
+<figure><img src="img/09.webp" alt="한 번 부탁한 결과 — 왼쪽은 대화, 오른쪽은 만들어진 문서 (이름과 링크는 흐리게 가림)" loading="lazy"><figcaption>한 번 부탁한 결과 — 왼쪽은 대화, 오른쪽은 만들어진 문서 (이름과 링크는 흐리게 가림)</figcaption></figure>
+<h2>핵심 ② 세 줄 프롬프트</h2>
+<p>짧게 물으면 클로드는 내 상황을 몰라서 되묻거나 두루뭉술하게 답해요. <strong>배경 · 작업 · 규칙</strong> 세 줄만 넣으면 첫 답부터 내 상황에 맞춰져요.</p>
+<figure><img src="img/10.webp" alt="배경 · 작업 · 규칙 세 줄" loading="lazy"><figcaption>배경 · 작업 · 규칙 세 줄</figcaption></figure>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code>저는 (내 역할)이고, (왜 필요한지).
+(무엇을) 해 주세요.
+(누가 볼지) 대상이고, (모양·분량)으로, (말투)로 써 주세요.</code></pre></div>
+<div class="tw hdr"><table>
+<tr><th>한 줄로 물으면</th><th>세 줄로 물으면</th></tr>
+<tr><td data-label="한 줄로 물으면">회의록 정리해 줘</td><td data-label="세 줄로 물으면">저는 5명 팀의 팀장이에요. 이 회의록에서 결정된 것과 할 일을 뽑아 주세요. 담당자·마감일 표로, 팀 메신저에 바로 올릴 수 있게요.</td></tr>
+<tr><td data-label="한 줄로 물으면">사과 메일 써 줘</td><td data-label="세 줄로 물으면">저는 쇼핑몰 CS 담당이에요. 배송이 2주 늦어진 고객에게 사과 메일을 써 주세요. 두 번째 지연이라 정중하게, 쿠폰 안내 포함, 5문장 이내로요.</td></tr>
+</table></div>
+<h2>핵심 ③ 먼저 시험하기</h2>
+<p>중요한 일을 바로 맡기지 말고, <strong>결과를 이미 아는 지난 작업</strong>으로 먼저 시험하세요. 잘 맞는 일은 계속 맡기고, 여러 번 다듬어도 안 맞는 일은 내가 해요.</p>
+<figure><img src="img/11.webp" alt="지난 작업으로 시험하고 판정하기" loading="lazy"><figcaption>지난 작업으로 시험하고 판정하기</figcaption></figure>
+<ol><li><strong>지난 작업 5~10개 고르기</strong> — 내가 쓴 메일, 만든 보고서처럼 정답을 아는 것</li><li><strong>같은 결과가 나오게 부탁하기</strong> — 그 일을 할 때 알던 사정까지 세 줄 프롬프트에 넣어서</li><li><strong>내 결과와 나란히 비교하기</strong> — 핵심을 잡았나? 말투가 맞나? 빠진 건?</li><li><strong>판정하기</strong> — 맞으면 '맡길 일', 고쳐도 안 맞으면 '내가 할 일'</li></ol>
+<h2>하루 30분, 7일 실습 플랜</h2>
+<figure><img src="img/12.webp" alt="7일 실습 플랜" loading="lazy"><figcaption>7일 실습 플랜</figcaption></figure>
+<div class="tw hdr"><table>
+<tr><th>일차</th><th>할 일</th><th>끝났다고 볼 기준</th></tr>
+<tr><td data-label="일차">1일</td><td data-label="할 일">가입하고 앱 깔기. Claude 지침에 내 일과 원하는 말투 적기</td><td data-label="끝났다고 볼 기준">컴퓨터와 휴대폰에서 같은 대화가 보인다</td></tr>
+<tr><td data-label="일차">2일</td><td data-label="할 일">궁금한 것 하나를 짧게 한 번, 세 줄로 한 번 물어보기</td><td data-label="끝났다고 볼 기준">두 답의 차이를 내 말로 설명할 수 있다</td></tr>
+<tr><td data-label="일차">3일</td><td data-label="할 일">업무 파일 하나를 + 버튼으로 올려 "내가 알아야 할 것만 3줄로" 요약 받기</td><td data-label="끝났다고 볼 기준">파일을 다 읽지 않고도 요점을 안다</td></tr>
+<tr><td data-label="일차">4일</td><td data-label="할 일">자주 하는 일 하나로 프로젝트 만들기. 자료 2~3개와 규칙 넣기</td><td data-label="끝났다고 볼 기준">그 프로젝트에선 자료를 다시 안 올린다</td></tr>
+<tr><td data-label="일차">5일</td><td data-label="할 일">같은 내용을 "요약해 줘"와 "○○용 한 페이지 문서로 만들어 줘"로 각각 부탁</td><td data-label="끝났다고 볼 기준">바로 쓸 수 있는 결과물이 하나 생긴다</td></tr>
+<tr><td data-label="일차">6일</td><td data-label="할 일">지난 작업 5개로 시험하고 판정하기</td><td data-label="끝났다고 볼 기준">'맡길 일'과 '내가 할 일'이 하나씩 정해진다</td></tr>
+<tr><td data-label="일차">7일</td><td data-label="할 일">'맡길 일' 하나를 맡기는 문장 틀로 통째로 부탁하기</td><td data-label="끝났다고 볼 기준">다음 주에 같은 일을 한 번의 부탁으로 시작한다</td></tr>
+</table></div>
+<h2>복사해서 바로 쓰는 문장 12개</h2>
+<p>괄호 안만 내 상황으로 바꿔서 쓰세요.</p>
+<p><strong>메일 답장</strong></p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code>저는 (역할)이에요. 아래 메일에 (수락/거절/일정 조율) 답장을 써 주세요. (상대)에게 보내는 거라 (정중하게/편하게), 5문장 이내로요.</code></pre></div>
+<p><strong>회의록 정리</strong></p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code>이 회의 내용에서 결정된 것과 할 일을 뽑아 주세요. 할 일은 담당자·마감일 표로 주세요.</code></pre></div>
+<p><strong>보고서 초안</strong></p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code>저는 (팀/역할)이에요. 아래 자료로 (팀장님/대표님)께 올릴 (주간/월간) 보고서를 써 주세요. 결론 먼저, 한 페이지로요.</code></pre></div>
+<p><strong>긴 문서 요약</strong></p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code>이 문서에서 (내 입장)으로서 알아야 할 것만 3줄로, 결정이 필요한 건 따로 표시해 주세요.</code></pre></div>
+<p><strong>엑셀 수식</strong></p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code>(열 구성)인 표에서 (원하는 계산)을 하는 수식을 알려 주세요. 수식과 넣는 순서를 번호로요.</code></pre></div>
+<p><strong>표로 정리</strong></p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code>아래 내용을 (항목1)·(항목2)·(항목3) 열이 있는 표로 정리해 주세요.</code></pre></div>
+<p><strong>아이디어</strong></p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code>(대상)을 위한 (주제) 아이디어 10개를 주세요. 비용이 적게 드는 순서로요.</code></pre></div>
+<p><strong>글 다듬기</strong></p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code>아래 글의 뜻은 그대로 두고, (대상)이 읽기 쉽게 (짧게/부드럽게) 고쳐 주세요. 바꾼 이유도 짧게요.</code></pre></div>
+<p><strong>발표 개요</strong></p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code>(주제)로 (시간)분 발표를 해요. 청중은 (대상)이에요. 슬라이드 (개수)장 개요를 주세요.</code></pre></div>
+<p><strong>고객 응대 문구</strong></p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code>저는 (업종) 사장님이에요. (상황)인 고객에게 보낼 문자를 (분량) 이내로 3가지 버전으로 써 주세요.</code></pre></div>
+<p><strong>일정 짜기</strong></p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code>(목표)를 (기간) 안에 끝내야 해요. 하루 (시간)씩 할 수 있어요. 주 단위 계획표를 주세요.</code></pre></div>
+<p><strong>배우기</strong></p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code>(어려운 개념)을 (나이/수준)도 알게 예시 하나로 설명해 주세요. 마지막에 확인 질문 하나도요.</code></pre></div>
+<h2>자주 묻는 것</h2>
+<p><strong>무료로도 충분한가요?</strong> 처음 1~2주는 무료로 충분해요. 채팅, 파일 올리기, 웹 검색, 결과물 만들기, 프로젝트(최대 5개)까지 돼요.</p>
+<p><strong>한도에 걸리면요?</strong> 무료 플랜은 5시간마다 다시 채워져요. 한 대화가 아주 길어지면 빨리 닳으니, 주제가 바뀌면 '새로 생성'으로 새 대화를 여세요.</p>
+<p><strong>회사 자료를 올려도 되나요?</strong> 회사 규정을 먼저 확인하세요. 고객 개인정보와 영업 비밀은 빼거나 가리고 올리는 게 기본이에요.</p>
+<p><strong>틀린 답을 하면요?</strong> "출처를 달아 줘", "확실하지 않은 건 표시해 줘"라고 하고, 중요한 숫자와 사실은 직접 확인하세요.</p>
+<h2>공식 자료</h2>
+<ul><li>원문 강의 Claude 101: <a href="https://academy.claude.com/ko/courses/claude-101" target="_blank" rel="noopener">academy.claude.com/ko/courses/claude-101</a> — 무료, 한국어, 퀴즈를 풀면 수료 배지</li><li>공식 도움말: <a href="https://support.claude.com" target="_blank" rel="noopener">support.claude.com</a></li><li>요금: <a href="https://claude.com/pricing" target="_blank" rel="noopener">claude.com/pricing</a></li><li>앱 받기: <a href="https://claude.com/download" target="_blank" rel="noopener">claude.com/download</a></li></ul>
+<p>기준일 2026년 10월 18일. 클로드는 화면과 요금이 자주 바뀌어요. 버튼 위치가 조금 달라도 이름은 비슷하니 같은 이름을 찾아보세요.</p>
+<div class="dl"><img src="cover.webp" alt="클로드 처음 시작 가이드 표지" width="96"><div><div class="t">PDF 무료 다운로드</div><h2>따라 하다 막히면 PDF를 펼쳐 보세요</h2><p>가입부터 7일 실습까지 21쪽에 순서대로 담았어요.</p></div><a class="go" href="claude_beginner_guide.pdf" download>PDF 내려받기 <small>21쪽 · 3.0MB</small></a></div>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>세 가지만 답하면 4단계 중 지금 위치를 바로 알려드려요. 무료예요.</p><span class="go">내 단계 진단하기 →</span></a>
+    <a class="cross" href="../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../../library/" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>

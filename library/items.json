@@ -2,6 +2,17 @@
  "updated": "2026-10-09",
  "files": [
   {
+   "slug": "claude-beginner-guide",
+   "notion": "",
+   "title": "클로드 처음 시작 가이드",
+   "desc": "공식 강의 Claude 101을 21쪽으로 — 가입 화면 사진, 복사해 쓰는 문장 12개, 7일 실습표",
+   "tag": "실전 가이드",
+   "date": "2026-10-18",
+   "thumb": "thumb/claude-beginner-guide.webp",
+   "url": "claude-beginner-guide/",
+   "ready": true
+  },
+  {
    "slug": "naver-blog-keyword",
    "notion": "3fa12e3c-61c9-8161-ab7a-ca2c3c70831d",
    "title": "클로드로 블로그 키워드 찾기",
