@@ -2641,6 +2641,23 @@
    "ready": true
   },
   {
+   "video_id": "cAeKDWa77xI",
+   "title": "Codex든 Claude Code든 돌아가는 AI 마케팅 시스템 만들기",
+   "title_orig": "Codex, Claude Code: Build Your AI Marketing System that Works on Any AI",
+   "source": "Grace Leung",
+   "date": "2026-07-17",
+   "topic": "에이전트",
+   "summary": "Grace Leung은 마케팅 에이전트를 AI 서비스 하나에 묶어 두지 말고 어디로든 들고 갈 수 있는 작업 폴더로 만들라고 말해요. 폴더를 다섯 부품으로 나눠 두면 Claude Code에서 Codex로 옮길 때 새로 만들 게 거의 없어요. 영상은 그 과정을 화면으로 끝까지 보여 줍니다.",
+   "points": [
+    "에이전트는 모델이 아니라 하네스가 결정해요",
+    "세 바구니로 나누면 옮기는 일이 작아져요",
+    "맥락은 한 번만 써 두면 계속 재사용돼요"
+   ],
+   "thumb": "notes/thumb/cAeKDWa77xI.webp",
+   "url": "notes/cAeKDWa77xI/",
+   "ready": true
+  },
+  {
    "video_id": "_Pd1G33_R48",
    "title": "헤르메스 에이전트 5개로 뉴스 큐레이션부터 주식 매매까지 자동화한 방법 전부 공개합니다 (AI 엔지니어 샘 호트만님)",
    "title_orig": "헤르메스 에이전트 5개로 뉴스 큐레이션부터 주식 매매까지 자동화한 방법 전부 공개합니다 (AI 엔지니어 샘 호트만님)",
