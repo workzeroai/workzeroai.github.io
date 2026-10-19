@@ -2102,7 +2102,7 @@
    "title_orig": "How to Get AI to Recommend Your Brand in 16 minutes | AEO Playbook",
    "source": "Grace Leung",
    "date": "2026-08-26",
-   "topic": "AI 소식",
+   "topic": "비즈니스",
    "summary": "Grace는 AI가 내 브랜드를 추천하게 만드는 길을 세 가지로 정리해요. 브랜드 정체성을 또렷하게 만들고 한 주제를 깊게 파고 남들이 나를 말해 주게 만드는 거예요. HubSpot AEO 화면으로 점검 방법과 이번 주에 할 일의 순서까지 보여 줍니다.",
    "points": [
     "AI는 브랜드 소개를 믿기 전에 교차 확인해요",
@@ -2757,6 +2757,23 @@
    ],
    "thumb": "notes/thumb/aRnVwkY4BJo.webp",
    "url": "notes/aRnVwkY4BJo/",
+   "ready": true
+  },
+  {
+   "video_id": "vXMSxajeL7M",
+   "title": "클로드 + Ahrefs 새 마케팅 에이전트가 내 일의 80%를 합니다",
+   "title_orig": "Claude + New Al Marketing Agent Does 80% of My Work (Ahrefs Agent A)",
+   "source": "Grace Leung",
+   "date": "2026-06-30",
+   "topic": "에이전트",
+   "summary": "Grace는 AI에게 마케팅 일을 맡기려면 세 단계를 밟으라고 말해요. 검증된 워크플로를 Skills로 돌린 다음 직무별 에이전트 역할을 정하고, 마지막에 팀이 쓰는 도구로 포장하는 순서입니다. 시연은 Ahrefs의 AI 마케팅 에이전트 Agent A로 보여 주지만 방법은 어떤 도구로 옮겨도 통해요.",
+   "points": [
+    "일을 먼저 기능별로 나눠야 해요",
+    "Skills만으로는 부족하고 역할이 있어야 일관돼요",
+    "정확한 데이터가 분석의 값을 정해요"
+   ],
+   "thumb": "notes/thumb/vXMSxajeL7M.webp",
+   "url": "notes/vXMSxajeL7M/",
    "ready": true
   },
   {
