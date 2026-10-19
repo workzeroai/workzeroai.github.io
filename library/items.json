@@ -1264,6 +1264,23 @@
    "ready": true
   },
   {
+   "video_id": "f0SdOoVBeFo",
+   "title": "6년 동안 광고를 한 번도 하지 않고 대기업 고객사를 절반까지 늘린 방법 (엘리펀트컴퍼니 김예지 대표님)",
+   "title_orig": "6년 동안 광고를 한 번도 하지 않고 대기업 고객사를 절반까지 늘린 방법 (엘리펀트컴퍼니 김예지 대표님)",
+   "source": "빌더 조쉬 Builder Josh",
+   "date": "2026-09-13",
+   "topic": "비즈니스",
+   "summary": "광고 없이 오가닉 마케팅만으로 회사를 키워 온 엘리펀트컴퍼니 김예지 대표가 GEO(생성형 AI 검색 최적화)를 어떻게 정의하는지, 그리고 고객 질문 설계부터 콘텐츠 유형, AI 글쓰기 엔진, 웹사이트 구조, 외부 채널까지 실제로 어떻게 움직이는지 조쉬와 함께 풀어 놓은 대담이에요.",
+   "points": [
+    "AI 답변은 통제가 아니라 확률 게임이에요",
+    "엔티티는 결국 일관된 브랜드 언어예요",
+    "AI가 신뢰를 판단하는 재료는 전환·코어 콘텐츠예요"
+   ],
+   "thumb": "notes/thumb/f0SdOoVBeFo.webp",
+   "url": "notes/f0SdOoVBeFo/",
+   "ready": true
+  },
+  {
    "video_id": "_MrumlZnGic",
    "title": "GPT-6 Astra에 DeepSeek을 붙였다 (비용 100분의 1)",
    "title_orig": "I Combined GPT-6 Astra With DeepSeek... (100x Cheaper)",
