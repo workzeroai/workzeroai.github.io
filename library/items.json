@@ -2896,6 +2896,23 @@
    "ready": true
   },
   {
+   "video_id": "yLXLHnD4fco",
+   "title": "Claude Code로 AI 마케팅팀 통째로 꾸리기 (에이전트 + 스킬)",
+   "title_orig": "Claude Code: Build Your Full AI Marketing Team (Agents + Claude Skills)",
+   "source": "Grace Leung",
+   "date": "2026-03-28",
+   "topic": "에이전트",
+   "summary": "Grace Leung이 Claude Code(터미널이나 VS Code 안에서 파일 작업까지 시키는 Claude 도구)로 여행 브랜드 Go Travel의 AI 마케팅팀을 처음부터 만드는 과정을 보여 줘요. Agents 5명과 Skills 12개로 팀을 짠 뒤 캠페인 한 건을 통째로 맡기고 Notion 작업 보드와 휴대폰으로 일을 시키는 데까지 이어집니다.",
+   "points": [
+    "Skills는 워크플로 하나에 하나씩, 레퍼런스를 먹여서 만든다",
+    "Agents는 Skills가 쌓여서 집중력이 흐려질 때 쓰는 해법이에요",
+    "context 폴더와 CLAUDE.md가 팀의 기반이에요"
+   ],
+   "thumb": "notes/thumb/yLXLHnD4fco.webp",
+   "url": "notes/yLXLHnD4fco/",
+   "ready": true
+  },
+  {
    "video_id": "m-5DjcgFmfQ",
    "title": "클로드 스킬, 18분이면 감 잡습니다",
    "title_orig": "Master Claude Skills in 18 Minutes | Claude Skills Explained",
