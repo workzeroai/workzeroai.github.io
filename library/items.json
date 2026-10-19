@@ -2877,6 +2877,23 @@
    "thumb": "notes/thumb/4JtB_QvKT8w.webp",
    "url": "notes/4JtB_QvKT8w/",
    "ready": true
+  },
+  {
+   "video_id": "Ridz1sP9Nmc",
+   "title": "프롬프트 하나 쳤을 뿐인데 30분 만에 데스크톱 앱이 완성됩니다 (feat. 마누스 AI)",
+   "title_orig": "프롬프트 하나 쳤을 뿐인데 30분 만에 데스크톱 앱이 완성됩니다 (feat. 마누스 AI)",
+   "source": "빌더 조쉬 Builder Josh",
+   "date": "2026-04-19",
+   "topic": "AI 소식",
+   "summary": "조쉬가 마누스의 새 기능 '마이 컴퓨터'에 프롬프트를 하나씩 넣어서 맥용 데스크톱 앱 세 개(실시간 통역, 회의록 녹음·요약, 카카오톡 자동 전송)를 직접 만들어 본 시연이에요. 첫 앱은 30분 정도 기다리니 완성됐고, 카카오톡 앱은 한 번 실패한 뒤 수정을 거쳐서 돌아갔어요.",
+   "points": [
+    "프롬프트 끝 한 문장이 완성도를 정해요",
+    "앱은 만들어도 AI 기능에는 API 키가 따로 필요해요",
+    "완료 메시지와 실제 동작은 따로 확인해야 해요"
+   ],
+   "thumb": "notes/thumb/Ridz1sP9Nmc.webp",
+   "url": "notes/Ridz1sP9Nmc/",
+   "ready": true
   }
  ]
 }
