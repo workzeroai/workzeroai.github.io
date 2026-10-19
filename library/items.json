@@ -2843,6 +2843,23 @@
    "thumb": "notes/thumb/gNgHnkJc29M.webp",
    "url": "notes/gNgHnkJc29M/",
    "ready": true
+  },
+  {
+   "video_id": "haM_DjiA5C8",
+   "title": "클로드 코드는 옵시디언으로 비로소 완성됩니다. 진짜 자동화 협업 사례를 보여드리겠습니다. (셀피쉬클럽 젬마님)",
+   "title_orig": "클로드 코드는 옵시디언으로 비로소 완성됩니다. 진짜 자동화 협업 사례를 보여드리겠습니다. (셀피쉬클럽 젬마님)",
+   "source": "빌더 조쉬 Builder Josh",
+   "date": "2026-04-27",
+   "topic": "에이전트",
+   "summary": "빌더 조쉬가 셀피쉬클럽의 젬마님을 만나, 여덟 명의 팀이 옵시디언(Obsidian)과 클로드 코드(Claude Code), 깃허브(GitHub)를 엮어 매주 하던 일만 하면 기록이 쌓이고 분석되고 웹사이트에 공개되는 구조를 어떻게 만들었는지 들어 봤어요. 도구 이야기처럼 보이지만 AI를 왜 혼자가 아니라 팀으로 써야 하는지에 대한 이야기이기도 해요.",
+   "points": [
+    "팀이 쌓는 진짜 자산은 워크플로우예요",
+    "매주 하던 일이 그대로 콘텐츠가 되는 구조",
+    "스킬은 늘리는 것보다 묶는 게 중요해요"
+   ],
+   "thumb": "notes/thumb/haM_DjiA5C8.webp",
+   "url": "notes/haM_DjiA5C8/",
+   "ready": true
   }
  ]
 }
