@@ -227,6 +227,23 @@
    "ready": true
   },
   {
+   "video_id": "CLpN3zl8noQ",
+   "title": "크래프톤 AI 역량 평가에서 개발 경험 없는 매장 직원 출신이 상위권에 오른 이유 (크래프톤 구한모·조정석님)",
+   "title_orig": "크래프톤 AI 역량 평가에서 개발 경험 없는 매장 직원 출신이 상위권에 오른 이유 (크래프톤 구한모·조정석님)",
+   "source": "빌더 조쉬 Builder Josh",
+   "date": "2026-10-12",
+   "topic": "AI 소식",
+   "summary": "크래프톤 AI 프론티어 본부의 구한모·조정석이 만든 AI 역량 평가 도구 '프로브'를 다룬 인터뷰예요. 코딩 테스트 대신 AI와 함께 실제 업무를 해 보는 환경을 주고 결과물·AI 활용·이해도를 기술·의도·인지 세 축으로 채점했더니, 개발 경험 없는 매장 직원 출신이 상위권에 올랐다는 이야기가 핵심입니다.",
+   "points": [
+    "AI 네이티브는 워크플로를 다시 짜는 사람이에요",
+    "결과물보다 그 결과물을 설명할 수 있느냐가 갈라요",
+    "잘하는 사람일수록 비용을 적게 써요"
+   ],
+   "thumb": "notes/thumb/CLpN3zl8noQ.webp",
+   "url": "notes/CLpN3zl8noQ/",
+   "ready": true
+  },
+  {
    "video_id": "XfdIhd1g6EI",
    "title": "모델도 안 보고 1,000억 달러를 걸었다 — 저커버그·알렉산더 왕의 Muse Wonder",
    "title_orig": "Muse Wonder: Zuckerberg and Wang's $100B AI",
