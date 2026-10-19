@@ -2605,6 +2605,23 @@
    "thumb": "notes/thumb/t4XEda3CB3Q.webp",
    "url": "notes/t4XEda3CB3Q/",
    "ready": true
+  },
+  {
+   "video_id": "jajEm8R9nD0",
+   "title": "6인 회사 지분을 사서 AI로 100% 자동화로 돌려보고 있는 개발자 (진양의 인수창업 김지혁님)",
+   "title_orig": "6인 회사 지분을 사서 AI로 100% 자동화로 돌려보고 있는 개발자 (진양의 인수창업 김지혁님)",
+   "source": "빌더 조쉬 Builder Josh",
+   "date": "2026-07-26",
+   "topic": "에이전트",
+   "summary": "개발자 출신으로 일곱 개 사업체의 영업권을 인수해 온 김지혁 님이 최근 인수한 SaaS를 PM·개발·콘텐츠 마케팅 AI 에이전트로 굴리는 과정을 조쉬와 나눈 대화예요. 인수할 때 무엇을 넘겨받아야 하는지부터 '쿼리어블 → 클로즈드 루프 → 셀프 임프루빙'으로 이어지는 AI 네이티브 회사 OS 구조까지, 실제 쓰는 도구 이름과 함께 풀어 줍니다.",
+   "points": [
+    "인수의 대상은 코드가 아니라 현금 흐름이에요",
+    "AI가 SaaS 인수의 계산식을 바꿨어요",
+    "에이전트도 컨텍스트가 넓으면 둔해져요"
+   ],
+   "thumb": "notes/thumb/jajEm8R9nD0.webp",
+   "url": "notes/jajEm8R9nD0/",
+   "ready": true
   }
  ]
 }
