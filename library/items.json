@@ -2860,6 +2860,23 @@
    "thumb": "notes/thumb/haM_DjiA5C8.webp",
    "url": "notes/haM_DjiA5C8/",
    "ready": true
+  },
+  {
+   "video_id": "4JtB_QvKT8w",
+   "title": "99%가 모르는 하네스 엔지니어링 — AI 에이전트 생산성을 10배 올리는 세팅법 (바이브마피아 최수민님)",
+   "title_orig": "99%가 모르는 하네스 엔지니어링 — AI 에이전트 생산성을 10배 올리는 세팅법 (바이브마피아 최수민님)",
+   "source": "빌더 조쉬 Builder Josh",
+   "date": "2026-04-23",
+   "topic": "에이전트",
+   "summary": "바이브마피아 최수민 님이 조쉬와 함께 하네스 엔지니어링을 실제 세팅으로 풀어 줬어요. 무엇을 만들지는 사람이 대화로 끝까지 구체화합니다. 그 뒤의 구현·테스트·PR 리뷰·머지는 스크립트와 에이전트에 통째로 맡기는 구조예요.",
+   "points": [
+    "하네스는 구체화가 끝난 뒤에야 힘을 써요",
+    "생각이 필요 없는 일은 스크립트로 빼요",
+    "컨텍스트는 추려서 줄수록 정확해져요"
+   ],
+   "thumb": "notes/thumb/4JtB_QvKT8w.webp",
+   "url": "notes/4JtB_QvKT8w/",
+   "ready": true
   }
  ]
 }
