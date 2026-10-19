@@ -2097,6 +2097,23 @@
    "ready": true
   },
   {
+   "video_id": "L-X6HIrzrBI",
+   "title": "AI가 내 브랜드를 추천하게 만드는 16분 AEO 플레이북",
+   "title_orig": "How to Get AI to Recommend Your Brand in 16 minutes | AEO Playbook",
+   "source": "Grace Leung",
+   "date": "2026-08-26",
+   "topic": "AI 소식",
+   "summary": "Grace는 AI가 내 브랜드를 추천하게 만드는 길을 세 가지로 정리해요. 브랜드 정체성을 또렷하게 만들고 한 주제를 깊게 파고 남들이 나를 말해 주게 만드는 거예요. HubSpot AEO 화면으로 점검 방법과 이번 주에 할 일의 순서까지 보여 줍니다.",
+   "points": [
+    "AI는 브랜드 소개를 믿기 전에 교차 확인해요",
+    "AEO에서는 순위보다 꾸준히 거론되는 빈도가 중요해요",
+    "많이 올리는 것보다 깊게 파는 쪽이 보상받아요"
+   ],
+   "thumb": "notes/thumb/L-X6HIrzrBI.webp",
+   "url": "notes/L-X6HIrzrBI/",
+   "ready": true
+  },
+  {
    "video_id": "zEv0lLYjUHw",
    "title": "클로드 스킬 만들기가 10배 쉬워졌다",
    "title_orig": "Building Claude Skills Just Got 10x Easier",
@@ -3020,7 +3037,7 @@
    "title_orig": "AI Search: Make Your Brand the #1 Choice (Copy These SEO Methods)",
    "source": "Grace Leung",
    "date": "2025-12-05",
-   "topic": "자동화",
+   "topic": "비즈니스",
    "summary": "Grace Leung은 AI 검색 시대의 최적화를 \"AI가 내 콘텐츠를 좋아하게 만들기\", \"AI가 내 브랜드를 믿게 만들기\", \"AI가 내 사이트를 싫어하지 않게 만들기\" 세 가지 관계로 나눠요. 영상에서는 Semrush One 화면을 따라가며 이 세 관계를 다지는 여섯 가지 방법을 순서대로 보여 줍니다.",
    "points": [
     "AI 검색은 순위가 아니라 추천 결정이에요",
