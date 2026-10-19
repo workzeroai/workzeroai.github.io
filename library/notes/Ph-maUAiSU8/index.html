@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Claude Design + 스킬로 마케팅 자동화하기 · 워크제로 자료실</title>
+<meta name="description" content="Grace Leung이 Claude Code와 Claude Design으로 브랜드 보이스, 디자인 시스템, 캠페인 기획, 캐러셀, 모션 영상 스킬을 차례로 만들고 이를 캠페인 매니저 에이전트와 Notion 스킬 라이브러리, 주간 루틴으로 묶어 마케팅 한 사이클을 자동화">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/Ph-maUAiSU8/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#2462e0">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="Claude Design + 스킬로 마케팅 자동화하기">
+<meta property="og:description" content="Grace Leung이 Claude Code와 Claude Design으로 브랜드 보이스, 디자인 시스템, 캠페인 기획, 캐러셀, 모션 영상 스킬을 차례로 만들고 이를 캠페인 매니저 에이전트와 Notion 스킬 라이브러리, 주간 루틴으로 묶어 마케팅 한 사이클을 자동화">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/Ph-maUAiSU8/">
+<meta property="og:image" content="https://img.youtube.com/vi/Ph-maUAiSU8/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Claude Design + 스킬로 마케팅 자동화하기">
+<meta name="twitter:description" content="Grace Leung이 Claude Code와 Claude Design으로 브랜드 보이스, 디자인 시스템, 캠페인 기획, 캐러셀, 모션 영상 스킬을 차례로 만들고 이를 캠페인 매니저 에이전트와 Notion 스킬 라이브러리, 주간 루틴으로 묶어 마케팅 한 사이클을 자동화">
+<meta name="twitter:image" content="https://img.youtube.com/vi/Ph-maUAiSU8/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+.tgl{margin:18px 0;border:1px solid var(--hair);border-radius:14px;background:var(--soft)}.tgl>summary{cursor:pointer;padding:14px 18px;font-weight:700;color:var(--ink);list-style:none}.tgl>summary::before{content:"▸ ";color:var(--primary)}.tgl[open]>summary::before{content:"▾ "}.tgl-in{padding:0 14px 14px}
+:root{--primary:#2462e0;--primary-deep:#1a4fb8;--primary-pale:#e5effd;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f4f8fe;--hair:#dfe7f2;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+/* WZ-COBALT-C */:root{--grad-btn:linear-gradient(135deg,#2b74f0 0%,#2462e0 50%,#1d55d6 100%);--gloss:radial-gradient(120% 90% at 30% 0%,rgba(255,255,255,.28) 0,rgba(255,255,255,0) 55%);--glow:0 12px 28px -10px rgba(36,98,224,.75),0 2px 6px -1px rgba(29,85,214,.35)}.btn.pri,.fbtn,.rcta .p1,.price.best .pick,.price .pop{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:var(--glow),inset 0 1px 0 rgba(255,255,255,.35)}.fchip.on{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:0 8px 18px -8px rgba(36,98,224,.8),inset 0 1px 0 rgba(255,255,255,.35)}.btn.pri:hover,.fbtn:hover,.rcta .p1:hover{filter:brightness(1.08) saturate(1.1)}.lv-head,.svr.win{background:var(--gloss),var(--grad-btn)}.eyebrow{background:linear-gradient(135deg,#e5effd,#d3e6ff);color:#1a4fb8}.logo b{color:#2b74f0}.fmeta i,.nm i{background:linear-gradient(135deg,#e5effd,#d6e7ff);color:#1a4fb8}.paneNote{background:linear-gradient(135deg,#eaf3ff 0%,#f7fbff 60%,#fff 100%);border-color:#d3e3fb}.keys{background:linear-gradient(135deg,#e5effd,#f2f8ff)}.nkeys span::before,.keys li::before{background:linear-gradient(135deg,#3b8cff,#1d55d6)}
+</style>
+<script src="/assets/wz.js" defer></script>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴"><a href="../../../tutoring/">1:1 과외</a><a href="../../../build/">제작 문의</a><a class="on" href="../../../library/" aria-current="page">자료실</a></div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../../../library/">← 자료실</a>
+  <div class="head"><div class="m"><i>에이전트</i><span>2026-04-25</span></div><h1>Claude Design + 스킬로 마케팅 자동화하기</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/Ph-maUAiSU8.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Grace Leung</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<span class="orig">원제 · Claude Design + Claude Skills: Automate Your Marketing (Claude Code)</span><br><a href="https://www.youtube.com/watch?v=Ph-maUAiSU8" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>브랜드 스킬이 모든 것의 바닥이에요</li><li>Claude Design의 가장 큰 가치는 내보내기에 있어요</li><li>스킬이 쌓이면 에이전트가 지휘해요</li></ul></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>Grace Leung이 Claude Code와 Claude Design으로 브랜드 보이스, 디자인 시스템, 캠페인 기획, 캐러셀, 모션 영상 스킬을 차례로 만들고 이를 캠페인 매니저 에이전트와 Notion 스킬 라이브러리, 주간 루틴으로 묶어 마케팅 한 사이클을 자동화하는 과정을 처음부터 끝까지 보여 줍니다.</p>
+<h3>전체 내용 정리</h3>
+<h4>마케팅 스킬은 세 종류로 나누고 브랜드 스킬부터 세워요</h4>
+<p>Grace는 Claude Skills(작업 방법을 적어 둔 재사용 지시서)를 한 번 만들어 두면 Claude가 그냥 도구에서 관리해야 하는 시스템으로 바뀐다고 봐요. 그래서 마케터라면 스킬 묶음을 이렇게 나누자고 제안합니다. 브랜드 스킬은 브랜드 기준을 정하고 기능 스킬(Function Skill)은 매일 하는 마케팅 업무를 맡고 전문 스킬(Specialty Skill)은 내 분야 특유의 규칙을 다뤄요.</p>
+<p>순서도 있어요. 먼저 한 주 동안 내가 반복해서 하는 일을 쭉 적어 보고 그걸 위 세 종류로 분류한 다음, 우선순위를 매깁니다. 거의 모든 마케팅 업무가 브랜드 스킬을 바탕에 깔고 돌아가니까 <strong>브랜드 스킬을 제일 먼저 만들고</strong> 그 위에 기능 스킬과 전문 스킬을 올리라는 거죠.</p>
+<p>이 영상에서는 캠페인 워크플로 시스템 하나를 예제로 삼아요. 스킬 8개짜리 시스템이고 Claude 데스크톱 앱 안의 Claude Code로 작업합니다. 예제 브랜드는 의료 SaaS 회사 Carely예요.</p>
+<p>첫 작업은 프로젝트 폴더예요. Carely 폴더 안에 context 폴더와 나머지 시스템 폴더를 두고 캠페인 결과물을 모아 둘 campaign 폴더도 따로 만들어요. context 폴더에는 브랜드 컨텍스트, ICP(이상적인 고객 프로필), 마케팅 전략 같은 핵심 브랜드 자료를 전부 넣습니다. 여기에 CLAUDE.md 파일도 하나 준비해서 Claude가 이 프로젝트 폴더를 어떻게 훑어야 하는지 알려 줘요.</p>
+<p>그다음 Claude 데스크톱을 열고 Claude Code로 전환해요. Grace는 새 데스크톱 버전에서 프로젝트별로 필터링할 수 있어서 바로바로 갈아탈 수 있는 점이 좋다고 하면서 Carely 프로젝트 폴더를 선택합니다.</p>
+<p>첫 스킬은 brand voice 스킬이에요. 마케터라면 누구나 필요한 스킬이죠. Claude Code에는 brand voice 가이드를 바탕으로 brand voice 스킬을 만들고 스킬의 asset으로 쓸 다양한 예시도 함께 만들라고 요청해요. 이때 <strong>버전 관리(versioning)를 포함하라고 같이 시키는 게 포인트</strong>예요. 영상 뒷부분에서 스킬 라이브러리를 만들 때 이 버전 정보가 쓰이거든요.</p>
+<p>Claude는 브랜드 컨텍스트를 읽고 예시를 만들고 나서 평가(evaluation)까지 돌려 스킬 품질을 확인해요. VS Code 같은 IDE로 프로젝트를 열어 보면 skills 폴더 아래에 새 스킬이 생긴 걸 볼 수 있습니다.</p>
+<h4>Claude Design으로 디자인 시스템을 뽑아 스킬로 내보내요</h4>
+<p>brand voice 스킬만으로는 모자라요. 브랜드가 눈으로 어떻게 보여야 하는지도 Claude에게 가르쳐야 하니까요. Grace는 Claude Design으로 브랜드 디자인 시스템을 훨씬 빠르게 세팅하고 그걸 재사용 가능한 스킬로 만들 수 있다고 해요.</p>
+<p>시작하기 전에 마케팅 자료를 먼저 준비하라고 권해요. 최소한 마케팅 소재는 있어야 추출 과정에서 쓸모가 있어요. Grace는 assets 폴더를 만들고 안에 브랜드 컬러 팔레트와 로고가 담긴 브랜디드 랜딩 페이지를 넣어 뒀어요. 순서는 이렇습니다.</p>
+<ol><li>Claude Design에서 design system을 눌러 이름을 정해요(여기서는 Carely).</li><li>GitHub 저장소를 연결하면 디자인 시스템을 추출해 주는데 이번에는 건너뛰어요.</li><li>자료가 든 프로젝트 폴더를 첨부하고 로고나 추가 마케팅 소재도 붙여요.</li><li>브랜드 보이스 노트를 다시 붙여 넣어요. Grace는 안전하게 가려고 하는 일이라고 설명해요.</li><li>generate를 눌러요.</li></ol>
+<p>이 과정은 Grace 경험상 최소 10~15분이 걸려서, 누르기 전에 자료를 꼭 점검하라고 해요. 결과로는 추출된 브랜드 컬러, UI, 목업 컴포넌트, 폰트, 로고가 나와요. 하나씩 꼼꼼히 보고 빠진 자료는 가져와 채워 넣습니다. 마케팅 사이트 목업에서 태그라인이 배경색과 겹쳐 보이면 프롬프트로 고쳐 달라고 하면 돼요.</p>
+<p>디자인 파일(design files) 화면에서는 에디터로 요소를 직접 골라 더 세밀하게 고칠 수 있어요. 다만 Grace는 이쪽에서 한 수정은 되돌리기 어렵다고 느껴서 너무 많이 만지지 말라고 해요.</p>
+<p>이 디자인 시스템은 통째로 내보낼 수 있는 Claude 스킬이에요. <strong>Grace는 이 내보내기가 Claude Design에서 얻은 가장 큰 가치라고 말해요.</strong> 마음에 들면 export 한 뒤 프로젝트 폴더를 열고 디자인 시스템 폴더를 통째로 끌어다 놓으면 됩니다. 말 그대로 Claude 스킬이라서 그걸로 끝이에요. 거기에 버전 관리와 유지보수 규칙을 붙여 넣으면 브랜드 디자인 스킬이 프로젝트에 바로 설치돼요.</p>
+<h4>캠페인 기획 스킬이 슬라이드 덱까지 만들어요</h4>
+<p>디자인 시스템 스킬이 생겼으니 그 위에 기능 스킬을 쌓을 차례예요. 그중 시간을 가장 많이 아껴 주는 건 캠페인 리서치와 기획 스킬이라고 Grace는 봐요. Claude Code에 이렇게 요청해요. 리서치에는 Perplexity를 쓰고 디자인 시스템 스킬을 불러 브랜디드 슬라이드 덱을 만들고 정해 둔 섹션이 들어간 빈 campaign brief 파일도 만드는 캠페인 기획 브리프(campaign planning brief) 스킬을 만들어 달라는 거죠.</p>
+<p>금방 두 번째 스킬이 만들어지고 단계별 과정이 화면에 나와요. 슬라이드 덱을 만들 때는 디자인 시스템 스킬을 호출하는 것도 보입니다. 그다음 다가오는 캠페인의 일정과 예산을 주고 캠페인 기획을 시켜요. Claude는 Perplexity 검색으로 시작해서 데이터를 종합하고 프레젠테이션을 만들어요.</p>
+<p>결과 덱은 브랜드 컬러와 폰트를 그대로 따라요. Grace가 특히 인상 깊어한 건 덱이 풀어 가는 이야기 흐름이에요. KPI 목표에서 타깃 페르소나, 퍼널 매핑까지 이어지고 마케팅 예산을 어디에 쓰는지, 캠페인 로드맵이 어떤지가 분명히 보입니다. 담당 팀과 다음 액션을 담은 마지막 슬라이드도 완벽했다고 해요.</p>
+<p>보너스도 하나 있어요. HTML 스타일의 세련된 슬라이드 덱이 필요하면 Claude Design에서 새 slide deck 프로젝트를 만들고 디자인 시스템을 고른 뒤, 캠페인 브리프 개요를 붙여 넣으면 돼요. 발표자 노트(speaker notes)까지 포함해 덱을 만들어 줍니다.</p>
+<h4>템플릿을 Claude Design에서 만들고 캐러셀·모션 스킬로 키워요</h4>
+<p>Grace가 꼽는 Claude Design의 최고의 활용법은 <strong>재사용 가능한 마케팅 자산 템플릿을 디자인 시스템 위에서 만들고 그걸 다른 스킬의 재료로 쓰는 것</strong>이에요. 먼저 캐러셀 디자인 스킬을 만들어 볼게요.</p>
+<p>Claude Design에서 prototype을 고르고 이름을 social carousel template으로 지어요. 디자인 시스템을 고르고 high fidelity를 택해요. 실제로 쓸 수 있는 완성도 높은 목업을 원한다는 뜻이에요. 그러면 Claude가 색상, 방향, 타입 처리, 변형(tweak variations) 같은 질문을 쏟아 내고 나서 목업을 만들기 시작해요.</p>
+<p>Grace가 요청한 대로 세 가지 변형이 나왔고 모두 브랜드에 맞고 꽤 전문적으로 보여요. 다만 글자가 조금 작았어요. 전체 방향이 마음에 들면 프로젝트를 통째로 export 해서 Claude Code에서 고치는 게 낫다고 Grace는 말해요. Claude Design에서 오가며 수정하면 토큰이 너무 빨리 닳기 때문이에요.</p>
+<p>내보낸 carousel template 폴더는 프로젝트의 templates 폴더에 복사해 둬요. 그러고 Claude Code에서 세 번째 스킬을 만들어요. 이 스킬은 방금 내보낸 템플릿을 참조해서 콘텐츠 앵글을 제안하고 nano banana 도구로 커버 이미지를 만들고 마지막으로 슬라이드를 한 장씩 개별 이미지로 내보내요.</p>
+<p>테스트로는 캠페인 브리프를 읽고 캐러셀을 만들라고 시켰어요. 스킬이 호출되고 세 변형의 커버 이미지가 생성됩니다. 결과도 괜찮고 커버 이미지가 Claude Design에서 만든 템플릿과 같은 틀을 쓴다는 점도 마음에 들었다고 해요. 그래서 템플릿을 처음부터 제대로 만드는 게 중요하다고 Grace는 강조해요. 그래야 최종 품질을 계속 통제할 수 있거든요. 글이 아직 많은 점은 아쉽대요. 교육용 캐러셀이면 괜찮지만 퍼포먼스 마케팅이라면 짧고 강한 문구가 낫다고 봐요. 각 슬라이드는 개별 이미지로 저장돼서 바로 올릴 수 있어요.</p>
+<p>같은 방식으로 모션도 만들어요. Grace는 영상에서 Claude로 SVG 모션 그래픽을 오래 써 왔고 이 원리 그대로 Claude Design에서 모션 엔진을 만들어 브랜드 모션 스킬로 쓸 수 있다고 해요. Claude Design에서 Animated Video라는 새 prototype 프로젝트를 만들고 브랜드 디자인 시스템을 고른 다음 제품 런칭용 애니메이션 영상을 디자인해 달라고 해요. 가장 자주 쓸 시나리오를 떠올려서 Claude의 질문에 답하면 돼요.</p>
+<p>결과물은 프로 수준 영상은 아니어도 단순한 마케팅 스토리텔링이나 랜딩 페이지의 설명 영상(explainer)으로는 충분하다고 Grace는 평가해요. 이 애니메이션이 스킬의 핵심 엔진이 됩니다. 프로젝트를 export 해서 animated video 폴더를 templates 폴더 아래에 복사하고 Claude Code로 돌아와서 Carely Animated Video 스킬을 만들어요. 이 스킬은 30초짜리 HTML 모션 영상을 만들고 영상마다 충분히 다르도록 만들기 전에 항상 스토리보드를 먼저 제안하게 시켰어요.</p>
+<p>같은 캠페인용으로 돌려 보니 브리프를 읽고 스토리보드를 짠 다음 영상을 만들기까지 거의 15분이 걸렸어요. 짧고 강한 문구로 이야기를 풀어 가고 전부 같은 디자인 시스템의 룩앤필을 따라서 어색하지 않아요. 캠페인 랜딩 페이지에 넣으면 제안을 설명하는 브랜드 모션 조각으로 쓸 수 있어요.</p>
+<h4>캠페인 매니저 에이전트가 모든 스킬을 지휘해요</h4>
+<p>이런 식으로 마케팅 스킬 7개를 만들었다고 해요. 여기서 끝내도 되지만 Grace가 말하는 큰 보너스는 이 스킬들을 지휘하는 campaign manager agent를 만들어 자동화를 한 단계 더 끌어올리는 거예요.</p>
+<p>Claude Code 데스크톱은 agent 명령을 지원하지 않아요. 그래서 우회로를 써요. 먼저 세션을 시작하고 터미널 뷰를 열고 거기서 Claude Code를 실행해 agent 명령으로 캠페인 매니저 에이전트를 만들어요. 이 에이전트는 캠페인 전체 워크플로를 지휘하면서 앞서 만든 스킬을 불러 쓰도록 했어요. 만든 다음에는 CLAUDE.md 파일도 업데이트해서 에이전트를 등록해요. 그래야 Claude가 이 에이전트를 언제 불러야 하고 어떻게 행동해야 하는지 항상 알아요.</p>
+<p>시험 삼아 신제품 기능에 관한 새 캠페인을 시작한다고 하되 일부러 정보를 거의 안 줘요. 그러면 캠페인 매니저가 목표, 예산, 타깃 오디언스 같은 질문을 던지고 답을 주면 리서치와 캠페인 브리프 작성이 시작돼요. 먼저 캠페인 기획 덱을 만들어요. 다른 에이전트를 띄워 일을 시키니까 메인 에이전트 창의 컨텍스트를 잡아먹지 않고 캠페인 브리프가 정해지면 그다음 에셋 생성으로 넘어갑니다. Grace의 추가 팁은 언제든 task view를 눌러 Claude가 지금 무슨 일을 하는지 볼 수 있다는 거예요.</p>
+<p>약 25분 뒤 Claude가 캠페인 결과물을 모두 가져왔어요.</p>
+<ul><li>캠페인 브리프 덱: Grace는 Claude Design으로 만든 덱보다 이쪽이 더 실용적이라고 해요. 텍스트를 바로 고치기 쉽고 전술 계획, 채널 전략, 예산 배분까지 있어서 캠페인 기획의 탄탄한 출발점이 됩니다.</li><li>캠페인 성과 트래커: 엑셀 수식이 이미 들어 있어서 계획 대비 실적(actual versus forecast)을 바로 관리할 수 있어요. 채널 성과, 콘텐츠 성과, 파이프라인 어트리뷰션까지 다룹니다.</li><li>소셜 캐러셀: 브랜드와 캠페인에 잘 맞아요. 다만 슬라이드 두 장에서 넘침(overflow) 문제가 있어서 스킬을 더 다듬어야 하지만 시간은 크게 아껴요.</li><li>모션 영상: 캠페인 주제에 맞는 스토리보드로 브랜드 모션 그래픽이 들어갔어요.</li><li>캠페인 랜딩 페이지: 행동 유도(call to action) 버튼과 앞의 영상이 들어가고 전부 브랜드 디자인 시스템에 맞아요.</li></ul>
+<p>이제 새 캠페인을 만들 때마다 세부 내용을 캠페인 매니저에게 주기만 하면 나머지가 이어서 돌아갑니다.</p>
+<h4>Notion 스킬 라이브러리와 주간 루틴으로 팀 시스템을 만들어요</h4>
+<p>브리프 하나로 캠페인을 통째로 돌렸지만 이 시스템은 지금 내 컴퓨터에만 있어요. 팀과 나누려면 Notion에 Claude 스킬 라이브러리를 만들면 되고 Grace는 여기서 개인 시스템이 팀 시스템이 된다고 해요.</p>
+<p>Notion 라이브러리에는 스킬 이름, 설명, 카테고리, 버전, 그리고 실제 스킬 파일이 저장돼요. 앞서 각 스킬에 넣은 버전 관리가 여기서 쓰입니다. Claude가 이 버전으로 변경을 추적하고 라이브러리를 최신으로 유지하거든요.</p>
+<p>먼저 프로젝트 레벨의 스킬을 전부 이 라이브러리에 올려요. Grace가 전에 만들어 둔 skill library manager 스킬이 호출되고 테스트 항목을 하나 먼저 올린 뒤 나머지를 이어서 올립니다. 금방 모든 스킬이 설명과 카테고리까지 자동으로 채워지고 스킬 파일은 zip으로 압축되어 라이브러리에서 내려받을 수 있어요. 팀원이나 클라이언트는 필요한 걸 필터로 골라 어떤 스킬이 있는지 볼 수 있죠.</p>
+<p>스킬이 업데이트되면 Claude에게 스킬 라이브러리를 동기화(sync)하라고 시키면 돼요. 어떤 스킬을 올려야 하는지 스캔하는데, 이 예시에서는 animated video 스킬의 버전 2가 올라올 대상으로 잡혔어요.</p>
+<p>한 걸음 더 가면 Claude Code의 routines 기능으로 예약 작업을 만들 수 있어요. 순서는 이렇습니다.</p>
+<ol><li>사이드바에서 routines로 들어가 local로 새 routine을 만들어요.</li><li>작업 이름, 설명, 지침을 적어요. 여기서는 아직 라이브러리에 올리지 않은 새 스킬이 있는지 확인하고 올려 달라는 내용이에요.</li><li>auto-mode를 골라요. 위험이 낮은 작업은 Claude가 알아서 승인해요.</li><li>같은 프로젝트 폴더를 선택하고 매주 오전 9시에 돌도록 설정해요.</li></ol>
+<p>이러면 스킬을 라이브러리에 수동으로 올릴 필요가 없어요. Grace는 이게 Claude 스킬의 가치를 더 크게 키우는 방법이라고 해요.</p>
+<p><strong>스킬 하나로 시작해 아주 잘 돌아가게 만든 다음 다음 스킬을 만드세요. 그렇게 진짜 시스템이 자라요.</strong></p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>브랜드 스킬이 모든 것의 바닥이에요</strong>: Grace는 거의 모든 마케팅 업무가 브랜드 스킬을 기반으로 한다고 봐요. brand voice 스킬과 디자인 시스템 스킬을 먼저 깔아 두면 이후 캠페인 기획, 캐러셀, 모션 스킬이 모두 같은 브랜드 룩앤필로 나옵니다.</li><li><strong>Claude Design의 가장 큰 가치는 내보내기에 있어요</strong>: 디자인 시스템과 캐러셀·애니메이션 템플릿을 만든 뒤 export 해서 Claude Code 스킬의 재료로 쓰는 흐름이에요. 템플릿이 제대로 만들어져야 최종 품질을 계속 통제할 수 있다는 게 Grace의 설명입니다.</li><li><strong>스킬이 쌓이면 에이전트가 지휘해요</strong>: 스킬 7개를 campaign manager agent에 묶으니 정보가 거의 없는 요청에서도 질문, 리서치, 덱, 트래커, 캐러셀, 영상, 랜딩 페이지까지 이어졌어요. 개별 도구가 아니라 시스템으로 쓰게 되는 지점이에요.</li><li><strong>버전 관리가 개인 시스템을 팀 시스템으로 바꿔요</strong>: 처음 스킬을 만들 때 versioning을 넣어 둔 덕에 Notion 라이브러리 동기화와 주간 routine이 가능해졌어요.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li>이번 주에 내가 반복해서 한 마케팅 업무를 전부 적고 브랜드 스킬, 기능 스킬, 전문 스킬 세 종류로 나눠 우선순위를 정해 보세요. 브랜드 스킬부터 만들라는 게 Grace의 순서예요.</li><li>브랜드 폴더를 하나 만들어 context 폴더에 브랜드 컨텍스트, ICP, 마케팅 전략 문서를 넣고 CLAUDE.md도 준비하세요. 그다음 Claude 데스크톱의 Claude Code에서 그 폴더를 열고 brand voice 가이드로 brand voice 스킬을 만들어 달라고 하세요. 예시를 asset으로 함께 만들고 versioning을 포함해 달라는 말을 꼭 붙이세요.</li><li>브랜드 컬러와 로고가 담긴 랜딩 페이지 같은 마케팅 소재를 assets 폴더에 모아 두고 Claude Design의 design system에서 이름을 정해 프로젝트 폴더와 로고 brand voice 노트를 붙여 generate 하세요. 10~15분 걸리니 눌러 두고 결과를 하나씩 검토한 뒤 export 해서 디자인 시스템 폴더를 프로젝트에 끌어다 놓으면 브랜드 디자인 스킬이 설치돼요.</li><li>Claude Design에서 prototype으로 social carousel template을 high fidelity로 만들고 export 해서 templates 폴더에 넣으세요. 그러고 Claude Code에 이 템플릿을 참조해 콘텐츠 앵글을 제안하고 nano banana로 커버를 만든 뒤 슬라이드를 개별 이미지로 내보내는 캐러셀 스킬을 만들어 달라고 해 보세요.</li><li>스킬이 서너 개 쌓이면 Claude Code의 routines에서 local routine을 새로 만드세요. 새 스킬이 있는지 확인해 라이브러리에 올리는 지침을 적고 auto-mode와 같은 프로젝트 폴더를 고른 뒤 매주 오전 9시로 설정하면 돼요.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>세 가지만 답하면 4단계 중 지금 위치를 바로 알려드려요. 무료예요.</p><span class="go">내 단계 진단하기 →</span></a>
+    <a class="cross" href="../../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../../../library/" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>
