@@ -2622,6 +2622,23 @@
    "thumb": "notes/thumb/jajEm8R9nD0.webp",
    "url": "notes/jajEm8R9nD0/",
    "ready": true
+  },
+  {
+   "video_id": "02esZkttfzE",
+   "title": "99%가 아직 모르는 ChatGPT 워크. 화면만 녹화하면 100% 자동화로 구현됩니다",
+   "title_orig": "99%가 아직 모르는 ChatGPT 워크. 화면만 녹화하면 100% 자동화로 구현됩니다",
+   "source": "빌더 조쉬 Builder Josh",
+   "date": "2026-07-20",
+   "topic": "에이전트",
+   "summary": "일주일 전 새로 나온 ChatGPT 워크(ChatGPT Work)를 조쉬가 직접 써 보며 사이트·프레젠테이션·스킬·플러그인을 차례로 시연하고 화면만 녹화하면 반복 업무를 스킬로 바꿔 주는 '리코드 앤 리플레이(Record & Replay)'까지 보여 주는 튜토리얼이에요. 마지막에는 클로드 코워크(Claude Cowork)와 비교해 어느 쪽을 언제 쓸지도 정리해 줍니다.",
+   "points": [
+    "워크의 무게중심은 대화가 아니라 산출물에 있어요",
+    "반복 업무 자동화의 진입 장벽이 '녹화 한 번'으로 내려갔어요",
+    "플러그인은 커넥터와 스킬을 묶은 패키지라서 더 많은 일을 맡길 수 있어요"
+   ],
+   "thumb": "notes/thumb/02esZkttfzE.webp",
+   "url": "notes/02esZkttfzE/",
+   "ready": true
   }
  ]
 }
