@@ -2571,6 +2571,23 @@
    "thumb": "notes/thumb/R2SOaieHus8.webp",
    "url": "notes/R2SOaieHus8/",
    "ready": true
+  },
+  {
+   "video_id": "xW3egX7Vo-E",
+   "title": "에이전트에 권한을 다 열어두면 어떻게 뚫리는지 보안 전문가가 직접 보여줍니다 (스틸리언 심재빈님)",
+   "title_orig": "에이전트에 권한을 다 열어두면 어떻게 뚫리는지 보안 전문가가 직접 보여줍니다 (스틸리언 심재빈님)",
+   "source": "빌더 조쉬 Builder Josh",
+   "date": "2026-08-04",
+   "topic": "에이전트",
+   "summary": "보안회사 스틸리언에서 5년 넘게 iOS 앱 보안을 해 온 심재빈 님이 SQL 인젝션·사회공학 해킹·하드코딩된 API 키 같은 전통적인 공격이 AI 에이전트 시대에 어떤 이름으로 돌아왔는지 직접 시연하며 보여 주고 에이전트에 권한을 어떻게 나눠 줘야 덜 위험한지 알려 줍니다.",
+   "points": [
+    "AI 보안은 새 분야가 아니라 옛 공격의 개명판이에요",
+    "완벽한 차단보다 피해 반경을 줄이는 쪽이 현실적이에요",
+    "쓰기 권한을 한곳에 모으면 관리할 대상이 줄어요"
+   ],
+   "thumb": "notes/thumb/xW3egX7Vo-E.webp",
+   "url": "notes/xW3egX7Vo-E/",
+   "ready": true
   }
  ]
 }
