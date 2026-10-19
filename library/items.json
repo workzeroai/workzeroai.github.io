@@ -2673,6 +2673,23 @@
    "thumb": "notes/thumb/ggFKB45anK4.webp",
    "url": "notes/ggFKB45anK4/",
    "ready": true
+  },
+  {
+   "video_id": "9m8iMzEBuSU",
+   "title": "5인 회사 운영하며 직접 헤르메스 에이전트 720시간 돌려본 후기 (feat. Slack, Hostinger)",
+   "title_orig": "5인 회사 운영하며 직접 헤르메스 에이전트 720시간 돌려본 후기 (feat. Slack, Hostinger)",
+   "source": "빌더 조쉬 Builder Josh",
+   "date": "2026-06-16",
+   "topic": "에이전트",
+   "summary": "여섯 명 남짓한 AX 컨설팅 회사를 운영하는 조쉬가 헤르메스 에이전트(Hermes Agent)를 슬랙에 '팀원'으로 들여 한 달(제목 기준 720시간) 동안 써 본 기록이에요. 설치 환경부터 데이터 적재, 매일 갱신되는 SOP, 이메일·ERP 업무 위임, 그리고 아직 사람이 맡아야 하는 영역까지 차례로 짚습니다.",
+   "points": [
+    "에이전트의 실력은 쌓인 맥락에서 나와요",
+    "원본보다 매일 갱신되는 요약 문서가 일을 해요",
+    "설치 위치는 공용인지 개인용인지로 정해요"
+   ],
+   "thumb": "notes/thumb/9m8iMzEBuSU.webp",
+   "url": "notes/9m8iMzEBuSU/",
+   "ready": true
   }
  ]
 }
