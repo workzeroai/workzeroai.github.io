@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>구글 AI, 이제 웬만한 건 다 콘텐츠로 바꿔 줍니다 · 워크제로 자료실</title>
+<meta name="description" content="Grace Leung이 가상의 과자 브랜드 Healthy Crunch를 예로 들어, 원본 파일만으로 블로그 글, 광고 이미지, 제품 영상, 소셜 콘텐츠까지 만드는 과정을 Google의 AI 도구 하나씩 따라가며 보여 줘요. NotebookLM, Nano Banana, ">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/4jZQoxF8YmY/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#2462e0">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="구글 AI, 이제 웬만한 건 다 콘텐츠로 바꿔 줍니다">
+<meta property="og:description" content="Grace Leung이 가상의 과자 브랜드 Healthy Crunch를 예로 들어, 원본 파일만으로 블로그 글, 광고 이미지, 제품 영상, 소셜 콘텐츠까지 만드는 과정을 Google의 AI 도구 하나씩 따라가며 보여 줘요. NotebookLM, Nano Banana, ">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/4jZQoxF8YmY/">
+<meta property="og:image" content="https://img.youtube.com/vi/4jZQoxF8YmY/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="구글 AI, 이제 웬만한 건 다 콘텐츠로 바꿔 줍니다">
+<meta name="twitter:description" content="Grace Leung이 가상의 과자 브랜드 Healthy Crunch를 예로 들어, 원본 파일만으로 블로그 글, 광고 이미지, 제품 영상, 소셜 콘텐츠까지 만드는 과정을 Google의 AI 도구 하나씩 따라가며 보여 줘요. NotebookLM, Nano Banana, ">
+<meta name="twitter:image" content="https://img.youtube.com/vi/4jZQoxF8YmY/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+.tgl{margin:18px 0;border:1px solid var(--hair);border-radius:14px;background:var(--soft)}.tgl>summary{cursor:pointer;padding:14px 18px;font-weight:700;color:var(--ink);list-style:none}.tgl>summary::before{content:"▸ ";color:var(--primary)}.tgl[open]>summary::before{content:"▾ "}.tgl-in{padding:0 14px 14px}
+:root{--primary:#2462e0;--primary-deep:#1a4fb8;--primary-pale:#e5effd;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f4f8fe;--hair:#dfe7f2;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+/* WZ-COBALT-C */:root{--grad-btn:linear-gradient(135deg,#2b74f0 0%,#2462e0 50%,#1d55d6 100%);--gloss:radial-gradient(120% 90% at 30% 0%,rgba(255,255,255,.28) 0,rgba(255,255,255,0) 55%);--glow:0 12px 28px -10px rgba(36,98,224,.75),0 2px 6px -1px rgba(29,85,214,.35)}.btn.pri,.fbtn,.rcta .p1,.price.best .pick,.price .pop{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:var(--glow),inset 0 1px 0 rgba(255,255,255,.35)}.fchip.on{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:0 8px 18px -8px rgba(36,98,224,.8),inset 0 1px 0 rgba(255,255,255,.35)}.btn.pri:hover,.fbtn:hover,.rcta .p1:hover{filter:brightness(1.08) saturate(1.1)}.lv-head,.svr.win{background:var(--gloss),var(--grad-btn)}.eyebrow{background:linear-gradient(135deg,#e5effd,#d3e6ff);color:#1a4fb8}.logo b{color:#2b74f0}.fmeta i,.nm i{background:linear-gradient(135deg,#e5effd,#d6e7ff);color:#1a4fb8}.paneNote{background:linear-gradient(135deg,#eaf3ff 0%,#f7fbff 60%,#fff 100%);border-color:#d3e3fb}.keys{background:linear-gradient(135deg,#e5effd,#f2f8ff)}.nkeys span::before,.keys li::before{background:linear-gradient(135deg,#3b8cff,#1d55d6)}
+</style>
+<script src="/assets/wz.js" defer></script>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴"><a href="../../../tutoring/">1:1 과외</a><a href="../../../build/">제작 문의</a><a class="on" href="../../../library/" aria-current="page">자료실</a></div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../../../library/">← 자료실</a>
+  <div class="head"><div class="m"><i>AI 소식</i><span>2026-06-12</span></div><h1>구글 AI, 이제 웬만한 건 다 콘텐츠로 바꿔 줍니다</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/4jZQoxF8YmY.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Grace Leung</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<span class="orig">원제 · Google AI Can Now Turn Almost Anything Into Content</span><br><a href="https://www.youtube.com/watch?v=4jZQoxF8YmY" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>브랜드 맥락을 한곳에 모아 두면 콘텐츠마다 처음부터 시작하지 않아도 돼요</li><li>반복 작업은 Gem으로 고정해요</li><li>영상은 스토리보드를 먼저 만들고 생성해요</li></ul></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>Grace Leung이 가상의 과자 브랜드 Healthy Crunch를 예로 들어, 원본 파일만으로 블로그 글, 광고 이미지, 제품 영상, 소셜 콘텐츠까지 만드는 과정을 Google의 AI 도구 하나씩 따라가며 보여 줘요. NotebookLM, Nano Banana, Gem, Omni, Flow, Pomelli가 각각 어느 단계를 맡는지 알면 콘텐츠 제작 흐름이 한눈에 정리돼요.</p>
+<h3>전체 내용 정리</h3>
+<h4>NotebookLM을 Gemini 앱에 붙이면 브랜드 맥락이 프로젝트 공간이 돼요</h4>
+<p>Grace는 Google I/O에서 직접 써 본 뒤 마케터 입장에서 꽤 인상 깊었다고 말해요. 이 영상의 목표는 기능 소개가 아니라 실제 브랜드 하나를 잡아 아무것도 없는 상태에서 콘텐츠 엔진을 만들어 보는 거예요. 모든 과정은 Google Gemini AI만으로 진행하고 시연용 브랜드라는 점도 미리 밝혀 둬요.</p>
+<p>출발점은 NotebookLM(자료를 올려 두면 그 자료만 근거로 답해 주는 Google의 노트 도구)이에요. 최근 NotebookLM이 Gemini 앱 안으로 들어오면서 Gemini에서도 만들어 둔 노트북을 그대로 불러 쓸 수 있게 됐어요. Grace는 이걸 브랜드 맥락을 기억하는 프로젝트 공간으로 봐요.</p>
+<p>Grace가 만든 brand knowledge 노트북에는 대표 제품, 고객 인사이트, 제품 이미지가 들어 있어요. 말하자면 계속 늘어나는 브랜드 지식 창고예요. Gemini 앱으로 돌아가면 같은 노트북이 그대로 보여요.</p>
+<p>블로그 글은 이런 순서로 만들어요. 먼저 blog content brief skill(콘텐츠 브리프 양식을 적어 둔 재사용 지시서)을 Gemini에 붙이고 노트북 자료를 바탕으로 콘텐츠 브리프를 써 달라고 해요. 그러면 Grace가 skill에 정해 둔 템플릿 형식을 Gemini가 따라서 블로그에 들어갈 세부 내용까지 채워 줘요.</p>
+<p>브리프가 마음에 들면 canvas mode를 켜고 이 브리프로 전체 글을 써 달라고 해요. 원하는 서식과 내부 링크까지 갖춘 블로그 글이 바로 나와요. 이어서 image mode를 켜 대표 배너 이미지와 본문용 이미지 두 장을 더 만들어 달라고 해요.</p>
+<p>노트북에 올려 둔 제품 이미지를 Gemini가 참고하기 때문에 이미지가 브랜드 분위기에서 벗어나지 않아요. 완성된 글은 Google Doc으로 바로 내보낼 수 있고 생성한 이미지도 같이 넣을 수 있어요. 다만 Grace는 이대로 발행하지 말고 제목을 손보고 내용을 검토하라고 해요. Google Doc에 옮겨 두면 팀원이 댓글을 달며 같이 고치기도 좋아요.</p>
+<p>Gemini의 쓸모는 글에서 끝나지 않아요. 같은 노트북으로 학부모용 도시락 플래너 같은 리드 마그넷(이메일 주소와 맞바꾸는 무료 자료) PDF 초안을 디자인할 수도 있어요. 그 초안을 Canva에서 다듬으면 매번 처음부터 시작하지 않아도 돼요.</p>
+<p>내부 자료도 같은 방식이에요. 팀에 돌릴 한 장짜리 리테일 바이인용 라인 시트(유통 담당자를 설득하는 제품 소개서)를 만들 때도 Gemini가 노트북에서 필요한 정보를 뽑아 디자인까지 해 줘요. Grace는 이 작업이 10분도 걸리지 않는다고 말해요.</p>
+<h4>Nano Banana는 이미지를 만드는 것보다 고치고 늘리는 데 강해요</h4>
+<p>배너와 본문 이미지는 Nano Banana(Google의 이미지 생성 모델)가 할 수 있는 일의 일부일 뿐이에요. 가장 쉬운 시작법은 chat box에서 image mode를 고르는 거예요. 그러면 미리 만들어 둔 스타일이 여러 개 보이는데 Grace는 이 방법이 가장 쉽고 마케팅에 가장 쓸모 있었다고 해요.</p>
+<p>예를 들어 salon 스타일을 고르고 제품 이미지 몇 장을 넣은 뒤 마케팅 캠페인용 제품 광고 컷을 만들어 달라고 해요. 프롬프트에 세부 내용을 거의 적지 않았는데도 결과가 꽤 좋아요.</p>
+<p>Grace가 꼽는 Nano Banana의 큰 강점은 고쳐 가며 다듬기가 쉽다는 점이에요. 웹사이트 히어로 배너 컷을 만들게 하면 첫 초안부터 눈에 띄고 산뜻해요. 가운데 놓인 제품을 지우고 싶다면 이미지를 클릭해 sketch tool로 해당 영역에 원을 그리고 지워 달라고 하면 돼요. Nano Banana가 지시를 알아듣고 반영하고 마음에 들 때까지 이 과정을 반복해요. 마지막에는 Canva로 옮겨 캠페인 슬로건 같은 세부 요소를 얹으면 끝나요.</p>
+<p>A/B 테스트 아이디어를 얻는 데도 좋아요. 이미지를 바로 만들지 않고 먼저 제품 이미지를 주고 A/B 테스트용 text-to-image 프롬프트 세 개를 제안해 달라고 해요. 배경, 분위기, 스타일이 서로 다른 프롬프트가 테스트 각도와 함께 나와요. 마음에 드는 하나를 고른 뒤 같은 대화창에서 Nano Banana를 켜 최종 광고 이미지를 만들면 돼요. Grace는 이렇게 하면 캠페인 기획에 쓸 창의적인 각도가 끝없이 나온다고 해요.</p>
+<p><strong>Grace가 특히 높이 사는 기능은 크리에이티브 리사이징이에요.</strong></p>
+<p>정사각형으로 만든 크리에이티브를 다른 채널에 쓰려고 세로 레이아웃으로 바꿔야 할 때가 많죠. 이때 Nano Banana에 원본을 주고 원하는 비율에 맞게 레이아웃을 다시 짜되 모든 요소를 일관되게 유지해 달라고 하면 돼요. 영상에서는 10초 안에 바로 쓸 수 있는 다른 사이즈가 나왔고 요소들도 일관됐어요. 채널마다 사이즈를 맞추는 시간이 크게 줄어드니 꼭 써 보라고 Grace는 권해요.</p>
+<h4>Gem을 만들어 두면 프롬프트를 매번 다시 쓰지 않아도 돼요</h4>
+<p>지금까지는 작업할 때마다 프롬프트를 새로 써야 했어요. Grace는 그게 꽤 번거롭다면서 Google Gem을 또 하나의 큰 변화로 소개해요. Gem은 나만의 Gemini를 만드는 기능이에요. 브랜드와 작업 방식을 한 번 넣어 두면 이후 콘텐츠 제작이 훨씬 편해져요.</p>
+<p>만드는 방법은 이래요. 사이드바에서 Gems로 들어가 New Gem을 눌러요. Gem마다 이름이 필요하고 가장 중요한 건 이 Gem의 행동을 정하는 instructions(지침)예요. 기본으로 쓸 도구와 참고할 knowledge(지식 자료)도 지정할 수 있어요.</p>
+<p>Grace가 만든 Studio Ad Shot Gem이 예시예요. 어떤 제품 입력이든 받아서 스튜디오급 컷으로 바꿔 주는 Gem이고 기본 도구는 Nano Banana예요. knowledge에는 제품 패키지 치수를 넣었는데 제품 크기를 알려 주면 모델이 더 현실적인 이미지를 만들기 때문이에요. Studio ads 스타일 가이드도 knowledge로 넣고 원한다면 노트북 지식도 붙일 수 있어요.</p>
+<p>이제 광고 컷이 필요할 때마다 제품만 주면 캠페인에 쓸 수 있는 전문적인 비주얼이 나와요. Gem을 쓰면 결과물이 일관돼 품질을 관리하기도 쉬워요. 스튜디오 컷, 라이프스타일 이미지, 캠페인 카피처럼 반복되는 작업마다 Gem을 따로 만들 수도 있어요. Grace는 마케팅용 라이프스타일 이미지 Gem도 하나 더 갖고 있어서 제품을 주면 여러 장면의 라이프스타일 이미지를 만들어 줘요.</p>
+<p>핵심은 팀의 작업 방식을 표준화하는 거예요. 매번 프롬프트를 다시 쓰는 대신 Gem을 팀원과 공유하면 돼요.</p>
+<h4>Omni 모델로 영상을 만들 땐 스토리보드부터 짜는 게 좋아요</h4>
+<p>영상 생성에서는 Google 모델이 가장 뛰어나다고 Grace는 말해요. 최근 나온 Omni 모델은 거의 어떤 입력이든 받아 거의 어떤 출력이든 만들도록 설계됐고 특히 물리 법칙과 추론이 강한 영상을 잘 만든다고 해요. 제품 영상, 릴스, 쇼츠처럼 마케터가 필요한 영상 대부분을 만들 수 있다는 설명이에요.</p>
+<p>쓰는 방법은 간단해요. video mode를 고르면 미리 만들어 둔 스타일이 여러 개 나와요. 스타일 하나와 입력 이미지 몇 장을 고르면 시작할 수 있어요. 영상에서는 여성 모델이 제품을 들고 있는 제품 영상을 만들어 달라고 했어요. Gemini 앱 안에서는 현재 최대 10초 길이까지 생성돼요.</p>
+<p>프롬프트가 복잡하지 않았는데도 Omni가 정확하게 이해했다고 해요. Grace가 특히 놀란 부분은 캐릭터 일관성이에요. 영상 내내 정말 같은 사람처럼 보였어요. 장면을 바꾸라고 프롬프트를 주면 나머지는 그대로 두고 다른 장면으로 바뀌어요. 그래서 Grace는 Omni를 "영상용 Nano Banana 같아요(like the Nano Banana, but for the video)"라고 표현해요.</p>
+<p>한 가지 조심할 점이 있어요. 구독 요금제에 따라 하루 생성 한도가 꽤 엄격해요. 그래서 쿼터를 낭비하지 않으려면 영상을 만들기 전에 스토리보드부터 짜라고 Grace는 강조해요.</p>
+<p>Grace는 공식 prompt guide를 바탕으로 Omni 영상용 스토리보드를 만드는 Gem을 따로 갖고 있어요. prompt guide 링크는 영상 설명란에 둔다고 해요. 사용 방법은 이래요.</p>
+<ul><li>제품 이미지와 영상 캐릭터 이미지를 올려요.</li><li>6개 장면(six scenes)으로 된 영상이라고 말하고 나머지 조건도 적어요.</li><li>그러면 공식 prompt guide의 틀에 맞춘 장면별 상세 지시문이 먼저 나와요.</li><li>이어서 스토리보드 이미지까지 만들어 줘요.</li></ul>
+<p>이렇게 하면 영상을 만들기 전에 장면 세부 내용을 조정할 수 있어요. 조정이 끝나면 스토리보드 비주얼을 raw input으로 올리고 화면 비율을 맞게 고른 뒤 최종 영상을 생성해요. 스토리보드를 거치면 결과물이 훨씬 예측 가능해져요. Grace가 강하게 추천하는 방법이에요.</p>
+<p>Omni가 다른 모델과 다른 점은 영상 자체를 참고 자료로 쓸 수 있다는 거예요. Grace는 Instagram 릴스 레시피 클립을 하나 가져와 속도감과 편집 스타일을 따라 하게 했어요. 제품 이미지도 함께 줘요. 지금은 10초 클립만 참고할 수 있어서 원하는 구간을 골라 먼저 잘라 둬야 해요. 그다음 이 제품이 나오고 실제 레시피 지시가 들어간 10초짜리 레시피 릴스를 만들어 달라고 요청해요.</p>
+<p>넣어야 할 입력이 많아 쉽지 않은 작업이었는데도 Omni가 잘 해냈다고 해요. 레시피 지시도 모두 정확했고요. Grace는 이 방법으로 청중에게 쓸모 있는 짧은 교육용 마케팅 클립을 여러 개 만들 수 있다고 봐요.</p>
+<h4>Flow는 영상 한 편을 만드는 스튜디오예요</h4>
+<p>Gemini 안에서 영상을 만들면 하루에 몇 번밖에 생성할 수 없고 타임라인이나 편집기도 없고 여러 클립을 이어 붙일 방법도 없어요. Grace도 직접 겪은 한계라고 해요. 이걸 풀어 주는 도구가 Google Flow예요. 장면을 추가하는 타임라인과 재사용 가능한 캐릭터, 에셋을 갖춘 스튜디오가 영상 생성 위에 얹혀 있어요.</p>
+<p>시작은 Google Flow에서 새 프로젝트를 만드는 거예요. 미디어를 올리거나 브랜드 캐릭터를 만들거나 장면을 만들면서 시작할 수 있어요. Grace는 브랜드 캐릭터부터 만들어요.</p>
+<ul><li>Flow 안에서 한 번 만들어 두면 모든 장면에서 다시 쓸 수 있는 캐릭터예요.</li><li>참고 이미지 한 장과 프롬프트 세부 내용을 줘요.</li><li>영상에서는 앞서 쓴 여성 모델을 모든 마케팅 자료의 브랜드 호스트로 삼았어요.</li><li>이름을 붙이고 목소리를 골라요.</li></ul>
+<p>이제 영상을 만들 때마다 이 캐릭터를 태그하고 제품을 업로드하거나 태그한 뒤 마케팅 클립을 만들어 달라고 하면 돼요. 비디오 모델, 비율, 길이, 변형(variation) 개수는 직접 조절해요. 생성할 때마다 크레딧이 들고 영상 속 예시는 15 credits가 필요했어요.</p>
+<p>결과는 금방 나와요. Grace는 만들어 둔 브랜드 캐릭터와 정말 닮았고 캐릭터 일관성이 매우 강하며 제품도 실제처럼 보인다고 평가해요. 첫 초안으로는 거의 완벽하다는 거예요. 한계는 한 번에 10초밖에 안 된다는 점이에요. 이어 가려면 장면을 추가해서 전체 영상을 완성해야 해요.</p>
+<p>Flow에는 기본 생성 외에 agent mode도 있어요. 영상 작업을 알아서 조율해 주는 기능이에요. 제품 이미지를 주고 agent mode를 켠 뒤 같은 제품 광고를 카메라 움직임과 각도를 다르게 해서 세 가지 버전으로 만들어 달라고 해요. agent의 세부 설정에서는 행동 방식도 정할 수 있어요. 영상에서는 작업 전에 항상 확인을 받도록 설정했어요.</p>
+<p>agent가 영상 변형 생성 허락을 구해 오면 승인해요. Grace는 이게 Gemini 앱에서는 할 수 없는 일이라고 말해요. agent가 세 개의 영상 생성 작업을 대신 조율해 주기 때문이에요. 결과로 나온 세 광고는 모두 꽤 괜찮았고 신나는 배경 음악도 들어 있었어요. 다만 길이를 더 늘려야 해요. 세 광고는 분위기가 확실히 달라서 프로젝트 자료로 남겨 두었다가 다음번에 agent에게 다시 쓰게 할 수 있어요.</p>
+<p>agent는 스토리보드를 따라 작업하는 데도 능해요. 제품 광고용 스토리보드를 먼저 만들고 그걸 Flow agent에게 넘기면서 캐릭터와 주력 제품을 태그해 주면 최종 영상 광고가 만들어져요. Grace는 flow agent를 쓰면 품질이 거의 항상 더 좋다고 해요. 스토리보드에서 제안한 내용을 그대로 따르기 때문이에요. 사람처럼 생긴 캐릭터뿐 아니라 브랜드 마스코트 스타일로도 할 수 있어서 브랜드 캠페인에 쓸 방법이 다양해요.</p>
+<h4>Pomelli는 웹사이트만 주면 브랜드에 맞는 소셜 콘텐츠를 만들어 줘요</h4>
+<p>여기까지 만든 콘텐츠는 모두 사람이 프롬프트를 하나씩 입력하며 끌고 간 결과예요. 그래서 Grace는 Google Pomelli도 놓치면 아쉬운 도구라고 소개해요. 웹사이트를 보고 브랜드 스타일을 가져와서 브랜드에 맞는 소셜 콘텐츠를 몇 분 안에 만들어 줘요.</p>
+<p>시작은 Business DNA 설정이에요. 웹사이트 주소를 넣으면 브랜드 프로필을 분석해요. 영상에서는 같은 Healthy Crunch 브랜드를 썼어요. 분석이 끝나면 브랜드 컬러와 태그라인을 고치고 Pomelli agent에게 제안을 받아 볼 수도 있어요. 콘텐츠를 만들기 전에 catalog and assets도 확인하라고 해요. 기존 제품 이미지나 에셋을 가져올 수 있고 이 브랜드의 경우 웹사이트에서 제품 에셋 대부분을 이미 수집해 놨어요.</p>
+<p>캠페인은 두 가지 방법으로 만들어요. 첫째는 미리 준비된 캠페인을 쓰는 거예요. World Chocolate Day 같은 제안 캠페인을 열면 Pomelli가 이미 만들어 둔 크리에이티브가 나오고 모두 브랜드에 잘 맞아 보여요. 무엇을 골라도 제목, 설명, CTA 버튼 문구를 바꿀 수 있고 다 되면 최종 에셋을 내려받아요. 에셋을 애니메이션으로 만드는 기능도 있는데 지금은 텍스트 효과 위주예요. 그래도 쓸 만하다고 해요.</p>
+<p>둘째는 chat box로 만드는 방법이에요.</p>
+<ul><li>먼저 제품을 골라요. 영상에서는 다섯 개를 골랐어요.</li><li>할인 같은 오퍼와 목표 같은 캠페인 내용을 프롬프트로 적어요.</li><li>화면 비율을 고르고 creative brief를 만들어 달라고 해요.</li><li>브리프에 캠페인과 제품 정보가 정리돼 나오면 confirm을 눌러요.</li></ul>
+<p>그러면 이 캠페인 내용을 바탕으로 관련 에셋이 한꺼번에 만들어져요. 제품의 특징을 강조한 브랜드다운 결과물이에요. Grace는 브랜드 소셜 콘텐츠를 빠르고 쉽게 만드는 방법이라고 평가해요.</p>
+<p>Pomelli는 이제 photoshoot도 지원해요. 가지고 있는 제품 에셋으로 제품 사진 컷을 쉽게 만들 수 있어요. catalog에서 제품 하나를 고르고 영상에서는 vanilla sparkle crispy squares를 골랐어요. 그다음 photoshoot 템플릿을 골라요. Gemini가 최종 에셋을 만들 때 쓸 레이아웃이 라이브러리에 있고 그중 네 개를 고를 수 있어요. 고르자마자 바로 쓸 수 있는 에셋 네 개가 나와요. 한 번에 모두 내려받거나 새 캠페인에 다시 추가할 수도 있어요.</p>
+<p>웹사이트도 Pomelli 안에서 만들 수 있어요. website 메뉴로 들어가면 브랜드 맥락과 브랜드북, DNA, 자료를 모두 써서 웹사이트 버전을 자동으로 만들어요. 정교한 맞춤 웹사이트는 아니에요. 대신 캠페인 아이디어를 빠르게 시험해 보기에는 단순하고 기능도 충분해요. 한 번 클릭으로 게시할 수 있으니 게시 권한이 있는지만 확인하면 돼요. CTA 링크를 바꾸는 등 수정은 Gemini에게 프롬프트로 요청해요.</p>
+<p>Grace는 Pomelli가 크리에이티브 영감을 얻거나 브랜드에 맞는 마케팅 에셋을 유연하게 빨리 만들 수 있는 훌륭한 무료 도구라고 평가해요.</p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>브랜드 맥락을 한곳에 모아 두면 콘텐츠마다 처음부터 시작하지 않아도 돼요</strong>: Grace는 NotebookLM의 brand knowledge 노트북을 Gemini에서 불러 블로그, 이미지, PDF, 라인 시트를 모두 같은 자료로 만들었어요. 자료가 한곳에 있어야 결과물이 브랜드에서 벗어나지 않아요.</li><li><strong>반복 작업은 Gem으로 고정해요</strong>: 프롬프트를 매번 다시 쓰는 대신 이름, 지침, 기본 도구, 지식 자료를 한 번 설정해 두면 결과가 일관되고 팀과 공유할 수도 있어요.</li><li><strong>영상은 스토리보드를 먼저 만들고 생성해요</strong>: Omni는 하루 생성 한도가 빡빡해서 Grace는 장면별 지시와 스토리보드 이미지를 먼저 확인하고 조정한 뒤 생성해요. 결과를 예측하기 쉬워지고 쿼터도 아껴요.</li><li><strong>한 번에 만들려 하지 말고 고쳐 가며 다듬어요</strong>: Nano Banana는 sketch tool로 영역을 지정해 지우기, 비율 바꿔 다시 구성하기처럼 수정과 변환에 강하다고 Grace는 평가해요.</li><li><strong>도구마다 맡은 역할이 달라요</strong>: Gemini는 글과 이미지, Omni는 짧은 영상, Flow는 타임라인과 캐릭터가 필요한 영상, Pomelli는 웹사이트 기반의 소셜 캠페인이에요.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li>NotebookLM에 브랜드 노트북을 하나 만들어 보세요. 대표 제품 정보와 고객 인사이트, 제품 이미지를 올린 뒤 Gemini 앱에서 같은 노트북이 보이는지 확인해요. 이후 모든 콘텐츠 작업의 기준 자료가 돼요.</li><li>같은 노트북으로 블로그 글을 만들어 보세요. content brief skill을 붙여 브리프를 먼저 쓰게 하고 마음에 들면 canvas mode에서 전체 글을 쓰게 해요. image mode로 배너 이미지를 만든 뒤 Google Doc으로 내보내 제목과 내용을 직접 검토해요.</li><li>Nano Banana로 제품 광고 컷을 만들어 보세요. chat box에서 image mode를 고르고 미리 만들어 둔 스타일 하나와 제품 이미지를 넣어요. 그다음 A/B 테스트용 text-to-image 프롬프트 세 개를 먼저 제안받아 마음에 드는 하나로 최종 이미지를 만들어 보세요. 그 결과물을 정사각형에서 세로 비율로 바꿔 달라고 하면 리사이징도 확인할 수 있어요.</li><li>Gem을 하나 만들어 보세요. 사이드바에서 Gems로 가서 New Gem을 누르고 이름과 instructions를 쓴 뒤 기본 도구와 knowledge를 정해요. Grace는 Nano Banana를 기본 도구로 하고 제품 패키지 치수와 스타일 가이드를 knowledge로 넣은 광고 컷 Gem을 만들었어요.</li><li>Pomelli에 브랜드 웹사이트 주소를 넣어 보세요. Business DNA가 만들어지면 브랜드 컬러와 태그라인을 고치고 catalog and assets를 확인한 다음 제안 캠페인 하나를 열어 제목과 CTA 문구를 바꿔 보세요.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>세 가지만 답하면 4단계 중 지금 위치를 바로 알려드려요. 무료예요.</p><span class="go">내 단계 진단하기 →</span></a>
+    <a class="cross" href="../../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../../../library/" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>

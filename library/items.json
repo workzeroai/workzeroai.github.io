@@ -2794,6 +2794,23 @@
    "ready": true
   },
   {
+   "video_id": "4jZQoxF8YmY",
+   "title": "구글 AI, 이제 웬만한 건 다 콘텐츠로 바꿔 줍니다",
+   "title_orig": "Google AI Can Now Turn Almost Anything Into Content",
+   "source": "Grace Leung",
+   "date": "2026-06-12",
+   "topic": "AI 소식",
+   "summary": "Grace Leung이 가상의 과자 브랜드 Healthy Crunch를 예로 들어, 원본 파일만으로 블로그 글, 광고 이미지, 제품 영상, 소셜 콘텐츠까지 만드는 과정을 Google의 AI 도구 하나씩 따라가며 보여 줘요. NotebookLM, Nano Banana, Gem, Omni, Flow, Pomelli가 각각 어느 단계를 맡는지 알면 콘텐츠 제작 흐름이 한눈에 정리돼요.",
+   "points": [
+    "브랜드 맥락을 한곳에 모아 두면 콘텐츠마다 처음부터 시작하지 않아도 돼요",
+    "반복 작업은 Gem으로 고정해요",
+    "영상은 스토리보드를 먼저 만들고 생성해요"
+   ],
+   "thumb": "notes/thumb/4jZQoxF8YmY.webp",
+   "url": "notes/4jZQoxF8YmY/",
+   "ready": true
+  },
+  {
    "video_id": "tYvQq-MRyx0",
    "title": "외주 개발 곧 사라진다, AI 네이티브 전환한 IT 에이전시 대표가 단언한 진짜 이유 (똑똑한개발자 서장원 대표님)",
    "title_orig": "외주 개발 곧 사라진다, AI 네이티브 전환한 IT 에이전시 대표가 단언한 진짜 이유 (똑똑한개발자 서장원 대표님)",
