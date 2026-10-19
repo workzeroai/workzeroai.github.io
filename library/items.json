@@ -2641,6 +2641,23 @@
    "ready": true
   },
   {
+   "video_id": "aF57uCHuXgY",
+   "title": "마케팅용 Claude Design, 17분 만에 마스터하기",
+   "title_orig": "Master Claude Design in 17 Minutes for Marketing",
+   "source": "Grace Leung",
+   "date": "2026-07-31",
+   "topic": "자동화",
+   "summary": "Grace Leung은 Claude Design(Anthropic의 비주얼 디자인 스튜디오)을 \"그때그때 프롬프트로 디자인을 뽑는 도구\"가 아니라 \"브랜드 디자인 시스템을 한 번 만들고 템플릿으로 굳혀 Skills(작업 방법을 적어 둔 재사용 지시서)로 자동화하는 출발점\"으로 쓰라고 말해요. 캐러셀, 슬라이드 덱, 리드 마그넷, 랜딩 페이지, 모션 그래픽까지 화면에서 어떻게 눌렀고 어떤 프롬프트를 넣었는지 단계별로 보여 줍니다.",
+   "points": [
+    "Claude Design은 결정하는 곳이고 Claude는 실행하는 곳이에요",
+    "최종 결과물이 아니라 템플릿을 만드세요",
+    "반복하는 에셋은 Skill로, 일회성은 Claude Design에서 직접"
+   ],
+   "thumb": "notes/thumb/aF57uCHuXgY.webp",
+   "url": "notes/aF57uCHuXgY/",
+   "ready": true
+  },
+  {
    "video_id": "t4XEda3CB3Q",
    "title": "LLM wiki랑 RAG랑 뭐가 다른건지 알려드려요. 옵시디언+클로드 코드 조합은 필수입니다. (브레인 트리니티 브라이언님)",
    "title_orig": "LLM wiki랑 RAG랑 뭐가 다른건지 알려드려요. 옵시디언+클로드 코드 조합은 필수입니다. (브레인 트리니티 브라이언님)",
