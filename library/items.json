@@ -2775,6 +2775,23 @@
    "thumb": "notes/thumb/UXM74bsbfIA.webp",
    "url": "notes/UXM74bsbfIA/",
    "ready": true
+  },
+  {
+   "video_id": "CVmbidt-3ro",
+   "title": "토스 PO 출신 대표가 사내 ERP와 AI 에이전트를 직접 만들고 AI 네이티브 컴퍼니로 거듭난 방법 (윤용승 대표, 윤자동)",
+   "title_orig": "토스 PO 출신 대표가 사내 ERP와 AI 에이전트를 직접 만들고 AI 네이티브 컴퍼니로 거듭난 방법 (윤용승 대표, 윤자동)",
+   "source": "빌더 조쉬 Builder Josh",
+   "date": "2026-05-21",
+   "topic": "에이전트",
+   "summary": "토스 PO 출신으로 자동화 회사 윤자동을 이끄는 윤용승 대표가 노션 대신 바이브 코딩으로 사내 ERP '윤비서'를 직접 만들고 슬랙·클로드 코드와 연결해 회사 전체를 굴리는 모습을 빌더 조쉬와 함께 화면으로 보여 줍니다. 미팅 녹음, 견적서, 세금계산서, 입금 확인, 명함 등록까지 사람 손을 거의 거치지 않게 만든 구조가 궁금하다면 끝까지 읽어 볼 만해요.",
+   "points": [
+    "작게 시작해 불편할 때마다 붙이면 ERP가 됩니다",
+    "AI 활용의 출발점은 데이터를 한곳에 모으는 일이에요",
+    "도구마다 역할을 나누면 오버스펙을 피할 수 있어요"
+   ],
+   "thumb": "notes/thumb/CVmbidt-3ro.webp",
+   "url": "notes/CVmbidt-3ro/",
+   "ready": true
   }
  ]
 }
