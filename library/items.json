@@ -380,6 +380,23 @@
    "ready": true
   },
   {
+   "video_id": "BzS93V2zFTg",
+   "title": "ChatGPT Work + Dot으로 AI 마케팅팀 만들기 (에이전트 + 스킬)",
+   "title_orig": "ChatGPT Work + Dot: Build your AI Marketing Team (Agents + Skills)",
+   "source": "Grace Leung",
+   "date": "2026-10-03",
+   "topic": "에이전트",
+   "summary": "Grace는 ChatGPT Work 안에서 코딩 없이 스킬 몇 개와 전문 에이전트를 만들고 상시 비서 에이전트에게 Slack으로 일을 시켜 마케팅팀처럼 굴리는 전 과정을 가상의 어학 플랫폼 브랜드 하나로 보여 줍니다. 폴더 구성부터 광고, 랜딩 페이지, 2주치 소셜 콘텐츠, 리드 마그넷 캠페인까지 따라 할 수 있는 순서가 담겨 있어요.",
+   "points": [
+    "맥락 파일이 먼저예요",
+    "스킬은 절차, 에이전트는 판단이에요",
+    "비서 에이전트는 자리를 비웠을 때 값어치가 커져요"
+   ],
+   "thumb": "notes/thumb/BzS93V2zFTg.webp",
+   "url": "notes/BzS93V2zFTg/",
+   "ready": true
+  },
+  {
    "video_id": "DFlELTiSPk8",
    "title": "코딩 몰라도 되는 Codex 개념 총정리",
    "title_orig": "Every Codex Concept Explained for Non-Coders",

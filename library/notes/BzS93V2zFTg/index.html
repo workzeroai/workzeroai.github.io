@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ChatGPT Work + Dot으로 AI 마케팅팀 만들기 (에이전트 + 스킬) · 워크제로 자료실</title>
+<meta name="description" content="Grace는 ChatGPT Work 안에서 코딩 없이 스킬 몇 개와 전문 에이전트를 만들고 상시 비서 에이전트에게 Slack으로 일을 시켜 마케팅팀처럼 굴리는 전 과정을 가상의 어학 플랫폼 브랜드 하나로 보여 줍니다. 폴더 구성부터 광고, 랜딩 페이지, 2주치 소셜 콘">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/BzS93V2zFTg/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#2462e0">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="ChatGPT Work + Dot으로 AI 마케팅팀 만들기 (에이전트 + 스킬)">
+<meta property="og:description" content="Grace는 ChatGPT Work 안에서 코딩 없이 스킬 몇 개와 전문 에이전트를 만들고 상시 비서 에이전트에게 Slack으로 일을 시켜 마케팅팀처럼 굴리는 전 과정을 가상의 어학 플랫폼 브랜드 하나로 보여 줍니다. 폴더 구성부터 광고, 랜딩 페이지, 2주치 소셜 콘">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/BzS93V2zFTg/">
+<meta property="og:image" content="https://img.youtube.com/vi/BzS93V2zFTg/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ChatGPT Work + Dot으로 AI 마케팅팀 만들기 (에이전트 + 스킬)">
+<meta name="twitter:description" content="Grace는 ChatGPT Work 안에서 코딩 없이 스킬 몇 개와 전문 에이전트를 만들고 상시 비서 에이전트에게 Slack으로 일을 시켜 마케팅팀처럼 굴리는 전 과정을 가상의 어학 플랫폼 브랜드 하나로 보여 줍니다. 폴더 구성부터 광고, 랜딩 페이지, 2주치 소셜 콘">
+<meta name="twitter:image" content="https://img.youtube.com/vi/BzS93V2zFTg/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+.tgl{margin:18px 0;border:1px solid var(--hair);border-radius:14px;background:var(--soft)}.tgl>summary{cursor:pointer;padding:14px 18px;font-weight:700;color:var(--ink);list-style:none}.tgl>summary::before{content:"▸ ";color:var(--primary)}.tgl[open]>summary::before{content:"▾ "}.tgl-in{padding:0 14px 14px}
+:root{--primary:#2462e0;--primary-deep:#1a4fb8;--primary-pale:#e5effd;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f4f8fe;--hair:#dfe7f2;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+/* WZ-COBALT-C */:root{--grad-btn:linear-gradient(135deg,#2b74f0 0%,#2462e0 50%,#1d55d6 100%);--gloss:radial-gradient(120% 90% at 30% 0%,rgba(255,255,255,.28) 0,rgba(255,255,255,0) 55%);--glow:0 12px 28px -10px rgba(36,98,224,.75),0 2px 6px -1px rgba(29,85,214,.35)}.btn.pri,.fbtn,.rcta .p1,.price.best .pick,.price .pop{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:var(--glow),inset 0 1px 0 rgba(255,255,255,.35)}.fchip.on{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:0 8px 18px -8px rgba(36,98,224,.8),inset 0 1px 0 rgba(255,255,255,.35)}.btn.pri:hover,.fbtn:hover,.rcta .p1:hover{filter:brightness(1.08) saturate(1.1)}.lv-head,.svr.win{background:var(--gloss),var(--grad-btn)}.eyebrow{background:linear-gradient(135deg,#e5effd,#d3e6ff);color:#1a4fb8}.logo b{color:#2b74f0}.fmeta i,.nm i{background:linear-gradient(135deg,#e5effd,#d6e7ff);color:#1a4fb8}.paneNote{background:linear-gradient(135deg,#eaf3ff 0%,#f7fbff 60%,#fff 100%);border-color:#d3e3fb}.keys{background:linear-gradient(135deg,#e5effd,#f2f8ff)}.nkeys span::before,.keys li::before{background:linear-gradient(135deg,#3b8cff,#1d55d6)}
+</style>
+<script src="/assets/wz.js" defer></script>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴"><a href="../../../tutoring/">1:1 과외</a><a href="../../../build/">제작 문의</a><a class="on" href="../../../library/" aria-current="page">자료실</a></div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../../../library/">← 자료실</a>
+  <div class="head"><div class="m"><i>에이전트</i><span>2026-10-03</span></div><h1>ChatGPT Work + Dot으로 AI 마케팅팀 만들기 (에이전트 + 스킬)</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/BzS93V2zFTg.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Grace Leung</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<span class="orig">원제 · ChatGPT Work + Dot: Build your AI Marketing Team (Agents + Skills)</span><br><a href="https://www.youtube.com/watch?v=BzS93V2zFTg" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>맥락 파일이 먼저예요</li><li>스킬은 절차, 에이전트는 판단이에요</li><li>비서 에이전트는 자리를 비웠을 때 값어치가 커져요</li></ul></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>Grace는 ChatGPT Work 안에서 코딩 없이 스킬 몇 개와 전문 에이전트를 만들고 상시 비서 에이전트에게 Slack으로 일을 시켜 마케팅팀처럼 굴리는 전 과정을 가상의 어학 플랫폼 브랜드 하나로 보여 줍니다. 폴더 구성부터 광고, 랜딩 페이지, 2주치 소셜 콘텐츠, 리드 마그넷 캠페인까지 따라 할 수 있는 순서가 담겨 있어요.</p>
+<h3>전체 내용 정리</h3>
+<h4>ChatGPT Work, Codex, 그리고 비서 에이전트는 각각 무슨 일을 하나요?</h4>
+<p>Grace는 요즘 ChatGPT가 몇 달 전과 전혀 다른 앱처럼 바뀌었다고 말하면서 시작합니다. 새로 생긴 건 크게 세 가지예요. ChatGPT Work, Codex, 그리고 24시간 돌아가며 메시지로 일을 맡길 수 있는 상시 비서 에이전트입니다.</p>
+<p>ChatGPT Work와 Codex는 같은 에이전트 기술을 바탕으로 하지만 쓰임새가 달라요. ChatGPT Work는 리서치, 분석 리포트, 발표 자료, 스프레드시트, 웹사이트처럼 여러 단계를 거쳐 완성품을 내는 업무에 맞춰져 있습니다. Codex는 개발자용 환경이라서 코드베이스를 열어 파일을 살펴보고 저장소 전체의 코드를 고치는 일에 쓰고요. Grace는 결과물이 비즈니스 성과일 때는 Work, 결과물이 소프트웨어나 프로그램일 때는 Codex를 고른다고 설명해요.</p>
+<p>상시 비서 에이전트는 계속 맡겨 둘 책임을 지는, 이름 붙은 어시스턴트입니다. 자기 컴퓨터가 따로 있고 허락을 받으면 사용자의 컴퓨터 파일에 원격으로 접근해 조작할 수도 있어요. Work, Codex, 사용자가 연결한 도구를 모두 쓸 수 있으니 서로 분리된 기능이 아니라 함께 움직이는 구조입니다.</p>
+<p>이 영상은 ChatGPT 데스크톱 앱 기준이고 Grace는 이 비서 기능이 지금은 ChatGPT Pro 플랜에서만 열려 있다고 알려 줍니다. 앱을 설치하면 사이드바에 비서가 보이고 이름을 지어 줄 수 있어요. Grace는 Emily라고 지었습니다. 기존 Slack 채널에 Emily를 추가해 언제든 메시지를 보내고 사람 동료처럼 이메일 주소를 주고 GPT 음성 모델로 전화 통화까지 한다고 해요. Grace는 이 경험이 꽤 재미있고 놀랍다고 말합니다.</p>
+<p>팀 구조는 이렇게 잡습니다. 맨 위에 Grace가 직접 대화하는 메인 에이전트인 마케팅 팀 리드가 있고 그 아래에 성장 전략가, 콘텐츠 제작자, 크리에이티브 디자이너, 웹사이트 디자이너 같은 전문 에이전트가 각자 한 영역을 맡아요. Emily는 이 팀 밖에서 Grace의 비서로 움직입니다. 특정 프로젝트에 묶이지 않으니 어디서든 일을 던지면 접근 권한이 있는 프로젝트 어디에서나 작업할 수 있어요.</p>
+<h4>먼저 프로젝트 폴더를 만들고 스킬 하나를 만들어 볼까요?</h4>
+<p>시작은 로컬 프로젝트 폴더입니다. Grace는 온라인 어학 학습 플랫폼 Lexora(직장인 대상)를 예시 브랜드로 삼았어요. 폴더 안에는 맥락 파일과 마케팅 산출물을 담을 폴더들을 둡니다. 맥락 파일에는 브랜드가 하는 일, 타깃 고객, 브랜드 스타일 같은 내용을 적고 원하면 더 넣어도 돼요.</p>
+<p>여기에 agents.md 파일이 하나 더 들어갑니다. 에이전트가 이 프로젝트 안에서 어떻게 일해야 하는지 알려 주는 온보딩 안내서 같은 파일이에요. Grace는 이 기본 구조와 맥락 파일을 만들어 주는 무료 셋업 키트를 따로 배포한다고 말하는데, 직접 폴더를 만들어도 구성은 같습니다. 폴더가 준비되면 ChatGPT에서 새 프로젝트를 만들고 이 폴더를 소스로 추가해요.</p>
+<p>이렇게 하면 AI가 브랜드는 알게 되지만 일하는 방법까지 아는 건 아닙니다. 그래서 Grace는 첫 단계로 일하는 방법을 가르치는 재사용 스킬을 만들어요. 스킬(작업 방법을 적어 둔 재사용 지시서)은 ChatGPT Work 안에서 만들면 되고 Codex로 넘어갈 필요가 없습니다.</p>
+<p>첫 스킬은 광고 크리에이티브 스킬이에요. 사용자에게 브리프를 받아 광고 콘셉트를 짜고 이미지 생성 모델로 이미지까지 만들도록 요청했습니다. 금방 스킬이 만들어졌고 프로젝트 폴더의 .agent 폴더 아래에 새 스킬이 자동으로 생겼어요. 파일 구조를 몰라도 괜찮습니다. ChatGPT의 스킬 패널로 가면 이 브랜드 프로젝트용으로 광고 크리에이티브 스킬이 만들어진 걸 볼 수 있어요. Grace의 표현대로 코딩은 필요 없어요(No coding is required).</p>
+<p>써 보는 방법은 간단합니다. 캠페인 브리프 파일을 태그하고 광고를 만들어 달라고 요청하세요. 화면에는 방금 만든 스킬이 호출되는 모습이 뜹니다. 이 스킬은 Instagram용 비주얼 콘셉트를 만들고 거기에 브랜드 로고와 카피를 얹어 최종 광고를 완성했어요. Grace는 비주얼 스타일이 일관되고 브랜드와 전문적인 톤이 맞는다고 평가합니다. 브랜드 컬러와 CTA 버튼, 로고 처리가 반영됐고 생성된 이미지 에셋과 광고 콘셉트가 모두 로컬에 저장돼서 팀에 공유할 수 있어요. 스킬이 있으니 다음에도 같은 절차를 그대로 재사용합니다.</p>
+<h4>웹사이트 스킬을 만들고 비서에게 일을 맡기면 어떻게 되나요?</h4>
+<p>두 번째 스킬은 웹사이트 빌더 스킬이에요. 마케팅 목표에 맞는 임팩트 있는 웹사이트와 랜딩 페이지를 만드는 스킬입니다. Grace는 이때 에이전트가 참고할 좋은 디자인 사이트 목록이 담긴 디자인 소스 파일도 함께 만들어 달라고 요청했어요. 이 스킬도 금방 만들어졌습니다.</p>
+<p>이번에는 프로젝트 안에서 직접 요청하지 않고 Emily에게 메시지를 보냈어요. 브랜드 프로젝트를 찾아서 곧 시작할 무료 체험 캠페인용 원페이지 오퍼 웹사이트를 만들어 달라고 하고 배포는 ChatGPT sites로 하라고 지정했습니다. 그러면 Emily가 이 작업을 Codex로 넘겨 새 스레드를 시작해요. 첫 초안이 나오면 Emily와 주고받으면서 고칩니다.</p>
+<p>최종 결과물은 ChatGPT에 호스팅돼서 팀과 바로 공유할 수 있는 상태가 됐어요. Grace는 전체 스타일이 마음에 든다고 말합니다. 화면 속 웹 요소를 클릭하거나 영역 안에서 끌어 보는 식으로 인터랙션이 되고 지나치게 튀지 않으면서 선과 여백이 또렷해 전문적으로 보이는 레이아웃이라고요. 이미지는 전부 최신 GPT 이미지 모델로 만들었고 작업에 30분이 채 안 걸렸습니다. 직접 가진 이미지나 영상을 넣어 더 다듬을 수도 있어요.</p>
+<p>이 웹사이트 스킬이 생겼으니 앞으로 웹페이지나 랜딩 페이지가 필요할 때마다 에이전트가 같은 방식으로 만들어 줍니다. Grace는 이런 식으로 전략, 콘텐츠 제작, 웹사이트 구축까지 마케팅 스킬 라이브러리를 총 15개까지 늘렸다고 해요.</p>
+<h4>스킬과 에이전트는 언제 각각 쓰나요?</h4>
+<p>Grace가 내놓는 기준은 단순합니다. 작업이 반복적이고 절차가 분명하며 매번 같은 품질과 형식이 필요하면 스킬을 쓰세요. 페이지 하나를 만들거나 앱을 만드는 일이 그런 예예요. 반대로 판단이 필요한 일이면 에이전트를 씁니다. 목표를 해석하고 무엇이 중요한지 정하고 알맞은 스킬을 고르고 특정 영역을 책임지는 일이죠.</p>
+<p><strong>스킬은 정해진 절차를 재현하고 에이전트는 판단을 맡습니다.</strong></p>
+<p>첫 에이전트는 성장 전략가예요. Grace는 요즘 에이전트를 만들 때 최대한 단순하게, 페르소나와 담당 범위와 역할만 준다고 말합니다. 에이전트의 가장 큰 가치가 판단력이기 때문이에요. 이 에이전트는 리서치나 데이터를 바탕으로 목표를 전략 문서로 바꿔 주는 역할이고 만들고 나면 프로젝트 폴더 안에 에이전트 파일이 든 폴더가 자동으로 생겼습니다. 이번에도 코딩 파일을 건드릴 필요는 없어요.</p>
+<p>쓰는 방법은 프로젝트 안에서 이 에이전트를 태그하는 것입니다. Grace는 새 성장 목표를 주고 캠페인 아이디어와 전략을 제안해 달라고 요청했어요. 에이전트가 관련 스킬을 스스로 골라 쓰는 게 보이는데, 단계별로 지시하지 않고 에이전트에게 고르게 맡기는 이유가 바로 이거라고 합니다. 결과는 캠페인 아이디어와 전략 덱이었고 Grace는 슬라이드마다 핵심 아이디어가 하나씩 있어 전문적으로 잘 정리됐다고 봐요. Astra 모델이 다이어그램과 플로차트를 특히 잘 만든다고 느꼈고 브랜딩에 맞게 화려하지 않은 디자인을 일부러 주문했는데 그대로 나왔다고 합니다. 슬라이드에 이미지를 넣어 달라고 할 수도 있어요.</p>
+<h4>Slack으로 비서에게 팀 조율을 맡기면 결과가 어떻게 나오나요?</h4>
+<p>전문 에이전트 하나만으로도 몇 시간이 줄지만 여전히 책상 앞에서 직접 지시하는 방식입니다. Grace는 여기서 한 걸음 더 나가요. 먼저 두 번째 에이전트인 콘텐츠 제작자를 같은 방식으로 만듭니다. 역할과 페르소나를 주면 되고 이 에이전트는 청중의 관점으로 생각하며 소셜 포스트와 블로그 글 같은 콘텐츠를 만드는 역할이에요.</p>
+<p>프로젝트 안에서 태그하는 대신 이번에는 Slack으로 Emily에게 말을 겁니다. 팀이 앞서 만든 캠페인 브리프를 승인했다고 가정하고 팀과 조율해서 캠페인 론칭용 소셜 콘텐츠 2주 치가 필요하다고 보냈어요. Emily는 곧바로 답장을 보내 브리프를 찾아 확인하고 팀의 의견을 받고 일정표를 보내겠다고 했습니다. 작업이 진행되는 동안에도 중간중간 상태를 알려 주고요. Grace는 자리를 떠나 있어도 Emily가 나머지를 처리해 준다는 점이 이 비서 기능에서 발견한 가장 큰 가치라고 말합니다.</p>
+<p>ChatGPT로 돌아가 보면 Emily가 요청을 해당 프로젝트로 보내 에이전트들을 호출한 흔적이 남아 있어요. 이번에는 성장 전략가와 콘텐츠 제작자를 불렀습니다. 10분쯤 지나 결과가 도착했고 리뷰용 PDF에 포스트 초안 여섯 개가 비주얼과 카피까지 묶여 있었어요. 팀에 보여 줄 개요 브리핑 같은 문서입니다.</p>
+<p>zip 파일로 전체 에셋을 내려받을 수도 있었어요. 안에는 브리프 문서와 게시 일정표가 있고 포스트마다 폴더가 따로 있어서 캠페인 론칭에 필요한 자료가 정리된 채 들어 있습니다. Grace는 캠페인에서는 에셋 한 세트가 아니라 여러 종류가 필요한 경우가 많아서 이런 폴더 구조가 특히 도움이 된다고 해요. 거기서 한 번 더 나아가 Notion 콘텐츠 캘린더에 일정을 올려 달라고 부탁했고 Emily는 콘텐츠 스케줄링 스킬로 모든 포스트를 등록해 팀이 쓰는 캘린더에 올려 놓았어요. Grace는 비서에게 도구를 연결해 두면 이런 일이 아주 편해지고 진짜 팀원과 일하는 경험에 가깝다며 꼭 해 보라고 추천합니다.</p>
+<h4>멀티에이전트 팀에게 한 번에 큰 과제를 주면요?</h4>
+<p>이 구조를 반드시 따라야 하는 건 아니에요. Grace는 에이전트 한두 개로 시작해도 충분하다고 말합니다. 다만 한 가지 단계는 꼭 넣으라고 해요. 앞서 만든 agents.md 같은 프로젝트 지침을 업데이트하는 겁니다. ChatGPT에게 프로젝트의 에이전트와 스킬을 검토하게 한 뒤, 전문 에이전트에게 위임할 때와 스킬을 바로 쓸 때를 구분하는 짧은 라우팅 안내를 추가해 달라고 요청하세요.</p>
+<p>준비가 끝나면 멀티에이전트 과제를 줍니다. 브랜드 프로젝트로 돌아가서, 앞서 확정한 Q4 캠페인에 맞춰 더 많은 리드를 모으는 리드 마그넷(연락처를 받고 나눠 주는 무료 자료) 캠페인을 만들어 달라고 했어요. 이번에는 과거 캠페인 성과 자료도 함께 주고 거기서 배운 점을 반영하라고 덧붙였습니다.</p>
+<p>ChatGPT는 먼저 계획과 사용할 스킬을 보여 주고 분석 담당 에이전트가 이미 결과를 검토하는 중이라고 알려 줍니다. 서브에이전트 탭을 열면 멀티에이전트 팀이 실제로 일하는 모습을 볼 수 있어요. 15분쯤 뒤 산출물이 나왔는데, 리드 마그넷은 팀 미팅 가이드북이었습니다. 브랜드에 맞는 이미지, 레이아웃, 실무 팁, 워크시트에 마지막 CTA까지 갖춘 완성도라고 Grace는 평가해요.</p>
+<p>이어서 캠페인 랜딩 페이지가 나왔고 테스트하려고 먼저 로컬에서 호스팅했습니다. 방금 만든 가이드북 표지와 내지가 그대로 쓰였고 리드 폼도 들어 있어서 리드 수집 흐름을 직접 시험해 볼 수 있었어요. 폼을 작성하자 실제 가이드북 PDF가 돌아왔습니다. 외부 리드 수집 도구를 쓴다면 연동 정보나 폼 ID를 주면 ChatGPT가 처리해 줘요. 마음에 들면 ChatGPT sites로 호스팅과 배포까지 맡길 수 있고 이 경우 리드 수집용 내장 데이터베이스가 있어서 외부 서버가 필요 없습니다. 모두 ChatGPT sites 안에서 돌아가요.</p>
+<p>덧붙여 Grace는 이런 멀티에이전트 과제도 비서에게 시킬 수 있다고 알려 줍니다. Slack 메시지, 이메일, 전화 통화 모두 가능하니, 자리에 없을 때 아이디어가 떠오르면 맡겨 두면 돼요. 이렇게 시스템을 한 번 세워 두면 브랜드를 다시 설명하거나 단계별로 지시할 필요 없이 다음에 할 일을 알아서 파악한다고 Grace는 정리합니다.</p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>맥락 파일이 먼저예요</strong>: Grace는 AI가 브랜드를 아는 것과 일하는 방법을 아는 것을 구분해요. 브랜드 설명 파일과 agents.md로 맥락을 주고 스킬로 방법을 가르치는 순서입니다.</li><li><strong>스킬은 절차, 에이전트는 판단이에요</strong>: 같은 품질과 형식이 매번 필요하면 스킬, 목표를 해석해 스킬을 고르는 일이면 에이전트입니다. 에이전트에게는 페르소나, 담당 범위, 역할만 줘도 시작할 수 있어요.</li><li><strong>비서 에이전트는 자리를 비웠을 때 값어치가 커져요</strong>: Grace는 Slack으로 일을 던지고 떠나도 진행 상황을 보고받으며 결과를 받는 점을 가장 큰 가치로 꼽아요. Notion 같은 도구까지 연결하면 일정 등록까지 끝납니다.</li><li><strong>agents.md의 라우팅 안내가 팀을 움직여요</strong>: 언제 전문 에이전트에게 맡기고 언제 스킬을 바로 쓸지 적어 두면, 큰 과제를 줘도 알아서 나눠서 처리합니다.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li>프로젝트 폴더를 하나 만들어 보세요. 브랜드 소개, 타깃 고객, 브랜드 스타일을 적은 맥락 파일과 산출물 폴더, 그리고 agents.md를 넣고 ChatGPT에서 새 프로젝트를 만들어 이 폴더를 소스로 추가하면 AI가 매번 브랜드를 다시 배우지 않아도 됩니다.</li><li>ChatGPT Work 안에서 광고 크리에이티브 스킬을 만들어 보세요. "브리프를 받아 광고 콘셉트를 짜고 이미지 생성 모델로 이미지까지 만드는 스킬을 만들어 줘"라고 요청하고 스킬 패널에서 생겼는지 확인합니다. 그다음 캠페인 브리프 파일을 태그해 Instagram용 광고를 만들어 달라고 해 보면 스킬이 실제로 호출되는지 볼 수 있어요.</li><li>성장 전략가 에이전트를 하나 만들어 보세요. 페르소나, 담당 범위, 역할만 적어 주고 프로젝트에서 태그한 뒤 새 성장 목표를 주며 캠페인 아이디어와 전략 덱을 요청합니다. 스킬을 어떻게 고르는지 보면 에이전트가 왜 필요한지 감이 옵니다.</li><li>Pro 플랜이라면 비서 에이전트에 이름을 붙여 Slack 채널에 추가해 보세요. 확정된 브리프를 주고 2주 치 소셜 콘텐츠를 팀과 조율해 달라고 메시지를 보낸 뒤, 자리를 비우고 결과가 오는지 확인하면 됩니다.</li><li>에이전트와 스킬이 몇 개 쌓이면 ChatGPT에게 프로젝트의 에이전트와 스킬을 검토하게 하고 언제 전문 에이전트에게 맡길지 알려 주는 짧은 라우팅 안내를 agents.md에 추가해 달라고 해 보세요. 이후 큰 과제를 줄 때 서브에이전트 탭에서 팀이 일하는 모습도 볼 수 있어요.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>세 가지만 답하면 4단계 중 지금 위치를 바로 알려드려요. 무료예요.</p><span class="go">내 단계 진단하기 →</span></a>
+    <a class="cross" href="../../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../../../library/" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>
