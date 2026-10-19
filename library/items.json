@@ -2656,6 +2656,23 @@
    "thumb": "notes/thumb/_Pd1G33_R48.webp",
    "url": "notes/_Pd1G33_R48/",
    "ready": true
+  },
+  {
+   "video_id": "ggFKB45anK4",
+   "title": "AI 네이티브 회사에서 실제로 벌어지고 있는 일들 (리트머스 김응진 대표)",
+   "title_orig": "AI 네이티브 회사에서 실제로 벌어지고 있는 일들 (리트머스 김응진 대표)",
+   "source": "빌더 조쉬 Builder Josh",
+   "date": "2026-07-10",
+   "topic": "에이전트",
+   "summary": "외주 개발사 리트머스의 김응진 대표가 조쉬와 만나 회사를 '일하는 플랫폼'으로 바꾼 과정을 보여 줍니다. 직무를 컨설턴트 하나로 합치고 워크벤치·넥서스·파운드리라는 사내 시스템으로 에이전트를 관리하면서 생산성이 세 배 넘게 올랐다고 느낀다는 이야기예요.",
+   "points": [
+    "AI 전환의 마지막 단계는 '공유와 관제'예요",
+    "권한은 처음부터 완벽하게 설계할 수 없어요",
+    "DX 없이 AX 없어요"
+   ],
+   "thumb": "notes/thumb/ggFKB45anK4.webp",
+   "url": "notes/ggFKB45anK4/",
+   "ready": true
   }
  ]
 }
