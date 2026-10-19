@@ -210,6 +210,23 @@
    "ready": true
   },
   {
+   "video_id": "uskp9cHFcec",
+   "title": "카카오 AI 전략 맡던 대표가 말하는 AI 에이전트 사고가 나기 전에 회사가 깔아야 할 통제 4단계 (임페라이 음병찬 대표님)",
+   "title_orig": "카카오 AI 전략 맡던 대표가 말하는 AI 에이전트 사고가 나기 전에 회사가 깔아야 할 통제 4단계 (임페라이 음병찬 대표님)",
+   "source": "빌더 조쉬 Builder Josh",
+   "date": "2026-10-14",
+   "topic": "에이전트",
+   "summary": "카카오에서 AI 사업 전략을 맡았던 임페라 대표가 AI 에이전트를 회사에 들이기 전에 어떤 통제 장치를 깔아야 하는지 설명해요. 에이전트에게 착하게 굴라고 타이르는 대신 **실제로 행동하는 지점을 따로 통제하라**는 게 요지예요. 그 구조를 식별·통제·증명·최적화의 4단계로 풀어 보여 줍니다.",
+   "points": [
+    "프롬프트로 막는 건 확률을 낮출 뿐이에요",
+    "등록돼 있어도 섀도우일 수 있어요",
+    "통제 기록은 비용이 아니라 자산이에요"
+   ],
+   "thumb": "notes/thumb/uskp9cHFcec.webp",
+   "url": "notes/uskp9cHFcec/",
+   "ready": true
+  },
+  {
    "video_id": "XfdIhd1g6EI",
    "title": "모델도 안 보고 1,000억 달러를 걸었다 — 저커버그·알렉산더 왕의 Muse Wonder",
    "title_orig": "Muse Wonder: Zuckerberg and Wang's $100B AI",
