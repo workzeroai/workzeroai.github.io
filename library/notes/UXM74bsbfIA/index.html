@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>노션 CLI 이 영상 하나로 종결합니다. 무려 노션을 직접 만드는 분과 설명해드려요. (Eric Goldman, 노션 제품 리드) · 워크제로 자료실</title>
+<meta name="description" content="노션 개발자 플랫폼을 만드는 Eric Goldman이 조쉬와 함께 노션 CLI(`ntn`)로 워커(Workers)를 만들어, 코드를 한 줄도 읽지 않고 조쉬 채널의 유튜브 통계를 노션 데이터베이스에 자동으로 동기화하는 과정을 보여 줘요. 노션이 왜 에이전트 OS를 말하">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/UXM74bsbfIA/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#2462e0">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="노션 CLI 이 영상 하나로 종결합니다. 무려 노션을 직접 만드는 분과 설명해드려요. (Eric Goldman, 노션 제품 리드)">
+<meta property="og:description" content="노션 개발자 플랫폼을 만드는 Eric Goldman이 조쉬와 함께 노션 CLI(`ntn`)로 워커(Workers)를 만들어, 코드를 한 줄도 읽지 않고 조쉬 채널의 유튜브 통계를 노션 데이터베이스에 자동으로 동기화하는 과정을 보여 줘요. 노션이 왜 에이전트 OS를 말하">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/UXM74bsbfIA/">
+<meta property="og:image" content="https://img.youtube.com/vi/UXM74bsbfIA/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="노션 CLI 이 영상 하나로 종결합니다. 무려 노션을 직접 만드는 분과 설명해드려요. (Eric Goldman, 노션 제품 리드)">
+<meta name="twitter:description" content="노션 개발자 플랫폼을 만드는 Eric Goldman이 조쉬와 함께 노션 CLI(`ntn`)로 워커(Workers)를 만들어, 코드를 한 줄도 읽지 않고 조쉬 채널의 유튜브 통계를 노션 데이터베이스에 자동으로 동기화하는 과정을 보여 줘요. 노션이 왜 에이전트 OS를 말하">
+<meta name="twitter:image" content="https://img.youtube.com/vi/UXM74bsbfIA/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+.tgl{margin:18px 0;border:1px solid var(--hair);border-radius:14px;background:var(--soft)}.tgl>summary{cursor:pointer;padding:14px 18px;font-weight:700;color:var(--ink);list-style:none}.tgl>summary::before{content:"▸ ";color:var(--primary)}.tgl[open]>summary::before{content:"▾ "}.tgl-in{padding:0 14px 14px}
+:root{--primary:#2462e0;--primary-deep:#1a4fb8;--primary-pale:#e5effd;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f4f8fe;--hair:#dfe7f2;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+/* WZ-COBALT-C */:root{--grad-btn:linear-gradient(135deg,#2b74f0 0%,#2462e0 50%,#1d55d6 100%);--gloss:radial-gradient(120% 90% at 30% 0%,rgba(255,255,255,.28) 0,rgba(255,255,255,0) 55%);--glow:0 12px 28px -10px rgba(36,98,224,.75),0 2px 6px -1px rgba(29,85,214,.35)}.btn.pri,.fbtn,.rcta .p1,.price.best .pick,.price .pop{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:var(--glow),inset 0 1px 0 rgba(255,255,255,.35)}.fchip.on{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:0 8px 18px -8px rgba(36,98,224,.8),inset 0 1px 0 rgba(255,255,255,.35)}.btn.pri:hover,.fbtn:hover,.rcta .p1:hover{filter:brightness(1.08) saturate(1.1)}.lv-head,.svr.win{background:var(--gloss),var(--grad-btn)}.eyebrow{background:linear-gradient(135deg,#e5effd,#d3e6ff);color:#1a4fb8}.logo b{color:#2b74f0}.fmeta i,.nm i{background:linear-gradient(135deg,#e5effd,#d6e7ff);color:#1a4fb8}.paneNote{background:linear-gradient(135deg,#eaf3ff 0%,#f7fbff 60%,#fff 100%);border-color:#d3e3fb}.keys{background:linear-gradient(135deg,#e5effd,#f2f8ff)}.nkeys span::before,.keys li::before{background:linear-gradient(135deg,#3b8cff,#1d55d6)}
+</style>
+<script src="/assets/wz.js" defer></script>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴"><a href="../../../tutoring/">1:1 과외</a><a href="../../../build/">제작 문의</a><a class="on" href="../../../library/" aria-current="page">자료실</a></div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../../../library/">← 자료실</a>
+  <div class="head"><div class="m"><i>에이전트</i><span>2026-05-27</span></div><h1>노션 CLI 이 영상 하나로 종결합니다. 무려 노션을 직접 만드는 분과 설명해드려요. (Eric Goldman, 노션 제품 리드)</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/UXM74bsbfIA.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · 빌더 조쉬 Builder Josh</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<br><a href="https://www.youtube.com/watch?v=UXM74bsbfIA" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>연동 수천 개를 직접 만드는 대신 만드는 도구를 줬어요</li><li>사람과 에이전트가 같은 도구를 쓰는 게 설계 원칙이에요</li><li>에이전트의 성능은 맥락이 좌우해요</li></ul></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>노션 개발자 플랫폼을 만드는 Eric Goldman이 조쉬와 함께 노션 CLI(<code>ntn</code>)로 워커(Workers)를 만들어, 코드를 한 줄도 읽지 않고 조쉬 채널의 유튜브 통계를 노션 데이터베이스에 자동으로 동기화하는 과정을 보여 줘요. 노션이 왜 에이전트 OS를 말하는지, 왜 CLI를 골랐는지, 팀에 처음 들일 때 무엇부터 만들면 좋은지까지 한 번에 정리돼 있습니다.</p>
+<h3>전체 내용 정리</h3>
+<h4>데이터 동기화 도구를 만들던 사람이 노션에 합류했어요</h4>
+<p>Eric은 이번이 첫 한국 방문이에요. 사무실로 쓰는 위워크에서도, 들른 카페에서도 노트북과 휴대폰마다 노션이 떠 있는 걸 보고 놀랐다고 해요. 한국은 노션의 가장 큰 시장 중 하나인데, 그 열기를 직접 느껴 보니 정말 즐겁다고 했죠.</p>
+<p>경력이 꽤 흥미롭습니다. 남가주대(USC)에서 경제학을 공부하던 2011년은 유튜브에 2분짜리 영상까지만 올릴 수 있던 시절이었거든요. 졸업 후 뉴미디어·숏폼 영상 스타트업에 들어가 유튜브의 건너뛸 수 있는 광고 포맷 작업을 많이 했고 유튜브·페이스북·스냅챗 데이터를 광고 시스템에 동기화하는 큰 시스템을 만들면서 처음으로 데이터 소스를 연결하는 어려운 문제를 만났어요. 노션을 개인 메모용으로 처음 써 본 것도 이 무렵인데, 그땐 데이터베이스 기능도 없던 초창기였대요.</p>
+<p>그 경험으로 공동창업자 Anthony와 함께 Sequin을 세웠어요. 데이터 동기화와 외부 API 연동을 쉽게 해 주는 개발자 도구 회사였죠. 그러다 노션이 Sequin 제품을 살펴보기 시작했고 노션 창업진과 이야기해 보니 겹치는 부분이 뚜렷했다고 해요. 그렇게 지난 8월 노션에 인수됐고 약 6개월 동안 그 기술을 노션 안으로 옮겨 와 며칠 전 개발자 플랫폼의 일부로 공개했습니다.</p>
+<p>Sequin에서 수십억 행을 스트리밍하며 Eric이 배운 건 두 가지예요. 동기화가 실패하는 방식은 셀 수 없이 많다는 것, 그리고 강력하면서도 단순하고 확장 가능한 블록 같은 도구가 중요하다는 점이에요. 노션은 많은 사람의 삶을 정리하는 허브지만 정보가 처음 생기는 곳은 아니거든요. 건강 기록은 애플워치에, 좋아하는 영화 목록은 다른 플랫폼에 쌓이죠.</p>
+<p>이걸 한곳에 모으면 제대로 된 세컨드 브레인이 된다는 게 Eric의 생각이에요. 그래서 개발자 플랫폼은 복잡한 시스템에도 연결되는 엔터프라이즈급 도구이면서 개발 도구나 코딩 에이전트를 한 번도 안 써 본 사용자도 쓸 수 있게 만들었다고 해요. <strong>노션은 개발자뿐 아니라 빌더(builder)를 위한 곳</strong>이라는 거죠.</p>
+<h4>노션이 에이전트 OS를 말하고 워커를 만든 이유</h4>
+<p>노션은 오랫동안 팀 협업 공간이었어요. 문서를 함께 쓰고 @멘션하면 실명으로 알림이 가는 멀티플레이어 구조가 처음부터 들어가 있었죠. 그런데 최근 노션은 스스로를 에이전트 OS(Agent OS)라고 부르기 시작했습니다.</p>
+<p>Eric은 이걸 새 팀원을 들이는 상황에 빗대요. 새 팀원에게 일을 맡기면서 평소 쓰는 도구 접근권도, 노션 페이지·데이터베이스 권한도 안 주고 한 일을 기록하지도 않는다면 그 사람이 잘해 낼 리 없겠죠. 노션은 에이전트가 일을 대체하기보다 <strong>팀의 연장선이 된다고 믿고</strong>, 커스텀 에이전트(custom agent)를 제대로 일하는 팀원으로 만드는 데 공을 들였다고 해요.</p>
+<p>여기서 핵심 원칙이 하나 나와요. 에이전트가 파일을 읽고 연락처를 찾고 페이지를 수정할 수 있다면 사람 팀원도 똑같이 할 수 있어야 한다는 거예요. 거꾸로 에이전트가 고친 내용을 사람이 볼 수 없거나 에이전트가 가져온 데이터를 확인할 수 없다면 굉장히 불안하겠죠. 맥락을 공유해야 신뢰가 쌓이고 함께 일할 수 있다고 Eric은 설명합니다.</p>
+<p>워커는 고객 이야기에서 출발했어요. 노션 안에는 모든 회의실에 고객이 있다는 문화가 있대요. 고객들과 대화하며 드러난 첫 번째 문제는 노션이 대부분의 도구와 연결되지 않는다는 점이었어요. 건설, 학생, 법률 사무소까지 노션이 쓰이는 모든 업종의 시스템을 커버하려면 연동이 수천 개 필요하고 이걸 다 직접 만드는 건 거의 불가능하죠.</p>
+<p>두 번째 문제는 더 까다로워요. 고객마다 데이터가 노션에 들어오는 모양을 다르게 원했거든요. 노션에는 오래전부터 GitHub 연동이 있었는데, 고객 다섯 명에게 데이터 구조를 어떻게 원하는지 물으면 다섯 가지 답이 나왔다고 해요. 그래서 수천 개 연동을 커버하면서도 사용자마다 원하는 대로 맞출 수 있는 <strong>강력한 추상화(abstraction)</strong> 가 필요했고 그 답이 워커였습니다.</p>
+<p>결정적인 계기도 있었어요. 내부에서는 8월부터 구상을 시작했는데, 12월에 Anthropic의 Opus 4.6 같은 코딩 모델이 나오면서 분위기가 달라졌대요. 코딩 에이전트에게 뭔가 만들어 달라고 하면 완벽하진 않아도 거의 맞게 만들어 내는 순간이 온 거죠. 그러면 평범한 노션 빌더도 코딩 에이전트로 원하는 플랫폼과의 연동을 자기 취향 그대로 만들 수 있겠다고 판단했다고 해요.</p>
+<h4>CLI로 낸 데는 분명한 이유가 있어요</h4>
+<p>조쉬는 직접 써 보며 궁금했던 걸 물어요. 워커가 Claude Code나 Codex의 플러그인으로 붙지 않고 독립된 CLI 도구로 나온 이유였죠. Eric의 답은 두 갈래예요. 먼저 특정 에이전트에 묶이고 싶지 않았다고 해요. 에이전트는 빠르게 바뀌고 사용자는 원하는 에이전트를 골라 쓸 수 있어야 하니까요.</p>
+<p><strong>"we don't want to lock you into an agent"</strong> (사용자를 특정 에이전트에 묶어 두고 싶지 않다)</p>
+<p>다음은 앞서 말한 원칙 그대로, 에이전트가 할 수 있는 일은 개발자도 할 수 있어야 한다는 점이에요. 에이전트만 워크스페이스를 바꿀 수 있고 개발자에겐 같은 도구가 없다면, 무슨 일이 벌어지는지 이해하지도 고치지도 못하겠죠. 다들 다시 터미널과 CLI로 돌아온 게 재밌는 반전이라고 Eric은 웃어요. CLI는 개발자와 에이전트가 함께 쓰기에 아주 단순한 인터페이스거든요.</p>
+<p>CLI는 페이지·블록·데이터베이스, 이제는 워커까지 만드는 기능을 모두 열어 둬요. Claude Code든 Codex든 Pi든, 앞으로 몇 달 안에 나올 새 에이전트든 같은 도구를 찾아 쓸 수 있죠. 노션 안의 개인 에이전트가 워커를 대신 만들어 주는 기능도 이 CLI를 기반으로 준비 중이라고 해요. 조쉬도 Codex와 Claude Code를 번갈아 쓴다며 공감했고 마침 그날 Gemini 3.5가 나왔다는 얘기도 꺼냈어요. Eric은 좋은 오픈소스 모델이 훨씬 싸게 나오는데 막을 이유가 없다며 지금 모델에 대해 확실한 건 계속 바뀐다는 사실 하나뿐이라고 말합니다.</p>
+<p>설치의 첫 단계는 터미널을 여는 거예요. Eric은 제품 리드 입장에서 이게 전체 제품에서 가장 어려운 부분이라고 솔직하게 인정해요. 그러면서 이렇게 응원하죠.</p>
+<p><strong>"if you can use Notion, you can use a terminal"</strong> (노션을 쓸 줄 알면 터미널도 쓸 수 있어요)</p>
+<p>설치 명령은 새 개발자 사이트 notion.dev 맨 위에 있어요. 페이지 맨 아래로 내려가면 재미로 만든 게임도 숨어 있대요. Windows 질문에는 지금은 macOS 같은 Unix 계열과 Linux를 지원하고 몇 주 안에 Windows에서 네이티브로 도는 CLI가 나온다고 답했어요. 조쉬는 한국 빌더, 특히 개발자 출신이 아닌 분들은 Windows를 많이 쓴다며 반가워했죠.</p>
+<p>설치 후 뭘 할지 모르겠다면 코딩 에이전트에게 CLI로 뭘 할 수 있는지 물어보면 돼요. 직접 보려면 <code>ntn --help</code>를 실행하면 전체 도구 목록이 나와요. Eric은 이걸 점진적 공개(progressive disclosure)라고 부릅니다. 처음부터 모든 도구를 한꺼번에 보여 주면 에이전트의 컨텍스트 창(context window)을 잔뜩 차지해 쓸데없이 비싸고 느려지거든요. 단계적으로 보여 주면 에이전트가 도구를 배우는 데 토큰을 얼마나 쓸지 스스로 정할 수 있어요.</p>
+<h4>프롬프트 한 줄 없이 워커를 만들고 배포했어요</h4>
+<p>Eric이 고른 예제는 조쉬 채널의 모든 영상 통계를 노션으로 가져오는 워커예요. <code>ntn workers new</code>를 실행하면 대화형 질문이 이어지고 이름은 builder-josh-yt로 정했어요. 템플릿이 설치되고 git 초기화와 의존성 설치까지 물어본 뒤, 워커 뼈대(scaffold)가 로컬 컴퓨터에 만들어집니다. 안내대로 <code>cd</code>로 그 폴더에 들어가면 준비가 끝나요.</p>
+<p>여기서 파일을 하나하나 설명할 수도 있지만 Eric은 그럴 필요가 없다고 해요. 코딩 에이전트에게 맡기면 되거든요. Claude Code를 권한 확인을 건너뛰는 모드(skip permissions)로 켰는데, 워커 환경이 이미 안전하게 갖춰져 있어서 이쪽이 훨씬 효율적이라는 설명이에요. 조쉬는 보안 때문에 이 모드를 권하진 않는다며 질문마다 하나씩 확인하는 방식도 괜찮다고 덧붙였어요.</p>
+<p>워커에는 sync 스킬이 기본으로 들어 있어요. <code>ntn workers new</code>를 실행할 때 함께 설치되는데, SDK 구조와 동기화를 만들고 테스트하고 구성하는 법을 Claude Code에 가르쳐 주는 스킬이에요. 스킬을 실행하자 폴더 이름만 보고 유튜브 영상 동기화를 하려는 거냐고 먼저 물었고 이어서 채널 핸들과 YouTube API 키, 동기화 주기를 물었어요. 주기는 하루 한 번으로 정했죠. <strong>Eric은 아직 프롬프트를 한 줄도 쓰지 않았다</strong>는 점을 짚어요.</p>
+<p>API 키를 구하는 일이 지금으로선 가장 번거로운 부분이에요. sync 스킬이 인증 설정 방법을 거의 항상 알려 주지만 대부분은 직접 찾아서 넣어야 하거든요. Eric은 이번 데모용으로 만든 토큰을 패스워드 관리자에서 꺼내 넣었어요. 에이전트가 제안한 데이터베이스 구조(제목, 영상 ID 등)를 확인하고 승인하자 빌드와 테스트가 시작됐습니다.</p>
+<p>중간에 실수도 있었어요. 그래도 SDK와 워커에 스스로 검증하고 고칠 도구가 갖춰져 있어서 결국 좋은 결과에 도달했다고 해요. 코드가 맞게 쓰였는지, 타입(type)이 맞는지까지 에이전트가 직접 확인할 수 있죠. 노션은 <strong>코딩 에이전트가 성공하려면 자기 작업을 검증하고 테스트할 수 있어야 한다</strong>는 생각으로 이 부분을 설계했어요.</p>
+<p>배포는 에이전트에게 맡길 수도 있지만 사람도 같은 도구를 쓸 수 있다는 걸 보여 주려고 Eric이 직접 했어요. <code>ntn login</code>으로 배포할 워크스페이스에 연결하고 <code>ntn workers deploy</code>를 실행하면, 노션이 코드가 안전한지 확인한 뒤 실행 파일로 묶어(bundle) 워커 인프라에 올려요. 그 전까지는 모든 게 내 컴퓨터에서만 돌기 때문에 노션이나 워크스페이스를 망가뜨릴 일이 없다고 강조했죠. 서버를 만들 필요도, 관리하거나 들여다볼 필요도 없어요.</p>
+<p>마지막으로 내 컴퓨터에만 있던 YouTube API 토큰을 <code>ntn workers env push</code>로 올려요. 토큰은 암호화된 채 노션으로 전송되고 워커가 네트워크 호출을 할 때 샌드박스 안에서만 복호화돼요. 환경 변수가 낯설다면 그냥 비밀번호라고 생각하면 된다고 Eric은 설명해요. 여기까지 하면 워커 생성, 동기화 프로그래밍, 배포, 비밀번호 업로드가 다 끝난 거예요.</p>
+<h4>83개 영상이 노션 데이터베이스로 들어왔어요</h4>
+<p>API 키는 그다음에 어떻게 관리하느냐는 조쉬 질문에, Eric은 바로 <code>ntn workers env --help</code>를 실행해 보여 줘요. 궁금하면 help부터 보라는 거죠. 목록(list) 명령으로 보면 변수 이름만 보이고 값은 절대 드러나지 않아요. 노션조차 값을 모를 만큼 완전히 암호화돼 있대요. 필요하면 지우거나 내 컴퓨터로 다시 내려받을 수도 있어요.</p>
+<p>터미널 화면 UI(TUI, terminal user interface)도 있어요. <code>ntn workers tui</code>로 조쉬 워커를 열어 보니 동기화 대상 데이터베이스가 보였고 지금까지 83개 영상을 upsert(있으면 갱신, 없으면 추가)했으며 한 사이클에 4.6초가 걸리고 상태는 정상(healthy)이었어요. 배포 직후 몇 번은 오류였는데, 실행 기록을 열어 보니 API 키 환경 변수를 올리기 전이라서였죠. 성공한 실행에는 전체 로그가 남는데, 로그가 한국어로 찍혀 있어서 Eric은 무슨 말인지 모르겠다며 웃었어요.</p>
+<p>노션에서 데이터베이스를 열자 조쉬 채널 영상들이 설명, 초 단위 길이, 참여 지표, 썸네일과 함께 들어와 있었어요. 새 영상을 올리면 자동으로 잡아서 추가해 줘요. 동기화 상태도 보이지만 본질은 일반 노션 데이터베이스라서, 속성을 추가하고 상태나 AI 자동 채우기(AI autofill) 속성을 붙이고 원하는 뷰를 만들 수 있어요. 커스텀 에이전트, 개인 에이전트와 함께 쓰는 것도 되고요. 그리고 이 과정 내내 Eric은 코드를 한 번도 읽지 않았어요.</p>
+<p>조쉬는 이런 작업을 그동안 n8n으로 해 왔다고 말해요. Eric은 워커 이전엔 n8n이나 Zapier가 최선이었다고 인정하면서 옮기는 요령을 알려 줘요. n8n 워크플로나 Zap 화면을 캡처해 Claude Code에 그대로 붙여 넣으면, 이미지를 해석해서 워커로 바꿔 준다고요. 그 뒤로는 코드로 유지하고 고칠 수 있어요. 흐름도를 화면에서 고치던 일이, 코딩 에이전트에게 개선을 요청하는 일로 바뀌는 셈이죠.</p>
+<p>바이브 코딩(vibe coding) 이야기도 나왔어요. Eric은 이 말을 싫어하는 개발자도 있다고 인정하면서도, 워커는 바이브 코딩하기 좋은 작업이라고 봐요. 복잡하고 새로운 시스템을 에이전트 혼자 만들게 하긴 어렵지만 워커는 엔지니어링 팀이 쓸모 있는 추상화를 잔뜩 만들어 둬서 에이전트가 스스로 쓰는 법을 배울 수 있거든요. 사용자는 방향만 잡아 주면 되고 실제 배포되는 코드는 SDK·스킬·개발 파이프라인 덕분에 엄격하게 테스트되고 보안과 거버넌스(governance)까지 갖춘다는 설명이에요.</p>
+<p>보안 쪽 입장은 분명해요. 사용자가 배포한 코드가 무엇을 하는지 노션은 알 수 없으니, 악의적일 수 있다고 가정하고 샌드박스에 넣어요. 샌드박스는 노션이 즉시 끌 수 있고 노션이 통제·검증할 수 없는 시스템엔 접속하지 못하며 비밀번호 같은 정보에 무단으로 접근할 수 없게 막힌 환경이에요. 런타임 보안을 위해 Vercel, AWS와도 협력했다고 해요.</p>
+<h4>팀에 들일 땐 개인용 동기화부터 시작하세요</h4>
+<p>조쉬는 한국 팀들이 노션을 팀의 세컨드 브레인으로 쓴다며 개발자 플랫폼이 협업 방식을 어떻게 바꿀지 물어요. Eric은 모든 정보가 노션에 있진 않다는 데서 출발해요. 고객은 CRM에, 영상은 유튜브에 있죠. 가장 흔한 성공 사례는 Salesforce, HubSpot, Shopify 같은 CRM 동기화예요. 노션으로 가져오면 영업팀이 아닌 사람도 고객을 볼 수 있고 마케팅팀은 캠페인을 CRM 데이터와 맞춰 볼 수 있어요.</p>
+<p>에이전트에게도 중요한 이야기예요. 유튜브 동기화 없이 에이전트에게 내 영상 성과를 물으면, 에이전트는 인터넷을 뒤져 영상을 찾고 정보를 해석해야 하고 성공할지도 장담할 수 없어요. <strong>에이전트가 결정적인 정보 하나만 놓쳐도 잘못된 판단을 내린다</strong>고 Eric은 말해요. 그렇다고 매번 수백만 토큰을 써 가며 정보를 찾게 할 순 없죠.</p>
+<p>워커 동기화로 맥락이 노션 안에 들어오면 노션이 이를 색인하고 벡터화해 에이전트가 쓸 수 있게 해요. 정보를 빠짐없이 얻으니 정확하고 그만큼 효율도 올라가요. 노션은 아직 프런티어 랩 회사가 아니라서 에이전트를 경제적으로 만드는 데 특히 동기가 크다고 해요. 개발자 플랫폼에 힘을 싣는 이유도 여기에 있어요.</p>
+<p>혼자 시작하는 빌더를 위한 조언은 두 단계예요. 먼저 나한테 쓸모 있는 동기화부터 만들어 보라고 해요. GitHub에 자주 들어간다면 GitHub 동기화, Shopify를 자주 연다면 Shopify 동기화, 음악을 좋아한다면 Spotify 동기화요. 그다음 팀을 위해선 정보를 알맞은 사람에게 보내 주는 에이전트를 권해요. 예컨대 Slack에서 고객 피드백을 받아 담당자에게 전달하는 에이전트죠. 시간을 아껴 줄 뿐 아니라, 귀찮은 잡무를 에이전트가 처리하는 걸 팀이 직접 보게 되니 그걸 만든 사람은 팀의 작은 영웅이 된다고요.</p>
+<p>Eric은 노션 내부 사례도 들려줘요. 직원은 약 1,000명인데 에이전트는 3,000개가 넘고 본인은 15분에서 30분마다 에이전트와 일한대요. 반면 다른 회사 사람들은 ChatGPT 같은 챗봇은 써 봤어도 에이전트가 실제로 도와주는 경험은 해 본 적 없는 경우가 많다고 해요. 데이터를 Snowflake나 Databricks 같은 웨어하우스에 모을 수도 있지만 그건 소수만 안전하게 다룰 수 있는 기술 시스템이에요. 노션은 문서·페이지·스프레드시트처럼 보이면서 밑에 보안과 권한이 깔려 있어서 페이지를 열고 타이핑할 줄 아는 사람이면 누구나 에이전트 워크플로에 보탤 수 있다는 거죠.</p>
+<p>마무리 질문에서 Eric은 시작점으로 notion.dev를 꼽았어요. CLI 설치와 동기화 만드는 법, 이번에 못 다룬 기능과 도움말 문서가 다 있고 개발자 Slack 채널에서 Eric과 엔지니어링 팀에 직접 질문할 수 있대요. AI 시대 빌더에게 필요한 태도로는 호기심을 들었어요. 오류가 나면 무슨 뜻이냐고 묻고 에이전트가 만든 게 이해되지 않으면 뭘 했는지 물어보라고요. 에이전트를 일만 대신해 주는 도구로 보지 않고 배우게 도와주는 존재로도 보면 자신감이 붙는다는 이야기예요.</p>
+<p>비전을 묻자 Eric은 노션이 문서와 에이전트가 들어 있는 익숙한 소프트웨어 모습에서 나와 팀을 위한 운영체제로 바뀌어 가길 바란다고 했어요. 필요한 맥락과 강력한 에이전트가 다 들어 있고 개발자 플랫폼 덕분에 각자 원하는 모습으로 마음껏 바꿀 수 있는 공간이죠. 앞으로 몇 달, 몇 년 안에 그 방향으로 가고 싶다며 지금 굉장히 빠르게 움직이고 있다고 덧붙였습니다.</p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>연동 수천 개를 직접 만드는 대신 만드는 도구를 줬어요</strong>: 고객 다섯 명에게 물으면 원하는 데이터 구조가 다섯 가지였어요. 노션은 연동을 하나씩 늘리는 대신 워커라는 추상화와 sync 스킬을 내놓고 각자 코딩 에이전트로 자기 취향에 맞는 연동을 만들게 했죠. 코딩 모델이 쓸 만해진 시점이라 가능해진 선택이에요.</li><li><strong>사람과 에이전트가 같은 도구를 쓰는 게 설계 원칙이에요</strong>: 에이전트가 할 수 있는 일은 사람도 할 수 있어야 한다는 원칙이 CLI 선택과 권한·기록 공개 방식까지 이어져요. 특정 에이전트에 묶이지 않으니 모델이 바뀌어도 그대로 쓸 수 있고 에이전트가 한 일을 사람이 확인할 수 있어서 신뢰가 생겨요.</li><li><strong>에이전트의 성능은 맥락이 좌우해요</strong>: 정보 하나만 빠져도 에이전트는 잘못된 결정을 내리고 정보를 찾아 헤매면 토큰이 새요. 외부 데이터를 노션 안으로 동기화해 두는 일이 에이전트를 정확하고 싸게 만드는 기반이라는 게 Eric의 설명이에요.</li><li><strong>바이브 코딩의 안전망은 플랫폼이 깔아요</strong>: 사용자는 방향만 말하고 검증·테스트 도구와 샌드박스, 암호화된 환경 변수가 뒤를 받쳐요. 코드를 읽지 못해도 배포까지 갈 수 있는 이유예요.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li>notion.dev에 들어가 맨 위의 명령으로 노션 CLI를 설치하고 <code>ntn --help</code>를 실행해 보세요. 어떤 명령이 있는지 훑어보는 것만으로 워커로 뭘 할 수 있는지 감이 옵니다(Windows는 몇 주 안에 네이티브 지원 예정이라고 해요).</li><li><code>ntn workers new</code>로 워커를 만들고 Claude Code에서 sync 스킬을 실행해, 자주 드나드는 서비스 하나(GitHub, Shopify, 유튜브 등)를 노션 데이터베이스로 가져와 보세요. 개인용 동기화 하나를 만들어 보면 노션을 더 잘 쓰는 법을 많이 배운다고 Eric은 말해요.</li><li>지금 n8n이나 Zapier로 돌리는 워크플로가 있다면 화면을 캡처해 Claude Code에 붙여 넣고 워커로 옮겨 달라고 해 보세요. 이후 수정은 에이전트에게 말로 요청하면 되니 관리 방식이 어떻게 달라지는지 비교해 볼 수 있어요.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>세 가지만 답하면 4단계 중 지금 위치를 바로 알려드려요. 무료예요.</p><span class="go">내 단계 진단하기 →</span></a>
+    <a class="cross" href="../../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../../../library/" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>
