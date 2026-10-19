@@ -2792,6 +2792,23 @@
    "thumb": "notes/thumb/CVmbidt-3ro.webp",
    "url": "notes/CVmbidt-3ro/",
    "ready": true
+  },
+  {
+   "video_id": "ZDfNfEGo7Fc",
+   "title": "Codex가 최고라는 소문 직접 검증합니다, 세팅부터 실전 앱 개발까지 전 과정 공개 (feat. OpenAI)",
+   "title_orig": "Codex가 최고라는 소문 직접 검증합니다, 세팅부터 실전 앱 개발까지 전 과정 공개 (feat. OpenAI)",
+   "source": "빌더 조쉬 Builder Josh",
+   "date": "2026-05-20",
+   "topic": "AI 소식",
+   "summary": "빌더 조쉬가 약 2시간 30분짜리 라이브에서 OpenAI의 코딩 도구 Codex를 설치부터 플러그인·스킬, 문서 네 장으로 짜는 하네스 세팅, 'goal' 기능까지 직접 써 보며 휴가 관리 ERP와 회의록 전사 앱을 Vercel에 배포했어요. 소문대로 쓸 만한지, 어디서 막히는지까지 그대로 보여 주는 실습 기록입니다.",
+   "points": [
+    "설정 세 가지가 체감 성능을 가릅니다",
+    "플러그인 하나가 MCP와 스킬을 한꺼번에 해결해요",
+    "문서 네 장이 바이브 코딩의 하네스예요"
+   ],
+   "thumb": "notes/thumb/ZDfNfEGo7Fc.webp",
+   "url": "notes/ZDfNfEGo7Fc/",
+   "ready": true
   }
  ]
 }
