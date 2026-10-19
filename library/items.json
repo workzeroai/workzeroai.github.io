@@ -2741,6 +2741,23 @@
    "thumb": "notes/thumb/zHomDAviK5g.webp",
    "url": "notes/zHomDAviK5g/",
    "ready": true
+  },
+  {
+   "video_id": "j5CIK1pcf3A",
+   "title": "헤르메스 에이전트 처음 써보는 분도 이 영상 하나로 끝납니다, 설치부터 회사 운영 자동화까지",
+   "title_orig": "헤르메스 에이전트 처음 써보는 분도 이 영상 하나로 끝납니다, 설치부터 회사 운영 자동화까지",
+   "source": "빌더 조쉬 Builder Josh",
+   "date": "2026-05-29",
+   "topic": "에이전트",
+   "summary": "빌더 조쉬가 헤르메스 에이전트(Hermes Agent)를 클라우드 서버에 설치해 슬랙에 붙이는 과정을 처음부터 끝까지 따라 하고 자기 회사에서 실제로 돌리는 아침 브리핑·견적서·세금계산서 같은 열 가지 운영 시나리오와 팀 단위 보안 체크리스트까지 보여 주는 튜토리얼이에요.",
+   "points": [
+    "에이전트의 실력은 쌓인 데이터에서 나와요",
+    "한 번에 다 맡기지 말고 제안받으며 넓혀 가요",
+    "팀 도입의 진짜 관문은 보안이에요"
+   ],
+   "thumb": "notes/thumb/j5CIK1pcf3A.webp",
+   "url": "notes/j5CIK1pcf3A/",
+   "ready": true
   }
  ]
 }
