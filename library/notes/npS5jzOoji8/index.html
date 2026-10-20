@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>앤트로픽은 클로드 스킬을 진짜 이렇게 만듭니다 · 워크제로 자료실</title>
-<meta name="description" content="Ben이 Anthropic의 Claude 스킬 가이드와 모범 사례를 뜯어보고 업무 자동화가 실제로 안정적으로 돌아가는 스킬을 만드는 8가지 방법을 정리했어요. 한마디로 **&quot;설명하지 말고 한 번 직접 해 보고 나서 스킬로 만들라&quot;**는 거예요.">
+<meta name="description" content="Ben이 Anthropic의 Claude 스킬 가이드와 모범 사례를 살펴보고 업무 자동화가 실제로 안정적으로 돌아가는 스킬을 만드는 8가지 방법을 정리했어요. 한마디로 **&quot;설명하지 말고 한 번 직접 해 보고 나서 스킬로 만들라&quot;**는 거예요.">
 <link rel="canonical" href="https://workzeroai.github.io/library/notes/npS5jzOoji8/">
 <link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
@@ -13,16 +13,17 @@
 <meta property="og:site_name" content="워크제로">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:title" content="앤트로픽은 클로드 스킬을 진짜 이렇게 만듭니다">
-<meta property="og:description" content="Ben이 Anthropic의 Claude 스킬 가이드와 모범 사례를 뜯어보고 업무 자동화가 실제로 안정적으로 돌아가는 스킬을 만드는 8가지 방법을 정리했어요. 한마디로 **&quot;설명하지 말고 한 번 직접 해 보고 나서 스킬로 만들라&quot;**는 거예요.">
+<meta property="og:description" content="Ben이 Anthropic의 Claude 스킬 가이드와 모범 사례를 살펴보고 업무 자동화가 실제로 안정적으로 돌아가는 스킬을 만드는 8가지 방법을 정리했어요. 한마디로 **&quot;설명하지 말고 한 번 직접 해 보고 나서 스킬로 만들라&quot;**는 거예요.">
 <meta property="og:url" content="https://workzeroai.github.io/library/notes/npS5jzOoji8/">
 <meta property="og:image" content="https://img.youtube.com/vi/npS5jzOoji8/maxresdefault.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="앤트로픽은 클로드 스킬을 진짜 이렇게 만듭니다">
-<meta name="twitter:description" content="Ben이 Anthropic의 Claude 스킬 가이드와 모범 사례를 뜯어보고 업무 자동화가 실제로 안정적으로 돌아가는 스킬을 만드는 8가지 방법을 정리했어요. 한마디로 **&quot;설명하지 말고 한 번 직접 해 보고 나서 스킬로 만들라&quot;**는 거예요.">
+<meta name="twitter:description" content="Ben이 Anthropic의 Claude 스킬 가이드와 모범 사례를 살펴보고 업무 자동화가 실제로 안정적으로 돌아가는 스킬을 만드는 8가지 방법을 정리했어요. 한마디로 **&quot;설명하지 말고 한 번 직접 해 보고 나서 스킬로 만들라&quot;**는 거예요.">
 <meta name="twitter:image" content="https://img.youtube.com/vi/npS5jzOoji8/maxresdefault.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
 <style>
+.tgl{margin:18px 0;border:1px solid var(--hair);border-radius:14px;background:var(--soft)}.tgl>summary{cursor:pointer;padding:14px 18px;font-weight:700;color:var(--ink);list-style:none}.tgl>summary::before{content:"▸ ";color:var(--primary)}.tgl[open]>summary::before{content:"▾ "}.tgl-in{padding:0 14px 14px}
 :root{--primary:#2462e0;--primary-deep:#1a4fb8;--primary-pale:#e5effd;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f4f8fe;--hair:#dfe7f2;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -100,7 +101,8 @@ figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-
 .cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
 footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
 @media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
-/* WZ-COBALT-C */:root{--grad-btn:linear-gradient(135deg,#2b74f0 0%,#2462e0 50%,#1d55d6 100%);--gloss:radial-gradient(120% 90% at 30% 0%,rgba(255,255,255,.28) 0,rgba(255,255,255,0) 55%);--glow:0 12px 28px -10px rgba(36,98,224,.75),0 2px 6px -1px rgba(29,85,214,.35)}.btn.pri,.fbtn,.rcta .p1,.price.best .pick,.price .pop{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:var(--glow),inset 0 1px 0 rgba(255,255,255,.35)}.fchip.on{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:0 8px 18px -8px rgba(36,98,224,.8),inset 0 1px 0 rgba(255,255,255,.35)}.btn.pri:hover,.fbtn:hover,.rcta .p1:hover{filter:brightness(1.08) saturate(1.1)}.lv-head,.svr.win{background:var(--gloss),var(--grad-btn)}.eyebrow{background:linear-gradient(135deg,#e5effd,#d3e6ff);color:#1a4fb8}.logo b{color:#2b74f0}.fmeta i,.nm i{background:linear-gradient(135deg,#e5effd,#d6e7ff);color:#1a4fb8}.paneNote{background:linear-gradient(135deg,#eaf3ff 0%,#f7fbff 60%,#fff 100%);border-color:#d3e3fb}.keys{background:linear-gradient(135deg,#e5effd,#f2f8ff)}.nkeys span::before,.keys li::before{background:linear-gradient(135deg,#3b8cff,#1d55d6)}</style>
+/* WZ-COBALT-C */:root{--grad-btn:linear-gradient(135deg,#2b74f0 0%,#2462e0 50%,#1d55d6 100%);--gloss:radial-gradient(120% 90% at 30% 0%,rgba(255,255,255,.28) 0,rgba(255,255,255,0) 55%);--glow:0 12px 28px -10px rgba(36,98,224,.75),0 2px 6px -1px rgba(29,85,214,.35)}.btn.pri,.fbtn,.rcta .p1,.price.best .pick,.price .pop{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:var(--glow),inset 0 1px 0 rgba(255,255,255,.35)}.fchip.on{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:0 8px 18px -8px rgba(36,98,224,.8),inset 0 1px 0 rgba(255,255,255,.35)}.btn.pri:hover,.fbtn:hover,.rcta .p1:hover{filter:brightness(1.08) saturate(1.1)}.lv-head,.svr.win{background:var(--gloss),var(--grad-btn)}.eyebrow{background:linear-gradient(135deg,#e5effd,#d3e6ff);color:#1a4fb8}.logo b{color:#2b74f0}.fmeta i,.nm i{background:linear-gradient(135deg,#e5effd,#d6e7ff);color:#1a4fb8}.paneNote{background:linear-gradient(135deg,#eaf3ff 0%,#f7fbff 60%,#fff 100%);border-color:#d3e3fb}.keys{background:linear-gradient(135deg,#e5effd,#f2f8ff)}.nkeys span::before,.keys li::before{background:linear-gradient(135deg,#3b8cff,#1d55d6)}
+</style>
 <script src="/assets/wz.js" defer></script>
 <script src="/assets/course.js" defer></script>
 </head>
@@ -111,13 +113,13 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
 <main>
 <div class="rd"><a class="back" href="../../../library/">← 자료실</a>
   <div class="head"><div class="m"><i>자동화</i><span>2026-10-06</span></div><h1>앤트로픽은 클로드 스킬을 진짜 이렇게 만듭니다</h1></div>
-  <figure style="margin:0 0 24px"><img src="../thumb/npS5jzOoji8.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Ben AI</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<span class="orig">원제 · How Anthropic ACTUALLY Builds Claude Skills To Automate Work</span><br><a href="https://www.youtube.com/watch?v=npS5jzOoji8" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>스킬은 &#x27;설명&#x27;이 아니라 &#x27;시연&#x27;에서 나온다</li><li>컨텍스트 창 관리가 곧 스킬 품질</li><li>스킬은 5~10번 고쳐야 쓸 만해진다</li></ul></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/npS5jzOoji8.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Ben AI</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<span class="orig">원제 · Anthropic Just Revealed 8 New Rules for Building Great Claude Skills</span><br><a href="https://www.youtube.com/watch?v=npS5jzOoji8" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>스킬은 &#x27;설명&#x27;이 아니라 &#x27;시연&#x27;에서 나온다</li><li>컨텍스트 창 관리가 곧 스킬 품질</li><li>스킬은 5~10번 고쳐야 쓸 만해진다</li></ul></div>
   <div class="bd">
 <h3>한 줄 요약</h3>
-<p>Ben이 Anthropic의 Claude 스킬 가이드와 모범 사례를 뜯어보고 업무 자동화가 실제로 안정적으로 돌아가는 스킬을 만드는 8가지 방법을 정리했어요. 한마디로 <strong>"설명하지 말고 한 번 직접 해 보고 나서 스킬로 만들라"</strong>는 거예요.</p>
+<p>Ben이 Anthropic의 Claude 스킬 가이드와 모범 사례를 살펴보고 업무 자동화가 실제로 안정적으로 돌아가는 스킬을 만드는 8가지 방법을 정리했어요. 한마디로 <strong>"설명하지 말고 한 번 직접 해 보고 나서 스킬로 만들라"</strong>는 거예요.</p>
 <h3>전체 내용 정리</h3>
 <h4>계획부터 세우지 말고 일을 한 번 끝낸 다음 스킬로 만드세요</h4>
-<p>Ben은 세 번 창업했고 AI 에이전시와 전문가·사업가를 위한 대형 AI 커뮤니티를 운영하는 사람이에요. 그가 꼽은 첫 번째이자 가장 중요한 팁은 <strong>스킬을 만들 때 미리 계획하거나 긴 프롬프트를 쓰지 말라</strong>는 거예요. Ben 자신도 예전엔 자동화할 작업을 계획하고 Claude에게 자세한 프롬프트를 줘서 스킬을 만들었다고 해요.</p>
+<p>Ben은 세 번 창업했고 AI 에이전시와 전문가·사업가를 위한 최대 규모의 AI 커뮤니티를 운영하는 사람이에요. 그가 꼽은 첫 번째이자 가장 중요한 팁은 <strong>스킬을 만들 때 미리 계획하거나 긴 프롬프트를 쓰지 말라</strong>는 거예요. Ben 자신도 예전엔 자동화할 작업을 계획하고 Claude에게 자세한 프롬프트를 줘서 스킬을 만들었다고 해요.</p>
 <p>그런데 Anthropic 가이드는 스킬을 만들기 전에 먼저 작업을 끝내라고 명시적으로 안내해요. 작업을 하다 보면 맥락을 자연스럽게 주고 선호를 설명하고 절차적 지식(일을 어떤 순서로 처리하는지에 대한 노하우)을 나누게 되거든요. Claude와 함께 작업을 성공적으로 마쳤다면 채팅 창의 "스킬로 만들기" 버튼을 누르거나 "이걸 스킬로 만들어 주세요"라고 말하면 끝이에요.</p>
 <p>이유는 사람과 같아요. 머릿속 과정을 말로 설명하긴 어렵지만 직접 해 보이면 훨씬 쉽죠.</p>
 <p>Ben은 새로 나온 <strong>"스킬 기록" 기능</strong>이 지금 Claude에서 가장 과소평가된 기능 중 하나라고 봐요. 작업을 직접 하면서 무엇을 왜 하는지 말하기만 하면, Claude가 화면과 클릭을 캡처하고 음성 녹취를 읽어 의도를 파악한 뒤, 멈추는 순간 전체 과정을 스킬로 바꿔 줘요. Ben은 이 방식으로 이메일 분류(triage) 스킬을 만들었고 이걸 기본 스킬 구축 방법으로 강력히 추천합니다.</p>

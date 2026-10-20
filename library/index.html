@@ -336,8 +336,8 @@ function note(n){
     return `<li class="card nitem soonx"><div class="nbd">${meta}
       <h3>${esc(n.title)}</h3><span class="soonpill">준비 중</span></div></li>`;
   }
-  const th = n.thumb ? `<div class="nth"><img src="${esc(n.thumb)}" alt="" loading="lazy">
-      <span class="play"><i>▶</i> ${esc(n.source||'YouTube')}</span></div>` : '';
+  // 채널명은 아래 메타 줄에 이미 있어 썸네일 위에는 겹쳐 쓰지 않는다.
+  const th = n.thumb ? `<div class="nth"><img src="${esc(n.thumb)}" alt="" loading="lazy"></div>` : '';
   const keys = (n.points&&n.points.length)
     ? `<div class="nkeys">${n.points.map(p=>`<span>${esc(p)}</span>`).join('')}</div>` : '';
   return `<li><a class="card nitem" href="${esc(n.url)}">${th}<div class="nbd">${meta}
@@ -345,6 +345,9 @@ function note(n){
     <div class="ngo">읽어보기 →</div></div></a></li>`;
 }
 let ntag='전체', nch='전체', nq='';
+// 글 하나가 여러 필터에 걸릴 수 있다(예: 에이전트 글이면서 마케팅 글). tags 가 없으면 대표 분류 하나만.
+const TAG_ORDER=['마케팅','에이전트','자동화','모델·도구','비즈니스','AI 소식'];
+function noteTags(n){ return (n.tags&&n.tags.length) ? n.tags : [n.topic||'AI 소식']; }
 // 글이 100편을 넘어 한 번에 다 그리면 썸네일까지 전부 받아 느려진다. 12편씩 끊어 보여준다.
 const NPAGE = 12;
 let nshown = NPAGE;
@@ -353,7 +356,7 @@ let nshown = NPAGE;
 function notesFor(){
   const q = nq.trim().toLowerCase();
   return DATA.notes.filter(n=>{
-    if(ntag!=='전체' && (n.topic||'AI 소식')!==ntag) return false;
+    if(ntag!=='전체' && !noteTags(n).includes(ntag)) return false;
     if(nch!=='전체' && (n.source||'')!==nch) return false;
     if(!q) return true;
     return [n.title,n.title_orig,n.summary,n.source,(n.points||[]).join(' ')]
@@ -394,7 +397,9 @@ function updStamp(){
     '마지막 업데이트 '+new Date(newestReady).toISOString().slice(0,10)+' · 읽을 수 있는 글 '+ready.length+'편';
 }
 function renderNChips(){
-  const tags=['전체',...new Set(DATA.notes.map(n=>n.topic||'AI 소식'))];
+  // 칩 순서를 고정한다(글이 들어온 순서대로 칩이 섞이지 않게). 목록에 없는 새 분류는 뒤에 붙는다.
+  const have=new Set(DATA.notes.flatMap(noteTags));
+  const tags=['전체',...TAG_ORDER.filter(t=>have.has(t)),...[...have].filter(t=>!TAG_ORDER.includes(t))];
   $('#nchips').innerHTML = tags.map(t=>`<button class="fchip${t===ntag?' on':''}" data-t="${esc(t)}">${esc(t)}</button>`).join('');
   $('#nchips').querySelectorAll('.fchip').forEach(b=>b.addEventListener('click',()=>{
     ntag=b.dataset.t; nshown=NPAGE; renderNChips(); renderNotes();
