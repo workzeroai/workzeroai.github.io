@@ -754,6 +754,23 @@
    "ready": true
   },
   {
+   "video_id": "EcxvHRccXnc",
+   "title": "Claude Opus 5.5로 AI 영상 한 단계 끌어올리기",
+   "title_orig": "Level Up Your AI Videos with Claude Opus 5.5",
+   "source": "Tao Prompts",
+   "date": "2026-09-27",
+   "topic": "모델·도구",
+   "summary": "Tao Prompts는 AI 영상이 모션 그래픽 속 글자와 오버레이를 정밀하게 다루지 못한다고 봐요. 그래서 글자 없는 영상을 먼저 만들고 그 위에 Claude Opus 5.5가 코드로 그래픽과 효과음을 얹는 작업 순서를 보여 줍니다.",
+   "points": [
+    "AI 영상의 약점은 영상 품질이 아니라 글자 통제예요",
+    "영상 모델과 Claude Opus의 역할을 나누면 결과물이 정확해져요",
+    "Claude 안에서 생성부터 효과음까지 이어져요"
+   ],
+   "thumb": "notes/thumb/EcxvHRccXnc.webp",
+   "url": "notes/EcxvHRccXnc/",
+   "ready": true
+  },
+  {
    "video_id": "fc7Nt94kGrw",
    "title": "옵시디언 국내 최고 권위자가 녹음 1,400개와 노트 1만 개를 AI로 굴리는 방법 (커맨드스페이스 구요한님)",
    "title_orig": "옵시디언 국내 최고 권위자가 녹음 1,400개와 노트 1만 개를 AI로 굴리는 방법 (커맨드스페이스 구요한님)",
