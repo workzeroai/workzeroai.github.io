@@ -3150,5 +3150,93 @@
    "url": "notes/m-5DjcgFmfQ/",
    "ready": true
   }
+ ],
+ "courses": [
+  {
+   "id": "claude-marketing",
+   "title": "클로드로 마케팅팀 꾸리기",
+   "desc": "스킬 개념부터 Cowork, Claude Code 에이전트 팀, 도구에 묶이지 않는 시스템까지 순서대로",
+   "items": [
+    "m-5DjcgFmfQ",
+    "l1y3IeC_eJ0",
+    "qiqw-_6TUZ0",
+    "yLXLHnD4fco",
+    "cAeKDWa77xI"
+   ]
+  },
+  {
+   "id": "chatgpt-work",
+   "title": "ChatGPT Work 따라잡기",
+   "desc": "첫 소개부터 화면 녹화 자동화, 마케팅팀 구성, 바로 맡길 에이전트 10개까지",
+   "items": [
+    "aRnVwkY4BJo",
+    "02esZkttfzE",
+    "BzS93V2zFTg",
+    "JWdvTUZoN0s"
+   ]
+  },
+  {
+   "id": "ai-search",
+   "title": "AI 검색에 우리 브랜드 띄우기",
+   "desc": "SEO 기본기 위에 GEO·AEO를 쌓고, 에이전트로 굴리는 데까지",
+   "items": [
+    "ZeMm6ZmiXeM",
+    "6S_3OfKM-No",
+    "L-X6HIrzrBI",
+    "vXMSxajeL7M"
+   ]
+  },
+  {
+   "id": "claude-design",
+   "title": "Claude Design 입문에서 실전까지",
+   "desc": "디자인 시스템 잡는 법부터 스킬 연동, 마케팅 소재, 실제 제작 사례까지",
+   "items": [
+    "gNgHnkJc29M",
+    "Ph-maUAiSU8",
+    "aF57uCHuXgY",
+    "8yCyUD3Nsuk"
+   ]
+  },
+  {
+   "id": "obsidian-claude",
+   "title": "옵시디언 + Claude Code 두 번째 뇌",
+   "desc": "팀 협업 사례, LLM wiki와 RAG의 차이, 노트 1만 개를 굴리는 실제 운영",
+   "items": [
+    "haM_DjiA5C8",
+    "t4XEda3CB3Q",
+    "fc7Nt94kGrw"
+   ]
+  },
+  {
+   "id": "hermes",
+   "title": "헤르메스 에이전트 따라 하기",
+   "desc": "설치 입문, 720시간 운영 후기, 에이전트 다섯 개를 나눠 쓰는 법",
+   "items": [
+    "j5CIK1pcf3A",
+    "9m8iMzEBuSU",
+    "_Pd1G33_R48"
+   ]
+  },
+  {
+   "id": "agent-safety",
+   "title": "에이전트 사고 막기",
+   "desc": "권한이 뚫리는 과정, 회사가 깔아야 할 통제 4단계, 사람이 만들 판단 기준",
+   "items": [
+    "xW3egX7Vo-E",
+    "uskp9cHFcec",
+    "3OWjqky90HU"
+   ]
+  },
+  {
+   "id": "ai-native",
+   "title": "AI 네이티브 회사 사례 모음",
+   "desc": "직접 ERP를 만든 대표, 일하는 방식이 바뀐 회사들, 채용 평가까지 바꾼 크래프톤",
+   "items": [
+    "CVmbidt-3ro",
+    "ggFKB45anK4",
+    "tYvQq-MRyx0",
+    "CLpN3zl8noQ"
+   ]
+  }
  ]
 }

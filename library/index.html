@@ -156,6 +156,24 @@ a.nitem:active{transform:scale(.995)}
 .cross p{font-size:15px;color:var(--ink2);margin-top:6px}
 .cross .go{display:inline-block;margin-top:14px;font-weight:800;color:var(--primary)}
 
+/* 코스 — 날짜순 피드에 묻히는 학습용 글을 주제별로 이어 읽게 묶는다. 데이터는 items.json 의 courses. */
+.ncourses{margin:4px 0 26px}
+.ncourses-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:10px}
+.ncourses-h b{font-size:16px;font-weight:800;letter-spacing:-.02em}
+.ncourses-h span{font-size:12.5px;color:var(--mute);font-weight:700}
+.crow{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 2px 12px;margin:0 -2px;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+.course{flex:0 0 84%;max-width:330px;scroll-snap-align:start;padding:18px 18px 16px;display:flex;flex-direction:column}
+@media (min-width:620px){.course{flex-basis:310px}}
+.course .ccnt{font-size:11.5px;font-weight:900;letter-spacing:.06em;color:var(--primary-deep)}
+.course h3{font-size:17px;font-weight:800;letter-spacing:-.025em;line-height:1.35;margin:6px 0 6px}
+.course .cdesc{font-size:13px;color:var(--mute);line-height:1.55;margin-bottom:12px}
+.course ol{list-style:none;display:grid;gap:7px;margin-bottom:14px;flex:1}
+.course li a{display:grid;grid-template-columns:20px 1fr;gap:8px;font-size:13.5px;line-height:1.45;color:var(--ink2)}
+.course li a:hover{color:var(--primary)}
+.course li a i{font-style:normal;font-size:11px;font-weight:900;color:var(--primary-deep);background:var(--primary-pale);border-radius:6px;height:20px;display:grid;place-items:center}
+.course li a span{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.course .cstart{font-size:13.5px;font-weight:800;color:var(--primary)}
+
 footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0;border-top:1px solid rgba(255,255,255,.08)}
 
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.lib-pane.on{animation:none}}
@@ -220,6 +238,10 @@ footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0;border-
 
     <div class="lib-pane" data-pane="notes">
       <p class="paneNote"><b id="nUpd"></b>매일 밤 자동으로 모으고 정리한 AI 소식이에요. <a href="../build/#cases">어떻게 만드는지 보기 →</a></p>
+      <div class="ncourses" id="ncourses" hidden>
+        <div class="ncourses-h"><b>코스로 이어 읽기</b><span>개념 → 방법 → 실전 순서</span></div>
+        <div class="crow" id="crow"></div>
+      </div>
       <div class="nfilt">
         <input id="nq" type="search" placeholder="제목·내용으로 검색" autocomplete="off" aria-label="글 검색">
         <select id="nch" aria-label="채널 선택"></select>
@@ -378,6 +400,18 @@ function renderNChips(){
     ntag=b.dataset.t; nshown=NPAGE; renderNChips(); renderNotes();
   }));
 }
+// 코스: 게시된 글만 남겨 순서대로 보여 준다. 한 편도 안 남은 코스는 숨긴다.
+function renderCourses(){
+  const byId={}; DATA.notes.forEach(n=>{ if(n.ready&&n.url) byId[n.video_id]=n; });
+  const list=(DATA.courses||[]).map(c=>({...c, posts:(c.items||[]).map(id=>byId[id]).filter(Boolean)}))
+    .filter(c=>c.posts.length>1);
+  $('#ncourses').hidden = !list.length;
+  $('#crow').innerHTML = list.map(c=>`<div class="card course" id="course-${esc(c.id)}">
+    <span class="ccnt">코스 · ${c.posts.length}편</span><h3>${esc(c.title)}</h3>
+    ${c.desc?`<p class="cdesc">${esc(c.desc)}</p>`:''}
+    <ol>${c.posts.map((n,i)=>`<li><a href="${esc(n.url)}"><i>${i+1}</i><span>${esc(n.title)}</span></a></li>`).join('')}</ol>
+    <a class="cstart" href="${esc(c.posts[0].url)}">1편부터 읽기 →</a></div>`).join('');
+}
 function renderFiles(){
   const list = tag==='전체' ? DATA.files : DATA.files.filter(f=>f.tag===tag);
   $('#fgrid').innerHTML = list.map(card).join('');
@@ -404,12 +438,12 @@ $('#nch').addEventListener('change',e=>{ nch=e.target.value; nshown=NPAGE; rende
 $('#nres').addEventListener('click',e=>{ if(e.target.id==='nreset') resetFilters(); });
 
 fetch('items.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw 0;return r.json()}).then(d=>{
-  DATA={files:d.files||[],columns:d.columns||[],notes:d.notes||[]};
+  DATA={files:d.files||[],columns:d.columns||[],notes:d.notes||[],courses:d.courses||[]};
   $('#cFiles').textContent=DATA.files.length;
   $('#cNotes').textContent=DATA.notes.length;
   $('#cColumns').textContent=DATA.columns.length;
   renderChips(); renderFiles(); renderColumns();
-  updStamp(); renderNChannels(); renderNChips(); renderNotes();
+  updStamp(); renderCourses(); renderNChannels(); renderNChips(); renderNotes();
   if(location.hash==='#notes') setTab('notes',false);
   if(location.hash==='#columns') setTab('columns',false);
 }).catch(()=>{
