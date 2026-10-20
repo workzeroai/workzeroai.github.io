@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Grok 봇 만들어 팔기 (2시간 코스) · 워크제로 자료실</title>
+<meta name="description" content="Nate가 2시간에 걸쳐 보여 주는 Grok 봇 실습 강의예요. 가상의 냉난방(HVAC) 회사를 예로 들어 이메일 담당·작업 기록 담당 같은 에이전트 팀을 맨바닥에서 세팅해 보여 줘요. 마지막에는 이 셋업을 서비스로 파는 방법까지 다뤄요.">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/4hKJ9X6rGFo/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#2462e0">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="Grok 봇 만들어 팔기 (2시간 코스)">
+<meta property="og:description" content="Nate가 2시간에 걸쳐 보여 주는 Grok 봇 실습 강의예요. 가상의 냉난방(HVAC) 회사를 예로 들어 이메일 담당·작업 기록 담당 같은 에이전트 팀을 맨바닥에서 세팅해 보여 줘요. 마지막에는 이 셋업을 서비스로 파는 방법까지 다뤄요.">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/4hKJ9X6rGFo/">
+<meta property="og:image" content="https://img.youtube.com/vi/4hKJ9X6rGFo/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Grok 봇 만들어 팔기 (2시간 코스)">
+<meta name="twitter:description" content="Nate가 2시간에 걸쳐 보여 주는 Grok 봇 실습 강의예요. 가상의 냉난방(HVAC) 회사를 예로 들어 이메일 담당·작업 기록 담당 같은 에이전트 팀을 맨바닥에서 세팅해 보여 줘요. 마지막에는 이 셋업을 서비스로 파는 방법까지 다뤄요.">
+<meta name="twitter:image" content="https://img.youtube.com/vi/4hKJ9X6rGFo/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+.tgl{margin:18px 0;border:1px solid var(--hair);border-radius:14px;background:var(--soft)}.tgl>summary{cursor:pointer;padding:14px 18px;font-weight:700;color:var(--ink);list-style:none}.tgl>summary::before{content:"▸ ";color:var(--primary)}.tgl[open]>summary::before{content:"▾ "}.tgl-in{padding:0 14px 14px}
+:root{--primary:#2462e0;--primary-deep:#1a4fb8;--primary-pale:#e5effd;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f4f8fe;--hair:#dfe7f2;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+/* WZ-COBALT-C */:root{--grad-btn:linear-gradient(135deg,#2b74f0 0%,#2462e0 50%,#1d55d6 100%);--gloss:radial-gradient(120% 90% at 30% 0%,rgba(255,255,255,.28) 0,rgba(255,255,255,0) 55%);--glow:0 12px 28px -10px rgba(36,98,224,.75),0 2px 6px -1px rgba(29,85,214,.35)}.btn.pri,.fbtn,.rcta .p1,.price.best .pick,.price .pop{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:var(--glow),inset 0 1px 0 rgba(255,255,255,.35)}.fchip.on{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:0 8px 18px -8px rgba(36,98,224,.8),inset 0 1px 0 rgba(255,255,255,.35)}.btn.pri:hover,.fbtn:hover,.rcta .p1:hover{filter:brightness(1.08) saturate(1.1)}.lv-head,.svr.win{background:var(--gloss),var(--grad-btn)}.eyebrow{background:linear-gradient(135deg,#e5effd,#d3e6ff);color:#1a4fb8}.logo b{color:#2b74f0}.fmeta i,.nm i{background:linear-gradient(135deg,#e5effd,#d6e7ff);color:#1a4fb8}.paneNote{background:linear-gradient(135deg,#eaf3ff 0%,#f7fbff 60%,#fff 100%);border-color:#d3e3fb}.keys{background:linear-gradient(135deg,#e5effd,#f2f8ff)}.nkeys span::before,.keys li::before{background:linear-gradient(135deg,#3b8cff,#1d55d6)}
+</style>
+<script src="/assets/wz.js" defer></script>
+<script src="/assets/course.js" defer></script>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴"><a href="../../../tutoring/">1:1 과외</a><a href="../../../build/">제작 문의</a><a class="on" href="../../../library/" aria-current="page">자료실</a></div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../../../library/">← 자료실</a>
+  <div class="head"><div class="m"><i>비즈니스</i><span>2026-08-30</span></div><h1>Grok 봇 만들어 팔기 (2시간 코스)</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/4hKJ9X6rGFo.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Nate Herk | AI Automation</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<span class="orig">원제 · Build &amp; Sell Grok Bots (2 Hour Course)</span><br><a href="https://www.youtube.com/watch?v=4hKJ9X6rGFo" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>역할이 하나인 에이전트를 소수의 임원급 아래에 둔다</li><li>맥락 다음에 연결, 그다음에 스킬과 루틴</li><li>제안은 이해한 뒤에 승인한다</li></ul></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>Nate가 2시간에 걸쳐 보여 주는 Grok 봇 실습 강의예요. 가상의 냉난방(HVAC) 회사를 예로 들어 이메일 담당·작업 기록 담당 같은 에이전트 팀을 맨바닥에서 세팅해 보여 줘요. 마지막에는 이 셋업을 서비스로 파는 방법까지 다뤄요.</p>
+<h3>전체 내용 정리</h3>
+<h4>만능 에이전트 하나보다 역할이 분명한 팀이 낫다고 Nate는 봐요</h4>
+<p>Grok 기반 에이전트 앱인 Grok 봇을 Nate는 주머니 속에 AI 에이전트 군단이 있는 셈(an army of AI agents right in your pocket)이라고 소개해요. 화면은 Telegram 스타일 채팅이라 팀원에게 말 걸듯 일을 맡기면 되죠. 에이전트끼리 대화하고 일을 넘기기도 해요. 내가 자는 동안에도 일해요. 로그인해서 내 도구를 쓰고 행동까지 한다는 점이 일반 챗봇과 다르다고 해요.</p>
+<p>Nate의 실제 계정에는 에이전트가 10개 있고 하나마다 맡은 일이 딱 하나예요. X만 확인하는 에이전트, 애니메이션만 만드는 에이전트, Fireflies(회의 녹취 서비스)만 살피는 에이전트가 그런 식이에요. 화면 위쪽에는 임원급 4개를 고정해 뒀어요. 비서실장 격의 chief, COO, 최고콘텐츠책임자(CCO), CFO예요. 이 넷을 leadership이라는 그룹 채팅에 넣고 4분기에 뭘 해야 할지, 한 사람에게 사업이 쏠리는 위험(key-man risk)은 어떻게 줄일지 논의하라고 시키면 서로를 태그하며 답을 모아 온다고 시연해요.</p>
+<p><strong>에이전트 하나가 나머지를 전부 지휘하는 구도는 이상적으로 보여도 과부하가 걸리고 지저분해진다</strong>고 Nate는 말해요. 그래서 내가 직접 대화하는 상대는 임원급 몇 명으로 줄여요. 그 밑에 마케팅 운영이나 회계처럼 한 가지만 하는 실무 에이전트를 두면 돼요. 위임은 각 에이전트의 description(다른 에이전트가 이 친구의 역할을 알아보게 하는 설명)을 보고 이뤄지니까 처음부터 분명하게 써 두라고 해요. 예를 들어 주간 리포트를 쓰던 에이전트가 다른 팀의 데이터가 필요해지면 그쪽에 요청해 받아 오고 하던 일을 이어 가요. 이때 길잡이가 되는 것도 description이에요.</p>
+<p>봇마다 자기 화면이 있지만 같은 컴퓨터를 나눠 써요. 한 에이전트가 어떤 사이트에 로그인해 두면 다른 에이전트도 그 로그인을 쓸 수 있고 사용자도 브라우저를 직접 조작할 수 있어요. 반복 실행은 routines(루틴)로 해요. Nate의 chief 에이전트에는 매주 일요일 밤에 그 주 ClickUp에서 완료된 항목을 모아 정리하는 루틴이 있어요.</p>
+<p>용도 구분도 있어요. 점심시간이나 휴가 중에 폰으로 말을 걸거나 밤새 혹은 이벤트가 생길 때 돌아가는 에이전트는 Grok 봇이 맞다는 거예요. 앱·웹사이트·게임 개발은 GitHub와 연결되는 Claude Code나 Codex가 맞고요. 프로젝트 관리, 받은편지함 분류, 리서치 리포트, 마케팅 자산 같은 빠른 지식 노동은 Grok 봇 몫이에요. Hermes나 VPS 서버에 Claude Code를 올리는 방식, OpenClaw에 비해 기술 부담이 적은 것도 장점으로 꼽아요.</p>
+<p>세팅의 뼈대는 Nate가 AI 운영체제라고 부르는 4C예요. Context는 나와 사업에 관한 정보예요. Connections는 이메일·캘린더·Slack 등을 읽고 행동할 권한이고요. Capabilities는 대개 Skills(일하는 방법을 적어 둔 재사용 지시서)를 가리켜요. Cadence는 시키지 않아도 시간이나 이벤트에 맞춰 도는 루틴이에요. 앞의 둘은 에이전트를 나에게 맞추는 정보이고 뒤의 둘은 에이전트를 빠르게 움직이게 하는 장치예요. 맥락이 있어야 연결을 어디에 쓸지 알기 때문에 순서도 이 차례예요.</p>
+<h4>가입하고 첫 에이전트에게 사업 문서를 읽히는 과정이에요</h4>
+<p>Grok 봇은 Google에서 검색해 공식 페이지에서 데스크톱 앱을 받으면 돼요. pricing에서 Super Grock 플랜으로 올리는데 출시 초기에는 월 200달러였고 지금은 월 30달러라고 Nate는 말해요. 앱에는 업그레이드할 때 쓴 이메일로 로그인하고 권한 동의를 해요. 온보딩에서 매일 쓰는 도구(Google Workspace, GitHub, ClickUp 등)를 고르는 단계가 나오는데 나중에 추가해도 괜찮아요. 데스크톱 앱을 닫아도 에이전트는 계속 일하고 폰 앱과도 자동으로 맞춰져요.</p>
+<p>첫 에이전트는 비서로 만들고 이름을 friend로 붙여요. 첫 프롬프트의 요지는 이렇습니다. 이름은 Nate이고 기술은 잘 모르니 쉽고 짧게 설명해 달라는 것이에요. 그리고 홈서비스 회사 Summit Home Services(HVAC)를 운영하며 소규모 팀으로 매출을 키우고 싶다는 것이에요.</p>
+<p>이어서 사업을 말로 설명하는 대신 이미 있는 문서를 줘요. 사업 개요·운영 시간·서비스·가격이 들어 있는 구글 문서 링크를 붙여서 읽고 memory(기억)에 저장하라고 시켜요. 문서가 잠겨 있어서 봇이 자기 브라우저로 열어 보려다 실패해요. 그러자 Google Drive 연결을 제안해요. Nate가 보여 준 연결 순서는 이래요.</p>
+<ol><li>커넥터(plugins) 메뉴에서 추가(add)를 눌러요.</li><li>authenticate를 눌러 Google 로그인으로 넘어가요.</li><li>보기·다운로드만 줄지 편집·생성·삭제까지 줄지 권한을 골라요.</li><li>계정이 여러 개라면 이름표(label)를 붙여 구분해요.</li></ol>
+<p>연결 뒤에 다시 해 보라고 하면 문서를 읽고 저장해요. 저장된 요약은 Twin Cities 지역의 소규모 HVAC 회사라는 것, 억지로 팔지 않고 고쳐 주는 쪽이라는 것, 돈이 새는 곳은 느린 이메일 응답이라는 것이었어요. Nate는 에이전트가 처음에는 팔이 없는 LLM일 뿐이라고 해요. 연결을 붙여야 보고 생각하고 행동하는 에이전트 루프(agentic loop)가 돌아요. 작은 API 키를 일일이 만질 필요도 없다고 말해요.</p>
+<h4>이메일만 맡는 에이전트를 만들고 제안은 이해한 뒤 승인해요</h4>
+<p>Nate는 비서에게 모든 일을 몰지 않아요. 이메일 전담 에이전트 inbox를 따로 만들어요. 이름은 역할이 바로 보이면 충분하다는 입장이에요. friend가 직접 inbox를 만들면서 사업 정보, 가격, 분류 기준, 원본 문서 링크를 메시지로 넘겨요. friend는 chief of staff로 이름을 바꿔 상단에 고정해요. Gmail 연결은 Drive와 같은 방식이에요. inbox의 description에 Summit 고객 이메일이 유일한 업무라고 적어 두면 chief of staff가 무엇을 누구에게 넘길지 판단하는 근거가 돼요.</p>
+<p>첫 지시는 받은편지함을 읽고 제안하라는 거였어요. 회사 메일에는 나만 답한다는 점, 가장 가치 큰 일이 무엇인지, 라벨과 자동화가 필요해 보인다는 점을 함께 적었어요. inbox의 제안은 이랬어요.</p>
+<ul><li>긴급 메일 2건이 몇 시간째 안 읽힌 상태예요. 그중 하나는 지하에서 온수기가 샌다는 메일이에요.</li><li>안 읽은 메일 5200통은 오래된 것이라 무시하자고 해요.</li><li>고객 메일용 라벨 6개를 만들자고 해요. Emergency, Needs you, Quote, Schedule, Billing, Warranty예요.</li><li>긴급·환불·화난 고객은 바로 알리고 나머지는 평일 아침에 목록으로 보내요. 쉬운 답장은 초안만 써요.</li></ul>
+<p>Nate가 전부 하라고 승인하자 라벨이 만들어지고 긴급 건 2개의 초안이 생겼어요. 30분마다 새 메일을 확인하는 감시 루틴도 만들어졌어요. 해당 메일이 없으면 아무것도 하지 않아요. SOP(단계별 업무 절차서)처럼 단계가 적혀 있는 형태예요. 초안에는 일요일 긴급 방문이면 진단비 외에 150달러 긴급 수수료가 붙는다는 안내와 서비스 주소 회신 요청이 담겼어요. 내 말투나 서명이 있으면 미리 알려 주는 게 좋다고 Nate는 조언해요.</p>
+<p>여기서 Nate가 꼭 새기라는 말이 하나 있어요. <strong>"생각은 맡겨도 이해는 맡길 수 없어요(you can outsource the thinking, but you cannot outsource the understanding)."</strong> 제안이 그럴듯해도 무작정 승인하지 말고 왜 그런지 알고 결정하라는 뜻이에요. 첫날 에이전트를 15개 만들어 놓고 테스트하지 않는 게 흔한 실수라고도 해요.</p>
+<p>개선은 Nate가 bike method(자전거 가르치기)라 부르는 방식으로 해요. 처음에는 뒤에서 잡아 주다가 점점 손을 떼되 완전히 놓지는 않는 거예요. 라벨이 틀린 메일을 5개쯤 골라 이건 Quote여야 한다고 이유 X·Y·Z와 함께 알려 주면 지침이 고쳐져요. 이런 반복 끝에 스킬로 굳혀요. 검증도 사람에게 하듯 시켜요. 에이전트가 넘기기 전에 스스로 검토하고 고치고 다시 검토하게 해서 V1 대신 V4나 V7을 받는 식이에요. 리서치라면 출처를 거듭 확인하게 하고 3개월 안의 자료만 쓰게 한다고 해요.</p>
+<h4>반복되는 일은 스킬로 굳히고 막히면 브라우저를 넘겨줘요</h4>
+<p>스킬은 재사용하며 계속 고쳐 가는 레시피예요. Nate는 팬케이크 레시피에 빗대요. Nate가 inbox에 준 스킬 제작 프롬프트의 요지는 이래요. weekly email report라는 스킬을 만들 것, 산출물은 Google Sheet일 것, 매주 금요일 오후 5시 루틴이 이 스킬을 부를 것이에요. 지난주 월~금에 라벨이 붙은 메일로 라벨별 요청 수와 평균 응답 시간 같은 분석을 한 장짜리 시트에 담을 것, 모르는 건 질문할 것, 예시 산출물도 줄 것이라고도 적어요. 질문하게 시키는 데는 이유가 있어요. 완료 기준(definition of done)이 흐리면 결과물이 나쁘게 나오기 때문이라고 Nate는 말해요.</p>
+<p>결과로 루틴이 둘 생겼어요. 30분마다 도는 inbox 감시와 금요일 5시 리포트예요. 샘플 시트에는 주차, 총 이메일 수, 대기 중인 건수, 평균 응답 시간이 들어갔어요. 후속 지시는 데이터는 좋으니 헤더와 굵은 글씨를 브랜드 초록색으로 바꾸라는 것이었어요. 라벨별 파이 또는 막대 차트도 넣고 시트를 고칠 때 스킬도 업데이트해 다음 금요일부터 반영하라고 해요. 스킬 파일은 Plugins의 Installed에서 private plugins라는 이름으로 볼 수 있어요.</p>
+<p>그런데 서식과 차트는 처음에 붙지 않았어요. 봇이 스스로 시트가 아직 민무늬라고 알려 왔어요. 초록 헤더와 차트를 넣으려면 Google 로그인이 필요하다는 거였죠. Nate가 에이전트의 컴퓨터를 take over(직접 조작)해서 로그인을 한 번 해 주면 다음부터는 봇이 알아서 써요. 이후 봇이 브라우저로 서식과 차트를 만들고 스크린샷으로 확인했는데 약 7분이 걸렸어요. 브라우저 조작을 녹화해 가르치는 teach a task 기능도 있어요. 다만 Nate는 자연어 지시가 편해서 잘 안 쓴다고 해요.</p>
+<p>사용량은 이름 메뉴의 usage에서 봐요. 30달러 플랜은 7일 뒤 리셋되는 한도 중 6%로 시작했어요. 실습을 하는 동안 13%까지 올랐어요. 상위 플랜은 100달러나 200달러 단계로 올릴 수 있어요.</p>
+<h4>일을 넘기는 체인과 기록, 메모리, 연결을 함께 정리해요</h4>
+<p>inbox가 고객에게 곧 팀원이 연락드린다고 답장했는데 실제로 연락할 사람이나 구조가 없다는 허점이 보여요. Nate는 chief of staff에게 브레인스토밍을 시켰어요. 에이전트를 무작정 늘리지 말라는 답이 돌아와요. 결론은 ClickUp만 맡는 에이전트 하나를 추가하는 것이었어요. ClickUp을 authorize하고 이름은 Fred로 정해요. chief of staff가 ClickUp의 internal automations 스페이스에 Summit 전용 리스트를 만들어요. 고객 이름·전화·주소·필요 사항·긴급도를 담은 카드도 만들어요. 그리고 inbox에게 팀원이 연락하겠다고 말한 고객은 Fred에게 넘기라고 안내해요.</p>
+<p>여기에 Nate는 해킹이라 부르는 팁을 하나 더해요. 어느 에이전트와 일하든 모든 프로젝트를 ClickUp에 기록하게 하는 거예요. 이메일 위임뿐 아니라 새 에이전트나 시트를 만든 작업까지 대상이에요. 담당 에이전트, 시작 시간, 진행 중인지 완료인지, 마감일을 남겨요. 이걸 스킬로 만들어 두면 매번 시키지 않아도 돼요. 한 달 뒤에 에이전트로 뭘 했는지 돌아볼 수 있고 프로젝트가 방치되지 않아요. 잡음은 걸러야 하죠. 30분마다 도는 점검은 카드로 남길 가치가 없어서 Nate는 그 카드를 archive하고 스킬을 갱신하라고 시켜요. 적게 기록하느니 많이 기록하는 쪽으로 기우는 성향은 안전해서 마음에 든다고 하고요.</p>
+<p>루틴은 클릭하면 실행 이력이 보이고 상단 Test run으로 바로 실행해 볼 수 있어요. 토글을 끄면 일시정지예요. 에이전트가 늘면 섹션으로 묶어 접어 둬요. 평소에는 임원급과만 대화하기 때문이에요. all hands라는 채널을 만들어 에이전트 셋을 한 그룹 채팅에 넣을 수도 있어요. 부족한 에이전트·스킬·루틴이 뭔지 물으면 각자 전문 영역에서 답해요. Nate는 COO와 CMO를 두고 매주 무슨 일이 있었는지, 병목은 어디였는지, 새 자동화는 어디에 필요한지 묻는 구조를 권해요.</p>
+<p>메모리는 공유 메모리와 에이전트별 메모리로 나뉘어요. Nate가 friend와 Fred에게 각자 아는 나와 모든 봇이 아는 나의 차이를 물어보니 공유 쪽에는 이름, Twin Cities와 Chicago 시간대, 쉬운 설명을 선호한다는 점, Google 계정이 있었어요. 사업 맥락은 friend가 더 알아요. inbox와 Fred는 자기 업무 메모만 가졌어요. 임원급에는 정보를 넉넉히 주고 실무 에이전트에는 그 일에 필요한 만큼만 주는 편이 좋다고 해요.</p>
+<p>Plugins에 없는 앱은 Composio라는 중간 서비스로 이어요. 가입은 무료예요. Plugins에서 Composio를 추가해 계정을 만들고 인증한 뒤 접근 가능한 앱을 chief of staff에게 물어 확인해요. Nate는 LinkedIn, QuickBooks, YouTube, Perplexity를 연결했어요. 리서치는 Perplexity로 하라는 지시와 연결 사실도 공유 메모리에 저장시켰어요. 플러그인·스킬·브라우저는 모든 에이전트가 같이 쓰고 메모리만 따로라서 한 번 연결해 두면 전 에이전트가 쓸 수 있어요.</p>
+<p>파일은 에이전트 컴퓨터의 File manager에 쌓여요. 에이전트끼리 파일 경로를 넘겨 일을 이어 가요. Nate는 chief of staff에게 context 폴더와 projects 폴더를 만들라고 시켰어요. 내 정보와 사업 기본 정보는 context에 넣어요. 새 프로젝트는 projects 아래 새 폴더에 저장하게 했어요. 데이터가 로컬·Google Drive·Notion 중 어디에 쌓이는지는 알고 있어야 한다고 해요.</p>
+<h4>에이전트 사례 다섯 가지를 한 프롬프트씩 만들어 봐요</h4>
+<p><strong>영상 편집(Slice).</strong> 프롬프트는 당신은 영상 편집자 Slice이니 이 GitHub repo를 조사해 Hyperframes(에이전트가 HTML을 써서 영상으로 렌더링하게 해 주는 도구) 스킬을 가져오라는 내용이에요. 그 스킬로 15초짜리 sizzle reel을 만들라고 해요. 누구인지, 무엇을 하는지, 함께 일하는 방법을 담고 마지막은 상담 예약 안내로 끝내라고 해요. 실제 정보는 chief of staff에게 물어 쓰게 했어요. 영상 12초 지점에서 미디어를 불러오지 못한다는 오류가 떴어요. 그래도 File manager의 MP4를 Chrome으로 열면 재생됐어요. 결과물 자체는 아주 밋밋했다는 게 Nate의 평가예요. Hyperframes는 스킬을 갖추면 플로차트 애니메이션 같은 모션 그래픽도 가능하다고 자기 영상으로 보여 줘요.</p>
+<p><strong>회의 녹취 정리(Fireflies).</strong> 새 봇에게 Fireflies를 인증한 뒤 평일 오후 6시에 그날 트랜스크립트를 로컬 meetings 폴더에 월별로 저장하라고 시켜요. 루틴 이름은 weekday fireflies dump예요. 봇이 기존 녹취를 전부 긁으려 하자 Nate가 끼어들어 딱 5개만 가져오라고 바로잡았어요. 지켜보다 개입하면 토큰 낭비를 막는다고 강조하는 대목이에요. 그 사이 세션 한도가 30%까지 찼거든요. Nate는 기술보다 어려운 게 좋은 use case를 찾는 일이라고 해요. 시간이나 이벤트로 생각해 보라는 거예요. X가 일어나면 나는 늘 Y를 하는가를 물어보면 돼요.</p>
+<p><strong>이미지 제작(Studio).</strong> CMO 에이전트에게 디자이너 에이전트 Studio를 직접 만들게 해요. Grok에 내장된 이미지 생성 기능으로 프로필 사진을 먼저 뽑아요. 더 나은 모델을 쓰려고 여러 이미지 모델을 API로 제공하는 외부 서비스에서 키를 만들어 Composio에 넣어요. Studio에게는 GPT Image 2와 Nano Banana 2로 같은 작업을 시켜요. 그런데 Composio를 거치면 이미지가 만들어지지 않았어요. 우회로는 에이전트 컴퓨터의 브라우저로 해당 서비스에 Nate가 한 번 로그인해 두고 Studio가 화면을 직접 조작하게 하는 거였어요. 이게 통했어요. 그다음 인터페이스 사용법을 스킬로 저장하라고 시켰어요. Nate는 GPT Image 2를 가장 좋아하지만 이번에는 더 사실적인 Nano Banana 2 결과를 골랐어요. 같은 일을 또 할 것 같으면 바로 스킬로 만들라는 조언도 여기서 나와요.</p>
+<p><strong>Slack 메시지 트리거.</strong> Slack 봇을 만들어 루틴의 트리거를 시간이 아닌 Slack의 새 메시지로 정해요. 대상 채널은 YouTube testing 채널이에요. Slack을 연결하고 권한을 허용한 뒤 해당 채널에서 /invite로 앱을 초대해야 해요. 앱이 들어간 채널만 감지하기 때문이에요. 가짜 스폰서 제안 메시지를 올리자 알림이 왔어요. n8n이면 15분, Claude Code면 7분쯤 걸릴 일을 프롬프트 한 번에 2분 만에 끝냈다고 Nate는 비교해요.</p>
+<p><strong>X 일일 요약.</strong> 봇 하나가 매일 X의 AI 소식을 요약해 ClickUp DM으로 보내요. 기본 X 플러그인은 사용량만큼 과금되는데 포스트당 약 half a cent라고 봇이 비용과 남은 크레딧까지 알려 줘요. 결과는 이미 쓰는 도구로 받고 Grok 봇은 개발용 인터페이스로만 쓰는 방식도 가능하다는 시연이에요.</p>
+<h4>만든 봇은 템플릿으로 나누고 셋업은 서비스 사다리로 팔아요</h4>
+<p>봇 설정 맨 아래의 share as template을 누르면 봇에게 자기 템플릿을 만들라는 프롬프트가 전달돼요. 봇이 자기 메모리·스킬·루틴·플러그인을 읽고 개인 정보를 뺀 템플릿을 써요. Nate가 Studio로 해 보니 메모리와 스킬과 플러그인은 들어갔고 루틴은 없었어요. 내용을 검토하고 고친 뒤 publish하고 링크를 복사해 나눠요. 받는 사람은 내용을 확인하고 추가하는데 인증은 직접 해야 해요. 인터넷에서 받은 템플릿은 악의적인 내용이 없는지 확인하라고 Nate는 당부해요. n8n 워크플로나 Claude 스킬, GitHub 레포를 파는 사람이 있듯 템플릿도 팔리는 날이 올 거라고 봐요.</p>
+<p>서비스로 팔 때 Nate는 Grok 봇 셋업을 신뢰를 쌓는 발 들이기(foot in the door) 상품으로 봐요. 사다리는 무료 작업에서 시작해요. 그다음이 시간당 교육·컨설팅이고 1,000달러에서 10,000달러 사이의 유료 audit(진단)이 이어져요. 맨 위가 리테이너(월 정액 계약)예요. 월 5K에서 시작해 그 두 배까지 올라가고 Nate의 에이전시는 월 20K 이상 리테이너를 받던 시절이 있었다고 해요. 가격 예시는 팀 전체 셋업 패키지 약 5,000달러예요. 시간당 100달러로 5시간이면 500달러이니 사업체에는 부담이 작은 금액이라고 해요.</p>
+<p>설득의 핵심은 본인이 증거가 되는 거예요(you have to be your own proof). 임원팀과 실무 에이전트와 스킬을 갖춰 내 일을 직접 돌려 보여 준다는 뜻이에요. 교육할 때 4C 틀을 쓰면 신뢰가 간다고 해요. 마케터에게 와닿는 확장도 있어요. Clay는 사람과 회사 정보를 보강(enrich)하고 AI 리서치 에이전트를 돌리며 B2B 데이터를 더 잘 찾게 도와주는 도구인데 Grok 봇에 커넥터가 있어요. 이걸로 리드를 보강하고 아웃리치 문구를 쓰게 하는 거예요. 그 전에 누구에게(person) 어떤 고민을(pain) 무슨 약속으로(promise) 접근할지 정해 두라고 해요. Nate가 세 가지 P라 부르는 틀이고 이 내용을 Grok 봇의 context에 넣어 두라는 설명이에요. 하루 50통 콜드메일을 보내는 에이전트와 그 결과를 분석해 개선안을 주는 에이전트를 짝지어 쓰는 구성을 예로 들어요.</p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>역할이 하나인 에이전트를 소수의 임원급 아래에 둔다</strong>: 만능 에이전트는 과부하가 걸리고 지저분해진다고 Nate는 봐요. 내가 대화할 상대를 줄이고 description을 분명히 써야 위임이 제대로 돌아가요.</li><li><strong>맥락 다음에 연결, 그다음에 스킬과 루틴</strong>: 4C는 순서가 의미를 가져요. 사업 문서부터 읽히고 연결을 붙인 뒤 반복 업무를 스킬과 루틴으로 굳히는 흐름이에요.</li><li><strong>제안은 이해한 뒤에 승인한다</strong>: 생각은 맡겨도 이해는 맡길 수 없다는 원칙이 Nate의 셋업 전체에 깔려 있어요. 에이전트의 제안을 무작정 받지 않고 틀린 사례를 골라 피드백하며 키워 가요.</li><li><strong>같은 일을 두 번 할 것 같으면 스킬로 만든다</strong>: 로그 기록, 주간 리포트, 이미지 도구 사용법까지 스킬로 쌓이면 에이전트가 늘어도 일하는 방식이 흩어지지 않아요.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li>Grok 봇 앱을 설치하고 비서 에이전트 하나를 만들어 보세요. 사업 개요·서비스·가격이 든 구글 문서 링크를 주고 읽어서 memory에 저장하라고 시킨 뒤 막히면 Plugins에서 Google Drive를 연결해요. 맥락이 있어야 이후 연결이 힘을 받기 때문이에요.</li><li>이메일 전담 에이전트를 따로 만들어 Gmail을 연결하세요. 받은편지함을 읽고 가장 가치 큰 자동화를 제안하라고 시키고 제안의 이유를 이해한 뒤 승인해요. 라벨 분류와 초안 작성부터 맡기고 30분 간격 감시 루틴을 붙이면 처음부터 무리하지 않고 시작할 수 있어요.</li><li>스킬 제작 프롬프트를 써 보세요. 스킬 이름, 산출물(Google Sheet), 실행 시점(금요일 오후 5시), 입력 범위를 적고 모르는 건 먼저 질문하라고 덧붙여요. 결과를 본 뒤에는 시트를 고치면서 스킬도 업데이트하라고 요청해요. 다음 주 결과부터 수정이 반영돼요.</li><li>모든 프로젝트를 ClickUp 같은 곳에 기록하는 스킬을 만들어 보세요. 담당 에이전트, 시작 시간, 진행 상태, 마감일을 남기게 하고 30분마다 도는 점검 같은 잡음은 제외하라고 피드백해요. 한 달 뒤 에이전트로 무엇을 했는지 돌아볼 수 있어요.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>세 가지만 답하면 4단계 중 지금 위치를 바로 알려드려요. 무료예요.</p><span class="go">내 단계 진단하기 →</span></a>
+    <a class="cross" href="../../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../../../library/" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>
