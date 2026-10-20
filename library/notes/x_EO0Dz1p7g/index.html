@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>마케팅을 통째로 자동화하는 Claude 스킬 11개 · 워크제로 자료실</title>
+<meta name="description" content="Ben은 6개월 동안 만든 Claude 스킬 중 매일 쓰는 11개를 카피라이팅 4개, 디자인 2개, 영상 1개, 리서치·분석 4개로 나눠 보여 줘요. 어떤 도구를 연결하고 어떤 순서로 돌리는지까지 따라 할 수 있게 풀어 줍니다.">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/x_EO0Dz1p7g/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#2462e0">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="마케팅을 통째로 자동화하는 Claude 스킬 11개">
+<meta property="og:description" content="Ben은 6개월 동안 만든 Claude 스킬 중 매일 쓰는 11개를 카피라이팅 4개, 디자인 2개, 영상 1개, 리서치·분석 4개로 나눠 보여 줘요. 어떤 도구를 연결하고 어떤 순서로 돌리는지까지 따라 할 수 있게 풀어 줍니다.">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/x_EO0Dz1p7g/">
+<meta property="og:image" content="https://img.youtube.com/vi/x_EO0Dz1p7g/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="마케팅을 통째로 자동화하는 Claude 스킬 11개">
+<meta name="twitter:description" content="Ben은 6개월 동안 만든 Claude 스킬 중 매일 쓰는 11개를 카피라이팅 4개, 디자인 2개, 영상 1개, 리서치·분석 4개로 나눠 보여 줘요. 어떤 도구를 연결하고 어떤 순서로 돌리는지까지 따라 할 수 있게 풀어 줍니다.">
+<meta name="twitter:image" content="https://img.youtube.com/vi/x_EO0Dz1p7g/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+.tgl{margin:18px 0;border:1px solid var(--hair);border-radius:14px;background:var(--soft)}.tgl>summary{cursor:pointer;padding:14px 18px;font-weight:700;color:var(--ink);list-style:none}.tgl>summary::before{content:"▸ ";color:var(--primary)}.tgl[open]>summary::before{content:"▾ "}.tgl-in{padding:0 14px 14px}
+:root{--primary:#2462e0;--primary-deep:#1a4fb8;--primary-pale:#e5effd;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f4f8fe;--hair:#dfe7f2;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+/* WZ-COBALT-C */:root{--grad-btn:linear-gradient(135deg,#2b74f0 0%,#2462e0 50%,#1d55d6 100%);--gloss:radial-gradient(120% 90% at 30% 0%,rgba(255,255,255,.28) 0,rgba(255,255,255,0) 55%);--glow:0 12px 28px -10px rgba(36,98,224,.75),0 2px 6px -1px rgba(29,85,214,.35)}.btn.pri,.fbtn,.rcta .p1,.price.best .pick,.price .pop{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:var(--glow),inset 0 1px 0 rgba(255,255,255,.35)}.fchip.on{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:0 8px 18px -8px rgba(36,98,224,.8),inset 0 1px 0 rgba(255,255,255,.35)}.btn.pri:hover,.fbtn:hover,.rcta .p1:hover{filter:brightness(1.08) saturate(1.1)}.lv-head,.svr.win{background:var(--gloss),var(--grad-btn)}.eyebrow{background:linear-gradient(135deg,#e5effd,#d3e6ff);color:#1a4fb8}.logo b{color:#2b74f0}.fmeta i,.nm i{background:linear-gradient(135deg,#e5effd,#d6e7ff);color:#1a4fb8}.paneNote{background:linear-gradient(135deg,#eaf3ff 0%,#f7fbff 60%,#fff 100%);border-color:#d3e3fb}.keys{background:linear-gradient(135deg,#e5effd,#f2f8ff)}.nkeys span::before,.keys li::before{background:linear-gradient(135deg,#3b8cff,#1d55d6)}
+</style>
+<script src="/assets/wz.js" defer></script>
+<script src="/assets/course.js" defer></script>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴"><a href="../../../tutoring/">1:1 과외</a><a href="../../../build/">제작 문의</a><a class="on" href="../../../library/" aria-current="page">자료실</a></div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../../../library/">← 자료실</a>
+  <div class="head"><div class="m"><i>마케팅</i><span>2026-07-25</span></div><h1>마케팅을 통째로 자동화하는 Claude 스킬 11개</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/x_EO0Dz1p7g.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Ben AI</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<span class="orig">원제 · 11 Claude Skills That Automate My Entire Marketing</span><br><a href="https://www.youtube.com/watch?v=x_EO0Dz1p7g" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>말투는 데이터량이 결정해요</li><li>AI에게 한 번에 쓰게 하지 않아요</li><li>글감은 내 이야기에서 나와야 해요</li></ul></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>Ben은 6개월 동안 만든 Claude 스킬 중 매일 쓰는 11개를 카피라이팅 4개, 디자인 2개, 영상 1개, 리서치·분석 4개로 나눠 보여 줘요. 어떤 도구를 연결하고 어떤 순서로 돌리는지까지 따라 할 수 있게 풀어 줍니다.</p>
+<h3>전체 내용 정리</h3>
+<h4>스킬 11개를 네 묶음으로 나눠 쓰고 있어요</h4>
+<p>Ben은 Claude 스킬로 카피라이팅부터 리서치, 분석, 디자인, 영상 재가공까지 마케팅 업무의 상당 부분을 자동화했다고 해요. 스킬을 6개월 동안 만들었고 그중 매일 가장 많이 쓰는 11개를 이 영상에서 소개합니다. 묶음은 카피라이팅 4개, 디자인 2개, 영상 1개, 리서치·아이디어·분석 4개예요.</p>
+<p>Skills(특정 작업의 처리 방법을 적어 둔 재사용 지시서)는 Claude Cowork에서 주로 보여 주고 일부는 Claude Code(터미널과 파일을 다루는 Claude)에서 보여 줘요. Ben은 스킬을 지원하는 플랫폼이면 어디서든 쓸 수 있다고 말합니다.</p>
+<p>설치 방법도 짧게 나와요. Ben이 배포하는 Notion 페이지에서 스킬 전체가 들어 있는 플러그인 zip 파일을 받아요. Claude의 customize 탭에서 plugins로 가서 add, upload plugin 순서로 누르고 zip을 올리면 됩니다. 스킬 하나만 쓰고 싶다면 개별 스킬 파일을 받아 skills 영역에서 add로 올리면 돼요.</p>
+<h4>내 말투로 쓰는 voice 스킬과 그걸 만들어 주는 스킬이 기본이에요</h4>
+<p>첫 번째는 voice 스킬이고 Ben은 마케팅을 넘어 가장 가치 있는 스킬로 꼽아요. 내 말투로 초안을 써 주는 스킬인데 잘 작동하는 이유가 둘 있다고 해요.</p>
+<p>하나는 학습 자료의 양이에요. Ben의 스킬에는 YouTube 영상 자막과 Circle 커뮤니티 댓글, 수백 건의 이메일 답장, SNS 콘텐츠, Slack 메시지가 들어 있어요. 음성 받아쓰기 도구 WhisperFlow의 전체 기록까지 넣었다고 해요. 그래서 자주 쓰는 추임새와 말하는 방식까지 따라 합니다. 다른 하나는 채널별 적응이에요. 이메일, LinkedIn, SNS, Slack마다 별도의 voice 가이드가 있어요. 예를 들어 Slack voice에는 인사하는 방식과 피드백 주는 방식, 자주 쓰는 단어, 대소문자 습관, 예시가 분석 결과로 정리돼 있어요. 휴머나이저 스킬에서 가져온 규칙 덕분에 em dash 같은 AI 글쓰기의 흔적도 항상 걷어 냅니다.</p>
+<p><strong>Ben이 이 스킬을 가장 많이 쓰는 곳은 받은편지함이에요.</strong></p>
+<p>순서는 이렇게 흘러가요. 먼저 Claude에게 답장하지 않은 이메일을 전부 확인해 달라고 시켜요. 목록을 훑어보고 답해야 할 메일마다 WhisperFlow로 말로 지시를 남겨요. Ben이 든 예시는 이런 식이에요.</p>
+<blockquote>Steve에게 문제없다고 답하는 메일 초안을 써 줘. 그의 웹사이트를 확인해 봤는데 우리와 잘 맞을 것 같아. Calendly 링크도 같이 보내 줘.</blockquote>
+<p>이렇게 여러 건을 말로 던지면 Claude가 Ben의 말투로 초안을 만들어 Gmail 임시보관함에 바로 넣어 줘요. 보내기만 하면 되는 거죠. 길고 복잡한 답장도 마찬가지예요. 소리 내어 생각을 쭉 말한 다음 voice 스킬로 구조만 잡으면 AI 티가 나지 않는 글이 나온다고 해요. SNS 콘텐츠와 댓글, DM에도 똑같이 씁니다.</p>
+<p>두 번째 스킬인 voice profile builder가 내 voice 스킬을 대신 만들어 줘요. 실행하면 Claude가 몇 가지를 물어봅니다.</p>
+<ul><li>누구를 위한 스킬인지 물어봐요. 나 자신일 수도, 다른 사람일 수도 있어요. Ben의 팀원도 모두 자기 스킬을 하나씩 갖고 있고 팀에 AI 티 나는 답장이 보이면 특히 추천한다고 해요.</li><li>말투 예시를 어디서 가져올지 물어봐요. Ben은 예시가 많을수록 결과가 좋아진다고 말해요. 선택한 항목에 따라 필요한 connector(외부 서비스 연결)가 정해집니다.</li><li>이메일은 선택지에 없어도 직접 추가할 수 있어요. Slack을 쓰면 Slack connector를 연결해요. SNS나 YouTube 자막을 긁어 오려면 Apify connector가 필요하고요.</li><li>음성 받아쓰기 도구를 쓴다면 가장 좋은 자료원이 됩니다. 이런 도구는 기록을 컴퓨터에 저장하니까 이 경우에는 Code 탭에서 스킬을 돌려야 해요. 추임새와 문장을 시작하고 끝내는 습관까지 읽어 내서 말투가 훨씬 가까워져요.</li></ul>
+<p>마지막으로 이 스킬을 어디에 쓸지 고르면 채널별 voice 가이드를 만들어요. 범용 가이드도 같이 만들어서 나중에 채널을 추가할 수 있습니다. continue를 누르면 몇 분 걸리고 끝나면 save 버튼으로 저장하면 돼요.</p>
+<h4>뉴스레터와 LinkedIn 글은 단계마다 내가 고르게 만들었어요</h4>
+<p>세 번째 스킬은 newsletter 스킬이에요. Ben은 요즘 거의 매일 뉴스레터를 보내는데 이 스킬 덕분이라고 해요. 뉴스레터가 없어도 다른 SNS 콘텐츠용으로 바꿔 쓸 수 있어요. voice 가이드와 예시만으로는 부족하고 SNS 콘텐츠를 잘 쓰게 하려면 스킬 안에 네 가지가 필요하다는 게 Ben의 경험이에요.</p>
+<p>첫째는 내 고유한 통찰에서 출발하는 것이에요. AI가 처음부터 다 만들면 누구나 올릴 수 있는 평범한 글이 나온다고 해요. Ben은 소재로 두 가지를 씁니다. 하나는 자기 YouTube 영상을 재가공하는 것이에요. 영상 링크를 주고 이 영상을 재가공하라고 시켜요. 다른 하나는 매일 손보는 values and beliefs 문서예요. Notion 페이지에 깊은 질문이 끝없이 적혀 있고 예를 들면 이런 것들이에요.</p>
+<ul><li>가까운 사람들이 나를 가장 잘 보여 준다고 말할 만한 일과 성공에 대한 믿음은 무엇인지</li><li>돈을 넘어서 사업을 만드는 일이 나에게 정말 무슨 뜻인지</li><li>절대 타협하지 않는 것은 무엇인지</li><li>AI를 한 번도 안 써 본 사람에게 빨리 결과를 내려면 무엇을 하라고 하겠는지</li></ul>
+<p>Ben은 매일 아침 이 질문 중 하나에 WhisperFlow로 답해요. 구조 없이 그냥 소리 내어 말하는 방식이에요. 이렇게 쌓인 이야기와 신념, 교훈이 뉴스레터의 재료가 됩니다. 스킬을 돌리면 답해 둔 내용에서 뉴스레터가 될 만한 각도를 알아서 찾아 줘요.</p>
+<p>둘째는 사람이 중간에 개입하는 단계별 흐름이에요. 한 번에 다 쓰게 하면 품질이 낮다고 Ben은 말해요. 셋째는 각 단계마다 선택지를 여러 개 주는 것이에요. 고치라고 왔다 갔다 하는 대신 마음에 드는 걸 고르거나 하나를 조금만 손보면 되니까 훨씬 효율적이라고 해요.</p>
+<p>실제 진행 순서는 이래요.</p>
+<ol><li>문서를 바탕으로 뉴스레터 각도 후보가 나오고 Ben이 하나를 골라요. 영상에서는 각도 3을 골랐어요.</li><li>이메일의 핵심 통찰 후보가 나오면 조금 고쳐서 방향을 잡아요.</li><li>독자가 얻을 주된 결과를 정하는데 이때도 후보 중에서 골라요.</li><li>개요 세 가지가 나오고 하나를 골라요.</li><li>제목(subject line) 후보와 훅 후보가 나와요.</li><li>여기까지 다 확정된 뒤에야 본문이 써져요. 쓰고 나서도 Ben이 직접 조금 고칩니다.</li></ol>
+<p>긴 과정처럼 보여도 AI에서 좋은 콘텐츠가 나오려면 이만큼은 필요하다는 게 Ben의 입장이에요. 한 편에 20~30분이 걸리지만 자기 이야기와 가치관에 뿌리를 둔 뉴스레터가 매일 나옵니다.</p>
+<p>넷째는 참고 파일과 예시예요. Ben의 스킬에는 자기 배경과 제공하는 서비스, ICP(이상적인 고객 프로필), voice와 성격, 전략, values and beliefs 문서가 들어 있어요. 훅 템플릿 문서와 제목 예시 문서도 있고요. 가장 중요한 건 뉴스레터 예시 모음이고 Ben은 30개가 넘게 넣었어요. 예시가 많을수록 결과가 좋아진다고 하고 직접 써 둔 뉴스레터가 많았던 게 도움이 됐어요.</p>
+<p>내 상황에 맞게 바꾸려면 Claude에게 시키는 게 가장 쉽다고 해요. Ben이 맞춤 설정용 프롬프트를 따로 만들어 무료 자료에 넣어 뒀어요. 스킬을 슬래시 명령으로 부른 다음 그 프롬프트를 붙여 넣으면 Claude가 단계별로 내 상황에 맞게 바꿔 줍니다. X 같은 다른 플랫폼용으로도 바꿀 수 있어요.</p>
+<p>네 번째 스킬은 LinkedIn writer예요. 워크플로는 뉴스레터 스킬과 거의 같고 Ben은 이 스킬로 LinkedIn 글을 일주일에 두 개 정도 쉽고 빠르게 내보내요. 지금은 주로 YouTube 영상 재가공에 쓴다고 합니다. 위의 네 요소가 그대로 들어 있고 글쓰기 프레임워크, 훅 템플릿, 휴먼화 규칙, LinkedIn 예시, 글쓰기 스타일이 참고 파일로 추가돼 있어요. 흐름은 이렇습니다.</p>
+<ol><li>영상을 재가공해서 글의 각도 후보를 여러 개 받아요.</li><li>글쓰기 프레임워크를 골라요. AIDA나 PAS(문제 제기, 불안 키우기, 해결책), BAB(Before, After, Bridge) 같은 검증된 틀이에요.</li><li>훅을 고르고 나서야 글이 써져요.</li></ol>
+<p>각 단계에서 해당 참고 파일을 읽어 그 단계를 더 잘 해내요. 영상을 긁어 오려면 Apify connector가 필요합니다. 커스터마이징도 앞에서 본 프롬프트로 하면 돼요. LinkedIn 글을 쓴 다음에는 뒤에 나올 영상 스킬로 그 글에 맞는 짧은 영상까지 이어서 만든다고 해요.</p>
+<h4>디자인은 발표 자료, 캐러셀, 영상 세 가지로 맡겨요</h4>
+<p>다섯 번째는 instant UI 스킬이에요. 어떤 내용이든 보기 좋은 발표 자료나 대시보드로 빠르게 바꿔 주는 스킬이고 Ben은 대부분의 직장인과 사업자에게 꼭 필요하다고 봅니다. Ben의 팀은 격주 회사 회의에서 각 부서의 업데이트와 계획을 모두 이 방식의 발표 자료로 공유해요. 회의가 훨씬 전문적으로 보이고 듣는 사람도 따라가기 쉽다고 해요. 고객 영업 통화, 온보딩 통화, 진행 상황 공유, 제안서 작성에도 쓰고 AI가 만든 리포트도 이 스타일로 만들어 팀에 공유합니다.</p>
+<p>스킬 자체는 단순해요. 템플릿 하나와 대시보드를 보기 좋게 구성하는 규칙이 참고 파일에 들어 있을 뿐입니다. 쓰는 방법은 이렇습니다.</p>
+<ol><li>격주 회사 회의에서 마케팅 업데이트를 발표해야 하니 instant UI로 발표 자료를 만들자고 Claude에게 말해요.</li><li>WhisperFlow로 하고 싶은 이야기를 길게 쏟아 내요. 새 계획과 지난 몇 주 동안 있었던 일 같은 것들이죠.</li><li>필요하면 connector로 데이터를 가져오게 해요.</li><li>Claude가 대시보드 전체를 만들어 주면 회의에서 그대로 띄워 발표해요.</li></ol>
+<p>기본 상태로 써도 되지만 내 브랜드 스타일에 맞게 바꿀 수 있어요. 말로 쏟아 내고 대시보드를 만드는 데 5분 정도 걸리고 고객에게 좋은 반응을 많이 받았다고 해요.</p>
+<p>여섯 번째는 carousel builder예요. 뉴스레터 내용을 LinkedIn용 이미지나 캐러셀로 바꾸는 데 쓰고 인포그래픽이나 SNS 이미지로 바꿔 쓰는 것도 쉽다고 해요. Claude는 이미지를 직접 만들지 못하기 때문에 Higgsfield connector를 써요. Higgsfield를 연결하면 GPT image 2와 Nano Banana 같은 이미지 모델과 영상 모델까지 Claude 안에서 쓸 수 있습니다. 비용이 들지만 SNS 이미지를 자주 만든다면 가장 좋은 모델로 워크플로를 짤 수 있어서 추천한다고 해요.</p>
+<p>핵심은 참고 파일에 쓰려는 용도의 예시 이미지를 넣어 두는 일이에요. Ben은 LinkedIn 캐러셀 예시를 넣어 뒀어요. 그러면 Higgsfield가 그 이미지를 업로드해서 같은 스타일로 새 이미지를 만듭니다. 프롬프트는 가장 최근 뉴스레터에 carousel builder 스킬을 실행해 달라는 한 줄이었고 뉴스레터 제목만 알려 줬는데도 받은편지함에서 찾아냈어요. 이미지를 만든 뒤에는 PDF로 묶어 다운로드 폴더에 저장해 줍니다.</p>
+<p>바꿔 쓸 때 주의점은 이미지 스킬 하나에 용도 하나만 맡기라는 거예요. Ben은 YouTube 썸네일은 별도 스킬로 따로 만들었어요. 너무 넓게 잡으면 잘 안 된다는 경험 때문이에요. 마음에 드는 디자인 예시를 하나 넣어 두면 계속 고쳐 달라고 하지 않아도 같은 스타일이 나옵니다.</p>
+<p>일곱 번째는 video repurposing 스킬이에요. 긴 영상을 LinkedIn이나 Instagram 같은 짧은 영상 플랫폼용으로 잘라 주고 자막과 전환 효과도 자동으로 넣어요. 처음부터 영상을 만드는 쪽으로 바꿔 쓸 수도 있다고 해요. Ben은 모든 YouTube 영상에서 핵심만 뽑아 2~3분짜리 LinkedIn 클립으로 만들어요. 채널별로 영상 형식도 바꿔 줍니다. 이 스킬은 Code 탭에서만 작동해요.</p>
+<p>프롬프트는 이런 모양이에요.</p>
+<blockquote>video repurposing 스킬로 이 YouTube 영상에서 2~3분짜리 클립을 만들어 줘. (영상 링크와, 이 영상을 만들 근거가 될 LinkedIn 글을 함께 붙여 넣어요.)</blockquote>
+<p>그러면 LinkedIn 글과 맞는 구간을 영상에서 찾고 패키지 세 개를 설치해요. FFmpeg는 영상을 내려받는 데 쓰고 Whisper는 음성 받아쓰기로 영상 전체를 단어 단위 타임스탬프까지 받아 적어요. Remotion은 자르고 편집하는 데 쓰입니다. 설치돼 있지 않아도 스킬이 알아서 깔아 줘요. 그다음 포함할 클립 제안이 나오고 확정하면 로컬호스트 화면이 열려서 영상을 보며 채팅으로 수정할 수 있어요. 마음에 들면 렌더링하라고 말하면 MP4로 컴퓨터에 저장됩니다.</p>
+<p>결과물에는 자막이 들어가고 영상의 여러 부분을 이어 하나의 이야기로 만들어요. 컷이 정확하고 전환도 매끄러워서 Ben은 LinkedIn용 재가공을 한 번에 끝내는 경우가 많다고 해요. 내 용도에 맞추려면 내려받아 한 번 실행해서 패키지를 깔고 그다음 릴스 같은 형식에 맞게 바꾸면 됩니다.</p>
+<h4>시장 동향과 고객 목소리를 정해진 시간에 자동으로 받아요</h4>
+<p>여덟 번째는 market intelligence report예요. 업계의 뉴스와 트렌드, 경쟁사 움직임을 대시보드 형태의 리포트로 매일 아침 받아요. Ben은 지난 48시간 동안 AI 업계에서 일어난 신기능 출시와 경쟁사 활동, 지금 뜨는 이야기를 이 리포트로 확인합니다. 소스는 X와 YouTube, 웹, Anthropic 블로그 등이에요. SNS를 훑으면 하루 시작부터 집중이 깨지는데 이 리포트가 그걸 대신해 줘요. 궁금한 항목에는 링크가 붙어 있어서 바로 파고들 수 있습니다. 콘텐츠 아이디어를 얻고 트렌드를 일찍 잡고 남들의 콘텐츠가 어떤지 알아보는 데도 도움이 된대요.</p>
+<p>Ben은 이 스킬을 scheduled task(정해진 시간에 자동 실행되는 작업)로 매일 오전 9시에 돌려요. 작업 내용은 하루가 시작되는 시점에 market intelligence report를 실행하라는 한 줄이에요. 필요한 connector는 X 같은 SNS를 긁어 올 Apify이고 웹 리서치가 많다면 Claude가 기본으로 못 읽는 사이트까지 읽도록 Firecrawl을 추가해요. Ben은 YouTube 데이터를 위해 VidIQ도 쓰는데 자기 용도라서 대부분은 필요 없을 거라고 합니다. 바꿔 쓰려면 내려받아 맞춤 설정 프롬프트를 돌리고 추적할 소스를 넣어요. Ben은 AI 분야에서 좋은 글을 올리는 계정을 모은 긴 Twitter 관찰 목록을 넣어 뒀는데 각자 업계에 맞게 바꾸라고 해요.</p>
+<p>아홉 번째는 customer intelligence report예요. Ben은 자기 상황에 조금 특수할 수 있지만 비슷하게 쓸 수 있는 사업이 많다고 말해요. 매주 고객의 불만과 성과를 뽑아내는 스킬이에요. Ben의 경우 Fireflies에 쌓인 고객 지원 통화 녹취와 Circle 커뮤니티의 요청 티켓을 읽어요. 쓰는 고객센터 플랫폼으로 바꾸면 됩니다.</p>
+<p>매주 자동으로 대시보드가 나오고 구성은 이래요.</p>
+<ul><li>이번 주 고객의 가장 큰 불만과 고객이 한 말을 그대로 옮긴 인용</li><li>고객이 어려워하는 기술 질문</li><li>고객이 거둔 성과</li></ul>
+<p>Ben은 이 대시보드를 콘텐츠 아이디어에 많이 써요. 최근 영상 몇 편이 여기서 나왔다고 합니다. 새 기능과 강의의 우선순위를 정할 때도 쓰고 마케팅이나 뉴스레터에 넣을 성공 사례와 후기도 이 리포트에서 건져요. 이것도 scheduled task로 매주 돌려요. 고객 기반이 어느 정도 있다면 콘텐츠 기획과 제품 개발 우선순위 모두에 도움이 될 거라고 해요.</p>
+<h4>깊이 있는 조사와 매일 갱신되는 분석 화면까지 맡겨요</h4>
+<p>열 번째는 topic research예요. 말 그대로 deep research(여러 출처를 깊게 조사해 보고서를 만드는 기능) 스킬이에요. Ben은 ChatGPT의 이 기능을 좋아했는데 Claude에는 없어서 스킬로 직접 만들었다고 해요. 영상을 만들기 전 조사와 강의 준비, 콘텐츠 리서치에 많이 씁니다.</p>
+<p>예시 프롬프트는 이런 내용이었어요.</p>
+<blockquote>로컬 LLM 모델을 본격적으로 세팅해서 써 보려고 해. 영상으로 만들 수도 있어. 모델을 좋은 환경에서 쓰는 가장 쉬운 방법을 조사해 주고 내 MacBook에서 현실적으로 돌릴 수 있는 모델이 어떤 건지도 찾아 줘.</blockquote>
+<p>Claude가 먼저 조사 방향이 맞는지 확인하는 질문을 몇 개 합니다. Ben은 여기에 앞서 본 instant UI를 같이 쓰라고 권해요. 그러면 인터넷에서 깊이 조사한 결과가 문서로 나오고 대시보드로도 정리됩니다. MacBook에서 어떤 모델이 실제로 돌아가는지와 로컬로 돌린다는 게 어떤 뜻인지, 가장 쉬운 세팅이 무엇인지 한눈에 훑어볼 수 있어요. 이 스킬은 별도 설정 없이 그대로 써도 되고 Claude가 기본으로 못 읽는 사이트까지 긁으려면 Firecrawl connector 정도만 추가하면 돼요.</p>
+<p>열한 번째는 marketing analytics 스킬이에요. Ben이 분석용으로 쓰는 스킬은 이것 하나뿐이에요. 추적할 지표를 한 화면에 모은 대시보드를 만들어요. 영상에서는 민감한 데이터라 흐리게 처리했지만 퍼널 지표와 YouTube 조회수, 사이트 방문수, 서비스 페이지 전환율, 전환이 가장 잘 되는 영상, 신규 구독자 같은 핵심 데이터가 한 화면에 들어 있어요.</p>
+<p>매일 scheduled task로 갱신되고 live URL로 배포되어서 팀과 링크로 공유할 수도 있어요. 여러 소프트웨어의 데이터를 한곳에 모아 준다는 게 Ben이 이 스킬을 좋아하는 이유예요. Ben은 Calendly, Stripe, YouTube analytics, 뉴스레터 소프트웨어, 분석 플랫폼 PostHog에서 데이터를 가져와요. 프롬프트는 marketing analytics 스킬을 실행하라는 간단한 한 줄이고요.</p>
+<p>바꿔 쓰려면 세 가지를 챙기라고 해요. 먼저 어떤 데이터를 시각화할지 정해요. 그다음 데이터를 가져올 곳의 connector를 설치해요. Google Analytics를 쓰는 것도 가능해요. 마지막으로 live URL로 배포할 수 있도록 Vercel connector를 연결합니다. Vercel은 이런 대시보드를 올릴 live URL을 만들어 주는 서비스고 한 번 클릭으로 설치돼서 쓰기 쉽다고 해요.</p>
+<p>Ben은 YouTube 채널 운영용 스킬도 따로 많이 쓴다고 해요. 채널이 없는 사람이 많을 것 같아 이 영상에는 넣지 않았어요. 스킬을 만드는 데 몇 달이 걸렸지만 이 11개가 마케팅의 큰 부분을 자동화해 주고 있고 투자할 만한 가치가 있다고 Ben은 말합니다.</p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>말투는 데이터량이 결정해요</strong>: Ben은 voice 스킬에 영상 자막과 이메일 답장, Slack 메시지, 음성 받아쓰기 기록까지 넣었어요. 예시가 많을수록 AI가 내 말투를 더 잘 흉내 내고 AI 티도 줄어든다는 게 핵심이에요.</li><li><strong>AI에게 한 번에 쓰게 하지 않아요</strong>: 뉴스레터와 LinkedIn 스킬은 각도, 핵심 통찰, 개요, 제목, 훅을 한 단계씩 후보 중에서 고르게 해요. 고치라고 오가는 시간이 줄고 결과물이 내가 원한 방향에 가까워져요.</li><li><strong>글감은 내 이야기에서 나와야 해요</strong>: Ben은 매일 아침 질문 하나에 말로 답해 두고 그 기록을 뉴스레터 재료로 써요. 그래서 누구나 쓸 수 있는 평범한 글이 되지 않는다는 게 Ben의 설명이에요.</li><li><strong>스킬 하나에 용도 하나예요</strong>: 이미지 스킬은 용도별로 나누고 참고 파일에 원하는 결과물의 예시 이미지를 넣어야 일관된 스타일이 나온다고 해요.</li><li><strong>반복되는 조사와 분석은 예약 실행이 맞아요</strong>: 시장 동향은 매일 오전 9시에, 고객 목소리는 매주, 분석 대시보드는 매일 scheduled task로 돌려요. 내가 찾으러 가지 않아도 리포트가 먼저 와요.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li>받은편지함 정리에 voice 스킬을 써 보세요. 먼저 Claude Cowork의 customize 탭에서 plugins로 가 add, upload plugin 순서로 Ben이 배포하는 플러그인 zip을 올려요. 그다음 답장하지 않은 이메일을 확인해 달라고 시키고 답할 메일마다 음성 받아쓰기 도구로 짧게 지시하세요. 이메일 connector를 연결해 두면 말투에 맞는 초안이 Gmail 임시보관함에 쌓여서 바로 보낼 수 있습니다.</li><li>voice profile builder로 내 voice 스킬을 만들어 보세요. 이메일과 Slack connector를 연결하고 SNS나 YouTube 콘텐츠가 있으면 Apify도 연결해요. 음성 받아쓰기 도구를 쓴다면 그 기록이 컴퓨터에 저장되니 Code 탭에서 실행하세요. 말투 예시가 많을수록 결과가 좋아집니다.</li><li>뉴스레터나 LinkedIn 글 하나를 단계별로 만들어 보세요. 내 YouTube 영상 링크나 평소 말로 풀어 둔 메모를 소재로 주고 각도, 핵심 통찰, 개요, 제목, 훅을 후보 중에서 한 단계씩 골라요. 20~30분이 걸리지만 그만큼 내 이야기가 담겨요.</li><li>하루 한 번 도는 market intelligence 리포트를 예약해 보세요. 스킬의 소스에 추적할 계정과 사이트를 내 업계에 맞게 넣고 Apify와 Firecrawl connector를 연결해요. 그다음 scheduled task에 하루가 시작되는 시점에 market intelligence report를 실행하라고 적어 두면 됩니다.</li><li>마케팅 지표를 한 화면에 모아 보세요. marketing analytics 스킬에서 보고 싶은 데이터를 먼저 정하고 그 데이터가 있는 서비스의 connector를 연결해요. Vercel connector로 live URL을 만들고 scheduled task로 매일 갱신하게 하면 팀에도 링크로 공유할 수 있어요.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>세 가지만 답하면 4단계 중 지금 위치를 바로 알려드려요. 무료예요.</p><span class="go">내 단계 진단하기 →</span></a>
+    <a class="cross" href="../../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../../../library/" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>
