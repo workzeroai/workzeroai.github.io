@@ -1910,6 +1910,23 @@
    "ready": true
   },
   {
+   "video_id": "SupWhagSCm8",
+   "title": "마케터가 매일 Claude를 쓰는 방법 7가지",
+   "title_orig": "7 Ways Marketing Specialists Use Claude Every Day",
+   "source": "Mikey Vibe Coding",
+   "date": "2026-09-01",
+   "topic": "마케팅",
+   "summary": "Mikey는 마케터들이 Claude를 광고 문구 뽑는 도구가 아니라 전략가·분석가·편집자처럼 캠페인 내내 곁에 두고 쓴다고 말해요. 광고 변형, 경쟁사 분석, 콘텐츠 캘린더, 이메일 시퀀스, SEO 브리프, 브랜드 보이스, 성과 진단까지 7가지 워크플로를 프롬프트 구성과 후속 질문 순서대로 따라 할 수 있게 정리했어요.",
+   "points": [
+    "Claude를 글쓰기 도구가 아니라 시니어 전략가로 대하기",
+    "좋은 브리프는 네 가지를 담아요",
+    "결과물만 달라고 하지 말고 이유도 물어보세요"
+   ],
+   "thumb": "notes/thumb/SupWhagSCm8.webp",
+   "url": "notes/SupWhagSCm8/",
+   "ready": true
+  },
+  {
    "video_id": "NyfYxpXiw_0",
    "title": "비전공자용 Grok Bot 개념 총정리",
    "title_orig": "Every Grok Bot Concept Explained for Normal People",

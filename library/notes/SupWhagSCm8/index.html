@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>마케터가 매일 Claude를 쓰는 방법 7가지 · 워크제로 자료실</title>
+<meta name="description" content="Mikey는 마케터들이 Claude를 광고 문구 뽑는 도구가 아니라 전략가·분석가·편집자처럼 캠페인 내내 곁에 두고 쓴다고 말해요. 광고 변형, 경쟁사 분석, 콘텐츠 캘린더, 이메일 시퀀스, SEO 브리프, 브랜드 보이스, 성과 진단까지 7가지 워크플로를 프롬프트 구성">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/SupWhagSCm8/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#2462e0">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="마케터가 매일 Claude를 쓰는 방법 7가지">
+<meta property="og:description" content="Mikey는 마케터들이 Claude를 광고 문구 뽑는 도구가 아니라 전략가·분석가·편집자처럼 캠페인 내내 곁에 두고 쓴다고 말해요. 광고 변형, 경쟁사 분석, 콘텐츠 캘린더, 이메일 시퀀스, SEO 브리프, 브랜드 보이스, 성과 진단까지 7가지 워크플로를 프롬프트 구성">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/SupWhagSCm8/">
+<meta property="og:image" content="https://img.youtube.com/vi/SupWhagSCm8/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="마케터가 매일 Claude를 쓰는 방법 7가지">
+<meta name="twitter:description" content="Mikey는 마케터들이 Claude를 광고 문구 뽑는 도구가 아니라 전략가·분석가·편집자처럼 캠페인 내내 곁에 두고 쓴다고 말해요. 광고 변형, 경쟁사 분석, 콘텐츠 캘린더, 이메일 시퀀스, SEO 브리프, 브랜드 보이스, 성과 진단까지 7가지 워크플로를 프롬프트 구성">
+<meta name="twitter:image" content="https://img.youtube.com/vi/SupWhagSCm8/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+.tgl{margin:18px 0;border:1px solid var(--hair);border-radius:14px;background:var(--soft)}.tgl>summary{cursor:pointer;padding:14px 18px;font-weight:700;color:var(--ink);list-style:none}.tgl>summary::before{content:"▸ ";color:var(--primary)}.tgl[open]>summary::before{content:"▾ "}.tgl-in{padding:0 14px 14px}
+:root{--primary:#2462e0;--primary-deep:#1a4fb8;--primary-pale:#e5effd;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f4f8fe;--hair:#dfe7f2;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+/* WZ-COBALT-C */:root{--grad-btn:linear-gradient(135deg,#2b74f0 0%,#2462e0 50%,#1d55d6 100%);--gloss:radial-gradient(120% 90% at 30% 0%,rgba(255,255,255,.28) 0,rgba(255,255,255,0) 55%);--glow:0 12px 28px -10px rgba(36,98,224,.75),0 2px 6px -1px rgba(29,85,214,.35)}.btn.pri,.fbtn,.rcta .p1,.price.best .pick,.price .pop{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:var(--glow),inset 0 1px 0 rgba(255,255,255,.35)}.fchip.on{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:0 8px 18px -8px rgba(36,98,224,.8),inset 0 1px 0 rgba(255,255,255,.35)}.btn.pri:hover,.fbtn:hover,.rcta .p1:hover{filter:brightness(1.08) saturate(1.1)}.lv-head,.svr.win{background:var(--gloss),var(--grad-btn)}.eyebrow{background:linear-gradient(135deg,#e5effd,#d3e6ff);color:#1a4fb8}.logo b{color:#2b74f0}.fmeta i,.nm i{background:linear-gradient(135deg,#e5effd,#d6e7ff);color:#1a4fb8}.paneNote{background:linear-gradient(135deg,#eaf3ff 0%,#f7fbff 60%,#fff 100%);border-color:#d3e3fb}.keys{background:linear-gradient(135deg,#e5effd,#f2f8ff)}.nkeys span::before,.keys li::before{background:linear-gradient(135deg,#3b8cff,#1d55d6)}
+</style>
+<script src="/assets/wz.js" defer></script>
+<script src="/assets/course.js" defer></script>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴"><a href="../../../tutoring/">1:1 과외</a><a href="../../../build/">제작 문의</a><a class="on" href="../../../library/" aria-current="page">자료실</a></div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../../../library/">← 자료실</a>
+  <div class="head"><div class="m"><i>마케팅</i><span>2026-09-01</span></div><h1>마케터가 매일 Claude를 쓰는 방법 7가지</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/SupWhagSCm8.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Mikey Vibe Coding</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<span class="orig">원제 · 7 Ways Marketing Specialists Use Claude Every Day</span><br><a href="https://www.youtube.com/watch?v=SupWhagSCm8" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>Claude를 글쓰기 도구가 아니라 시니어 전략가로 대하기</li><li>좋은 브리프는 네 가지를 담아요</li><li>결과물만 달라고 하지 말고 이유도 물어보세요</li></ul></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>Mikey는 마케터들이 Claude를 광고 문구 뽑는 도구가 아니라 전략가·분석가·편집자처럼 캠페인 내내 곁에 두고 쓴다고 말해요. 광고 변형, 경쟁사 분석, 콘텐츠 캘린더, 이메일 시퀀스, SEO 브리프, 브랜드 보이스, 성과 진단까지 7가지 워크플로를 프롬프트 구성과 후속 질문 순서대로 따라 할 수 있게 정리했어요.</p>
+<h3>전체 내용 정리</h3>
+<h4>문구 한 줄이 아니라 브리프를 줘야 광고 변형 5개가 서로 달라져요</h4>
+<p>Mikey가 먼저 짚는 건 마케터 대부분(그는 90% 정도라고 말해요)의 습관이에요. Claude를 열어 "광고 써 줘", "이메일 써 줘"라고 입력하고 결과를 복사한 뒤 넘어가죠. 그는 이렇게 따로 떨어진 프롬프트는 따로 떨어진 결과만 낸다고 봐요. 캠페인 전체와 브랜드 보이스와 마케팅 목표를 Claude가 모르면 누가 써도 비슷한 평범한 카피가 나온다는 이야기예요.</p>
+<p>첫 번째 워크플로는 광고 변형 만들기예요. Meta, LinkedIn, TikTok은 훅(첫 문장), 감정 각도, 이야기 구조, 행동 유도 문구(CTA)가 다양할수록 성과가 좋아요. 그런데 서로 조금씩 고친 광고 두세 개만 내보내는 팀이 많아요. 그러면 플랫폼이 학습할 거리가 줄어 광고 피로가 빨리 오고 획득 비용도 오를 수 있다고 Mikey는 설명해요.</p>
+<p>시연은 Claude.ai에서 새 대화를 열고 프롬프트를 넣는 것으로 시작해요. 프롬프트에는 제품, 타깃, 플랫폼, 캠페인 목표를 모두 적었어요. 제품은 원격 프로젝트 팀용 AI 시간 추적·생산성 워크스페이스예요. 타깃은 청구하지 못한 시간과 범위 확대(scope creep), 팀 번아웃에 시달리는 운영 매니저와 에이전시 디렉터예요. 플랫폼은 LinkedIn이고 목표는 구매 의향이 높은 무료 체험 가입이에요. 변형마다 고유한 헤드라인, 서로 다른 훅, 구체적인 감정 각도, 분명한 CTA, 권장 글자 수와 광고 포맷을 달라고 했어요.</p>
+<p>Claude는 확실히 다른 접근 5개를 내놓았어요.</p>
+<ul><li><strong>the revenue leak</strong>: 청구하지 못한 시간이 새는 문제예요. 훅은 청구 가능 시간의 20%를 내주고 있을 수 있다는 내용이고 감정은 손실 회피예요. 문서형이나 전후 타임시트 캐러셀을 추천했어요.</li><li><strong>the burnout signal</strong>: 프로젝트 매니저가 곧 그만둘지 모른다는 경고로 공감에 호소해요. 영상이나 대시보드 시연과 어울려요.</li><li><strong>the scope creep trap</strong>: 익숙한 고객 요청을 금전 손실과 연결해요. 대가 없는 일에 대한 좌절감을 건드리고 단일 이미지 광고에 맞아요.</li><li><strong>the skeptic's proof</strong>: 근거를 원하는 구매자에게 사회적 증거와 측정 가능한 결과를 보여 줘요. 결과 캐러셀이 맞아요.</li><li><strong>the direct ask</strong>: 자동 추적의 편리함을 먼저 말해 마찰을 줄여요. 신용카드가 필요 없다는 점을 CTA에 담고 구매 의향이 높은 스폰서 메시지나 인메일 리타깃팅에 어울려요.</li></ul>
+<p>광고는 모두 400~450자 안팎이라 LinkedIn에 맞게 짧아요.</p>
+<p>핵심은 다음 단계예요. Mikey는 후속 프롬프트로 각 변형 뒤의 심리, 겨냥하는 구매자 인지 단계(buyer awareness stage), 가장 잘 먹힐 캠페인 조건을 설명하라고 해요. Claude는 문제를 모르는 단계(unaware), 문제를 아는 단계(problem-aware), 해결책을 아는 단계(solution-aware) 중 어디를 노린 광고인지 짚어 줘요. 그래서 개인 취향이 아니라 전략으로 크리에이티브를 고를 수 있어요. 카피라이터가 한 시간쯤 쓸 분량이 몇 분으로 줄어든다는 게 그의 평가예요.</p>
+<h4>경쟁사 홈페이지 문구를 같은 기준표에 올리면 비어 있는 자리가 보여요</h4>
+<p>두 번째는 경쟁사 분석이에요. Mikey는 웹사이트 문구와 광고를 모아 비교하고 결론까지 내려면 몇 시간이 걸려서 가장 자주 건너뛰는 일이라고 해요. 그래서 표면적인 짐작으로 캠페인을 만들어 시장의 다른 브랜드와 비슷하게 들리거나 아무도 차지하지 않은 메시지 기회를 놓치기 쉬워요.</p>
+<p>시연에서는 새 대화에 프로젝트 관리 SaaS 3곳의 홈페이지 원문을 붙여 넣었어요. 대상은 Asana, monday.com, ClickUp이에요. 요청한 분석 항목은 다섯 가지예요. 핵심 가치 제안, 문구에 드러난 타깃 단서와 언어 신호, 차지한 메시지 각도와 감정 영역, 기능 중심인지 성과 중심인지의 균형, 아직 아무도 주장하지 않은 시장 공백이에요. 같은 기준으로 비교하게 했기 때문에 홈페이지 요약집이 아니라 브랜드끼리 맞대어 본 결과가 나와요.</p>
+<ul><li><strong>Asana</strong>: 규모가 커져도 유지되는 명확성과 책임이 가치 제안이에요. cross-functional teams, programs, initiatives 같은 거버넌스 용어를 써서 조율을 중시하는 기업 운영 매니저에게 맞고 감정 영역은 통제감과 확신이에요. 기능(list, timelines, Kanban boards)과 혜택을 균형 있게 엮어요.</li><li><strong>monday.com</strong>: 속도와 실행이에요. 경쟁자를 앞지른다는 식의 힘 있는 말투로 성과 지향 회사를 겨냥하고 감정 영역은 야망과 지배력이에요. 구체적인 기능은 거의 말하지 않아요.</li><li><strong>ClickUp</strong>: 흩어진 도구를 하나로 대체한다는 통합과 완결성이에요. 기술적이고 기능 중심인 어휘로 IT 구매 담당자와 파워 유저를 겨냥하고 감정 영역은 혼란에서 벗어나는 안도감이에요.</li></ul>
+<p>세 곳 모두 특정 업종이나 회사 규모를 내세우지 않고 거의 모든 팀에 말을 거는 수평적 포지셔닝이라는 점도 Claude가 짚었어요. 가장 쓸모 있었던 건 Claude가 찾은 공백 6개예요. 소규모 팀을 위한 단순함, 비용 효율과 투명한 가격, 신뢰·보안·거버넌스, 구체적인 AI 차별화, 팀 문화와 웰빙, 업종 특화예요. 세 회사 모두 AI를 신뢰 근거로 언급하지만 어떻게 다르게 작동하고 어떤 결과를 내는지는 앞세우지 않는다는 해석이 붙었어요.</p>
+<p>분석을 읽은 뒤 Mikey는 후속 프롬프트를 넣어요. 이 카테고리에서 가장 포화된 메시지 클리셰 3개를 짚고 공백을 바탕으로 방어 가능한 포지셔닝 각도 2개를 제안하고 각 방향의 히어로 헤드라인과 서브헤드라인을 달라는 요청이에요. 결과는 홈페이지 카피, 캠페인 콘셉트, 포지셔닝 전략의 출발점이 돼요. 사람 분석가가 처음 본 경쟁사에 비중을 두거나 이미 마음에 둔 아이디어의 증거만 찾는 편향도 Claude는 덜하다고 Mikey는 덧붙여요.</p>
+<h4>한 달 콘텐츠 캘린더는 맥락을 길게 줄수록 캠페인처럼 나와요</h4>
+<p>세 번째는 월간 콘텐츠 캘린더예요. 게시물마다 플랫폼에 맞아야 하고 사업 목표를 받쳐야 하며 독자가 볼 이유도 있어야 해서, 손으로 하면 하나의 흐름으로 쌓이지 않는 급조한 주제만 남기 쉽다고 Mikey는 말해요.</p>
+<p>시연의 핵심은 아이디어를 요청하기 전에 주는 맥락의 양이에요. 브랜드는 의료기관용 자동 컴플라이언스 모니터링을 파는 B2B SaaS예요. 타깃은 의료기관 컴플라이언스 책임자와 기획·운영 디렉터이고 목표는 다가오는 규제 변화를 알리면서 데모 가입을 만드는 거예요. 채널은 LinkedIn과 회사 블로그이고 기간은 4주예요. 주마다 LinkedIn 게시물 3개와 블로그 글 1개를 만들게 하고 주차·플랫폼·콘텐츠 필러·주제 또는 훅·형식·주요 CTA를 열로 한 표로 정리하게 했어요.</p>
+<p>Claude가 만든 건 단순 게시 일정이 아니라 캠페인에 가까워요. 1주차는 긴박감, 2주차는 변화가 만들 실무 문제, 3주차는 증거와 신뢰, 4주차는 직접 전환에 비중을 뒀어요. LinkedIn은 규제 업데이트 요약 캐러셀, 네이티브 투표, 30~45초 화면 녹화, 공감 텍스트 게시물처럼 짧은 콘텐츠로 도달을 노려요. 블로그는 1,500단어가 넘는 롱폼, 하우투 가이드, 체크리스트, 고객 사례, 다운로드 자료를 맡고 그 주의 메인 자산이 돼요.</p>
+<p>CTA는 단계적으로 강해져요. 1주차는 팔로우나 댓글, 2~3주차는 전체 가이드 읽기나 워크스루 시청, 4주차는 데모 예약과 라이브 워크스루 등록과 체크리스트 다운로드예요. 콘텐츠 비율도 조절됐어요. 절반은 교육(2027년 규제 업데이트, HIPAA 과태료 통계, 흔한 감사 함정), 4분의 1은 참여(투표, 미신 대 팩트 캐러셀), 나머지 4분의 1은 홍보(고객 인용 카드, 기능 대시보드, 사례, 라이브 데모 웨비나)예요.</p>
+<p>캘린더가 나온 뒤에는 같은 대화에서 아이디어 하나를 완성 원고로 키워요. 2주차 LinkedIn 게시물 1번, 즉 새 HIPAA 컴플라이언스 업데이트가 클리닉의 일상 운영에 의미하는 바를 쓰게 하면서 강한 훅, 한 문장짜리 짧은 문단, 불릿 핵심 포인트, 블로그 가이드로 안내하는 전문적인 CTA를 요구했어요. 같은 대화라 Claude가 브랜드와 타깃과 월간 목표를 이미 알고 있어서 게시물을 따로 쓸 때 생기는 어긋난 톤이 줄어요.</p>
+<h4>이메일 시퀀스는 한 대화에서 5통을 같이 써야 한 흐름으로 읽혀요</h4>
+<p>네 번째는 리드 육성 이메일이에요. 몇 주에 걸쳐 여러 사람이 쓰면 톤이 들쑥날쑥하고 판매로 너무 빨리 달려가거나 같은 이야기를 되풀이하기 쉽다고 Mikey는 짚어요. 해법은 시퀀스 전체를 한 대화에서 만들어 모든 메일이 같은 맥락을 바탕으로 쓰이게 하는 거예요.</p>
+<p>프롬프트에는 제품, 구독자가 들어오는 경로, 시퀀스 목표, 유지할 브랜드 보이스를 적었어요. 제품은 이커머스 스토어 운영자를 위한 재무 분석 소프트웨어이고 구독자는 이익률 계산기 스프레드시트를 내려받은 사람이에요. 10일 동안 육성한 뒤 유료 체험을 시작하게 하는 게 목표예요. 보이스는 공감적이고 전문가답고 직설적이며 투명하게 하라고 했어요. 메일 5통을 시간 순서로 쓰되 각 메일에 제목 후보, 미리보기 텍스트, 본문, CTA를 넣게 했어요.</p>
+<ol><li><strong>첫 번째</strong>: 약속한 계산기를 바로 주고 이익률은 일부일 뿐이니 SKU(상품 단위) 수준의 이익 누수를 보라고 안내해요. 추신에서 현재 마진을 답장으로 알려 달라고 해요. Mikey는 이 작은 상호작용이 관계를 만들고 이메일 전달률에도 도움이 된다고 해요.</li><li><strong>두 번째</strong>: 이커머스 창업자 두 명을 비교해요. 마진 30%인데도 폐업한 사람과 12%로도 수익성 있게 성장한 사람을 통해 정적인 스냅숏과 지속적인 추적의 차이를 보여 줘요.</li><li><strong>세 번째</strong>: 놓치기 쉬운 이익 누수 3가지를 설명해요. 결제 수수료가 슬금슬금 늘어나는 현상, 반품 처리의 숨은 인건비, 합산 광고 수익률에 가려진 광고 손실이에요.</li><li><strong>네 번째</strong>: 가장 잘 팔린다고 믿은 상품이 사실은 이익이 가장 낮았다는 고객 사례로 소프트웨어를 소개해요.</li><li><strong>다섯 번째</strong>: SKU별 일일 마진 업데이트와 알림 기준값을 설명하고 신용카드도 계약도 필요 없다는 점으로 망설임을 덜어요.</li></ol>
+<p>두 번째와 세 번째 메일은 판매가 아니라 교육이에요. 수익성을 생각하는 법을 가르쳐 판매 메시지 전에 신뢰를 쌓아요. 시퀀스를 통째로 계획했기에 교육에서 제품으로 넘어가는 전환이 자연스럽다고 Mikey는 설명해요.</p>
+<p>일부만 바꾸고 싶으면 처음부터 다시 만들 필요가 없어요. 후속 지시로 네 번째 메일을 부드러운 소개 대신 빠른 속도의 이익 누수 해부(profit leak teardown)로 다시 쓰게 해요. 한 사업자가 이 소프트웨어로 광고비에서 새던 15%의 이익 누수를 찾아 고치는 과정을 보여 주되 공감적인 보이스는 그대로 두라는 요청이에요. 이야기 중심 버전과 긴박한 버전을 비교한 뒤 발송할 수 있어요. 같은 대화에 두면 Claude가 앞 메일에서 독자가 배운 내용을 기억해 자연스럽게 이어 가요.</p>
+<h4>SEO 브리프와 브랜드 보이스 블루프린트는 글쓰기 전에 하는 작업이에요</h4>
+<p>다섯 번째는 SEO 브리프예요. 작가가 키워드와 단어 수만 받으면 검색 의도를 놓치고 중요한 하위 주제를 빠뜨린 평범한 글이 나온다고 Mikey는 말해요. 시연 프롬프트는 키워드 외에 독자, 사업 목표, 브리프의 구조까지 정해 줘요. 키워드는 enterprise cloud cost optimization이고 독자는 IT 디렉터와 인프라 아키텍트예요. 목표는 구글 첫 페이지 노출과 엔터프라이즈 상담 예약이에요. 브리프에는 주요 키워드와 관련 의미 키워드, 검색 의도, 콘텐츠 각도, 목표 단어 수, 제목 구조, 내부 링크 기회, CTA 위치를 넣게 했어요.</p>
+<p>Claude는 추천 이유까지 담은 편집 설계도를 내놓았어요. 막연한 비용 절감 조언 대신 FinOps maturity model을 축으로 잡았고 H2, H3, H4가 각각 검색자 여정의 한 부분에 답하게 했어요. 경쟁 글에 자주 빠지는 숨은 스토리지 비용과 컨테이너 난립도 넣었어요. CTA는 초반에 자가 진단 자료 다운로드를 두고 90일 구현 로드맵 뒤에 상담 제안을 두는 식으로 배치해요. 설계도를 만들기 전에 검색 의도 분석부터 시키는 단계가 중요해요. 정의를 찾는지 구현 가이드를 찾는지 벤더 비교를 찾는지 판단하고 기존 검색 결과를 이기려면 어떤 깊이와 형식이 필요한지 설명하게 하는 거죠. 수작업으로 최소 1~2시간 걸리는 브리프가 몇 분으로 줄어요.</p>
+<p>여섯 번째는 브랜드 보이스예요. 보이스가 문서 없이 말없는 기대로만 존재하면 웹사이트와 이메일과 소셜의 성격이 제각각이 된다고 Mikey는 말해요. 그래서 이미 성과가 좋은 카피를 Claude에게 분석시켜 블루프린트로 역설계하게 해요. 샘플은 Mailchimp의 홈페이지 카피, AI 크리에이티브 어시스턴트 제품 발표 이메일, 소기업 자동화 사례를 다룬 LinkedIn 게시물 3개예요. 접점이 다른 글을 함께 보면 어디서나 유지되는 패턴이 드러나요.</p>
+<ul><li><strong>성격</strong>: 독자를 주인공으로 두고 브랜드는 돕는 파트너가 되는 힘을 북돋는 안내자예요. 기업 전문 용어, 지나치게 격식 있는 말투, 압박에 기대는 공포 마케팅은 피해요.</li><li><strong>글쓰기 패턴</strong>: 짧은 오프닝 훅, 의도적인 문장 조각, 능동태, rule of three 구조예요. 익숙한 문제를 던진 뒤 곧바로 해결책을 보여 주는 리듬도 있어요.</li><li><strong>어휘와 채널</strong>: 꾸준히 쓰는 말과 피하는 말을 나누고 강한 주장은 구체적인 작동 방식이나 증거로 받쳐요. 웹사이트는 권위 있게 이메일은 믿을 만한 동료의 조언처럼 소셜은 커뮤니티와 고객 증거 중심으로 달라져요.</li></ul>
+<p>만든 뒤에는 바로 시험해요. 딱딱한 기업식 제품 발표문(향상된 리포팅 기능 안내)을 주고 블루프린트로 다시 쓰게 해요. 원래 예시 밖에서도 통하는지 확인하는 단계예요. 검증을 마친 블루프린트는 팀원 누구든 이후 Claude 대화에서 다시 쓸 수 있어요.</p>
+<h4>성과 리포트는 숫자를 읽어 주는 데서 끝나지 않고 예산 결정까지 가야 해요</h4>
+<p>일곱 번째는 캠페인 성과 분석이에요. 대시보드의 숫자만으로는 다음 결정이 나오지 않는다고 Mikey는 말해요. 프롬프트에는 Meta Ads, LinkedIn Ads, Google Search 세 캠페인의 지출, 노출, 클릭, 전환, 매출을 넣고 요약이 아니라 진단을 요청했어요. 가장 강한 효율 동인, 예산이 낭비되는 곳, 핵심 지표 사이의 관계, 예산 재배분안을 달라는 거예요.</p>
+<p>Claude의 첫 통찰은 채널마다 성공하는 이유가 다르다는 거예요. LinkedIn은 고객을 싸게 데려와서가 아니라 전환 하나의 가치가 높아서 광고 수익률이 좋아요. Google Search는 획득 효율이 돋보여 구매 의향이 높은 트래픽에 알맞아요. Meta는 클릭 이후에 효율이 떨어지는 징후가 보여 문제가 퍼널 아래쪽에 있다고 판단했어요.</p>
+<p>실행안은 Meta 예산을 30%, 즉 1,500달러 줄여 Google Search로 옮기고 LinkedIn은 유지하며 데이터를 더 모으라는 거예요. 순서도 있어요. 예산을 먼저 옮기고 퍼널 문제를 해결한 다음 개선을 측정하고 나서야 투자를 다시 늘리라는 로드맵이에요. 후속 지시로는 약한 캠페인들에 추가 5,000달러를 어떻게 배분해야 전체 획득 비용이 가장 낮아지는지 물어요. 일반론이 아니라 재무적 근거를 붙인 정확한 금액 배분이 나오고 앞선 분석 위에서 이어지니 다음 달 계획에 바로 쓸 수 있어요. Mikey는 리포트가 숫자를 문장으로 바꾸는 일이라면 진단 분석은 그 숫자가 왜 중요한지 설명해 예산 결정으로 이끈다고 구분해요.</p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>Claude를 글쓰기 도구가 아니라 시니어 전략가로 대하기</strong>: Mikey는 짧은 프롬프트로 "새 기능에 대한 소셜 게시물을 써 줘"라고만 하면 Claude가 타깃과 목표와 메시지를 짐작해야 해서 고쳐 쓸 게 많은 카피가 나온다고 봐요.</li><li><strong>좋은 브리프는 네 가지를 담아요</strong>: 타깃, 사업 목표, 원하는 톤, 결과물의 구조예요. Mikey는 "Claude 출력의 품질은 거의 전부 입력한 브리프의 품질에 달려 있다"고 말해요.</li><li><strong>결과물만 달라고 하지 말고 이유도 물어보세요</strong>: 광고 변형의 심리, 구매자 인지 단계, 성과의 원인까지 묻는 게 영상 전체의 공통 패턴이에요. 마케터의 역할이 초안 쓰기에서 전략 검토와 결정으로 옮겨 가요.</li><li><strong>같은 대화에서 후속 지시를 이어 가세요</strong>: 게시물 하나를 완성하고 이메일 한 통만 고치고 추가 예산을 배분하는 장면은 모두 앞선 맥락이 남아 있어서 가능했어요.</li><li><strong>한꺼번에 7개를 도입하지 마세요</strong>: Mikey는 브랜드 보이스로 시작해 광고 카피 생성과 A/B 테스트로 넘어가라고 권해요. 나머지 5개는 그다음에 넓혀 가면 돼요.</li><li><strong>같은 원칙은 다른 업무에도 통해요</strong>: 캠페인 이름, 랜딩 페이지 카피 구조, 인플루언서 브리프, 기자용 PR 피치에도 맥락과 목표와 결과물 형태를 알려 주는 방식이 똑같이 적용된다고 해요.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li><strong>브랜드 보이스 블루프린트부터 만들어 보세요.</strong> Mikey가 가장 먼저 권하는 작업이에요. Claude.ai 새 대화에 우리 브랜드에서 반응이 좋았던 카피 3개(홈페이지, 제품 발표 이메일, LinkedIn 게시물)를 붙여 넣어요. 소통 방식을 블루프린트로 역설계하라고 하고 성격, 문장 리듬, 어휘, 문장부호 스타일, 채널별 조절법을 포함하게 하세요. 딱딱한 발표문을 하나 넣어 다시 쓰게 하면 제대로 작동하는지 확인돼요.</li><li><strong>광고 변형 5개를 뽑고 이유까지 물어보세요.</strong> 제품, 타깃, 플랫폼, 캠페인 목표를 적고 변형마다 고유 헤드라인, 다른 훅, 감정 각도, CTA, 권장 글자 수와 포맷을 요청해요. 이어서 각 변형의 심리와 구매자 인지 단계와 잘 먹힐 캠페인 조건을 설명하게 하면 A/B 테스트할 광고를 전략으로 고를 수 있어요.</li><li><strong>경쟁사 3곳의 홈페이지 문구를 비교해 보세요.</strong> 원문 카피를 붙여 넣고 핵심 가치 제안, 타깃 단서, 메시지 각도와 감정 영역, 기능 대 성과 균형, 시장 공백 다섯 가지로 분석하게 해요. 이어서 포화된 클리셰 3개와 포지셔닝 각도 2개, 각각의 히어로 헤드라인과 서브헤드라인을 요청하세요.</li><li><strong>캠페인 성과 데이터를 진단 분석으로 바꿔 보세요.</strong> 캠페인별 지출, 노출, 클릭, 전환, 매출을 붙여 넣고 효율 동인과 낭비되는 예산과 지표 간 관계와 재배분안을 물어요. 추가 예산이 있다면 정확한 금액으로 어디에 쓸지도 물어보세요.</li><li><strong>잘 먹힌 프롬프트는 템플릿으로 저장하세요.</strong> 타깃·목표·톤·구조 네 요소를 담은 브리프로 한 작업을 끝까지 해 본 다음 결과가 일관되게 좋았던 프롬프트를 재사용 템플릿으로 남겨요. 이 템플릿이 쌓이면 팀 누구나 쓰는 워크플로가 된다고 Mikey는 말해요.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>세 가지만 답하면 4단계 중 지금 위치를 바로 알려드려요. 무료예요.</p><span class="go">내 단계 진단하기 →</span></a>
+    <a class="cross" href="../../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../../../library/" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>
