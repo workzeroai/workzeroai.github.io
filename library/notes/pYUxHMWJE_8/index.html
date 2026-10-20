@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>클로드 코드에서 &quot;이 스킬&quot;만 있으면 마케팅 직원을 만들 수 있습니다 (클로드도 가능) · 워크제로 자료실</title>
+<meta name="description" content="해외 마케팅 에이전시 운영자가 자기 노하우를 스킬 파일로 공개해 뒀는데, 투쏠은 이 스킬을 Claude에 올려 콘텐츠 전략과 랜딩 페이지 카피를 뽑고, 같은 스킬 다섯 개를 묶어 Claude Code 서브 에이전트(마케팅 직원)까지 만드는 과정을 보여 줘요.">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/pYUxHMWJE_8/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#2462e0">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="클로드 코드에서 &quot;이 스킬&quot;만 있으면 마케팅 직원을 만들 수 있습니다 (클로드도 가능)">
+<meta property="og:description" content="해외 마케팅 에이전시 운영자가 자기 노하우를 스킬 파일로 공개해 뒀는데, 투쏠은 이 스킬을 Claude에 올려 콘텐츠 전략과 랜딩 페이지 카피를 뽑고, 같은 스킬 다섯 개를 묶어 Claude Code 서브 에이전트(마케팅 직원)까지 만드는 과정을 보여 줘요.">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/pYUxHMWJE_8/">
+<meta property="og:image" content="https://img.youtube.com/vi/pYUxHMWJE_8/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="클로드 코드에서 &quot;이 스킬&quot;만 있으면 마케팅 직원을 만들 수 있습니다 (클로드도 가능)">
+<meta name="twitter:description" content="해외 마케팅 에이전시 운영자가 자기 노하우를 스킬 파일로 공개해 뒀는데, 투쏠은 이 스킬을 Claude에 올려 콘텐츠 전략과 랜딩 페이지 카피를 뽑고, 같은 스킬 다섯 개를 묶어 Claude Code 서브 에이전트(마케팅 직원)까지 만드는 과정을 보여 줘요.">
+<meta name="twitter:image" content="https://img.youtube.com/vi/pYUxHMWJE_8/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+.tgl{margin:18px 0;border:1px solid var(--hair);border-radius:14px;background:var(--soft)}.tgl>summary{cursor:pointer;padding:14px 18px;font-weight:700;color:var(--ink);list-style:none}.tgl>summary::before{content:"▸ ";color:var(--primary)}.tgl[open]>summary::before{content:"▾ "}.tgl-in{padding:0 14px 14px}
+:root{--primary:#2462e0;--primary-deep:#1a4fb8;--primary-pale:#e5effd;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f4f8fe;--hair:#dfe7f2;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+/* WZ-COBALT-C */:root{--grad-btn:linear-gradient(135deg,#2b74f0 0%,#2462e0 50%,#1d55d6 100%);--gloss:radial-gradient(120% 90% at 30% 0%,rgba(255,255,255,.28) 0,rgba(255,255,255,0) 55%);--glow:0 12px 28px -10px rgba(36,98,224,.75),0 2px 6px -1px rgba(29,85,214,.35)}.btn.pri,.fbtn,.rcta .p1,.price.best .pick,.price .pop{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:var(--glow),inset 0 1px 0 rgba(255,255,255,.35)}.fchip.on{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:0 8px 18px -8px rgba(36,98,224,.8),inset 0 1px 0 rgba(255,255,255,.35)}.btn.pri:hover,.fbtn:hover,.rcta .p1:hover{filter:brightness(1.08) saturate(1.1)}.lv-head,.svr.win{background:var(--gloss),var(--grad-btn)}.eyebrow{background:linear-gradient(135deg,#e5effd,#d3e6ff);color:#1a4fb8}.logo b{color:#2b74f0}.fmeta i,.nm i{background:linear-gradient(135deg,#e5effd,#d6e7ff);color:#1a4fb8}.paneNote{background:linear-gradient(135deg,#eaf3ff 0%,#f7fbff 60%,#fff 100%);border-color:#d3e3fb}.keys{background:linear-gradient(135deg,#e5effd,#f2f8ff)}.nkeys span::before,.keys li::before{background:linear-gradient(135deg,#3b8cff,#1d55d6)}
+</style>
+<script src="/assets/wz.js" defer></script>
+<script src="/assets/course.js" defer></script>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴"><a href="../../../tutoring/">1:1 과외</a><a href="../../../build/">제작 문의</a><a class="on" href="../../../library/" aria-current="page">자료실</a></div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../../../library/">← 자료실</a>
+  <div class="head"><div class="m"><i>마케팅</i><span>2026-05-03</span></div><h1>클로드 코드에서 &quot;이 스킬&quot;만 있으면 마케팅 직원을 만들 수 있습니다 (클로드도 가능)</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/pYUxHMWJE_8.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · 투쏠ㅣAI 에이전트</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<br><a href="https://www.youtube.com/watch?v=pYUxHMWJE_8" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>스킬은 전문가의 질문 순서까지 담고 있어요</li><li>입력이 모호하면 Claude가 그 모호함을 짚어 줘요</li><li>스킬을 묶으면 마케팅 직원이 돼요</li></ul></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>해외 마케팅 에이전시 운영자가 자기 노하우를 스킬 파일로 공개해 뒀는데, 투쏠은 이 스킬을 Claude에 올려 콘텐츠 전략과 랜딩 페이지 카피를 뽑고, 같은 스킬 다섯 개를 묶어 Claude Code 서브 에이전트(마케팅 직원)까지 만드는 과정을 보여 줘요.</p>
+<h3>전체 내용 정리</h3>
+<h4>전환율 최적화 전문가의 노하우가 스킬 묶음으로 공개돼 있어요</h4>
+<p>투쏠이 이번 영상에서 들고 나온 건 마케팅 스킬 모음이에요. 해외에서 전환율 최적화 마케팅 에이전시를 운영하는 사람이 자기 마케팅 노하우를 전부 스킬로 만들어 GitHub에 올려 뒀다고 해요. 투쏠이 찾아보니 그쪽에서는 꽤 유명한 사람이라고 합니다.</p>
+<p>스킬은 큰 섹션으로 나뉘어 있고, 그 안에 항목이 여러 개 들어 있어요. 투쏠이 훑어본 목록만 해도 A/B 테스트, 광고 크리에이티브, SEO 분석, 분석·트래킹, 콜드메일, 콘텐츠 전략, 카피라이팅, 카피 에디팅, 고객 조사, 이메일 시퀀스, 폼 전환율 최적화, 리드 마그넷, 페이지 전환율 최적화, 레퍼럴 프로그램까지 이어져요. 마케팅 심리학이나 마케팅 아이디어 같은 항목도 있고요.</p>
+<p>투쏠은 이걸 직접 써 보니 꽤 유용했고, 해외에서 볼 법한 유명 마케팅 노하우와 느낌이 비슷하다고 말해요. 요즘은 이 스킬로 자기만의 마케팅 전략을 많이 짜고 있다고 하고요. 그중에서도 콘텐츠 전략, 카피라이팅, 리드 마그넷, 폼 전환율 최적화를 가장 자주 쓴다고 합니다. 나머지 항목은 아직 다 열어 보지 못해서 하나씩 도장 깨기를 하는 중이라고 해요. 목록 중에는 용도를 잘 모르겠다며 넘어간 항목도 하나 있었어요.</p>
+<p><strong>오늘 영상에서 보여 주는 건 딱 두 가지예요. 이 스킬을 Claude에서 쓰는 방법, 그리고 Claude Code로 에이전트를 만드는 방법입니다.</strong></p>
+<h4>Claude에 스킬을 올리는 방법은 다운로드 한 번이면 돼요</h4>
+<p>스킬은 먼저 Claude에 넣어 줘야 쓸 수 있어요. 투쏠이 보여 준 순서는 이렇습니다. 왼쪽 아래에서 설정으로 들어가 기능 메뉴를 열고, 아래로 내리면 스킬 항목이 나와요. 거기서 사용자 지정 쪽으로 들어가면 내 스킬을 모아 두는 화면이 열립니다.</p>
+<p>설명란에 걸린 GitHub 저장소에서 원하는 스킬 폴더를 열면 안에 SKILL.md 파일이 있어요. 이 파일 화면 오른쪽의 다운로드 버튼을 누르면 파일이 내려받아집니다. 그다음 Claude 스킬 화면에서 플러스 버튼을 눌러 스킬 만들기, 스킬 업로드를 고르고, 방금 받은 파일을 그대로 끌어다 놓으면 끝이에요. 투쏠은 이미 올려 둔 스킬이 있어서 이 과정은 생략했고, 없다면 필요한 스킬을 하나씩 받아서 넣으면 된다고 안내합니다.</p>
+<p>투쏠이 말하는 쓸모는 이렇습니다. 마케팅 심리가 궁금하면 책을 볼 수도 있지만, 이렇게 스킬로 넣어 두면 바로 활용할 수 있어요. 광고 전략을 같이 짜 보고 싶을 때도 같은 방식으로 해당 스킬의 SKILL.md를 받아 올리면 됩니다.</p>
+<p>쓰는 법도 간단해요. Claude 채팅창에서 슬래시를 누르면 내가 올려 둔 스킬 목록이 뜨고, 거기서 고르면 됩니다.</p>
+<h4>콘텐츠 전략 스킬은 질문부터 던지고 나서 답을 줬어요</h4>
+<p>첫 시연은 콘텐츠 전략 스킬이에요. 투쏠은 슬래시로 스킬을 고른 뒤, 지금 Claude Code 관련 콘텐츠를 올리고 있는데 어떤 전략으로 확장할 수 있을지 이 스킬을 활용해서 제안해 달라고 보냈어요. 콘텐츠를 만들다 막혔을 때 그냥 슬래시 커맨드를 켜고 물어보면 된다는 설명이 붙었습니다.</p>
+<p>Claude는 스킬 파일을 먼저 읽고 나서 곧바로 답하지 않고 컨텍스트를 물어봤어요. 투쏠 말로는 컨텍스트 파일이나 저장된 메모리가 따로 없는 상태라서 당연한 반응이라고 합니다. 처음에는 가장 가능성이 높은 시나리오를 가설로 하나 보여 주고, 답을 듣고 나서 다듬겠다는 식으로 진행됐어요.</p>
+<p>투쏠은 질문에 이렇게 답했어요. 포지셔닝은 한국에서 Claude Code 1인자, 주요 타깃은 비개발 직군 사장님이나 1인 크리에이터, 지금 가장 약한 지점은 차별화된 시그니처 콘텐츠입니다. 말 그대로 Claude에게 내 컨텍스트를 주는 과정이고, 그래야 스킬이 더 잘 맞춰진다는 거예요.</p>
+<p>결과로는 채널별 비중 제안이 나왔어요. 투쏠이 읽어 준 내용으로는 유튜브 롱폼을 40%, 뉴스레터를 25%로 두고, 나머지는 증거 콘텐츠와 Claude Code 기초 콘텐츠 등으로 나누는 구성이었습니다. 유튜브 전략, 인스타그램 활용, 뉴스레터에 케이스 스터디를 올리는 방향도 함께 나왔고요. 시그니처 콘텐츠를 만드는 방법으로는 이름을 붙인 프레임워크를 반복해서 쓰라는 제안이 있었어요. 자신의 노하우를 플레이북으로 만들고, AI가 대신하는 시스템으로 바꾸는 4단계 같은 주제를 다뤄 보라는 제안도 나왔다고 합니다.</p>
+<h4>카피라이팅 스킬은 형편없는 카피를 먼저 진단해 줬어요</h4>
+<p>두 번째는 카피라이팅 스킬이에요. 이번에는 바로 일을 시키지 않고, 이 스킬을 어떻게 쓸 수 있는지 읽어 보고 알려 달라고 물었어요. Claude의 설명은 이랬습니다. 웹사이트나 랜딩 페이지에서 행동을 끌어내는 전환 카피를 쓰는 스킬이고, 구조는 히어로 섹션, 소셜 프루프, 문제 제기, 해결, 작동 방식, 이의 해소, FAQ, 마지막 CTA 순서예요. 커뮤니티 모집 랜딩 페이지를 쓰는 방법도 안에 들어 있다고 했어요.</p>
+<p>스킬을 부를 때 알려 줘야 할 정보도 안내해 줬어요. 페이지 종류(랜딩인지 가격 페이지인지), 이 페이지에서 원하는 단 하나의 행동, 누가 보러 오는지, 기존 카피, 차별점이에요. 투쏠은 여기에 맞춰 입력하되, 일부러 허술하게 채웠습니다. 목적은 진단 신청, 대상은 Claude Code를 제대로 배우고 싶은 사람, 현재 카피는 짧은 한 줄, 차별점은 크리에이터가 알려주는 활용법 정도였어요.</p>
+<p>Claude는 카피를 쓰기 전에 현재 상태부터 진단했어요. 투쏠이 전하는 핵심은 세 가지예요.</p>
+<ul><li>지금 카피는 나의 단어로 쓰여 있으니 고객의 단어로 바꿔야 한다는 지적</li><li>타깃이 너무 모호하다는 지적</li><li>신청한 사람이 30일, 90일 뒤에 어떻게 달라져 있는지가 빠져 있다는 지적</li></ul>
+<p>투쏠은 이 모호한 부분을 일부러 만든 건데도 정확히 짚어 줘서 인상 깊었다고 해요. 진단 끝에 나온 V1 카피 중 하나는 머릿속에만 있던 노하우를 Claude Code로 시스템으로 만들자는 방향이었고, 개발자가 아닌 크리에이터가 가르치는 진짜 쓰는 Claude Code라는 카피도 있었어요. 서브 헤드라인은 30분 무료 진단에서 워크플로 하나를 골라 Claude Code 시스템으로 어떻게 자동화할지 함께 설계한다는 내용이었고, 투쏠은 30분, 하나, 함께 설계처럼 모든 게 구체적이라고 평가했어요.</p>
+<p><strong>그 구체성이 전부 카피라이팅 스킬 안에 들어 있는 원칙에서 나온다는 게 투쏠의 설명이에요.</strong></p>
+<p>그다음 투쏠이 정보를 더 줬어요. 1대1 무료 진단이고, 소셜 프루프 훅이 있으며, 다음 단계는 1대1 컨설팅 판매라고요. Claude는 V2를 쓰기 전에 전략부터 다시 잡았는데, 이 페이지가 무료 진단 신청 페이지처럼 보여도 실제로는 컨설팅 판매 퍼널의 1단계라고 정리했어요. 그렇게 나온 V2는 대상이 훨씬 또렷해졌고, 1인 크리에이터를 위한 Claude Code 적용 방법이라는 문구가 앞에 서요. 서브 헤드라인에는 내가 줄 수 있는 핵심 정보가 들어갔고, 섹션 구성은 후기와 프루프, 안내 순으로 이어졌어요.</p>
+<p>투쏠이 강조하는 건 이 흐름이에요. 만들고 싶은 상품을 마케팅 스킬과 함께 질문을 주고받으며 다듬으면 더 잘 만들 수 있고, 마케팅이 가물가물한 사람도 이 질문 과정에서 자기 마케팅을 고도화할 수 있다는 거죠.</p>
+<h4>스킬 다섯 개를 묶어 Claude Code 마케팅 서브 에이전트를 만들었어요</h4>
+<p>여기까지가 Claude 쪽이었고, 이제 에이전트를 만들어요. 투쏠은 편집기 안티그래비티에서 폴더를 하나 만들고, 그 폴더 기준으로 터미널에서 Claude Code를 켰습니다. 익스텐션으로 쓸 수도 있지만 이번에는 터미널을 골랐어요. 먼저 플랜 모드로 바꿔서 에이전트를 같이 설계하는 방식이에요.</p>
+<p>투쏠이 입력한 지시는 대략 이렇습니다. 서브 에이전트를 하나 만든다, 목적은 마케팅 프로세스의 전략을 짜 주는 것이다, 내가 주제를 던지면 그 주제의 콘텐츠 전략과 메인 헤드라인, 본문, CTA 구조를 짜고 그걸 통해 줄 리드 마그넷까지 설계하라는 거예요. 그리고 에이전트가 반드시 쓸 스킬로 콘텐츠 전략, 카피라이팅, 마케팅 아이디어, 리드 마그넷, 마케팅 심리 스킬 다섯 개를 지정했어요. 이걸 바탕으로 계획부터 세워 보라고 시켰습니다.</p>
+<p>Claude Code가 낸 계획에는 서브 에이전트 구축 계획과 최종 디렉터리 구조, 작업 목록이 들어 있었어요. 구조는 프로젝트 안에 에이전트 MD 파일과 skills 폴더만 두는 깔끔한 형태였습니다. 투쏠은 원하는 대로 설계가 잘 됐다고 보고, 바이패스 퍼미션을 켜서 바로 구축을 시켰어요. 이 구조는 서브 에이전트 개념이고, CLAUDE.md 같은 파일까지 더 들어가야 에이전트 구조가 한층 안정적이라는 말도 덧붙였어요. 이번 영상에서는 CLAUDE.md를 넣지 않아서 마지막에 따로 짚어요.</p>
+<p>구축이 끝나자 Claude Code 세션을 시작하면 에이전트가 자동으로 인식된다는 안내가 떴어요. 투쏠은 Claude Code를 한 번 나갔다가 다시 켰습니다. 에이전트가 제대로 인식되는지 확인하는 단계예요.</p>
+<h4>에이전트에 주제 하나만 던졌더니 전략, 카피, 리드 마그넷이 한 번에 나왔어요</h4>
+<p>시험 주제는 국내 1인 SaaS 창업자를 위해 노션으로 고객을 관리하는 방법을 소재로 마케팅 전략을 짜 달라는 요청이었어요. 에이전트는 마케팅 전략 스킬을 먼저 쓰고, 이어서 카피라이팅과 리드 마그넷 스킬을 차례로 불러 썼습니다. 여러 스킬을 혼자 판단해서 번갈아 쓰는 모습이 화면에 그대로 보였어요.</p>
+<p>결과에서 투쏠이 짚은 항목은 이렇습니다.</p>
+<ul><li>콘텐츠 전략: 바이럴용 70, 공유용 30 비율. 검색량은 작지만 구매 의도가 높은 키워드를 중심에 두는 안</li><li>배포: 디스콰이엇과 긱뉴스에 만드는 과정을 메타 콘텐츠로 공유</li><li>리드 수집 후 7일, 14일 단계로 자동화</li><li>토스페이와 스트라이프 결제 데이터를 노션에 연동하는 아이디어</li><li>메인 카피: "허브스팟 없이도 1인 창업자가 고객 327명을 노션 한 장으로 관리하는 법"</li><li>서브 헤드라인: 문의 응대, 토스 결제, 트라이얼 종료 알림까지 도구 다섯 개를 따로 쓰지 말고 노션 한 장에서 끝내라는 메시지</li><li>본문은 7블록 구조, 그 밖에 리드 마그넷 설계, 심리 트리거, 1주차 실행 계획까지 포함</li></ul>
+<p>투쏠은 메인 카피를 두고 되게 좋은 헤드라인이라고 평가했어요. 1주차 실행 계획에는 노션 템플릿, 시나리오, 녹화 같은 작업이 들어 있었고요. 투쏠은 설계한 대로 잘 나왔다고 정리합니다.</p>
+<p>한계도 하나 짚었어요. 스킬 파일이 미국 기준으로 만들어져서 토스페이나 스트라이프 같은 결제 연동은 컨텍스트가 부족해 보인다는 거예요. 이런 부분은 스킬 폴더나 CLAUDE.md에 들어가서 직접 고쳐 줘야 한다고 말합니다.</p>
+<p>마무리에서 투쏠이 남긴 가장 실용적인 조언은 맥락 파일이에요. 에이전트에게 지금 어떤 사업을 하는지, 어떤 일을 하는지, 어떤 사람인지를 먼저 알려 줘야 한다는 거죠. 이 내용을 문서 파일로 저장해 두고, 마케팅 에이전트를 실행하기 전에 반드시 이 파일을 읽고 작업하도록 훅 같은 걸 걸어 두면 훨씬 유용하게 쓸 수 있다고 해요.</p>
+<p>투쏠은 이번에 이렇게 구성해 봤으니 마케팅 스킬 MD 파일을 꼭 한번 써 보라고 권합니다.</p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>스킬은 전문가의 질문 순서까지 담고 있어요</strong>: 시연에서 Claude는 바로 답하지 않고 컨텍스트부터 물었고, 카피라이팅 스킬은 카피를 쓰기 전에 현재 카피를 먼저 진단했어요. 스킬 덕분에 답의 품질뿐 아니라 일하는 순서도 달라진다는 점이 투쏠 시연의 핵심이에요.</li><li><strong>입력이 모호하면 Claude가 그 모호함을 짚어 줘요</strong>: 투쏠은 일부러 허술하게 넣었는데 타깃, 변화 시점, 고객의 단어가 빠졌다는 점을 정확히 짚어 줬어요. 내 마케팅이 가물가물한 사람일수록 질문을 주고받는 과정 자체가 공부가 된다는 이야기예요.</li><li><strong>스킬을 묶으면 마케팅 직원이 돼요</strong>: 스킬 다섯 개를 지정한 서브 에이전트는 주제 하나만 받아도 전략, 헤드라인, 본문 구조, 리드 마그넷, 실행 계획까지 만들어 냈어요. 스킬을 개별로 부르는 것과 에이전트가 알아서 골라 쓰는 것의 차이가 여기서 드러나요.</li><li><strong>해외 기준 스킬은 우리 환경에 맞게 고쳐 써야 해요</strong>: 결제 연동처럼 국내 서비스에 관한 맥락은 스킬에 없어서, 스킬 폴더나 CLAUDE.md에 직접 보강해야 한다고 투쏠은 말해요.</li><li><strong>내가 누구인지 담은 맥락 파일이 에이전트의 안정성을 좌우해요</strong>: 사업과 하는 일, 사람에 대한 정보를 파일로 저장하고 실행 전에 읽게 하면 결과가 한층 맞춰져요. 투쏠은 이번 영상에서 CLAUDE.md를 아직 넣지 않았다고 직접 인정했어요.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li>GitHub 저장소에서 콘텐츠 전략이나 카피라이팅 스킬 폴더를 열어 SKILL.md를 내려받고, Claude의 설정, 기능, 스킬 화면에서 스킬 업로드로 올려 보세요. 한 번 올려 두면 채팅창에서 슬래시로 바로 부를 수 있어요.</li><li>채팅창에 슬래시를 누르고 올려 둔 스킬을 고른 다음, 지금 하는 일을 설명하며 전략을 제안해 달라고 보내 보세요. Claude가 되묻는 컨텍스트 질문에 답하는 것만으로도 내 포지셔닝과 약한 지점이 정리돼요.</li><li>카피라이팅 스킬에는 페이지 종류, 원하는 단 하나의 행동, 누가 보러 오는지, 기존 카피, 차별점을 넣어 보세요. 투쏠처럼 지금 가진 카피를 그대로 넣으면 먼저 진단을 받아 볼 수 있어요.</li><li>폴더를 하나 만들고 터미널에서 Claude Code를 켠 뒤 플랜 모드로 서브 에이전트 설계를 시켜 보세요. 에이전트 목적, 내가 던질 입력(주제), 받고 싶은 결과물(헤드라인, 본문, CTA 구조, 리드 마그넷)과 반드시 쓸 스킬 이름을 적어 주면 돼요.</li><li>계획이 마음에 들면 실행을 시키고, 구축이 끝나면 Claude Code를 한 번 나갔다가 다시 켜서 에이전트가 인식되는지 확인하세요. 그다음 내 사업과 하는 일, 내가 어떤 사람인지를 적은 문서를 만들어 두고 에이전트가 먼저 읽게 하면 결과가 더 잘 맞아요.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>세 가지만 답하면 4단계 중 지금 위치를 바로 알려드려요. 무료예요.</p><span class="go">내 단계 진단하기 →</span></a>
+    <a class="cross" href="../../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../../../library/" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>
