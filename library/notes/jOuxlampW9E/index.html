@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Claude Code로 배우는 마케팅 엔지니어링 속성 과정 · 워크제로 자료실</title>
+<meta name="description" content="Cody Schneider가 코딩 에이전트에게 마케팅 실무(광고 업로드, 데이터 분석, 리드 수집, 키워드 조사, 블로그 발행)를 시키는 마케팅 엔지니어링의 필수 구성 요소와, Claude Code로 그 작업을 실제로 돌려 보여 준 시연을 정리했어요.">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/jOuxlampW9E/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#2462e0">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="Claude Code로 배우는 마케팅 엔지니어링 속성 과정">
+<meta property="og:description" content="Cody Schneider가 코딩 에이전트에게 마케팅 실무(광고 업로드, 데이터 분석, 리드 수집, 키워드 조사, 블로그 발행)를 시키는 마케팅 엔지니어링의 필수 구성 요소와, Claude Code로 그 작업을 실제로 돌려 보여 준 시연을 정리했어요.">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/jOuxlampW9E/">
+<meta property="og:image" content="https://img.youtube.com/vi/jOuxlampW9E/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Claude Code로 배우는 마케팅 엔지니어링 속성 과정">
+<meta name="twitter:description" content="Cody Schneider가 코딩 에이전트에게 마케팅 실무(광고 업로드, 데이터 분석, 리드 수집, 키워드 조사, 블로그 발행)를 시키는 마케팅 엔지니어링의 필수 구성 요소와, Claude Code로 그 작업을 실제로 돌려 보여 준 시연을 정리했어요.">
+<meta name="twitter:image" content="https://img.youtube.com/vi/jOuxlampW9E/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+.tgl{margin:18px 0;border:1px solid var(--hair);border-radius:14px;background:var(--soft)}.tgl>summary{cursor:pointer;padding:14px 18px;font-weight:700;color:var(--ink);list-style:none}.tgl>summary::before{content:"▸ ";color:var(--primary)}.tgl[open]>summary::before{content:"▾ "}.tgl-in{padding:0 14px 14px}
+:root{--primary:#2462e0;--primary-deep:#1a4fb8;--primary-pale:#e5effd;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f4f8fe;--hair:#dfe7f2;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+/* WZ-COBALT-C */:root{--grad-btn:linear-gradient(135deg,#2b74f0 0%,#2462e0 50%,#1d55d6 100%);--gloss:radial-gradient(120% 90% at 30% 0%,rgba(255,255,255,.28) 0,rgba(255,255,255,0) 55%);--glow:0 12px 28px -10px rgba(36,98,224,.75),0 2px 6px -1px rgba(29,85,214,.35)}.btn.pri,.fbtn,.rcta .p1,.price.best .pick,.price .pop{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:var(--glow),inset 0 1px 0 rgba(255,255,255,.35)}.fchip.on{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:0 8px 18px -8px rgba(36,98,224,.8),inset 0 1px 0 rgba(255,255,255,.35)}.btn.pri:hover,.fbtn:hover,.rcta .p1:hover{filter:brightness(1.08) saturate(1.1)}.lv-head,.svr.win{background:var(--gloss),var(--grad-btn)}.eyebrow{background:linear-gradient(135deg,#e5effd,#d3e6ff);color:#1a4fb8}.logo b{color:#2b74f0}.fmeta i,.nm i{background:linear-gradient(135deg,#e5effd,#d6e7ff);color:#1a4fb8}.paneNote{background:linear-gradient(135deg,#eaf3ff 0%,#f7fbff 60%,#fff 100%);border-color:#d3e3fb}.keys{background:linear-gradient(135deg,#e5effd,#f2f8ff)}.nkeys span::before,.keys li::before{background:linear-gradient(135deg,#3b8cff,#1d55d6)}
+</style>
+<script src="/assets/wz.js" defer></script>
+<script src="/assets/course.js" defer></script>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴"><a href="../../../tutoring/">1:1 과외</a><a href="../../../build/">제작 문의</a><a class="on" href="../../../library/" aria-current="page">자료실</a></div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../../../library/">← 자료실</a>
+  <div class="head"><div class="m"><i>마케팅</i><span>2026-10-14</span></div><h1>Claude Code로 배우는 마케팅 엔지니어링 속성 과정</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/jOuxlampW9E.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Cody Schneider</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<span class="orig">원제 · Marketing Engineering Crash Course with Claude Code</span><br><a href="https://www.youtube.com/watch?v=jOuxlampW9E" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>광고 플랫폼 API로 직접 읽지 말고 웨어하우스에서 읽어요</li><li>마케팅 작업 하나하나가 에이전트에게 시킬 수 있는 단위예요</li><li>여러 작업을 동시에 백그라운드로 돌려요</li></ul></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>Cody Schneider가 코딩 에이전트에게 마케팅 실무(광고 업로드, 데이터 분석, 리드 수집, 키워드 조사, 블로그 발행)를 시키는 마케팅 엔지니어링의 필수 구성 요소와, Claude Code로 그 작업을 실제로 돌려 보여 준 시연을 정리했어요.</p>
+<h3>전체 내용 정리</h3>
+<h4>마케팅 엔지니어링은 손으로 하던 중간 작업을 코딩 에이전트에게 넘기는 일이에요</h4>
+<p>Cody는 Claude Code(터미널에서 쓰는 AI 코딩 에이전트)나 Cursor, Hermes agent 같은 도구를 가리지 않고 쓸 수 있다고 먼저 말해요. 마케팅 엔지니어링이란 카피 쓰기, 크리에이티브 제작, 그래픽 디자인, 블로그 글 업로드, 랜딩 페이지 제작, 구글 광고 키워드 조사, 타깃 고객 조사처럼 마케터가 손으로 하던 중간 작업을 코딩 에이전트가 맡게 하는 거예요.</p>
+<p>고객의 이메일을 찾아 콜드 이메일 도구에 넣는 일, 웨비나용 뉴스레터를 만드는 일, Facebook·Google·LinkedIn의 경쟁사 광고 라이브러리를 살펴보는 일도 같은 범주예요. Cody는 15년 동안 디지털 마케팅을 했고 최근 4년은 AI로 마케팅 운영을 돌리는 방법만 파고들었다고 소개해요.</p>
+<p>왜 배워야 하느냐에 대한 Cody의 근거는 채용 시장이에요. 마케팅 엔지니어링 검색량과 채용 공고가 빠르게 늘고 있고 연봉도 150,000달러 이상이 어렵지 않다고 해요. 비슷한 궤적으로 커지는 직무가 GTM 엔지니어링(영업·마케팅 같은 시장 진출 업무를 기술로 자동화하는 일)이라고 설명해요. Cody는 2년 뒤에도 일자리를 지키려면 마케팅 지식에 이 엔지니어링 역량을 얹어야 한다고 봐요.</p>
+<h4>에이전트가 일하려면 데이터와 실행 환경이 먼저 갖춰져야 해요</h4>
+<p>Cody가 꼽은 첫 번째 필수 요소는 데이터 파이프라인(여러 곳의 데이터를 한곳으로 모으는 길)과 데이터 웨어하우스(많은 데이터를 쌓아 두고 SQL로 빠르게 조회하는 특수한 데이터베이스)예요. Facebook 광고, Google 광고, Google Analytics, Search Console, HubSpot 같은 CRM, 결제 처리 서비스 Stripe의 데이터를 전부 에이전트가 접근할 수 있는 한 위치에 모으는 거죠.</p>
+<p>API로 각 플랫폼을 직접 호출하면 되지 않느냐는 질문에 Cody는 세 가지 문제를 들어요. 하나는 호출 제한(rate limit)이에요. Facebook 광고는 과하게 호출하면 약관 위반으로 광고 계정이 정지될 수 있다고 해요. 둘째는 여러 소스를 에이전트가 직접 합치다 보면 환각이 생기기 쉽다는 점이에요. 셋째는 Facebook 광고 5천만 행, Google Analytics 7,500만 행을 불러오면 에이전트의 입력 한도와 컨텍스트가 금세 바닥난다는 점이에요.</p>
+<p>또 광고 데이터만 보면 실제 성과가 왜곡돼요. 광고가 매출로 이어졌는지까지 추적하려면 여러 소스를 함께 봐야 하는데, Cody는 이 실수를 사람들이 자주 한다고 지적해요.</p>
+<p>그래서 구조는 이렇게 짜요. 데이터는 파이프라인을 거쳐 웨어하우스로 들어가고 Claude Code는 웨어하우스에서 읽어서 분석해요. 각 플랫폼의 API 키는 읽기가 아니라 쓰기에만 써요. 광고 업로드, 광고 켜고 끄기, 광고 세트 안에서 광고 옮기기 같은 작업이죠. 쓴 결과는 다시 웨어하우스로 돌아오니 순환 고리가 되는 구조예요.</p>
+<p><strong>작은 계정 하나라면 API만으로도 돌아가지만 규모가 커지면 이 구조가 정석이라는 게 Cody의 말이에요.</strong> 2년 동안 이 일을 하면서 로컬에서 먼저 해 보다가 같은 문제에 부딪혀 찾아오는 회사를 계속 봤다고 해요. Cody는 지금 마케팅의 모든 것이 코드이고 코딩 에이전트에게 코드로 마케팅할 재료를 줘야 한다고 봐요.</p>
+<p>데이터 말고도 필요한 요소가 더 있어요. Cody가 나열한 순서대로 정리하면 이래요.</p>
+<ul><li>클라우드 서버: 내 노트북을 켜 두지 않아도 항상 켜져 있는 컴퓨터예요. 스크립트나 에이전트를 올려서 돌려요.</li><li>미디어 저장소: 광고, 소셜 게시물, AI 아바타 영상 같은 이미지·영상을 두는 곳이에요. S3 버킷이 가장 싸고 좋다고 해요.</li><li>데이터베이스: Postgres를 예로 들어요. 에이전트가 콜드 이메일용 시장 규모 매핑 결과를 저장하거나 이미지·영상을 색조나 SKU별로 정리하고 ChatGPT Image 2.5나 Seedance에 보낸 JSON을 기록해 두는 데 써요. 필요할 때 즉석에서 만들 수 있어야 해요.</li><li>반복 실행(cron job): 매시간·매분·매일 같은 주기로 소프트웨어를 돌려요.</li><li>산출물 호스팅: 승인받을 광고 모음이나 대시보드를 공유할 URL이 필요해요. 그러면 누가 볼 수 있는지 인증 문제도 같이 풀어야 해요.</li><li>Git 관리: 여러 사람이 같은 코드를 동시에 만져도 서로 덮어쓰지 않게 해 줘요.</li><li>API 게이트웨이: 이미지 생성, 이메일 찾기, 영상 생성, 웹·소셜 계정 스크래핑 같은 API 접근을 한곳으로 묶어요.</li></ul>
+<p>Cody는 이 자원을 다 갖춰 주면 에이전트가 세상에서 가장 뛰어난 마케터가 된다고 말해요. 직접 조립하려면 오픈소스 데이터 파이프라인 도구, 오픈소스 웨어하우스 ClickHouse, 서버용 Netlify, 데이터베이스용 Railway, 산출물 배포용 Vercel, 코드 관리용 GitHub 같은 조합이 가능하다고 예시를 들어요. 다만 필요한 API를 약 40개 따로 구독해야 하니 이번 영상에서는 하나로 묶인 서비스를 쓴다고 해요.</p>
+<h4>도구 하나(Graph CLI)로 전부 묶고 Facebook 광고 토큰을 준비해요</h4>
+<p>Cody가 시연에 쓴 건 graph.com의 마케팅 엔지니어링 클라우드와 그 CLI예요. 영상은 이 서비스의 협찬을 받았지만 여기서는 방법만 정리할게요. 위에서 말한 구성 요소가 한 클라우드에 묶여 있고 사용량만큼 내는 방식이에요. Cody는 10달러만 넣어도 이메일 1,000건 정도를 뽑을 수 있다고 소개해요.</p>
+<p>설치는 간단해요. Graph CLI는 npm 패키지라서 주소를 Claude Code에 주고 이걸 설치하라고 시키면 돼요. 데이터 소스는 800개 이상을 연결할 수 있고 영상에는 GoHighLevel, Google Analytics, Search Console, Instantly, Facebook 광고가 예로 나와요.</p>
+<p>Facebook 광고에 쓰기 권한을 주려면 Marketing API 토큰이 필요한데, Cody가 설명한 순서는 이래요.</p>
+<ol><li>비즈니스 설정(business settings)에서 오른쪽 위의 추가 버튼을 눌러 개발자 앱을 만들어요.</li><li>앱 이름을 정해요. 영상에서는 graph ads라고 지었어요.</li><li>사용 사례로 Marketing API로 광고를 만들고 관리하는 항목과 Meta 광고 관리자로 광고를 만들고 관리하는 항목을 골라요.</li><li>비즈니스 포트폴리오를 연결하고 다음으로 넘어가 개요를 확인한 뒤 앱을 만들어요.</li><li>개인정보 처리방침을 추가해요. 전체 과정에 10분쯤 걸린다고 해요.</li><li>시스템 사용자(system user)를 추가하고 접근시킬 자산을 지정하면 토큰이 생겨요.</li></ol>
+<p>이렇게 만든 토큰은 만료되지 않아요. Cody는 이 단계가 적힌 Notion 문서를 영상 설명란에 올렸다고 하니 자세한 화면은 거기서 확인할 수 있어요.</p>
+<p>토큰을 로컬에 그냥 저장해 둘 수도 있지만 보안 취약점이 되니 권하지 않아요. 안전하게 하려면 비밀 관리 도구(secrets manager)를 써야 해요. Graph는 이 작업을 알아서 처리해 줘요. 사용법은 토큰을 Claude Code에 붙여 넣고 "이 Facebook 광고 API 토큰을 내 secrets에 추가해 줘"라고 말하면 끝이에요. "Graph CLI의 secrets를 보여 줘"라고 하면 저장된 목록이 나와요. Cody 계정에는 Facebook 광고, Google 광고, Instantly, 블로그 CMS 키가 들어 있다고 해요.</p>
+<h4>광고 이미지를 만들어 Facebook에 올리고 끄는 것까지 말로 시켜요</h4>
+<p>첫 시연은 정사각형 정적 광고예요. 새 채팅을 열고 Claude Code에 Graph CLI를 쓰라고 한 뒤 이렇게 요청해요. 1080x1080 크기의 정적 광고를 만들 것, ChatGPT Image 2.5 API 엔드포인트를 쓸 것, 문구는 "marketing engineering crash course"로 할 것, 디자인 스타일은 graph.com을 보고 맞출 것이에요.</p>
+<p>Graph CLI가 설치돼 있으면 에이전트가 통합 API(Graph tools)를 통해 필요한 주소를 알아서 호출해요. 이번에는 ChatGPT Image 2.5 요청이 Kai AI라는 서비스로 전달돼 이미지가 만들어졌어요. Graph tools는 약 250개 엔드포인트로 구성돼 있어요. 광고 스크립트 수집(TikTok, Google, Meta), 이메일 찾기와 검증, 사람 조회, 전화번호 조회, 투자 신호 찾기, 뉴스 검색, DataForSEO 기반 키워드 조사, 이미지와 영상 생성(Seedance, HeyGen), LinkedIn 프로필 추출 등이 들어 있고 전부 사용량 기준 과금이에요.</p>
+<p>Cody는 같은 방식으로 변수를 바꿔 광고를 대량으로 만들 수 있다고 말해요. 글꼴, 색상, 규제 업종이라면 쓰면 안 되는 표현까지 지시에 넣을 수 있어요.</p>
+<p>업로드는 더 간단해요. 올리고 싶은 광고 세트의 URL을 복사해 Claude Code에 붙여 넣고 이렇게 말해요. "marketing engineering crash course 광고를 이 광고 세트에 올려 줘. 맨 앞에 넣어 줘. Graph CLI를 써." 저장해 둔 Facebook 토큰을 에이전트가 알아서 꺼내 써요. 잠시 뒤 새로고침하면 광고가 그 세트에 올라와 있어요.</p>
+<p>끄는 것도 말로 해요. 광고 세트 안에서 제목이 "G ads questions"인 광고를 끄라고 하면 해당 광고가 꺼져요. 광고를 올리고 끄고 옮기는 계정 관리 전체를 에이전트에게 시킬 수 있다는 게 Cody의 설명이에요.</p>
+<p>여기서 Cody의 작업 방식도 보여요. 작업 하나를 시켜 놓고 기다리지 않고 여러 작업을 백그라운드에서 동시에 돌려요. 시스템이 갖춰지면 클라우드에 배포해서 정해 둔 주기로 알아서 돌게 해요. 자신은 매달리지 않아요.</p>
+<h4>실제 데이터를 한 번에 묻고 Reddit에서 소재를 뽑아 대시보드로 만들어요</h4>
+<p>두 번째 시연은 데이터 분석이에요. Cody는 Facebook 광고 데이터에서 가입자가 몇 명인지, Facebook 픽셀이 기록한 수치는 얼마인지, Google Analytics 4에서 참조 출처가 Facebook인 트래픽은 얼마인지, Search Console 데이터로 브랜드 검색이 늘고 있는지를 한 번에 물어요. 모두 웨어하우스에 모여 있으니 에이전트가 빠르게 합쳐서 답해요.</p>
+<p>결과에는 Facebook 가입 데이터, 랜딩 페이지 조회 기록, 브랜드 검색, Google Analytics 4 트래픽이 한 번에 나왔어요. 데이터는 한 시간 간격으로 동기화되니 거의 실시간이에요. 그 위에 자율적으로 판단하는 에이전트나 팀에 공유할 대시보드를 올릴 수 있다는 게 Cody의 설명이에요.</p>
+<p>광고 소재 리서치도 맡겨요. Reddit에서 데이터 파이프라인과 웨어하우스 솔루션을 살 만한 사람들의 불만과 원하는 결과를 xAI API로 추출하라고 시켜요. 요청에는 Looker Studio나 Power BI 대신 Claude Code로 분석하려는 사람들이라는 조건도 들어가요. 광고 소재에 쓸 목적이라고도 덧붙여요.</p>
+<p>결과로는 관련 스레드에서 불만, 원하는 결과, 반론을 모아 묶음(클러스터)으로 분류했어요. Cody는 이런 정리를 바탕으로 광고 100개 분량의 제목과 설명을 쓸 수 있다고 해요.</p>
+<p>그다음 요청이 UGC(일반 사용자가 찍은 듯한 형식의 광고) 대본이에요. 훅은 "이거 좀 대박이다", "더 일찍 알았더라면" 같은 톤으로 하고 불만과 결과 중 하나를 다루는 대본을 영향력이 큰 아이디어 위주로 10개 써 달라고 해요. 이 대본으로 AI 아바타 광고를 만들거나 본인이 직접 읽을 수 있어요.</p>
+<p>분석 결과를 대시보드로 만드는 것도 같은 대화에서 이어져요. "방금 뽑은 데이터로 대시보드(artifact)를 만들어 줘"라고 하면 Graph CLI로 뽑은 데이터가 시각화돼서 나와요. 공유 URL이 생기고 팀원만 접근할 수 있어서 외부에는 공개되지 않아요.</p>
+<p>수정도 말로 해요. 막대 차트를 월별 광고비 꺾은선 차트로 바꿔 달라고 하거나 날짜 범위 선택기를 추가해 달라고 하면 에이전트가 바이브 코딩 방식으로 고쳐 줘요. 읽기만 하는 화면이 아니라 상호작용이 되는 소프트웨어도 만들 수 있다는 점을 Cody가 짚어요.</p>
+<h4>리드 수집, 키워드 조사, 블로그 발행까지 한 흐름으로 돌려요</h4>
+<p>세 번째 시연은 전통적인 GTM 엔지니어링이에요. LinkedIn에서 내 타깃 고객이 반응했을 만한 게시물 하나를 고르고 URL을 Claude Code에 붙여 넣어요. 그다음 이렇게 말해요. "Graph CLI로 이 게시물의 반응한 사람을 전부 뽑고 get leads 엔드포인트로 이메일을 찾아 줘."</p>
+<p>이 게시물에는 반응이 69개, 댓글이 316개 있었는데 중복이 섞였을 거라고 Cody는 짐작해요. 결과는 이메일이 없는 사람이 44명이고 찾은 건 5건이라 Cody도 이번 건 별로라고 인정해요. 보통은 절반쯤 찾는다고 해요.</p>
+<p>그래서 후속으로 워터폴 보강(waterfall enrichment)을 시켜요. 가장 싼 제공자부터 차례로 내려가며 이메일을 찾는 방식이에요. Lead Magic이나 Apollo 같은 서비스를 거치며 쓴 크레딧만큼만 내요. 나머지 89명은 이메일을 추측해서 이메일 검증 서비스로 확인하라고 해요. 이메일 형태가 32가지뿐이고 검증 비용이 워낙 싸서 추측하는 편이 더 싼 경우도 있다는 설명이에요.</p>
+<p>키워드 조사는 두 갈래예요. 먼저 DataForSEO API로 고객 데이터 플랫폼(CDP) 분야의 versus 콘텐츠 키워드를 찾아요. Hightouch vs X, ClickHouse vs X처럼 이 스택에 들어갈 만한 비교 키워드예요. 결과가 765개 나오자 X vs Y와 Y vs X처럼 검색 의도가 같은 건 빼고 고유한 의도만 남기라고 다시 시켜요.</p>
+<p>다음은 Search Console과 웨어하우스 데이터로 이미 구글 2페이지(11~20위)에 걸린 키워드를 찾는 분석이에요. 쉽게 순위를 올릴 만한 영향력 큰 키워드를 찾는 게 목적이에요. 최근 90일 노출이 어느 정도 되는 키워드가 398개 나왔어요. 거기서 순위 상태를 보고 새 콘텐츠를 쓸 만한 상위 10개를 뽑으라고 해요.</p>
+<p>블로그 발행에는 Graph에 이미 만들어 둔 SEO 플러그인을 써요. 처음 쓰는 사람은 "Graph SEO 플러그인을 설치하고 내 CMS에 연결하도록 도와 줘"라고 하면 돼요. 이후 타깃 키워드를 주고 Graph 블로그에 글을 써서 올리라고 시켜요. 에이전트는 먼저 구글 첫 페이지에 오른 글을 조사하고 Claude Sonnet으로 글을 쓴 뒤 CMS에 업로드해요. 영상 끝에서 글이 실제로 게시됐어요. 비슷한 키워드 변형도 찾아 냈다고 해요. Cody는 이 플러그인을 마음대로 고쳐 써도 된다고 해요. 자기들이 써 보니 잘 맞았던 구성이라고 소개해요.</p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>광고 플랫폼 API로 직접 읽지 말고 웨어하우스에서 읽어요</strong>: Cody는 호출 제한, 계정 정지 위험, 소스 간 조인에서 생기는 환각, 컨텍스트 소진을 이유로 들어요. 읽기는 웨어하우스에서 하고 API는 쓰기에만 쓰는 구조가 규모가 커질 때 정석이라는 주장이에요.</li><li><strong>마케팅 작업 하나하나가 에이전트에게 시킬 수 있는 단위예요</strong>: 광고 이미지 생성, 업로드, 광고 끄기, 리드 추출, 키워드 분석, 블로그 발행이 전부 같은 방식(말로 요청)으로 처리돼요. 어떤 일을 자동화할지 고르는 눈이 마케터의 몫이에요.</li><li><strong>여러 작업을 동시에 백그라운드로 돌려요</strong>: Cody는 한 작업이 도는 동안 다른 작업을 시켜 놓는 식으로 일해요. 시스템이 갖춰지면 클라우드에 올려 정해진 주기로 돌아가게 하고 자신은 관리에 매달리지 않아요.</li><li><strong>결과가 좋지 않을 때는 다음 수단으로 이어가요</strong>: LinkedIn 반응자 이메일 찾기는 5건뿐이었는데, Cody는 워터폴 보강과 이메일 추측 후 검증으로 이어 갔어요. 한 번에 안 되면 비용이 싼 방법으로 단계를 넘기는 식이에요.</li><li><strong>비밀 정보는 로컬 파일이 아닌 관리 도구에 넣어요</strong>: API 토큰은 보안 취약점이 되기 쉽다고 Cody가 경고해요. 토큰을 붙여 넣고 secrets에 추가하라고 한 뒤 목록으로 확인하는 흐름을 보여 줘요.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li>Facebook 광고 계정에 쓰기 권한을 주는 토큰을 만들어 보세요. 비즈니스 설정에서 개발자 앱을 만들고 Marketing API와 Meta 광고 관리자 사용 사례를 고른 뒤, 개인정보 처리방침을 넣고 시스템 사용자를 추가해 자산을 지정하면 만료되지 않는 토큰이 나와요. 에이전트가 광고를 올리고 끄려면 이 토큰이 먼저 필요하거든요.</li><li>Claude Code에서 이미지 광고 한 장을 만들어 보세요. Graph CLI를 쓰라고 한 뒤 "1080x1080 정적 광고, ChatGPT Image 2.5 엔드포인트 사용, 문구는 ○○, 디자인 스타일은 우리 사이트를 보고 맞춰 줘"라고 요청해 보세요. 글꼴, 색상, 쓰면 안 되는 표현까지 적어 주면 결과가 더 일정해져요.</li><li>만든 광고를 광고 세트 URL과 함께 붙여 넣고 올려 보세요. "이 광고를 이 광고 세트에 올려 줘. 맨 앞에 넣어 줘"라고 말하면 돼요. 끝나면 광고 관리자를 새로고침해서 올라왔는지 확인해요. 이어서 제목으로 광고 하나를 지정해 끄라고 시켜 보면 계정 관리가 말로 된다는 감이 와요.</li><li>Search Console 데이터로 2페이지(11~20위) 키워드를 뽑아 보세요. "구글에서 2페이지에 있는 키워드를 찾아 줘. 쉽게 올릴 수 있는 영향력 큰 키워드가 목적이야. Search Console 데이터 소스를 써"라고 시킨 뒤, 상위 10개를 순서대로 정렬해 달라고 하면 다음에 쓸 글감이 나와요.</li><li>Reddit에서 고객의 불만과 원하는 결과를 뽑아 UGC 대본으로 바꿔 보세요. 팔려는 솔루션을 살 만한 사람들의 불만과 원하는 결과를 Reddit에서 추출하라고 한 뒤, 그 내용으로 UGC 광고 대본 10개를 써 달라고 하면 돼요. 훅은 "이거 좀 대박이다" 같은 톤으로 정해 주세요.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>세 가지만 답하면 4단계 중 지금 위치를 바로 알려드려요. 무료예요.</p><span class="go">내 단계 진단하기 →</span></a>
+    <a class="cross" href="../../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../../../library/" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>

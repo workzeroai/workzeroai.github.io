@@ -227,6 +227,23 @@
    "ready": true
   },
   {
+   "video_id": "jOuxlampW9E",
+   "title": "Claude Code로 배우는 마케팅 엔지니어링 속성 과정",
+   "title_orig": "Marketing Engineering Crash Course with Claude Code",
+   "source": "Cody Schneider",
+   "date": "2026-10-14",
+   "topic": "마케팅",
+   "summary": "Cody Schneider가 코딩 에이전트에게 마케팅 실무(광고 업로드, 데이터 분석, 리드 수집, 키워드 조사, 블로그 발행)를 시키는 마케팅 엔지니어링의 필수 구성 요소와, Claude Code로 그 작업을 실제로 돌려 보여 준 시연을 정리했어요.",
+   "points": [
+    "광고 플랫폼 API로 직접 읽지 말고 웨어하우스에서 읽어요",
+    "마케팅 작업 하나하나가 에이전트에게 시킬 수 있는 단위예요",
+    "여러 작업을 동시에 백그라운드로 돌려요"
+   ],
+   "thumb": "notes/thumb/jOuxlampW9E.webp",
+   "url": "notes/jOuxlampW9E/",
+   "ready": true
+  },
+  {
    "video_id": "uskp9cHFcec",
    "title": "카카오 AI 전략 맡던 대표가 말하는 AI 에이전트 사고가 나기 전에 회사가 깔아야 할 통제 4단계 (임페라이 음병찬 대표님)",
    "title_orig": "카카오 AI 전략 맡던 대표가 말하는 AI 에이전트 사고가 나기 전에 회사가 깔아야 할 통제 4단계 (임페라이 음병찬 대표님)",
