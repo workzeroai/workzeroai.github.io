@@ -3168,6 +3168,23 @@
    "ready": true
   },
   {
+   "video_id": "ILmwmgMcCnc",
+   "title": "Claude Code가 마케팅팀을 통째로 만들어 줬어요",
+   "title_orig": "Claude Code Built My ENTIRE Marketing Team!",
+   "source": "Duncan Rogoff | Learn Claude Code",
+   "date": "2026-03-30",
+   "topic": "마케팅",
+   "summary": "Anthropic 마케팅팀을 10개월 동안 혼자 운영한 Austin의 방식을 따라, 내 브랜드 정보와 말투 파일을 만들고 Claude Code에서 `/content` 한 줄로 LinkedIn 글·이메일 제목·영상 훅을 한꺼번에 뽑는 개인용 마케팅 시스템을 만드는 과정을 Duncan이 보여 줘요.",
+   "points": [
+    "준비 단계가 스킬의 품질을 정해요",
+    "이미 검증된 사례를 본보기로 삼으면 설계가 쉬워져요",
+    "총괄 스킬 하나와 전문 에이전트 여럿으로 나누면 한 명이 여러 채널을 돌릴 수 있어요"
+   ],
+   "thumb": "notes/thumb/ILmwmgMcCnc.webp",
+   "url": "notes/ILmwmgMcCnc/",
+   "ready": true
+  },
+  {
    "video_id": "yLXLHnD4fco",
    "title": "Claude Code로 AI 마케팅팀 통째로 꾸리기 (에이전트 + 스킬)",
    "title_orig": "Claude Code: Build Your Full AI Marketing Team (Agents + Claude Skills)",
