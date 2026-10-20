@@ -193,6 +193,23 @@
  ],
  "notes": [
   {
+   "video_id": "Pwkj4X-CPk4",
+   "title": "굿바이 파워포인트, PPT는 이제 HTML로 만듭니다.",
+   "title_orig": "굿바이 파워포인트, PPT는 이제 HTML로 만듭니다.",
+   "source": "페이퍼로지",
+   "date": "2026-10-16",
+   "topic": "모델·도구",
+   "summary": "페이퍼로지가 PowerPoint 대신 HTML로 발표 자료를 만드는 방법을 보여줘요. 프롬프트와 모션 템플릿만 있으면 Claude, GPT, 젠스파크 어디서든 만들 수 있고, 30장짜리 한 벌을 만드는 비용은 젠스파크가 가장 낮았다고 합니다.",
+   "points": [
+    "발표 자료가 파일이 아니라 브라우저 화면이 돼요",
+    "재료는 프롬프트와 모션 템플릿 두 가지예요",
+    "PPT 한 벌 비용은 도구마다 크게 달라요"
+   ],
+   "thumb": "notes/thumb/Pwkj4X-CPk4.webp",
+   "url": "notes/Pwkj4X-CPk4/",
+   "ready": true
+  },
+  {
    "video_id": "JWdvTUZoN0s",
    "title": "ChatGPT Work로 지금 바로 맡길 수 있는 AI 에이전트 10개",
    "title_orig": "ChatGPT Work: 10 AI Agents to Automate Your Work Right Now",
@@ -3359,13 +3376,39 @@
   {
    "id": "claude-marketing",
    "title": "클로드로 마케팅팀 꾸리기",
-   "desc": "스킬 개념부터 Cowork, Claude Code 에이전트 팀, 도구에 묶이지 않는 시스템까지 순서대로",
+   "desc": "Claude 첫 사용부터 스킬, Cowork, Claude Code 에이전트 팀, 도구에 묶이지 않는 시스템까지 순서대로",
    "items": [
+    "9oJySubZRSA",
     "m-5DjcgFmfQ",
     "l1y3IeC_eJ0",
     "qiqw-_6TUZ0",
     "yLXLHnD4fco",
     "cAeKDWa77xI"
+   ]
+  },
+  {
+   "id": "solo-marketing-global",
+   "title": "Claude로 1인 마케팅팀 (해외 실전편)",
+   "desc": "12분 입문부터 스킬 11개, 마케팅 엔지니어링, 72분·6시간 풀 코스까지 짧은 것에서 긴 것 순서로",
+   "items": [
+    "ILmwmgMcCnc",
+    "yCACmFTiCto",
+    "x_EO0Dz1p7g",
+    "SupWhagSCm8",
+    "jOuxlampW9E",
+    "_8TUhqsgyXk",
+    "yulWjh3rq28"
+   ]
+  },
+  {
+   "id": "marketing-kr",
+   "title": "국내 사례로 보는 AI 마케팅",
+   "desc": "마케팅 직원 스킬, 에이전틱 마케팅, 클로드 코드 12단계, 광고비를 AI로 굴리는 실제 운영",
+   "items": [
+    "pYUxHMWJE_8",
+    "w4nNR3olvow",
+    "FZzxy_0FT0o",
+    "deZOQOoXN10"
    ]
   },
   {
