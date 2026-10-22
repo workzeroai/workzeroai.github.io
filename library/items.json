@@ -218,9 +218,9 @@
    "title_orig": "윈도우 AI 왕초보 탈출하기 | 설치 없이 바로 쓰는 기본 AI 기능 5가지 (글자 복사·배경 바꾸기·Copilot)",
    "source": "윤자동",
    "date": "2026-10-21",
-   "topic": "AI 소식",
+   "topic": "모델·도구",
    "tags": [
-    "AI 소식"
+    "모델·도구"
    ],
    "summary": "따로 프로그램을 사지 않고 윈도우 11에 들어 있는 기능만으로 사진 속 글자 복사, 배경 바꾸기·흐리게, 물건 지우기, Copilot 정리까지 해 보는 왕초보용 안내예요. 직접 해 보다 안 된 기능과 개인정보 주의점도 함께 담겼습니다.",
    "points": [
@@ -258,9 +258,9 @@
    "title_orig": "A Guide to Becoming a Solopreneur w/ Claude in 2027",
    "source": "Nick Saraev",
    "date": "2026-10-20",
-   "topic": "모델·도구",
+   "topic": "비즈니스",
    "tags": [
-    "모델·도구"
+    "비즈니스"
    ],
    "summary": "Nick Saraev는 Claude로 1인 사업을 하려면 세 가지 기술, 곧 Claude로 고객이 원하는 걸 만드는 법, 그게 왜 필요한지 설명하는 영업, 결과가 나올 때까지 버티는 꾸준함만 있으면 된다고 말해요. 실제 수주 사례와 가격 공식, 복리 효과로 각 기술을 풀어 줍니다.",
    "points": [
@@ -358,9 +358,9 @@
    "title_orig": "Anthropic Just Announced the End of Capitalism.",
    "source": "Nick Saraev",
    "date": "2026-10-19",
-   "topic": "모델·도구",
+   "topic": "AI 소식",
    "tags": [
-    "모델·도구"
+    "AI 소식"
    ],
    "summary": "Anthropic이 지분 일부를 공익 기금에 내놓겠다고 발표했어요. 처음 5%만 해도 약 750억 달러인데, Nick Saraev는 이 돈이 Claude가 운영하는 기본소득으로 이어질 수 있다고 보고 그게 어떤 세상일지 상상해 봅니다.",
    "points": [
@@ -617,9 +617,9 @@
    "title_orig": "우리 집 고양이를 AI 인플루언서로 만들었습니다, 사진 한 장과 춤 영상 하나로 (Higgsfield AI Influencer 2.0)",
    "source": "샘 호트만 : AI 엔지니어의 시선",
    "date": "2026-10-15",
-   "topic": "AI 소식",
+   "topic": "모델·도구",
    "tags": [
-    "AI 소식"
+    "모델·도구"
    ],
    "summary": "샘 호트만이 고양이 사진 한 장과 춤 영상 하나로 Higgsfield AI Influencer 2.0을 돌려 자기 집 고양이 '복자'를 춤추는 AI 인플루언서로 만든 과정을 보여 줘요. 열흘 동안 14편을 만들며 크레딧을 날려 보고 얻은 결론은 하나예요. 얼굴은 우리 고양이가 정하지만 나머지는 거의 레퍼런스 영상이 정한다는 거예요.",
    "points": [
@@ -714,9 +714,9 @@
    "title_orig": "I Let Claude Code Run My $1M/Year Business for a Whole Week",
    "source": "Nick Saraev",
    "date": "2026-10-13",
-   "topic": "에이전트",
+   "topic": "자동화",
    "tags": [
-    "에이전트"
+    "자동화"
    ],
    "summary": "Nick은 연 매출 약 100만 달러 규모의 에이전시에 Claude를 붙여 일주일 동안 업무 대부분을 자동화했어요. 화면 캡처로 업무를 기록하고 작업마다 평가(evals)로 점수를 매겨 스킬로 굳힌 뒤, 예약 실행할 것과 사람이 볼 것을 나누는 표준 과정을 단계별로 보여 줘요.",
    "points": [
@@ -1005,9 +1005,9 @@
    "title_orig": "The $15M ARR SEO Agency Breakdown",
    "source": "Eugene Kadzin",
    "date": "2026-10-09",
-   "topic": "모델·도구",
+   "topic": "비즈니스",
    "tags": [
-    "모델·도구"
+    "비즈니스"
    ],
    "summary": "메뉴판처럼 가격을 걸어 두고 선결제로 SEO 서비스를 파는 에이전시 Fat Joe의 공동창업자 Joe Davis가 Eugene Kadzina의 라이브 쇼에 나왔어요. AI 시대에 SEO 에이전시가 살아남는 지점, 상품화(productized) 모델로 바꾼 이유와 첫 실수, 광고로 첫 100만 달러를 만든 방법, 그리고 지금 처음부터 시작한다면 팔 서비스 S~D 등급표까지 담겼어요.",
    "points": [
