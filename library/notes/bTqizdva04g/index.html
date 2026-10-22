@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Claude 모드 100개 갈아 끼워 보고 고른 베스트 9 · 워크제로 자료실</title>
+<meta name="description" content="Anthropic이 Claude Code에 &#x27;모드(mods)&#x27;를 내놓으면서 원하는 기능을 말로 설명만 하면 Claude가 직접 만들어 붙여 주는 시대가 됐어요. Ben은 몇 주 동안 100개가 넘는 모드를 분석·제작·테스트했고 그중 가장 쓸 만한 9개를 하나씩 보여 줍">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/bTqizdva04g/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#2462e0">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="Claude 모드 100개 갈아 끼워 보고 고른 베스트 9">
+<meta property="og:description" content="Anthropic이 Claude Code에 &#x27;모드(mods)&#x27;를 내놓으면서 원하는 기능을 말로 설명만 하면 Claude가 직접 만들어 붙여 주는 시대가 됐어요. Ben은 몇 주 동안 100개가 넘는 모드를 분석·제작·테스트했고 그중 가장 쓸 만한 9개를 하나씩 보여 줍">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/bTqizdva04g/">
+<meta property="og:image" content="https://img.youtube.com/vi/bTqizdva04g/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Claude 모드 100개 갈아 끼워 보고 고른 베스트 9">
+<meta name="twitter:description" content="Anthropic이 Claude Code에 &#x27;모드(mods)&#x27;를 내놓으면서 원하는 기능을 말로 설명만 하면 Claude가 직접 만들어 붙여 주는 시대가 됐어요. Ben은 몇 주 동안 100개가 넘는 모드를 분석·제작·테스트했고 그중 가장 쓸 만한 9개를 하나씩 보여 줍">
+<meta name="twitter:image" content="https://img.youtube.com/vi/bTqizdva04g/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+.tgl{margin:18px 0;border:1px solid var(--hair);border-radius:14px;background:var(--soft)}.tgl>summary{cursor:pointer;padding:14px 18px;font-weight:700;color:var(--ink);list-style:none}.tgl>summary::before{content:"▸ ";color:var(--primary)}.tgl[open]>summary::before{content:"▾ "}.tgl-in{padding:0 14px 14px}
+:root{--primary:#2462e0;--primary-deep:#1a4fb8;--primary-pale:#e5effd;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f4f8fe;--hair:#dfe7f2;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+/* WZ-COBALT-C */:root{--grad-btn:linear-gradient(135deg,#2b74f0 0%,#2462e0 50%,#1d55d6 100%);--gloss:radial-gradient(120% 90% at 30% 0%,rgba(255,255,255,.28) 0,rgba(255,255,255,0) 55%);--glow:0 12px 28px -10px rgba(36,98,224,.75),0 2px 6px -1px rgba(29,85,214,.35)}.btn.pri,.fbtn,.rcta .p1,.price.best .pick,.price .pop{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:var(--glow),inset 0 1px 0 rgba(255,255,255,.35)}.fchip.on{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:0 8px 18px -8px rgba(36,98,224,.8),inset 0 1px 0 rgba(255,255,255,.35)}.btn.pri:hover,.fbtn:hover,.rcta .p1:hover{filter:brightness(1.08) saturate(1.1)}.lv-head,.svr.win{background:var(--gloss),var(--grad-btn)}.eyebrow{background:linear-gradient(135deg,#e5effd,#d3e6ff);color:#1a4fb8}.logo b{color:#2b74f0}.fmeta i,.nm i{background:linear-gradient(135deg,#e5effd,#d6e7ff);color:#1a4fb8}.paneNote{background:linear-gradient(135deg,#eaf3ff 0%,#f7fbff 60%,#fff 100%);border-color:#d3e3fb}.keys{background:linear-gradient(135deg,#e5effd,#f2f8ff)}.nkeys span::before,.keys li::before{background:linear-gradient(135deg,#3b8cff,#1d55d6)}
+</style>
+<script src="/assets/wz.js" defer></script>
+<script src="/assets/course.js" defer></script>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴"><a href="../../../tutoring/">1:1 과외</a><a href="../../../build/">제작 문의</a><a class="on" href="../../../library/" aria-current="page">자료실</a></div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../../../library/">← 자료실</a>
+  <div class="head"><div class="m"><i>에이전트</i><span>2026-10-21</span></div><h1>Claude 모드 100개 갈아 끼워 보고 고른 베스트 9</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/bTqizdva04g.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Ben AI</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<span class="orig">원제 · I Tried 100+ Claude Mods, These 9 Are the Best</span><br><a href="https://www.youtube.com/watch?v=bTqizdva04g" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>모드의 뼈대는 &#x27;신호 감지 → 지켜보기·바꾸기·막기&#x27;예요</li><li>비용은 &#x27;캐시가 식었는지&#x27;에서 크게 갈려요</li><li>비용 0인 &#x27;보여 주기&#x27; 모드가 체감 효과는 더 클 수 있어요</li></ul></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>Anthropic이 Claude Code에 '모드(mods)'를 내놓으면서 원하는 기능을 말로 설명만 하면 Claude가 직접 만들어 붙여 주는 시대가 됐어요. Ben은 몇 주 동안 100개가 넘는 모드를 분석·제작·테스트했고 그중 가장 쓸 만한 9개를 하나씩 보여 줍니다.</p>
+<h3>전체 내용 정리</h3>
+<h4>모드는 Claude Code의 생김새와 동작을 바꾸는 플러그인이에요</h4>
+<p>Ben은 모드를 최근 Claude Code 업데이트 중 가장 큰 변화로 꼽아요. 모드는 데스크톱 앱이나 터미널에서 Claude Code의 외형과 동작 방식을 바꾸는 플러그인입니다. 인터페이스는 물론 하니스(harness, Claude가 일하는 실행 환경) 자체의 모양과 동작까지 내 입맛대로 바꿀 수 있죠. Ben은 아직 코워크(Cowork)에 익숙한 사람이라면 이것만으로도 Claude Code 탭으로 넘어갈 이유가 충분하다고 봅니다.</p>
+<p>참고로 Ben은 세 번 창업한 경험이 있어요. 지금은 AI 에이전시와 전문가·사업가를 위한 AI 커뮤니티를 운영하면서 AI로 업무를 자동화하거나 AI 비즈니스를 만드는 법을 가르치고 있어요.</p>
+<h4>첫 번째, 엉망인 음성 메모를 깔끔한 프롬프트로 바꾸는 '브레인 덤프'</h4>
+<p>모드가 뭔지 가장 쉽게 보여 주는 예가 Ben이 처음 만든 '브레인 덤프(Brain Dump)' 모드예요. 많은 사람이 Claude에게 긴 음성으로 생각을 쏟아 내는데, 이런 브레인 덤프는 내용이 복잡해지기 쉽거든요. 음성 인식 오류가 섞이고 주제가 자주 바뀌고 구조도 엉성하죠. 앞뒤가 안 맞을 때도 있어요.</p>
+<p>작동 원리는 간단합니다. Claude Code는 프롬프트를 보낼 때, 도구를 쓰려 할 때, 서브에이전트가 시작될 때, 답변을 마쳤을 때처럼 무슨 일이 생길 때마다 신호를 보내요. 모드는 이 신호를 지켜보다가 특정 신호가 오면 정해 둔 작업을 합니다. 브레인 덤프 모드는 프롬프트를 보내는 순간을 잡아내서, 길고 복잡한 브레인 덤프인지 확인하고 맞으면 Claude에게 넘어가기 전에 잠깐 멈춰 세워요.</p>
+<p>그다음 백그라운드에서 다른 AI 모델이 확인 질문을 몇 개 던지고 Anthropic의 모범 사례 프롬프팅 프레임워크에 맞춰 <strong>작업 내용·이유·가이드라인·완료 기준</strong>이 담긴 명확한 프롬프트로 바꿔 줍니다. Claude는 두서없는 생각 대신 정리된 프롬프트를 받게 되죠.</p>
+<p><strong>신호를 감지하게 만들고 그 신호에 맞춰 지켜보거나 바꾸거나 막는 것. 이게 모드의 본질이에요.</strong></p>
+<h4>모드는 말로 설명하면 Claude가 만들어 줘요</h4>
+<p>만드는 것도 쉬워요. Ben은 "내 긴 음성 메모를 포착해서 몇 가지 확인 질문을 던진 다음, 내 프롬프팅 프레임워크에 맞춰 다시 작성해 주는 모드를 만들어 줘"라고 말했을 뿐이에요. 그러면 Claude가 내장된 '플러그인 제작' 스킬로 모드를 만들어 줍니다. 원하는 대로 안 돌아가면 스킬을 다룰 때처럼 뭘 고칠지 말하면 되고요.</p>
+<p>모드는 크게 두 종류예요. 브레인 덤프처럼 AI를 써서 일반 메시지처럼 요금제 사용량을 쓰는 모드가 있고 화면에 표시하거나 기록만 해서 비용이 전혀 안 드는 모드가 있어요. 영상에 나온 모드는 전부 설명란 첫 번째 링크의 무료 리소스 zip 파일에 들어 있습니다. 이 파일을 Claude 채팅창에 넣고 "이 모드들 설치해 줘"라고 하면 계정에 추가해 준다고 해요.</p>
+<h4>두 번째, 서브에이전트가 뭘 하는지 보여 주는 '헬퍼 데스크'</h4>
+<p>Opus 5.5 같은 최신 모델은 서브에이전트를 많이 써요. Ben이 새 영상 아이디어를 부탁하면 Claude가 리서치용 서브에이전트를 여러 개 띄우는 식이죠. 정보를 빨리 분석하고 메인 채팅을 깔끔하게 유지해 주니 대체로 좋은데, 문제는 각 서브에이전트가 <strong>뭘 하는지, 비용이 얼마인지, 어디까지 왔는지</strong> 알 길이 없다는 거예요. 5분이 걸릴지 15분이 걸릴지 모른 채 기다려야 하거든요.</p>
+<p>'헬퍼 데스크'는 이걸 두 가지로 풀어 줍니다. 프롬프트 입력창 바로 위에 보라색 작업 표시줄이 생겨서 할 일이 체크될 때마다 채워지니, 전체가 얼마나 진행됐고 지금 어느 단계인지 보여요. 그리고 사이드 패널에 서브에이전트마다 고유한 아이콘·색상·진행률 표시줄·비용이 뜹니다. 어떤 작업이 속도를 잡아먹는지, 전체 채팅 비용에 얼마씩 더해지는지 한눈에 보이죠.</p>
+<p>AI를 쓰지 않는 모드라 실행 비용은 0이에요. 모드라서 서브에이전트 역할에 맞춰 이름을 붙이는 식으로 화면을 원하는 대로 바꿔 달라고 할 수도 있고요. Ben은 조니 사비의 프로그레스 모드에서 영감을 받아 자기 워크플로우에 맞게 다시 만들었다고 밝혀요.</p>
+<h4>세 번째, 오래된 채팅이 비싸지는 순간을 알려 주는 '캐시 클록'</h4>
+<p>Ben이 토큰 지출을 크게 줄였다고 말하는 모드예요. 메시지를 보낼 때마다 Claude는 채팅 전체를 다시 읽어요. 비용을 아끼려고 Anthropic은 답변할 때마다 채팅 사본을 자기 서버에 저장하는데, 이걸 '캐시' 또는 '채팅을 따뜻하게 유지한다'고 부릅니다. 따뜻한 동안에는 저장된 사본을 읽으니 일반 비용의 일부만 내면 돼요. Opus 모델 기준으로 일반 비용의 20분의 1 수준이라고 해요.</p>
+<p>그런데 이 사본은 정해진 시간만 유지돼요. 타이머가 끝나면 캐시가 '식어 버리고', Claude는 채팅 전체를 다시 읽고 저장해야 해서 정가를 냅니다. 긴 채팅이면 같은 메시지를 보내도 <strong>최대 40배</strong>까지 비싸질 수 있어요. 긴 Opus 채팅을 다시 이어갈 때 따뜻하면 약 4센트지만, 식으면 1.6달러까지 나올 수 있다는 거죠. 타이머도 짧아요. Claude 구독은 1시간, API 키는 겨우 5분이에요.</p>
+<p>문제는 언제 끝나는지 모른다는 점이에요. '캐시 클록(Cache Clock)'은 Claude가 답변을 마치면 Anthropic 응답에서 직접 가져온 타이머로 만료까지 남은 시간을 카운트다운해 보여 줍니다. 추측이 아니에요. 점심 먹고 다시 올 생각이라면 'keep warm'을 누르거나 <code>/keep warm</code>을 입력하면 돼요. 만료 직전에 작은 숨은 메시지를 보내 타이머를 다시 시작시키는데, 한 번에 몇 센트 정도라 캐시를 새로 불러오는 것보다 훨씬 싸죠. 다음 메시지를 보내거나 2시간이 지나면 저절로 멈춥니다. 영감은 Karan Binsal이 만든 '캐시 택스(cache tax)' 모드에서 얻었다고 해요.</p>
+<h4>네 번째, 맥락을 잃지 않고 새 채팅으로 넘기는 '핸드오프'</h4>
+<p>캐시 클록과 잘 맞물리는 모드로, Ben이 직접 만들었어요. 큰 프로젝트를 하다 보면 채팅이 길어지고 길어질수록 답변 품질이 떨어지죠. Claude가 한 채팅에 담을 수 있는 단기 기억, 이른바 컨텍스트 윈도우(context window)에 한계가 있어서예요. 데이터가 쌓이면 세부 정보를 놓치거나 내용을 헷갈리기 시작하는데, 이걸 '컨텍스트 로트(context rot)'라고도 불러요.</p>
+<p>Claude도 오래된 부분을 요약해 압축하지만 요약은 늘 세부 정보를 조금씩 잃어요. 그 상태에서 캐시까지 만료되면 메시지마다 비용도 훨씬 커지고요. 그래서 언젠가는 맥락과 진행 상황을 지닌 채 새 채팅을 열고 싶어지는데, 그 타이밍을 잡기가 어렵습니다.</p>
+<p>핸드오프(handoff)는 세 가지 상황에서 작동해요. 채팅이 <strong>25만 토큰</strong>에 닿았을 때(Ben은 이 지점부터 Claude 성능이 조금씩 떨어진다고 봐요), 캐시 클록이 캐시 만료를 감지했을 때, 그리고 <code>/handoff</code>를 직접 입력했을 때예요. 그러면 채팅 전체와 Claude가 쓰거나 만든 파일·스킬·도구·링크를 읽고 새 채팅용 구조화된 인수인계 프롬프트를 써 줍니다. Claude의 자동 요약보다 훨씬 자세하고 버튼 하나로 그 프롬프트를 들고 새 채팅을 시작할 수 있어요. 핸드오프 결과물은 평범한 프롬프트라서 팀원에게 일을 넘길 때도 그대로 쓸 수 있죠.</p>
+<h4>다섯·여섯 번째, 규칙을 기억시키는 'Reflect'와 작업 내역을 보여 주는 'Chat Inventory'</h4>
+<p>'Reflect'는 Claude가 내 역할과 선호를 실제로 기억하게 만드는 모드예요. Claude Code에는 자동 메모리가 있고 CLAUDE.md나 agent.md, 세컨드 브레인 같은 도구에 저장할 수도 있지만, 뭘 저장하고 뭘 잊을지는 내가 정할 수 없거든요. 꼭 남겨야 할 규칙을 빠뜨릴 때도 있고요. 이 모드는 모든 채팅의 프롬프트를 확인해서 "대시(em dash)를 절대 사용하지 마"나 "LinkedIn 후킹 문구는 12단어 이내로 유지해" 같은 엄격한 규칙을 잡아내면, 내장 메모리·CLAUDE.md·세컨드 브레인 중 어디에 저장할지 묻는 팝업을 띄워요. 스킬처럼 다른 곳에 저장하고 싶으면 모드를 그렇게 바꿔 달라고 하면 됩니다. 영감은 Ben의 코스에 있는 'Claude Reflect' 스킬을 만든 Byram에게서 얻었다고 해요.</p>
+<p>'Chat Inventory'는 Ben이 코워크에서 Claude Code로 넘어오게 만든 모드예요. 그동안 코워크를 쓴 이유는 UI였어요. 코워크에는 할 일 목록, Claude가 쓰는 커넥터와 스킬, 읽거나 만드는 파일을 보여 주는 사이드 패널이 있는데, Claude Code 탭엔 그게 없어서 긴 작업은 블랙박스처럼 느껴졌다는 거죠. 이 모드는 채팅 중 모든 도구 호출·커넥터 호출·스킬을 감지해 'In This Chat' 사이드 패널에 기록해요. 맨 위에 목표가 붙은 할 일 목록, 커넥터와 로고, 호출 횟수, 쓰는 스킬, 읽고 만드는 파일이 다 보입니다. CRM·이메일·드라이브 정보로 고객 보고서를 쓸 때 어디서 뭘 가져왔는지 바로 확인할 수 있고 기록만 하니 운영 비용도 0이에요.</p>
+<h4>일곱·여덟·아홉 번째, 화면 공유·편집 되감기·모드 관리</h4>
+<p>'Screen Share Mode'는 남이 내 화면을 볼 때 Claude Code 채팅 속 개인 정보를 가려 줘요. 팀 회의, 영업 통화, 교육, 소셜 미디어용 녹화, 팀원용 Loom 영상을 찍을 때 고객 이름·이메일·거래 금액이 그대로 노출되기 쉽거든요. 대부분은 이미 늦은 뒤에야 알아차리고요. 공유 전에 <code>/screen share</code>를 입력하면 이름·이메일·전화번호·금액이 전부 회색 막대로 바뀌어요. Ben은 예전엔 영상용으로 가상의 고객 이름을 지어내야 했는데, 이제는 이 모드를 켜고 실제 채팅을 쓴다고 해요.</p>
+<p>'리플레이 시어터(Replay Theater)'는 Anthropic이 직접 만든 모드예요. 뉴스레터 초안을 부탁하면 Claude가 한 번에 수십 군데를 고치는데, 뭐가 바뀌었는지 알려면 버전을 직접 비교하거나 변경 사항을 나열해 달라고 하는 수밖에 없었죠. 이 모드는 Claude가 파일에 가한 변경을 전부 추적하고 답변 뒤에 <code>/replay</code>를 입력하면 하나씩 순서대로 재생해 줍니다. 더 마음에 드는 이전 버전으로 되돌릴 수도 있어요. 다만 채팅 텍스트가 아니라 Claude가 편집하는 파일에만 작동해요.</p>
+<p>마지막 '스위치보드(Switchboard)'는 Ben이 직접 만든 모드로, 실행 중인 모드를 한곳에서 보고 끌 수 있게 해 줘요. Ben은 일단 시작하면 모드를 많이 만들고 깔고 테스트하게 될 거라고 봐요. 예전 스킬(Skills) 때도 사람들이 수백 개씩 깔고는 계정에 뭐가 있는지, 뭘 쓰는지 몰랐거든요. 지금 데스크톱 앱에는 실행 중인 모드를 한눈에 보거나 채팅 도중 끄는 방법이 없거든요. <code>/mods</code>를 입력하면 스위치보드가 열리고 모드마다 켜고 끄거나 화면에 붙는 부가 패널을 숨길 수 있어요. 새 모드는 이 목록에 저절로 올라옵니다.</p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>모드의 뼈대는 '신호 감지 → 지켜보기·바꾸기·막기'예요</strong>: 프롬프트 전송, 도구 사용, 서브에이전트 시작, 답변 완료 같은 신호와 이 몇 가지 구성 요소만 있으면 원하는 기능 대부분을 직접 만들 수 있다고 Ben은 봐요. 그 제작도 말로 설명하면 Claude가 해 주니, 내 작업 방식에 맞춘 도구를 붙이는 문턱이 확 낮아진 셈이죠.</li><li><strong>비용은 '캐시가 식었는지'에서 크게 갈려요</strong>: 긴 채팅은 캐시가 식으면 같은 메시지도 최대 40배까지 비싸질 수 있고 타이머는 구독 1시간·API 키 5분으로 짧아요. 긴 대화를 자주 이어가는 사람일수록 남은 시간을 눈으로 보는 것만으로도 아낄 여지가 커요.</li><li><strong>비용 0인 '보여 주기' 모드가 체감 효과는 더 클 수 있어요</strong>: 헬퍼 데스크·Chat Inventory·스위치보드는 AI를 안 쓰고 화면에 표시만 하는데, Ben이 코워크에서 Claude Code로 넘어온 이유가 바로 이런 가시성이었어요. Claude가 실제로 뭘 하는지 늘 알 수 있다는 게 그만큼 크다는 얘기예요.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li>Claude Code에서 "긴 채팅을 다시 이어갈 때 캐시 만료까지 남은 시간을 보여 주는 모드 만들어 줘"처럼 원하는 기능을 한 문장으로 주문해 보세요. 모드가 얼마나 쉽게 만들어지는지 직접 겪어 보면 다음 아이디어가 바로 떠올라요.</li><li>매번 Claude에게 반복해서 말하는 규칙(예: "대시 쓰지 마") 3개를 적고 Reflect처럼 규칙을 감지하면 CLAUDE.md 저장 여부를 묻는 모드를 만들어 보세요. 같은 말을 몇 번이나 했는지 세어 보면 효과가 보일 거예요.</li><li>화면 공유나 녹화가 잦다면, 이름·이메일·전화번호·금액을 회색 막대로 가리는 화면 공유 모드를 먼저 만들어 두세요. Ben 말대로 노출은 대부분 이미 늦은 뒤에야 알아차리게 되니까요.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>세 가지만 답하면 4단계 중 지금 위치를 바로 알려드려요. 무료예요.</p><span class="go">내 단계 진단하기 →</span></a>
+    <a class="cross" href="../../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../../../library/" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>

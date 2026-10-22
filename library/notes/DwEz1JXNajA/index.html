@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Grok 에이전틱 OS로 Grok 봇 10배 키우기 (10분) · 워크제로 자료실</title>
+<meta name="description" content="Jack Roberts가 Grok 봇(Grokbot)의 큰 업데이트 세 가지를 소개하고, 그래도 남는 가장 큰 한계인 &quot;다른 AI와 단절돼 있다&quot;는 문제를 에이전틱 운영체제(Agentic OS)로 푸는 방법을 보여 줘요. Grok 봇과 ChatGPT의 Dots를 하나의">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/DwEz1JXNajA/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#2462e0">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="Grok 에이전틱 OS로 Grok 봇 10배 키우기 (10분)">
+<meta property="og:description" content="Jack Roberts가 Grok 봇(Grokbot)의 큰 업데이트 세 가지를 소개하고, 그래도 남는 가장 큰 한계인 &quot;다른 AI와 단절돼 있다&quot;는 문제를 에이전틱 운영체제(Agentic OS)로 푸는 방법을 보여 줘요. Grok 봇과 ChatGPT의 Dots를 하나의">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/DwEz1JXNajA/">
+<meta property="og:image" content="https://img.youtube.com/vi/DwEz1JXNajA/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Grok 에이전틱 OS로 Grok 봇 10배 키우기 (10분)">
+<meta name="twitter:description" content="Jack Roberts가 Grok 봇(Grokbot)의 큰 업데이트 세 가지를 소개하고, 그래도 남는 가장 큰 한계인 &quot;다른 AI와 단절돼 있다&quot;는 문제를 에이전틱 운영체제(Agentic OS)로 푸는 방법을 보여 줘요. Grok 봇과 ChatGPT의 Dots를 하나의">
+<meta name="twitter:image" content="https://img.youtube.com/vi/DwEz1JXNajA/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+.tgl{margin:18px 0;border:1px solid var(--hair);border-radius:14px;background:var(--soft)}.tgl>summary{cursor:pointer;padding:14px 18px;font-weight:700;color:var(--ink);list-style:none}.tgl>summary::before{content:"▸ ";color:var(--primary)}.tgl[open]>summary::before{content:"▾ "}.tgl-in{padding:0 14px 14px}
+:root{--primary:#2462e0;--primary-deep:#1a4fb8;--primary-pale:#e5effd;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f4f8fe;--hair:#dfe7f2;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+/* WZ-COBALT-C */:root{--grad-btn:linear-gradient(135deg,#2b74f0 0%,#2462e0 50%,#1d55d6 100%);--gloss:radial-gradient(120% 90% at 30% 0%,rgba(255,255,255,.28) 0,rgba(255,255,255,0) 55%);--glow:0 12px 28px -10px rgba(36,98,224,.75),0 2px 6px -1px rgba(29,85,214,.35)}.btn.pri,.fbtn,.rcta .p1,.price.best .pick,.price .pop{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:var(--glow),inset 0 1px 0 rgba(255,255,255,.35)}.fchip.on{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:0 8px 18px -8px rgba(36,98,224,.8),inset 0 1px 0 rgba(255,255,255,.35)}.btn.pri:hover,.fbtn:hover,.rcta .p1:hover{filter:brightness(1.08) saturate(1.1)}.lv-head,.svr.win{background:var(--gloss),var(--grad-btn)}.eyebrow{background:linear-gradient(135deg,#e5effd,#d3e6ff);color:#1a4fb8}.logo b{color:#2b74f0}.fmeta i,.nm i{background:linear-gradient(135deg,#e5effd,#d6e7ff);color:#1a4fb8}.paneNote{background:linear-gradient(135deg,#eaf3ff 0%,#f7fbff 60%,#fff 100%);border-color:#d3e3fb}.keys{background:linear-gradient(135deg,#e5effd,#f2f8ff)}.nkeys span::before,.keys li::before{background:linear-gradient(135deg,#3b8cff,#1d55d6)}
+</style>
+<script src="/assets/wz.js" defer></script>
+<script src="/assets/course.js" defer></script>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴"><a href="../../../tutoring/">1:1 과외</a><a href="../../../build/">제작 문의</a><a class="on" href="../../../library/" aria-current="page">자료실</a></div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../../../library/">← 자료실</a>
+  <div class="head"><div class="m"><i>에이전트</i><span>2026-10-10</span></div><h1>Grok 에이전틱 OS로 Grok 봇 10배 키우기 (10분)</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/DwEz1JXNajA.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Jack Roberts</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<span class="orig">원제 · Grok Agentic OS Will 10X Your GrokBot (in 10 mins)</span><br><a href="https://www.youtube.com/watch?v=DwEz1JXNajA" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>에이전트의 성능은 모델보다 맥락에서 갈려요</li><li>도구 하나에 올인하기보다 역할을 나눠 쌓는 게 현실적이에요</li><li>자동 라우팅은 편하지만 무엇이 돌았는지는 안 보여요</li></ul></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>Jack Roberts가 Grok 봇(Grokbot)의 큰 업데이트 세 가지를 소개하고, 그래도 남는 가장 큰 한계인 "다른 AI와 단절돼 있다"는 문제를 에이전틱 운영체제(Agentic OS)로 푸는 방법을 보여 줘요. Grok 봇과 ChatGPT의 Dots를 하나의 운영체제 안에서 함께 부리는 장면이 핵심이에요.</p>
+<h3>전체 내용 정리</h3>
+<h4>Grok 봇에 모델 라우팅·Claude 설치·X 검색이 생겼어요</h4>
+<p>첫 번째 업데이트는 <strong>모델 라우팅</strong>이에요. 예전 Grok 봇은 Grok 4.8 같은 Grok 모델만 썼는데요. 이제는 작업을 가장 잘 처리할 모델로 알아서 넘겨 줘요. Jack은 Opus 5.5, Midjourney, Suno 같은 모델까지 알아서 처리할 거라고 설명해요.</p>
+<p>예를 들어 "DALL-E 대신 Grok 봇을 써야 하는 이유나 둘을 같이 쓰는 방법을 자세히 조사해 줘"라고 시키면, Grok 모델만 쓰는 게 아니라 그 일에 가장 잘 맞는 모델이 움직여요. 작은 작업은 훨씬 빨리 끝나고 토큰도 덜 낭비하죠. 다만 <strong>어떤 모델을 쓸지는 사용자가 직접 고를 수 없고</strong>, 백그라운드에서 돌아가서 실제로 어떤 모델이 쓰였는지도 알 수 없어요.</p>
+<p>두 번째는 조건이 붙긴 하지만 <strong>Grok 안에서 Claude를 쓸 수 있다</strong>는 점이에요. 새 봇을 띄운 뒤 "Aether, 네 컴퓨터에 Claude를 설치해 줘"라고 말하면 Grok이 알아서 Claude를 내려받아요. Grok에는 자체 가상 서버가 있어서 로그인까지 할 수 있거든요.</p>
+<p>서버에 Claude 데스크톱 앱 같은 걸 깔고 로그인하면 Grok으로 Claude의 기능을 부릴 수 있어요. Jack은 멋진 기능이라면서도 <strong>"이보다 10배는 더 좋은 방법"이 따로 있다</strong>고 예고해요. 그게 뒤에 나오는 에이전틱 운영체제예요.</p>
+<p>세 번째는 Grok 봇이 <strong>X를 직접 검색</strong>한다는 거예요. Jack이 "지난 3일간 X에서 Grok 봇에 관해 가장 화제가 된 게시물을 찾아 줘"라고 하자 네 가지 항목이 바로 돌아왔어요. 읽기엔 양이 많아서 핵심 두 가지로 줄여 달라고 다시 요청했죠.</p>
+<p>그러자 가장 이야기해 볼 만한 건 <strong>설정 가이드</strong>라는 답이 나왔어요. 사람들이 Grok 설정 방법을 정말 알고 싶어 한다는 뜻이에요. 요약을 한 번 더 시킨 건 AI가 가끔 말이 너무 많기 때문이라고 Jack은 말해요.</p>
+<h4>가장 큰 문제는 Grok 봇이 다른 AI와 대화하지 못한다는 점이에요</h4>
+<p>업데이트가 아무리 좋아도 한계가 남아요. 우리는 ChatGPT, Claude, Hermes를 함께 쓰는데 <strong>Grok 봇은 그 대화에서 무슨 일이 있었는지 전혀 몰라요.</strong> Jack은 Grok 봇을 정말 좋게 만드는 건 결국 <strong>맥락</strong>이라고 강조해요.</p>
+<p>앱과 연결은 할 수 있지만 그것만으로는 부족하대요. 그래서 Jack이 내놓은 해법은 이 앱들을 전부 하나의 <strong>에이전틱 운영체제(Agentic OS)</strong> 위에서 돌리며 <strong>공유 메모리 하나</strong>를 갖게 하는 거예요. Jack은 자기 운영체제를 "Jarvis"라고 부르고, 그 안에서 Grok과 관련된 모든 걸 논의하고 사용 내역까지 확인해요.</p>
+<h4>운영체제가 에이전트에게 일을 보내고, Grok 봇은 전용 이메일도 가져요</h4>
+<p>시연이 이어져요. Jack이 음성으로 메모를 열어 달라고 한 뒤 "오늘 일찍 Grok 봇에게 뭘 조사하라고 했었지?"라고 묻자, 운영체제가 <strong>"이번 주 X의 상위 10개 Grok Bot 게시물을 가져오라고 요청하셨지만, 그전에 중단하셨습니다"</strong>라고 기억을 되살려 줘요. 이어서 Grok 봇을 시켜 ChatGPT의 에이전트인 Dots에 관한 상위 10개 게시물도 찾아 달라고 하자 바로 작업이 시작되고, 결과는 에이전트 페이지에 나타나요.</p>
+<p>정보를 조회하는 데서 그치지 않고 <strong>에이전트에게 실제 작업을 실행시킬 수 있다</strong>는 게 포인트예요. 끝난 내용은 운영체제가 알아서 '참모장' 쪽에 기록해 둬요.</p>
+<p>Grok 봇에 새로 생긴 기능 중 하나는 <strong>자기만의 이메일 주소</strong>예요. "기업들에 이메일을 보내 내 대신 업무를 처리하고, 나도 그 내용을 추적할 수 있게 이메일 계정을 하나 만들어 줘"라고 시키면 돼요. 사람들에게 메일을 보낼 때 이 에이전트를 참조(CC)에 넣을 수도 있죠.</p>
+<p>Jack이 좋다고 꼽는 지점은 Grok 봇이 예약을 잡는 메일을 보내고 전용 받은 편지함을 갖는 과정을 <strong>에이전틱 운영체제 대시보드 한 곳에서</strong> 관리할 수 있다는 거예요. 다른 모든 시스템과도 연결되고요.</p>
+<h4>Dots로 계획하고 Grok 봇으로 실행하는 걸 "에이전트 시스템 스태킹"이라고 불러요</h4>
+<p>같은 운영체제 안에서 Grok 봇과 Dots를 동시에 돌릴 수 있어요. Jack은 Dots에게 지난 7일간의 대화 기록을 보고 자신의 음성 인식 스타트업을 키울 계획을 짜 달라고 했고, 계획이 순식간에 나왔어요. 참고로 Jack은 <strong>Dots를 ChatGPT용 오케스트레이션 에이전트</strong>로 이해하면 가장 쉽다고 해요. Dots가 하는 일 상당수는 ChatGPT에서도 거의 똑같이 할 수 있거든요.</p>
+<p>진짜 힘은 이 시스템들을 서로 트리거할 수 있다는 데서 나와요. Jack은 이걸 <strong>에이전트 시스템 스태킹(agent system stacking)</strong>이라고 불러요. 각 시스템이 독립적으로 돌아가면서도 Dots가 계획을 세우고 Grok 봇이 그 계획을 실행하는 식이죠. 시연에서는 Dots에게 대화 기록 전체를 바탕으로 X 성장 전략을 조사시키고, 보고서가 나오면 Grok 봇에 넘겨 작업하게 한 뒤 끝나면 알려 달라고 지시해요.</p>
+<h4>Grok은 결국 생태계의 도구 하나예요</h4>
+<p>Jack은 에이전트 OS가 중요한 이유를 이렇게 설명해요. 내 <strong>지식, 데이터, 시스템, 기억을 모든 AI가 공유하게</strong> 해 주고, 맥락을 많이 줄수록 더 좋아지고 강력해진다는 거예요. 영상에서는 이 운영체제를 직접 만드는 강의와 온보딩 시스템도 소개하는데, 노트북에 연결된 Claude, ChatGPT, Grok, Hermes를 찾아 한곳으로 모아 준다고 해요.</p>
+<p>Grok은 점점 강해지고 더 많이 연결되고 있어요. 그래도 현실적으로는 <strong>생태계 안의 도구 하나</strong>이고 Dots도, ChatGPT도, Claude도 함께 있어요. Jack은 개인 비서로 쓸 무언가가 필요해지고 그게 Grok이겠지만, 많은 작업을 대신 수행할 무언가도 따로 필요해질 거라고 봐요. 본인은 Claude와 ChatGPT를 잘 쓰고 있는데, Grok 에이전트 운영체제가 있으면 이 둘을 하나로 묶을 수 있대요. 영상은 "Grok으로 할 수 있는 가장 강력한 일은 무엇인가"라는 질문을 던지고 이어서 볼 영상을 소개하며 끝나요.</p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>에이전트의 성능은 모델보다 맥락에서 갈려요</strong>: Grok 봇이 모델 라우팅, Claude 설치, X 검색까지 갖춰도 다른 AI에서 오간 대화를 모르면 반쪽짜리예요. 그래서 Jack은 업데이트 소개 직후 바로 "맥락 단절"을 가장 큰 문제로 꼽아요.</li><li><strong>도구 하나에 올인하기보다 역할을 나눠 쌓는 게 현실적이에요</strong>: Dots로 계획하고 Grok 봇으로 실행하는 스태킹 방식은 "가장 좋은 AI 하나"를 고르는 대신 각자 잘하는 일을 맡기고 공유 메모리로 묶는 구조예요. Jack도 개인 비서 역할은 Grok이, 많은 작업은 또 다른 무언가가 맡게 될 거라고 봐요.</li><li><strong>자동 라우팅은 편하지만 무엇이 돌았는지는 안 보여요</strong>: Grok 봇은 알아서 모델을 고르지만 사용자는 고를 수도, 어떤 모델이 쓰였는지 알 수도 없어요. Jack도 이 점을 따로 풀어야 할 문제로 짚어요.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li>지금 쓰는 AI(ChatGPT, Claude, Grok 등)마다 "주로 맡기는 일"을 한 줄씩 적어 보세요. 겹치는 일과 빈 곳이 보이면 어떤 AI에게 계획을, 어떤 AI에게 실행을 맡길지 감이 와요.</li><li>Grok 봇을 쓰고 있다면 "지난 3일간 X에서 ○○에 관해 가장 화제가 된 게시물을 찾아 줘"라고 내 업종 키워드로 시켜 보세요. 결과가 길면 Jack처럼 "핵심 두 가지만 요약해 줘"를 한 번 더 붙이면 바로 쓸 만한 소재가 남아요.</li><li>한 AI에서 만든 결과물(계획서, 조사 보고서)을 다른 AI에 그대로 넘겨 실행을 시켜 보세요. 손으로 복사해 넘기는 게 몇 번이나 반복되는지 세어 보면 공유 메모리가 왜 필요한지 체감할 수 있어요.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>세 가지만 답하면 4단계 중 지금 위치를 바로 알려드려요. 무료예요.</p><span class="go">내 단계 진단하기 →</span></a>
+    <a class="cross" href="../../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../../../library/" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>

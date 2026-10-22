@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>연 매출 100만 달러 회사를 일주일 동안 Claude Code에 맡겨 봤습니다 · 워크제로 자료실</title>
+<meta name="description" content="Nick은 연 매출 약 100만 달러 규모의 에이전시에 Claude를 붙여 일주일 동안 업무 대부분을 자동화했어요. 화면 캡처로 업무를 기록하고 작업마다 평가(evals)로 점수를 매겨 스킬로 굳힌 뒤, 예약 실행할 것과 사람이 볼 것을 나누는 표준 과정을 단계별로 보">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/rvkjS3YoVio/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#2462e0">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="연 매출 100만 달러 회사를 일주일 동안 Claude Code에 맡겨 봤습니다">
+<meta property="og:description" content="Nick은 연 매출 약 100만 달러 규모의 에이전시에 Claude를 붙여 일주일 동안 업무 대부분을 자동화했어요. 화면 캡처로 업무를 기록하고 작업마다 평가(evals)로 점수를 매겨 스킬로 굳힌 뒤, 예약 실행할 것과 사람이 볼 것을 나누는 표준 과정을 단계별로 보">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/rvkjS3YoVio/">
+<meta property="og:image" content="https://img.youtube.com/vi/rvkjS3YoVio/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="연 매출 100만 달러 회사를 일주일 동안 Claude Code에 맡겨 봤습니다">
+<meta name="twitter:description" content="Nick은 연 매출 약 100만 달러 규모의 에이전시에 Claude를 붙여 일주일 동안 업무 대부분을 자동화했어요. 화면 캡처로 업무를 기록하고 작업마다 평가(evals)로 점수를 매겨 스킬로 굳힌 뒤, 예약 실행할 것과 사람이 볼 것을 나누는 표준 과정을 단계별로 보">
+<meta name="twitter:image" content="https://img.youtube.com/vi/rvkjS3YoVio/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+.tgl{margin:18px 0;border:1px solid var(--hair);border-radius:14px;background:var(--soft)}.tgl>summary{cursor:pointer;padding:14px 18px;font-weight:700;color:var(--ink);list-style:none}.tgl>summary::before{content:"▸ ";color:var(--primary)}.tgl[open]>summary::before{content:"▾ "}.tgl-in{padding:0 14px 14px}
+:root{--primary:#2462e0;--primary-deep:#1a4fb8;--primary-pale:#e5effd;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f4f8fe;--hair:#dfe7f2;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+/* WZ-COBALT-C */:root{--grad-btn:linear-gradient(135deg,#2b74f0 0%,#2462e0 50%,#1d55d6 100%);--gloss:radial-gradient(120% 90% at 30% 0%,rgba(255,255,255,.28) 0,rgba(255,255,255,0) 55%);--glow:0 12px 28px -10px rgba(36,98,224,.75),0 2px 6px -1px rgba(29,85,214,.35)}.btn.pri,.fbtn,.rcta .p1,.price.best .pick,.price .pop{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:var(--glow),inset 0 1px 0 rgba(255,255,255,.35)}.fchip.on{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:0 8px 18px -8px rgba(36,98,224,.8),inset 0 1px 0 rgba(255,255,255,.35)}.btn.pri:hover,.fbtn:hover,.rcta .p1:hover{filter:brightness(1.08) saturate(1.1)}.lv-head,.svr.win{background:var(--gloss),var(--grad-btn)}.eyebrow{background:linear-gradient(135deg,#e5effd,#d3e6ff);color:#1a4fb8}.logo b{color:#2b74f0}.fmeta i,.nm i{background:linear-gradient(135deg,#e5effd,#d6e7ff);color:#1a4fb8}.paneNote{background:linear-gradient(135deg,#eaf3ff 0%,#f7fbff 60%,#fff 100%);border-color:#d3e3fb}.keys{background:linear-gradient(135deg,#e5effd,#f2f8ff)}.nkeys span::before,.keys li::before{background:linear-gradient(135deg,#3b8cff,#1d55d6)}
+</style>
+<script src="/assets/wz.js" defer></script>
+<script src="/assets/course.js" defer></script>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴"><a href="../../../tutoring/">1:1 과외</a><a href="../../../build/">제작 문의</a><a class="on" href="../../../library/" aria-current="page">자료실</a></div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../../../library/">← 자료실</a>
+  <div class="head"><div class="m"><i>에이전트</i><span>2026-10-13</span></div><h1>연 매출 100만 달러 회사를 일주일 동안 Claude Code에 맡겨 봤습니다</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/rvkjS3YoVio.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Nick Saraev</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<span class="orig">원제 · I Let Claude Code Run My $1M/Year Business for a Whole Week</span><br><a href="https://www.youtube.com/watch?v=rvkjS3YoVio" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>내 일은 말보다 화면이 더 정확하게 설명해요</li><li>자동화의 진짜 시간은 &#x27;채점&#x27;에 들어가요</li><li>감독이 필요한 일은 예약하지 않아요</li></ul></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>Nick은 연 매출 약 100만 달러 규모의 에이전시에 Claude를 붙여 일주일 동안 업무 대부분을 자동화했어요. 화면 캡처로 업무를 기록하고 작업마다 평가(evals)로 점수를 매겨 스킬로 굳힌 뒤, 예약 실행할 것과 사람이 볼 것을 나누는 표준 과정을 단계별로 보여 줘요.</p>
+<h3>전체 내용 정리</h3>
+<h4>과장 영상이 아니라고 먼저 못 박아요</h4>
+<p>Nick은 연 매출 약 100만 달러 규모의 자기 사업체에 Claude Code 접근 권한을 주고 "전부 자동화해 달라"고 요청했대요. 결과는 <strong>꽤 훌륭했다</strong>고 해요. 그런데 바로 선을 그어요. 클릭베이트도 아니고 "내 삶이 전부 자동화돼서 모든 게 환상적"이라고 떠드는 영상도 아니라고요.</p>
+<p>Nick은 지난 4년 동안 GPT-3.5 Turbo부터 여러 모델로 같은 시도를 수없이 했고 보통은 꽤 실망스러웠대요. 그런데 <strong>이제는 실제로 이런 일을 할 수 있는 지점에 왔다</strong>고 봐요. 그래서 이번 영상에서 대부분의 지식 업무를 자동화하는 데 쓸 수 있는 간단하고 표준화된 과정을 알려 주겠다고 해요.</p>
+<h4>말 대신 화면으로 보여 주고, 나온 목록을 Claude에게 넘겨요</h4>
+<p>첫 단계는 자기 업무를 분석하는 거예요. 여기에만 일주일 정도 걸렸대요. Nick은 Opus 5.5를 'Max thinking' 모드로 두고 하루 종일 <strong>5초마다 작업 화면을 캡처하는 추적 도구</strong>를 만들어 달라고 했어요. 1분에 12번꼴이니 스크린샷이 상당히 많죠.</p>
+<p>그래서 알아볼 수 있는 최소 크기로 압축하고 지금 무엇을 보고 어떤 작업을 하는지 설명을 붙이게 해야 해요. Nick은 이 데이터를 전부 데이터베이스에 저장했어요. 여기에 더해 하루 동안 Claude가 10~15개 정도 질문을 던지게 설정했대요. "지금 무슨 일 하고 있어?", "왜 이 일을 하고 있죠?", "이 일을 성사시키려면 어떤 시스템이 필요한가요?" 같은 간단한 질문이에요.</p>
+<p>이 방식의 핵심은 이거예요. 내가 하는 일을 말로 설명할 수는 있지만, <strong>정작 본인은 의사결정에 필요한 맥락을 다 알지 못하는 경우가 많거든요.</strong> 그래서 말보다 직접 보여 주는 게 훨씬 효과적이라고 Nick은 말해요. 이 과정에서 사용 한도를 거의 한 번 꽉 채웠고 플랜도 업그레이드해야 했대요. 추천하는 Max thinking 모드를 쓰려면 아마 여러분도 그래야 할 거라고 해요.</p>
+<p>분석이 끝나자 에이전시에서 Nick이 직접 관여하는 결과물과 프로세스의 거대한 목록이 나왔어요. Apify나 LinkedIn Sales Navigator로 잠재 고객 리스트 뽑기, 이메일 정보 보강·검증, 콜드 이메일 문구와 시퀀스 쓰기가 있었어요. 도메인을 사서 예열(warm-up)하고 발송 계정 만들기, 콜드 이메일 답장에 회신하기, 통화 일정 잡기, 새 예약 확인, 발굴 통화와 영업 통화, 제안서 작성도 들어 있었고요.</p>
+<p>이 목록을 새 Claude 인스턴스에 넣고 이렇게 말하면 돼요. <strong>"안녕, 내가 매일 하는 일들이 여기 있어. 내 목표는 고객 대면 업무가 아닌 일들의 대부분을 자동화하는 거야. 이 각각의 작업에 대해 가능한 한 많이 자동화할 수 있는 시스템을 구축하도록 도와줄래?"</strong>, <strong>"만약 이 내용들에 대해 맥락이 부족하다면, 나에게 물어봐 줘."</strong></p>
+<p>그러면 Claude가 질문을 하고, 답은 음성으로 녹음해서 넘기기만 하면 돼요. Nick은 간단한 음성 전사 도구를 쓴대요. 한 시간 정도면 모든 내용을 쏟아 낼 수 있고, 그러면 AI가 자동화에 필요한 맥락을 다 파악하게 되죠.</p>
+<h4>작업마다 평가를 만들어 8점까지 끌어올려요</h4>
+<p>다음은 각 작업에 <strong>평가(evals)</strong>를 만드는 단계예요. 평가는 특정 프롬프트를 받았을 때 AI 모델이 그 작업을 얼마나 잘하는지 반복해서 기록하는 테스트예요. 결과는 평균을 내요. AI 모델은 같은 작업도 어떤 때는 아주 잘하다가 어떤 때는 형편없이 하기 때문이에요.</p>
+<p>Nick은 앞서 말한 모든 작업을 10번씩 실행하게 하고 그 10개 결과물을 직접 채점했어요. 10점 만점에 8점 이하면(조금 낮은 정확도로 충분한 경우도 있었지만 대부분은 8점, 80% 정도를 목표로 했대요) Claude에게 이렇게 물었대요. "이봐, 내 목표에 맞춰 점수를 높이려면 시스템을 어떻게 개선해야 할까? 결과물들이 이런 식으로 나오는데, 나는 사실 저런 식으로 나오길 원해." 그렇게 시스템이 나아질 때까지 반복했고 <strong>거의 모든 작업을 10점 만점에 7~8점 이상으로 끌어올렸다</strong>고 해요.</p>
+<p>이게 전체 과정에서 시간이 가장 많이 든 부분이래요. 스크린샷은 뒤에서 지켜보는 수준이라 따로 시간이 안 들었지만, 평가는 "이봐요, 이건 틀렸어요. 이걸 고쳐야 해요"라고 직접 말해 줘야 하는 실제 작업 시간이었거든요. 템플릿이나 자료도 많이 넣어 줘야 했대요. 성과가 좋았던 콜드 이메일 예시, 조건에 맞는 리스트, 품질 좋은 제안서 같은 것들이요. <strong>여기서는 여러분도 발품을 좀 팔아야 한다</strong>고 Nick은 말해요.</p>
+<h4>점수를 넘긴 시스템은 스킬로 굳혀서 팀과 나눠요</h4>
+<p>일정 점수를 넘긴 시스템은 <strong>스킬(skill)로 제도화</strong>할 수 있어요. Nick이 이걸 아주 중요하게 보는 이유가 있어요. Claude 팀 플랜 같은 걸 쓰면 조직 안의 다른 사람들, 비기술직 직원과도 스킬을 공유할 수 있거든요. 그 사람들은 Claude Code를 쓸 필요도 없어요. Claude Cowork나 Claude 채팅 같은 더 쉬운 도구로 쓰면 되니까요.</p>
+<p>시간을 크게 아끼는 팁도 하나 나와요. 스킬의 아주 작은 부분만 고치고 다시 테스트하는 식으로 하지 말고, <strong>테스트 3~4개를 묶어서 동시에 돌리라</strong>는 거예요. 그러면 Claude가 스킬에 적용하는 변경 사항을 병렬로 처리할 수 있어요. Nick은 하나씩 순서대로 했다면 하루가 아니라 일주일은 걸렸을 거라고 해요.</p>
+<h4>예약할 것과 사람이 볼 것을 나눠요</h4>
+<p>마지막으로 Nick은 스킬마다 Claude에게 물었대요. "이걸 저 없이 자율적으로 실행되도록 예약하는 게 의미가 있을까?" 예를 들어 매일 아침 모든 고객에게 보내는 초안은 지금 작업 중인 내용과 어제 한 일, 현재 겪고 있는 문제점을 알리는 간단한 글이에요. 이런 건 <strong>기본적으로 완전히 자동화</strong>할 수 있어요. 보내기 전에 한 번 검토하고 엔터만 누르면 되죠.</p>
+<p>반면 결과물을 만들거나 시스템을 구축하는 일, 콜드 이메일 캠페인을 처음부터 끝까지 짜는 일은 최소한 사람의 감독이나 개입이 필요해요. 그래서 자동 예약하지 않고 필요할 때마다 Nick이 직접 실행한대요.</p>
+<p>예약할 수 있는 걸 다 예약하고 나면 할 일이 몇 개 안 남아요. Nick은 에이전시를 위해 매일 하는 일이 <strong>다섯, 여섯 가지 정도뿐</strong>이고 나머지 80~90%는 완전히 자동화돼 있대요.</p>
+<h4>남은 일은 사람과 이야기하는 것뿐이에요</h4>
+<p>Nick은 이제 사업에서 자기가 할 일은 회의에 들어가 만들고 싶은 시스템에 대해 이야기하는 것뿐이라고 말해요. 이런 일을 싫어하는 사람도 있겠지만, Nick에게는 이게 가장 큰 가치와 즐거움을 준대요. 사람들과 이야기하며 병목을 찾고 자기 경험과 사례를 바탕으로 해결책을 먼저 제시하는 일이죠. 이 부분도 Claude와 상담할 수는 있지만, 직접 대화해야 실제로 무슨 일이 벌어지는지 보인다고 해요.</p>
+<p>소프트웨어 엔지니어링과 쓸데없는 A/B 테스트, 모듈 드래그 앤 드롭을 너무 많이 해 온 사람으로서 <strong>지금이 얼마나 해방감을 주는지 말로 다 못 한다</strong>고 해요. 인생에서 처음으로 사실상 최대치의 생산성으로 일한다는 느낌이 든대요. 앞으로 얼마나 더 갈 수 있을지는 모르지만 AGI의 시대가 오고 있다는 걸 확실히 느낀다고요.</p>
+<p>영상 끝에서 Nick은 이 전체 과정을 안내하는 상세 프롬프트를 설명란 두 번째 링크에서 무료로 복사할 수 있다고 알려 줘요. 이 작업에는 <strong>가장 최신 모델을 Max thinking 모드로 쓰라</strong>고 강하게 권해요. 상위 단계의 계획 수립이라 그 뒤 모든 하위 단계에 영향을 주기 때문이에요. 사용량을 다 쓰면 세션이 초기화될 때까지 기다렸다가 다시 돌리면 된대요.</p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>내 일은 말보다 화면이 더 정확하게 설명해요</strong>: 사람은 자기 업무를 설명할 때 의사결정에 쓰는 맥락을 빠뜨리기 쉬워요. 그래서 Nick은 5초 간격 캡처와 중간 질문으로 실제 일하는 모습부터 기록하게 했어요. 말로 설명하는 것보다 직접 보여 주는 게 훨씬 효과적이라는 게 Nick의 판단이에요.</li><li><strong>자동화의 진짜 시간은 '채점'에 들어가요</strong>: 같은 작업을 10번 돌려 점수를 매기고 8점 이하면 고치는 과정이 가장 오래 걸렸대요. AI 모델은 같은 작업도 잘할 때와 형편없을 때가 있어서, 한 번이 아니라 평균으로 봐야 한다는 거죠.</li><li><strong>감독이 필요한 일은 예약하지 않아요</strong>: 고객 업데이트 초안처럼 단순한 건 예약하고 콜드 이메일 캠페인처럼 사람의 감독이나 개입이 필요한 건 필요할 때 직접 돌려요. 예약할 수 있는 건 다 예약해서 Nick은 매일 하는 일을 다섯, 여섯 가지로 줄였어요.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li>하루 동안 내가 하는 일을 30분 단위로라도 적어 보고, 그 목록을 Claude에 붙여 "고객 대면이 아닌 일을 자동화하고 싶어, 맥락이 부족하면 물어봐 줘"라고 요청해 보세요. Nick처럼 캡처 도구까지 만들지 않아도 질문을 받다 보면 빠뜨린 맥락이 드러나요.</li><li>자동화 후보 하나를 골라 같은 프롬프트로 10번 돌리고 결과를 10점 만점으로 채점해 보세요. 평균이 8점에 못 미치면 원하는 결과 예시를 붙여 고쳐 달라고 하면 됩니다.</li><li>이미 만든 자동화나 스킬 목록을 펴 놓고 "검토만 하고 보내도 되는 것"과 "사람이 직접 판단해야 하는 것"으로 나눠 보세요. 앞쪽부터 예약 실행으로 돌려 보면 매일 직접 챙길 일이 얼마나 남는지 보여요.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>세 가지만 답하면 4단계 중 지금 위치를 바로 알려드려요. 무료예요.</p><span class="go">내 단계 진단하기 →</span></a>
+    <a class="cross" href="../../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../../../library/" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>

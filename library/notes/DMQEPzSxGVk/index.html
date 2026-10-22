@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Haiku 5.5를 24시간 굴려 봤어요 — Opus랑 얼마나 차이 날까? · 워크제로 자료실</title>
+<meta name="description" content="Nick Saraev가 700달러 넘게 들여 Haiku 5.5를 Sonnet 5.5·Opus 5.5와 같은 프롬프트로 맞붙였어요. 게임·웹사이트·회계 감사·다큐 영상까지 만들어 본 결론은 이래요. Opus가 대체로 가장 좋긴 한데, 가격 차이만큼 결과 차이가 크지는 않">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/DMQEPzSxGVk/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#2462e0">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="Haiku 5.5를 24시간 굴려 봤어요 — Opus랑 얼마나 차이 날까?">
+<meta property="og:description" content="Nick Saraev가 700달러 넘게 들여 Haiku 5.5를 Sonnet 5.5·Opus 5.5와 같은 프롬프트로 맞붙였어요. 게임·웹사이트·회계 감사·다큐 영상까지 만들어 본 결론은 이래요. Opus가 대체로 가장 좋긴 한데, 가격 차이만큼 결과 차이가 크지는 않">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/DMQEPzSxGVk/">
+<meta property="og:image" content="https://img.youtube.com/vi/DMQEPzSxGVk/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Haiku 5.5를 24시간 굴려 봤어요 — Opus랑 얼마나 차이 날까?">
+<meta name="twitter:description" content="Nick Saraev가 700달러 넘게 들여 Haiku 5.5를 Sonnet 5.5·Opus 5.5와 같은 프롬프트로 맞붙였어요. 게임·웹사이트·회계 감사·다큐 영상까지 만들어 본 결론은 이래요. Opus가 대체로 가장 좋긴 한데, 가격 차이만큼 결과 차이가 크지는 않">
+<meta name="twitter:image" content="https://img.youtube.com/vi/DMQEPzSxGVk/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+.tgl{margin:18px 0;border:1px solid var(--hair);border-radius:14px;background:var(--soft)}.tgl>summary{cursor:pointer;padding:14px 18px;font-weight:700;color:var(--ink);list-style:none}.tgl>summary::before{content:"▸ ";color:var(--primary)}.tgl[open]>summary::before{content:"▾ "}.tgl-in{padding:0 14px 14px}
+:root{--primary:#2462e0;--primary-deep:#1a4fb8;--primary-pale:#e5effd;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f4f8fe;--hair:#dfe7f2;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+/* WZ-COBALT-C */:root{--grad-btn:linear-gradient(135deg,#2b74f0 0%,#2462e0 50%,#1d55d6 100%);--gloss:radial-gradient(120% 90% at 30% 0%,rgba(255,255,255,.28) 0,rgba(255,255,255,0) 55%);--glow:0 12px 28px -10px rgba(36,98,224,.75),0 2px 6px -1px rgba(29,85,214,.35)}.btn.pri,.fbtn,.rcta .p1,.price.best .pick,.price .pop{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:var(--glow),inset 0 1px 0 rgba(255,255,255,.35)}.fchip.on{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:0 8px 18px -8px rgba(36,98,224,.8),inset 0 1px 0 rgba(255,255,255,.35)}.btn.pri:hover,.fbtn:hover,.rcta .p1:hover{filter:brightness(1.08) saturate(1.1)}.lv-head,.svr.win{background:var(--gloss),var(--grad-btn)}.eyebrow{background:linear-gradient(135deg,#e5effd,#d3e6ff);color:#1a4fb8}.logo b{color:#2b74f0}.fmeta i,.nm i{background:linear-gradient(135deg,#e5effd,#d6e7ff);color:#1a4fb8}.paneNote{background:linear-gradient(135deg,#eaf3ff 0%,#f7fbff 60%,#fff 100%);border-color:#d3e3fb}.keys{background:linear-gradient(135deg,#e5effd,#f2f8ff)}.nkeys span::before,.keys li::before{background:linear-gradient(135deg,#3b8cff,#1d55d6)}
+</style>
+<script src="/assets/wz.js" defer></script>
+<script src="/assets/course.js" defer></script>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴"><a href="../../../tutoring/">1:1 과외</a><a href="../../../build/">제작 문의</a><a class="on" href="../../../library/" aria-current="page">자료실</a></div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../../../library/">← 자료실</a>
+  <div class="head"><div class="m"><i>모델·도구</i><span>2026-10-08</span></div><h1>Haiku 5.5를 24시간 굴려 봤어요 — Opus랑 얼마나 차이 날까?</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/DMQEPzSxGVk.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Nick Saraev</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<span class="orig">원제 · I Spent 24 Hours Testing Haiku 5.5: Here Are The Results</span><br><a href="https://www.youtube.com/watch?v=DMQEPzSxGVk" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>가격 차이만큼 품질 차이가 나지 않아요</li><li>텍스트 업무는 이미 모델 간 차이가 거의 없어요</li><li>비싼 모델이 늘 이기지는 않아요</li></ul></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>Nick Saraev가 700달러 넘게 들여 Haiku 5.5를 Sonnet 5.5·Opus 5.5와 같은 프롬프트로 맞붙였어요. 게임·웹사이트·회계 감사·다큐 영상까지 만들어 본 결론은 이래요. <strong>Opus가 대체로 가장 좋긴 한데, 가격 차이만큼 결과 차이가 크지는 않아요.</strong> 그래서 Haiku 5.5는 "싸게 많이 돌리는 실무 모델"로 쓸 만하다는 거예요.</p>
+<h3>전체 내용 정리</h3>
+<h4>같은 프롬프트, 세 모델, 품질·속도·비용 비교예요</h4>
+<p>Nick은 Haiku 5.5, Sonnet 5.5, Opus 5.5에 똑같은 프롬프트를 넣고 UI, 3D 월드, 프레젠테이션, 비디오 게임을 만들게 했어요. 비교 기준은 품질과 속도, 그리고 시청자가 가장 궁금해할 <strong>비용</strong>이에요. 테스트가 끝난 뒤 Haiku에게 결과를 모아 보여 주는 랜딩 페이지까지 만들게 했고, 데모마다 쓴 프롬프트는 설명란에 무료로 공개했다고 해요. 정리해 보면 Sonnet 비용이 꽤 많이 나왔고 Haiku는 일관되게 훨씬 저렴했어요.</p>
+<h4>리그 오브 레전드 MOBA에서는 Sonnet 그래픽이 앞섰지만 비용도 다섯 배였어요</h4>
+<p>첫 과제는 "Three.js로 리그 오브 레전드에서 영감을 받은 3D MOBA를 만들어 줘. 기지 두 개짜리 작은 맵에서 탑다운 시점으로 하는 1대1 매치여야 해"였어요. Haiku는 10달러 미만, 약 3시간 46분, 9천만 토큰 이상을 썼고 게임 이름을 'Riftbound'로 붙였어요. 챔피언 선택, 그래픽 옵션, 점멸·회복 스킬까지 있어서 Nick은 리그 오브 레전드를 거의 그대로 재현한 수준이라고 할 정도였죠.</p>
+<p>Sonnet 버전은 그래픽이 Haiku와 비교가 안 될 만큼 좋았어요. 다만 컴퓨팅 자원을 훨씬 많이 먹어서 미니언이 나오자 프레임이 떨어졌대요. Opus는 Sonnet보다 딱히 나아 보이지 않았고 오히려 조금 별로라는 평이었어요. 그래도 캐릭터 생성 화면과 툴팁은 더 고품질이었다고 해요.</p>
+<p><strong>Sonnet이 Haiku보다 다섯 배쯤 나았을 수는 있지만 비용도 다섯 배였어요.</strong> 그래서 Nick은 같은 비용을 Haiku에 썼다면 어땠을지 궁금하다고 말해요. 토큰은 Haiku가 더 적게 썼는데, 걸린 시간은 둘이 거의 비슷했어요.</p>
+<h4>브레이킹 배드 게임, 인물은 Opus가 낫지만 하고 싶은 건 Haiku 버전이었어요</h4>
+<p>두 번째는 드라마 브레이킹 배드를 바탕으로 한 게임이에요. Haiku는 'Halcyon'이라는 제목을 붙였고, 뉴멕시코 앨버커키 풍경 위로 22년간 고등학교에서 화학을 가르친 오웬 머서가 암 진단을 받는 이야기가 펼쳐져요. 레나라는 인물에게 암 진단 사실을 말할지 고르는 선택지가 있고, 우편물을 확인하거나 아들과 대화할 수도 있어요. Nick은 배경 텍스처 품질에 놀라면서도 인물 표현은 아쉽다고 봐요.</p>
+<p>Sonnet 버전은 분위기가 좋고, 바깥 풍경이 뉴멕시코에서 예상할 만한 모습에 훨씬 가까웠어요. 상단에 현금, 수배도(heat), 'moth'(아마 meth의 오타), 가족 포인트 같은 UX까지 넣었죠. Opus는 예상대로 <strong>캐릭터 충실도가 압도적</strong>이었고, Haiku와 Sonnet은 이 부분이 형편없었다고 해요.</p>
+<p>그런데도 Nick의 결론은 <strong>Haiku의 승리</strong>예요. 훨씬 적은 비용으로 이 정도 렌더링 품질을 냈거든요. 게다가 Sonnet과 Opus 버전은 건너뛸 수 없는 컷신이 너무 많아서, 직접 한다면 Haiku 버전을 플레이하겠다고 말해요.</p>
+<h4>시계 런칭 사이트는 Haiku가 15분의 1 비용으로 충분히 쓸 만했어요</h4>
+<p>게임만 만드는 게 아니라는 걸 보여 주려고, 시계 내부를 들여다보는 런칭 사이트도 만들게 했어요. Haiku는 약 30센트, Opus는 거의 5.5달러가 들었어요. Haiku 버전은 스크롤하면 시계가 분해되면서 내부 장치가 보이고, 스위스 프랑으로 예약하는 기능과 FAQ도 있었어요. 이탤릭·세리프 폰트 같은 'Claude 특유의 느낌'이 조금 남아 있지만, 일반적인 웹사이트보다는 훨씬 낫다는 평이에요.</p>
+<p>Sonnet은 분해 장면 품질이 훨씬 뛰어나고 세부까지 확대해 볼 수 있었어요. Opus 버전은 '역작'이라 부를 만했어요. 섹션마다 3D 시각화가 뜨고, 시계가 왜 멋진지 분자 수준까지 설명해 주거든요. 이 과제는 Opus의 승리지만, Haiku는 15분의 1~16분의 1 비용으로 해냈어요. 그래서 <strong>SEO용 사이트를 여러 개 찍어 내야 한다면 Haiku 방식이 확실히 좋다</strong>는 게 Nick의 판단이에요.</p>
+<p>데모 세 개를 거치며 Nick이 짚은 점이 하나 더 있어요. <strong>Sonnet과 Opus의 품질 차이가 사람들이 생각하는 것보다 훨씬 작다</strong>는 거예요.</p>
+<h4>법의학 회계 감사에서는 세 모델 모두 사기 8건을 다 찾았어요</h4>
+<p>비즈니스 업무도 시험했어요. 프롬프트는 "너는 아웃도어 장비 소매업체 노스윈드 트레일 감사위원회가 고용한 법의학 회계사야. 여기 데이터가 있어. 391,303달러 규모의 사기를 찾아내"였어요. 데이터는 방대한 CSV 파일들이었죠.</p>
+<p>결과는 Haiku, Sonnet, Opus 모두 <strong>8건 중 8건</strong>이에요. Haiku는 매입 채무를 전부 테스트하고 위험 금액을 정리한 감사 보고서까지 만들었어요. Opus가 정보를 조금 더 보기 좋게 보여 줬을 수는 있어도, 실제 부정행위 조사 결과는 똑같았대요. 비용은 Haiku가 20센트 정도였고, Opus는 그 4~5배인 약 1.5달러였어요.</p>
+<p>Nick은 여기서 <strong>"요즘 텍스트 작업 비교는 사실상 한계치에 도달했다"</strong>고 봐요. 가장 작은 경량 모델이든 거대한 모델이든 텍스트 작업은 다 훌륭하게 해낸다는 거죠. 그는 이를 두고 사실상 모든 분야에서 AGI의 순간에 다가가고 있다고까지 말해요.</p>
+<h4>콜 오브 듀티 스타일 FPS에서는 Opus가 비싼 값을 했어요</h4>
+<p>"Three.js로 콜 오브 듀티 4: 모던 워페어(2007)에서 영감을 받은 1인칭 슈팅 게임을 만들어 줘. 영화 같은 캠페인 미션도 넣어서"라는 과제예요. Haiku는 '그레이 랜턴'이라는 게임을 만들었는데, 봇 수준이 조악하고 텍스처 품질이 낮은 평범한 FPS였어요. 10~20년 전이라면 인상적이었을 수준이라는 평이에요.</p>
+<p>Sonnet은 집 주변에 아티팩트(렌더링 오류)가 좀 보였지만 그래픽은 훨씬 좋았어요. 수류탄과 점프 애니메이션도 갖췄죠. Opus는 맵이 아름답고 캐릭터가 옆으로 움직이고 뛰는 모습까지 보여서 <strong>거의 카운터 스트라이크 수준</strong>이었대요. 바닥이 조금 깜빡이는 것만 빼면요.</p>
+<p>비용은 Haiku 5.07달러, Sonnet 27달러, Opus 20.78달러였어요. <strong>가장 비싼 건 Sonnet이었고, Opus가 더 싸면서 훨씬 볼만한 게임을 만들었어요.</strong></p>
+<h4>비행의 역사 2분 다큐를 보면 Opus가 늘 이기는 건 아니에요</h4>
+<p>모델의 설명 능력을 보려고, 최초의 연과 글라이더부터 수직 착륙하는 재사용 로켓까지 인류 비행의 역사를 다루는 2분짜리 영상을 만들게 했어요. Nick은 이제 모델이 업무를 수행하는 도구를 넘어 교육자 역할까지 한다고 봐요. 화면은 전부 SVG로 그려지고, 내레이션 오디오도 들어가요.</p>
+<p>Haiku는 1달러도 안 되는 비용으로 플래시 애니메이션 같은 캐릭터를 써서 비행의 역사를 잘 보여 줬어요. 다만 전개가 너무 빨라서 따라 읽기 힘들었대요. Sonnet은 인트로부터 훨씬 아름다웠고, 레오나르도 다빈치의 공책에 선이 그려지는 장면이 생생했어요. Nick은 지금까지 본 장면 중 이게 최고라고 말해요.</p>
+<p>흥미로운 건 7달러짜리 Opus예요. 비디오 게임에서는 확실히 나았지만, 이번에는 Sonnet보다 나은지 잘 모르겠다고 해요. 오히려 Haiku와 품질이 거의 비슷해 보였고, 로켓 장면은 형편없었대요. 이 과제라면 Nick은 Sonnet을 고르겠다고 해요. 정작 비용은 Sonnet이 Opus와 Haiku보다 더 들었어요.</p>
+<h4>마인크래프트 복셀 샌드박스는 20센트짜리 Haiku도 그럴듯했어요</h4>
+<p>"CDN에서 Three.js를 불러와 index.html 하나에 플레이 가능한 마인크래프트 스타일 복셀 샌드박스를 만들어 줘. 월드는 절차적으로 생성하고"라는 과제예요. Haiku는 약 20센트, 13분, 220만 토큰으로 마인크래프트와 꽤 비슷한 월드를 만들었어요. 블록을 놓을 수도 있었지만, 첫 위치에서 빠져나올 수 없는 문제가 보였대요.</p>
+<p>Sonnet은 실제 마인크래프트에 훨씬 가까웠어요. 손에 블록을 들고 있고, 블록을 바꿀 수 있고, 월드도 더 컸어요. Opus는 '블록랜드'라는 이름으로 100% 절차적 생성 월드를 만들었고 그림자까지 구현했어요. 이 과제는 <strong>Opus가 비교가 안 될 만큼 단연 최고</strong>였다는 평이에요.</p>
+<h4>개인 금융 웹앱 Ledgerly는 Sonnet이 가장 좋았고, Opus는 기대에 못 미쳤어요</h4>
+<p>Ledgerly라는 가상의 개인 금융 앱을 싱글 페이지 앱으로 만들게 했어요. Dribbble이나 Mobbin에 소개될 만한 세련된 SaaS처럼 보여야 한다는 조건이 붙었죠. Haiku는 약 50센트, 17분, 700만 토큰을 썼어요. 나머지 두 모델은 각각 400만, 339만 토큰만 썼다는 점이 흥미롭다고 해요.</p>
+<p>Haiku 버전은 지출 추가, 카테고리 변경, 라이트·다크 모드 전환, 데모 초기화까지 됐어요. 모드를 바꿀 때 폰트 색이 엉키는 사소한 문제는 있었지만, Nick은 <strong>시중 소비자용 앱의 90%보다 나은 UX</strong>일 거라고 봐요. Sonnet 버전은 비교가 안 될 만큼 고품질이었어요. 그래프 배치가 깔끔하고, 저축 목표 기능, CSV 내보내기, 오류 표시 시뮬레이션까지 갖췄죠. 대신 비용은 Haiku의 약 5배였어요.</p>
+<p>Opus는 '대작'일 거라 기대했지만 Nick은 Sonnet보다 낫다고 보지 않아요. 폰트 선택 탓일 수도 있대요. 그래도 Shift+D로 테마 전환, Command+K로 검색 같은 기능이 있어서 앱 개발 측면에서는 탄탄한 결과물이라고 평가해요.</p>
+<h4>갓 오브 워 스타일 액션 게임은 10달러, 34달러, 42달러가 들었어요</h4>
+<p>"Three.js로 2005년작 갓 오브 워에서 영감을 받은 3D 액션 게임을 만들어 줘. 그리스 신화를 배경으로 한 잔혹하고 묵직한 3인칭 액션"이라는 과제예요. 비용은 Haiku 약 10달러, Sonnet 34달러, Opus 42달러였고, Nick은 최근 통장 잔고가 줄어든 이유를 알겠다며 웃어요.</p>
+<p>Haiku의 '맹세의 재(Ashes of the Oath)'는 주인공이 검은 직사각형처럼 보였고, 공중 공격이 지나치게 강력했어요. Sonnet의 'Ashen Wrath'는 게임 내 컷신, E 키 패링, 슬로모션 연출까지 있어서 초창기 갓 오브 워와 비슷한 느낌이었어요. Opus의 'Ashes of Sparta'는 모드 선택과 콤보 연계가 되고 바로 전투에 뛰어들 수 있어서, 셋 중 <strong>가장 보기 좋았다</strong>고 해요.</p>
+<h4>진격의 거인 크래프트에서는 5달러짜리 Haiku 게임에도 그림자가 생겼어요</h4>
+<p>마지막은 마인크래프트와 진격의 거인을 합친 게임이에요. 3인칭으로 날아다니며 캠페인 모드를 진행하는 방식이죠. Haiku는 5달러, 7,200만 토큰을 썼는데, 앞선 마인크래프트 과제에는 없던 그림자까지 구현했어요. 플레이 중 가스가 떨어져 거인과 싸우기 곤란해지는 상황도 나왔어요.</p>
+<p>Sonnet은 4.5~5달러 정도로 Haiku보다 토큰을 적게 쓰고도 그림자 품질이 더 좋았어요. Opus는 가장 매력적이었고, 셋 중 유일하게 튜토리얼 모드가 있었으며 조작감도 가장 반응이 빨랐대요. 비교용으로 넣은 구세대 모델 Fable 5.1은 벤치마크 점수는 높지만 덜 재미있었어요. 도시 안에 갈고리를 걸 곳이 없었는데, Sonnet은 이 문제를 처음부터 해결했다고 해요.</p>
+<h4>가격표를 보면 Haiku 5.5의 쓰임새가 보여요</h4>
+<p>Nick이 정리한 100만 토큰당 가격은 이래요.</p>
+<ul><li>Fable 5.1: 입력 10달러 / 출력 50달러</li><li>Opus 5.5: 입력 4달러 / 출력 20달러</li><li>Sonnet 5.5: 입력 2달러 / 출력 10달러</li><li>Haiku 4.5(이전 세대): 입력 1달러 / 출력 5달러</li><li>Haiku 5.5: 입력 10센트 / 출력 50센트</li></ul>
+<p>Fable에서 Haiku로 오면서 비용은 기하급수적으로 줄었는데, 결과물 품질 차이는 크지 않았어요. <strong>Opus 결과물이 Haiku보다 40배 낫다고 말하기는 어렵다</strong>는 게 Nick의 판단이에요.</p>
+<p>그가 특히 강조하는 건 <strong>10만 토큰 가격 절벽</strong>이에요. 10만 토큰을 넘기면 단가가 크게 뛰거든요. 대신 캐시 읽기(cache read, 한 세션에서 모델에 프롬프트를 여러 번 이어서 넣을 때 앞 내용을 재사용하는 것) 가격은 10분의 1이에요. 그래서 10만 토큰 안에서 이어지는 프롬프트는 1~5센트 수준까지 내려간다고 설명해요.</p>
+<h4>Opus가 계획하고, Haiku가 손발이 되는 구조예요</h4>
+<p>Nick이 제안하는 활용법은 이래요. Opus나 Sonnet 에이전트가 리서치를 할 때 Haiku에게 일을 넘기는 방식은 이미 많이 쓰이는데, 이제 그 비용이 이전의 10분의 1이고 캐시 읽기까지 쓰면 더 싸져요. 상위 오케스트레이터(orchestrator, 여러 하위 에이전트를 지휘하는 에이전트)에게 이렇게 지시해 두는 거예요. "서브에이전트 스레드가 약 10만 토큰에 도달하면 바로 작업을 멈추고, 결과를 요약해서 새 스레드에 넣어."</p>
+<p>이렇게 하면 Haiku 4.5를 쓸 때보다 100분의 1 비용으로 방대한 리서치를 돌릴 수 있다고 해요. <strong>계획은 Opus 5.5 같은 최첨단 모델이 세우고, 실제 작업은 Haiku가 맡는</strong> 구조죠. 보고서 요약, 티켓 분류, 데이터베이스 쿼리, 1만 개 숫자 중 하나를 찾아내는 부정행위 분석 같은 일이 여기에 해당해요.</p>
+<p>Haiku 5.5가 역대급 발견을 해낼 거라고 보지는 않는대요. 다만 <strong>지금 사용자들에게 가장 큰 제약은 비용</strong>이라서, Opus 5.5보다 훨씬 많은 데이터를 싸게 훑을 수 있다는 점이 핵심이라고 Nick은 봐요. 게임과 웹앱 데모도 그 가능성을 탐구하려고 만든 거였고요.</p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>가격 차이만큼 품질 차이가 나지 않아요</strong>: 대부분의 과제에서 Opus나 Sonnet이 앞섰지만, Haiku는 훨씬 적은 비용으로 쓸 만한 결과를 냈어요. 시계 사이트는 15분의 1~16분의 1 비용이었죠. 사이트를 대량으로 찍어 내거나 반복 작업을 돌릴 때는 비용 대비 품질로 모델을 골라야 하는 이유예요.</li><li><strong>텍스트 업무는 이미 모델 간 차이가 거의 없어요</strong>: 39만 달러 규모 사기 탐지에서 세 모델이 모두 8건 중 8건을 찾았어요. 요약·분류·데이터 검토 같은 텍스트 위주 자동화라면 가장 싼 모델부터 시험해 볼 근거가 돼요.</li><li><strong>비싼 모델이 늘 이기지는 않아요</strong>: FPS에서는 Opus가 Sonnet보다 싸면서 더 잘했고, 다큐 영상과 금융 앱에서는 Sonnet이 Opus보다 낫다는 평이었어요. 작업 유형별로 직접 한 번씩 돌려 보고 정하는 게 가장 확실해요.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li>지금 자동화에서 요약·분류·추출을 맡은 단계를 하나 골라 Haiku 5.5로 바꿔 돌려 보세요. 결과를 기존 모델과 나란히 비교하면 텍스트 작업에서 차이가 있는지 바로 확인할 수 있거든요.</li><li>Claude Code나 에이전트 워크플로우에 "계획은 Opus, 실행은 Haiku" 역할 분담을 적용해 보세요. 오케스트레이터 지시문에 "서브에이전트 스레드가 10만 토큰에 가까워지면 요약해서 새 스레드로 넘겨"를 넣어 두면 가격 절벽을 피할 수 있어요.</li><li>랜딩 페이지나 소개 페이지 하나를 같은 프롬프트로 Haiku와 Sonnet에 각각 맡겨 보세요. 비용과 결과물을 직접 비교해 두면 다음 작업부터 어느 모델을 쓸지 감으로 정하지 않아도 돼요.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>세 가지만 답하면 4단계 중 지금 위치를 바로 알려드려요. 무료예요.</p><span class="go">내 단계 진단하기 →</span></a>
+    <a class="cross" href="../../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../../../library/" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>

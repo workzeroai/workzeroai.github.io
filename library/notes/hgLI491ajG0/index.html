@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>AI 도구 100개 넘게 써 보고 남긴 7개 · 워크제로 자료실</title>
+<meta name="description" content="AI 도구를 100개 넘게 써 본 Nate Herk가 매일 사업에 실제로 쓰는 7가지를 골랐어요. Claude Code·Codex, OpenRouter, Hostinger VPS, Grockbot, Glido, Kie.ai, trigger.dev를 어디에 어떻게 쓰는지">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/hgLI491ajG0/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#2462e0">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="AI 도구 100개 넘게 써 보고 남긴 7개">
+<meta property="og:description" content="AI 도구를 100개 넘게 써 본 Nate Herk가 매일 사업에 실제로 쓰는 7가지를 골랐어요. Claude Code·Codex, OpenRouter, Hostinger VPS, Grockbot, Glido, Kie.ai, trigger.dev를 어디에 어떻게 쓰는지">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/hgLI491ajG0/">
+<meta property="og:image" content="https://img.youtube.com/vi/hgLI491ajG0/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI 도구 100개 넘게 써 보고 남긴 7개">
+<meta name="twitter:description" content="AI 도구를 100개 넘게 써 본 Nate Herk가 매일 사업에 실제로 쓰는 7가지를 골랐어요. Claude Code·Codex, OpenRouter, Hostinger VPS, Grockbot, Glido, Kie.ai, trigger.dev를 어디에 어떻게 쓰는지">
+<meta name="twitter:image" content="https://img.youtube.com/vi/hgLI491ajG0/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+.tgl{margin:18px 0;border:1px solid var(--hair);border-radius:14px;background:var(--soft)}.tgl>summary{cursor:pointer;padding:14px 18px;font-weight:700;color:var(--ink);list-style:none}.tgl>summary::before{content:"▸ ";color:var(--primary)}.tgl[open]>summary::before{content:"▾ "}.tgl-in{padding:0 14px 14px}
+:root{--primary:#2462e0;--primary-deep:#1a4fb8;--primary-pale:#e5effd;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f4f8fe;--hair:#dfe7f2;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+/* WZ-COBALT-C */:root{--grad-btn:linear-gradient(135deg,#2b74f0 0%,#2462e0 50%,#1d55d6 100%);--gloss:radial-gradient(120% 90% at 30% 0%,rgba(255,255,255,.28) 0,rgba(255,255,255,0) 55%);--glow:0 12px 28px -10px rgba(36,98,224,.75),0 2px 6px -1px rgba(29,85,214,.35)}.btn.pri,.fbtn,.rcta .p1,.price.best .pick,.price .pop{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:var(--glow),inset 0 1px 0 rgba(255,255,255,.35)}.fchip.on{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:0 8px 18px -8px rgba(36,98,224,.8),inset 0 1px 0 rgba(255,255,255,.35)}.btn.pri:hover,.fbtn:hover,.rcta .p1:hover{filter:brightness(1.08) saturate(1.1)}.lv-head,.svr.win{background:var(--gloss),var(--grad-btn)}.eyebrow{background:linear-gradient(135deg,#e5effd,#d3e6ff);color:#1a4fb8}.logo b{color:#2b74f0}.fmeta i,.nm i{background:linear-gradient(135deg,#e5effd,#d6e7ff);color:#1a4fb8}.paneNote{background:linear-gradient(135deg,#eaf3ff 0%,#f7fbff 60%,#fff 100%);border-color:#d3e3fb}.keys{background:linear-gradient(135deg,#e5effd,#f2f8ff)}.nkeys span::before,.keys li::before{background:linear-gradient(135deg,#3b8cff,#1d55d6)}
+</style>
+<script src="/assets/wz.js" defer></script>
+<script src="/assets/course.js" defer></script>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴"><a href="../../../tutoring/">1:1 과외</a><a href="../../../build/">제작 문의</a><a class="on" href="../../../library/" aria-current="page">자료실</a></div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../../../library/">← 자료실</a>
+  <div class="head"><div class="m"><i>에이전트</i><span>2026-10-19</span></div><h1>AI 도구 100개 넘게 써 보고 남긴 7개</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/hgLI491ajG0.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Nate Herk | AI Automation</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<span class="orig">원제 · I Tried 100+ AI Tools. These 7 Are the Best</span><br><a href="https://www.youtube.com/watch?v=hgLI491ajG0" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>에이전트 하나가 여러 구독을 대신해요</li><li>도구보다 갈아탈 수 있는 구조가 중요해요</li><li>모든 자동화에 AI가 필요하진 않아요</li></ul></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>AI 도구를 100개 넘게 써 본 Nate Herk가 매일 사업에 실제로 쓰는 7가지를 골랐어요. Claude Code·Codex, OpenRouter, Hostinger VPS, Grockbot, Glido, Kie.ai, trigger.dev를 어디에 어떻게 쓰는지까지 알려 줍니다.</p>
+<h3>전체 내용 정리</h3>
+<h4>100개 넘게 써 보고 남긴 7개, 1위는 Claude Code와 Codex예요</h4>
+<p>Nate는 사업용으로 AI 도구를 100개 넘게 테스트해 보고 한 가지를 알아챘다고 해요. 대부분은 소음이거나, 꽤 기본적인 문제에 화려한 해법을 씌운 것이었다는 거죠. 새 도구가 계속 쏟아지는데도 매일 사업을 돌리는 방식을 실제로 바꾼 건 7개뿐이었다고 합니다.</p>
+<p>몇 개는 단순하거나 지루하게 들릴 수 있다고 Nate도 인정해요. 그런데 처음 쓰기 시작할 때 예상한 것보다 사업에 훨씬 큰 영향을 줬다고 말합니다. 영상은 이 7개가 무엇인지, Nate가 어떻게 쓰는지, 왜 써 보라고 하는지를 차례로 짚어요.</p>
+<p>첫 번째는 사실 두 개예요. Claude Code와 Codex는 내 컴퓨터에서 바로 돌아가는 AI 에이전트라서 로컬 파일을 읽고 코드를 쓰고 뭔가를 만들어 줘요. 말로 시키기만 하면 됩니다. Nate는 이 목록에서 딱 하나만 써야 한다면 둘 중 하나를 고르겠다고 할 만큼 <strong>사업에서 가장 큰 지렛대</strong>로 꼽아요.</p>
+<p>슬라이드 덱, 스프레드시트, Google Docs를 만들고 브레인스토밍 상대나 조언자 역할도 맡겨요. Nate의 세컨드 브레인(second brain, 지식을 모아 두는 개인 저장소)도 여기 있어요. 모든 프로젝트, 스킬, 지식, 회의 녹취록이 다 들어가 있고, 매일 하는 업무의 약 90%를 이걸로 돌린다고 해요.</p>
+<p>덕분에 돈을 내던 다른 도구도 많이 정리했어요. 예전엔 슬라이드용으로 Gamma, 콘텐츠용으로 Poppy를 결제했는데, 지금은 작은 맞춤 앱을 직접 만들어 써요. 자기만의 Loom도 만들었다고 해요. 원하는 도구를 설명만 하면 만들어지니 다른 회사 도구를 빌려 쓸 필요가 줄어든다는 거죠.</p>
+<p>다만 Nate는 수십만 명이 쓰는 소프트웨어를 만드는 게 쉽다는 얘기는 아니라고 선을 그어요. 혼자 쓰거나 작은 팀이 쓰는 정도라면 위험이 크지 않다는 거예요. 시작점으로는 매달 돈을 내면서 기능 하나만 쓰는 도구를 직접 만들어 보거나, Claude Code에 SOP(표준 업무 절차서)와 고객 문서를 연결해 팀원이 나 대신 거기에 질문하게 하는 방법을 권해요.</p>
+<p>둘 중 뭘 쓰냐는 질문에는 둘 다라고 답해요. 둘 다 결제하고 매주 둘 다 쓴다고 합니다. 어느 때는 한쪽 모델이 앞서고 어느 때는 한쪽 사용량이 더 오래 버텨서 자주 오간다고 해요. 대체로 Codex는 컴퓨터 사용(computer use)과 브라우저 사용에 강하고 Claude Code는 브레인스토밍할 때 더 좋은 생각 파트너라고 Nate는 봐요. 지금은 사용량도 더 오래 간다고 하는데, 두 달 뒤엔 달라질 수 있다고 덧붙여요.</p>
+<p><strong>그래서 어느 쪽이 최고냐가 아니라, 지금 하는 작업에 어느 쪽이 맞느냐의 문제라고 해요.</strong> Nate가 신경 쓰는 건 파일·폴더·프로젝트로 이뤄진 자기 AIOS(AI 운영체제)를 두 도구 사이에서 번거로움 없이 오갈 수 있게 짜 두는 쪽이에요.</p>
+<h4>OpenRouter 계정 하나로 500개 넘는 모델을 써요</h4>
+<p>두 번째는 OpenRouter예요. 계정 하나로 80곳 넘는 제공사의 AI 모델 500개 이상에 접근할 수 있어요. OpenAI, Anthropic, Google 같은 곳마다 키, 결제 정보, 비밀번호를 따로 관리할 필요가 없어지죠.</p>
+<p>Nate의 회사가 지금 실제로 돌리는 자동화는 자기 사업용이든 고객사에 넣어 준 것이든 거의 다 OpenRouter를 모델 공급원으로 써요. 이유는 폴백(fallback, 대체 경로) 설정이에요. 한 모델이 다운되거나 오류를 내면 다음 모델로 넘어가서 자동화 전체가 멈추지 않아요. 자동화마다 API 키를 따로 만들 수 있어서 어느 자동화에 돈이 얼마나 드는지도 분석 화면에서 바로 보여요.</p>
+<p>예를 들면 싸고 빠른 모델이 들어오는 리드를 분류하고 더 똑똑한 모델이 실제 답장을 쓰거나 추론을 맡게 할 수 있어요. 이 모든 게 한 대시보드, 한 제공사, 카드 한 장으로 돌아가요. 모델을 바꾸는 것도 사실상 한 줄만 고치면 된다고 합니다. <strong>아주 단순한 도구라서 좋아한다</strong>는 게 Nate의 설명이에요.</p>
+<h4>Hostinger VPS는 24시간 켜져 있는 클라우드 컴퓨터예요</h4>
+<p>세 번째는 Hostinger VPS예요. 이 구간은 Hostinger 협찬이라고 밝히는데, Nate는 협찬이 아니어도 목록에 넣었을 거라고 해요. 실제로 오래 써 왔다는 거죠. VPS(가상 사설 서버)는 노트북이나 데스크톱을 꺼도 계속 켜져서 내 작업을 돌려 주는 클라우드 속 컴퓨터예요.</p>
+<p>목록에서 가장 지루하게 들리지만 Nate의 작업이 많이 사는 곳이라고 해요. n8n을 돌리는 서버가 있고, Hermes 에이전트와 OpenClaw 에이전트, 나중에 직접 호스팅하고 싶은 다른 오픈소스 에이전트나 오픈소스 모델도 올려요. Hermes 에이전트 중엔 주식을 거래하는 것도, Instagram 릴스와 캐러셀을 24시간 만드는 것도 있어요. 다른 Claude Code 설정을 시험하는 용도로도 써요.</p>
+<p>Hostinger를 고른 이유는 버튼 한 번으로 서버를 빠르게 띄울 수 있어서예요. Nate는 기술이나 DevOps(개발·운영) 배경이 없어서 스케일링, 컴퓨팅 자원, 명령어 같은 걸 신경 쓰고 싶지 않았다고 해요. n8n, Hermes, OpenClaw처럼 뜨는 도구를 원클릭 템플릿으로 올릴 수 있고, 자는 동안 뭔가 꺼져서 원인도 모르는 상황을 걱정하지 않아도 된다고 말해요.</p>
+<h4>Grockbot은 주머니 속에서 도는 작은 봇들이에요</h4>
+<p>네 번째는 Grockbot이에요. Nate가 정말 많이 쓴다고 해요. 일을 대신 해 주는 봇을 만들 수 있고, 봇들이 브라우저·파일 시스템·터미널이 달린 클라우드 컴퓨터를 함께 써요. 그래서 실제 컴퓨터에서 내가 할 수 있는 일은 거의 다 할 수 있죠.</p>
+<p>Nate가 좋아하는 건 자동화를 세팅하는 속도예요. 이미 쓰는 앱들과 연결되는 커넥터가 들어 있고, 휴대폰 앱과도 거의 자동으로 동기화돼요. 일정이나 웹훅(webhook, 특정 이벤트가 생기면 신호를 보내는 장치)으로 돌아가는 루틴을 쉽게 만들어 두면, 주머니 속에서 계속 백그라운드로 돌아가요.</p>
+<p>예시도 들어요. Plus 커뮤니티에서 Q&amp;A 통화가 끝날 때마다 Grockbot이 녹취록을 가져와 커뮤니티에 올리고 회원들이 나중에 찾을 수 있게 클래스룸에도 넣어요. 유튜브 영상이 올라갈 때마다 두 커뮤니티에 글을 올리는 봇도 있고, AI 소식을 계속 알려 주는 봇도 있어요. 깜빡하면 나중에 따라잡아야 하는 반복 작업을 맡겨서, 완벽하게 꾸준하지 않아도 되고 실수할 여지도 줄었다고 해요.</p>
+<p>Nate는 각각 아주 구체적인 일을 맡은 Grockbot 캐릭터를 여러 개 만들어 뒀어요. 그의 표현으로는 <strong>주머니 속에 OpenClaw를 여러 개 넣고 다니는 것과 비슷한데 기술 세팅은 훨씬 적은 것</strong>이에요. OpenClaw는 서버, 연결, 호스팅을 직접 알아내야 하지만, Grockbot은 원하는 걸 설명하면 되고 노트북이나 휴대폰에 설치하는 앱일 뿐이라고 해요.</p>
+<h4>Glido는 말로 받아쓰고, 말로 일을 시키는 앱이에요</h4>
+<p>다섯 번째는 Glido예요. Nate는 자신이 Glido의 파트너라고 먼저 밝히고, 그만큼 실제로 쓰고 비전을 믿는다는 뜻이라고 말해요. 키를 누른 채 말하면 지금 쓰는 앱에 글자가 입력되는 음성 받아쓰기 앱이에요. Nate는 프롬프트, 메시지, 이메일을 이제 거의 타이핑하지 않고 마이크에 대고 말한다고 해요. 설정을 세세하게 바꿀 수 있고, 시장에서 가장 빠르며 완전히 비공개라고 소개합니다.</p>
+<p>목록에 넣은 진짜 이유는 커맨드 모드예요. 받아쓰기만이 아니라 행동도 해 줘요. 웹 검색, 유튜브 영상 요약, 딥 리서치, 파일과 앱 찾아 열기를 시킬 수 있고, 지금까지 Glido에 말한 내용을 다시 찾아볼 수도 있어요. 이 기록은 모두 로컬에 저장돼요.</p>
+<p>커맨드 모드에는 맞춤 도구도 붙일 수 있어요. 그 위에 MCP 서버를, 그러니까 사실상 플러그인을 만들어 붙여서 Claude Code나 Codex에 작업 스레드를 띄우거나 Notion, 할 일 앱과 동기화할 수 있다고 해요. Nate가 말하는 Glido의 비전은 <strong>목소리만으로 컴퓨터 전체를 다루고, 책상을 떠나 있어도 앉아 있을 때만큼 일하는 것</strong>이에요. 커맨드 모드 없이 받아쓰기만 써도 이메일이나 SOP를 쓸 때 시간이 많이 아껴진다고 해요. 말하는 게 타이핑보다 빠르니까요.</p>
+<h4>Kie.ai는 이미지·영상판 OpenRouter, trigger.dev는 서버 없는 코드 실행이에요</h4>
+<p>여섯 번째 Kie.ai는 Nate의 표현으로 이미지와 영상용 OpenRouter예요. Veo, Kling, Seedance, Nano Banana, GPT Image 2 같은 이미지·영상 모델을 한곳에서 쓴 만큼만 내고 써요. 캐러셀, 썸네일, Instagram 릴스용 이미지를 만들 때 늘 Kie.ai를 쓰는데, 생성한 만큼만 돈을 내서 한 번에 많이 만들 때 찾아본 것 중 가장 싸다고 해요. 시청자에게는 제품 사진, 광고 소재, SNS용 짧은 영상에 쓸 수 있다고 하고, 월 구독료 없이 쓴 만큼만 낸다는 점을 강조해요.</p>
+<p>마지막 일곱 번째는 trigger.dev예요. TypeScript 코드를 올려 두면 일정에 따라, 또는 웹훅 같은 이벤트가 생길 때 실행해 줘요. VPS와 달리 관리할 서버가 없고 코드만 실행돼요. Nate의 회사는 문서 처리나 두 도구 사이의 데이터 동기화처럼 매번 같은 단계를 밟는 결정론적(deterministic, 결과가 예측 가능한) 자동화에 늘 이걸 써요.</p>
+<p>이런 일에 Claude Code 같은 에이전트 루프 전체를 돌리는 건 낭비이고 과하다는 게 Nate의 생각이에요. 그래서 Claude Code로 스크립트를 만들고 그 스크립트를 trigger.dev에 넣어 자동으로 돌려요. trigger.dev를 열어 볼 필요도 없다고 해요. Claude Code에 "이 용도로 TypeScript trigger.dev 자동화를 만들어 줘"라고 하면 만들고 배포하고 테스트하고 업데이트까지 해 준다는 거죠.</p>
+<p>코드만 돌리니 비용도 아주 낮아요. 실행되는 순간만큼만 내면 되고, 무료 플랜에 매달 5달러 크레딧이 들어 있어서 꽤 오래 쓸 수 있다고 해요. 내 사업이나 고객사에 코드 기반 결정론적 자동화를 여럿 깔아야 한다면 trigger.dev를 꼭 권한다고 말합니다.</p>
+<p>마지막으로 Nate는 이게 자기 목록이라는 점을 분명히 해요. 시간이 지나며 바뀌긴 하지만, 1년 반에서 2년 가까이 꾸준히 돌아오는 7개라고 합니다. 하는 사업이 다르면 이 목록이 딱 맞지 않을 수 있고, 그래도 괜찮다고 해요. 처음엔 배우는 게 부담스러울 수 있어서 채널과 커뮤니티에서 최대한 많이 다루려 한다고 덧붙이며 마무리해요.</p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>에이전트 하나가 여러 구독을 대신해요</strong>: Nate는 Claude Code·Codex로 Gamma, Poppy 같은 유료 도구를 직접 만든 앱으로 바꿨어요. 혼자나 작은 팀이 쓰는 수준이면 위험이 크지 않다고 보고, 기능 하나만 쓰는 구독부터 바꿔 보라고 해요.</li><li><strong>도구보다 갈아탈 수 있는 구조가 중요해요</strong>: Claude Code와 Codex 중 앞서는 쪽은 몇 달마다 바뀌어요. 그래서 Nate는 파일·폴더·프로젝트를 두 도구가 함께 쓸 수 있게 짜 두고, OpenRouter로 모델 교체를 한 줄 수정으로 끝내요.</li><li><strong>모든 자동화에 AI가 필요하진 않아요</strong>: 매번 같은 단계를 밟는 일은 에이전트 대신 스크립트로 만들어 trigger.dev에 올리는 게 싸고, 에이전트를 쓰는 건 과하다는 게 Nate의 판단이에요. 판단이 필요한 일과 반복만 하는 일을 나누는 데서 비용 차이가 생겨요.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li>지난달 카드 명세서에서 매달 내면서 기능 하나만 쓰는 도구를 하나 찾아보세요. 그 기능만 Claude Code나 Codex에 설명해 작은 앱으로 만들어 보면, 구독을 끊어도 되는지 감이 옵니다.</li><li>돌리고 있는 자동화가 있다면 OpenRouter에서 자동화별로 API 키를 따로 만들고 폴백 모델을 하나 지정해 보세요. 어느 자동화에 돈이 얼마나 드는지 바로 보이고, 모델 하나가 멈춰도 전체가 서지 않아요.</li><li>매번 같은 단계로 끝나는 작업(문서 처리, 두 도구 간 데이터 동기화)을 하나 골라 Claude Code에 "이 용도로 TypeScript trigger.dev 자동화를 만들어 줘"라고 요청해 보세요. 무료 플랜의 월 5달러 크레딧으로 먼저 시험해 볼 수 있어요.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>세 가지만 답하면 4단계 중 지금 위치를 바로 알려드려요. 무료예요.</p><span class="go">내 단계 진단하기 →</span></a>
+    <a class="cross" href="../../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../../../library/" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>

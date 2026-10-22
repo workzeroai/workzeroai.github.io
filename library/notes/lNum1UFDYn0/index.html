@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>AI 하니스, 24분 만에 이해하기 (비전공자용) · 워크제로 자료실</title>
+<meta name="description" content="Claude Code와 Codex는 AI 모델이 아니라 모델을 감싼 &#x27;하니스(harness)&#x27;예요. Nick Saraev가 하니스를 이루는 맥락·메모리·도구·검증·권한 다섯 가지와 그 위에서 도는 에이전트 루프, 그리고 앞으로 하니스가 어디로 갈지를 비전공자 눈높이로 ">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/lNum1UFDYn0/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#2462e0">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="AI 하니스, 24분 만에 이해하기 (비전공자용)">
+<meta property="og:description" content="Claude Code와 Codex는 AI 모델이 아니라 모델을 감싼 &#x27;하니스(harness)&#x27;예요. Nick Saraev가 하니스를 이루는 맥락·메모리·도구·검증·권한 다섯 가지와 그 위에서 도는 에이전트 루프, 그리고 앞으로 하니스가 어디로 갈지를 비전공자 눈높이로 ">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/lNum1UFDYn0/">
+<meta property="og:image" content="https://img.youtube.com/vi/lNum1UFDYn0/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI 하니스, 24분 만에 이해하기 (비전공자용)">
+<meta name="twitter:description" content="Claude Code와 Codex는 AI 모델이 아니라 모델을 감싼 &#x27;하니스(harness)&#x27;예요. Nick Saraev가 하니스를 이루는 맥락·메모리·도구·검증·권한 다섯 가지와 그 위에서 도는 에이전트 루프, 그리고 앞으로 하니스가 어디로 갈지를 비전공자 눈높이로 ">
+<meta name="twitter:image" content="https://img.youtube.com/vi/lNum1UFDYn0/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+.tgl{margin:18px 0;border:1px solid var(--hair);border-radius:14px;background:var(--soft)}.tgl>summary{cursor:pointer;padding:14px 18px;font-weight:700;color:var(--ink);list-style:none}.tgl>summary::before{content:"▸ ";color:var(--primary)}.tgl[open]>summary::before{content:"▾ "}.tgl-in{padding:0 14px 14px}
+:root{--primary:#2462e0;--primary-deep:#1a4fb8;--primary-pale:#e5effd;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f4f8fe;--hair:#dfe7f2;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+/* WZ-COBALT-C */:root{--grad-btn:linear-gradient(135deg,#2b74f0 0%,#2462e0 50%,#1d55d6 100%);--gloss:radial-gradient(120% 90% at 30% 0%,rgba(255,255,255,.28) 0,rgba(255,255,255,0) 55%);--glow:0 12px 28px -10px rgba(36,98,224,.75),0 2px 6px -1px rgba(29,85,214,.35)}.btn.pri,.fbtn,.rcta .p1,.price.best .pick,.price .pop{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:var(--glow),inset 0 1px 0 rgba(255,255,255,.35)}.fchip.on{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:0 8px 18px -8px rgba(36,98,224,.8),inset 0 1px 0 rgba(255,255,255,.35)}.btn.pri:hover,.fbtn:hover,.rcta .p1:hover{filter:brightness(1.08) saturate(1.1)}.lv-head,.svr.win{background:var(--gloss),var(--grad-btn)}.eyebrow{background:linear-gradient(135deg,#e5effd,#d3e6ff);color:#1a4fb8}.logo b{color:#2b74f0}.fmeta i,.nm i{background:linear-gradient(135deg,#e5effd,#d6e7ff);color:#1a4fb8}.paneNote{background:linear-gradient(135deg,#eaf3ff 0%,#f7fbff 60%,#fff 100%);border-color:#d3e3fb}.keys{background:linear-gradient(135deg,#e5effd,#f2f8ff)}.nkeys span::before,.keys li::before{background:linear-gradient(135deg,#3b8cff,#1d55d6)}
+</style>
+<script src="/assets/wz.js" defer></script>
+<script src="/assets/course.js" defer></script>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴"><a href="../../../tutoring/">1:1 과외</a><a href="../../../build/">제작 문의</a><a class="on" href="../../../library/" aria-current="page">자료실</a></div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../../../library/">← 자료실</a>
+  <div class="head"><div class="m"><i>에이전트</i><span>2026-10-07</span></div><h1>AI 하니스, 24분 만에 이해하기 (비전공자용)</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/lNum1UFDYn0.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Nick Saraev</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<span class="orig">원제 · AI Harnesses In 24 Minutes (For Normal People)</span><br><a href="https://www.youtube.com/watch?v=lNum1UFDYn0" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>&quot;어떤 모델을 쓰나&quot;보다 &quot;어떤 하니스에 넣었나&quot;가 결과를 가를 수 있어요</li><li>맥락 파일은 한 번 쓰고 계속 돌려받는 투자예요</li><li>AI의 &quot;좋아 보이네요&quot;를 믿지 말고 확인 장치를 붙이세요</li></ul></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>Claude Code와 Codex는 AI 모델이 아니라 모델을 감싼 '하니스(harness)'예요. Nick Saraev가 하니스를 이루는 맥락·메모리·도구·검증·권한 다섯 가지와 그 위에서 도는 에이전트 루프, 그리고 앞으로 하니스가 어디로 갈지를 비전공자 눈높이로 풀어 줘요.</p>
+<h3>전체 내용 정리</h3>
+<h4>일을 하는 건 모델이 아니라 하니스예요</h4>
+<p>AI는 이제 거의 모든 주요 조직에 들어가 있어요. 수학 문제를 풀고 기업에 수억 달러의 수익을 만들어 주기도 하죠. 그런데 Nick은 여기에 미묘한 차이가 하나 있다고 짚어요. <strong>그 일을 직접 하는 건 AI 모델 자체가 아니라는 거예요.</strong> 모델은 '병 속에 담긴 뇌' 같아서 혼자서는 말하거나 행동할 수 없거든요. 실제 작업은 모델을 감싼 무언가가 하는데, 그걸 <strong>AI 하니스(harness)</strong>라고 불러요.</p>
+<p>익숙한 예로 Claude Code와 Codex가 있어요. 많은 사람이 이 둘을 AI 모델로 알지만 사실은 하니스예요. Claude Code는 Anthropic이 Mythos, Fable, Opus, Sonnet, Haiku 같은 Claude 모델 제품군을 위해 만든 하니스이고 Codex는 GPT-6, GPT-5 같은 모델을 위한 OpenAI의 하니스죠. Nick은 이 두 가지로 설명하지만 내용은 시중의 거의 모든 하니스와 기초 모델에 그대로 적용된다고 해요.</p>
+<p>흥미로운 건 <strong>같은 모델이라도 어떤 하니스에 넣느냐에 따라 성능이 확연히 달라진다</strong>는 점이에요. Claude를 OpenAI의 Codex 하니스에 넣으면 꽤 다르게 움직일 거래요. 하니스만 살짝 바꿔도 성능이 크게 오른다는 연구 결과가 이미 많고, 모델과 하니스 사이에 궁합 같은 선호도도 있다고 해요. 믿기 어렵겠지만 <strong>채팅 창 자체도 하나의 하니스</strong>예요. 대부분의 AI 도구가 단순한 채팅 창에서 출발했죠.</p>
+<p>그래서 새 벤치마크에서 Claude가 예전에 못 하던 걸 해내도, 그게 꼭 기반 지능이 똑똑해진 결과는 아니에요. 지능은 그대로인데 주변 장치가 좋아졌을 수도 있거든요. Nick은 이걸 스타크래프트의 해병이 업그레이드로 무장해 더 짧은 시간에 더 많은 일을 하게 되는 모습에 빗대요.</p>
+<h4>모델은 원래 '다음 단어 맞히기' 기계였어요</h4>
+<p>지금 말하는 AI 모델, 곧 거대 언어 모델(LLM)은 처음에 <strong>텍스트 예측기</strong>로 훈련됐어요. 짧은 텍스트를 넣으면 조금 더 긴 텍스트를 돌려주는 식이죠. "하늘은"을 넣으면 "하늘은 파랗다"처럼 단어나 토큰 하나를 덧붙여 주는 게 전부였어요. 통계적으로 '하늘' 다음에 '파란'은 수십억 번, '프테로닥틸'은 14번쯤 나왔으니 '파란'을 고르는 거예요. Nick은 지금도 LLM이 내부에서 하는 일은 이게 전부라고 말해요.</p>
+<p>이 상태의 모델에는 한계가 네 가지 있었어요. <strong>기억력이 없어서</strong> 새 채팅을 열 때마다 백지에서 시작했고, 컴퓨터의 파일이나 화면을 <strong>볼 수도 없었어요.</strong> 행동할 능력도 없어서 "여기서 시작해서 이걸 하고 그다음엔 저걸 하세요"라고 알려 주는 데서 그쳤죠. 마지막으로 <strong>결과를 확인할 수 없어서</strong> 자기 코드가 돌아가는지도 몰랐어요. 지금은 이 문제를 모두 해결했는데, 그 해결의 주인공이 하니스예요.</p>
+<h4>하니스는 말에 채우는 안장과 고삐예요</h4>
+<p>'하니스'라는 말 자체가 마구(馬具)에서 왔어요. 모델만 단독으로 쓰는 건 말 한 마리를 맨손으로 다루는 것과 비슷하거든요. 힘은 엄청난데 제어할 방법이 없어요. 어떨 땐 아주 똑똑한 텍스트를 내놓고 어떨 땐 엉뚱한 결과를 내죠. 이런 기복에 현실에서 아무것도 못 하는 한계까지 더해지면 결국 제어가 안 되는 거죠.</p>
+<p>하니스는 그 말에 채우는 <strong>안장이자 고삐</strong>예요. 강력한 지능을 사람에게 쓸모 있는 방향으로 끌고 가려고 주변에 쌓는 인프라죠. Nick이 꼽는 구성 요소는 가운데의 모델을 둘러싼 다섯 가지예요.</p>
+<ul><li><strong>맥락(context)</strong>: 무엇을, 왜 하는지 알려 줘요</li><li><strong>메모리(memory)</strong>: 모델과 나눈 과거 대화를 담아요</li><li><strong>도구(tools)</strong>: 모델이 현실에서 행동하게 해 줘요</li><li><strong>검증(verification)</strong>: 자기가 제대로 했는지 스스로 판단하게 해요</li><li><strong>권한(permissions)</strong>: 원치 않는 행동을 막는 정지 조건이에요</li></ul>
+<p>Nick은 <strong>이제 좋은 하니스가 좋은 모델만큼 중요하다</strong>고 말해요. 아주 훌륭한 하니스를 형편없는 모델에 씌워도 꽤 괜찮은 결과가 나온다고요.</p>
+<h4>맥락은 한 번만 잘 만들어 두면 돼요</h4>
+<p>새 세션이 시작되면 모델은 거의 빈 상태로 떠요. "안녕"이라고 하면 "안녕"이라고 답하겠지만 "닉, 오늘 업무는 좀 어때요?"라고 묻지는 않죠. 상대가 누군지 모르니까요. 비즈니스 관점에서 맥락이란 지금 어떤 프로젝트를 하고 있는지, 파일 구조가 어떤지, 최근에 뭘 바꿨는지, 어떤 도구를 쓸 수 있는지 같은 정보예요.</p>
+<p>하니스는 이 정보를 대화 시작 단계에서 모델에게 미리 넣어 둬요. 사용자 화면에는 안 보이게 숨겨서 복잡함을 덜어 주고요. Claude Code나 Codex에서는 보통 <code>CLAUDE.md</code>나 <code>AGENTS.md</code> 같은 파일을 써요. "우리 코드 스타일을 써 줘", "이 폴더는 수정하지 마", "항상 이 테스트를 돌려" 같은 내용을 적어 두는 식이죠.</p>
+<p>맥락의 장점은 <strong>한 번만 만들어 두면 된다</strong>는 거예요. 매번 같은 프롬프트를 다시 칠 시간이 사라지죠. Nick은 맥락 문제를 풀면 앞으로 생길 프롬프트 문제를 사실상 다 푸는 셈이라고 봐요. 많은 하니스가 맥락을 최대한 구조적이고 효율적으로 짜려고 애쓰는 이유도 여기 있대요.</p>
+<h4>메모리는 긴 대화를 압축해 이어 가게 해 줘요</h4>
+<p>대화가 길어지면 컨텍스트 윈도우(context window, 모델이 한 번에 볼 수 있는 분량)가 점점 차요. 이건 하니스가 아니라 모델의 설계·학습 방식에서 오는 한계예요. 윈도우가 가득 차면 모델의 지능이 조금 떨어지는 경향이 있고, 수백만 토큰(책 20~50권 분량)을 다루다 보니 서로 부딪치는 지시가 섞여 모델이 꽤 헷갈려 하곤 해요.</p>
+<p>그래서 메모리는 목표, 계획, 바꾼 파일, 현재 단계, 오류, 메모, 실패한 시도를 모아 <strong>훨씬 압축된 고밀도 데이터</strong>로 바꿔요. 특히 하니스가 잘하는 기능이 <strong>압축(compaction)</strong>이에요. 예전 단계는 짧은 요약 하나로 바꾸고 실패한 시도는 지우고 현재 진행 상황만 자세히 남겨요. 그렇게 윈도우를 비워서 원래 윈도우보다 훨씬 오래 대화를 이어 가게 해 주죠. Claude Code는 윈도우가 거의 차면 이걸 자동으로 해요.</p>
+<p>같은 파일을 여러 번 고칠 때 요즘 하니스는 파일 전체를 기억하는 대신 <strong>변경 로그</strong>만 남겨요. 모델은 이 로그를 거슬러 올라가 처음 파일을 재구성할 수 있죠. 개발 경험이 있다면 Git 같은 버전 관리와 아주 비슷하다고 느낄 거예요. 결국 메모리는 세션 시작 시점의 맥락뿐 아니라 토큰 한도와 상관없이 이어지는 맥락을 모델에게 주는 장치예요.</p>
+<h4>도구는 모델의 '운동 피질'이에요</h4>
+<p>모델은 기본적으로 텍스트만 출력할 수 있어요. 그래서 하니스는 모델 주위에 <strong>특정 형태의 텍스트를 알아보는 시스템</strong>을 깔아 둬요. 모델이 그런 텍스트를 내면 "이건 모델이 이런 작업을 하고 싶다는 뜻이야"라고 결정론적으로 해석해서 실제 소프트웨어에 연결하죠. 이게 도구 계층(tool layer)이에요.</p>
+<p>도구 호출(tool calling)은 이렇게 흘러가요. 모델이 출력을 내면 하니스가 그걸 요청으로 알아보고, 가능한 도구 목록에서 맞는 걸 찾아요. 예를 들어 파일 검색이라면 결과를 가져와 하니스로 돌려보내고 하니스가 다시 모델에 넘겨요. 모델이 환경을 탐색하는 동안 이런 일이 <strong>보통 1분에 수십 번씩</strong> 일어나요.</p>
+<p>Nick은 이걸 뇌와 운동 피질의 관계에 빗대요. 뇌가 운동 피질에 연결돼 있지 않으면 컵을 잡고 싶다, 길에서 하이파이브를 하고 싶다는 생각은 해도 실제로 할 수는 없죠. <strong>도구가 모델의 운동 피질</strong>이라는 거예요. 도구 쪽 혁신도 많았어요. 예전엔 토큰을 잔뜩 써야 겨우 결과가 나왔는데, 지금은 도구 출력을 다듬고 소프트웨어를 AI 친화적으로 다시 짜서 거대한 입출력을 막고 모델이 도구를 똑똑하게 고르게 하면서 아주 효율적이 됐대요.</p>
+<p>이걸 가능하게 하는 게 스키마(schema)이고, 요즘 가장 흔한 게 <strong>MCP(Model Context Protocol)</strong>예요. 모델이 맞춤 도구로 외부의 여러 앱에 연결하게 해 주죠. Nick은 하니스에 의미 있는 기여를 하고 싶다면 지금 바로 할 수 있다고 말해요. 쓰는 AI 에이전트에게 "모델이 X, Y, Z를 할 수 있게 하는 MCP 서버를 만들고 싶어"라고 하면 개발을 도와줄 거래요. 그렇게 만든 MCP는 어떤 모델에든 붙일 수 있어요. Claude Code나 Codex가 그걸 공식으로 통합할지는 별개 문제지만요.</p>
+<h4>검증이 없으면 모델은 늘 "좋아 보이네요"라고 해요</h4>
+<p>검증이라는 말이 어려워 보여도 사실은 일을 마치고 스스로 확인하는 과정이에요. 검증 계층 없이 결과를 보여 주면 모델은 종종 "네, 아주 좋아 보이네요"라고 답해요. 검증을 표준화할 자기만의 방법이 없거든요. 코드를 보고 단어 배치가 그럴듯하고 만들려던 모양을 대충 갖췄다고 판단할 뿐, <strong>실제로 돌아가는지는 몰라요.</strong></p>
+<p>ChatGPT로 LLM이 크게 퍼진 2022년 무렵, 학생들이 "17 곱하기 3이 뭐야?"라고 물으면 모델이 "48이에요"라고 답하곤 했어요. "51 아닌가요?"라고 해도 "아니요, 48이에요"라고 버텼죠. 모델 안에 계산기가 없기 때문이에요. 해결책은 <strong>계산기를 만들어 모델에게 쥐여 주는 것</strong>이었어요. 그러면 모델은 직접 계산하느라 애쓰지 않고 계산기 결과를 확인해 넘겨줘요. 사람들이 이런 방식을 쓰기 시작하면서 AI가 수학을 하게 됐대요.</p>
+<p>Nick은 이게 사람이 수학하는 방식과 같다고 봐요. 우리 뇌도 수학에 최적화돼 진화하지 않았으니 자주 헤매고 실수하잖아요. 그래서 계산기, 코드의 테스트, 린터(linter), 마크다운 포매터처럼 출력이 맞는지 판단해 주는 도구에 일을 맡기죠. 모델도 같아요. 코드를 만들면 검증 도구에 통과시키고 성공 코드 0이 나오면 "좋아, 괜찮네" 하고 사용자에게 넘기는 식이에요.</p>
+<h4>권한과 샌드박스로 위험한 행동을 막아요</h4>
+<p>마지막은 권한 설정과 샌드박스(sandbox)예요. 하니스는 모든 도구 호출을 하나하나 확인하고 한 단계 위에서는 호출이 이어지는 순서까지 봐요. 지금은 대부분 절차적인 규칙으로 하지만, <strong>다른 AI 모델을 권한 검사기로 붙이는 실험</strong>도 진행 중이래요. AI가 다른 AI의 행동을 검증하고 통제하는 구조인데, Nick은 서로를 끊임없이 견제하는 여러 부위로 이뤄진 뇌와 닮아서 흥미롭다고 말해요.</p>
+<p>예를 들어 모델이 www.definitelynotaphishinglink.com으로 데이터를 보내려 한다고 해 볼게요. 권한 계층이 제대로 있으면 "새 사이트고 전에 데이터를 보낸 적도 없으니 확인이 필요해"라고 감지하고 "이 사이트에 연결해도 될까요?" 같은 작은 확인 창을 띄워요. "이전 폴더를 삭제해도 될까요?"도 같은 원리죠.</p>
+<p>이건 주로 <strong>훅(hook)</strong>으로 구현해요. 하니스의 작업 흐름 곳곳에 도구 호출을 끼워 넣는 장치예요. 이커머스 회사에서 로딩 시간을 줄이려고 특정 함수를 최적화한다면, 파일을 고칠 때마다 전체 테스트를 돌리는 <strong>'포스트 에디트 훅'</strong>을 걸어 둘 수 있어요. 모델은 테스트 결과를 보고 자기가 잘했는지 알게 되죠(이건 검증 루프에 더 가까워요). 반대로 도구 호출 직전에 지난 2주 동안 요청을 보낸 사이트 목록을 확인해서, 목록에 없는 새 사이트면 허용할지 묻게 할 수도 있어요.</p>
+<p><strong>샌드박스</strong>는 모델이 자유롭게 테스트하되 바깥으로는 못 나가게 만든 가상 환경이에요. 가치는 두 가지예요. 하나는 모델이 "내 파일 전부 삭제, 시스템 설정 변경" 같은 명령을 실수로 실행하고 안전장치가 놓쳐도 피해가 그 선 안에 갇힌다는 거예요. 다른 하나는 <strong>AI 정렬(alignment)</strong> 문제예요. 모델이 똑똑해지면서 사용자 의도와 조금 어긋난 행동을 하기 시작했대요. 더 싸고 쉬운 답을 찾으려 할 수도 있고 더 나쁜 이유가 있을 수도 있죠. 샌드박스는 모델이 자기 가중치를 인터넷에 빼돌리거나 의도치 않은 서비스에 스스로를 올리는 행동을 막아 줘요.</p>
+<h4>생각하고, 행동하고, 다시 생각하는 에이전트 루프</h4>
+<p>결정을 내리는 주체는 결국 모델이에요. 맥락과 현재 상태를 넣으면 모델이 둘을 보고 지시에 따라 다음 행동을 정하죠. 요즘은 <strong>추론(reasoning)</strong>도 하니스에 들어가 있어요. 모델이 첫 생각을 내놓으면 그걸 다시 입력으로 넣어 "내 첫 생각은 이렇고, 그런데 다시 생각해 보니"로 이어 가게 하는 거예요.</p>
+<p>AI 기업들이 이걸 구현하는 방법이 꽤 창의적이에요. 간단한 예가 '하지만(but)', '그러나(however)', '그렇지 않으면(otherwise)', '아직(yet)' 같은 단어를 쓰는 거예요. "이 문제를 추론해서 최선의 다음 단계를 제시해 줘"라는 프롬프트로 한 번 답하게 한 뒤, 그 답 끝에 '하지만'을 붙여 다시 넣어요. 그러면 모델은 바로 "하지만 뭐?"를 떠올리며 방금 한 말의 예외를 찾기 시작해요. 사람도 앞 문장에 주장이 있고 다음 문장이 '하지만'으로 시작하면 반론을 쓰게 되잖아요.</p>
+<p>추론이 끝나면 모델은 최종 행동을 정해 하니스에 넘기고, 하니스가 출력을 정리해요. 이때 고를 수 있는 길은 여러 가지예요. 확신이 없으면 더 고민하고, 도구를 요청하고, 같은 작업을 반복하거나, 사용자에게 설명이나 피드백을 부탁하죠. Nick의 정리는 이래요.</p>
+<p><strong>"하니스가 모델 자체를 본질적으로 더 똑똑하게 만들 수는 없습니다. 하지만 모델을 훨씬 더 유용하게 만들 수는 있습니다."</strong></p>
+<p>그는 지난 6개월 정도 모델이 보여 준 큰 도약이 전적으로 하니스 덕분이라고까지 말하고 싶대요. 그리고 좋은 소식은 <strong>하니스가 그냥 소프트웨어</strong>라는 점이에요. GPU 같은 하드웨어가 필요한 모델 훈련과 달리, 영상을 보는 누구든 하니스에는 의미 있는 기여를 할 수 있죠.</p>
+<p>이 흐름을 묶은 게 <strong>에이전트 루프</strong>예요. 최근에 나온 게 아니라 수년 동안 연구돼 온 구조이고 Nick은 LangChain 쪽에서 처음 나왔을 것 같다고 해요. 먼저 생각해서 다음 단계를 정하고, 행동(보통 도구 호출)하고, 권한 계층이 허용 여부를 판단하고, 보통 샌드박스에서 먼저 돌려 영향 범위를 보고, 출력을 다듬어 쓸모 있는 부분만 남기고, 무슨 일이 왜 일어났는지 읽은 뒤 다시 생각해요. 목표를 이룰 때까지 이걸 반복하고 끝나면 루프를 빠져나오죠. 이게 <strong>ReAct 루프(Reason + Action)</strong>이고 오늘날 주요 에이전트 하니스 대부분의 바탕이에요.</p>
+<h4>하니스는 앞으로 이렇게 바뀔 거래요</h4>
+<p>Nick이 내다보는 방향은 세 가지예요. 첫째, <strong>MCP와 연결 앱이 계속 늘어요.</strong> 주요 플랫폼이 거의 다 MCP에 붙고 있고 Claude Code나 Codex는 커넥터와 플러그인으로 이걸 사용자에게 열어 주고 있죠.</p>
+<p>둘째, <strong>에이전트 팀</strong>이에요. 지금도 하위 에이전트(sub-agent)끼리 일을 나누지만, Nick은 이게 하니스 안에 훨씬 깊게 들어갈 거라고 봐요. 비슷한 문제를 풀었던 다른 에이전트들의 맥락을 모아 둔 '에이전트 채팅 계층' 같은 게 생긴다는 거죠. 여러 버전을 동시에 시도하는 방식도 늘어요. 최근 점수가 좋은 하니스들은 맡긴 작업을 복제해 검증 루프가 다른 여러 모델에 나눠 주고, 세 번쯤 돌려서 <strong>한 번이라도 성공하면 그 결과를 최종 출력으로 내보낸대요.</strong> 가능한 해법을 통계적으로 훑고 정답만 남기는 방식인데, 이미 꽤 유망한 결과를 보여서 Nick은 대부분의 하니스가 갈 논리적인 방향으로 봐요.</p>
+<p>셋째, <strong>진화형 하니스</strong>예요. 모델을 만드는 AI 기업들이 더 넓게 도입하기 시작한 방식이래요. 하니스나 모델이 실수할 때마다 실수 비율, 무엇이 맞는지, 왜 틀렸는지를 잡아내고 하니스 자체를 고쳐 다음 실수를 막아요. 예를 들어 모델이 작업 공간의 모든 파일을 읽느라 토큰을 낭비해 성능이 떨어진다면, 하니스 개선을 맡은 AI가 "다음엔 전체를 스캔하지 말고 먼저 검색부터 하자"고 바꾸는 식이에요. 사용자는 보통 파일 몇 개만 필요하니까요. 그러면 <strong>토큰을 1/10만 쓰면서</strong> 비용도 줄이고 작업 성공 확률도 크게 높일 수 있다고 Nick은 말해요.</p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>"어떤 모델을 쓰나"보다 "어떤 하니스에 넣었나"가 결과를 가를 수 있어요</strong>: 같은 모델도 하니스에 따라 성능이 확연히 달라지고, Nick은 지난 6개월 정도의 도약이 전적으로 하니스 덕분이라고까지 말해요. 새 모델 소식만 쫓기보다 지금 쓰는 도구의 맥락·검증·권한을 들여다볼 이유가 여기 있어요.</li><li><strong>맥락 파일은 한 번 쓰고 계속 돌려받는 투자예요</strong>: <code>CLAUDE.md</code>, <code>AGENTS.md</code> 같은 파일에 프로젝트 정보와 금지 사항을 적어 두면 매번 같은 설명을 반복할 필요가 없어요. Nick 표현대로라면 맥락 문제를 풀면 앞으로 생길 프롬프트 문제를 사실상 다 푸는 셈이에요.</li><li><strong>AI의 "좋아 보이네요"를 믿지 말고 확인 장치를 붙이세요</strong>: 모델은 자기 결과를 검증할 방법이 없어서 대부분 괜찮다고 답해요. 계산기·테스트·훅처럼 기계적으로 확인하는 단계를 끼워 넣어야 결과를 믿고 넘길 수 있어요.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li>Claude Code나 Codex를 쓰고 있다면 프로젝트 폴더에 <code>CLAUDE.md</code>(또는 <code>AGENTS.md</code>)를 만들어 "이 폴더는 건드리지 말 것", "작업이 끝나면 이 명령으로 확인할 것" 같은 규칙을 5줄만 적어 보세요. 다음 세션부터 같은 설명을 반복하지 않아도 되는 걸 바로 느낄 수 있어요.</li><li>자주 맡기는 작업 하나를 골라 "결과가 맞는지 어떻게 확인하지?"를 적어 보세요. 엑셀 합계 검산, 링크 클릭 테스트처럼 기계적으로 확인할 수 있는 단계를 프롬프트나 훅에 넣어 두면 AI의 "잘 됐어요"에 덜 속게 돼요.</li><li>답을 받은 뒤 "하지만 이 답에서 놓친 예외나 반례가 있다면?"이라고 한 번 더 물어보세요. 영상에 나온 '하지만' 기법을 손으로 해 보는 건데, 모델이 방금 한 말의 예외를 스스로 찾게 만드는 게 이 기법의 핵심이에요.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>세 가지만 답하면 4단계 중 지금 위치를 바로 알려드려요. 무료예요.</p><span class="go">내 단계 진단하기 →</span></a>
+    <a class="cross" href="../../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../../../library/" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>

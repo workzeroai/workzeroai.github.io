@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>이제 Claude Code를 내 입맛대로 바꿀 수 있어요 · 워크제로 자료실</title>
+<meta name="description" content="Anthropic이 10월 1일 내놓은 Claude Code 모드(mods)는 프롬프트 한 줄로 Claude Code 화면과 동작 방식을 직접 바꾸는 기능이에요. Nick Puru가 지난 2주 세션 기록에서 자기에게 필요한 모드를 찾아내 삭제 가드·전송 전 승인·영수증">
+<link rel="canonical" href="https://workzeroai.github.io/library/notes/MDwCtwPfFGM/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#2462e0">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="이제 Claude Code를 내 입맛대로 바꿀 수 있어요">
+<meta property="og:description" content="Anthropic이 10월 1일 내놓은 Claude Code 모드(mods)는 프롬프트 한 줄로 Claude Code 화면과 동작 방식을 직접 바꾸는 기능이에요. Nick Puru가 지난 2주 세션 기록에서 자기에게 필요한 모드를 찾아내 삭제 가드·전송 전 승인·영수증">
+<meta property="og:url" content="https://workzeroai.github.io/library/notes/MDwCtwPfFGM/">
+<meta property="og:image" content="https://img.youtube.com/vi/MDwCtwPfFGM/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="이제 Claude Code를 내 입맛대로 바꿀 수 있어요">
+<meta name="twitter:description" content="Anthropic이 10월 1일 내놓은 Claude Code 모드(mods)는 프롬프트 한 줄로 Claude Code 화면과 동작 방식을 직접 바꾸는 기능이에요. Nick Puru가 지난 2주 세션 기록에서 자기에게 필요한 모드를 찾아내 삭제 가드·전송 전 승인·영수증">
+<meta name="twitter:image" content="https://img.youtube.com/vi/MDwCtwPfFGM/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+.tgl{margin:18px 0;border:1px solid var(--hair);border-radius:14px;background:var(--soft)}.tgl>summary{cursor:pointer;padding:14px 18px;font-weight:700;color:var(--ink);list-style:none}.tgl>summary::before{content:"▸ ";color:var(--primary)}.tgl[open]>summary::before{content:"▾ "}.tgl-in{padding:0 14px 14px}
+:root{--primary:#2462e0;--primary-deep:#1a4fb8;--primary-pale:#e5effd;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f4f8fe;--hair:#dfe7f2;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+/* WZ-COBALT-C */:root{--grad-btn:linear-gradient(135deg,#2b74f0 0%,#2462e0 50%,#1d55d6 100%);--gloss:radial-gradient(120% 90% at 30% 0%,rgba(255,255,255,.28) 0,rgba(255,255,255,0) 55%);--glow:0 12px 28px -10px rgba(36,98,224,.75),0 2px 6px -1px rgba(29,85,214,.35)}.btn.pri,.fbtn,.rcta .p1,.price.best .pick,.price .pop{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:var(--glow),inset 0 1px 0 rgba(255,255,255,.35)}.fchip.on{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:0 8px 18px -8px rgba(36,98,224,.8),inset 0 1px 0 rgba(255,255,255,.35)}.btn.pri:hover,.fbtn:hover,.rcta .p1:hover{filter:brightness(1.08) saturate(1.1)}.lv-head,.svr.win{background:var(--gloss),var(--grad-btn)}.eyebrow{background:linear-gradient(135deg,#e5effd,#d3e6ff);color:#1a4fb8}.logo b{color:#2b74f0}.fmeta i,.nm i{background:linear-gradient(135deg,#e5effd,#d6e7ff);color:#1a4fb8}.paneNote{background:linear-gradient(135deg,#eaf3ff 0%,#f7fbff 60%,#fff 100%);border-color:#d3e3fb}.keys{background:linear-gradient(135deg,#e5effd,#f2f8ff)}.nkeys span::before,.keys li::before{background:linear-gradient(135deg,#3b8cff,#1d55d6)}
+</style>
+<script src="/assets/wz.js" defer></script>
+<script src="/assets/course.js" defer></script>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴"><a href="../../../tutoring/">1:1 과외</a><a href="../../../build/">제작 문의</a><a class="on" href="../../../library/" aria-current="page">자료실</a></div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../../../library/">← 자료실</a>
+  <div class="head"><div class="m"><i>에이전트</i><span>2026-10-10</span></div><h1>이제 Claude Code를 내 입맛대로 바꿀 수 있어요</h1></div>
+  <figure style="margin:0 0 24px"><img src="../thumb/MDwCtwPfFGM.webp" alt="" loading="lazy"></figure><div class="src"><b>출처 · Nick Puru | AI Automation</b>이 글은 아래 영상 내용을 한국어로 요약·정리한 것입니다. 원문의 주장과 수치는 영상 제작자의 것입니다.<span class="orig">원제 · claude code is now fully customizable..</span><br><a href="https://www.youtube.com/watch?v=MDwCtwPfFGM" target="_blank" rel="noopener">원본 영상 보기 →</a></div><div class="keys"><b>핵심</b><ul><li>지침은 요청, 모드는 보장</li><li>필요한 모드는 내 세션 기록이 알려 줘요</li><li>모드는 내 권한으로 도는 코드예요</li></ul></div>
+  <div class="bd">
+<h3>한 줄 요약</h3>
+<p>Anthropic이 10월 1일 내놓은 Claude Code 모드(mods)는 프롬프트 한 줄로 Claude Code 화면과 동작 방식을 직접 바꾸는 기능이에요. Nick Puru가 지난 2주 세션 기록에서 자기에게 필요한 모드를 찾아내 삭제 가드·전송 전 승인·영수증 모드 세 가지를 만들어 보고, 다른 사람이 만든 모드를 설치할 때의 보안 위험까지 정리합니다.</p>
+<h3>전체 내용 정리</h3>
+<h4>모드가 나오면서 Claude Code가 임대 사무실에서 내 건물이 됐어요</h4>
+<p>이제 프롬프트만 입력하면 Claude Code를 원하는 모습으로 바꿀 수 있어요. 이 말을 한 사람은 Claude Code를 만든 Boris Cherny이고, 출시 당일 직접 올린 글에 담긴 내용이에요. 그가 말한 기능이 바로 <strong>모드(mods)</strong>죠. Anthropic이 10월 1일 출시했고, 출시 게시물은 빠르게 조회수를 모았어요.</p>
+<p>예시를 보면 감이 와요. 프롬프트 위에 컨텍스트가 얼마나 찼는지 보여 주는 바가 생기고, Claude가 무언가를 삭제하기 전에 멈춰서 파일을 먼저 보여 주기도 해요. 이전 Claude Code에는 없던 기능들이에요. Claude Code 엔지니어 Tarek은 <strong>"모든 소프트웨어가 유연해지고 있다"</strong>고 말하는데, 쉽게 말해 사용자가 직접 바꿀 수 있게 된다는 뜻이에요. Tarek은 답변이 끝날 때마다 다음 단계를 제안하는 모드를 만들었고, 벌써 계획 진행률을 실시간으로 보여 주는 바를 만든 사람도, Claude가 작업하는 동안 게임을 하는 사람도 나왔어요.</p>
+<p>모드는 Claude Code 자체를 바꾸는 작은 코드 조각이에요. 겉모습이나 실제 작동 방식을 바꾸는데, 코드를 직접 짤 필요는 없어요. 원하는 걸 평범한 말로 설명하면 Claude가 알아서 작성해 주거든요.</p>
+<p>Nick은 임대 사무실에 비유해요. 지금까지 Claude Code는 사람을 데려오고 파일을 가져오고 화이트보드에 규칙을 적을 수는 있어도, 벽을 옮기거나 문에 잠금장치를 달 수는 없는 공간이었어요. 뭔가 바꾸려면 집주인인 Anthropic이 해 줄 때까지 기다려야 했죠. <strong>모드를 쓰면 건물을 소유하게 되는 셈</strong>이에요. 누구에게 묻거나 승인을 받지 않아도 돼요.</p>
+<p>이 비유가 모드의 세 가지 핵심 기능과 맞아떨어져요. 첫째는 <strong>벽에 거는 스크린</strong>, 프롬프트 위의 바나 버튼이 있는 측면 패널처럼 화면에 뭔가를 추가하는 모드예요. 둘째는 <strong>안내 데스크</strong>로, 요청이 전달되기 전에 내용을 바꾸는 모드예요. 입력한 내용을 Claude가 보기 전에 다시 쓰거나 다른 모델로 보낼 수도 있어요. 셋째는 <strong>잠금장치</strong>인데, Claude가 뭔가 하려는 순간 멈춰 세우고 사용자에게 먼저 묻게 만들어요.</p>
+<h4>스킬은 "아는 것"을, 모드는 "환경"을 바꿔요</h4>
+<p>모드는 스킬과 헷갈리기 쉬운데 둘은 전혀 달라요. 프롬프트는 입력하면 Claude가 수행하는 일회성 요청이에요. 스킬은 제안서 쓰는 법처럼 Claude가 필요할 때 읽어 보는 지침 파일이고요. <strong>스킬은 Claude가 아는 내용을 바꾸고, 모드는 Claude가 일하는 애플리케이션 환경을 바꿔요.</strong> 제안서 스킬이 사용자 스타일을 익히게 한다면, 모드는 Claude가 묻지 않고 제안서를 삭제하지 못하게 막는 거죠.</p>
+<p>비즈니스에서 이 차이가 중요한 이유는 Anthropic 공식 문서의 한 문장에 있어요.</p>
+<p><strong>지침은 요청이지, 보장이 아니에요.</strong></p>
+<p>"묻지 않고 이메일 보내지 마"라고 지침에 적어 두면 Claude는 대부분 따르지만 가끔 놓칠 수 있어요. 모드는 Claude가 읽는 게 아니라 Claude Code가 작업이 실행되기 직전마다 매번 돌리는 코드라서 근본적으로 달라요. 일반 Claude 채팅에서는 쓸 수 없고, 터미널과 데스크톱 앱 상단의 Claude Code 탭 두 곳에서 작동해요. Claude Code를 먼저 업데이트하기만 하면 되고요.</p>
+<h4>추천 목록 대신 내 세션 기록에서 필요한 모드를 찾았어요</h4>
+<p>Nick은 다른 사람의 목록을 그대로 가져오지 않고 자기에게 실제로 필요한 모드를 알고 싶었어요. 그래서 기록을 읽게 하는 프롬프트를 Claude 채팅창에 넣었죠. 잘 모르는 사람도 많은데, <strong>Claude Code는 모든 세션을 컴퓨터에 파일로 저장</strong>해요. 지난 2주간 입력한 내용이 전부 남아 있고 Claude가 그걸 읽을 수 있거든요.</p>
+<p>프롬프트의 요청은 이래요. 지난 14일 정도의 기록을 살펴보고 세 가지를 찾아 달라는 거예요. 세션 전체에서 반복되는 요청을 횟수와 함께 원문 인용으로, 삭제·전송처럼 되돌릴 수 없는 위험한 작업을 횟수와 함께, 그리고 작업을 검증하거나 확인해 달라고 요청한 경우를요. 그다음 각 항목이 모드가 돼야 할지, 스킬이 돼야 할지, 아니면 지침 한 줄이면 충분할지 이유와 함께 알려 주고, 실제로 얼마나 도움이 될지 순위를 매기게 해요. <strong>아직 아무것도 만들지 말고 결과만 먼저 보여 달라</strong>는 조건도 붙였어요.</p>
+<p>결과 목록은 다양했어요. 정말 유용한 것도 있고 별로 쓸모없는 것도 있어서, Nick이 직접 검토해 가장 의미 있는 세 가지를 골랐어요. 모드로 만들 수 있는 게 워낙 많아 어디서 시작할지 막막하기 쉬운데, 같은 프롬프트로 자기 세션을 읽혀 보면 일하는 방식에 맞춘 각자 다른 목록이 나온다고 해요.</p>
+<h4>삭제 가드와 전송 전 승인은 되돌릴 수 없는 작업 앞에서 멈춰요</h4>
+<p>첫 번째는 삭제 가드예요. Claude는 오래된 초안이나 임시 폴더를 늘 지워 주는데, 파일이 사라지기 전에 무슨 일이 일어나는지 볼 수가 없었어요. 그래서 바탕화면의 오래된 초안 폴더를 지워 달라고 하자, 프롬프트 위에 상자가 뜨면서 이 삭제 명령을 실행할지 묻고 실행·취소 두 버튼을 보여 줘요. 취소를 누르면 아무것도 지워지지 않고 폴더도 그대로예요. Claude에게는 사용자가 거절했으니 다른 방법으로 지우지 말라는 통보가 가요.</p>
+<p>마음을 바꿔 "좋아, 이제 삭제해 줘"라고 하면 다시 물어보고, 이번에 실행을 누르면 폴더가 휴지통으로 옮겨졌다고 알려 줘요. 중요한 점은 <strong>이게 Claude 자체의 권한 확인 창과 완전히 별개</strong>라는 거예요. Nick처럼 자동 모드로 대부분의 확인을 건너뛰게 해 둬도, 모드가 그보다 먼저 실행돼서 확인을 거치거든요.</p>
+<p>만드는 법은 간단해요. "모든 삭제 명령을 가로채서 실행·취소 두 버튼으로 먼저 묻는 모드를 만들어 줘"라고 입력하면 돼요. Claude가 코드를 전부 쓰고 테스트까지 스스로 만들어 돌린 뒤 넘겨줘요. 마지막에 지금 세션에 핫 리로딩(작성 즉시 불러오기)으로 활성화할지 묻는데, 활성화를 누르면 바로 적용돼요.</p>
+<p>꼭 알아 둘 게 있어요. <strong>Claude가 만든 모드는 그 모드를 만든 채팅에서만 불러와져요.</strong> 새 채팅을 열면 나타나지 않거든요. 마음에 들면 "이 모드를 유지해서 모든 새 세션에서도 로드되게 해 줘"라고 한 번 더 말해야 Claude가 설정을 해 줘요. 이 모드는 Claude가 실행하려는 명령을 읽는 방식으로 작동하니 일종의 안전망으로 생각하라고 해요. Claude가 비정상적인 방식으로 삭제하면 빠져나갈 수도 있고, Anthropic도 자기 버전에서 같은 점을 언급하고 있어요.</p>
+<p>두 번째는 전송 전 승인 모드예요. Nick은 Gmail을 Claude에 연결해 두고 <strong>늘 초안만 쓰고, 승인하기 전엔 아무것도 보내지 않는다</strong>는 규칙을 지켜 왔어요. 그런데 그 규칙은 지침 속 한 줄일 뿐이라 결국 요청에 불과했죠. 그래서 두 번째 이메일 주소로 제목 '테스트', 본문 '안녕' 한 줄짜리 메일을 보내 달라고 시켜 봐요. 그러자 "이걸 보낼까요?"라는 창이 뜨고 어떤 앱인지, 수신 주소, 제목을 보여 준 뒤 전송·취소 중 고르게 해요. 전송을 누르면 잠시 뒤 받은편지함에 메일이 도착해요.</p>
+<p>이 모드는 이메일에만 쓰이지 않아요. Slack이나 Teams 메시지 등 <strong>도구 이름에 send·reply·forward·post(전송·답장·전달·게시) 같은 단어가 들어간 모든 연결 앱</strong>에 적용할 수 있어요. 도구 이름을 기준으로 작동하거든요.</p>
+<p>프롬프트는 이래요. 도구 이름에 전송·답장·전달·게시가 들어간 모든 연결 앱을 가로채서 먼저 확인받는 모드를 만들고, 앱·수신자·제목을 보여 준 뒤 전송과 취소 중 고르게 해 달라고 해요. 취소하면 Claude에게 아무것도 보내지 않았다고 알리고 초안으로 저장하게 하고, 초안 작성 도구는 묻지 말고 그냥 실행하게 하라는 조건까지 붙이고요.</p>
+<h4>영수증 모드부터 보조 에이전트까지, 모드로 할 수 있는 일은 넓어요</h4>
+<p>세 번째는 영수증 모드예요. 프롬프트 입력창 위에 작은 줄이 하나 생겨요. "웹 페이지 0개, 검색 0회, 읽은 파일 0개, 기타 도구 호출 3회" 같은 식이죠. 답변이 끝날 때마다 Claude가 실제로 무엇을 열었는지 보여 주는 <strong>영수증</strong>이에요.</p>
+<p>Anthropic 문서에서 Claude Code 모드가 뭔지 찾아 세 줄로 요약하라고 시키면, 답변 아래 영수증에 웹 페이지 1개(문서 페이지), 검색 1회, 읽은 파일 0개, 기타 도구 호출 0회가 찍혀요. 답 자체보다 <strong>어디서 정보를 가져왔는지가 핵심</strong>이라는 거예요. 반대로 "12 곱하기 12는 뭐야?"처럼 이미 아는 걸 물으면 아무것도 열지 않았고, 답이 메모리나 이전 대화에서 나왔다고 표시돼요.</p>
+<p>만들 때는 "Claude가 답할 때마다 프롬프트 위에 그 턴에서 무엇을 열었는지 보여 주는 한 줄을 추가하는 모드를 만들어 줘"라고 하면 돼요. 몇 개 웹 페이지를 어느 사이트에서 열었는지, 검색 횟수, 읽은 파일 수, 기타 도구 호출 수를 보여 주고, 아무것도 안 열었으면 메모리나 이전 대화에서 나온 답이라고 표시하게 하는 거죠. Nick은 세 모드와 프롬프트를 모두 자기 무료 Skool 커뮤니티에 올려 둔다고 해요.</p>
+<p>세 예시는 작은 기능이지만, Anthropic 공식 문서를 보면 모드의 범위는 훨씬 넓어요. 우선 <strong>Claude Code 화면 일부를 다시 그릴 수 있어요.</strong> 각 작업이 표시되는 방식, Claude가 생각할 때 도는 스피너 아이콘, 심지어 Claude가 질문을 던지는 입력창 자체도 바꿀 수 있죠.</p>
+<p>다음으로 곧 일어날 모든 작업에 끼어들 수 있어요. 삭제 가드처럼 작업을 일시 정지시키거나, 모든 프롬프트가 전송되기 전에 회사 규칙을 덧붙이거나, 요청 하나를 다른 모델로 보낼 수 있어요. <strong>쉬운 작업은 싼 모델에, 어려운 작업은 큰 모델에</strong> 맡기는 식이죠. 자체 명령어도 추가할 수 있어서, 슬래시 명령어를 치면 Claude를 기다리지 않고 코드가 즉시 실행되고 Claude가 다른 일을 하는 중에도 작동해요.</p>
+<p>보조 에이전트를 함께 돌릴 수도 있어요. Anthropic은 출시 다음 날 <strong>'You should know'</strong>라는 기능을 직접 선보였는데, Claude가 일하는 동안 보조 에이전트가 그 내용을 읽고 사용자가 놓칠 만한 부분을 프롬프트 바로 위에 메모로 남겨 줘요. 예를 들어 Claude가 결제 호출에 자동 재시도를 넣으면, 재시도 때문에 고객이 이중 청구될 수 있다고 알려 주는 식이에요. 이 기능은 이미 내장돼 있고 기본값이 꺼져 있을 뿐이에요.</p>
+<p>흥미로운 건 Claude Code의 일부 기능도 이미 모드로 만들어져 있다는 점이에요. diff 뷰가 모드이고, 에이전트용 MD 지침 파일을 불러오는 기능도 모드예요. Anthropic은 내장 기능을 더 많이 모드로 옮겨서 원치 않는 건 끌 수 있게 할 계획이라고 해요. 팀을 운영한다면 관리자가 팀원 모두의 Claude에서 어떤 모드를 허용할지 정하고, 회사 규칙을 강제하는 모드를 직접 작성할 수도 있어요.</p>
+<h4>다른 사람이 만든 모드는 스킬보다 위험하니 확인하고 써요</h4>
+<p>그래서 다른 사람이 만든 모드는 조심해야 해요. 스킬에서 이미 겪은 문제거든요. 스킬이 처음 나와 인터넷에 공유되기 시작했을 때, 보안 감사 결과 <strong>공유된 스킬 4,000여 개 중 3분의 1 이상이 보안 문제</strong>를 안고 있었고 일부는 비밀번호나 키를 빼돌리도록 설계돼 있었어요. 지금 모드도 똑같이 공유되고 있는데, 모드는 코드로서 Claude 안에서 사용자 권한으로 직접 실행되니 스킬보다 훨씬 위험해요. 공식 문서에도 그 의미가 적혀 있고요.</p>
+<p>구체적으로 모드는 사용자 대신 컴퓨터에서 프로그램을 띄우거나 인터넷에 접속할 수 있어요. API 키를 포함한 보안 정보를 읽을 수 있고, 사용자가 보내는 모든 프롬프트와 Claude가 대신하는 모든 동작을 볼 수 있어요. 프롬프트를 고쳐 쓰거나 사용자가 입력한 것처럼 보낼 수도 있고, 요청하기 전에 동작을 승인하거나 사용자 플랜을 호출해 사용량을 소모할 수도 있어요. 게다가 샌드박스 환경이 아니라 보호막이나 안전장치가 없어요.</p>
+<p>다만 모드가 못 바꾸는 게 딱 하나 있어요. <strong>권한 확인 프롬프트</strong>예요. 거기 뜨는 내용은 진짜 정보라는 뜻이죠. 반면 모드는 프롬프트 바로 위에 자체 버튼이나 텍스트 입력칸을 만들 수 있어서, <strong>화면 위쪽에서 비밀번호나 키를 입력하라고 하면 절대 입력하지 말라</strong>고 강조해요.</p>
+<p>인터넷에서 받은 모드를 설치하기 전엔 명령어 하나로 간단히 확인할 수 있어요. <strong><code>claude plugin validate</code></strong>를 입력하면 모드를 실행하지 않고도 무엇을 감시하고 무엇을 호출할 수 있는지 나열해 줘요. Nick의 삭제 모드는 Claude가 하려는 도구 호출 하나만 감시하고, 사용자에게 질문하는 동작 하나만 호출해요. 파일 접근도 인터넷 접속도 없죠. 내려받은 모드에서 이유를 알 수 없는 파일 읽기, 프로그램 실행, 인터넷 연결이 보이면 설치하지 말라고 해요.</p>
+<p>그런데 이 검사는 모드 자체만 읽어요. 같은 다운로드 파일 안에 따로 실행되는 스크립트가 들어 있으면 잡아내지 못하거든요. 그래서 믿을 만하거나 어느 정도 검증된 사람의 모드만 설치하길 권해요.</p>
+<p>모드가 이상하게 굴면 플러그인 메뉴의 설치됨(installed) 섹션에서 해당 모드를 골라 스페이스바를 누르고 메뉴를 닫으면 바로 꺼져요. 터미널에서는 Claude를 <strong>안전 모드</strong>로 띄울 수도 있는데, 그 세션 동안 설치된 모드가 전부 꺼지고 스킬과 연결 앱도 없이 실행돼요. 거기서 문제를 찾고 원인을 추적한 뒤 일반 모드로 돌아오면 돼요.</p>
+<p>그래서 Nick은 <strong>다른 사람의 모드를 내려받기보다 직접 만들라</strong>고 권해요. 다른 사람에게 영감은 얻어도 모드 자체는 받지 않겠다는 거죠. Claude가 내 작업 방식에 맞춰 코드를 써 주고 언제든 설명도 해 주니, 굳이 다른 사람의 모드를 받을 이유가 없다는 게 Nick의 생각이에요.</p>
+<h3>핵심 인사이트</h3>
+<ul><li><strong>지침은 요청, 모드는 보장</strong>: 지침 파일은 Claude가 읽고 대부분 따르지만 가끔 놓쳐요. 모드는 실행 직전마다 Claude Code가 돌리는 코드라 삭제·전송처럼 되돌릴 수 없는 작업 앞에 매번 확인 단계를 세울 수 있어요</li><li><strong>필요한 모드는 내 세션 기록이 알려 줘요</strong>: Claude Code는 모든 세션을 파일로 남기니, 지난 2주 기록에서 반복 요청·위험 작업·검증 요청을 뽑아 모드/스킬/지침 한 줄로 분류하게 하면 다른 사람의 추천 목록보다 정확한 우선순위가 나와요. 일하는 방식이 사람마다 다르니까요.</li><li><strong>모드는 내 권한으로 도는 코드예요</strong>: 공유 스킬 3분의 1 이상에서 보안 문제가 나왔는데, 모드는 샌드박스도 없이 API 키·프롬프트 전체에 접근할 수 있어 위험이 더 커요. 다른 사람의 모드는 <code>claude plugin validate</code>로 확인하고, 웬만하면 직접 만드는 쪽이 안전해요.</li></ul>
+<h3>오늘 당장 해볼 것</h3>
+<ol><li>Claude Code를 최신 버전으로 업데이트한 뒤, 지난 14일 세션 기록을 읽고 반복 요청·위험 작업·검증 요청을 횟수·인용과 함께 뽑아 모드/스킬/지침으로 분류하라는 프롬프트를 돌려 보세요. "아직 아무것도 만들지 말 것" 조건을 붙이면 목록만 먼저 보고 고를 수 있어요.</li><li>첫 모드로 삭제 가드를 만들어 보세요. "모든 삭제 명령을 가로채서 실행·취소 버튼으로 먼저 묻는 모드를 만들어 줘"라고 한 뒤, 마음에 들면 "모든 새 세션에서도 로드되게 해 줘"까지 꼭 요청해야 다음 채팅에서도 살아 있어요.</li><li>Gmail·Slack 같은 앱을 연결해 쓰고 있다면 전송 전 승인 모드를 걸어 보세요. 도구 이름에 send·reply·forward·post가 들어간 동작을 가로채 앱·수신자·제목을 보여 주게 하면, 지침 한 줄에 기대던 "초안만 쓰기" 규칙이 실제 잠금장치가 돼요.</li></ol>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>세 가지만 답하면 4단계 중 지금 위치를 바로 알려드려요. 무료예요.</p><span class="go">내 단계 진단하기 →</span></a>
+    <a class="cross" href="../../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../../../library/" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>
