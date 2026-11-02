@@ -1,6 +1,6 @@
 {
  "updated": "2026-11-02",
- "_note": "talks = 인물 아카이브 영상. src = 자막이 저장된 Apify dataset/offset (글 생성용). captions none = 자막 꺼짐, todo = 자막 미수집. views = 2026-11-02 기준 조회수. 글 원고는 talks/<id>.md",
+ "_note": "talks = 인물 아카이브 영상. src = 자막이 저장된 Apify dataset/offset (글 생성용). captions none = 자막 꺼짐, todo = 자막 미수집. views = 2026-11-02 기준 조회수. 글 원고는 talks/<id>.md article_from 이전 영상은 목록만 두고 글로 옮기지 않는다(필요하면 같은 절차로 변환).",
  "people": [
   {
    "id": "song",
@@ -1685,7 +1685,11 @@
    "date": "2025-11-05",
    "seconds": 1254,
    "views": 395767,
-   "captions": "todo"
+   "src": {
+    "dataset": "uw4BRI4KOps2gG8Q3",
+    "offset": 0
+   }
   }
- ]
+ ],
+ "article_from": "2025-01-01"
 }

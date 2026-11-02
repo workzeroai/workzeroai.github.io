@@ -97,8 +97,13 @@ def parse_article(path):
     return meta
 
 
+ARTICLE_FROM = "2025-01-01"
+
+
 def load():
+    global ARTICLE_FROM
     d = json.loads((ROOT / "talks.json").read_text(encoding="utf-8"))
+    ARTICLE_FROM = d.get("article_from", ARTICLE_FROM)
     arts = {}
     for p in sorted((ROOT / "talks").glob("*.md")):
         a = parse_article(p)
@@ -187,6 +192,8 @@ def talk_card(t, arts, pmap, depth, me=None):
     note = ""
     if not a and t.get("captions") == "none":
         note = '<span class="lang">자막 없음</span>'
+    elif not a and t["date"] < ARTICLE_FROM:
+        note = '<span class="lang">목록만</span>'
     return f'''
 <article class="tcard" data-art="{1 if a else 0}" data-date="{t["date"]}" data-views="{t["views"]}" data-q="{e(q)}">
   <a class="thumb" href="{href}"{tgt} tabindex="-1" aria-hidden="true"><img src="{thumb(t["id"])}" alt="" loading="lazy" decoding="async" width="480" height="270" onerror="this.remove()">{'<span class="has">글</span>' if a else ''}<span class="dur">{fmt_dur(t["seconds"])}</span></a>
@@ -278,7 +285,7 @@ def person_page(p, d, arts, pmap):
     </div>
     <div class="tlist" id="tlist">{cards}</div>
     <p class="empty" id="empty">조건에 맞는 영상이 없어요.</p>
-    <p class="note">조회수는 {fmt_date(d["updated"])} 기준이에요. '글' 표시가 있는 영상은 자막을 바탕으로 한 편의 글로 다시 썼어요.</p>
+    <p class="note">조회수는 {fmt_date(d["updated"])} 기준이에요. '글' 표시가 있는 영상은 자막을 바탕으로 한 편의 글로 다시 썼어요. {ARTICLE_FROM[:4]}년 이전 영상은 목록만 두었어요.</p>
   </section>
 </div>
 </main>
