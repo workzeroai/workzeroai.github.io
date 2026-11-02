@@ -12,6 +12,9 @@ import pathlib
 import re
 import sys
 
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import people  # noqa: E402
+
 HERE = pathlib.Path(__file__).resolve().parent
 ROOT = HERE.parent
 SITE = "https://workzeroai.github.io/future/"
@@ -169,6 +172,15 @@ def render_radar(d):
     return "".join(out)
 
 
+def update_sitemap(urls, lastmod):
+    """저장소 루트 sitemap.xml 에서 /future/ 줄을 지우고 다시 넣는다."""
+    p = ROOT.parent / "sitemap.xml"
+    lines = [ln for ln in p.read_text(encoding="utf-8").split("\n") if "/future/" not in ln]
+    i = next(k for k, ln in enumerate(lines) if "<url>" in ln)
+    new = [f"  <url><loc>{u}</loc><lastmod>{lastmod}</lastmod></url>" for u in urls]
+    p.write_text("\n".join(lines[:i] + new + lines[i:]), encoding="utf-8")
+
+
 def main():
     d = json.loads((ROOT / "data.json").read_text(encoding="utf-8"))
     validate(d)
@@ -190,7 +202,11 @@ def main():
     sig_chips += [f'<button class="chip" type="button" data-group="signal" data-val="{e(s["id"])}" aria-pressed="false">{e(sig_name[s["id"]])}<span class="n">{counts.get(s["id"], 0)}</span></button>'
                   for s in d["signals"]]
 
+    people_cards, people_urls, (n_people, n_talks, n_arts), _ = people.build()
     stats = [
+        (n_people, "명의 인물"),
+        (n_talks, "편 강연·대담"),
+        (n_arts, "편 글로 읽기"),
         (tcount.get("video", 0), "롱폼 영상"),
         (tcount.get("official", 0), "공식 학습자료"),
         (tcount.get("essay", 0) + tcount.get("data", 0), "에세이·연구"),
@@ -215,6 +231,7 @@ def main():
     rep = {
         "UPDATED": e(d["updated"].replace("-", ".")),
         "STATS": stats_html,
+        "PEOPLE": people_cards,
         "SIGNALS": render_signals(d, counts),
         "TYPE_CHIPS": "".join(type_chips),
         "SIGNAL_CHIPS": "".join(sig_chips),
@@ -225,6 +242,7 @@ def main():
     }
     out = re.sub(r"\{\{(\w+)\}\}", lambda m: rep[m.group(1)], tpl)
     (ROOT / "index.html").write_text(out, encoding="utf-8")
+    update_sitemap([SITE] + people_urls, d["updated"])
     print(f"future/index.html 생성 — 자료 {len(items)}개, 신호 {len(d['signals'])}개, 계정 {len(d['accounts'])}개")
 
 
