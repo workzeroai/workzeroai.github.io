@@ -1,0 +1,1695 @@
+{
+ "updated": "2026-11-02",
+ "_note": "talks = 인물 아카이브 영상. src = 자막이 저장된 Apify dataset/offset (글 생성용). captions none = 자막 꺼짐, todo = 자막 미수집. views = 2026-11-02 기준 조회수. 글 원고는 talks/<id>.md article_from 이전 영상은 목록만 두고 글로 옮기지 않는다(필요하면 같은 절차로 변환).",
+ "people": [
+  {
+   "id": "song",
+   "slug": "song-gilyoung",
+   "name": "송길영",
+   "role": "마인드 마이너 · 『시대예보』 저자",
+   "bio": "20년 넘게 소셜 빅데이터로 사람들의 마음과 욕망의 변화를 읽어 온 '마인드 마이너'. 『시대예보』 시리즈로 핵개인, 호명사회, 경량문명, 수고인류 같은 이름을 붙이며 AI 이후 개인과 조직이 어떻게 달라지는지 이야기한다.",
+   "keywords": [
+    "핵개인",
+    "호명사회",
+    "경량문명",
+    "수고인류",
+    "시대예보"
+   ]
+  },
+  {
+   "id": "kim",
+   "slug": "kim-daesik",
+   "name": "김대식",
+   "role": "KAIST 전기및전자공학부 교수 · 뇌과학자",
+   "bio": "뇌과학과 인공지능을 함께 연구해 온 과학자. AGI, AI 에이전트, 피지컬 AI가 노동과 자본, 교육, 국가 경쟁력을 어떻게 바꿀지 가장 적극적으로 경고하고 설명하는 사람 중 하나다.",
+   "keywords": [
+    "AGI",
+    "AI 에이전트",
+    "피지컬 AI",
+    "노동의 종말",
+    "뇌과학"
+   ]
+  }
+ ],
+ "talks": [
+  {
+   "id": "a5-0oVm6edg",
+   "people": [
+    "song"
+   ],
+   "title": "딸깍이면 다 되는 시대, 인간의 마지막 가치 - 송길영 작가",
+   "channel": "손에잡히는경제",
+   "date": "2026-10-01",
+   "seconds": 2766,
+   "views": 197362,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 0
+   }
+  },
+  {
+   "id": "8wT0ovsaaoc",
+   "people": [
+    "song"
+   ],
+   "title": "홀로서기를 시작할 모든 이들을 위한 지침 | '시대예보' 송길영 작가 1부",
+   "channel": "최성운의 사고실험",
+   "date": "2025-09-17",
+   "seconds": 1995,
+   "views": 270002,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 1
+   }
+  },
+  {
+   "id": "G7X-z_3ZzYw",
+   "people": [
+    "song"
+   ],
+   "title": "AI가 다 해주는데도 살아남는 사람들이 있다, 앞으로 더 중요해지는 일 | 마인드마이너 송길영 [신과대화]",
+   "channel": "삼프로TV 3PROTV",
+   "date": "2026-09-25",
+   "seconds": 2889,
+   "views": 862146,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 2
+   }
+  },
+  {
+   "id": "msHB5XYTBKs",
+   "people": [
+    "song"
+   ],
+   "title": "일을 돕던 AI가 일을 없애기 시작했다, 이제 무엇을 준비해야 할까? | 송길영 작가 | 인생질문 362회",
+   "channel": "세바시 인생질문",
+   "date": "2026-10-08",
+   "seconds": 1612,
+   "views": 364712,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 3
+   }
+  },
+  {
+   "id": "QBh5P4SWS10",
+   "people": [
+    "song"
+   ],
+   "title": "송길영의 통찰 \"직업부터 사라진다...AI 시대 대체되지 않으려면 당장 해야할 일들\"",
+   "channel": "박재홍의 한판승부",
+   "date": "2026-11-02",
+   "seconds": 1525,
+   "views": 11240,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 4
+   }
+  },
+  {
+   "id": "sL0R_xMVZlA",
+   "people": [
+    "song"
+   ],
+   "title": "회사보다 내가 더 오래 살고 일하는 시대, 무엇으로 살아 남을 수 있을까? | 세바시 2152회",
+   "channel": "세바시 강연 Sebasi Talk",
+   "date": "2026-10-28",
+   "seconds": 1254,
+   "views": 349550,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 5
+   }
+  },
+  {
+   "id": "7FS4wbogcrc",
+   "people": [
+    "song",
+    "kim"
+   ],
+   "title": "3개월 뒤, 부의 판도가 완전히 뒤집힌다ㅣ초대석: 합석 EP.16 (김대식 X 유현준 X 송길영)",
+   "channel": "지식인사이드",
+   "date": "2026-09-25",
+   "seconds": 5150,
+   "views": 3791667,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 6
+   }
+  },
+  {
+   "id": "L00Yte79nIY",
+   "people": [
+    "song"
+   ],
+   "title": "\"이 직업만 살아남는다.\" AI가 대신할 수 없는 마지막 영역ㅣ지식인초대석 풀버전 (송길영 작가)",
+   "channel": "지식인사이드",
+   "date": "2025-04-06",
+   "seconds": 3285,
+   "views": 1480103,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 7
+   }
+  },
+  {
+   "id": "KPovWIJGomc",
+   "people": [
+    "song"
+   ],
+   "title": "AI 시대 절대 해고되지 않을 사람은 '이런 특징'이 있다ㅣ지식인초대석 (송길영 박사 풀버전)",
+   "channel": "지식인사이드",
+   "date": "2026-01-16",
+   "seconds": 3118,
+   "views": 496089,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 8
+   }
+  },
+  {
+   "id": "QyP0N8KeZW4",
+   "people": [
+    "song"
+   ],
+   "title": "모두의 종착지가 다른 시대. [송길영]이 말하는 나의 '본진'을 찾는 법",
+   "channel": "B tv 이동진의 파이아키아",
+   "date": "2026-05-20",
+   "seconds": 2915,
+   "views": 227108,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 9
+   }
+  },
+  {
+   "id": "GxbZIdjbIlI",
+   "people": [
+    "song"
+   ],
+   "title": "앞으로 열심히 살수록 다 '헛수고' 입니다. '이렇게' 사는 사람만 살아남는다 ㅣ Ep. 181 (송길영 작가 1부)",
+   "channel": "책과삶",
+   "date": "2026-10-22",
+   "seconds": 1745,
+   "views": 614768,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 10
+   }
+  },
+  {
+   "id": "AKCZVhzNJQQ",
+   "people": [
+    "song"
+   ],
+   "title": "AI시대, 인류는 어떻게 살아야할까 ｜솔로몬 EP. 3 송길영 작가",
+   "channel": "이지영 [Leejiyoung Official]",
+   "date": "2026-02-03",
+   "seconds": 4005,
+   "views": 312308,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 11
+   }
+  },
+  {
+   "id": "bKa7xt1jfUY",
+   "people": [
+    "song"
+   ],
+   "title": "[손석희의 12시] ep.10 루틴 | 나를 지키는 가장 단단한 힘 w.송길영,이종범,김겨울",
+   "channel": "손석희의 12시",
+   "date": "2026-09-06",
+   "seconds": 4629,
+   "views": 408860,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 12
+   }
+  },
+  {
+   "id": "_R2Xa8n5rVM",
+   "people": [
+    "song"
+   ],
+   "title": "빅데이터로 증명된 최적의 노후 대비법 | 지식인초대석 EP.5 (송길영 작가)",
+   "channel": "지식인사이드",
+   "date": "2024-09-29",
+   "seconds": 1726,
+   "views": 1419308,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 13
+   }
+  },
+  {
+   "id": "0eO-cPHtePY",
+   "people": [
+    "song"
+   ],
+   "title": "\"가벼워져야 산다\"…송길영 작가가 말하는 '경량 사회' / 뉴스헌터스",
+   "channel": "SBS 뉴스",
+   "date": "2026-01-01",
+   "seconds": 1526,
+   "views": 34469,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 14
+   }
+  },
+  {
+   "id": "PIEaYb6MeMc",
+   "people": [
+    "song"
+   ],
+   "title": "시대예보: 거대한 조직이 무너지는 시대, 개인이 살아남는 법ㅣ송길영 작가 1부",
+   "channel": "이혜성의 1% 북클럽",
+   "date": "2026-02-19",
+   "seconds": 2494,
+   "views": 74234,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 15
+   }
+  },
+  {
+   "id": "lVVPmhJjCjA",
+   "people": [
+    "song"
+   ],
+   "title": "취업 안 되는 시대, 이력서보다 중요한 한 가지 | 송길영 | 인생질문 307회",
+   "channel": "세바시 인생질문",
+   "date": "2025-09-23",
+   "seconds": 1645,
+   "views": 339835,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 16
+   }
+  },
+  {
+   "id": "aXjoneVSQB0",
+   "people": [
+    "song"
+   ],
+   "title": "나만의 주체성, 어디에서 찾고 어떻게 지킬까? | 마인드 마이너 송길영 작가 | 인생질문 237회",
+   "channel": "세바시 인생질문",
+   "date": "2023-10-24",
+   "seconds": 1406,
+   "views": 1032127,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 17
+   }
+  },
+  {
+   "id": "nRoHmhY3j3M",
+   "people": [
+    "song"
+   ],
+   "title": "AI 에이전트 시대, 인간과 AI의 미래를 말한다 - 박정호, 송길영, 김덕진",
+   "channel": "알MONEY",
+   "date": "2026-10-06",
+   "seconds": 4006,
+   "views": 46927,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 18
+   }
+  },
+  {
+   "id": "dldXBzjYTqs",
+   "people": [
+    "song"
+   ],
+   "title": "『시대예보: 수고인류의 시간』 송길영 작가 랜선팬사인회",
+   "channel": "교보문고",
+   "date": "2026-09-22",
+   "seconds": 4905,
+   "views": 6729,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 19
+   }
+  },
+  {
+   "id": "gQKwEpCtrmI",
+   "people": [
+    "song"
+   ],
+   "title": "[손석희의 12시] 사색 ep.4 나이듦 | 우리는 어떻게 나이 들어야 하는가 w.송길영,이종범,김겨울",
+   "channel": "손석희의 12시",
+   "date": "2026-07-26",
+   "seconds": 4590,
+   "views": 403913,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 20
+   }
+  },
+  {
+   "id": "cQNfCj7xTcU",
+   "people": [
+    "song"
+   ],
+   "title": "새해 극적으로 달라질 '이것' 지금부터 대비하세요 - 송길영 박사 1부 '20분 트렌드과외'",
+   "channel": "MKTV 김미경TV",
+   "date": "2026-01-05",
+   "seconds": 1212,
+   "views": 632840,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 21
+   }
+  },
+  {
+   "id": "Vh1yC5mn0WE",
+   "people": [
+    "song"
+   ],
+   "title": "더 이상 무한대의 경쟁은 하지 마세요 (with 송길영)",
+   "channel": "요즘사",
+   "date": "2024-10-08",
+   "seconds": 3188,
+   "views": 192802,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 22
+   }
+  },
+  {
+   "id": "w-HyMIUmugs",
+   "people": [
+    "song"
+   ],
+   "title": "대기업 시대는 끝났다. AI가 쏘아올린 '가벼운 문명'의 시대, 중장년층 덮친다",
+   "channel": "장르만 여의도",
+   "date": "2025-12-24",
+   "seconds": 2103,
+   "views": 314818,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 23
+   }
+  },
+  {
+   "id": "6z6ZuiTNJuM",
+   "people": [
+    "song"
+   ],
+   "title": "[손석희의 12시] 사색 ep.5 쉼 | 잘 쉬는 법을 잊어버린 당신에게 w.송길영,이종범,김겨울",
+   "channel": "손석희의 12시",
+   "date": "2026-08-02",
+   "seconds": 4756,
+   "views": 120284,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 24
+   }
+  },
+  {
+   "id": "kwjU4w89VZs",
+   "people": [
+    "song"
+   ],
+   "title": "[손석희의 12시] AI 시대에 '읽기와 쓰기'를 이야기하다 w.송길영,이종범,김겨울",
+   "channel": "손석희의 12시",
+   "date": "2026-07-12",
+   "seconds": 5308,
+   "views": 166142,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 25
+   }
+  },
+  {
+   "id": "OAaChcb2QZQ",
+   "people": [
+    "song",
+    "kim"
+   ],
+   "title": "AI 특이점은 이미 시작됐다, 살아남는 인간이 되는 방법 (김대식X송길영)ㅣ10분토론",
+   "channel": "14F 일사에프",
+   "date": "2025-07-12",
+   "seconds": 2777,
+   "views": 1381596,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 26
+   }
+  },
+  {
+   "id": "IyHp-B3xYzI",
+   "people": [
+    "song"
+   ],
+   "title": "시보야의 미래를 위해 귀한분 모셨습니다. 송길영의 미래교실 | 에그문화센터",
+   "channel": "채널십오야",
+   "date": "2024-03-29",
+   "seconds": 2132,
+   "views": 709204,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 27
+   }
+  },
+  {
+   "id": "oItkQ8FJBZ8",
+   "people": [
+    "song"
+   ],
+   "title": "타인의 성공방식을 나에게 대입하면 안 되는 이유 | 송길영 작가 2부",
+   "channel": "최성운의 사고실험",
+   "date": "2024-10-10",
+   "seconds": 1481,
+   "views": 232723,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 28
+   }
+  },
+  {
+   "id": "QoCMwb8qa2w",
+   "people": [
+    "song"
+   ],
+   "title": "AI 시대에서 살아남으려면 갖춰야 할 능력 | 지식인초대석 EP.6 (송길영 작가)",
+   "channel": "지식인사이드",
+   "date": "2024-09-30",
+   "seconds": 1646,
+   "views": 1322222,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 29
+   }
+  },
+  {
+   "id": "H7Trml7qb5w",
+   "people": [
+    "song"
+   ],
+   "title": "\"월급은 AI가 벌어올게, 넌 놀기만 해\" 5년 뒤, 진짜 출근 안 해도 먹고사는 세상이 온다면? | [AI 이후 우리는] EP.1",
+   "channel": "SK",
+   "date": "2026-05-09",
+   "seconds": 2298,
+   "views": 1033015,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 30
+   }
+  },
+  {
+   "id": "dgrhzzu98pc",
+   "people": [
+    "song"
+   ],
+   "title": "AI가 아무리 발전해도 절대 대체할 수 없는 인간은 누구일까? | 철학을 보다 EP.19",
+   "channel": "보다 BODA",
+   "date": "2025-12-16",
+   "seconds": 2875,
+   "views": 747312,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 32
+   }
+  },
+  {
+   "id": "GRSyD4zPr2Q",
+   "people": [
+    "song"
+   ],
+   "title": "[손석희의 12시] 사색 ep.7 기다림 | 효율의 시대, 우리가 잃어버린 '기다림'의 미학 w.송길영,이종범,김겨울",
+   "channel": "손석희의 12시",
+   "date": "2026-08-16",
+   "seconds": 4859,
+   "views": 115095,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 33
+   }
+  },
+  {
+   "id": "lSeOqC4n-cE",
+   "people": [
+    "song"
+   ],
+   "title": "송길영의 10년, 세상의 변화에도 변하지 않는 통찰 | 세바시 인생질문",
+   "channel": "세바시 강연 Sebasi Talk",
+   "date": "2025-05-12",
+   "seconds": 3245,
+   "views": 83197,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 34
+   }
+  },
+  {
+   "id": "E5wfbdFY8_8",
+   "people": [
+    "song"
+   ],
+   "title": "송길영과 슈즈오프 EP.46 | 2025년, 명함에 목숨 걸지마",
+   "channel": "SPNS TV",
+   "date": "2025-04-10",
+   "seconds": 4027,
+   "views": 63167,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 35
+   }
+  },
+  {
+   "id": "8jDPkoXNZ-g",
+   "people": [
+    "song"
+   ],
+   "title": "홀로 선 핵개인, 서로의 이름을 부르다 | 송길영 '시대예보:호명사회' 저자 | 세바시 1908회",
+   "channel": "세바시 강연 Sebasi Talk",
+   "date": "2024-11-11",
+   "seconds": 1362,
+   "views": 392636,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 36
+   }
+  },
+  {
+   "id": "6qo0ZInNXW4",
+   "people": [
+    "song"
+   ],
+   "title": "요즘 시대 성공을 위해 특히 중요해진 이것! 송길영 작가와의 대화(시대예보: 호명사회 저자)",
+   "channel": "김콜베",
+   "date": "2024-11-08",
+   "seconds": 2231,
+   "views": 77489,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 37
+   }
+  },
+  {
+   "id": "mOP1w1AczG4",
+   "people": [
+    "song"
+   ],
+   "title": "'나 혼자 1000억'을 벌 수 있는 세상이 왔다, 회사는 끝 | 마인드마이너 송길영 [신과대화]",
+   "channel": "삼프로TV 3PROTV",
+   "date": "2026-01-18",
+   "seconds": 4904,
+   "views": 258670,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 38
+   }
+  },
+  {
+   "id": "HrTLArLEw_g",
+   "people": [
+    "song"
+   ],
+   "title": "세대별로 다른 경험치가 가치관을 갈랐다 (ft. 송길영 부사장)",
+   "channel": "삼프로TV 3PROTV",
+   "date": "2022-11-27",
+   "seconds": 3903,
+   "views": 773336,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 39
+   }
+  },
+  {
+   "id": "3thL76Hw248",
+   "people": [
+    "song"
+   ],
+   "title": "[작은서점_장강명의 인생책] 송길영 작가의 인생책 1편 – 신지영 '언어의 줄다리기', 노명우 '인생극장'",
+   "channel": "KBS 1라디오",
+   "date": "2026-03-26",
+   "seconds": 2932,
+   "views": 5656,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 40
+   }
+  },
+  {
+   "id": "kmX0u2iV2UM",
+   "people": [
+    "song"
+   ],
+   "title": "힘들게 입사한 대기업 퇴사하는 이유 f.마인드마이너 송길영 1부 [신과함께]",
+   "channel": "삼프로TV 3PROTV",
+   "date": "2024-09-28",
+   "seconds": 3018,
+   "views": 559488,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 41
+   }
+  },
+  {
+   "id": "iPK21GYkGz0",
+   "people": [
+    "song"
+   ],
+   "title": "윤종신 & 송길영이 말하는 AI 시대의 뮤지션 생존법 | #음악의참견 EP.6",
+   "channel": "STAN:A",
+   "date": "2026-07-14",
+   "seconds": 2476,
+   "views": 7245,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 42
+   }
+  },
+  {
+   "id": "mPcCnvcJ-cM",
+   "people": [
+    "song"
+   ],
+   "title": "직장도 직업도 없어질 때, 꼭 남겨야 하는 것 | 송길영 작가, 마인드마이너 | 인생질문 261회",
+   "channel": "세바시 인생질문",
+   "date": "2024-10-01",
+   "seconds": 1630,
+   "views": 403324,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 43
+   }
+  },
+  {
+   "id": "5AjkUul16ws",
+   "people": [
+    "song"
+   ],
+   "title": "[손석희의 12시] 평생 무언가를 지망하며 살아가는.. 지망생 사회 w.송길영,이종범,김겨울",
+   "channel": "손석희의 12시",
+   "date": "2026-07-05",
+   "seconds": 4976,
+   "views": 103833,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 44
+   }
+  },
+  {
+   "id": "9OGsiFsr5GE",
+   "people": [
+    "song"
+   ],
+   "title": "\"올해 가기 전에 꼭 해야할 일은...\" 빅데이터 전문가 만나서 2026년 미리 보고 왔습니다 (feat. 송길영)",
+   "channel": "민음사TV",
+   "date": "2025-12-12",
+   "seconds": 1506,
+   "views": 84724,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 45
+   }
+  },
+  {
+   "id": "GV-WF-anI5w",
+   "people": [
+    "song"
+   ],
+   "title": "\"대기업 신화 끝났다.\" 앞으로 '이런' 사람이 대우받습니다ㅣ지식인초대석 EP.72 (송길영 박사 1부)",
+   "channel": "지식인사이드",
+   "date": "2025-10-25",
+   "seconds": 1543,
+   "views": 1193143,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 46
+   }
+  },
+  {
+   "id": "070LUsQP6oo",
+   "people": [
+    "song"
+   ],
+   "title": "[작은서점_장강명의 인생책] \"시대예보\" 송길영 작가의 인생책 2편 – 오가와 사야카 '청킹맨션의 보스는 알고 있다'",
+   "channel": "KBS 1라디오",
+   "date": "2026-03-27",
+   "seconds": 3050,
+   "views": 5945,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 47
+   }
+  },
+  {
+   "id": "sbH9VvGLhRU",
+   "people": [
+    "song"
+   ],
+   "title": "이름으로 불리지 않는 사람은 뒤처질 겁니다 – 송길영 작가",
+   "channel": "손에잡히는경제",
+   "date": "2024-10-01",
+   "seconds": 2692,
+   "views": 74157,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 48
+   }
+  },
+  {
+   "id": "bkTUXK9dNE4",
+   "people": [
+    "song"
+   ],
+   "title": "예상보다 빨라진 기술직의 시련 (ft. 송길영 작가) | 지식의발견 모아보기",
+   "channel": "SBS 뉴스",
+   "date": "2026-02-14",
+   "seconds": 1707,
+   "views": 65592,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 49
+   }
+  },
+  {
+   "id": "g6ToNPy_rVE",
+   "people": [
+    "song"
+   ],
+   "title": "직원 많이 뽑는 기업은 반드시 망합니다 (송길영 작가)",
+   "channel": "언더스탠딩 : 세상의 모든 지식",
+   "date": "2025-09-20",
+   "seconds": 3975,
+   "views": 251674,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 50
+   }
+  },
+  {
+   "id": "4H3HGib5QRQ",
+   "people": [
+    "song"
+   ],
+   "title": "경량문명 기업들이 시장을 지배할 겁니다 - 송길영 작가",
+   "channel": "손에잡히는경제",
+   "date": "2025-10-04",
+   "seconds": 2569,
+   "views": 236285,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 51
+   }
+  },
+  {
+   "id": "5_79NAqrxk8",
+   "people": [
+    "song"
+   ],
+   "title": "[손석희의 12시] 사색 ep.6 중독 | 도파민의 노예가 된 시대, 우리는 어떻게 중심을 잡을 것인가 w.송길영,이종범,김겨울",
+   "channel": "손석희의 12시",
+   "date": "2026-08-09",
+   "seconds": 4739,
+   "views": 170792,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 52
+   }
+  },
+  {
+   "id": "BR03TvMmPeU",
+   "people": [
+    "song"
+   ],
+   "title": "AI시대, 앞으로 '이런' 준비를 하셔야 됩니다ㅣLIFEPLUS PEOPLE ep.28 - 송길영, 이종범",
+   "channel": "LIFEPLUS TV",
+   "date": "2025-12-18",
+   "seconds": 2809,
+   "views": 523469,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 53
+   }
+  },
+  {
+   "id": "J6V2_KfC5Fw",
+   "people": [
+    "song"
+   ],
+   "title": "음악시장을 삼킨 AI, 이제 가수는 필요 없는 것인가? (w. 송길영 작가, 다영, 규정, 영인)ㅣ음모론",
+   "channel": "Spotify Korea",
+   "date": "2026-06-20",
+   "seconds": 2059,
+   "views": 5332,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 54
+   }
+  },
+  {
+   "id": "3UPwFxV2cL0",
+   "people": [
+    "song"
+   ],
+   "title": "36주년 특별기획 '배캠, 미래를 엿보다' with 송길영 작가 | 배철수의음악캠프",
+   "channel": "Mhz 므흐즈: MBC RADIO",
+   "date": "2026-02-20",
+   "seconds": 3338,
+   "views": 2800,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 55
+   }
+  },
+  {
+   "id": "PSVCzUzxNw4",
+   "people": [
+    "kim"
+   ],
+   "title": "인간이 죽을 때까지 서로를 혐오하는 뇌과학적 이유ㅣ지식인초대석 EP.133 (김대식 교수)",
+   "channel": "지식인사이드",
+   "date": "2026-05-17",
+   "seconds": 1559,
+   "views": 659963,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 56
+   }
+  },
+  {
+   "id": "Zm_uuw4IKZQ",
+   "people": [
+    "song"
+   ],
+   "title": "자격증 따고 스펙 쌓던 시대는 끝났다? AI 시대에 달라진 '노력의 공식' | 마인드마이너 송길영 [신과대화]",
+   "channel": "삼프로TV 3PROTV",
+   "date": "2026-09-26",
+   "seconds": 3852,
+   "views": 640377,
+   "src": {
+    "dataset": "2VcyEwleUsHZuLcxO",
+    "offset": 57
+   }
+  },
+  {
+   "id": "HNM2LMKf8s8",
+   "people": [
+    "kim"
+   ],
+   "title": "\"기술은 중요하지 않다\" AI가 절대 따라잡을 수 없는 인간만의 능력ㅣ김대식 교수ㅣ김혜연 안무가",
+   "channel": "교보문고 보라",
+   "date": "2026-10-13",
+   "seconds": 1244,
+   "views": 730348,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 1
+   }
+  },
+  {
+   "id": "DdhHomq8Bg8",
+   "people": [
+    "kim"
+   ],
+   "title": "[통합본] \"지금 무서울 만큼 너무 빨라요\" 뇌과학자 김대식 교수의 6개월 뒤 전망..AI시대, 살아남는 사람들의 조건",
+   "channel": "교양이를 부탁해",
+   "date": "2026-04-25",
+   "seconds": 3191,
+   "views": 180588,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 2
+   }
+  },
+  {
+   "id": "QpBy2MZlvZw",
+   "people": [
+    "kim"
+   ],
+   "title": "\"지금 하던 거 멈추세요\" AGI 시대 오면 '이런' 인간만 살아남을 겁니다ㅣ지식인초대석 (김대식 교수 풀버전)",
+   "channel": "지식인사이드",
+   "date": "2025-12-13",
+   "seconds": 3654,
+   "views": 925046,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 3
+   }
+  },
+  {
+   "id": "ABFlrtrOnvw",
+   "people": [
+    "kim"
+   ],
+   "title": "운명vs알고리즘, 당신의 미래는 무엇이 결정하는가? (김대식X강성용) ㅣ10분 토론",
+   "channel": "14F 일사에프",
+   "date": "2025-10-31",
+   "seconds": 2186,
+   "views": 302969,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 4
+   }
+  },
+  {
+   "id": "GBDY95PiqMk",
+   "people": [
+    "kim"
+   ],
+   "title": "\"거품이 터지는 순간 시작이다\" 이제 에피타이저를 맛봤다는 AI, 세상의 구조를 바꾸기 시작했다 | 클래스e 김대식",
+   "channel": "EBS 지식",
+   "date": "2026-09-23",
+   "seconds": 2063,
+   "views": 298957,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 6
+   }
+  },
+  {
+   "id": "512LLypVJfQ",
+   "people": [
+    "kim"
+   ],
+   "title": "\"일해서 돈버는 시대 끝났다.\" AI시대 몸값 폭등하는 사람의 특징ㅣ지식인초대석 EP.100 (김대식 X 오건영)",
+   "channel": "지식인사이드",
+   "date": "2026-03-07",
+   "seconds": 4589,
+   "views": 7621298,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 7
+   }
+  },
+  {
+   "id": "3LAwlIyqLm0",
+   "people": [
+    "kim"
+   ],
+   "title": "\"과연 인간이 필요할까?\" AI→AGI→ASI(초지능)으로 이어지는 인공지능 이야기 (김대식 통합본)",
+   "channel": "정형돈의 제목없음TV",
+   "date": "2026-05-27",
+   "seconds": 4659,
+   "views": 183765,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 8
+   }
+  },
+  {
+   "id": "v5jWMfqKcus",
+   "people": [
+    "kim"
+   ],
+   "title": "\"더이상 AI 못 막는다\" 지금은 현실적으로 '이것부터' 하세요 (김대식 교수 풀버전)",
+   "channel": "머니인사이드",
+   "date": "2025-10-18",
+   "seconds": 4088,
+   "views": 1168310,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 9
+   }
+  },
+  {
+   "id": "mom7MltoDFE",
+   "people": [
+    "kim"
+   ],
+   "title": "\"딱 5년 남았어요\" AGI 시대 오면 '이런' 인간만 살아남을 겁니다 (카이스트 김대식 교수)",
+   "channel": "슬기로운 머니생활",
+   "date": "2026-10-27",
+   "seconds": 2711,
+   "views": 885,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 10
+   }
+  },
+  {
+   "id": "puvsffN_Lm8",
+   "people": [
+    "kim"
+   ],
+   "title": "\"AI는 아직 시작도 안 했다\" 2026년 진짜 본게임이 시작되는 이유 | 김대식x김광석",
+   "channel": "경제 읽어주는 남자(김광석TV)",
+   "date": "2026-07-25",
+   "seconds": 4826,
+   "views": 199045,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 11
+   }
+  },
+  {
+   "id": "nm20TC-LOhg",
+   "people": [
+    "kim"
+   ],
+   "title": "AI 시대 자산격차, 고작 '이 차이'로 확 갈린다ㅣ지식인초대석: 합석 EP.10 (김대식 X 오건영)",
+   "channel": "지식인사이드",
+   "date": "2026-07-11",
+   "seconds": 4877,
+   "views": 2011517,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 12
+   }
+  },
+  {
+   "id": "2S24WTSo06U",
+   "people": [
+    "kim"
+   ],
+   "title": "\"대비하지 못하면 죽는다\" 이미 시작된 AI혁명, 풍요인가 디스토피아인가 | 클래스e 김대식",
+   "channel": "EBSCulture (EBS 교양)",
+   "date": "2026-02-05",
+   "seconds": 2098,
+   "views": 146338,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 13
+   }
+  },
+  {
+   "id": "VNuc8XeyOrc",
+   "people": [
+    "kim"
+   ],
+   "title": "요즘 청년들이 무조건 번아웃 올 수밖에 없는 이유 | 책과사람 149 (차인표, 김대식, 하성훈)",
+   "channel": "책과삶",
+   "date": "2026-09-03",
+   "seconds": 1900,
+   "views": 294202,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 14
+   }
+  },
+  {
+   "id": "mVaAeGCLQdA",
+   "people": [
+    "kim"
+   ],
+   "title": "뇌과학자가 말하는 AI 시대에도 끝까지 살아남는 5가지 능력 | 김대식 교수의 고전 책 5권 추천",
+   "channel": "책과삶",
+   "date": "2026-03-01",
+   "seconds": 2913,
+   "views": 1052424,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 15
+   }
+  },
+  {
+   "id": "k2ELJKcQjxU",
+   "people": [
+    "kim"
+   ],
+   "title": "\"깜짝 놀랄 겁니다.\" 뇌과학자가 AI와 대화하면 생기는 일ㅣ지식인초대석 EP.118 (김대식 교수)",
+   "channel": "지식인사이드",
+   "date": "2026-04-02",
+   "seconds": 1266,
+   "views": 859150,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 16
+   }
+  },
+  {
+   "id": "vfG-hF-VLaE",
+   "people": [
+    "kim"
+   ],
+   "title": "피지컬 AI가 바꿀 미래는 어디까지 확장될까? (with 카이스트 김대식 교수) | 현대진행형 팟캐스트 EP.22",
+   "channel": "현대자동차그룹(HYUNDAI)",
+   "date": "2026-08-06",
+   "seconds": 1446,
+   "views": 59962,
+   "captions": "none"
+  },
+  {
+   "id": "HMxOFlHg14g",
+   "people": [
+    "kim"
+   ],
+   "title": "뇌과학적으로 인간이 가장 살기 좋은 도시 1위ㅣ지식인초대석: 합석 EP.1 (김대식 X 유현준)",
+   "channel": "지식인사이드",
+   "date": "2026-04-17",
+   "seconds": 2088,
+   "views": 2407316,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 18
+   }
+  },
+  {
+   "id": "3rODRHamCyM",
+   "people": [
+    "kim"
+   ],
+   "title": "[모아보기] AI는 아직 시작도 안 됐다…AI에이전트·제조AX·피지컬 AI, 그리고 한국의 기회 | 김대식 외",
+   "channel": "경제 읽어주는 남자(김광석TV)",
+   "date": "2026-10-11",
+   "seconds": 1423,
+   "views": 214727,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 19
+   }
+  },
+  {
+   "id": "WVsfqdmDd1s",
+   "people": [
+    "kim"
+   ],
+   "title": "\"빠르면 3년, 당신의 노동은 가치를 잃습니다\" AGI와 로봇이 가져올 노동의 종말 | 클래스e 김대식",
+   "channel": "EBSCulture (EBS 교양)",
+   "date": "2026-06-06",
+   "seconds": 2040,
+   "views": 77055,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 20
+   }
+  },
+  {
+   "id": "UvXTL_dUAng",
+   "people": [
+    "kim"
+   ],
+   "title": "사람보다 AI를 믿고 이동하는 시대가 올까? (with 카이스트 김대식 교수) | 현대진행형 팟캐스트 EP.23",
+   "channel": "현대자동차그룹(HYUNDAI)",
+   "date": "2026-08-14",
+   "seconds": 1344,
+   "views": 56138,
+   "captions": "none"
+  },
+  {
+   "id": "vDZ0ryuiYfg",
+   "people": [
+    "kim"
+   ],
+   "title": "\"이 3가지는 필수\" AI 20년 연구한 뇌과학자가 챗GPT 쓰는 법 (카이스트 김대식 교수)",
+   "channel": "머니인사이드",
+   "date": "2025-09-08",
+   "seconds": 1927,
+   "views": 3103110,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 22
+   }
+  },
+  {
+   "id": "sco0M5UQYQY",
+   "people": [
+    "kim"
+   ],
+   "title": "'이런 생각' 못하는 사람은 AI시대에 더 이상 살아남지 못합니다 ㅣ 책과사람 47 (김대식 교수)",
+   "channel": "책과삶",
+   "date": "2025-12-28",
+   "seconds": 2161,
+   "views": 1177388,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 23
+   }
+  },
+  {
+   "id": "3oIL71er4YI",
+   "people": [
+    "kim"
+   ],
+   "title": "\"GPU 쓸 곳이 없어요.\" AI 시대 한국이 '멘붕'에 빠진 이유ㅣ지식인초대석 EP.88 (김대식 교수)",
+   "channel": "지식인사이드",
+   "date": "2026-01-03",
+   "seconds": 1905,
+   "views": 4810033,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 24
+   }
+  },
+  {
+   "id": "UIBLOK6XCCA",
+   "people": [
+    "kim"
+   ],
+   "title": "\"10년도 안 남았다.\" 앞으로 세상을 지배할 충격적인 기술ㅣ지식인초대석 EP.68 (김대식 교수 1부)",
+   "channel": "지식인사이드",
+   "date": "2025-10-11",
+   "seconds": 2206,
+   "views": 4337735,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 25
+   }
+  },
+  {
+   "id": "pdh4lkZKT6A",
+   "people": [
+    "kim"
+   ],
+   "title": "뇌과학자가 '이 책' 읽고 하지 않게 된 4가지 \"생각 수준이 달라진다\" (사람산책 통합본, 김대식)",
+   "channel": "책과삶",
+   "date": "2026-04-12",
+   "seconds": 3535,
+   "views": 1860260,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 26
+   }
+  },
+  {
+   "id": "fBAue3aqqQc",
+   "people": [
+    "kim"
+   ],
+   "title": "2026 AI 대예측! 인간은 뭘 하고 살아야 할까 ㅣ 아는 만큼 보이는 과학 (김대식 교수)",
+   "channel": "아만보! 아는 만큼 보인다",
+   "date": "2025-12-26",
+   "seconds": 1442,
+   "views": 583027,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 27
+   }
+  },
+  {
+   "id": "nxWYjFlzRbM",
+   "people": [
+    "kim"
+   ],
+   "title": "\"좋은 집의 기준 바뀐다\" 미래의 집값을 가르는 결정적 차이ㅣ지식인초대석: 합석 EP.2 (김대식 X 유현준)",
+   "channel": "지식인사이드",
+   "date": "2026-04-30",
+   "seconds": 1607,
+   "views": 1563667,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 28
+   }
+  },
+  {
+   "id": "g_7y28ZT30M",
+   "people": [
+    "kim"
+   ],
+   "title": "[작은서점_장강명의 인생책] 뇌과학자 김대식 교수의 인생책 2편 – \"길가메시 서사시\", 움베르토 에코 \"장미의 이름\"",
+   "channel": "KBS 1라디오",
+   "date": "2025-11-21",
+   "seconds": 3753,
+   "views": 17382,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 29
+   }
+  },
+  {
+   "id": "JOpF8yrE1t8",
+   "people": [
+    "kim"
+   ],
+   "title": "\"AI한테 질문하지 마세요.\" 앞으로 5년, 가장 빨리 사라질 직원ㅣ지식인초대석 EP.132 (김대식 X 김혜연)",
+   "channel": "지식인사이드",
+   "date": "2026-05-16",
+   "seconds": 1407,
+   "views": 1165201,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 30
+   }
+  },
+  {
+   "id": "rXnuasMaHSM",
+   "people": [
+    "kim"
+   ],
+   "title": "앞으로 10년 뒤, 집값을 좌우하는 건 입지 아닌 '이것' 입니다ㅣ지식인초대석: 합석 (김대식 X 유현준 풀버전)",
+   "channel": "지식인사이드",
+   "date": "2026-06-03",
+   "seconds": 3577,
+   "views": 235307,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 31
+   }
+  },
+  {
+   "id": "wt0N9ihXkAg",
+   "people": [
+    "kim"
+   ],
+   "title": "로봇과 AI 다 가진 '이 기업' 지금 싸도 너무 쌉니다 (김대식 교수 / 풀버전)",
+   "channel": "신사임당",
+   "date": "2025-10-29",
+   "seconds": 5130,
+   "views": 494844,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 32
+   }
+  },
+  {
+   "id": "lMgRbNvx8zU",
+   "people": [
+    "kim"
+   ],
+   "title": "[작은서점_장강명의 인생책] 뇌과학자 김대식 교수의 인생책 1편 – 세스 노터봄 \"계속되는 이야기\", 불가코프 \"거장과 마르가리타\"",
+   "channel": "KBS 1라디오",
+   "date": "2025-11-20",
+   "seconds": 2838,
+   "views": 20515,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 33
+   }
+  },
+  {
+   "id": "IOm5L3KVqh0",
+   "people": [
+    "kim"
+   ],
+   "title": "[Beautiful LIFE] 뇌, 현실 그리고 인공지능_김대식 교수",
+   "channel": "빅퀘스천 Big Questions",
+   "date": "2020-05-18",
+   "seconds": 3133,
+   "views": 97714,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 34
+   }
+  },
+  {
+   "id": "eLM7_ozYK64",
+   "people": [
+    "kim"
+   ],
+   "title": "영화 [오디세이] 보기 전 필수! 30분 만에 끝내는 원작 배경 총정리 | 책과사람 134 (김대식 교수)",
+   "channel": "책과삶",
+   "date": "2026-08-06",
+   "seconds": 2054,
+   "views": 426889,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 35
+   }
+  },
+  {
+   "id": "3tL-1_SPH44",
+   "people": [
+    "kim"
+   ],
+   "title": "아인슈타인급 AI 나와도 흉내낼 수 없는 인간만의 영역ㅣ지식인초대석 EP.89 (김대식 교수, 김혜연 안무가)",
+   "channel": "지식인사이드",
+   "date": "2026-01-04",
+   "seconds": 1661,
+   "views": 786030,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 36
+   }
+  },
+  {
+   "id": "UwGfHKHJYAo",
+   "people": [
+    "kim"
+   ],
+   "title": "\"뇌가 확 살아난다\" 뇌과학자가 무조건 야외에서 독서하는 이유ㅣ(김대식 교수님 통합본)",
+   "channel": "책과삶",
+   "date": "2026-06-27",
+   "seconds": 3514,
+   "views": 127659,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 37
+   }
+  },
+  {
+   "id": "rjVXxdkDmSQ",
+   "people": [
+    "kim"
+   ],
+   "title": "\"극소수만 살아남는다\" AI시대 이렇게 준비하세요 ㅣ 아는 만큼 보이는 과학 (김대식 교수, 김혜연 안무가)",
+   "channel": "아만보! 아는 만큼 보인다",
+   "date": "2026-01-16",
+   "seconds": 2498,
+   "views": 115248,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 38
+   }
+  },
+  {
+   "id": "3MVvZxyJGyY",
+   "people": [
+    "kim"
+   ],
+   "title": "일자리 소멸이 온다? 소득이 없다면 인간은 어떻게 살아갈까? (김대식 2부)ㅣ10분 토론",
+   "channel": "14F 일사에프",
+   "date": "2026-03-28",
+   "seconds": 1514,
+   "views": 264275,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 39
+   }
+  },
+  {
+   "id": "dNt4NGOqEQI",
+   "people": [
+    "kim"
+   ],
+   "title": "어제의 당신, 오늘의 당신과 같은 사람인가요? | 인문학 아고라 - 과학기술시대, 명상을 만나다 EP.01 (김대식 교수)",
+   "channel": "재단법인 지관",
+   "date": "2018-09-15",
+   "seconds": 3121,
+   "views": 371913,
+   "captions": "none"
+  },
+  {
+   "id": "M7ATWXHviQo",
+   "people": [
+    "kim"
+   ],
+   "title": "AI로 노동의 가치, 제로된다…KAIST 김대식 교수가 말한 2045 생존 전략",
+   "channel": "TheMiilk",
+   "date": "2025-11-07",
+   "seconds": 2040,
+   "views": 45336,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 41
+   }
+  },
+  {
+   "id": "U50R56XBoe8",
+   "people": [
+    "kim"
+   ],
+   "title": "\"뇌과학자도 아는 척 하나요?\" 사람들이 지식을 과시하고 싶은 과학적인 이유 ㅣ 사람산책 09 (김대식 교수 2부)",
+   "channel": "책과삶",
+   "date": "2026-05-27",
+   "seconds": 1949,
+   "views": 35088,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 42
+   }
+  },
+  {
+   "id": "bBqDs0IJQvI",
+   "people": [
+    "kim"
+   ],
+   "title": "AI, 뇌 과학자 카이스트 김대식 교수 ㅣ 2025.11.15. 방송",
+   "channel": "KBS 1R 생방송 주말 저녁입니다",
+   "date": "2026-01-17",
+   "seconds": 2039,
+   "views": 11522,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 43
+   }
+  },
+  {
+   "id": "RNpTVKRandM",
+   "people": [
+    "kim"
+   ],
+   "title": "뇌과학자가 본 AI시대 4050이 더 불안할 수밖에 없는 진짜 이유 | 김대식 교수의 인생 책 추천",
+   "channel": "책과삶",
+   "date": "2026-05-10",
+   "seconds": 1855,
+   "views": 55269,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 44
+   }
+  },
+  {
+   "id": "5h4PRkNnB8o",
+   "people": [
+    "kim"
+   ],
+   "title": "뇌과학자가 말하는 책 읽자마자 뇌에서 벌어지는 엄청난 일 ㅣ 사람산책 06 (김대식 교수)",
+   "channel": "책과삶",
+   "date": "2026-05-16",
+   "seconds": 1576,
+   "views": 598377,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 45
+   }
+  },
+  {
+   "id": "-5pb3UrUeOM",
+   "people": [
+    "kim"
+   ],
+   "title": "\"일자리? 아닙니다\" AI 시대에 인간이 사실 진짜 포기 못하는 '이것' ㅣ 책과사람 81 (김대식 교수님 1부)",
+   "channel": "책과삶",
+   "date": "2026-05-09",
+   "seconds": 1834,
+   "views": 178383,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 46
+   }
+  },
+  {
+   "id": "Ttz5cuBDO-0",
+   "people": [
+    "kim"
+   ],
+   "title": "\"이 책 중 한 권은 인생책이 될 겁니다\" 뇌과학자가 추천하는 책 5권ㅣ 사람산책 03 (김대식 교수 1부)",
+   "channel": "책과삶",
+   "date": "2026-03-14",
+   "seconds": 2431,
+   "views": 1151573,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 47
+   }
+  },
+  {
+   "id": "eSwBl6_NI80",
+   "people": [
+    "kim"
+   ],
+   "title": "[오마이포럼 기조연설] 김대식 교수 \"지금 초등학생, AI와 경쟁하는 첫세대\"",
+   "channel": "오마이TV",
+   "date": "2026-02-20",
+   "seconds": 1381,
+   "views": 24954,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 48
+   }
+  },
+  {
+   "id": "OngvfAXgsxE",
+   "people": [
+    "kim"
+   ],
+   "title": "최소 30%는 해고됩니다! AI가 바꾸는 일의 종말 ㅣ 아는 만큼 보이는 과학 (김대식, 김혜연 1부)",
+   "channel": "아만보! 아는 만큼 보인다",
+   "date": "2026-04-03",
+   "seconds": 1796,
+   "views": 35105,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 49
+   }
+  },
+  {
+   "id": "yZEtpzcCcYc",
+   "people": [
+    "kim"
+   ],
+   "title": "김대식 \"지금은 모든 인간이 새롭게 경쟁할 수 있는 기회\" [코너별 다시보기]",
+   "channel": "[팟빵] 최욱의 매불쇼",
+   "date": "2026-05-04",
+   "seconds": 2198,
+   "views": 166736,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 50
+   }
+  },
+  {
+   "id": "eCKS_etvZyI",
+   "people": [
+    "kim"
+   ],
+   "title": "카이스트 김대식 교수 | (1부) \"인공지능 시대에 애플의 움직임이 없는 이유\" 처음 듣는 챗GPT 이야기",
+   "channel": "동아시아유니버스",
+   "date": "2023-03-14",
+   "seconds": 1492,
+   "views": 2697761,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 51
+   }
+  },
+  {
+   "id": "8VrtOkl1ztM",
+   "people": [
+    "kim"
+   ],
+   "title": "[지식뉴스] \"올여름부터 난리가 날 겁니다\"..AI에이전트 시대, 당신이 지금 당장 버려야 할 착각들 (ft.김대식 교수, 김혜연 대표)",
+   "channel": "교양이를 부탁해",
+   "date": "2026-05-13",
+   "seconds": 1390,
+   "views": 185455,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 52
+   }
+  },
+  {
+   "id": "T6Km1iqhco0",
+   "people": [
+    "kim"
+   ],
+   "title": "[한예종 1편] \"지금 너무 빨라요, 올해가 마지막 기회입니다\"..6개월 뒤 'AI 에이전트' 전망 (ft.김대식 카이스트 교수)",
+   "channel": "교양이를 부탁해",
+   "date": "2026-04-17",
+   "seconds": 1362,
+   "views": 382494,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 53
+   }
+  },
+  {
+   "id": "Jn7Hd7odSss",
+   "people": [
+    "kim"
+   ],
+   "title": "\"매장에 쥐새끼 한 마리도 없다\" 삼성 완패 후 최대인 애플의 몰락 (카이스트 김대식 교수 / 1부)",
+   "channel": "신사임당",
+   "date": "2025-10-23",
+   "seconds": 1247,
+   "views": 59200,
+   "src": {
+    "dataset": "bHPaxOfrPdrzIkUAE",
+    "offset": 54
+   }
+  },
+  {
+   "id": "F0XOK4n6-e4",
+   "people": [
+    "kim"
+   ],
+   "title": "카이스트 김대식 교수의 AI 시대에 살아남는 냉철한 현실조언 - 김대식 교수 김혜연 안무가 '20분 AI 과외'",
+   "channel": "MKTV 김미경TV",
+   "date": "2025-11-05",
+   "seconds": 1254,
+   "views": 395767,
+   "src": {
+    "dataset": "uw4BRI4KOps2gG8Q3",
+    "offset": 0
+   }
+  }
+ ],
+ "article_from": "2025-01-01"
+}
