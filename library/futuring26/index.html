@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>FUTURING 26 현장 인사이트 + 세 줄 프롬프트 · 워크제로 자료실</title>
+<meta name="description" content="마케팅 컨퍼런스에서 들은 9개 세션을 3가지 흐름으로 — 흐름마다 복사해 쓰는 세 줄 프롬프트">
+<link rel="canonical" href="https://workzeroai.github.io/library/futuring26/">
+<link rel="icon" href="https://workzeroai.github.io/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://workzeroai.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#2462e0">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="워크제로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="FUTURING 26 현장 인사이트 + 세 줄 프롬프트">
+<meta property="og:description" content="마케팅 컨퍼런스에서 들은 9개 세션을 3가지 흐름으로 — 흐름마다 복사해 쓰는 세 줄 프롬프트">
+<meta property="og:url" content="https://workzeroai.github.io/library/futuring26/">
+<meta property="og:image" content="https://workzeroai.github.io/library/thumb/futuring26.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FUTURING 26 현장 인사이트 + 세 줄 프롬프트">
+<meta name="twitter:description" content="마케팅 컨퍼런스에서 들은 9개 세션을 3가지 흐름으로 — 흐름마다 복사해 쓰는 세 줄 프롬프트">
+<meta name="twitter:image" content="https://workzeroai.github.io/library/thumb/futuring26.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+.tgl{margin:18px 0;border:1px solid var(--hair);border-radius:14px;background:var(--soft)}.tgl>summary{cursor:pointer;padding:14px 18px;font-weight:700;color:var(--ink);list-style:none}.tgl>summary::before{content:"▸ ";color:var(--primary)}.tgl[open]>summary::before{content:"▾ "}.tgl-in{padding:0 14px 14px}
+:root{--primary:#2462e0;--primary-deep:#1a4fb8;--primary-pale:#e5effd;--ink:#0d253d;--ink2:#273951;--mute:#64748d;--soft:#f4f8fe;--hair:#dfe7f2;--mint:#14b87a;--sh1:0 1px 3px rgba(0,55,112,.08);--ease:cubic-bezier(.16,1,.3,1);--gut:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.72;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.rd{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(227,232,238,.7)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:900 16px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:-.02em}
+.logo b{color:var(--primary)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:3px}
+.seg a{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;color:var(--mute);white-space:nowrap}
+.seg a.on{background:var(--ink);color:#fff}
+@media (max-width:400px){.seg a{padding:8px 11px;font-size:12.5px}.logo{font-size:15px}}
+.back{display:inline-block;margin:26px 0 0;font-size:13px;font-weight:800;color:var(--primary)}
+.head{padding:14px 0 26px;border-bottom:1px solid var(--hair);margin-bottom:34px}
+.head .m{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:var(--mute);margin-bottom:12px}
+.head .m i{font-style:normal;background:var(--primary-pale);color:var(--primary-deep);padding:5px 9px;border-radius:7px}
+.head h1{font-size:28px;font-weight:800;letter-spacing:-.035em;line-height:1.32}
+.src{background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin-bottom:30px;font-size:13.5px;color:var(--ink2)}
+.src b{display:block;font-size:13px;color:var(--primary-deep);margin-bottom:5px}
+.src a{color:var(--primary);font-weight:800}
+.src .orig{display:block;margin:7px 0 2px;font-size:12.5px;color:var(--mute);word-break:break-word}
+.keys{margin:0 0 30px;padding:18px 20px;background:var(--primary-pale);border-radius:16px}
+.keys b{display:block;font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--primary-deep);margin-bottom:10px}
+.keys ul{list-style:none;display:grid;gap:9px}
+.keys li{position:relative;padding-left:20px;font-size:15px;font-weight:700;color:var(--ink)}
+.keys li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.bd h2{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:42px 0 14px;line-height:1.35}
+.bd h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:32px 0 10px}
+.bd h4{font-size:16px;font-weight:800;margin:24px 0 8px}
+.bd p{margin:14px 0;font-size:16px;color:var(--ink2)}
+.bd strong{color:var(--ink);font-weight:800}
+.bd ul,.bd ol{margin:14px 0 14px 20px;font-size:16px;color:var(--ink2)}
+.bd li{margin:7px 0}
+.bd hr{border:0;border-top:1px solid var(--hair);margin:38px 0}
+.bd a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.bd code{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--primary-deep);word-break:break-all}
+.bd blockquote{margin:18px 0;padding:16px 18px;background:var(--primary-pale);border-radius:14px;font-size:15.5px;color:var(--ink2);font-weight:600}
+.lmnote{margin:20px 0;padding:18px 20px;background:var(--soft);border:1px solid var(--hair);border-radius:16px}
+.lmnote>:first-child{margin-top:0}.lmnote>:last-child{margin-bottom:0}
+.lmnote p,.lmnote li{font-size:15px}
+figure{margin:24px 0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--hair)}
+figcaption{margin-top:9px;font-size:13px;color:var(--mute);font-weight:700;text-align:center}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--hair);border-radius:14px}
+.tw table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+.tw th,.tw td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+.tw th{background:var(--soft);font-weight:800;color:var(--ink);white-space:nowrap}
+.tw tr:last-child td{border-bottom:0}
+@media (max-width:639px){
+.tw.hdr{overflow:visible;border:0;border-radius:0}
+.tw.hdr table{min-width:0;display:block}
+.tw.hdr tr{display:block;background:#fff;border:1px solid var(--hair);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.tw.hdr tr:first-child{display:none}
+.tw.hdr td{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;padding:11px 14px;border-bottom:1px solid var(--hair)}
+.tw.hdr tr td:last-child{border-bottom:0}
+.tw.hdr td::before{content:attr(data-label);font-weight:800;color:var(--mute);font-size:12px;line-height:1.65}
+.tw.hdr td code{word-break:break-all}
+}
+.cw{position:relative;margin:20px 0}
+.cw pre{background:#0d1526;border-radius:14px;padding:18px 18px 18px;overflow-x:auto}
+.cw code{background:none;border:0;padding:0;color:#dbe6f5;font-size:13.5px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.cbtn{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;z-index:1}
+.cbtn.ok{background:var(--mint)}
+.foot{background:var(--soft);margin-top:56px;padding:48px 0}
+.foot h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.crosses{display:grid;gap:12px;margin-top:22px}
+.cross{display:block;padding:22px;border-radius:22px;background:linear-gradient(135deg,var(--primary-pale),#fff);border:1px solid var(--hair);height:100%}
+.cross .tag{display:inline-block;font:800 11px/1 "Pretendard","Noto Sans KR",sans-serif;letter-spacing:.1em;padding:6px 9px;border-radius:8px;background:#fff;color:var(--primary-deep);margin-bottom:9px}
+.cross h3{font-size:17px;font-weight:800}
+.cross p{font-size:14px;color:var(--ink2);margin-top:5px}
+.cross .go{display:inline-block;margin-top:12px;font-weight:800;color:var(--primary);font-size:14px}
+footer{background:var(--ink);color:#7f97b5;font-size:12px;padding:24px 0}
+@media (min-width:860px){:root{--gut:32px}.head h1{font-size:36px}.bd p,.bd ul,.bd ol{font-size:17px}.crosses{grid-template-columns:repeat(3,1fr)}}
+/* WZ-COBALT-C */:root{--grad-btn:linear-gradient(135deg,#2b74f0 0%,#2462e0 50%,#1d55d6 100%);--gloss:radial-gradient(120% 90% at 30% 0%,rgba(255,255,255,.28) 0,rgba(255,255,255,0) 55%);--glow:0 12px 28px -10px rgba(36,98,224,.75),0 2px 6px -1px rgba(29,85,214,.35)}.btn.pri,.fbtn,.rcta .p1,.price.best .pick,.price .pop{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:var(--glow),inset 0 1px 0 rgba(255,255,255,.35)}.fchip.on{background:var(--gloss),var(--grad-btn);border-color:transparent;color:#fff;box-shadow:0 8px 18px -8px rgba(36,98,224,.8),inset 0 1px 0 rgba(255,255,255,.35)}.btn.pri:hover,.fbtn:hover,.rcta .p1:hover{filter:brightness(1.08) saturate(1.1)}.lv-head,.svr.win{background:var(--gloss),var(--grad-btn)}.eyebrow{background:linear-gradient(135deg,#e5effd,#d3e6ff);color:#1a4fb8}.logo b{color:#2b74f0}.fmeta i,.nm i{background:linear-gradient(135deg,#e5effd,#d6e7ff);color:#1a4fb8}.paneNote{background:linear-gradient(135deg,#eaf3ff 0%,#f7fbff 60%,#fff 100%);border-color:#d3e3fb}.keys{background:linear-gradient(135deg,#e5effd,#f2f8ff)}.nkeys span::before,.keys li::before{background:linear-gradient(135deg,#3b8cff,#1d55d6)}
+</style>
+<script src="/assets/wz.js" defer></script>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../tutoring/">WORK<b>ZERO</b></a>
+  <div class="seg" role="tablist" aria-label="메뉴"><a href="../../tutoring/">1:1 과외</a><a href="../../build/">제작 문의</a><a class="on" href="../../library/" aria-current="page">자료실</a></div></div></nav>
+<main>
+<div class="rd"><a class="back" href="../../library/">← 자료실</a>
+  <div class="head"><div class="m"><i>실전 가이드</i><span>2026-11-09</span></div><h1>FUTURING 26 현장 인사이트 + 세 줄 프롬프트</h1></div>
+  
+  <div class="bd">
+<blockquote>피처링 초청으로 다녀온 마케팅 컨퍼런스 FUTURING 26(2026-10-28)에서 <strong>직접 들은 9개 세션</strong>을 정리했어요. 숫자는 현장 슬라이드와 피처링 공식 인사이트 백서 기준이에요.</blockquote>
+<h3>30초 요약</h3>
+<ul><li>연사들이 다른 말로 같은 얘기를 했어요. 크게 <strong>세 가지 흐름</strong>이에요.</li></ul>
+<ol><li><strong>AI</strong> — 도구는 다 비슷해졌고, 성과는 우리 팀 <strong>기준</strong>에서 갈린다</li><li><strong>인플루언서</strong> — <strong>팔로워 수</strong>로는 성과를 예측할 수 없다</li><li><strong>커머스</strong> — 사람들은 광고가 아니라 <strong>사람</strong>을 보고 산다</li></ol>
+<ul><li>흐름마다 끝에 <strong>세 줄 프롬프트</strong>(우리 목표 / 하지 말 것 / 좋은 결과의 조건)를 붙였어요. 복사해서 바로 쓰면 돼요.</li></ul>
+<div class="tw hdr"><table>
+<tr><th>흐름</th><th>들은 세션</th><th>바로 쓰는 세 줄</th></tr>
+<tr><td data-label="흐름">① AI는 기준 싸움</td><td data-label="들은 세션">피처링 CEO · 피처링 CTO · WPP · 브이캣</td><td data-label="바로 쓰는 세 줄">콘텐츠 브리프</td></tr>
+<tr><td data-label="흐름">② 팔로워 수의 함정</td><td data-label="들은 세션">피처링 CEO · HSAD · 메타 · 카카오</td><td data-label="바로 쓰는 세 줄">인플루언서 선정</td></tr>
+<tr><td data-label="흐름">③ 사람이 유통망</td><td data-label="들은 세션">CJ ENM · 메타 · 카카오 · 에어월렉스</td><td data-label="바로 쓰는 세 줄">커머스 기획전</td></tr>
+</table></div>
+<hr>
+<h3>흐름 ① AI는 기준 싸움 — "범용 AI는 충분, 문제는 우리 기준"</h3>
+<div class="tw hdr"><table>
+<tr><th>연사</th><th>들은 것</th><th>숫자·근거</th></tr>
+<tr><td data-label="연사">피처링 장지훈 CEO</td><td data-label="들은 것">AI로 시간을 아껴도 다시 확인·수정하는 데 쓴다. 이제는 답의 속도보다 일을 어디까지 끝내느냐</td><td data-label="숫자·근거">AI로 절약한 시간 중 <strong>약 40%</strong>를 확인·수정에 다시 씀 (슬라이드, Workday 2026)</td></tr>
+<tr><td data-label="연사">피처링 최화섭 CTO</td><td data-label="들은 것">우리가 AI에 시키는 일은 "찾아줘·작성해줘·정리해줘"처럼 한 번 답받고 끝. AI를 계속 일하게 하는 건 더 좋은 모델이 아니라 <strong>기준</strong></td><td data-label="숫자·근거">브랜드 목표 기준 → 콘텐츠 탐색 기준처럼 기준이 쌓이면 다음 일이 자동으로 이어짐</td></tr>
+<tr><td data-label="연사">WPP Media 정재원 리드</td><td data-label="들은 것">"인플루언서 전략 만들어 줘" 대신 판단 기준을 담아 요청</td><td data-label="숫자·근거">목적 · 맥락 · 제약 · 산출물 · 검증 (슬라이드)</td></tr>
+<tr><td data-label="연사">브이캣 정범진 CEO</td><td data-label="들은 것">AI를 쓰는 기업은 많지만, AI로 마케팅을 <strong>운영</strong>하는 기업만 남는다</td><td data-label="숫자·근거">범용 AI는 충분, 문제는 톤앤매너 불일치·가이드 위반 같은 <strong>브랜드 기준</strong></td></tr>
+</table></div>
+<p><strong>내 일에 옮기면:</strong> 프롬프트를 길게 쓰기 전에, 매번 다시 고치는 이유를 세 줄로 적어 둔다.</p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code>우리 목표: 이번 콘텐츠가 무엇을 위한 건지, 무엇으로 잘됐다고 판단하는지
+하지 말 것: 우리 브랜드 톤에 안 맞는 표현, 금지어, 지켜야 할 가이드
+좋은 결과의 조건: 결과물에 꼭 들어갈 것, 근거·출처 표시 방법</code></pre></div>
+<hr>
+<h3>흐름 ② 팔로워 수의 함정 — "숫자는 영향력을 말해 주지 않는다"</h3>
+<div class="tw hdr"><table>
+<tr><th>연사</th><th>들은 것</th><th>숫자·근거</th></tr>
+<tr><td data-label="연사">피처링 장지훈 CEO</td><td data-label="들은 것">비슷한 육아 인플루언서 두 명에게 같은 제품을 맡겼더니, 팔로워가 훨씬 많은 쪽은 하나도 못 팔고 적은 쪽이 100개 넘게 팔았다</td><td data-label="숫자·근거">이 고민에서 가짜 팔로워를 거르는 '피처링 스코어'가 시작</td></tr>
+<tr><td data-label="연사">HSAD 임효철 상무</td><td data-label="들은 것">팔로워 수가 아니라 <strong>구매 타깃</strong> 기준으로 채널을 고르고, 검증된 콘텐츠에 집중해 부스팅</td><td data-label="숫자·근거">1주 조회수 20만↑ · 반응 1만↑ 콘텐츠에 집중</td></tr>
+<tr><td data-label="연사">Meta 김수정 매니저</td><td data-label="들은 것">크리에이터를 '사지' 말고 포트폴리오로 운영. 발굴 기준이 팔로워 수에서 <strong>브랜드 핏 검증</strong>으로</td><td data-label="숫자·근거">최고의 협업은 브랜드를 자발적으로 언급한 댓글·DM에서 나온다</td></tr>
+<tr><td data-label="연사">카카오 심윤보 리더</td><td data-label="들은 것">팔로워 수만으로는 커머스 성과를 예측할 수 없다. 유사 브랜드 협업 이력 → 콘텐츠 핏 → 실제 댓글 반응 → 과거 커머스 성과로 검증</td><td data-label="숫자·근거">인플루언서 커머스 거래액 1년 새 <strong>약 3.8배</strong>, 성장을 이끈 건 검증된 기존 파트너</td></tr>
+</table></div>
+<p><strong>내 일에 옮기면:</strong> 인플루언서 후보를 AI에 넘길 때, 팔로워 수 대신 볼 기준을 세 줄로 준다.</p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code>우리 목표: [제품]을 [타깃]에게 팔 인플루언서 후보 5명 고르기. 성공은 협업 콘텐츠의 구매 클릭으로 판단
+하지 말 것: 팔로워 수·평균 조회수만으로 순위 매기지 않기, 브랜드 톤과 안 맞는 계정 넣지 않기
+좋은 결과의 조건: 후보마다 유사 브랜드 협업 이력·실제 댓글 반응·과거 판매 근거 한 줄씩, 확인 안 된 건 &#x27;가설&#x27;로 표시</code></pre></div>
+<hr>
+<h3>흐름 ③ 사람이 유통망 — "광고가 아니라 사람을 보고 산다"</h3>
+<div class="tw hdr"><table>
+<tr><th>연사</th><th>들은 것</th><th>숫자·근거</th></tr>
+<tr><td data-label="연사">CJ ENM 김정곤 팀장</td><td data-label="들은 것">쇼핑의 출발점이 SNS로. 크리에이터는 있는 수요를 가져오는 게 아니라 <strong>새 수요를 만든다</strong></td><td data-label="숫자·근거">크리에이터 보고 구매해 본 소비자 <strong>60%</strong>, 처음 알게 된 상품 구매 <strong>25%</strong> (슬라이드)</td></tr>
+<tr><td data-label="연사">Meta 김수정 매니저</td><td data-label="들은 것">AI가 추천을 쏟아낼수록 사람들은 그걸 검증해 줄 <strong>사람</strong>을 찾는다. 오가닉 콘텐츠가 곧 광고 소재 후보</td><td data-label="숫자·근거">크리에이터 추천이 구매의 <strong>45%</strong>에 영향, 신뢰 요인 1위는 전문성</td></tr>
+<tr><td data-label="연사">카카오 심윤보 리더</td><td data-label="들은 것">목표에 따라 독립형 · 행사 연계형 · 대체형 기획전을 고른다</td><td data-label="숫자·근거">인플루언서 연계 행사 평균 거래액 <strong>2배</strong></td></tr>
+<tr><td data-label="연사">에어월렉스 권윤아 지사장</td><td data-label="들은 것">글로벌로 커질수록 <strong>돈의 흐름</strong>(해외 매출 수취 · 인플루언서 지급)을 하나로 설계</td><td data-label="숫자·근거">서너 번 환전되는 동안 보이지 않는 손실</td></tr>
+</table></div>
+<p><strong>내 일에 옮기면:</strong> 인플루언서 기획전을 AI와 같이 짤 때.</p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code>우리 목표: [기획전 이름]으로 새 고객 첫 구매 만들기. 성공은 신규 구매자 수와 객단가로 판단
+하지 말 것: 할인율만 앞세우기, 인플루언서 말투를 브랜드 문구로 덮어쓰기
+좋은 결과의 조건: 독립형/행사 연계형/대체형 중 하나를 고른 이유, 인플루언서별 역할, 지표와 확인 시점</code></pre></div>
+<hr>
+<h3>세 줄 프롬프트 만드는 법</h3>
+<p>위 예시를 내 업무로 바꾸고 싶다면, AI한테 인터뷰를 받으세요. 빈칸만 바꿔 Claude나 ChatGPT에 붙여 넣으면 돼요.</p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code>너는 마케팅 팀의 &#x27;일하는 기준&#x27;을 정리해 주는 편집자야.
+내가 맡은 일: [예: 인플루언서 협업 브리프 작성]
+
+아래 세 가지를 한 번에 하나씩 나에게 질문해 줘.
+내 답이 모호하면 한 번 더 구체적으로 물어봐 줘.
+1) 우리 목표 — 이 일이 무엇을 위한 건지, 잘됐는지 무엇으로 판단하는지
+2) 하지 말 것 — 브랜드 톤에 안 맞는 표현, 금지어, 지켜야 할 가이드
+3) 좋은 결과의 조건 — 결과물에 꼭 들어가야 할 것, 근거·출처 표시 방법
+
+질문이 끝나면 아래 형식으로 세 줄만 정리해 줘. 줄마다 한 문장.
+우리 목표:
+하지 말 것:
+좋은 결과의 조건:</code></pre></div>
+<p>일을 시킬 때는 이렇게만 쓰면 돼요.</p>
+<div class="cw"><button class="cbtn" type="button">복사</button><pre><code>위 기준대로 [할 일]을 해줘. 기준과 안 맞는 부분이 있으면 먼저 알려 줘.</code></pre></div>
+<p><strong>쓰는 요령</strong></p>
+<ul><li>한 줄에 한 문장. 길어지면 AI도 사람도 안 지켜요.</li><li>다시 고칠 일이 생기면 "왜 고쳤지?"를 기준에 한 줄 더해요. 기준이 쌓이는 게 핵심이에요(피처링 CTO).</li><li>업무마다 세 줄을 따로 만들어요(브리프용, 인플루언서 선정용, 기획전용).</li></ul>
+<hr>
+<h3>Claude 프로젝트 지침에 넣기</h3>
+<p>한 번 넣어 두면 그 프로젝트 안의 모든 대화가 세 줄을 읽고 시작해요.</p>
+<ol><li>claude.ai 왼쪽에서 <strong>Projects</strong>를 누르거나 <code>claude.ai/projects</code>로 들어가요.</li><li>오른쪽 위 <strong>+ New Project</strong>를 누르고 이름을 적어요(예: 인플루언서 선정). 이름·설명은 Claude가 읽지 않아요.</li><li>프로젝트 화면 오른쪽 <strong>Set project instructions</strong>를 눌러요.</li><li>세 줄을 붙여 넣고 <strong>Save instructions</strong>.</li><li>이 프로젝트 안에서 새 대화를 열고 "위 기준대로 ~해줘"라고 시켜요.</li></ol>
+<blockquote><strong>공식 문서 한 줄</strong> — 프로젝트는 무료 계정도 쓸 수 있고, 무료는 최대 5개까지 만들 수 있어요. <a href="https://support.claude.com/en/articles/9517075-what-are-projects" target="_blank" rel="noopener">원문 보기</a> · 2026-11-04 확인</blockquote>
+<p><strong>무료 계정에서 'Set project instructions'가 안 보이면</strong> — 공식 문서 중 한 곳에 프로젝트 지침이 유료 플랜 기능으로 적혀 있어요. 그럴 땐 새 대화의 첫 메시지에 세 줄을 붙여 넣고 시작하면 같은 효과를 볼 수 있어요. ChatGPT 등 다른 AI도 같은 방법이 돼요.</p>
+<hr>
+<h3>자주 묻는 것</h3>
+<p><strong>세 줄로 충분해요?</strong> 처음엔 충분해요. 다시 고칠 때마다 이유를 한 줄씩 더하면 돼요.</p>
+<p><strong>팀이 같이 쓰려면요?</strong> Claude Team·Enterprise 플랜은 프로젝트를 팀원과 공유할 수 있어요. 개인 플랜이라면 세 줄을 팀 문서에 두고 각자 붙여 넣으세요.</p>
+<p><strong>어떤 일부터 해 볼까요?</strong> 매주 반복하고, 매번 고치는 일부터요. 브리프, 인플루언서 선정, 주간 리포트가 대표적이에요.</p>
+<hr>
+<p>기준 날짜 2026-11-05 · @work__zero 이 자료는 피처링 초청으로 다녀온 FUTURING 26 후기를 바탕으로 만들었어요. 직접 들은 세션만 담았고, 연사 이름·숫자는 현장 슬라이드와 피처링 공식 인사이트 백서를 따랐어요.</p>
+  </div>
+</div>
+<div class="foot"><div class="rd">
+  <h2>이 자료가 도움이 됐다면</h2>
+  <div class="crosses">
+    <a class="cross" href="../../tutoring/#level"><span class="tag">배우기</span><h3>직접 만들고 싶다면</h3><p>내 업무를 실습 주제로 쓰는 1:1 과외.</p><span class="go">1:1 과외 보기 →</span></a>
+    <a class="cross" href="../../build/#diagnosis"><span class="tag">순서부터</span><h3>뭐부터 할지 모르겠다면</h3><p>세 가지만 답하면 4단계 중 지금 위치를 바로 알려드려요. 무료예요.</p><span class="go">내 단계 진단하기 →</span></a>
+    <a class="cross" href="../../build/#contact"><span class="tag">맡기기</span><h3>그냥 맡기고 싶다면</h3><p>상담은 무료예요. 되는 일과 안 되는 일을 솔직하게.</p><span class="go">제작 문의하기 →</span></a>
+  </div>
+  <p style="margin-top:22px"><a href="../../library/" style="color:var(--primary);font-weight:800">← 다른 자료 보기</a></p>
+</div></div>
+<footer><div class="wrap">© WORKZERO · 제로 @work__zero</div></footer>
+</main>
+<script>
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.parentElement.querySelector('code');
+  try{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges()}
+  catch(e){try{navigator.clipboard.writeText(c.innerText)}catch(_){}}
+  b.textContent='복사됨';b.classList.add('ok');setTimeout(()=>{b.textContent='복사';b.classList.remove('ok')},1600);
+}));
+</script>
+</body>
+</html>

@@ -2,6 +2,17 @@
  "updated": "2026-10-09",
  "files": [
   {
+   "slug": "futuring26",
+   "notion": "",
+   "title": "FUTURING 26 현장 인사이트 + 세 줄 프롬프트",
+   "desc": "마케팅 컨퍼런스에서 들은 9개 세션을 3가지 흐름으로 — 흐름마다 복사해 쓰는 세 줄 프롬프트",
+   "tag": "실전 가이드",
+   "date": "2026-11-09",
+   "thumb": "thumb/futuring26.webp",
+   "url": "futuring26/",
+   "ready": true
+  },
+  {
    "slug": "marketer-ai-tools-9",
    "notion": "40112e3c-61c9-8113-bdac-c7c1da380425",
    "title": "마케터 일 순서별 AI 도구 9개",
